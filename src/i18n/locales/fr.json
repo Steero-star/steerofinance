@@ -1,0 +1,976 @@
+{
+  "common": {
+    "joinWaitlist": "M'inscrire à la liste d'attente",
+    "discoverApproach": "Découvrir l'approche Steero",
+    "discoverFeatures": "Découvrir les fonctionnalités",
+    "learnMore": "En savoir plus",
+    "readMore": "Lire plus",
+    "close": "Fermer"
+  },
+  "waitlist": {
+    "modalTitle": "Rejoins la liste d'attente",
+    "modalDescription": "Sois parmi les premiers à essayer Steero et à transformer ta relation à l'argent.",
+    "firstName": "Prénom",
+    "lastName": "Nom",
+    "email": "Email",
+    "dateOfBirth": "Date de naissance",
+    "selectDate": "Sélectionner une date",
+    "country": "Pays",
+    "selectCountry": "Sélectionner un pays",
+    "language": "Langue",
+    "selectLanguage": "Sélectionner une langue",
+    "currency": "Devise",
+    "selectCurrency": "Sélectionner une devise",
+    "popularCurrencies": "Devises populaires",
+    "allCurrencies": "Toutes les devises",
+    "termsText": "J'accepte les",
+    "termsLink": "Conditions Générales d'Utilisation",
+    "submit": "Rejoindre la liste d'attente",
+    "submitting": "Inscription en cours...",
+    "successTitle": "Inscription réussie ! 🎉",
+    "successMessage": "Tu fais désormais partie de la liste d'attente Steero. On te tient informé !",
+    "errors": {
+      "required": "Ce champ est requis",
+      "email": "Adresse email invalide",
+      "terms": "Tu dois accepter les conditions générales",
+      "emailExists": "Cette adresse email est déjà inscrite"
+    }
+  },
+  "header": {
+    "home": "Accueil",
+    "whySteero": "Pourquoi Steero",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs"
+  },
+  "footer": {
+    "tagline": "Un cadre simple pour comprendre et piloter ses finances dans la durée.",
+    "product": "Produit",
+    "resources": "Ressources",
+    "legal": "Légal",
+    "legalNotice": "Mentions légales",
+    "cgs": "CGS",
+    "privacy": "Confidentialité",
+    "contact": "Contact",
+    "closingPhrase": "Construis ta sérénité financière, un rituel à la fois.",
+    "copyright": "© 2026 Steero. Tous droits réservés."
+  },
+  "hero": {
+    "badge": "L'application qui te reconnecte à tes dépenses",
+    "title": "(Re)Prends le contrôle de tes finances avec",
+    "titleHighlight": "simplicité",
+    "description": "Un tableau de bord simple pour suivre tes budgets, tes dépenses et ancrer des habitudes qui comptent. Découvre le premier système d'exploitation personnel qui relie finances et habitudes pour changer durablement.",
+    "features": {
+      "time": "Simplicité",
+      "timeDesc": "Un rituel de suivi en moins de 2 minutes par jour",
+      "clarity": "Clarté",
+      "clarityDesc": "Tu sais exactement pourquoi tu dépenses et où tu vas",
+      "security": "Sérénité",
+      "securityDesc": "Plus de surprises en fin de mois"
+    }
+  },
+  "howItWorks": {
+    "title": "Comment ça marche ?",
+    "description": "Un processus simple en 3 étapes pour reprendre le contrôle de tes finances",
+    "step1": {
+      "title": "Observe tes habitudes",
+      "description": "Comprends où va ton argent sans jugement. Steero t'aide à visualiser, à chaque saisie, ce que tu as déjà consommé et ce qu'il te reste dans ton budget"
+    },
+    "step2": {
+      "title": "Ritualise ton suivi",
+      "description": "Avec des rituels financiers réguliers conçus pour t'accompagner, prend un moment une fois par semaine, mois ou trimestre pour comprendre, ajuster et planifier."
+    },
+    "step3": {
+      "title": "Avance vers tes objectifs",
+      "description": "Chaque petite décision s'accumule pour construire l'avenir avec sérénité et aligné avec tes objectifs : Constituer un patrimoine, créer ton entreprise ou voyager."
+    }
+  },
+  "features": {
+    "title": "Pas d'automatisation qui te transforme en simple spectateur",
+    "description": "Avec Steero, tu deviens le pilote : tu comprends, ajustes et ritualises ta trajectoire financière pour atteindre la destination que tu as choisie.",
+    "budget": {
+      "title": "Budgétiser",
+      "description": "Tes ressources sont limitées : elles te permettent de construire le présent et de préparer l'avenir. Bien les définir est essentiel. Créé des budgets clairs, grâce à la trajectoire, notre outil intuitif qui t'accompagne pour définir ta destination."
+    },
+    "capture": {
+      "title": "Saisir",
+      "description": "Contrairement à d'autres applications, Steero ne fait pas à ta place. La saisie manuelle crée un lien émotionnel : ce qui améliore significativement l'autorégulation… Nous l'avons amélioré grâce au Niveau - La jauge budgétaire qui indique le consommé, consommé avec la dépense saisie et le restant"
+    },
+    "ritualize": {
+      "title": "Ritualiser",
+      "description": "La compréhension financière ne repose pas uniquement sur des connaissances, mais sur des habitudes comportementales. La répétition consciente est un facteur clé du changement durable, les rituels t'indiquent quoi faire, quoi regarder, quelles questions te poser et comment préparer la suite."
+    }
+  },
+  "differentiation": {
+    "title": "Pas d'automatisation qui te transforme en simple spectateur",
+    "description": "Avec Steero, tu deviens le pilote : tu comprends, ajustes et ritualises ta trajectoire financière pour atteindre la destination que tu as choisie.",
+    "budget": {
+      "title": "Budgétiser",
+      "description": "Tes ressources sont limitées : elles te permettent de construire le présent et de préparer l'avenir. Bien les définir est essentiel. Crée des budgets clairs, grâce à la trajectoire, notre outil intuitif qui t'accompagne pour définir ta destination.",
+      "link": "Les fondements comportementaux de Steero"
+    },
+    "capture": {
+      "title": "Saisir",
+      "description": "Contrairement à d'autres applications, Steero ne fait pas à ta place. La saisie manuelle crée un lien émotionnel : ce qui améliore significativement l'autorégulation… Le niveau, la jauge budgétaire, t'indique ce que tu as déjà dépensé, ce que la dépense saisie représente et ce qu'il reste dans ton budget.",
+      "link": "Les fondements comportementaux de Steero"
+    },
+    "ritualize": {
+      "title": "Ritualiser",
+      "description": "La compréhension financière ne repose pas uniquement sur des connaissances, mais sur des habitudes comportementales. La répétition consciente est un facteur clé du changement durable, les rituels t'indiquent quoi faire, quoi regarder, quelles questions te poser et comment préparer la suite.",
+      "link": "Les fondements comportementaux de Steero"
+    }
+  },
+  "nextSteps": {
+    "title": "Les prochaines étapes",
+    "description": "Découvre la feuille de route de Steero et rejoins l'aventure dès maintenant.",
+    "step": "Étape",
+    "step1": {
+      "title": "Inscris-toi à la liste d'attente",
+      "description": "Un outil simple, intuitif, conçu pour reprendre le contrôle de tes finances c'est notre priorité. Inscris-toi à la liste et partage Steero autour de toi : chaque soutien compte pour accélérer le lancement.",
+      "date": "Dès maintenant"
+    },
+    "step2": {
+      "title": "Deviens early adopter",
+      "description": "La version stable de Steero se construira avec toi, futur utilisateur. Un groupe restreint d'inscrits aura accès en avant-première afin de tester les fonctionnalités clés, affiner l'expérience et contribuer à la stabilisation du produit.",
+      "date": "Phase bêta : février 2026"
+    },
+    "step3": {
+      "title": "Lancement",
+      "description": "Un outil fiable, abouti et pensé pour durer, pour enfin piloter tes finances en toute sérénité. Après la phase de stabilisation, Steero deviendra ton espace de référence pour suivre, comprendre et décider.",
+      "date": "Disponibilité : Mars 2026"
+    }
+  },
+  "cta": {
+    "title": "Prêt à transformer ta relation à l'argent ?",
+    "description": "Rejoins Steero et commence 2026 dans les meilleures dispositions",
+    "launchDate": "Lancement prévu le 20 mars 2026",
+    "days": "Jours",
+    "hours": "Heures",
+    "minutes": "Minutes",
+    "seconds": "Secondes",
+    "features": {
+      "free": "Gratuit pour commencer",
+      "noCard": "Gestions des habitudes financières",
+      "cancel": "Données sécurisées"
+    }
+  },
+  "whySteero": {
+    "heroTitle": "Pourquoi choisir",
+    "heroDescription": "Une approche différente de la gestion financière, basée sur la compréhension, la régularité et le changement durable.",
+    "missionTitle": "Notre mission",
+    "missionP1": "Steero est né d'un constat simple : les applications de finances personnelles automatisent tout, mais ne changent rien à tes comportements.",
+    "missionP2": "Notre mission est de t'aider à développer une véritable compréhension de ta gestion financière, pas simplement un outil pour consulter des graphiques générés automatiquement.",
+    "missionItems": ["Comprends et ajuste tes décisions", "Créé des habitudes durables", "Atteinds tes objectifs"],
+    "quote": "La vraie liberté financière vient de la compréhension, qui naît et se renforce par l'action et non par l'automatisation.",
+    "quoteAuthor": "L'équipe Steero",
+    "alternativesTitle": "Tu as peut-être déjà essayé...",
+    "alternativesDescription": "Des solutions qui promettent beaucoup, mais qui ne changent pas vraiment tes habitudes.",
+    "alternatives": {
+      "excel": {
+        "title": "Excel dispersé",
+        "description": "Formules cassées, suivi irrégulier."
+      },
+      "bankApps": {
+        "title": "Apps bancaires",
+        "description": "Beaucoup de données, peu de décisions."
+      },
+      "notion": {
+        "title": "Notion bricolé",
+        "description": "Puissant mais fragile."
+      },
+      "steero": {
+        "title": "Steero",
+        "description": "Un cadre simple, pensé pour durer."
+      }
+    },
+    "behavioralTitle": "Les fondements comportementaux de Steero",
+    "behavioralDescription": "Steero aide chacun à piloter consciemment sa trajectoire financière, plutôt que de la subir.",
+    "behavioralBadge": "Approche scientifique",
+    "principlesExplored": "principes explorés",
+    "bravo": "Bravo !",
+    "clickToDiscover": "Clique sur chaque principe pour en découvrir le détail.",
+    "read": "Lu",
+    "reference": "Référence",
+    "behavioral": {
+      "cognitive": {
+        "title": "La compréhension naît de l'effort cognitif",
+        "subtitle": "Pas de la simple exposition à l'information",
+        "description": "Les sciences cognitives sont très claires sur un point : voir une information n'est pas la comprendre.\n\nLe cerveau apprend durablement lorsqu'il est actif, pas passif. L'enregistrement manuel oblige à :\n\n• identifier la dépense,\n• la catégoriser,\n• la comparer à une intention (budget, objectif),\n• l'assumer consciemment.\n\nCe mécanisme est proche de ce qu'on appelle le \"learning by doing\" ou apprentissage actif, largement documenté en psychologie de l'éducation.\n\n➡️ Automatiser supprime l'effort cognitif, donc la compréhension profonde. L'automatisation crée une illusion de contrôle. Elle ne développe pas une réelle maîtrise.",
+        "reference": "Chi et Wylie – The ICAP Framework"
+      },
+      "illusion": {
+        "title": "L'automatisation crée une illusion de contrôle",
+        "subtitle": "Elle ne développe pas une réelle maîtrise",
+        "description": "De nombreuses études montrent que les outils automatisés génèrent une illusion de maîtrise :\n\n• \"Mes comptes sont connectés\"\n• \"Mes dépenses sont catégorisées\"\n• \"J'ai un dashboard\"\n\nMais :\n\n• l'utilisateur ne sait pas expliquer où va son argent,\n• ni pourquoi il dévie de ses objectifs,\n• ni quel levier activer.\n\nCe phénomène est proche du biais de surconfiance passive, renforcé par les systèmes automatiques.\n\n➡️ L'automatisation déplace la responsabilité vers l'outil, pas vers l'utilisateur.",
+        "reference": "Parasuraman & Riley – Humans and Automation"
+      },
+      "ritual": {
+        "title": "Le rituel transforme la finance en comportement",
+        "subtitle": "Le rituel développe la compréhension et la maîtrise",
+        "description": "La compréhension financière ne repose pas uniquement sur des connaissances, mais sur des habitudes comportementales.\n\nRitualiser (ex. quelques minutes par jour et semaine) permet :\n\n• d'ancrer une routine consciente,\n• de créer un point de contact régulier avec la réalité financière,\n• de transformer une contrainte abstraite en pratique tangible.\n\nLes recherches sur les habitudes montrent que :\n\n• la répétition consciente est un facteur clé de changement durable,\n• les micro-rituels sont plus efficaces que les bilans occasionnels automatisés.\n\n➡️ Steero ne cherche pas qu'à \"montrer des chiffres\", mais aussi à installer un comportement.",
+        "reference": "Wood & Neal (2007) • Lally et al. (2010)"
+      },
+      "emotional": {
+        "title": "L'enregistrement manuel crée un lien émotionnel",
+        "subtitle": "La clé de la décision",
+        "description": "Une dépense enregistrée manuellement n'est pas neutre :\n\n• elle déclenche une micro-évaluation émotionnelle,\n• elle rend le coût psychologiquement réel,\n• elle renforce la mémoire de la décision.\n\nC'est le même mécanisme que :\n\n• écrire ses objectifs à la main,\n• noter ses repas dans un journal alimentaire,\n• tenir un carnet de dépenses.\n\nLes études montrent que cette auto-observation consciente améliore significativement l'autorégulation.\n\n➡️ Sans friction minimale, il n'y a ni prise de conscience, ni arbitrage réel.",
+        "reference": "Baumeister & Vohs – Self-regulation"
+      },
+      "learning": {
+        "title": "Automatiser trop tôt empêche l'apprentissage",
+        "subtitle": "Une des erreurs classiques à l'heure de reprendre le contrôle",
+        "description": "L'automatisation est utile… après la compréhension, pas avant.\n\nDans la majorité des apps actuelles :\n\n• l'utilisateur est bombardé de données,\n• sans cadre mental,\n• sans pédagogie implicite,\n• sans appropriation.\n\nRésultat :\n\n• abandon rapide,\n• consultation passive,\n• aucune progression réelle.\n\nÀ l'inverse, Steero adopte une logique similaire à l'apprentissage de la conduite : d'abord comprendre et ressentir puis optimiser et automatiser.\n\n➡️ L'objectif n'est pas de supprimer l'effort, mais de le rendre utile, court et intentionnel.",
+        "reference": "Sweller – Cognitive Load Theory"
+      }
+    },
+    "testimonialsTitle": "Ce qu'on aimerait que nos utilisateurs disent de Steero",
+    "testimonials": [
+      {
+        "quote": "Steero m'a permis de comprendre enfin où partait mon argent. En 3 mois, j'ai économisé plus que jamais.",
+        "author": "Marie L.",
+        "role": "Freelance"
+      },
+      {
+        "quote": "La saisie manuelle semblait contraignante au début, mais c'est devenu un rituel qui m'aide vraiment à réfléchir.",
+        "author": "Thomas D.",
+        "role": "Cadre"
+      },
+      {
+        "quote": "Simple, efficace, sans prise de tête. Exactement ce dont j'avais besoin pour reprendre le contrôle.",
+        "author": "Sophie M.",
+        "role": "Enseignante"
+      }
+    ],
+    "ctaTitle": "Prêt à transformer ta relation à l'argent ?",
+    "ctaDescription": "Rejoins Steero et commence 2026 dans les meilleures dispositions"
+  },
+  "animations": {
+    "flowAuto": "Flux automatique",
+    "flowProcessed": "Flux traité",
+    "dataForgotten": "Peu ou pas de maîtrise",
+    "dataAnchored": "Maîtrise renforcée",
+    "effortCreatesStep": "L'effort crée une étape cognitive supplémentaire",
+    "denseView": "Vue dense",
+    "simpleView": "Vue simple",
+    "nothingChanges": "Rien ne change...",
+    "indicatorEvolves": "L'indicateur évolue",
+    "seeingNotUnderstanding": "Voir beaucoup ≠ Comprendre",
+    "regularRhythm": "Rythme régulier",
+    "repetitionTransforms": "La répétition transforme l'information en comportement",
+    "activeConnections": "L'effort crée la compréhension",
+    "realUnderstanding": "Comprendre vraiment",
+    "understood": "Compris",
+    "autoSync": "Auto-sync",
+    "manualEntry": "Saisie manuelle",
+    "whereMoneyGoes": "Où part mon argent ?",
+    "controlVsUnderstanding": "Contrôle ≠ Compréhension",
+    "weeklyRitual": "Rituel hebdomadaire",
+    "ritualComplete": "Semaine complète",
+    "habitFormed": "L'habitude se forme par la répétition",
+    "emotionalReaction": "Était-ce vraiment nécessaire ?",
+    "consciousDecision": "Décision consciente prise : Évolution du comportement",
+    "realAwareness": "La friction crée la conscience",
+    "budgetResto": "Budget Resto",
+    "learn": "Apprendre",
+    "understand": "Comprendre",
+    "master": "Maîtriser",
+    "thenAutomate": "Automatiser ?",
+    "autoTooEarly": "Automatiser trop tôt = échec probable",
+    "understandingGrows": "La compréhension s'installe...",
+    "autoCanBeConsidered": "L'automatisation peut être envisagée : Le rituel financier jamais abandonné",
+    "restaurant": "Restaurant",
+    "mastery": "Maîtrise",
+    "effort": "Effort",
+    "ritual": "Rituel",
+    "spent": "Consommé",
+    "remaining": "Restant"
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "noAnswer": "TU NE TROUVES PAS TA RÉPONSE ?",
+    "discoverHow": "Découvre comment Steero fonctionne concrètement.",
+    "discoverApproach": "Découvrir l'approche Steero",
+    "joinWaitlist": "Rejoindre la liste d'attente",
+    "ctaTitle": "Prêt à piloter tes finances ?",
+    "ctaDescription": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
+    "sections": {
+      "understand": {
+        "title": "Comprendre Steero",
+        "q1": {
+          "question": "À qui s'adresse Steero ?",
+          "answer": "Steero s'adresse à toutes les personnes qui veulent reprendre le contrôle de leurs finances, sans devenir expertes ni passer des heures à gérer des chiffres.\n\nQue tu débutes ou que tu aies déjà essayé des tableurs, des applications budgétaires ou des outils automatisés, Steero est fait pour toi si tu cherches avant tout de la clarté, des repères compréhensibles et un cadre simple pour avancer dans la durée.\n\nIl n'y a aucun prérequis financier."
+        },
+        "q2": {
+          "question": "Quelle est la différence entre Steero et une app bancaire ou un agrégateur ?",
+          "answer": "Les applications bancaires et les agrégateurs montrent principalement ce qui s'est déjà passé : soldes, transactions, graphiques rétrospectifs.\n\nSteero adopte une approche différente. Steero est un outil de pilotage, pas un simple outil de consultation. Il te permet de :\n• définir une direction (objectifs)\n• suivre une trajectoire (budgets, indicateurs)\n• repérer les écarts\n• ajuster consciemment tes décisions\n• suivre un rythme clair qui te guide\n\nLà où d'autres outils informent, Steero t'aide à comprendre et agir."
+        },
+        "q3": {
+          "question": "Est-ce que Steero remplace mon application bancaire ?",
+          "answer": "Non, et ce n'est pas son objectif. Ton application bancaire reste indispensable pour payer, consulter tes comptes et effectuer des opérations bancaires.\n\nSteero vient en complément. Il te permet de prendre de la hauteur, de structurer ta vision financière et de piloter ce que tes apps bancaires ne font pas : tes rituels, tes objectifs, ta trajectoire, tes arbitrages.\n\nEn résumé : la banque exécute, Steero t'aide à décider."
+        }
+      },
+      "howItWorks": {
+        "title": "Fonctionnement",
+        "q1": {
+          "question": "Pourquoi Steero ne se connecte pas à mes banques ?",
+          "answer": "Automatiser ≠ Comprendre. Les outils 100 % automatisés montrent des chiffres, mais n'enseignent pas. Sans effort cognitif, l'utilisateur voit ses finances sans les maîtriser. Résultat courant : illusion de contrôle → désengagement → abandon.\n\nLa compréhension naît de l'action consciente. Enregistrer manuellement une opération oblige à identifier la dépense, la catégoriser et la relier à un budget ou un objectif. Ce micro-effort active l'apprentissage et la mémorisation. C'est le principe du learning by doing : on comprend en faisant.\n\nLe rituel crée un comportement durable. Steero privilégie un rituel court et régulier. La répétition consciente transforme la finance en habitude, pas en contrainte. Une habitude bat toujours un dashboard automatisé oublié."
+        },
+        "q2": {
+          "question": "Combien de temps ça prend d'enregistrer mes opérations ?",
+          "answer": "Très peu de temps — et beaucoup moins que tu ne l'imagines.\n\nDans la réalité, la majorité des personnes effectue quelques opérations par jour, parfois seulement quelques-unes par semaine. Avec Steero, les enregistrer prend quelques secondes. Il ne s'agit pas de tout consigner obsessivement, mais de capturer l'essentiel, régulièrement.\n\nPourquoi ce n'est pas lourd :\n• Tu n'as pas des dizaines de lignes par jour\n• Les opérations récurrentes deviennent vite naturelles à saisir grâce aux modèles de transactions\n• Le geste s'intègre dans un rituel simple, pas dans une corvée\n\nCe que tu gagnes : tu sais où tu en es sans attendre la fin du mois, et tu repères immédiatement où tu te situes grâce à un indicateur dynamique de budget."
+        },
+        "q3": {
+          "question": "Est-ce que Steero donne des conseils financiers ?",
+          "answer": "Non. Et c'est volontaire.\n\nSteero ne fournit pas de conseils financiers personnalisés et ne remplace pas un professionnel (conseiller financier, fiscaliste, juriste).\n\nLes analyses, graphiques, projections et indicateurs proposés par Steero ont un objectif informatif et pédagogique : ils t'aident à mieux comprendre ta situation, à visualiser ta trajectoire et à prendre du recul sur tes décisions.\n\nIls ne constituent ni des recommandations individualisées, ni des garanties de performance ou de résultat. Steero ne décide pas à ta place."
+        }
+      },
+      "security": {
+        "title": "Sécurité & données",
+        "q1": {
+          "question": "Mes données sont-elles sécurisées ?",
+          "answer": "Oui. La sécurité et le respect de tes données sont des priorités.\n\n• Tes données sont stockées de manière sécurisée\n• Steero ne revend pas tes informations\n• Tu restes propriétaire de tes données à tout moment\n\nSteero est conçu comme un outil de confiance, durable et respectueux — pas comme un produit basé sur l'exploitation de tes informations.\n\nNous t'invitons à prendre connaissance des conditions générales de services avant d'essayer."
+        },
+        "q2": {
+          "question": "Où sont stockées mes données ?",
+          "answer": "Tes données sont hébergées sur des serveurs sécurisés en Europe, conformément aux réglementations en vigueur (RGPD).\n\nNous utilisons des technologies modernes de chiffrement et des pratiques de sécurité éprouvées pour garantir la confidentialité et l'intégrité de tes informations."
+        }
+      },
+      "access": {
+        "title": "Accès & modèle",
+        "q1": {
+          "question": "Est-ce que Steero est gratuit ?",
+          "answer": "Oui, Steero est gratuit pendant 14 jours. Cette période te permet de découvrir l'outil, de l'utiliser dans ton quotidien et de vérifier s'il s'intègre naturellement à ta façon de gérer tes finances. Aucune pression — tu peux arrêter à tout moment pendant cette période.\n\nEt après les 14 jours ? Un abonnement est nécessaire pour continuer. Cet abonnement permet de maintenir et améliorer la solution, de garantir une expérience stable et de développer de nouvelles fonctionnalités.\n\nUn prix volontairement accessible : l'abonnement principal coûtera moins de 10 € par mois — soit l'équivalent d'un café par semaine, ou de quelques minutes de charge mentale en moins chaque jour."
+        },
+        "q2": {
+          "question": "Comment fonctionne la liste d'attente ?",
+          "answer": "La liste d'attente te permet de réserver ta place pour accéder à Steero dès son lancement.\n\nEn t'inscrivant, tu seras parmi les premiers informés de l'ouverture de l'application. Tu recevras un email pour créer ton compte et commencer ton essai gratuit de 14 jours.\n\nL'inscription est gratuite et sans engagement."
+        },
+        "q3": {
+          "question": "Puis-je utiliser Steero sur Mobile ?",
+          "answer": "Pas pour le moment — et c'est un choix assumé. Steero est conçu comme un outil de pilotage, pas comme une application à consulter entre deux notifications.\n\nLe rituel financier que nous défendons nécessite du calme et de la concentration. Comprendre une trajectoire financière implique de la profondeur d'information, des comparaisons, des indicateurs lisibles et une vision globale.\n\nLe mobile est excellent pour consulter rapidement. Il l'est beaucoup moins pour réfléchir, analyser et ajuster consciemment. Steero n'est pas conçu pour être \"checké\", mais pour être utilisé avec intention.\n\nEt pour la suite ? Le mobile n'est pas exclu, mais s'il arrive un jour, ce sera pour servir le pilotage, pas pour l'appauvrir."
+        },
+        "q4": {
+          "question": "Steero va-t-il évoluer avec le temps ?",
+          "answer": "Oui, et c'est même au cœur du projet.\n\nSteero est pensé comme un produit long terme, qui évolue progressivement pour rester simple, pertinent et aligné avec les besoins réels des utilisateurs.\n\nDe nouvelles fonctionnalités viendront enrichir l'expérience, toujours avec la même philosophie :\n• pas de complexité inutile\n• pas d'automatisation qui dépossède\n• uniquement ce qui aide réellement à mieux piloter\n\nLes abonnements servent précisément à maintenir cette qualité et à faire évoluer Steero dans le bon sens."
+        }
+      }
+    }
+  },
+  "fonctionnalites": {
+    "heroTitle": "Des fonctionnalités pensées pour ton",
+    "heroTitleHighlight": "autonomie financière",
+    "heroSubtitle": "Clique sur une carte pour en savoir plus",
+    "step1": "Étape 1",
+    "step2": "Étape 2",
+    "step3": "Étape 3",
+    "start": "Démarrer",
+    "follow": "Suivre",
+    "adjustLast": "Ajuster & durer",
+    "discovered": "Découvert",
+    "clickForPreview": "Voir le détail",
+    "comingSoon": "À venir",
+    "futureTitle": "Et quand tu voudras aller plus loin",
+    "futureSubtitle": "D'autres dimensions à explorer, bientôt disponibles.",
+    "ctaTitle": "Prêt à piloter tes finances ?",
+    "ctaSubtitle": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
+    "ctaDescription": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
+    "features": {
+      "onboarding": {
+        "title": "Trajectoire personnalisée",
+        "microPromise": "Pose les bases de ta direction financière.",
+        "details": "Un parcours guidé qui t'aide à définir tes objectifs, tes revenus, tes charges fixes et tes priorités. Pas de jargon, pas de complexité : juste les bonnes questions pour créer ton cadre financier."
+      },
+      "budget": {
+        "title": "Structure de budget",
+        "microPromise": "Organise tes ressources selon tes priorités.",
+        "details": "Crée des catégories et sous-catégories qui reflètent ta vie réelle. Organise tes dépenses de manière hiérarchique pour avoir une vision claire de ce qui compte vraiment."
+      },
+      "fixed": {
+        "title": "Opérations fixes",
+        "microPromise": "Anticipe tes flux récurrents.",
+        "details": "Prévois tes revenus, charges et échéances pour le mois. Anticipe les moments où ta trésorerie sera tendue et garde un calendrier clair de tes mouvements."
+      },
+      "daily": {
+        "title": "Modèles et saisie rapide",
+        "microPromise": "Enregistre tes dépenses en un instant.",
+        "details": "Crée des modèles pour tes opérations fréquentes : café, courses, essence... Un tap suffit pour enregistrer, le système apprend tes habitudes."
+      },
+      "level": {
+        "title": "Le Niveau",
+        "microPromise": "Visualise ta marge en temps réel.",
+        "details": "Lors de chaque saisie, visualise instantanément : ce qui a déjà été dépensé, ce que représente la dépense en cours, et ce qu'il te restera disponible dans ton budget."
+      },
+      "rituals": {
+        "title": "Suivi des rituels",
+        "microPromise": "Ancre des habitudes qui durent.",
+        "details": "Un système de rituels qui te guide sur ce que tu dois faire, regarder, et quelles questions te poser. Développe des habitudes financières durables."
+      },
+      "indicators": {
+        "title": "Aide à la prise de décision",
+        "microPromise": "Repère les écarts avant qu'ils ne s'installent.",
+        "details": "Une vue budgétaire claire qui met en évidence ce qui mérite ton attention. Comprends rapidement ta situation et prends des décisions éclairées grâce à des indicateurs pensés pour t'aider à ajuster ta trajectoire."
+      }
+    },
+    "futureFeatures": {
+      "projects": {
+        "title": "Gestion de projets",
+        "promise": "Relie plusieurs budgets autour d'un même objectif.",
+        "description": "Regroupe plusieurs budgets sous un même objectif avec une temporalité définie. Que ce soit un voyage, une rénovation ou un événement : visualise ta progression et garde une vision transversale sur les ressources allouées."
+      },
+      "tiers": {
+        "title": "Gestion des tiers & de la trésorerie",
+        "promise": "Clarifie ce que tu dois, ce qu'on te doit, et l'impact réel sur ta trésorerie.",
+        "description": "Suis ce que tu dois et ce qu'on te doit. Notes de frais, avances entre amis, remboursements attendus : cette vue te permet de clarifier ta trésorerie réelle et d'anticiper les flux à venir."
+      },
+      "patrimoine": {
+        "title": "Gestion du patrimoine",
+        "promise": "Comprends ta situation financière globale en un coup d'œil.",
+        "description": "Identifie tes actifs (épargne, investissements, biens) et tes passifs (crédits, dettes). Comprends ton patrimoine net comme un indicateur clé de ta situation financière globale."
+      }
+    },
+    "animations": {
+      "banks": "Banques",
+      "objectives": "Objectifs",
+      "income": "Revenus",
+      "fixedExpenses": "Dépenses fixes",
+      "rituals": "Rituels",
+      "priorities": "Priorités",
+      "profileComplete": "Profil complété",
+      "onboardingClosing": "Un parcours guidé pour poser un cadre clair, sans jargon ni complexité.",
+      "month": "Mois",
+      "april": "Avril",
+      "may": "Mai",
+      "june": "Juin",
+      "total": "Total",
+      "categories": "Catégories",
+      "budgetClosing": "Un budget mensuel structuré pour refléter ta vie réelle.",
+      "housing": "Logement",
+      "rent": "Loyer",
+      "insurance": "Assurance",
+      "food": "Alimentation",
+      "groceries": "Courses",
+      "restaurant": "Resto",
+      "leisure": "Loisirs",
+      "sports": "Sport",
+      "outings": "Sorties",
+      "salary": "Salaire",
+      "netflix": "Netflix",
+      "electricity": "Électricité",
+      "shopping": "Courses",
+      "coffee": "Café",
+      "gas": "Essence",
+      "transport": "Transport",
+      "cornerCoffee": "Café du coin",
+      "tapToAdd": "Tap pour ajouter rapidement ↓",
+      "spent": "Dépensé",
+      "inProgress": "En cours",
+      "remaining": "Reste dispo",
+      "dailyRitual": "Rituel quotidien",
+      "consecutiveDays": "7 jours consécutifs !",
+      "upcomingRituals": "Prochains rituels",
+      "weeklyRitual": "Hebdomadaire",
+      "weeklyDate": "Le 7 avril",
+      "monthlyRitual": "Mensuel",
+      "monthlyDate": "Le 28 avril",
+      "ritualsClosing": "Des rendez-vous simples pour garder le cap, sans pression.",
+      "budgetLabel": "Budget",
+      "percentConsumed": "% conso.",
+      "available": "Dispo.",
+      "indicatorsClosing": "Une aide concrète pour décider, avant que les écarts ne s'installent.",
+      "fixedChargesIdentified": "Charges fixes identifiées",
+      "fixedExpensesTotal": "Dépenses fixes",
+      "ofIncome": "du revenu",
+      "streamingCanceled": "Streaming résilié",
+      "fixedClosing": "Centralise la gestion de ce qui entre et sort de manière fixe chaque mois et la part des dépenses fixes sur mon revenu.",
+      "favoriteOperations": "Opérations favorites",
+      "selectOperation": "Sélectionner...",
+      "name": "Nom",
+      "date": "Date",
+      "category": "Catégorie",
+      "bank": "Banque",
+      "amount": "Montant",
+      "transactionComplete": "Opération enregistrée",
+      "dailyClosing": "Un moyen simple et intuitif de créer tes opérations ponctuelles favorites : tout est prérempli, plus qu'à valider !",
+      "budgetResto": "Budget Resto",
+      "gaugeClosing": "Chaque dépense te montre immédiatement où tu en es, te permettant d'ajuster ton comportement financier.",
+      "newExpense": "Nouvelle dépense",
+      "gaugeEachEntry": "Cet indicateur s'affiche à chaque saisie",
+      "projectVacances": "Vacances",
+      "projectLodging": "Logement",
+      "projectTransport": "Transport",
+      "projectOnSite": "Dépenses sur place",
+      "budgetLeisure": "Budget loisirs",
+      "budgetTransport": "Budget transport",
+      "budgetDaily": "Budget quotidien",
+      "projectClosing": "Le projet n'est pas un budget de plus : c'est ta vue transversale.",
+      "projectConsumed": "Consommé",
+      "projectRemaining": "Reste",
+      "tiersOwedToMe": "Mes avoirs : Ce qu'on me doit",
+      "tiersIOwe": "Mes dettes : Ce que je dois",
+      "tiersVacationShare": "Part vacances",
+      "tiersRestaurant": "Restaurant samedi",
+      "tiersGroupGift": "Cadeau groupe",
+      "tiersEmployer": "Mon employeur",
+      "tiersExpenseReports": "Notes de frais",
+      "tiersTreasuryBalance": "Impact trésorerie",
+      "tiersClosing": "Je sais où est mon argent, même quand il n'est pas sur mon compte.",
+      "patrimoineAssets": "Actifs",
+      "patrimoineLiabilities": "Passifs",
+      "patrimoineApartment": "Appartement",
+      "patrimoineRealEstate": "Immobilier",
+      "patrimoineAccounts": "Comptes courants et épargnes",
+      "patrimoineLiquidity": "Liquidités",
+      "patrimoineStocksETF": "Actions & ETF",
+      "patrimoineInvestments": "Investissements",
+      "patrimoineMortgage": "Crédit immobilier",
+      "patrimoineApartmentDebt": "Emprunt appartement",
+      "patrimoineNetWorth": "Patrimoine net",
+      "patrimoineClosing": "J'ai un bilan global, synthétique et évolutif de mon patrimoine."
+    }
+  },
+  "blog": {
+    "title": "Blog Steero",
+    "subtitle": "Découvrez nos articles pour mieux comprendre et piloter vos finances personnelles.",
+    "searchPlaceholder": "Rechercher un article...",
+    "filterBy": "Filtrer par :",
+    "clear": "Effacer",
+    "articlesFound": "article(s) trouvé(s)",
+    "readFullArticle": "Lire l'article complet",
+    "readyToTransform": "Prêt à transformer ta gestion financière ?",
+    "ctaTitle": "Prêt à piloter tes finances ?",
+    "ctaDescription": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
+    "joinWaitlist": "Rejoindre la liste d'attente",
+    "linkCopied": "Lien copié !",
+    "share": "Partager",
+    "collapseArticle": "Réduire l'article",
+    "noResults": "Aucun article ne correspond à votre recherche.",
+    "clearFilters": "Effacer les filtres",
+    "tableOfContents": "Sommaire",
+    "min": "min",
+    "keyIdea": "À retenir",
+    "myth": "Idée reçue",
+    "tags": {
+      "beginner": "Débutant",
+      "skills": "Compétences",
+      "piloting": "Pilotage",
+      "ritual": "Rituel",
+      "mindset": "Mindset",
+      "method": "Méthode",
+      "psychology": "Psychologie",
+      "budget": "Budget"
+    },
+    "articles": {
+      "1": {
+        "title": "Comprendre ses finances personnelles : pourquoi c'est une compétence essentielle aujourd'hui",
+        "tags": ["Débutant", "Compétences"],
+        "hook": "La gestion des finances personnelles est rarement enseignée à l'école. Pourtant, comprendre son argent est aujourd'hui une compétence essentielle, au même titre que savoir organiser son temps ou développer ses compétences professionnelles.\n\nBeaucoup de personnes gagnent correctement leur vie, mais peinent à :\n• comprendre où part leur argent,\n• prendre des décisions financières sereines,\n• ou atteindre leurs objectifs financiers.\n\nLa bonne nouvelle ? La finance personnelle s'apprend.",
+        "sections": [
+          "Pourquoi la gestion des finances personnelles n'est pas innée",
+          "Comprendre son argent pour reprendre le contrôle financier",
+          "La finance personnelle est une compétence qui se développe avec le temps",
+          "Conclusion : apprendre à gérer son argent change durablement la relation à l'argent"
+        ]
+      },
+      "2": {
+        "title": "La montée en compétences financières : passer du flou au pilotage de son argent",
+        "tags": ["Pilotage", "Compétences"],
+        "hook": "Beaucoup de personnes ont l'impression de \"mal gérer\" leur argent. En réalité, la plupart ne gèrent pas mal : elles ne pilotent pas.\n\nElles regardent parfois leur solde, paient leurs factures, épargnent quand il reste quelque chose… mais sans vision globale ni méthode claire.\n\nLa bonne nouvelle ?\nLa gestion financière n'est pas binaire. Elle se construit par étapes, comme une véritable montée en compétences.",
+        "sections": [
+          "De la gestion subie au pilotage financier",
+          "Étape 1 : Observer ses finances sans jugement",
+          "Étape 2 : Structurer pour donner du sens aux chiffres",
+          "Étape 3 : Comprendre les écarts pour mieux décider",
+          "Étape 4 : Décider en fonction de ses objectifs",
+          "Pourquoi la montée en compétences financières échoue souvent",
+          "Comment Steero accompagne la montée en compétences financières",
+          "Conclusion : piloter ses finances est une compétence accessible"
+        ]
+      },
+      "3": {
+        "title": "Pourquoi sans rituel, aucun outil financier ne fonctionne",
+        "tags": ["Rituel", "Mindset"],
+        "hook": "Télécharger une application de gestion financière est facile. La consulter régulièrement… beaucoup moins.\n\nCe n'est pas un manque de motivation. Ce n'est pas non plus un problème d'intelligence financière. Le véritable point de rupture, c'est l'absence de rituel.\n\nSans rituel, même le meilleur outil finit oublié. Avec un rituel simple, la gestion financière devient enfin durable.",
+        "sections": [
+          "Le vrai problème des outils financiers modernes",
+          "Rituel financier : de quoi parle-t-on vraiment ?",
+          "Le rituel comme pilier de la montée en compétences financières",
+          "Comment Steero a été pensé autour du rituel, pas de l'outil",
+          "Conclusion : sans rituel, il n'y a pas de contrôle financier"
+        ]
+      },
+      "4": {
+        "title": "Le rituel financier en 2 minutes : mythe ou réalité ?",
+        "tags": ["Rituel", "Méthode"],
+        "hook": "Quand on parle de gestion financière, beaucoup imaginent encore :\n• des tableurs complexes,\n• des heures d'analyse,\n• une discipline difficile à tenir.\n\nAlors l'idée d'un rituel financier en 2 minutes semble irréaliste. Pas parce que 2 minutes ne suffisent pas… mais parce que la gestion financière est souvent pensée comme un bloc unique, au lieu d'un ensemble de rituels complémentaires.",
+        "sections": [
+          "Pourquoi la gestion financière paraît toujours trop lourde",
+          "Le principe clé : un rituel = une vocation",
+          "Les rituels financiers : une architecture, pas une contrainte",
+          "Pourquoi le rituel en 2 minutes est non seulement possible, mais essentiel",
+          "Ce que change une approche structurée par rituels",
+          "Conclusion : ce n'est pas le temps qui manque, c'est la structure"
+        ]
+      },
+      "5": {
+        "title": "Comprendre tes finances comme un tableau de bord, pas comme une punition",
+        "tags": ["Mindset", "Psychologie"],
+        "hook": "Si gérer ton argent te met mal à l'aise, ce n'est probablement pas à cause des chiffres. C'est à cause de ce qu'ils représentent émotionnellement.\n\nPour beaucoup, regarder ses finances, c'est :\n• se confronter à des erreurs passées,\n• ressentir de la culpabilité,\n• ou avoir l'impression de se faire \"gronder\".\n\nMais si tu changeais complètement de perspective ? Et si tes finances devenaient un tableau de bord, pas un jugement ?",
+        "sections": [
+          "Pourquoi regarder ses finances est souvent vécu comme une punition",
+          "Un tableau de bord n'est pas là pour juger, mais pour informer",
+          "Pourquoi la visualisation est un levier si puissant",
+          "De la sanction au pilotage : un changement de posture",
+          "Comment Steero t'aide à adopter cette logique de tableau de bord",
+          "Conclusion : regarder tes finances ne devrait jamais faire peur"
+        ]
+      },
+      "6": {
+        "title": "La règle des 50 / 30 / 20 : bonne base ou fausse promesse ?",
+        "tags": ["Budget", "Débutant"],
+        "hook": "Si tu t'intéresses un peu à la gestion de budget, tu as forcément déjà croisé cette règle :\n• 50 % pour les besoins,\n• 30 % pour les envies,\n• 20 % pour l'épargne.\n\nSimple. Claire. Rassurante. Mais une question mérite d'être posée : est-ce une vraie solution… ou juste un point de départ ?",
+        "sections": [
+          "Pourquoi la règle des 50 / 30 / 20 est si populaire",
+          "Pourquoi la règle peut devenir culpabilisante",
+          "La vraie question à se poser (et que la règle ne pose pas)",
+          "La règle comme repère, pas comme objectif",
+          "Adapter plutôt qu'appliquer : la clé d'un budget durable",
+          "Comment Steero t'aide à dépasser la règle sans la jeter",
+          "Conclusion : une bonne règle ne remplace jamais la compréhension"
+        ]
+      }
+    }
+  },
+  "legal": {
+    "cgs": {
+      "title": "Conditions Générales de Services",
+      "subtitle": "Application de gestion financière personnelle",
+      "lastUpdate": "Dernière mise à jour : Vendredi 9 janvier 2026",
+      "sections": {
+        "s1": {
+          "title": "1. Pourquoi ces conditions ?",
+          "intro": "Ces Conditions Générales de Services (les « CGS ») expliquent simplement :",
+          "items": [
+            "ce que fait l'application,",
+            "ce que tu peux en attendre,",
+            "ce que nous faisons (et ne faisons pas),",
+            "et comment chacun est protégé."
+          ],
+          "outro": "En créant un compte ou en utilisant l'application, tu acceptes ces conditions."
+        },
+        "s2": {
+          "title": "2. Ce qu'est l'application",
+          "intro": "L'application est un outil personnel de gestion financière et de suivi d'habitudes, conçu pour t'aider à :",
+          "items": [
+            "mieux comprendre tes finances,",
+            "suivre tes dépenses, revenus et budgets,",
+            "fixer des objectifs clairs,",
+            "adopter de meilleurs comportements financiers sur la durée."
+          ],
+          "notes": [
+            "👉 Ce n'est pas une banque,",
+            "👉 ce n'est pas un conseiller financier,",
+            "👉 et ce n'est pas un outil de trading ou d'investissement automatisé."
+          ],
+          "outro": "C'est un tableau de bord intelligent pour t'aider à prendre de meilleures décisions."
+        },
+        "s3": {
+          "title": "3. À qui s'adresse l'application ?",
+          "intro": "L'application est destinée à toute personne majeure souhaitant organiser ses finances personnelles.",
+          "confirm": "En utilisant l'application, tu confirmes que :",
+          "items": [
+            "tu es légalement capable de contracter,",
+            "tu utilises l'outil pour un usage personnel (pas professionnel ou illégal)."
+          ]
+        },
+        "s4": {
+          "title": "4. Création et gestion du compte",
+          "intro": "Pour utiliser l'application, tu dois créer un compte.",
+          "responsible": "Tu es responsable :",
+          "items": [
+            "des informations que tu renseignes,",
+            "de la confidentialité de tes identifiants,",
+            "de l'usage de ton compte."
+          ],
+          "outro": "Si tu constates une activité suspecte, contacte-nous rapidement."
+        },
+        "s5": {
+          "title": "5. Fonctionnalités et évolutions",
+          "intro": "Les fonctionnalités disponibles dépendent :",
+          "items": ["de la version de l'application,", "de ton abonnement éventuel."],
+          "evolution": "L'application évolue en continu : nous pouvons ajouter, modifier ou améliorer certaines fonctionnalités pour offrir une meilleure expérience.",
+          "outro": "Nous faisons toujours de notre mieux pour que ces évolutions restent cohérentes et bénéfiques."
+        },
+        "s6": {
+          "title": "6. Abonnements et paiements",
+          "intro": "Certaines fonctionnalités peuvent être accessibles via un abonnement payant.",
+          "conditions": "Les conditions (prix, durée, renouvellement) sont clairement indiquées au moment de la souscription.",
+          "renewal": "Les abonnements sont renouvelés automatiquement, sauf résiliation avant la date de renouvellement.",
+          "outro": "Tu peux gérer ou résilier ton abonnement à tout moment depuis ton compte."
+        },
+        "s7": {
+          "title": "7. Ce que l'application ne fait pas",
+          "important": "C'est important d'être clair 👇",
+          "noAdvice": "L'application ne donne pas de conseils financiers personnalisés.",
+          "informative": "Les analyses, graphiques, projections ou recommandations sont informatives, pas des garanties.",
+          "responsible": "Tu restes 100 % responsable de tes décisions financières.",
+          "outro": "Si tu as besoin de conseils professionnels (financiers, fiscaux, juridiques), fais appel à un expert qualifié."
+        },
+        "s8": {
+          "title": "8. Tes données",
+          "ownership": "Tes données t'appartiennent.",
+          "intro": "Nous :",
+          "items": [
+            "les stockons de manière sécurisée,",
+            "les utilisons uniquement pour faire fonctionner l'application,",
+            "ne les revendons jamais."
+          ],
+          "details": "Les détails sur la gestion des données personnelles sont disponibles dans notre",
+          "privacyLink": "Politique de confidentialité",
+          "gdpr": "(conforme au RGPD)."
+        },
+        "s9": {
+          "title": "9. Disponibilité et sécurité",
+          "intro": "Nous mettons tout en œuvre pour :",
+          "items": ["assurer un service fiable,", "protéger tes données,", "maintenir l'application accessible."]
+        },
+        "s10": {
+          "title": "10. Responsabilité",
+          "intro": "L'application est un outil d'aide, pas une promesse de résultat.",
+          "noLiability": "Nous ne pouvons pas être tenus responsables :",
+          "items": [
+            "d'erreurs de saisie,",
+            "de mauvaises interprétations,",
+            "de pertes financières,",
+            "de décisions prises sur la base des données affichées."
+          ],
+          "outro": "Tu gardes le contrôle. Toujours."
+        },
+        "s11": {
+          "title": "11. Propriété intellectuelle",
+          "intro": "Tout ce qui compose l'application (design, code, textes, marque, structure) nous appartient ou est utilisé avec autorisation.",
+          "usage": "Tu peux utiliser l'application normalement, mais pas :",
+          "items": ["la copier,", "la revendre,", "la modifier,", "ou l'exploiter sans accord écrit."]
+        },
+        "s12": {
+          "title": "12. Résiliation",
+          "userDelete": "Tu peux supprimer ton compte à tout moment, simplement.",
+          "ourSide": "De notre côté, nous pouvons suspendre ou fermer un compte en cas :",
+          "items": ["d'usage abusif,", "de fraude,", "ou de non-respect des présentes conditions."]
+        },
+        "s13": {
+          "title": "13. Loi applicable",
+          "law": "Ces conditions sont régies par le droit français.",
+          "dispute": "En cas de litige, nous privilégions toujours une solution amiable avant toute action judiciaire."
+        },
+        "s14": {
+          "title": "14. Contact",
+          "question": "Une question, un souci, une idée ?",
+          "email": "📧 Contacte-nous à :",
+          "tempEmail": "(Mail temporaire)"
+        }
+      }
+    },
+    "mentions": {
+      "title": "Mentions légales",
+      "sections": {
+        "s1": {
+          "title": "1. Éditeur du site",
+          "intro": "Le site Steero est édité par la société Steero SAS, société par actions simplifiée au capital de 10 000 euros, immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro XXX XXX XXX.",
+          "address": "Siège social :",
+          "director": "Directeur de la publication :",
+          "email": "Email :",
+          "tbc": "[À compléter]"
+        },
+        "s2": {
+          "title": "2. Hébergement",
+          "intro": "Le site est hébergé par [Nom de l'hébergeur], dont le siège social est situé [Adresse de l'hébergeur]."
+        },
+        "s3": {
+          "title": "3. Propriété intellectuelle",
+          "content": "L'ensemble du contenu de ce site (textes, images, vidéos, logos, icônes, sons, logiciels, etc.) est protégé par le droit d'auteur et le droit des marques. Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Steero SAS."
+        },
+        "s4": {
+          "title": "4. Protection des données personnelles",
+          "content": "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant. Pour exercer ces droits, vous pouvez nous contacter à l'adresse : contact@steero.fr"
+        },
+        "s5": {
+          "title": "5. Cookies",
+          "content": "Ce site utilise des cookies pour améliorer l'expérience utilisateur et mesurer l'audience. Vous pouvez configurer votre navigateur pour refuser les cookies, mais certaines fonctionnalités du site pourraient ne plus être disponibles."
+        },
+        "s6": {
+          "title": "6. Contact",
+          "content": "Pour toute question relative aux présentes mentions légales, vous pouvez nous contacter à l'adresse email suivante : contact@steero.fr"
+        }
+      }
+    },
+    "privacy": {
+      "title": "Politique de confidentialité",
+      "subtitle": "Protection des données personnelles & RGPD (UE)",
+      "lastUpdate": "Dernière mise à jour : Vendredi 09 janvier 2026",
+      "sections": {
+        "s1": {
+          "title": "1. Pourquoi cette politique ?",
+          "intro": "Ta vie privée est importante pour nous.",
+          "explains": "Cette politique de confidentialité explique :",
+          "items": [
+            "quelles données nous collectons,",
+            "pourquoi nous les collectons,",
+            "comment nous les utilisons et les protégeons,",
+            "et quels sont tes droits."
+          ],
+          "outro": "Elle s'applique à tous les utilisateurs de l'application."
+        },
+        "s2": {
+          "title": "2. Qui est responsable de tes données ?",
+          "intro": "Le responsable du traitement est :",
+          "company": "Steero",
+          "legalForm": "[Forme juridique] – [RCS] / En cours de création",
+          "address": "Siège social : 295 rue Lecourbe",
+          "contact": "📧 Contact : steerofinance@gmail.com (Mail temporaire)"
+        },
+        "s3": {
+          "title": "3. Quelles données collectons-nous ?",
+          "intro": "Nous collectons uniquement les données nécessaires au fonctionnement de l'application.",
+          "voluntary": "🔹 Données que tu fournis volontairement",
+          "voluntaryItems": ["Adresse email", "Mot de passe (chiffré)", "Informations de profil (facultatives)"],
+          "financial": "Données financières saisies manuellement :",
+          "financialItems": [
+            "budgets (Objectifs)",
+            "transactions",
+            "revenus",
+            "habitudes",
+            "catégories personnalisées"
+          ],
+          "note": "👉 Aucune donnée bancaire n'est collectée sans action volontaire explicite de ta part.",
+          "technical": "🔹 Données techniques",
+          "technicalItems": [
+            "Type d'appareil et navigateur",
+            "Adresse IP",
+            "Logs de connexion",
+            "Données d'usage anonymisées (pour améliorer le produit)"
+          ]
+        },
+        "s4": {
+          "title": "4. Pourquoi utilisons-nous ces données ?",
+          "intro": "Tes données sont utilisées pour :",
+          "items": [
+            "Fournir et faire fonctionner l'application",
+            "Sauvegarder et afficher tes informations",
+            "Calculer des statistiques et visualisations",
+            "Améliorer l'expérience utilisateur",
+            "Assurer la sécurité et prévenir la fraude",
+            "Gérer les abonnements et la facturation",
+            "Répondre à tes demandes de support"
+          ],
+          "noProfiling": "Nous ne faisons aucun profilage publicitaire."
+        },
+        "s5": {
+          "title": "5. Base légale du traitement (RGPD)",
+          "intro": "Conformément au RGPD, les traitements reposent sur :",
+          "items": [
+            "L'exécution du contrat (utilisation normale de l'application)",
+            "Ton consentement (ex : communications non essentielles)",
+            "Notre intérêt légitime (sécurité, amélioration du produit)"
+          ]
+        },
+        "s6": {
+          "title": "6. Partage des données",
+          "noSell": "Nous ne vendons jamais tes données. Jamais.",
+          "shared": "Tes données peuvent être partagées uniquement avec :",
+          "items": [
+            "des prestataires techniques de confiance (hébergement, paiement, emails),",
+            "strictement dans le cadre du fonctionnement de l'application,",
+            "avec des garanties contractuelles conformes au RGPD."
+          ],
+          "outro": "Aucune donnée n'est transmise à des tiers à des fins commerciales."
+        },
+        "s7": {
+          "title": "7. Où sont stockées tes données ?",
+          "location": "Les données sont hébergées au sein de l'Union Européenne ou dans des pays reconnus comme adéquats par la Commission européenne.",
+          "scc": "Si un prestataire hors UE est utilisé, des clauses contractuelles standard (SCC) sont mises en place."
+        },
+        "s8": {
+          "title": "8. Combien de temps conservons-nous tes données ?",
+          "content": "Les données sont conservées pendant la durée de ton utilisation de l'application, puis supprimées ou anonymisées conformément aux obligations légales."
+        },
+        "s9": {
+          "title": "9. Sécurité des données",
+          "intro": "Nous mettons en œuvre des mesures techniques et organisationnelles adaptées :",
+          "items": [
+            "chiffrement des mots de passe",
+            "accès restreint aux données",
+            "surveillance des accès",
+            "sauvegardes sécurisées"
+          ],
+          "outro": "Aucun système n'est infaillible, mais la sécurité est une priorité."
+        },
+        "s10": {
+          "title": "10. Tes droits (RGPD)",
+          "intro": "Conformément au RGPD, tu disposes des droits suivants :",
+          "items": [
+            "Droit d'accès à tes données",
+            "Droit de rectification",
+            "Droit à l'effacement (droit à l'oubli)",
+            "Droit à la limitation du traitement",
+            "Droit à la portabilité",
+            "Droit d'opposition",
+            "Droit de retirer ton consentement à tout moment"
+          ],
+          "exercise": "📩 Pour exercer tes droits : Contacte-nous à",
+          "response": "Nous répondons sous 30 jours maximum."
+        },
+        "s11": {
+          "title": "11. Suppression du compte",
+          "intro": "Tu peux supprimer ton compte directement depuis l'application.",
+          "result": "Cette action entraîne :",
+          "items": ["la suppression de tes données personnelles,", "sauf obligations légales de conservation."]
+        },
+        "s12": {
+          "title": "12. Cookies et traceurs",
+          "intro": "L'application peut utiliser :",
+          "items": ["des cookies strictement nécessaires,", "des outils de mesure anonymisés."],
+          "outro": "Aucun cookie publicitaire sans consentement explicite."
+        },
+        "s13": {
+          "title": "13. Modifications de la politique",
+          "intro": "Cette politique peut évoluer pour :",
+          "items": ["rester conforme à la loi,", "refléter l'évolution du produit."],
+          "outro": "En cas de changement majeur, tu seras informé."
+        },
+        "s14": {
+          "title": "14. Réclamation",
+          "intro": "Si tu estimes que tes droits ne sont pas respectés, tu peux :",
+          "items": ["nous contacter directement,", "ou saisir l'autorité de contrôle compétente (ex : CNIL en France)."]
+        },
+        "s15": {
+          "title": "15. Contact",
+          "question": "Une question sur tes données ?",
+          "tempEmail": "(Mail temporaire)"
+        }
+      }
+    }
+  },
+  "pricing": {
+    "seoTitle": "Tarifs - Steero",
+    "seoDescription": "Découvrez l'offre Steero à 7,90€/mois : accès complet à toutes les fonctionnalités pour reprendre le contrôle de vos finances.",
+    "titlePart1": "Un tarif simple et",
+    "titleHighlight": "transparent",
+    "subtitle": "Accès complet à Steero pour reprendre le contrôle de tes finances.",
+    "perMonth": "mois",
+    "quarterly": "Trimestriel",
+    "annual": "Annuel",
+    "billedAnnually": "Facturé annuellement",
+    "billedQuarterly": "Facturé trimestriellement",
+    "totalBilled": "Total facturé :",
+    "savings": "Économie de",
+    "planName": "Steero",
+    "description": "Tout ce dont tu as besoin pour gérer ton budget au quotidien.",
+    "feature1": "Comptes personnels illimités",
+    "feature2": "Budgets et objectifs financiers",
+    "feature3": "Tableau de bord avancé",
+    "feature4": "Tes 5 rituels de suivi financiers",
+    "cta": "Rejoindre la liste d'attente",
+    "faqTitle": "Des questions ?",
+    "faqDescription": "Consulte notre FAQ pour en savoir plus sur Steero.",
+    "faqCta": "Voir la FAQ"
+  }
+}
