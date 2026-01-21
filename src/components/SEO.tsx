@@ -15,7 +15,7 @@ const SEO = ({
   description,
   keywords,
   canonical,
-  ogImage = 'https://steerofinance.lovable.app/og-image.png',
+  ogImage = 'https://steero.fr/og-image.png',
   ogType = 'website',
   noIndex = false,
 }: SEOProps) => {

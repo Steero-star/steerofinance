@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
+import { supabase } from "@/lib/supabase";
 
 interface WaitlistFormProps {
   onSuccess?: () => void;
@@ -211,6 +212,10 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                   disabled={(date) =>
                     date > new Date() || date < new Date("1900-01-01")
                   }
+                  defaultMonth={new Date(2000, 0, 1)}
+                  fromYear={1900}
+                  toYear={new Date().getFullYear()}
+                  captionLayout="dropdown-buttons"
                   initialFocus
                   className="pointer-events-auto"
                 />

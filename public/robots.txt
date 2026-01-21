@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://steerofinance.lovable.app/sitemap.xml
+Sitemap: https://steero.fr/sitemap.xml

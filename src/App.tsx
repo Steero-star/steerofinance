@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { WaitlistProvider } from "@/contexts/WaitlistContext";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import PourquoiSteero from "./pages/PourquoiSteero";
@@ -25,6 +26,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <WaitlistProvider>
             <Routes>
               <Route path="/" element={<Index />} />
