@@ -16,6 +16,7 @@ import MentionsLegales from "./pages/MentionsLegales";
 import CGS from "./pages/CGS";
 import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
 import NotFound from "./pages/NotFound";
+import AnalyticsTracker from "./components/AnalyticsTracker";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <AnalyticsTracker />
           <ScrollToTop />
           <WaitlistProvider>
             <Routes>
