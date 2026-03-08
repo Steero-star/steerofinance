@@ -212,10 +212,6 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
                   disabled={(date) =>
                     date > new Date() || date < new Date("1900-01-01")
                   }
-                  defaultMonth={new Date(2000, 0, 1)}
-                  fromYear={1900}
-                  toYear={new Date().getFullYear()}
-                  captionLayout="dropdown-buttons"
                   initialFocus
                   className="pointer-events-auto"
                 />

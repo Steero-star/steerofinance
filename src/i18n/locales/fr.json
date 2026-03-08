@@ -24,7 +24,7 @@
     "popularCurrencies": "Devises populaires",
     "allCurrencies": "Toutes les devises",
     "termsText": "J'accepte les",
-    "termsLink": "Conditions Générales d'Utilisation",
+    "termsLink": "Conditions Générales de Services",
     "submit": "Rejoindre la liste d'attente",
     "submitting": "Inscription en cours...",
     "successTitle": "Inscription réussie ! 🎉",
@@ -131,18 +131,18 @@
     "step2": {
       "title": "Deviens early adopter",
       "description": "La version stable de Steero se construira avec toi, futur utilisateur. Un groupe restreint d'inscrits aura accès en avant-première afin de tester les fonctionnalités clés, affiner l'expérience et contribuer à la stabilisation du produit.",
-      "date": "Phase bêta : février 2026"
+      "date": "Phase bêta : mars 2026"
     },
     "step3": {
       "title": "Lancement",
       "description": "Un outil fiable, abouti et pensé pour durer, pour enfin piloter tes finances en toute sérénité. Après la phase de stabilisation, Steero deviendra ton espace de référence pour suivre, comprendre et décider.",
-      "date": "Disponibilité : Mars 2026"
+      "date": "Disponibilité : avril 2026"
     }
   },
   "cta": {
     "title": "Prêt à transformer ta relation à l'argent ?",
     "description": "Rejoins Steero et commence 2026 dans les meilleures dispositions",
-    "launchDate": "Lancement prévu le 20 mars 2026",
+    "launchDate": "Lancement prévu le 17 avril 2026",
     "days": "Jours",
     "hours": "Heures",
     "minutes": "Minutes",
@@ -951,7 +951,7 @@
   },
   "pricing": {
     "seoTitle": "Tarifs - Steero",
-    "seoDescription": "Découvrez l'offre Steero à 7,90€/mois : accès complet à toutes les fonctionnalités pour reprendre le contrôle de vos finances.",
+    "seoDescription": "Découvrez l'offre Steero à 8€/mois : accès complet à toutes les fonctionnalités pour reprendre le contrôle de vos finances.",
     "titlePart1": "Un tarif simple et",
     "titleHighlight": "transparent",
     "subtitle": "Accès complet à Steero pour reprendre le contrôle de tes finances.",
@@ -969,8 +969,26 @@
     "feature3": "Tableau de bord avancé",
     "feature4": "Tes 5 rituels de suivi financiers",
     "cta": "Rejoindre la liste d'attente",
+    "founderTitle": "Prix fondateur",
+    "founderText1": "Nous lançons Steero avec un tarif volontairement accessible. À mesure que la plateforme évoluera et que de nouvelles fonctionnalités seront ajoutées, ce prix pourra évoluer.",
+    "founderText2": "Les premiers utilisateurs bénéficieront toujours des meilleures conditions.",
+    "earlyBadge": "Offre Early Adopters",
+    "earlyText1": "Les 200 premiers inscrits sur la liste d'attente bénéficieront de -50% à vie sur leur abonnement Steero.",
+    "earlyText2": "Rejoins la liste d'attente et verrouille -50% à vie sur Steero*. Offre limitée aux 200 premiers inscrits.",
+    "earlyCta": "Rejoindre la liste d'attente",
+    "earlyDisclaimer": "La réduction de 50% s'applique sur le prix public en vigueur. Si le tarif évolue dans le futur, la réduction restera appliquée.",
     "faqTitle": "Des questions ?",
     "faqDescription": "Consulte notre FAQ pour en savoir plus sur Steero.",
-    "faqCta": "Voir la FAQ"
+    "faqCta": "Voir la FAQ",
+    "impactTitle": "Le Plan Impact",
+    "impactIntro": "Parce que certaines personnes très motivées n'ont pas toujours les moyens d'accéder à ce type d'outils, nous avons créé le",
+    "impactName": "Plan Impact",
+    "impactLimited": "Chaque année, un nombre limité de places est réservé à des utilisateurs déterminés qui souhaitent reprendre le contrôle de leurs finances mais dont les ressources sont limitées.",
+    "impactEligibility": "Si vous êtes étudiant, en début de carrière ou dans une situation financière temporairement difficile, vous pouvez faire une demande de",
+    "impactDiscount": "remise de 50\u00a0%",
+    "impactDuration": "pour la durée d'une année renouvelable.",
+    "impactReview": "Les candidatures sont étudiées individuellement.",
+    "impactGoal": "Notre objectif est simple\u00a0: permettre à ceux qui sont prêts à faire l'effort de progresser d'avoir accès aux bons outils.",
+    "impactCta": "Candidater"
   }
 }

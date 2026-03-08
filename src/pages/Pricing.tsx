@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -17,37 +16,31 @@ const Pricing = () => {
   const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("quarterly");
 
   const isAnnual = billingPeriod === "annual";
-  const quarterlyPrice = 7.90;
-  const annualPrice = 6.30;
-  const discountPercent = 20;
+  const monthlyPrice = 8.00;
+  const annualPrice = 6.00;
+  const discountPercent = 25;
 
   // Total amounts
-  const quarterlyTotal = (quarterlyPrice * 3).toFixed(2).replace('.', ',');
-  const annualTotal = (annualPrice * 12).toFixed(2).replace('.', ',');
-  const annualSavings = ((quarterlyPrice - annualPrice) * 12).toFixed(2).replace('.', ',');
+  const quarterlyTotal = (monthlyPrice * 3).toFixed(2).replace('.', ',');
+  const annualTotal = 72;
+  const annualSavings = 24;
 
   const getPrice = () => {
     if (isAnnual) {
       return `${annualPrice.toFixed(2).replace('.', ',')}€`;
     }
-    return `${quarterlyPrice.toFixed(2).replace('.', ',')}€`;
+    return `${monthlyPrice.toFixed(2).replace('.', ',')}€`;
   };
 
   const getOriginalPrice = () => {
     if (!isAnnual) return null;
-    return `${quarterlyPrice.toFixed(2).replace('.', ',')}€`;
+    return `${monthlyPrice.toFixed(2).replace('.', ',')}€`;
   };
 
   const getTotalBilled = () => {
-    return isAnnual ? `${annualTotal}€` : `${quarterlyTotal}€`;
+    return isAnnual ? `${annualTotal},00€` : `${quarterlyTotal}€`;
   };
 
-  const features = [
-    t("pricing.feature1"),
-    t("pricing.feature2"),
-    t("pricing.feature3"),
-    t("pricing.feature4"),
-  ];
 
   return (
     <div className="min-h-screen">
@@ -164,7 +157,7 @@ const Pricing = () => {
                       </p>
                       {isAnnual && (
                         <p className="text-sm font-semibold text-white bg-white/20 rounded-full px-4 py-1">
-                          🎉 {t("pricing.savings")} {annualSavings}€
+                          🎉 {t("pricing.savings")} {annualSavings},00€
                         </p>
                       )}
                     </motion.div>
@@ -175,16 +168,32 @@ const Pricing = () => {
                   {t("pricing.description")}
                 </p>
 
-                <ul className="space-y-3 mb-8 text-left">
-                  {features.map((feature, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 shrink-0 mt-0.5 text-primary-foreground" />
-                      <span className="text-sm text-primary-foreground/90">
-                        {feature}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
+                {/* Prix fondateur */}
+                <div className="mb-6 bg-white/10 rounded-xl p-4 text-left space-y-2">
+                  <h4 className="text-sm font-bold text-primary-foreground">{t("pricing.founderTitle")}</h4>
+                  <p className="text-xs text-primary-foreground/80 leading-relaxed">
+                    {t("pricing.founderText1")}
+                  </p>
+                  <p className="text-xs text-primary-foreground/80 leading-relaxed">
+                    {t("pricing.founderText2")}
+                  </p>
+                </div>
+
+                {/* Early Adopters */}
+                <div className="mb-6 bg-orange-500/20 border border-orange-400/40 rounded-xl p-4 text-left space-y-2">
+                  <span className="inline-block bg-orange-500 text-white text-[10px] font-bold uppercase tracking-wide px-2.5 py-0.5 rounded-full">
+                    {t("pricing.earlyBadge")}
+                  </span>
+                  <p className="text-xs text-primary-foreground/90 leading-relaxed">
+                    {t("pricing.earlyText1")}
+                  </p>
+                  <p className="text-xs text-primary-foreground font-medium leading-relaxed">
+                    {t("pricing.earlyText2")}
+                  </p>
+                  <p className="text-[10px] text-primary-foreground/60 leading-relaxed">
+                    *{t("pricing.earlyDisclaimer")}
+                  </p>
+                </div>
 
                 <Button
                   onClick={openWaitlist}
@@ -198,8 +207,49 @@ const Pricing = () => {
         </div>
       </main>
 
-      {/* FAQ Teaser */}
+      {/* Plan Impact */}
       <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl mx-auto"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-center">
+              {t("pricing.impactTitle")}
+            </h2>
+            <div className="bg-card border border-border rounded-2xl p-8 space-y-4 text-muted-foreground text-sm leading-relaxed">
+              <p>
+                {t("pricing.impactIntro")} <span className="font-semibold text-foreground">{t("pricing.impactName")}</span>.
+              </p>
+              <p>{t("pricing.impactLimited")}</p>
+              <p>
+                {t("pricing.impactEligibility")} <span className="font-semibold text-foreground">{t("pricing.impactDiscount")}</span> {t("pricing.impactDuration")}
+              </p>
+              <p>{t("pricing.impactReview")}</p>
+              <p className="font-medium text-foreground">
+                {t("pricing.impactGoal")}
+              </p>
+              <div className="pt-2 text-center">
+                <a
+                  href="https://www.notion.so/68ab0233fa764fee9a8845d05af589e7?v=319020d992408096af72000cb7be3444&source=copy_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="rounded-full">
+                    {t("pricing.impactCta")}
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Teaser */}
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

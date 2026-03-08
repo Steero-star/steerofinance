@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
 
-const targetDate = new Date("2026-03-20T12:00:00+01:00");
+const targetDate = new Date("2026-04-17T12:00:00+01:00");
 
 const CTA = () => {
   const { t } = useTranslation();
