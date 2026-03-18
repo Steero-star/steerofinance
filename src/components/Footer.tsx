@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Linkedin } from "lucide-react";
+import { Facebook, Linkedin, Youtube } from "lucide-react";
 import steeroLogo from "@/assets/steero-logo.png";
 
 const Footer = () => {
@@ -45,18 +45,41 @@ const Footer = () => {
             className="lg:col-span-1"
           >
             <Link to="/" className="inline-block mb-4">
-              <img src={steeroLogo} alt="Steero" className="h-16 w-auto object-contain" />
+              <img src={steeroLogo} alt="Steero" className="h-10 w-auto object-contain" />
             </Link>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">{t("footer.tagline")}</p>
-            <a
-              href="https://www.linkedin.com/company/steero-osfinance"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={18} />
-            </a>
+            <p className="text-muted-foreground text-sm leading-relaxed max-w-xs mb-4">{t("footer.tagline")}</p>
+            
+            <div className="mt-4 flex items-center gap-2">
+              <a
+                href="https://www.linkedin.com/company/steero-osfinance"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                aria-label="LinkedIn"
+              >
+                <Linkedin size={27} />
+              </a>
+              
+              <a
+                href="https://www.youtube.com/@Steero-fin"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                aria-label="Youtube"
+              >
+                <Youtube size={27} />
+              </a>
+              
+              <a
+                href="https://www.facebook.com/profile.php?id=61579672177032"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook size={27} />
+              </a>
+            </div>
           </motion.div>
 
           {/* Column 2 - Product */}

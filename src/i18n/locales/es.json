@@ -738,7 +738,7 @@
           "title": "14. Contacto",
           "question": "¿Una pregunta, un problema, una idea?",
           "email": "📧 Contáctanos en:",
-          "tempEmail": "(Email temporal)"
+          "tempEmail": ""
         }
       }
     },
@@ -747,15 +747,15 @@
       "sections": {
         "s1": {
           "title": "1. Editor del sitio",
-          "intro": "El sitio Steero es editado por la sociedad Steero SAS, sociedad por acciones simplificada con un capital de 10.000 euros, inscrita en el Registro de Comercio y Sociedades de París bajo el número XXX XXX XXX.",
-          "address": "Domicilio social:",
-          "director": "Director de publicación:",
+          "intro": "El sitio Steero es editado por la sociedad Steero SAS, sociedad por acciones simplificada con un capital de 1.000 euros, inscrita en el Registro de Comercio y Sociedades de París bajo el número XXX XXX XXX.",
+          "address": "Domicilio social: 295 rue Lecourbe 75015 Paris",
+          "director": "Director de publicación: M. Ronald MARTINEZ",
           "email": "Email:",
-          "tbc": "[Por completar]"
+          "tbc": ""
         },
         "s2": {
           "title": "2. Alojamiento",
-          "intro": "El sitio está alojado por [Nombre del alojador], cuyo domicilio social se encuentra en [Dirección del alojador]."
+          "intro": "El sitio está alojado por OVH, cuyo domicilio social se encuentra en 2 rue Kellermann - 59100 Roubaix - France."
         },
         "s3": {
           "title": "3. Propiedad intelectual",
@@ -872,7 +872,7 @@
         "s15": {
           "title": "15. Contacto",
           "question": "¿Una pregunta sobre tus datos?",
-          "tempEmail": "(Email temporal)"
+          "tempEmail": ""
         }
       }
     }

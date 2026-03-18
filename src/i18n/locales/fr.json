@@ -765,7 +765,7 @@
           "title": "14. Contact",
           "question": "Une question, un souci, une idée ?",
           "email": "📧 Contacte-nous à :",
-          "tempEmail": "(Mail temporaire)"
+          "tempEmail": ""
         }
       }
     },
@@ -774,15 +774,15 @@
       "sections": {
         "s1": {
           "title": "1. Éditeur du site",
-          "intro": "Le site Steero est édité par la société Steero SAS, société par actions simplifiée au capital de 10 000 euros, immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro XXX XXX XXX.",
-          "address": "Siège social :",
-          "director": "Directeur de la publication :",
+          "intro": "Le site Steero est édité par la société Steero SAS, société par actions simplifiée au capital de 1 000 euros, immatriculée au Registre du Commerce et des Sociétés de Paris sous le numéro XXX XXX XXX.",
+          "address": "Siège social : 295 rue Lecourbe 75015 Paris",
+          "director": "Directeur de la publication : M. Ronald MARTINEZ",
           "email": "Email :",
-          "tbc": "[À compléter]"
+          "tbc": ""
         },
         "s2": {
           "title": "2. Hébergement",
-          "intro": "Le site est hébergé par [Nom de l'hébergeur], dont le siège social est situé [Adresse de l'hébergeur]."
+          "intro": "Le site est hébergé par OVH, dont le siège social est situé 2 rue Kellermann - 59100 Roubaix - France."
         },
         "s3": {
           "title": "3. Propriété intellectuelle",
@@ -944,7 +944,7 @@
         "s15": {
           "title": "15. Contact",
           "question": "Une question sur tes données ?",
-          "tempEmail": "(Mail temporaire)"
+          "tempEmail": ""
         }
       }
     }
