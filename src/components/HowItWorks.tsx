@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import steeroBanner from "@/assets/steero-banner-3.png";
 
 const containerVariants = {
   hidden: {},
@@ -68,8 +69,13 @@ const HowItWorks = () => {
 
   return (
     <section ref={sectionRef} className="py-24 bg-primary/5 relative overflow-hidden">
+      {/* Background banner image */}
+      <div className="absolute inset-0">
+        <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-15" />
+        <div className="absolute inset-0 bg-background/70" />
+      </div>
       {/* Decorative background elements with parallax */}
-      <div className="absolute inset-0 overflow-hidden bg-primary-foreground">
+      <div className="absolute inset-0 overflow-hidden">
         <motion.div 
           style={{ y: decorY1 }}
           className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" 

@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
+import steeroBanner from "@/assets/steero-banner-3.png";
 // Progress sidebar component for behavioral principles
 const BehavioralProgressSidebar = ({
   elements,
@@ -1149,8 +1150,12 @@ const PourquoiSteero = () => {
       </AnimatePresence>
 
       {/* Hero */}
-      <section className="pt-32 pb-16 bg-hero-gradient overflow-hidden">
-        <div className="container mx-auto px-6">
+      <section className="pt-32 pb-16 bg-hero-gradient overflow-hidden relative">
+        <div className="absolute inset-0">
+          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/40 to-background/70" />
+        </div>
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <motion.h1 initial={{
             opacity: 0,
@@ -1403,6 +1408,11 @@ const PourquoiSteero = () => {
 
       {/* CTA */}
       <section className="py-20 bg-primary relative overflow-hidden">
+        {/* Background banner image */}
+        <div className="absolute inset-0">
+          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+          <div className="absolute inset-0 bg-primary/50" />
+        </div>
         {/* Decorative elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -left-20 top-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />

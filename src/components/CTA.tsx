@@ -1,43 +1,12 @@
 import { ArrowRight, Shield, Users, Zap } from "lucide-react";
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
-
-const targetDate = new Date("2026-04-17T12:00:00+01:00");
+import steeroBanner from "@/assets/steero-banner-3.png";
 
 const CTA = () => {
   const { t } = useTranslation();
   const { openWaitlist } = useWaitlist();
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-
-  function calculateTimeLeft() {
-    const now = new Date();
-    const difference = targetDate.getTime() - now.getTime();
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60),
-    };
-  }
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const timeUnits = [
-    { value: timeLeft.days, label: t('cta.days') },
-    { value: timeLeft.hours, label: t('cta.hours') },
-    { value: timeLeft.minutes, label: t('cta.minutes') },
-    { value: timeLeft.seconds, label: t('cta.seconds') },
-  ];
 
   const features = [
     { icon: Users, text: t('cta.features.free') },
@@ -47,6 +16,11 @@ const CTA = () => {
 
   return (
     <section className="py-20 bg-primary relative overflow-hidden">
+      {/* Background banner image */}
+      <div className="absolute inset-0">
+        <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-primary/50" />
+      </div>
       {/* Decorative elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -left-20 top-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
@@ -88,37 +62,8 @@ const CTA = () => {
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </motion.button>
 
-          {/* Countdown intégré */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mb-10 p-6 rounded-2xl bg-primary-foreground/10 backdrop-blur-sm"
-          >
-            <p className="text-primary-foreground/80 mb-4 text-sm">
-              {t('cta.launchDate')}
-            </p>
-            <div className="flex justify-center gap-3 md:gap-6">
-              {timeUnits.map((unit, index) => (
-                <motion.div 
-                  key={index} 
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-background flex items-center justify-center shadow-lg">
-                    <span className="text-xl md:text-2xl font-bold text-primary">
-                      {String(unit.value).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <p className="mt-2 text-xs text-primary-foreground/70">{unit.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+
+
 
           <motion.div 
             initial={{ opacity: 0 }}

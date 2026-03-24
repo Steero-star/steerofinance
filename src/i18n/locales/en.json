@@ -105,17 +105,25 @@
     "description": "With Steero, you become the pilot: you understand, adjust, and ritualize your financial trajectory to reach the destination you've chosen.",
     "budget": {
       "title": "Budget",
-      "description": "Your resources are limited: they allow you to build the present and prepare for the future. Defining them well is essential. Create clear budgets with the trajectory, our intuitive tool that guides you to define your destination.",
-      "link": "The behavioral foundations of Steero"
+      "ba1": { "before": "You wonder where your money went", "after": "You know exactly where it goes — and why" },
+      "ba2": { "before": "You suffer your expenses", "after": "You anticipate and direct them" },
+      "ba3": { "before": "Your money disappears without structure", "after": "Every euro serves a clear intention" },
+      "ba4": { "before": "You move forward blindly", "after": "You know where you're going, every month" }
     },
     "capture": {
       "title": "Log",
-      "description": "Unlike other apps, Steero doesn't do it for you. Manual logging creates an emotional connection: which significantly improves self-regulation… The Level, the budget gauge, shows what you've already spent, what the logged expense represents, and what's left in your budget.",
+      "ba1": { "before": "You spend without really realizing it", "after": "Every expense becomes a conscious decision" },
+      "ba2": { "before": "You lose control little by little", "after": "You regain it, operation after operation" },
+      "ba3": { "before": "Your habits drive you", "after": "You drive your habits" },
+      "ba4": { "before": "You forget, you postpone, you avoid", "after": "You face it, simply, without friction" },
       "link": "The behavioral foundations of Steero"
     },
     "ritualize": {
       "title": "Ritualize",
-      "description": "Financial understanding doesn't rely solely on knowledge, but on behavioral habits. Conscious repetition is a key factor in lasting change. Rituals tell you what to do, what to look at, what questions to ask yourself, and how to prepare for what's next.",
+      "ba1": { "before": "You check your accounts when it's too late", "after": "You adjust before things go off track" },
+      "ba2": { "before": "You operate in fits and starts", "after": "You move forward with consistency" },
+      "ba3": { "before": "You suffer from your lack of discipline", "after": "You build natural mastery" },
+      "ba4": { "before": "You react", "after": "You anticipate" },
       "link": "The behavioral foundations of Steero"
     }
   },
@@ -739,7 +747,7 @@
           "title": "14. Contact",
           "question": "A question, a problem, an idea?",
           "email": "📧 Contact us at:",
-          "tempEmail": "(Temporary email)"
+          "tempEmail": ""
         }
       }
     },
@@ -794,7 +802,7 @@
           "company": "Steero",
           "legalForm": "[Legal form] – [RCS] / Being created",
           "address": "Registered office: 295 rue Lecourbe",
-          "contact": "📧 Contact: steerofinance@gmail.com"
+          "contact": "📧 Contact: contact@steero.fr"
         },
         "s3": {
           "title": "3. What data do we collect?",

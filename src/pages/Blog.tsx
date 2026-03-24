@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import steeroBanner from "@/assets/steero-banner-3.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, ArrowRight, Lightbulb, AlertCircle, Share2, Check, List, Search, X } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -1314,6 +1315,11 @@ const Blog = () => {
 
       {/* CTA Section */}
       <section className="py-20 bg-primary relative overflow-hidden">
+        {/* Background banner image */}
+        <div className="absolute inset-0">
+          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+          <div className="absolute inset-0 bg-primary/50" />
+        </div>
         {/* Decorative elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -left-20 top-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />

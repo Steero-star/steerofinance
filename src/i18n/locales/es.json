@@ -105,17 +105,25 @@
     "description": "Con Steero, te conviertes en el piloto: comprendes, ajustas y ritualizas tu trayectoria financiera para alcanzar el destino que has elegido.",
     "budget": {
       "title": "Presupuestar",
-      "description": "Tus recursos son limitados: te permiten construir el presente y preparar el futuro. Definirlos bien es esencial. Crea presupuestos claros, gracias a la trayectoria, nuestra herramienta intuitiva que te acompaña para definir tu destino.",
-      "link": "Los fundamentos conductuales de Steero"
+      "ba1": { "before": "Te preguntas a dónde fue tu dinero", "after": "Sabes exactamente a dónde va — y por qué" },
+      "ba2": { "before": "Sufres tus gastos", "after": "Los anticipas y los diriges" },
+      "ba3": { "before": "Tu dinero desaparece sin estructura", "after": "Cada euro sirve una intención clara" },
+      "ba4": { "before": "Avanzas a ciegas", "after": "Sabes a dónde vas, cada mes" }
     },
     "capture": {
       "title": "Registrar",
-      "description": "A diferencia de otras aplicaciones, Steero no hace las cosas por ti. El registro manual crea un vínculo emocional: lo que mejora significativamente la autorregulación… El nivel, el indicador de presupuesto, te muestra lo que ya has gastado, lo que representa el gasto registrado y lo que queda en tu presupuesto.",
+      "ba1": { "before": "Gastas sin realmente darte cuenta", "after": "Cada gasto se convierte en una decisión consciente" },
+      "ba2": { "before": "Pierdes el control poco a poco", "after": "Lo recuperas, operación tras operación" },
+      "ba3": { "before": "Tus hábitos te controlan", "after": "Tú controlas tus hábitos" },
+      "ba4": { "before": "Olvidas, pospones, evitas", "after": "Afrontas, simplemente, sin fricción" },
       "link": "Los fundamentos conductuales de Steero"
     },
     "ritualize": {
       "title": "Ritualizar",
-      "description": "La comprensión financiera no solo se basa en conocimientos, sino en hábitos de comportamiento. La repetición consciente es un factor clave del cambio duradero, los rituales te indican qué hacer, qué mirar, qué preguntas hacerte y cómo preparar el siguiente paso.",
+      "ba1": { "before": "Miras tus cuentas cuando ya es tarde", "after": "Ajustas antes de que se descontrole" },
+      "ba2": { "before": "Funcionas a golpes", "after": "Avanzas con regularidad" },
+      "ba3": { "before": "Sufres tu falta de disciplina", "after": "Instalas un dominio natural" },
+      "ba4": { "before": "Reaccionas", "after": "Anticipas" },
       "link": "Los fundamentos conductuales de Steero"
     }
   },

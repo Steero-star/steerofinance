@@ -101,21 +101,29 @@
     }
   },
   "differentiation": {
-    "title": "Pas d'automatisation qui te transforme en simple spectateur",
-    "description": "Avec Steero, tu deviens le pilote : tu comprends, ajustes et ritualises ta trajectoire financière pour atteindre la destination que tu as choisie.",
+    "title": "Moins de friction. Plus de maîtrise",
+    "description": "Modèles, favoris et raccourcis éliminent la friction. Tu te concentres sur ce qui compte : comprendre tes décisions.",
     "budget": {
       "title": "Budgétiser",
-      "description": "Tes ressources sont limitées : elles te permettent de construire le présent et de préparer l'avenir. Bien les définir est essentiel. Crée des budgets clairs, grâce à la trajectoire, notre outil intuitif qui t'accompagne pour définir ta destination.",
-      "link": "Les fondements comportementaux de Steero"
+      "ba1": { "before": "Tu te demandes où est passé ton argent", "after": "Tu sais exactement où il va — et pourquoi" },
+      "ba2": { "before": "Tu subis tes dépenses", "after": "Tu les anticipes et tu les diriges" },
+      "ba3": { "before": "Ton argent disparaît sans structure", "after": "Chaque euro sert une intention claire" },
+      "ba4": { "before": "Tu avances à l'aveugle", "after": "Tu sais où tu vas, chaque mois" }
     },
     "capture": {
       "title": "Saisir",
-      "description": "Contrairement à d'autres applications, Steero ne fait pas à ta place. La saisie manuelle crée un lien émotionnel : ce qui améliore significativement l'autorégulation… Le niveau, la jauge budgétaire, t'indique ce que tu as déjà dépensé, ce que la dépense saisie représente et ce qu'il reste dans ton budget.",
+      "ba1": { "before": "Tu dépenses sans vraiment t'en rendre compte", "after": "Chaque dépense devient une décision consciente" },
+      "ba2": { "before": "Tu perds le contrôle petit à petit", "after": "Tu le reprends, opération après opération" },
+      "ba3": { "before": "Tes habitudes te pilotent", "after": "C'est toi qui pilotes tes habitudes" },
+      "ba4": { "before": "Tu oublies, tu repousses, tu évites", "after": "Tu fais face, simplement, sans friction" },
       "link": "Les fondements comportementaux de Steero"
     },
     "ritualize": {
       "title": "Ritualiser",
-      "description": "La compréhension financière ne repose pas uniquement sur des connaissances, mais sur des habitudes comportementales. La répétition consciente est un facteur clé du changement durable, les rituels t'indiquent quoi faire, quoi regarder, quelles questions te poser et comment préparer la suite.",
+      "ba1": { "before": "Tu regardes tes comptes quand il est trop tard", "after": "Tu ajustes avant que ça dérape" },
+      "ba2": { "before": "Tu fonctionnes par à-coups", "after": "Tu avances avec régularité" },
+      "ba3": { "before": "Tu subis ton manque de discipline", "after": "Tu installes une maîtrise naturelle" },
+      "ba4": { "before": "Tu réagis", "after": "Tu anticipes" },
       "link": "Les fondements comportementaux de Steero"
     }
   },

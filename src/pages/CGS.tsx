@@ -192,7 +192,7 @@ const CGS = () => {
               <p>
                 {t('legal.cgs.sections.s14.email')}{" "}
                 <a href="mailto:steerofinance@gmail.com" className="text-primary hover:underline">
-                  steerofinance@gmail.com
+                  contact@steero.fr
                 </a>{" "}
                 {t('legal.cgs.sections.s14.tempEmail')}
               </p>

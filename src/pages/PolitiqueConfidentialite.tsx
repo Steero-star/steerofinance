@@ -147,7 +147,7 @@ const PolitiqueConfidentialite = () => {
                 ))}
               </ul>
               <p className="mt-4">
-                {t('legal.privacy.sections.s10.exercise')} <a href="mailto:steerofinance@gmail.com" className="text-primary hover:underline">steerofinance@gmail.com</a>
+                {t('legal.privacy.sections.s10.exercise')} <a href="mailto:steerofinance@gmail.com" className="text-primary hover:underline">contact@steero.fr</a>
               </p>
               <p className="mt-2 text-muted-foreground">{t('legal.privacy.sections.s10.response')}</p>
             </section>
@@ -199,7 +199,7 @@ const PolitiqueConfidentialite = () => {
               <h2 className="text-2xl font-semibold mb-4">{t('legal.privacy.sections.s15.title')}</h2>
               <p className="mb-4">{t('legal.privacy.sections.s15.question')}</p>
               <p>
-                📧 <a href="mailto:steerofinance@gmail.com" className="text-primary hover:underline">steerofinance@gmail.com</a> {t('legal.privacy.sections.s15.tempEmail')}
+                📧 <a href="mailto:steerofinance@gmail.com" className="text-primary hover:underline">contact@steero.fr</a> {t('legal.privacy.sections.s15.tempEmail')}
               </p>
             </section>
           </div>
