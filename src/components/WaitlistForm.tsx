@@ -4,15 +4,11 @@ import { useTranslation } from "react-i18next";
 import { toast } from "sonner";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
 import { getCountries, getCurrencies, popularCurrencies } from "@/lib/countries";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
@@ -30,10 +26,41 @@ interface WaitlistFormProps {
   onSuccess?: () => void;
 }
 
+// Returns the number of days in a given month/year (handles leap years).
+// When no year is provided yet, defaults to a non-leap year so February
+// shows 28 days — the 29th only appears once a valid leap year is selected.
+const getDaysInMonth = (month: string, year: string): number => {
+  if (!month) return 31;
+  const m = parseInt(month);
+  const y = year ? parseInt(year) : 2001; // 2001 = non-leap year as safe default
+  return new Date(y, m, 0).getDate();
+};
+
+const MONTHS = [
+  { value: 1, label: "janvier" },
+  { value: 2, label: "février" },
+  { value: 3, label: "mars" },
+  { value: 4, label: "avril" },
+  { value: 5, label: "mai" },
+  { value: 6, label: "juin" },
+  { value: 7, label: "juillet" },
+  { value: 8, label: "août" },
+  { value: 9, label: "septembre" },
+  { value: 10, label: "octobre" },
+  { value: 11, label: "novembre" },
+  { value: 12, label: "décembre" },
+];
+const currentYear = new Date().getFullYear();
+const YEARS = Array.from({ length: currentYear - 1900 }, (_, i) => currentYear - i);
+
 export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
   const { t, i18n } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isCalendarOpen, setIsCalendarOpen] = useState(false);
+
+  // Local state for the three date parts
+  const [dobDay, setDobDay] = useState<string>("");
+  const [dobMonth, setDobMonth] = useState<string>("");
+  const [dobYear, setDobYear] = useState<string>("");
 
   const defaultLanguage = (
     ["fr", "en", "es"].includes(i18n.language) ? i18n.language : "en"
@@ -74,6 +101,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
     formState: { errors },
     reset,
     watch,
+    setValue,
   } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues: {
@@ -86,10 +114,43 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
   const currencies = getCurrencies();
   const termsAccepted = watch("terms_accepted");
 
+  const datePlaceholders = {
+    day:   { fr: "Jour",  en: "Day",   es: "Día"  },
+    month: { fr: "Mois",  en: "Month", es: "Mes"  },
+    year:  { fr: "Année", en: "Year",  es: "Año"  },
+  } as const;
+  const dp = datePlaceholders;
+  const lang = defaultLanguage;
+
+  // Update the hidden date_of_birth field whenever a part changes
+  const handleDatePartChange = (
+    day: string,
+    month: string,
+    year: string,
+    setDay?: (v: string) => void
+  ) => {
+    // If the selected day exceeds the days available in the new month/year, reset it
+    if (day && month) {
+      const maxDays = getDaysInMonth(month, year);
+      if (parseInt(day) > maxDays) {
+        day = "";
+        setDay?.("");
+      }
+    }
+
+    if (day && month && year) {
+      const mm = String(month).padStart(2, "0");
+      const dd = String(day).padStart(2, "0");
+      setValue("date_of_birth", `${year}-${mm}-${dd}`, { shouldValidate: true });
+    } else {
+      setValue("date_of_birth", "", { shouldValidate: false });
+    }
+  };
+
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-   const { error } = await supabase.from("waitlist").insert([
+      const { error } = await supabase.from("waitlist").insert([
         {
           first_name: data.first_name,
           last_name: data.last_name,
@@ -113,12 +174,15 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
         setIsSubmitting(false);
         return;
       }
-          
+
       toast.success(t("waitlist.successTitle"), {
         description: t("waitlist.successMessage"),
       });
 
       reset();
+      setDobDay("");
+      setDobMonth("");
+      setDobYear("");
       onSuccess?.();
     } catch (error: any) {
       toast.error("Error", {
@@ -175,50 +239,78 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
         )}
       </div>
 
-      {/* Date of birth */}
+      {/* Date of birth — hidden field + three selects */}
       <div className="space-y-2">
         <Label>{t("waitlist.dateOfBirth")}</Label>
-        <Controller
-          name="date_of_birth"
-          control={control}
-          render={({ field }) => (
-            <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
-              <PopoverTrigger asChild>
-                <Button
-                  variant="outline"
-                  className={cn(
-                    "w-full justify-start text-left font-normal bg-background",
-                    !field.value && "text-muted-foreground"
-                  )}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {field.value ? (
-                    format(new Date(field.value), "PPP")
-                  ) : (
-                    <span>{t("waitlist.selectDate")}</span>
-                  )}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 z-50" align="start">
-                <Calendar
-                  mode="single"
-                  selected={field.value ? new Date(field.value) : undefined}
-                  onSelect={(date) => {
-                    if (date) {
-                      field.onChange(format(date, "yyyy-MM-dd"));
-                      setIsCalendarOpen(false);
-                    }
-                  }}
-                  disabled={(date) =>
-                    date > new Date() || date < new Date("1900-01-01")
-                  }
-                  initialFocus
-                  className="pointer-events-auto"
-                />
-              </PopoverContent>
-            </Popover>
-          )}
-        />
+
+        {/* Hidden field managed by react-hook-form */}
+        <input type="hidden" {...register("date_of_birth")} />
+
+        <div className="grid grid-cols-3 gap-2">
+          {/* Day */}
+          <Select
+            value={dobDay}
+            onValueChange={(val) => {
+              setDobDay(val);
+              handleDatePartChange(val, dobMonth, dobYear);
+            }}
+          >
+            <SelectTrigger className="bg-background">
+            <SelectValue placeholder={dp.day[lang]} />
+            </SelectTrigger>
+            <SelectContent className="z-50 max-h-[200px]">
+              {Array.from(
+                { length: getDaysInMonth(dobMonth, dobYear) },
+                (_, i) => i + 1
+              ).map((d) => (
+                <SelectItem key={d} value={String(d)}>
+                  {d}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+
+          {/* Month */}
+          <Select
+            value={dobMonth}
+            onValueChange={(val) => {
+              setDobMonth(val);
+              handleDatePartChange(dobDay, val, dobYear, setDobDay);
+            }}
+          >
+            <SelectTrigger className="bg-background">
+            <SelectValue placeholder={dp.month[lang]} />
+            </SelectTrigger>
+            <SelectContent className="z-50 max-h-[200px]">
+              {MONTHS.map((m) => (
+                <SelectItem key={m.value} value={String(m.value)}>
+                  {m.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+
+          {/* Year */}
+          <Select
+            value={dobYear}
+            onValueChange={(val) => {
+              setDobYear(val);
+              handleDatePartChange(dobDay, dobMonth, val, setDobDay);
+            }}
+          >
+            <SelectTrigger className="bg-background">
+            <SelectValue placeholder={dp.year[lang]} />
+            </SelectTrigger>
+            <SelectContent className="z-50 max-h-[200px]">
+              {YEARS.map((y) => (
+                <SelectItem key={y} value={String(y)}>
+                  {y}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
         {errors.date_of_birth && (
           <p className="text-sm text-destructive">{errors.date_of_birth.message}</p>
         )}
