@@ -2,7 +2,7 @@ import { Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-const heroImage = "src/assets/flux_financiers_HD.png";
+const heroImage = "../assets/flux_financiers_HD.png";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -92,7 +92,7 @@ const Hero = () => {
               <div style={{ overflow: 'hidden', borderRadius: '12px' }}>
                 <img
                   src={heroImage}
-                  srcSet="src/assets/flux_financiers_HD.png 2x"
+                  srcSet="../assets/flux_financiers_HD.png 2x"
                   alt="Finances calmes et claires"
                   style={{
                     width: '100%',
