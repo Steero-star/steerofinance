@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-const targetDate = new Date("2026-04-17T12:00:00+01:00");
+const targetDate = new Date("2026-04-17T11:00:00+02:00");
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   function calculateTimeLeft() {
@@ -41,7 +41,7 @@ const Countdown = () => {
   }];
   return <div className="py-12 rounded-3xl bg-orange-100">
       <p className="text-center text-muted-foreground mb-6">
-        Lancement prévu le <span className="font-semibold text-foreground">20 mars 2026</span>
+        Lancement prévu le <span className="font-semibold text-foreground">17 avril 2026</span>
       </p>
       <div className="flex justify-center gap-4 md:gap-8">
         {timeUnits.map((unit, index) => <div key={index} className="text-center">

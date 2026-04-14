@@ -1,6 +1,6 @@
 {
   "common": {
-    "joinWaitlist": "M'inscrire à la liste d'attente",
+    "joinWaitlist": "Commencer gratuitement",
     "discoverApproach": "Découvrir l'approche Steero",
     "discoverFeatures": "Découvrir les fonctionnalités",
     "learnMore": "En savoir plus",
@@ -51,52 +51,105 @@
     "cgs": "CGS",
     "privacy": "Confidentialité",
     "contact": "Contact",
+    "freeResources": "Ressources gratuites",
     "closingPhrase": "Construis ta sérénité financière, un rituel à la fois.",
     "copyright": "© 2026 Steero. Tous droits réservés."
   },
+  "freeResources": {
+    "badge": "📥 Ressource gratuite",
+    "title": "Template budget mensuel gratuit",
+    "description": "Un tableau simple et prêt à l'emploi pour poser les bases de ta gestion financière. Revenus, dépenses, épargne — en un coup d'œil.",
+    "download": "Télécharger",
+    "learnMore": "En savoir plus sur le blog →"
+  },
   "hero": {
-    "badge": "L'application qui te reconnecte à tes dépenses",
-    "title": "(Re)Prends le contrôle de tes finances avec",
-    "titleHighlight": "simplicité",
-    "description": "Un tableau de bord simple pour suivre tes budgets, tes dépenses et ancrer des habitudes qui comptent. Découvre le premier système d'exploitation personnel qui relie finances et habitudes pour changer durablement.",
-    "features": {
-      "time": "Simplicité",
-      "timeDesc": "Un rituel de suivi en moins de 2 minutes par jour",
-      "clarity": "Clarté",
-      "clarityDesc": "Tu sais exactement pourquoi tu dépenses et où tu vas",
-      "security": "Sérénité",
-      "securityDesc": "Plus de surprises en fin de mois"
+    "badge": "Système de pilotage financier personnel",
+    "title": "Construire un système",
+    "titleHighlight": "Pas juste suivre ses dépenses",
+    "description": "La plupart des gens ne gèrent pas mal leur argent. \n\nIls n'ont pas de système pour le piloter. Steero t'en donne un avec des rituels clairs, de l'opérationnel au stratégique."
+  },
+  "realProblem": {
+    "label": "LE VRAI PROBLÈME",
+    "title": "Tu ne dépenses pas trop. \nTu pilotes trop rarement.",
+    "description": "La dérive financière ne se construit pas en un jour. Elle s'installe sur plusieurs jours puis semaines et se découvre en fin de mois : quand il est trop tard pour corriger. \nCe n'est pas un manque de discipline mais l'absence d'un système de pilotage régulier.",
+    "card1": "Tu regardes tes comptes une fois par mois, quand les dégâts sont déjà faits.",
+    "card2": "Tu as l'intention de \"mieux gérer\" mais pas de moment ni de structure dédiée.",
+    "card3": "Tu sous-estimes tes dépenses réelles de 20 à 30% car la mémoire financière est sélective."
+  },
+  "tempo": {
+    "label": "LE SYSTÈME TEMPO",
+    "title": "5 rituels : Du quotidien à l'annuel",
+    "description": "Un pilote ne regarde pas ses instruments une fois par mois. \n\nSteero est structuré autour de 5 rituels à fréquences différentes qui t'accompagne de d'une approche opérationnel à une vision stratégique.",
+    "rituals": {
+      "t": {
+        "letter": "T",
+        "name": "Tracer",
+        "desc": "Enregistrer ses opérations, garder le lien, éviter la dérive invisible.",
+        "freq": "Quotidien",
+        "time": "5 min"
+      },
+      "e": {
+        "letter": "E",
+        "name": "Examiner",
+        "desc": "Comparer prévu vs réel. Corriger la trajectoire avant qu'il soit trop tard.",
+        "freq": "Hebdomadaire",
+        "time": "10 min"
+      },
+      "m": {
+        "letter": "M",
+        "name": "Maîtriser",
+        "desc": "Décider consciemment où va ton argent. Reprendre la main sur tes choix.",
+        "freq": "Mensuel",
+        "time": "15 min"
+      },
+      "p": {
+        "letter": "P",
+        "name": "Positionner",
+        "desc": "Aligner finances et objectifs de vie. Sortir du transactionnel.",
+        "freq": "Trimestriel",
+        "time": "30 min"
+      },
+      "o": {
+        "letter": "O",
+        "name": "Orienter",
+        "desc": "Bilan global, grandes orientations, arbitrages stratégiques. Choisir l'avenir.",
+        "freq": "Annuel",
+        "time": "60 min"
+      }
     }
   },
-  "howItWorks": {
-    "title": "Comment ça marche ?",
-    "description": "Un processus simple en 3 étapes pour reprendre le contrôle de tes finances",
-    "step1": {
-      "title": "Observe tes habitudes",
-      "description": "Comprends où va ton argent sans jugement. Steero t'aide à visualiser, à chaque saisie, ce que tu as déjà consommé et ce qu'il te reste dans ton budget"
+  "whySteeroSection": {
+    "label": "POURQUOI STEERO",
+    "title": "Ce qui nous différencie vraiment.",
+    "description": "Pas l'agrégation automatique. Pas les graphiques en camembert. La conscience et la régularité.",
+    "card1": {
+      "title": "La saisie est intentionnelle",
+      "desc": "Enregistrer une dépense, c'est déjà en prendre conscience. Des modèles préremplis réduisent la friction à quelques secondes  sans supprimer le geste."
     },
-    "step2": {
-      "title": "Ritualise ton suivi",
-      "description": "Avec des rituels financiers réguliers conçus pour t'accompagner, prend un moment une fois par semaine, mois ou trimestre pour comprendre, ajuster et planifier."
+    "card2": {
+      "title": "Un rituel, pas un tableau",
+      "desc": "Steero est construit autour de fréquences, pas de features. Le système TEMPO te donne un cadre de pilotage comme un manager pilote son équipe."
     },
-    "step3": {
-      "title": "Avance vers tes objectifs",
-      "description": "Chaque petite décision s'accumule pour construire l'avenir avec sérénité et aligné avec tes objectifs : Constituer un patrimoine, créer ton entreprise ou voyager."
-    }
+    "card3": {
+      "title": "De l'opérationnel au stratégique",
+      "desc": "5 minutes par jour pour ne rien laisser dériver. 60 minutes par an pour décider de la direction. Les deux niveaux dans le même outil."
+    },
+    "quote": "\"Je veux une vision claire, en temps réel, de ma situation.\"",
+    "quoteCaption": "Ce que disent nos utilisateurs. Ce que Steero construit."
   },
   "features": {
-    "title": "Pas d'automatisation qui te transforme en simple spectateur",
-    "description": "Avec Steero, tu deviens le pilote : tu comprends, ajustes et ritualises ta trajectoire financière pour atteindre la destination que tu as choisie.",
+    "title": "Moins de friction. Plus de maîtrise",
+    "description": "Modèles, favoris et raccourcis éliminent la friction. Tu te concentres sur ce qui compte : comprendre tes décisions.",
     "budget": {
-      "title": "Budgétiser",
+      "title": "Etape #1 : Défini tes objectifs",
       "description": "Tes ressources sont limitées : elles te permettent de construire le présent et de préparer l'avenir. Bien les définir est essentiel. Créé des budgets clairs, grâce à la trajectoire, notre outil intuitif qui t'accompagne pour définir ta destination."
     },
     "capture": {
-      "title": "Saisir",
+      "title": "Etape #2 : Reconnecte toi à tes dépenses",
       "description": "Contrairement à d'autres applications, Steero ne fait pas à ta place. La saisie manuelle crée un lien émotionnel : ce qui améliore significativement l'autorégulation… Nous l'avons amélioré grâce au Niveau - La jauge budgétaire qui indique le consommé, consommé avec la dépense saisie et le restant"
     },
     "ritualize": {
-      "title": "Ritualiser",
+      "title": "Etape #3 : Garde le cap",
       "description": "La compréhension financière ne repose pas uniquement sur des connaissances, mais sur des habitudes comportementales. La répétition consciente est un facteur clé du changement durable, les rituels t'indiquent quoi faire, quoi regarder, quelles questions te poser et comment préparer la suite."
     }
   },
@@ -104,26 +157,62 @@
     "title": "Moins de friction. Plus de maîtrise",
     "description": "Modèles, favoris et raccourcis éliminent la friction. Tu te concentres sur ce qui compte : comprendre tes décisions.",
     "budget": {
-      "title": "Budgétiser",
-      "ba1": { "before": "Tu te demandes où est passé ton argent", "after": "Tu sais exactement où il va — et pourquoi" },
-      "ba2": { "before": "Tu subis tes dépenses", "after": "Tu les anticipes et tu les diriges" },
-      "ba3": { "before": "Ton argent disparaît sans structure", "after": "Chaque euro sert une intention claire" },
-      "ba4": { "before": "Tu avances à l'aveugle", "after": "Tu sais où tu vas, chaque mois" }
+      "title": "Etape #1 : Défini tes objectifs",
+      "ba1": {
+        "before": "Tu te demandes où est passé ton argent",
+        "after": "Tu sais exactement où il va — et pourquoi"
+      },
+      "ba2": {
+        "before": "Tu subis tes dépenses",
+        "after": "Tu les anticipes et tu les diriges"
+      },
+      "ba3": {
+        "before": "Ton argent disparaît sans structure",
+        "after": "Chaque euro sert une intention claire"
+      },
+      "ba4": {
+        "before": "Tu avances à l'aveugle",
+        "after": "Tu sais où tu vas, chaque mois"
+      }
     },
     "capture": {
-      "title": "Saisir",
-      "ba1": { "before": "Tu dépenses sans vraiment t'en rendre compte", "after": "Chaque dépense devient une décision consciente" },
-      "ba2": { "before": "Tu perds le contrôle petit à petit", "after": "Tu le reprends, opération après opération" },
-      "ba3": { "before": "Tes habitudes te pilotent", "after": "C'est toi qui pilotes tes habitudes" },
-      "ba4": { "before": "Tu oublies, tu repousses, tu évites", "after": "Tu fais face, simplement, sans friction" },
+      "title": "Etape #2 : Reconnecte toi à tes dépenses",
+      "ba1": {
+        "before": "Tu dépenses sans vraiment t'en rendre compte",
+        "after": "Chaque dépense devient une décision consciente"
+      },
+      "ba2": {
+        "before": "Tu perds le contrôle petit à petit",
+        "after": "Tu le reprends, opération après opération"
+      },
+      "ba3": {
+        "before": "Tes habitudes te pilotent",
+        "after": "C'est toi qui pilotes tes habitudes"
+      },
+      "ba4": {
+        "before": "Tu oublies, tu repousses, tu évites",
+        "after": "Tu fais face, simplement, sans friction"
+      },
       "link": "Les fondements comportementaux de Steero"
     },
     "ritualize": {
-      "title": "Ritualiser",
-      "ba1": { "before": "Tu regardes tes comptes quand il est trop tard", "after": "Tu ajustes avant que ça dérape" },
-      "ba2": { "before": "Tu fonctionnes par à-coups", "after": "Tu avances avec régularité" },
-      "ba3": { "before": "Tu subis ton manque de discipline", "after": "Tu installes une maîtrise naturelle" },
-      "ba4": { "before": "Tu réagis", "after": "Tu anticipes" },
+      "title": "Etape #3 : Garde le cap",
+      "ba1": {
+        "before": "Tu regardes tes comptes quand il est trop tard",
+        "after": "Tu ajustes avant que ça dérape"
+      },
+      "ba2": {
+        "before": "Tu fonctionnes par à-coups",
+        "after": "Tu avances avec régularité"
+      },
+      "ba3": {
+        "before": "Tu subis ton manque de discipline",
+        "after": "Tu installes une maîtrise naturelle"
+      },
+      "ba4": {
+        "before": "Tu réagis",
+        "after": "Tu anticipes"
+      },
       "link": "Les fondements comportementaux de Steero"
     }
   },
@@ -148,8 +237,8 @@
     }
   },
   "cta": {
-    "title": "Prêt à transformer ta relation à l'argent ?",
-    "description": "Rejoins Steero et commence 2026 dans les meilleures dispositions",
+    "title": "Installe ton système TEMPO",
+    "description": "14 jours pour tester la méthode puis un abonnement accessible pour transformer ta relation à l'argent ",
     "launchDate": "Lancement prévu le 17 avril 2026",
     "days": "Jours",
     "hours": "Heures",
@@ -157,7 +246,7 @@
     "seconds": "Secondes",
     "features": {
       "free": "Gratuit pour commencer",
-      "noCard": "Gestions des habitudes financières",
+      "noCard": "Aucune intégration bancaire requise",
       "cancel": "Données sécurisées"
     }
   },
@@ -167,7 +256,11 @@
     "missionTitle": "Notre mission",
     "missionP1": "Steero est né d'un constat simple : les applications de finances personnelles automatisent tout, mais ne changent rien à tes comportements.",
     "missionP2": "Notre mission est de t'aider à développer une véritable compréhension de ta gestion financière, pas simplement un outil pour consulter des graphiques générés automatiquement.",
-    "missionItems": ["Comprends et ajuste tes décisions", "Créé des habitudes durables", "Atteinds tes objectifs"],
+    "missionItems": [
+      "Comprends et ajuste tes décisions",
+      "Créé des habitudes durables",
+      "Atteinds tes objectifs"
+    ],
     "quote": "La vraie liberté financière vient de la compréhension, qui naît et se renforce par l'action et non par l'automatisation.",
     "quoteAuthor": "L'équipe Steero",
     "alternativesTitle": "Tu as peut-être déjà essayé...",
@@ -248,8 +341,8 @@
         "role": "Enseignante"
       }
     ],
-    "ctaTitle": "Prêt à transformer ta relation à l'argent ?",
-    "ctaDescription": "Rejoins Steero et commence 2026 dans les meilleures dispositions"
+    "ctaTitle": "Prêt à transformer ta relation à l'argent durablement ?",
+    "ctaDescription": "Rejoins Steero pour changer d'approche et atteindre tes objectifs."
   },
   "animations": {
     "flowAuto": "Flux automatique",
@@ -299,7 +392,7 @@
     "discoverApproach": "Découvrir l'approche Steero",
     "joinWaitlist": "Rejoindre la liste d'attente",
     "ctaTitle": "Prêt à piloter tes finances ?",
-    "ctaDescription": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
+    "ctaDescription": "Rejoins Steero pour changer d'approche et atteindre tes objectifs.",
     "sections": {
       "understand": {
         "title": "Comprendre Steero",
@@ -379,60 +472,60 @@
     "futureTitle": "Et quand tu voudras aller plus loin",
     "futureSubtitle": "D'autres dimensions à explorer, bientôt disponibles.",
     "ctaTitle": "Prêt à piloter tes finances ?",
-    "ctaSubtitle": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
-    "ctaDescription": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
+    "ctaSubtitle": "Rejoins Steero pour changer d'approche et atteindre tes objectifs.",
+    "ctaDescription": "Rejoins Steero pour changer d'approche et atteindre tes objectifs.",
     "features": {
       "onboarding": {
         "title": "Trajectoire personnalisée",
         "microPromise": "Pose les bases de ta direction financière.",
-        "details": "Un parcours guidé qui t'aide à définir tes objectifs, tes revenus, tes charges fixes et tes priorités. Pas de jargon, pas de complexité : juste les bonnes questions pour créer ton cadre financier."
+        "details": "Un parcours guidé qui t'aide à définir tes objectifs, tes revenus, tes dépenses fixes et tes priorités. Pas de jargon, pas de complexité : juste les bonnes questions pour créer ton cadre financier."
       },
       "budget": {
         "title": "Structure de budget",
-        "microPromise": "Organise tes ressources selon tes priorités.",
-        "details": "Crée des catégories et sous-catégories qui reflètent ta vie réelle. Organise tes dépenses de manière hiérarchique pour avoir une vision claire de ce qui compte vraiment."
+        "microPromise": "Organise tes ressources par priorité.",
+        "details": "Crée des catégories et sous-catégories qui reflètent ta vie réelle. Organise tes dépenses de manière hiérarchique pour une vision claire de ce qui compte vraiment."
       },
       "fixed": {
         "title": "Opérations fixes",
         "microPromise": "Anticipe tes flux récurrents.",
-        "details": "Prévois tes revenus, charges et échéances pour le mois. Anticipe les moments où ta trésorerie sera tendue et garde un calendrier clair de tes mouvements."
+        "details": "Planifie tes revenus, tes charges et tes échéances du mois. Anticipe les moments où ta trésorerie sera serrée et garde un calendrier clair de tes mouvements."
       },
       "daily": {
-        "title": "Modèles et saisie rapide",
+        "title": "Modèles & saisie rapide",
         "microPromise": "Enregistre tes dépenses en un instant.",
-        "details": "Crée des modèles pour tes opérations fréquentes : café, courses, essence... Un tap suffit pour enregistrer, le système apprend tes habitudes."
+        "details": "Crée des modèles pour tes opérations fréquentes : café, courses, essence... Un tap suffit pour enregistrer, le système apprend de tes habitudes."
       },
       "level": {
         "title": "Le Niveau",
         "microPromise": "Visualise ta marge en temps réel.",
-        "details": "Lors de chaque saisie, visualise instantanément : ce qui a déjà été dépensé, ce que représente la dépense en cours, et ce qu'il te restera disponible dans ton budget."
+        "details": "À chaque saisie, visualise instantanément : ce qui a déjà été dépensé, ce que représente la dépense en cours et ce qu'il restera de disponible dans ton budget."
       },
       "rituals": {
-        "title": "Suivi des rituels",
+        "title": "Suivi d'habitudes",
         "microPromise": "Ancre des habitudes qui durent.",
-        "details": "Un système de rituels qui te guide sur ce que tu dois faire, regarder, et quelles questions te poser. Développe des habitudes financières durables."
+        "details": "Un système de rituels qui te guide sur quoi faire, quoi regarder et quelles questions te poser. Développe des habitudes financières durables."
       },
       "indicators": {
-        "title": "Aide à la prise de décision",
+        "title": "Aide à la décision",
         "microPromise": "Repère les écarts avant qu'ils ne s'installent.",
-        "details": "Une vue budgétaire claire qui met en évidence ce qui mérite ton attention. Comprends rapidement ta situation et prends des décisions éclairées grâce à des indicateurs pensés pour t'aider à ajuster ta trajectoire."
+        "details": "Une vue budget claire qui met en avant ce qui mérite ton attention. Comprends rapidement ta situation et prends des décisions éclairées avec des indicateurs pensés pour t'aider à ajuster ta trajectoire."
       }
     },
     "futureFeatures": {
       "projects": {
-        "title": "Gestion de projets",
-        "promise": "Relie plusieurs budgets autour d'un même objectif.",
-        "description": "Regroupe plusieurs budgets sous un même objectif avec une temporalité définie. Que ce soit un voyage, une rénovation ou un événement : visualise ta progression et garde une vision transversale sur les ressources allouées."
+        "title": "Gestion par projets",
+        "promise": "Relie plusieurs budgets autour d'un seul objectif.",
+        "description": "Regroupe plusieurs budgets sous un seul objectif avec une timeline définie. Qu'il s'agisse d'un voyage, d'une rénovation ou d'un événement : suis ta progression et garde une vue transversale des ressources allouées."
       },
       "tiers": {
-        "title": "Gestion des tiers & de la trésorerie",
-        "promise": "Clarifie ce que tu dois, ce qu'on te doit, et l'impact réel sur ta trésorerie.",
-        "description": "Suis ce que tu dois et ce qu'on te doit. Notes de frais, avances entre amis, remboursements attendus : cette vue te permet de clarifier ta trésorerie réelle et d'anticiper les flux à venir."
+        "title": "Gestion des tiers & avances",
+        "promise": "Clarifie ce que tu dois, ce qu'on te doit et l'impact réel sur ta trésorerie.",
+        "description": "Suis ce que tu dois et ce qu'on te doit. Notes de frais, avances entre amis, remboursements attendus : cette vue clarifie ta trésorerie réelle et aide à anticiper les entrées et sorties à venir."
       },
       "patrimoine": {
         "title": "Gestion du patrimoine",
-        "promise": "Comprends ta situation financière globale en un coup d'œil.",
-        "description": "Identifie tes actifs (épargne, investissements, biens) et tes passifs (crédits, dettes). Comprends ton patrimoine net comme un indicateur clé de ta situation financière globale."
+        "promise": "Comprends ta situation globale en un coup d'œil.",
+        "description": "Identifie tes actifs (épargne, investissements, immobilier) et tes passifs (emprunts, dettes). Comprends ton patrimoine net comme indicateur clé de ta situation financière globale."
       }
     },
     "animations": {
@@ -443,7 +536,7 @@
       "rituals": "Rituels",
       "priorities": "Priorités",
       "profileComplete": "Profil complété",
-      "onboardingClosing": "Un parcours guidé pour poser un cadre clair, sans jargon ni complexité.",
+      "onboardingClosing": "Un parcours guidé pour établir un cadre clair, sans jargon ni complexité.",
       "month": "Mois",
       "april": "Avril",
       "may": "Mai",
@@ -456,39 +549,39 @@
       "insurance": "Assurance",
       "food": "Alimentation",
       "groceries": "Courses",
-      "restaurant": "Resto",
+      "restaurant": "Restaurant",
       "leisure": "Loisirs",
       "sports": "Sport",
       "outings": "Sorties",
       "salary": "Salaire",
       "netflix": "Netflix",
       "electricity": "Électricité",
-      "shopping": "Courses",
+      "shopping": "Shopping",
       "coffee": "Café",
       "gas": "Essence",
       "transport": "Transport",
       "cornerCoffee": "Café du coin",
-      "tapToAdd": "Tap pour ajouter rapidement ↓",
+      "tapToAdd": "Appuie pour ajouter rapidement ↓",
       "spent": "Dépensé",
       "inProgress": "En cours",
-      "remaining": "Reste dispo",
+      "remaining": "Disponible",
       "dailyRitual": "Rituel quotidien",
       "consecutiveDays": "7 jours consécutifs !",
-      "upcomingRituals": "Prochains rituels",
+      "upcomingRituals": "Rituels à venir",
       "weeklyRitual": "Hebdomadaire",
-      "weeklyDate": "Le 7 avril",
+      "weeklyDate": "7 Avril",
       "monthlyRitual": "Mensuel",
-      "monthlyDate": "Le 28 avril",
-      "ritualsClosing": "Des rendez-vous simples pour garder le cap, sans pression.",
+      "monthlyDate": "28 Avril",
+      "ritualsClosing": "Des points de passage simples pour garder le cap, sans pression.",
       "budgetLabel": "Budget",
-      "percentConsumed": "% conso.",
+      "percentConsumed": "% consommé",
       "available": "Dispo.",
-      "indicatorsClosing": "Une aide concrète pour décider, avant que les écarts ne s'installent.",
+      "indicatorsClosing": "Un soutien concret aux décisions, avant que les écarts ne s'installent.",
       "fixedChargesIdentified": "Charges fixes identifiées",
       "fixedExpensesTotal": "Dépenses fixes",
       "ofIncome": "du revenu",
-      "streamingCanceled": "Streaming résilié",
-      "fixedClosing": "Centralise la gestion de ce qui entre et sort de manière fixe chaque mois et la part des dépenses fixes sur mon revenu.",
+      "streamingCanceled": "Streaming annulé",
+      "fixedClosing": "Centraliser la gestion de ce qui rentre et sort de manière fixe chaque mois et la part des dépenses fixes sur mon revenu.",
       "favoriteOperations": "Opérations favorites",
       "selectOperation": "Sélectionner...",
       "name": "Nom",
@@ -496,27 +589,27 @@
       "category": "Catégorie",
       "bank": "Banque",
       "amount": "Montant",
-      "transactionComplete": "Opération enregistrée",
-      "dailyClosing": "Un moyen simple et intuitif de créer tes opérations ponctuelles favorites : tout est prérempli, plus qu'à valider !",
+      "transactionComplete": "Transaction enregistrée",
+      "dailyClosing": "Une manière simple et intuitive de créer tes opérations ponctuelles favorites : tout est pré-rempli, il n'y a plus qu'à valider !",
       "budgetResto": "Budget Resto",
       "gaugeClosing": "Chaque dépense te montre immédiatement où tu en es, te permettant d'ajuster ton comportement financier.",
       "newExpense": "Nouvelle dépense",
-      "gaugeEachEntry": "Cet indicateur s'affiche à chaque saisie",
+      "gaugeEachEntry": "Cet indicateur apparaît à chaque saisie",
       "projectVacances": "Vacances",
-      "projectLodging": "Logement",
+      "projectLodging": "Hébergement",
       "projectTransport": "Transport",
       "projectOnSite": "Dépenses sur place",
-      "budgetLeisure": "Budget loisirs",
-      "budgetTransport": "Budget transport",
-      "budgetDaily": "Budget quotidien",
-      "projectClosing": "Le projet n'est pas un budget de plus : c'est ta vue transversale.",
+      "budgetLeisure": "Budget Loisirs",
+      "budgetTransport": "Budget Transport",
+      "budgetDaily": "Budget Quotidien",
+      "projectClosing": "Un projet n'est pas juste un budget de plus : c'est ta vue transversale.",
       "projectConsumed": "Consommé",
-      "projectRemaining": "Reste",
-      "tiersOwedToMe": "Mes avoirs : Ce qu'on me doit",
-      "tiersIOwe": "Mes dettes : Ce que je dois",
+      "projectRemaining": "Restant",
+      "tiersOwedToMe": "Mes avoirs : On me doit",
+      "tiersIOwe": "Mes dettes : Je dois",
       "tiersVacationShare": "Part vacances",
-      "tiersRestaurant": "Restaurant samedi",
-      "tiersGroupGift": "Cadeau groupe",
+      "tiersRestaurant": "Dîner samedi",
+      "tiersGroupGift": "Cadeau commun",
       "tiersEmployer": "Mon employeur",
       "tiersExpenseReports": "Notes de frais",
       "tiersTreasuryBalance": "Impact trésorerie",
@@ -525,28 +618,28 @@
       "patrimoineLiabilities": "Passifs",
       "patrimoineApartment": "Appartement",
       "patrimoineRealEstate": "Immobilier",
-      "patrimoineAccounts": "Comptes courants et épargnes",
+      "patrimoineAccounts": "Comptes courants & épargne",
       "patrimoineLiquidity": "Liquidités",
       "patrimoineStocksETF": "Actions & ETF",
       "patrimoineInvestments": "Investissements",
       "patrimoineMortgage": "Crédit immobilier",
-      "patrimoineApartmentDebt": "Emprunt appartement",
+      "patrimoineApartmentDebt": "Prêt appartement",
       "patrimoineNetWorth": "Patrimoine net",
-      "patrimoineClosing": "J'ai un bilan global, synthétique et évolutif de mon patrimoine."
+      "patrimoineClosing": "J'ai une vision globale, synthétique et évolutive de mon patrimoine."
     }
   },
   "blog": {
     "title": "Blog Steero",
-    "subtitle": "Découvrez nos articles pour mieux comprendre et piloter vos finances personnelles.",
+    "subtitle": "Découvre nos articles pour mieux comprendre et piloter tes finances personnelles.",
     "searchPlaceholder": "Rechercher un article...",
     "filterBy": "Filtrer par :",
     "clear": "Effacer",
     "articlesFound": "article(s) trouvé(s)",
     "readFullArticle": "Lire l'article complet",
-    "readyToTransform": "Prêt à transformer ta gestion financière ?",
+    "readyToTransform": "Essaye Steero gratuitement pendant 14 jours et installe ton premier rituel TEMPO aujourd'hui.",
     "ctaTitle": "Prêt à piloter tes finances ?",
-    "ctaDescription": "Rejoins la liste d'attente et sois parmi les premiers à essayer Steero.",
-    "joinWaitlist": "Rejoindre la liste d'attente",
+    "ctaDescription": "Rejoins Steero pour changer d'approche et atteindre tes objectifs.",
+    "joinWaitlist": "Commencer",
     "linkCopied": "Lien copié !",
     "share": "Partager",
     "collapseArticle": "Réduire l'article",
@@ -556,6 +649,27 @@
     "min": "min",
     "keyIdea": "À retenir",
     "myth": "Idée reçue",
+    "featured": {
+      "badge": "📥 Ressource gratuite",
+      "title": "Ton premier pas vers la clarté financière",
+      "subtitle": "Un template budget mensuel simple, gratuit et prêt à l'emploi pour poser les bases de ta gestion financière.",
+      "description": "Avant d'utiliser un outil comme Steero, il faut commencer par voir clair. Ce template Excel te permet de poser les bases : tes revenus, tes dépenses fixes et variables, ton épargne — et de voir immédiatement ton solde disponible.",
+      "whyTitle": "Pourquoi ce template ?",
+      "why1": "Parce que 80% des personnes ne savent pas exactement où va leur argent chaque mois.",
+      "why2": "Parce qu'un simple tableau peut déjà changer ta perception de tes finances.",
+      "why3": "Parce que la clarté est le premier pas vers le contrôle.",
+      "containsTitle": "Ce que contient le template",
+      "contains1": "Suivi des revenus (prévu vs réel)",
+      "contains2": "Dépenses fixes et variables avec écarts automatiques",
+      "contains3": "Section épargne dédiée",
+      "contains4": "Bilan mensuel avec solde disponible",
+      "limitTitle": "Les limites volontaires",
+      "limit1": "Suivi des habitudes, rituels et tableau de bord limité.",
+      "limit2": "Ce template est un point de départ. Pour aller plus loin, Steero transforme cette base en un véritable système de pilotage.",
+      "downloadBtn": "Télécharger le template gratuit",
+      "downloadFormat": "Format .xlsx — Compatible Excel, Google Sheets, LibreOffice",
+      "goFurther": "Envie d'aller plus loin ?"
+    },
     "tags": {
       "beginner": "Débutant",
       "skills": "Compétences",
@@ -568,81 +682,178 @@
     },
     "articles": {
       "1": {
-        "title": "Comprendre ses finances personnelles : pourquoi c'est une compétence essentielle aujourd'hui",
-        "tags": ["Débutant", "Compétences"],
-        "hook": "La gestion des finances personnelles est rarement enseignée à l'école. Pourtant, comprendre son argent est aujourd'hui une compétence essentielle, au même titre que savoir organiser son temps ou développer ses compétences professionnelles.\n\nBeaucoup de personnes gagnent correctement leur vie, mais peinent à :\n• comprendre où part leur argent,\n• prendre des décisions financières sereines,\n• ou atteindre leurs objectifs financiers.\n\nLa bonne nouvelle ? La finance personnelle s'apprend.",
+        "title": "Tu dépenses trop chaque mois : voici pourquoi (et comment l'arrêter)",
+        "tags": [
+          "Pilotage",
+          "Méthode",
+          "Rituel"
+        ],
+        "hook": "Tu finis le mois dans le rouge ou tout juste à l'équilibre sans pouvoir expliquer exactement pourquoi. Tu n'as pas fait de folie ou claqué un budget week-end extravagant et pourtant, les chiffres ne sont pas là. Ce n'est pas un problème de discipline. C'est un problème de fréquence de regard.",
         "sections": [
-          "Pourquoi la gestion des finances personnelles n'est pas innée",
-          "Comprendre son argent pour reprendre le contrôle financier",
-          "La finance personnelle est une compétence qui se développe avec le temps",
-          "Conclusion : apprendre à gérer son argent change durablement la relation à l'argent"
+          "Ce n'est pas que tu dépenses trop. C'est que tu regardes trop rarement.",
+          "Les 4 fuites invisibles qui plombent un budget cadre",
+          "Pourquoi les bonnes résolutions ne fonctionnent pas",
+          "La vraie solution : un système de pilotage à 5 niveaux",
+          "Par où commencer quand on part de zéro",
+          "Ce que tu vas changer cette semaine"
         ]
       },
       "2": {
-        "title": "La montée en compétences financières : passer du flou au pilotage de son argent",
-        "tags": ["Pilotage", "Compétences"],
-        "hook": "Beaucoup de personnes ont l'impression de \"mal gérer\" leur argent. En réalité, la plupart ne gèrent pas mal : elles ne pilotent pas.\n\nElles regardent parfois leur solde, paient leurs factures, épargnent quand il reste quelque chose… mais sans vision globale ni méthode claire.\n\nLa bonne nouvelle ?\nLa gestion financière n'est pas binaire. Elle se construit par étapes, comme une véritable montée en compétences.",
+        "title": "La montée en compétences financières : du flou au pilotage",
+        "tags": [
+          "Pilotage",
+          "Compétences",
+          "Méthode"
+        ],
+        "hook": "Mal gérer son argent ou ne pas le piloter — ce n'est pas la même chose. Voici comment passer concrètement de l'un à l'autre, étape par étape.",
         "sections": [
-          "De la gestion subie au pilotage financier",
-          "Étape 1 : Observer ses finances sans jugement",
-          "Étape 2 : Structurer pour donner du sens aux chiffres",
-          "Étape 3 : Comprendre les écarts pour mieux décider",
-          "Étape 4 : Décider en fonction de ses objectifs",
-          "Pourquoi la montée en compétences financières échoue souvent",
-          "Comment Steero accompagne la montée en compétences financières",
-          "Conclusion : piloter ses finances est une compétence accessible"
+          "Subir ou piloter : la seule distinction qui compte",
+          "Étape 1 : Observer sans juger (niveau Tracer)",
+          "Étape 2 : Structurer pour transformer des chiffres en information (niveau Examiner)",
+          "Étape 3 : Comprendre les écarts pour reprendre la main (niveau Maîtriser)",
+          "Étape 4 : Aligner finances et objectifs (niveaux Positionner et Orienter)",
+          "Pourquoi la montée en compétences échoue avant d'avoir commencé",
+          "Le pilotage s'apprend. Comme n'importe quelle compétence."
         ]
       },
       "3": {
         "title": "Pourquoi sans rituel, aucun outil financier ne fonctionne",
-        "tags": ["Rituel", "Mindset"],
-        "hook": "Télécharger une application de gestion financière est facile. La consulter régulièrement… beaucoup moins.\n\nCe n'est pas un manque de motivation. Ce n'est pas non plus un problème d'intelligence financière. Le véritable point de rupture, c'est l'absence de rituel.\n\nSans rituel, même le meilleur outil finit oublié. Avec un rituel simple, la gestion financière devient enfin durable.",
+        "tags": [
+          "Rituel",
+          "Mindset",
+          "Méthode"
+        ],
+        "hook": "Finary, Bankin, Excel : tu as essayé. Et tu as abandonné. Le problème n'est pas l'outil. C'est l'absence d'un rituel pour le faire vivre. Voici pourquoi, et comment changer ça.",
         "sections": [
-          "Le vrai problème des outils financiers modernes",
-          "Rituel financier : de quoi parle-t-on vraiment ?",
-          "Le rituel comme pilier de la montée en compétences financières",
-          "Comment Steero a été pensé autour du rituel, pas de l'outil",
-          "Conclusion : sans rituel, il n'y a pas de contrôle financier"
+          "La majorité des apps de finance personnelle sont des rétroviseurs",
+          "Un rituel n'est pas un bilan mensuel",
+          "Pourquoi les rituels financiers échouent avant de commencer",
+          "Le système TEMPO : cinq rituels, cinq fréquences, un seul cap",
+          "Ce que ça change concrètement",
+          "Le seul outil qui fonctionne est celui qu'on utilise régulièrement"
         ]
       },
       "4": {
-        "title": "Le rituel financier en 2 minutes : mythe ou réalité ?",
-        "tags": ["Rituel", "Méthode"],
-        "hook": "Quand on parle de gestion financière, beaucoup imaginent encore :\n• des tableurs complexes,\n• des heures d'analyse,\n• une discipline difficile à tenir.\n\nAlors l'idée d'un rituel financier en 2 minutes semble irréaliste. Pas parce que 2 minutes ne suffisent pas… mais parce que la gestion financière est souvent pensée comme un bloc unique, au lieu d'un ensemble de rituels complémentaires.",
+        "title": "5 minutes par jour pour ne plus jamais subir sa fin de mois",
+        "tags": [
+          "Rituel",
+          "Méthode",
+          "Mindset"
+        ],
+        "hook": "Un rituel financier de 2 minutes, c'est un mythe. 5 minutes par jour avec la bonne structure, c'est ce qui change durablement ton rapport à l'argent. Voici pourquoi.",
         "sections": [
-          "Pourquoi la gestion financière paraît toujours trop lourde",
-          "Le principe clé : un rituel = une vocation",
-          "Les rituels financiers : une architecture, pas une contrainte",
-          "Pourquoi le rituel en 2 minutes est non seulement possible, mais essentiel",
-          "Ce que change une approche structurée par rituels",
-          "Conclusion : ce n'est pas le temps qui manque, c'est la structure"
+          "Le vrai problème : on essaie de tout faire d'un coup",
+          "Un rituel, une question. Pas plus.",
+          "Les 5 niveaux du système TEMPO",
+          "Alors, 2 minutes : mythe ou réalité ?",
+          "Ce que change une architecture de rituels"
         ]
       },
       "5": {
-        "title": "Comprendre tes finances comme un tableau de bord, pas comme une punition",
-        "tags": ["Mindset", "Psychologie"],
-        "hook": "Si gérer ton argent te met mal à l'aise, ce n'est probablement pas à cause des chiffres. C'est à cause de ce qu'ils représentent émotionnellement.\n\nPour beaucoup, regarder ses finances, c'est :\n• se confronter à des erreurs passées,\n• ressentir de la culpabilité,\n• ou avoir l'impression de se faire \"gronder\".\n\nMais si tu changeais complètement de perspective ? Et si tes finances devenaient un tableau de bord, pas un jugement ?",
+        "title": "Tes finances ne sont pas un bulletin de notes. Arrête de les lire comme tel.",
+        "tags": [
+          "Mindset",
+          "Psychologie",
+          "Pilotage"
+        ],
+        "hook": "Si regarder tes finances te met mal à l'aise, le problème n'est pas les chiffres. C'est la posture avec laquelle tu les regardes. Voici comment changer ça.",
         "sections": [
-          "Pourquoi regarder ses finances est souvent vécu comme une punition",
-          "Un tableau de bord n'est pas là pour juger, mais pour informer",
-          "Pourquoi la visualisation est un levier si puissant",
-          "De la sanction au pilotage : un changement de posture",
-          "Comment Steero t'aide à adopter cette logique de tableau de bord",
-          "Conclusion : regarder tes finances ne devrait jamais faire peur"
+          "Le rétroviseur ne te juge pas. Ton cerveau, si.",
+          "Pourquoi l'évitement financier s'installe",
+          "La posture de pilotage : observer sans juger",
+          "Voir clair, c'est déjà décider mieux",
+          "De l'observation à la décision : le rôle des rituels",
+          "Ce que change une lecture factuelle de ses finances"
         ]
       },
       "6": {
-        "title": "La règle des 50 / 30 / 20 : bonne base ou fausse promesse ?",
-        "tags": ["Budget", "Débutant"],
-        "hook": "Si tu t'intéresses un peu à la gestion de budget, tu as forcément déjà croisé cette règle :\n• 50 % pour les besoins,\n• 30 % pour les envies,\n• 20 % pour l'épargne.\n\nSimple. Claire. Rassurante. Mais une question mérite d'être posée : est-ce une vraie solution… ou juste un point de départ ?",
+        "title": "La règle des 50/30/20 : pourquoi elle rassure mais ne change rien",
+        "tags": [
+          "Budget",
+          "Méthode",
+          "Mindset"
+        ],
+        "hook": "50% pour les besoins. 30% pour les envies. 20% pour l'épargne. Simple, clair, rassurant. Et pratiquement inutile si on s'arrête là.\n\nCe n'est pas que la règle soit fausse. C'est qu'elle répond à la mauvaise question.",
         "sections": [
-          "Pourquoi la règle des 50 / 30 / 20 est si populaire",
-          "Pourquoi la règle peut devenir culpabilisante",
-          "La vraie question à se poser (et que la règle ne pose pas)",
-          "La règle comme repère, pas comme objectif",
-          "Adapter plutôt qu'appliquer : la clé d'un budget durable",
-          "Comment Steero t'aide à dépasser la règle sans la jeter",
-          "Conclusion : une bonne règle ne remplace jamais la compréhension"
+          "Pourquoi cette règle est si populaire et pourquoi c'est un problème",
+          "Le problème réel : la règle te dit où aller, pas comment y arriver",
+          "La règle comme rétroviseur",
+          "Pourquoi la règle devient culpabilisante sans le vouloir",
+          "Ce qu'il faut à la place : un système adaptatif",
+          "Utilise la règle comme point de départ, pas comme destination"
+        ]
+      },
+      "7": {
+        "title": "Pourquoi ton tableau Excel budget ne tient jamais plus de 3 semaines",
+        "tags": [
+          "Méthode",
+          "Rituel",
+          "Budget"
+        ],
+        "hook": "Tu as cherché \"tableau Excel budget gratuit\". Tu en as téléchargé un, peut-être même plusieurs. Tu l'as ouvert, configuré, rempli consciencieusement pendant quelques jours. Et trois semaines plus tard, tu ne l'as plus touché.\n\nCe n'est pas un problème d'Excel. Ce n'est pas un problème de tableau. Et ce n'est surtout pas un problème de discipline.\n\nC'est un problème de système.",
+        "sections": [
+          "Excel n'est pas le coupable",
+          "La mécanique d'abandon en 3 semaines",
+          "Ce qui manque dans tous les tableaux Excel budget",
+          "Le rituel qui fait vivre n'importe quel outil",
+          "Alors pourquoi ne pas rester sur Excel ?",
+          "Le bon diagnostic change tout"
+        ]
+      },
+      "8": {
+        "title": "Économiser 500€ ce mois-ci : ce que personne ne te dit vraiment",
+        "tags": [
+          "Pilotage",
+          "Budget",
+          "Méthode"
+        ],
+        "hook": "Tu veux économiser 500€ ce mois-ci. La plupart des articles vont te répondre avec une liste : supprime Netflix, prépare tes repas, arrête le café à emporter, évite les achats impulsifs.\n\nTu connais déjà cette liste. Elle ne t'a pas aidé. Parce qu'elle répond à la mauvaise question.\n\nLa question n'est pas \"comment dépenser moins ?\" Elle est \"où partent déjà ces 500€ sans que tu le voies ?\"",
+        "sections": [
+          "Les 500€ sont probablement déjà là",
+          "Pourquoi les coupes budgétaires ne fonctionnent pas seules",
+          "Le vrai travail : cartographier avant de couper",
+          "Le niveau M de TEMPO : l'endroit où les 500€ apparaissent",
+          "Ce que tu peux faire dès cette semaine",
+          "500€ d'économies ou 500€ de choix ?"
+        ]
+      },
+      "9": {
+        "title": "La meilleure app pour gérer son argent n'est pas celle que tu crois",
+        "tags": [
+          "Méthode",
+          "Mindset",
+          "Pilotage"
+        ],
+        "hook": "Tu cherches la meilleure app pour gérer ton argent. Tu vas trouver des dizaines de comparatifs comme des top 10, tableaux de features, notes sur l'App Store, avis d'utilisateurs. Ils vont tous répondre à ta question.\n\nAucun ne va remettre en question si c'est la bonne question.",
+        "sections": [
+          "Le marché des apps finance personnelle a un problème structurel",
+          "Ce que les comparatifs ne mesurent jamais",
+          "Le rétroviseur automatique vs le pare-brise conscient",
+          "Ce qu'une app doit vraiment faire pour changer ta situation",
+          "Pourquoi l'automatisation totale ne tient pas sa promesse",
+          "Les critères qui comptent vraiment pour choisir une app",
+          "Le paradoxe de la meilleure app"
+        ]
+      },
+      "10": {
+        "title": "Ta carte bancaire t'a rendu financièrement anesthésié",
+        "tags": [
+          "Psychologie",
+          "Méthode",
+          "Pilotage"
+        ],
+        "hook": "Tu gagnes bien ta vie. Tu n'as pas de comportements irrationnels. Et pourtant, chaque fin de mois, il manque quelque chose. Ce n'est pas un problème de revenus. C'est un problème de perception. Et ta carte bancaire en est directement responsable.",
+        "sections": [
+          "Payer fait, ou ne fait plus mal : ce que la recherche dit vraiment",
+          "Pourquoi la carte découple l'achat de la douleur",
+          "La comptabilité mentale : comment ton cerveau classe et déforme l'argent",
+          "Ce que ça change concrètement dans tes fins de mois",
+          "L'anesthésie de l'argent numérique : ce que les apps automatiques aggravent",
+          "Le rétroviseur ne fait pas mal : c'est son problème",
+          "La saisie manuelle comme acte de conscience : pourquoi c'est un choix de design",
+          "C'est exactement ce que Steero a choisi de ne pas automatiser",
+          "Comment installer ce mécanisme dans ta vie : le rituel T de TEMPO",
+          "Ce que ça change au bout de 3 semaines"
         ]
       }
     }
@@ -703,7 +914,10 @@
         "s5": {
           "title": "5. Fonctionnalités et évolutions",
           "intro": "Les fonctionnalités disponibles dépendent :",
-          "items": ["de la version de l'application,", "de ton abonnement éventuel."],
+          "items": [
+            "de la version de l'application,",
+            "de ton abonnement éventuel."
+          ],
           "evolution": "L'application évolue en continu : nous pouvons ajouter, modifier ou améliorer certaines fonctionnalités pour offrir une meilleure expérience.",
           "outro": "Nous faisons toujours de notre mieux pour que ces évolutions restent cohérentes et bénéfiques."
         },
@@ -738,7 +952,11 @@
         "s9": {
           "title": "9. Disponibilité et sécurité",
           "intro": "Nous mettons tout en œuvre pour :",
-          "items": ["assurer un service fiable,", "protéger tes données,", "maintenir l'application accessible."]
+          "items": [
+            "assurer un service fiable,",
+            "protéger tes données,",
+            "maintenir l'application accessible."
+          ]
         },
         "s10": {
           "title": "10. Responsabilité",
@@ -756,13 +974,22 @@
           "title": "11. Propriété intellectuelle",
           "intro": "Tout ce qui compose l'application (design, code, textes, marque, structure) nous appartient ou est utilisé avec autorisation.",
           "usage": "Tu peux utiliser l'application normalement, mais pas :",
-          "items": ["la copier,", "la revendre,", "la modifier,", "ou l'exploiter sans accord écrit."]
+          "items": [
+            "la copier,",
+            "la revendre,",
+            "la modifier,",
+            "ou l'exploiter sans accord écrit."
+          ]
         },
         "s12": {
           "title": "12. Résiliation",
           "userDelete": "Tu peux supprimer ton compte à tout moment, simplement.",
           "ourSide": "De notre côté, nous pouvons suspendre ou fermer un compte en cas :",
-          "items": ["d'usage abusif,", "de fraude,", "ou de non-respect des présentes conditions."]
+          "items": [
+            "d'usage abusif,",
+            "de fraude,",
+            "ou de non-respect des présentes conditions."
+          ]
         },
         "s13": {
           "title": "13. Loi applicable",
@@ -773,7 +1000,7 @@
           "title": "14. Contact",
           "question": "Une question, un souci, une idée ?",
           "email": "📧 Contacte-nous à :",
-          "tempEmail": ""
+          "tempEmail": " "
         }
       }
     },
@@ -786,11 +1013,11 @@
           "address": "Siège social : 295 rue Lecourbe 75015 Paris",
           "director": "Directeur de la publication : M. Ronald MARTINEZ",
           "email": "Email :",
-          "tbc": ""
+          "tbc": " "
         },
         "s2": {
           "title": "2. Hébergement",
-          "intro": "Le site est hébergé par OVH, dont le siège social est situé 2 rue Kellermann - 59100 Roubaix - France."
+          "intro": "Le site est hébergé par [Nom de l'hébergeur], dont le siège social est situé [Adresse de l'hébergeur]."
         },
         "s3": {
           "title": "3. Propriété intellectuelle",
@@ -833,13 +1060,17 @@
           "company": "Steero",
           "legalForm": "[Forme juridique] – [RCS] / En cours de création",
           "address": "Siège social : 295 rue Lecourbe",
-          "contact": "📧 Contact : steerofinance@gmail.com (Mail temporaire)"
+          "contact": "📧 Contact : contact@steero.fr "
         },
         "s3": {
           "title": "3. Quelles données collectons-nous ?",
           "intro": "Nous collectons uniquement les données nécessaires au fonctionnement de l'application.",
           "voluntary": "🔹 Données que tu fournis volontairement",
-          "voluntaryItems": ["Adresse email", "Mot de passe (chiffré)", "Informations de profil (facultatives)"],
+          "voluntaryItems": [
+            "Adresse email",
+            "Mot de passe (chiffré)",
+            "Informations de profil (facultatives)"
+          ],
           "financial": "Données financières saisies manuellement :",
           "financialItems": [
             "budgets (Objectifs)",
@@ -930,29 +1161,41 @@
           "title": "11. Suppression du compte",
           "intro": "Tu peux supprimer ton compte directement depuis l'application.",
           "result": "Cette action entraîne :",
-          "items": ["la suppression de tes données personnelles,", "sauf obligations légales de conservation."]
+          "items": [
+            "la suppression de tes données personnelles,",
+            "sauf obligations légales de conservation."
+          ]
         },
         "s12": {
           "title": "12. Cookies et traceurs",
           "intro": "L'application peut utiliser :",
-          "items": ["des cookies strictement nécessaires,", "des outils de mesure anonymisés."],
+          "items": [
+            "des cookies strictement nécessaires,",
+            "des outils de mesure anonymisés."
+          ],
           "outro": "Aucun cookie publicitaire sans consentement explicite."
         },
         "s13": {
           "title": "13. Modifications de la politique",
           "intro": "Cette politique peut évoluer pour :",
-          "items": ["rester conforme à la loi,", "refléter l'évolution du produit."],
+          "items": [
+            "rester conforme à la loi,",
+            "refléter l'évolution du produit."
+          ],
           "outro": "En cas de changement majeur, tu seras informé."
         },
         "s14": {
           "title": "14. Réclamation",
           "intro": "Si tu estimes que tes droits ne sont pas respectés, tu peux :",
-          "items": ["nous contacter directement,", "ou saisir l'autorité de contrôle compétente (ex : CNIL en France)."]
+          "items": [
+            "nous contacter directement,",
+            "ou saisir l'autorité de contrôle compétente (ex : CNIL en France)."
+          ]
         },
         "s15": {
           "title": "15. Contact",
           "question": "Une question sur tes données ?",
-          "tempEmail": ""
+          "tempEmail": " "
         }
       }
     }
@@ -993,10 +1236,10 @@
     "impactName": "Plan Impact",
     "impactLimited": "Chaque année, un nombre limité de places est réservé à des utilisateurs déterminés qui souhaitent reprendre le contrôle de leurs finances mais dont les ressources sont limitées.",
     "impactEligibility": "Si vous êtes étudiant, en début de carrière ou dans une situation financière temporairement difficile, vous pouvez faire une demande de",
-    "impactDiscount": "remise de 50\u00a0%",
+    "impactDiscount": "remise de 50 %",
     "impactDuration": "pour la durée d'une année renouvelable.",
     "impactReview": "Les candidatures sont étudiées individuellement.",
-    "impactGoal": "Notre objectif est simple\u00a0: permettre à ceux qui sont prêts à faire l'effort de progresser d'avoir accès aux bons outils.",
+    "impactGoal": "Notre objectif est simple : permettre à ceux qui sont prêts à faire l'effort de progresser d'avoir accès aux bons outils.",
     "impactCta": "Candidater"
   }
 }

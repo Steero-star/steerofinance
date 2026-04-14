@@ -23,9 +23,9 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="container mx-auto px-2 py-1 flex items-center justify-between">
+      <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <img src={steeroLogo} alt="Steero" className="h-20 w-auto object-contain" />
+          <img src={steeroLogo} alt="Steero" className="h-16 w-auto object-contain" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">
@@ -35,17 +35,15 @@ const Header = () => {
           <Link to="/pourquoi-steero" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.whySteero')}
           </Link>
-          <Link to="/fonctionnalites" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-            {t('header.features')}
-          </Link>
-          <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-            {t('header.pricing')}
+          <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            Blog
           </Link>
         </nav>
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          <Button className="btn-primary text-xs sm:text-sm hidden sm:inline-flex" onClick={openWaitlist}>{t('common.joinWaitlist')}</Button>
+          <Button variant="outline" className="text-xs sm:text-sm hidden sm:inline-flex rounded-full border-primary text-primary hover:bg-primary/10 px-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft" onClick={() => {}}>Connexion</Button>
+          <Button className="btn-primary text-xs sm:text-sm hidden sm:inline-flex rounded-full px-6" onClick={openWaitlist}>{t('common.joinWaitlist')}</Button>
           
           {/* Hamburger button */}
           <button
@@ -90,19 +88,19 @@ const Header = () => {
                 {t('header.whySteero')}
               </Link>
               <Link 
-                to="/fonctionnalites" 
+                to="/blog" 
                 className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('header.features')}
+                Blog
               </Link>
-              <Link 
-                to="/pricing" 
-                className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+              <Button 
+                variant="outline"
+                className="text-xs w-full mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                {t('header.pricing')}
-              </Link>
+                Connexion
+              </Button>
               <Button 
                 className="btn-primary text-xs w-full mt-2"
                 onClick={() => {

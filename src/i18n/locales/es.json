@@ -51,38 +51,91 @@
     "cgs": "Términos de uso",
     "privacy": "Privacidad",
     "contact": "Contacto",
+    "freeResources": "Recursos gratuitos",
     "closingPhrase": "Construye tu tranquilidad financiera, un ritual a la vez.",
     "copyright": "© 2026 Steero. Todos los derechos reservados."
   },
+  "freeResources": {
+    "badge": "📥 Recurso gratuito",
+    "title": "Plantilla de presupuesto mensual gratuita",
+    "description": "Una hoja de cálculo simple y lista para usar para sentar las bases de tu gestión financiera. Ingresos, gastos, ahorro — de un vistazo.",
+    "download": "Descargar",
+    "learnMore": "Saber más en el blog →"
+  },
   "hero": {
-    "badge": "La aplicación que te reconecta con tus gastos",
-    "title": "(Re)Toma el control de tus finanzas con",
-    "titleHighlight": "simplicidad",
-    "description": "Un tablero simple para seguir tus presupuestos, gastos y anclar hábitos que importan. Descubre el primer Sistema Operativo personal que conecta finanzas y hábitos para cambiar de forma duradera.",
-    "features": {
-      "time": "Simplicidad",
-      "timeDesc": "Un ritual de seguimiento en menos de 2 minutos por día",
-      "clarity": "Claridad",
-      "clarityDesc": "Sabes exactamente por qué gastas y hacia dónde vas",
-      "security": "Serenidad",
-      "securityDesc": "Sin más sorpresas a fin de mes"
+    "badge": "Sistema de pilotaje financiero personal",
+    "title": "Construir un sistema",
+    "titleHighlight": "No solo seguir tus gastos",
+    "description": "La mayoría de la gente no gestiona mal su dinero. Simplemente no tiene un sistema para pilotarlo. Steero te da uno — con rituales claros, de lo operativo a lo estratégico."
+  },
+  "realProblem": {
+    "label": "EL VERDADERO PROBLEMA",
+    "title": "No gastas demasiado. Pilotas muy poco.",
+    "description": "La deriva financiera no se construye en un día. Se instala durante tres semanas sin mirar, y se descubre a fin de mes — cuando ya es demasiado tarde para corregir. No es falta de disciplina. Es la ausencia de un sistema de pilotaje regular.",
+    "card1": "Miras tus cuentas una vez al mes, cuando el daño ya está hecho.",
+    "card2": "Tienes la intención de \"gestionar mejor\" pero no tienes un momento ni una estructura dedicada.",
+    "card3": "Subestimas tus gastos reales en un 20 a 30% — la memoria financiera es selectiva."
+  },
+  "tempo": {
+    "label": "EL SISTEMA TEMPO",
+    "title": "5 rituales. Del diario al anual.",
+    "description": "Un piloto no mira sus instrumentos una vez al mes. Steero está estructurado en torno a 5 rituales a diferentes frecuencias — de lo operativo a lo estratégico.",
+    "rituals": {
+      "t": {
+        "letter": "T",
+        "name": "Trazar",
+        "desc": "Registrar tus operaciones, mantener el vínculo, evitar la deriva invisible.",
+        "freq": "Diario",
+        "time": "5 min"
+      },
+      "e": {
+        "letter": "E",
+        "name": "Examinar",
+        "desc": "Comparar lo previsto vs lo real. Corregir la trayectoria antes de que sea tarde.",
+        "freq": "Semanal",
+        "time": "10 min"
+      },
+      "m": {
+        "letter": "M",
+        "name": "Dominar",
+        "desc": "Decidir conscientemente a dónde va tu dinero. Retomar el control de tus decisiones.",
+        "freq": "Mensual",
+        "time": "15 min"
+      },
+      "p": {
+        "letter": "P",
+        "name": "Posicionar",
+        "desc": "Alinear finanzas y objetivos de vida. Salir de lo transaccional.",
+        "freq": "Trimestral",
+        "time": "30 min"
+      },
+      "o": {
+        "letter": "O",
+        "name": "Orientar",
+        "desc": "Balance global, grandes orientaciones, arbitrajes estratégicos. Elegir el futuro.",
+        "freq": "Anual",
+        "time": "60 min"
+      }
     }
   },
-  "howItWorks": {
-    "title": "¿Cómo funciona?",
-    "description": "Un proceso simple en 3 pasos para retomar el control de tus finanzas",
-    "step1": {
-      "title": "Observa tus hábitos",
-      "description": "Comprende a dónde va tu dinero sin juzgarte. Steero te ayuda a visualizar, con cada registro, lo que ya has gastado y lo que te queda en tu presupuesto"
+  "whySteeroSection": {
+    "label": "POR QUÉ STEERO",
+    "title": "Lo que realmente nos diferencia.",
+    "description": "No la agregación automática. No los gráficos circulares. La conciencia y la regularidad.",
+    "card1": {
+      "title": "El registro es intencional",
+      "desc": "Registrar un gasto ya es tomar conciencia. Las plantillas prellenadas reducen la fricción a unos segundos — sin eliminar el gesto."
     },
-    "step2": {
-      "title": "Ritualiza tu seguimiento",
-      "description": "Con rituales financieros regulares diseñados para acompañarte, toma un momento una vez por semana, mes o trimestre para comprender, ajustar y planificar."
+    "card2": {
+      "title": "Un ritual, no un panel",
+      "desc": "Steero está construido alrededor de frecuencias, no de funcionalidades. El sistema TEMPO te da un marco de pilotaje — como un manager pilota su equipo."
     },
-    "step3": {
-      "title": "Avanza hacia tus objetivos",
-      "description": "Cada pequeña decisión se acumula para construir el futuro con serenidad y alineado con tus objetivos: Construir un patrimonio, crear tu empresa o viajar."
-    }
+    "card3": {
+      "title": "De lo operativo a lo estratégico",
+      "desc": "5 minutos al día para no dejar nada a la deriva. 60 minutos al año para decidir la dirección. Los dos niveles en la misma herramienta."
+    },
+    "quote": "\"Quiero una visión clara, en tiempo real, de mi situación.\"",
+    "quoteCaption": "Lo que dicen nuestros usuarios. Lo que Steero construye."
   },
   "features": {
     "title": "Sin automatización que te convierta en un simple espectador",
@@ -105,25 +158,61 @@
     "description": "Con Steero, te conviertes en el piloto: comprendes, ajustas y ritualizas tu trayectoria financiera para alcanzar el destino que has elegido.",
     "budget": {
       "title": "Presupuestar",
-      "ba1": { "before": "Te preguntas a dónde fue tu dinero", "after": "Sabes exactamente a dónde va — y por qué" },
-      "ba2": { "before": "Sufres tus gastos", "after": "Los anticipas y los diriges" },
-      "ba3": { "before": "Tu dinero desaparece sin estructura", "after": "Cada euro sirve una intención clara" },
-      "ba4": { "before": "Avanzas a ciegas", "after": "Sabes a dónde vas, cada mes" }
+      "ba1": {
+        "before": "Te preguntas a dónde fue tu dinero",
+        "after": "Sabes exactamente a dónde va — y por qué"
+      },
+      "ba2": {
+        "before": "Sufres tus gastos",
+        "after": "Los anticipas y los diriges"
+      },
+      "ba3": {
+        "before": "Tu dinero desaparece sin estructura",
+        "after": "Cada euro sirve una intención clara"
+      },
+      "ba4": {
+        "before": "Avanzas a ciegas",
+        "after": "Sabes a dónde vas, cada mes"
+      }
     },
     "capture": {
       "title": "Registrar",
-      "ba1": { "before": "Gastas sin realmente darte cuenta", "after": "Cada gasto se convierte en una decisión consciente" },
-      "ba2": { "before": "Pierdes el control poco a poco", "after": "Lo recuperas, operación tras operación" },
-      "ba3": { "before": "Tus hábitos te controlan", "after": "Tú controlas tus hábitos" },
-      "ba4": { "before": "Olvidas, pospones, evitas", "after": "Afrontas, simplemente, sin fricción" },
+      "ba1": {
+        "before": "Gastas sin realmente darte cuenta",
+        "after": "Cada gasto se convierte en una decisión consciente"
+      },
+      "ba2": {
+        "before": "Pierdes el control poco a poco",
+        "after": "Lo recuperas, operación tras operación"
+      },
+      "ba3": {
+        "before": "Tus hábitos te controlan",
+        "after": "Tú controlas tus hábitos"
+      },
+      "ba4": {
+        "before": "Olvidas, pospones, evitas",
+        "after": "Afrontas, simplemente, sin fricción"
+      },
       "link": "Los fundamentos conductuales de Steero"
     },
     "ritualize": {
       "title": "Ritualizar",
-      "ba1": { "before": "Miras tus cuentas cuando ya es tarde", "after": "Ajustas antes de que se descontrole" },
-      "ba2": { "before": "Funcionas a golpes", "after": "Avanzas con regularidad" },
-      "ba3": { "before": "Sufres tu falta de disciplina", "after": "Instalas un dominio natural" },
-      "ba4": { "before": "Reaccionas", "after": "Anticipas" },
+      "ba1": {
+        "before": "Miras tus cuentas cuando ya es tarde",
+        "after": "Ajustas antes de que se descontrole"
+      },
+      "ba2": {
+        "before": "Funcionas a golpes",
+        "after": "Avanzas con regularidad"
+      },
+      "ba3": {
+        "before": "Sufres tu falta de disciplina",
+        "after": "Instalas un dominio natural"
+      },
+      "ba4": {
+        "before": "Reaccionas",
+        "after": "Anticipas"
+      },
       "link": "Los fundamentos conductuales de Steero"
     }
   },
@@ -148,8 +237,8 @@
     }
   },
   "cta": {
-    "title": "¿Listo para transformar tu relación con el dinero?",
-    "description": "Únete a Steero y empieza 2026 en las mejores condiciones",
+    "title": "Instala tu sistema TEMPO y transforma tu relación con el dinero.",
+    "description": "Únete a Steero y toma el control de tus finanzas con un método estructurado.",
     "launchDate": "Lanzamiento previsto el 17 de abril de 2026",
     "days": "Días",
     "hours": "Horas",
@@ -560,6 +649,27 @@
     "min": "min",
     "keyIdea": "A recordar",
     "myth": "Idea preconcebida",
+    "featured": {
+      "badge": "📥 Recurso gratuito",
+      "title": "Tu primer paso hacia la claridad financiera",
+      "subtitle": "Una plantilla de presupuesto mensual simple, gratuita y lista para usar para sentar las bases de tu gestión financiera.",
+      "description": "Antes de usar una herramienta como Steero, necesitas empezar por ver claro. Esta plantilla Excel te permite sentar las bases: tus ingresos, gastos fijos y variables, ahorro — y ver inmediatamente tu saldo disponible.",
+      "whyTitle": "¿Por qué esta plantilla?",
+      "why1": "Porque el 80% de las personas no saben exactamente a dónde va su dinero cada mes.",
+      "why2": "Porque una simple hoja de cálculo ya puede cambiar tu percepción de tus finanzas.",
+      "why3": "Porque la claridad es el primer paso hacia el control.",
+      "containsTitle": "Qué contiene la plantilla",
+      "contains1": "Seguimiento de ingresos (previsto vs real)",
+      "contains2": "Gastos fijos y variables con desviaciones automáticas",
+      "contains3": "Sección de ahorro dedicada",
+      "contains4": "Resumen mensual con saldo disponible",
+      "limitTitle": "Limitaciones intencionadas",
+      "limit1": "Sin seguimiento de hábitos, sin rituales, sin tablero dinámico.",
+      "limit2": "Esta plantilla es un punto de partida. Para ir más lejos, Steero transforma esta base en un verdadero sistema de pilotaje.",
+      "downloadBtn": "Descargar la plantilla gratuita",
+      "downloadFormat": "Formato .xlsx — Compatible con Excel, Google Sheets, LibreOffice",
+      "goFurther": "¿Quieres ir más lejos?"
+    },
     "tags": {
       "beginner": "Principiante",
       "skills": "Competencias",
@@ -572,81 +682,178 @@
     },
     "articles": {
       "1": {
-        "title": "Entender tus finanzas personales: por qué es una competencia esencial hoy",
-        "tags": ["Principiante", "Competencias"],
-        "hook": "La gestión de las finanzas personales rara vez se enseña en la escuela. Sin embargo, entender tu dinero es hoy una competencia esencial, al igual que saber organizar tu tiempo o desarrollar tus competencias profesionales.\n\nMuchas personas ganan correctamente su vida, pero les cuesta:\n• entender a dónde va su dinero,\n• tomar decisiones financieras serenas,\n• o alcanzar sus objetivos financieros.\n\n¿La buena noticia? Las finanzas personales se aprenden.",
+        "title": "Gastas demasiado cada mes: aquí está el porqué (y cómo pararlo)",
+        "tags": [
+          "Pilotaje",
+          "Método",
+          "Ritual"
+        ],
+        "hook": "Terminas el mes en rojo o justo en equilibrio sin poder explicar exactamente por qué. No hiciste ninguna locura ni te volaste un presupuesto de fin de semana extravagante y sin embargo, los números no cuadran. No es un problema de disciplina. Es un problema de frecuencia de observación.",
         "sections": [
-          "Por qué la gestión de finanzas personales no es innata",
-          "Entender tu dinero para retomar el control financiero",
-          "Las finanzas personales son una competencia que se desarrolla con el tiempo",
-          "Conclusión: aprender a gestionar tu dinero cambia duraderamente la relación con el dinero"
+          "No es que gastes demasiado. Es que miras con poca frecuencia.",
+          "Las 4 fugas invisibles que hunden un presupuesto profesional",
+          "Por qué las buenas resoluciones no funcionan",
+          "La verdadera solución: un sistema de pilotaje de 5 niveles",
+          "Por dónde empezar cuando se parte de cero",
+          "Lo que vas a cambiar esta semana"
         ]
       },
       "2": {
-        "title": "El desarrollo de competencias financieras: pasar de la confusión al pilotaje de tu dinero",
-        "tags": ["Pilotaje", "Competencias"],
-        "hook": "Muchas personas tienen la impresión de \"gestionar mal\" su dinero. En realidad, la mayoría no gestiona mal: no pilota.\n\nMiran a veces su saldo, pagan sus facturas, ahorran cuando queda algo… pero sin visión global ni método claro.\n\n¿La buena noticia?\nLa gestión financiera no es binaria. Se construye por etapas, como un verdadero desarrollo de competencias.",
+        "title": "Desarrollo de competencias financieras: de la confusión al pilotaje",
+        "tags": [
+          "Pilotaje",
+          "Competencias",
+          "Método"
+        ],
+        "hook": "Gestionar mal tu dinero o no pilotarlo — no es lo mismo. Aquí te mostramos cómo pasar concretamente de uno a otro, paso a paso.",
         "sections": [
-          "De la gestión sufrida al pilotaje financiero",
-          "Etapa 1: Observar tus finanzas sin juzgar",
-          "Etapa 2: Estructurar para dar sentido a los números",
-          "Etapa 3: Comprender las desviaciones para decidir mejor",
-          "Etapa 4: Decidir en función de tus objetivos",
-          "Por qué el desarrollo de competencias financieras a menudo fracasa",
-          "Cómo Steero acompaña el desarrollo de competencias financieras",
-          "Conclusión: pilotar tus finanzas es una competencia accesible"
+          "Sufrir o pilotar: la única distinción que importa",
+          "Etapa 1: Observar sin juzgar (nivel Trazar)",
+          "Etapa 2: Estructurar para transformar cifras en información (nivel Examinar)",
+          "Etapa 3: Comprender las desviaciones para retomar el control (nivel Dominar)",
+          "Etapa 4: Alinear finanzas y objetivos (niveles Posicionar y Orientar)",
+          "Por qué el desarrollo de competencias fracasa antes de empezar",
+          "El pilotaje se aprende. Como cualquier competencia."
         ]
       },
       "3": {
         "title": "Por qué sin ritual, ninguna herramienta financiera funciona",
-        "tags": ["Ritual", "Mindset"],
-        "hook": "Descargar una aplicación de gestión financiera es fácil. Consultarla regularmente… mucho menos.\n\nNo es falta de motivación. Tampoco es un problema de inteligencia financiera. El verdadero punto de ruptura es la ausencia de ritual.\n\nSin ritual, incluso la mejor herramienta termina olvidada. Con un ritual simple, la gestión financiera se vuelve finalmente duradera.",
+        "tags": [
+          "Ritual",
+          "Mindset",
+          "Método"
+        ],
+        "hook": "Finary, Bankin, Excel — lo has intentado. Y lo abandonaste. El problema no es la herramienta. Es la falta de un ritual para darle vida. Aquí te explicamos por qué — y cómo cambiarlo.",
         "sections": [
-          "El verdadero problema de las herramientas financieras modernas",
-          "Ritual financiero: ¿de qué hablamos realmente?",
-          "El ritual como pilar del desarrollo de competencias financieras",
-          "Cómo Steero fue pensado alrededor del ritual, no de la herramienta",
-          "Conclusión: sin ritual, no hay control financiero"
+          "La mayoría de las apps de finanzas personales son retrovisores",
+          "Un ritual no es un balance mensual",
+          "Por qué los rituales financieros fracasan antes de empezar",
+          "El sistema TEMPO: cinco rituales, cinco frecuencias, un solo rumbo",
+          "Lo que cambia concretamente",
+          "La única herramienta que funciona es la que usas regularmente"
         ]
       },
       "4": {
-        "title": "El ritual financiero en 2 minutos: ¿mito o realidad?",
-        "tags": ["Ritual", "Método"],
-        "hook": "Cuando se habla de gestión financiera, muchos todavía imaginan:\n• hojas de cálculo complejas,\n• horas de análisis,\n• una disciplina difícil de mantener.\n\nEntonces la idea de un ritual financiero en 2 minutos parece irreal. No porque 2 minutos no sean suficientes… sino porque la gestión financiera a menudo se piensa como un bloque único, en lugar de un conjunto de rituales complementarios.",
+        "title": "5 minutos al día para nunca más sufrir el fin de mes",
+        "tags": [
+          "Ritual",
+          "Método",
+          "Mindset"
+        ],
+        "hook": "Un ritual financiero de 2 minutos es un mito. 5 minutos al día con la estructura adecuada es lo que cambia de forma duradera tu relación con el dinero. Aquí te explicamos por qué.",
         "sections": [
-          "Por qué la gestión financiera siempre parece demasiado pesada",
-          "El principio clave: un ritual = una vocación",
-          "Los rituales financieros: una arquitectura, no una restricción",
-          "Por qué el ritual en 2 minutos es no solo posible, sino esencial",
-          "Lo que cambia un enfoque estructurado por rituales",
-          "Conclusión: no es el tiempo lo que falta, es la estructura"
+          "El verdadero problema: intentar hacerlo todo de golpe",
+          "Un ritual, una pregunta. Nada más.",
+          "Los 5 niveles del sistema TEMPO",
+          "Entonces, ¿2 minutos: mito o realidad?",
+          "Lo que cambia una arquitectura de rituales"
         ]
       },
       "5": {
-        "title": "Entender tus finanzas como un tablero de control, no como un castigo",
-        "tags": ["Mindset", "Psicología"],
-        "hook": "Si gestionar tu dinero te incomoda, probablemente no sea por los números. Es por lo que representan emocionalmente.\n\nPara muchos, mirar sus finanzas es:\n• confrontarse con errores pasados,\n• sentir culpa,\n• o tener la impresión de ser \"regañado\".\n\n¿Pero si cambiaras completamente de perspectiva? ¿Y si tus finanzas se convirtieran en un tablero de control, no en un juicio?",
+        "title": "Tus finanzas no son un boletín de notas. Deja de leerlas como tal.",
+        "tags": [
+          "Mindset",
+          "Psicología",
+          "Pilotaje"
+        ],
+        "hook": "Si mirar tus finanzas te incomoda, el problema no son los números. Es la postura con la que los miras. Aquí te explicamos cómo cambiarlo.",
         "sections": [
-          "Por qué mirar tus finanzas a menudo se vive como un castigo",
-          "Un tablero de control no está para juzgar, sino para informar",
-          "Por qué la visualización es una palanca tan poderosa",
-          "De la sanción al pilotaje: un cambio de postura",
-          "Cómo Steero te ayuda a adoptar esta lógica de tablero de control",
-          "Conclusión: mirar tus finanzas nunca debería dar miedo"
+          "El retrovisor no te juzga. Tu cerebro, sí.",
+          "Por qué se instala la evitación financiera",
+          "La postura de pilotaje: observar sin juzgar",
+          "Ver claro ya es decidir mejor",
+          "De la observación a la decisión: el papel de los rituales",
+          "Lo que cambia una lectura factual de tus finanzas"
         ]
       },
       "6": {
-        "title": "La regla del 50 / 30 / 20: ¿buena base o falsa promesa?",
-        "tags": ["Presupuesto", "Principiante"],
-        "hook": "Si te interesas un poco en la gestión de presupuesto, seguramente ya has cruzado esta regla:\n• 50% para necesidades,\n• 30% para deseos,\n• 20% para ahorro.\n\nSimple. Clara. Tranquilizadora. Pero una pregunta merece ser planteada: ¿es una verdadera solución… o solo un punto de partida?",
+        "title": "La regla del 50/30/20: por qué tranquiliza pero no cambia nada",
+        "tags": [
+          "Presupuesto",
+          "Método",
+          "Mindset"
+        ],
+        "hook": "50% para necesidades. 30% para deseos. 20% para ahorro. Simple, claro, tranquilizador. Y prácticamente inútil si te quedas ahí.\n\nNo es que la regla sea falsa. Es que responde a la pregunta equivocada.",
         "sections": [
-          "Por qué la regla del 50 / 30 / 20 es tan popular",
-          "Por qué la regla puede volverse culpabilizante",
-          "La verdadera pregunta a hacerse (y que la regla no hace)",
-          "La regla como referencia, no como objetivo",
-          "Adaptar en lugar de aplicar: la clave de un presupuesto duradero",
-          "Cómo Steero te ayuda a superar la regla sin descartarla",
-          "Conclusión: una buena regla nunca reemplaza la comprensión"
+          "Por qué esta regla es tan popular y por qué es un problema",
+          "El problema real: la regla te dice adónde ir, no cómo llegar",
+          "La regla como espejo retrovisor",
+          "Por qué la regla se vuelve culpabilizante sin quererlo",
+          "Lo que necesitas en su lugar: un sistema adaptativo",
+          "Usa la regla como punto de partida, no como destino"
+        ]
+      },
+      "7": {
+        "title": "Por qué tu hoja de cálculo Excel de presupuesto nunca dura más de 3 semanas",
+        "tags": [
+          "Método",
+          "Ritual",
+          "Presupuesto"
+        ],
+        "hook": "Buscaste \"hoja de cálculo Excel presupuesto gratis\". Descargaste una, quizás varias. La abriste, la configuraste, la llenaste con dedicación durante unos días. Y tres semanas después, no la volviste a tocar.\n\nNo es un problema de Excel. No es un problema de hoja de cálculo. Y definitivamente no es un problema de disciplina.\n\nEs un problema de sistema.",
+        "sections": [
+          "Excel no es el culpable",
+          "La mecánica de abandono en 3 semanas",
+          "Lo que falta en todas las hojas Excel de presupuesto",
+          "El ritual que mantiene viva cualquier herramienta",
+          "Entonces, ¿por qué no quedarse con Excel?",
+          "El diagnóstico correcto lo cambia todo"
+        ]
+      },
+      "8": {
+        "title": "Ahorrar 500€ este mes: lo que nadie te dice realmente",
+        "tags": [
+          "Gestión",
+          "Presupuesto",
+          "Método"
+        ],
+        "hook": "Quieres ahorrar 500€ este mes. La mayoría de los artículos te responderán con una lista: cancela Netflix, cocina en casa, deja el café para llevar, evita las compras impulsivas.\n\nYa conoces esa lista. No te ha ayudado. Porque responde a la pregunta equivocada.\n\nLa pregunta no es \"¿cómo gastar menos?\" Es \"¿a dónde van ya esos 500€ sin que lo veas?\"",
+        "sections": [
+          "Los 500€ probablemente ya están ahí",
+          "Por qué los recortes presupuestarios solos no funcionan",
+          "El verdadero trabajo: cartografiar antes de recortar",
+          "El nivel M de TEMPO: donde aparecen los 500€",
+          "Lo que puedes hacer esta semana",
+          "¿500€ de ahorro o 500€ de decisiones?"
+        ]
+      },
+      "9": {
+        "title": "La mejor app para gestionar tu dinero no es la que crees",
+        "tags": [
+          "Método",
+          "Mindset",
+          "Gestión"
+        ],
+        "hook": "Buscas la mejor app para gestionar tu dinero. Encontrarás decenas de comparativas — top 10, tablas de funcionalidades, valoraciones en la App Store, opiniones de usuarios. Todas responderán a tu pregunta.\n\nNinguna cuestionará si es la pregunta correcta.",
+        "sections": [
+          "El mercado de apps de finanzas personales tiene un problema estructural",
+          "Lo que las comparativas nunca miden",
+          "El retrovisor automático vs el parabrisas consciente",
+          "Lo que una app debe hacer realmente para cambiar tu situación",
+          "Por qué la automatización total no cumple su promesa",
+          "Los criterios que realmente importan al elegir una app",
+          "La paradoja de la mejor app"
+        ]
+      },
+      "10": {
+        "title": "Tu tarjeta bancaria te ha anestesiado financieramente",
+        "tags": [
+          "Psicología",
+          "Método",
+          "Gestión"
+        ],
+        "hook": "Ganas bien. No tienes comportamientos irracionales. Y sin embargo, cada fin de mes falta algo. No es un problema de ingresos. Es un problema de percepción. Y tu tarjeta bancaria es directamente responsable.",
+        "sections": [
+          "Pagar duele, o ya no: lo que dice realmente la investigación",
+          "Por qué la tarjeta desacopla la compra del dolor",
+          "Contabilidad mental: cómo tu cerebro clasifica y distorsiona el dinero",
+          "Lo que cambia concretamente en tus finales de mes",
+          "La anestesia del dinero digital: lo que las apps automáticas agravan",
+          "El retrovisor no duele: ese es el problema",
+          "El registro manual como acto de consciencia: por qué es una decisión de diseño",
+          "Esto es exactamente lo que Steero eligió no automatizar",
+          "Cómo instalar este mecanismo en tu vida: el ritual T de TEMPO",
+          "Lo que cambia después de 3 semanas"
         ]
       }
     }
@@ -660,33 +867,58 @@
         "s1": {
           "title": "1. ¿Por qué estas condiciones?",
           "intro": "Estas Condiciones Generales de Servicios (las \"CGS\") explican simplemente:",
-          "items": ["lo que hace la aplicación,", "lo que puedes esperar de ella,", "lo que hacemos (y no hacemos),", "y cómo cada uno está protegido."],
+          "items": [
+            "lo que hace la aplicación,",
+            "lo que puedes esperar de ella,",
+            "lo que hacemos (y no hacemos),",
+            "y cómo cada uno está protegido."
+          ],
           "outro": "Al crear una cuenta o usar la aplicación, aceptas estas condiciones."
         },
         "s2": {
           "title": "2. Lo que es la aplicación",
           "intro": "La aplicación es una herramienta personal de gestión financiera y seguimiento de hábitos, diseñada para ayudarte a:",
-          "items": ["entender mejor tus finanzas,", "seguir tus gastos, ingresos y presupuestos,", "fijar objetivos claros,", "adoptar mejores comportamientos financieros a largo plazo."],
-          "notes": ["👉 No es un banco,", "👉 no es un asesor financiero,", "👉 y no es una herramienta de trading o inversión automatizada."],
+          "items": [
+            "entender mejor tus finanzas,",
+            "seguir tus gastos, ingresos y presupuestos,",
+            "fijar objetivos claros,",
+            "adoptar mejores comportamientos financieros a largo plazo."
+          ],
+          "notes": [
+            "👉 No es un banco,",
+            "👉 no es un asesor financiero,",
+            "👉 y no es una herramienta de trading o inversión automatizada."
+          ],
           "outro": "Es un tablero de control inteligente para ayudarte a tomar mejores decisiones."
         },
         "s3": {
           "title": "3. ¿A quién se dirige la aplicación?",
           "intro": "La aplicación está destinada a cualquier persona mayor de edad que desee organizar sus finanzas personales.",
           "confirm": "Al usar la aplicación, confirmas que:",
-          "items": ["eres legalmente capaz de contratar,", "usas la herramienta para uso personal (no profesional o ilegal)."]
+          "items": [
+            "eres legalmente capaz de contratar,",
+            "usas la herramienta para uso personal (no profesional o ilegal)."
+          ]
         },
         "s4": {
           "title": "4. Creación y gestión de la cuenta",
           "intro": "Para usar la aplicación, debes crear una cuenta.",
           "responsible": "Eres responsable:",
-          "items": ["de la exactitud de la información proporcionada,", "de la confidencialidad de tus credenciales,", "de todo uso de tu cuenta."],
+          "items": [
+            "de la exactitud de la información proporcionada,",
+            "de la confidencialidad de tus credenciales,",
+            "de todo uso de tu cuenta."
+          ],
           "reminder": "📌 Recordatorio: tu contraseña está cifrada. Nunca te pediremos que la comuniques."
         },
         "s5": {
           "title": "5. Evolución de la aplicación",
           "intro": "La aplicación está en desarrollo continuo. Esto significa:",
-          "items": ["que las funcionalidades pueden cambiar,", "que algunas pueden desaparecer o transformarse,", "que otras pueden añadirse."],
+          "items": [
+            "que las funcionalidades pueden cambiar,",
+            "que algunas pueden desaparecer o transformarse,",
+            "que otras pueden añadirse."
+          ],
           "outro": "Siempre hacemos todo lo posible para que estas evoluciones sigan siendo coherentes y beneficiosas."
         },
         "s6": {
@@ -708,7 +940,11 @@
           "title": "8. Tus datos",
           "ownership": "Tus datos te pertenecen.",
           "intro": "Nosotros:",
-          "items": ["los almacenamos de manera segura,", "los usamos únicamente para hacer funcionar la aplicación,", "nunca los revendemos."],
+          "items": [
+            "los almacenamos de manera segura,",
+            "los usamos únicamente para hacer funcionar la aplicación,",
+            "nunca los revendemos."
+          ],
           "details": "Los detalles sobre la gestión de datos personales están disponibles en nuestra",
           "privacyLink": "Política de privacidad",
           "gdpr": "(conforme al RGPD)."
@@ -716,26 +952,44 @@
         "s9": {
           "title": "9. Disponibilidad y seguridad",
           "intro": "Hacemos todo lo posible para:",
-          "items": ["asegurar un servicio fiable,", "proteger tus datos,", "mantener la aplicación accesible."]
+          "items": [
+            "asegurar un servicio fiable,",
+            "proteger tus datos,",
+            "mantener la aplicación accesible."
+          ]
         },
         "s10": {
           "title": "10. Responsabilidad",
           "intro": "La aplicación es una herramienta de ayuda, no una promesa de resultado.",
           "noLiability": "No podemos ser responsables:",
-          "items": ["de errores de entrada,", "de malas interpretaciones,", "de pérdidas financieras,", "de decisiones tomadas sobre la base de los datos mostrados."],
+          "items": [
+            "de errores de entrada,",
+            "de malas interpretaciones,",
+            "de pérdidas financieras,",
+            "de decisiones tomadas sobre la base de los datos mostrados."
+          ],
           "outro": "Tú mantienes el control. Siempre."
         },
         "s11": {
           "title": "11. Propiedad intelectual",
           "intro": "Todo lo que compone la aplicación (diseño, código, textos, marca, estructura) nos pertenece o se usa con autorización.",
           "usage": "Puedes usar la aplicación normalmente, pero no:",
-          "items": ["copiarla,", "revenderla,", "modificarla,", "o explotarla sin acuerdo escrito."]
+          "items": [
+            "copiarla,",
+            "revenderla,",
+            "modificarla,",
+            "o explotarla sin acuerdo escrito."
+          ]
         },
         "s12": {
           "title": "12. Terminación",
           "userDelete": "Puedes eliminar tu cuenta en cualquier momento, simplemente.",
           "ourSide": "Por nuestra parte, podemos suspender o cerrar una cuenta en caso de:",
-          "items": ["uso abusivo,", "fraude,", "o incumplimiento de las presentes condiciones."]
+          "items": [
+            "uso abusivo,",
+            "fraude,",
+            "o incumplimiento de las presentes condiciones."
+          ]
         },
         "s13": {
           "title": "13. Ley aplicable",
@@ -746,7 +1000,7 @@
           "title": "14. Contacto",
           "question": "¿Una pregunta, un problema, una idea?",
           "email": "📧 Contáctanos en:",
-          "tempEmail": ""
+          "tempEmail": "(Email temporal)"
         }
       }
     },
@@ -755,15 +1009,15 @@
       "sections": {
         "s1": {
           "title": "1. Editor del sitio",
-          "intro": "El sitio Steero es editado por la sociedad Steero SAS, sociedad por acciones simplificada con un capital de 1.000 euros, inscrita en el Registro de Comercio y Sociedades de París bajo el número XXX XXX XXX.",
+          "intro": "El sitio Steero es editado por la sociedad Steero SAS, sociedad por acciones simplificada con un capital de 10.000 euros, inscrita en el Registro de Comercio y Sociedades de París bajo el número XXX XXX XXX.",
           "address": "Domicilio social: 295 rue Lecourbe 75015 Paris",
-          "director": "Director de publicación: M. Ronald MARTINEZ",
-          "email": "Email:",
-          "tbc": ""
+          "director": "Director de publicación:",
+          "email": "Email: M. Ronald MARTINEZ",
+          "tbc": " "
         },
         "s2": {
           "title": "2. Alojamiento",
-          "intro": "El sitio está alojado por OVH, cuyo domicilio social se encuentra en 2 rue Kellermann - 59100 Roubaix - France."
+          "intro": "El sitio está alojado por [Nombre del alojador], cuyo domicilio social se encuentra en [Dirección del alojador]."
         },
         "s3": {
           "title": "3. Propiedad intelectual",
@@ -792,7 +1046,12 @@
           "title": "1. ¿Por qué esta política?",
           "intro": "Tu privacidad es importante para nosotros.",
           "explains": "Esta política de privacidad explica:",
-          "items": ["qué datos recopilamos,", "por qué los recopilamos,", "cómo los usamos y protegemos,", "y cuáles son tus derechos."],
+          "items": [
+            "qué datos recopilamos,",
+            "por qué los recopilamos,",
+            "cómo los usamos y protegemos,",
+            "y cuáles son tus derechos."
+          ],
           "outro": "Se aplica a todos los usuarios de la aplicación."
         },
         "s2": {
@@ -801,35 +1060,66 @@
           "company": "Steero",
           "legalForm": "[Forma jurídica] – [RCS] / En proceso de creación",
           "address": "Domicilio social: 295 rue Lecourbe",
-          "contact": "📧 Contacto: steerofinance@gmail.com (Email temporal)"
+          "contact": "📧 Contacto: contact@steero.fr "
         },
         "s3": {
           "title": "3. ¿Qué datos recopilamos?",
           "intro": "Solo recopilamos los datos necesarios para el funcionamiento de la aplicación.",
           "voluntary": "🔹 Datos que proporcionas voluntariamente",
-          "voluntaryItems": ["Dirección de email", "Contraseña (cifrada)", "Información de perfil (opcional)"],
+          "voluntaryItems": [
+            "Dirección de email",
+            "Contraseña (cifrada)",
+            "Información de perfil (opcional)"
+          ],
           "financial": "Datos financieros introducidos manualmente:",
-          "financialItems": ["presupuestos (Objetivos)", "transacciones", "ingresos", "hábitos", "categorías personalizadas"],
+          "financialItems": [
+            "presupuestos (Objetivos)",
+            "transacciones",
+            "ingresos",
+            "hábitos",
+            "categorías personalizadas"
+          ],
           "note": "👉 Ningún dato bancario se recopila sin una acción voluntaria explícita de tu parte.",
           "technical": "🔹 Datos técnicos",
-          "technicalItems": ["Tipo de dispositivo y navegador", "Dirección IP", "Registros de conexión", "Datos de uso anonimizados (para mejorar el producto)"]
+          "technicalItems": [
+            "Tipo de dispositivo y navegador",
+            "Dirección IP",
+            "Registros de conexión",
+            "Datos de uso anonimizados (para mejorar el producto)"
+          ]
         },
         "s4": {
           "title": "4. ¿Por qué usamos estos datos?",
           "intro": "Tus datos se usan para:",
-          "items": ["Proporcionar y hacer funcionar la aplicación", "Guardar y mostrar tu información", "Calcular estadísticas y visualizaciones", "Mejorar la experiencia del usuario", "Asegurar la seguridad y prevenir el fraude", "Gestionar las suscripciones y la facturación", "Responder a tus solicitudes de soporte"],
+          "items": [
+            "Proporcionar y hacer funcionar la aplicación",
+            "Guardar y mostrar tu información",
+            "Calcular estadísticas y visualizaciones",
+            "Mejorar la experiencia del usuario",
+            "Asegurar la seguridad y prevenir el fraude",
+            "Gestionar las suscripciones y la facturación",
+            "Responder a tus solicitudes de soporte"
+          ],
           "noProfiling": "No hacemos ningún perfilado publicitario."
         },
         "s5": {
           "title": "5. Base legal del tratamiento (RGPD)",
           "intro": "Conforme al RGPD, los tratamientos se basan en:",
-          "items": ["La ejecución del contrato (uso normal de la aplicación)", "Tu consentimiento (ej.: comunicaciones no esenciales)", "Nuestro interés legítimo (seguridad, mejora del producto)"]
+          "items": [
+            "La ejecución del contrato (uso normal de la aplicación)",
+            "Tu consentimiento (ej.: comunicaciones no esenciales)",
+            "Nuestro interés legítimo (seguridad, mejora del producto)"
+          ]
         },
         "s6": {
           "title": "6. Compartición de datos",
           "noSell": "Nunca vendemos tus datos. Nunca.",
           "shared": "Tus datos solo pueden ser compartidos con:",
-          "items": ["proveedores técnicos de confianza (alojamiento, pago, emails),", "estrictamente en el marco del funcionamiento de la aplicación,", "con garantías contractuales conformes al RGPD."],
+          "items": [
+            "proveedores técnicos de confianza (alojamiento, pago, emails),",
+            "estrictamente en el marco del funcionamiento de la aplicación,",
+            "con garantías contractuales conformes al RGPD."
+          ],
           "outro": "Ningún dato se transmite a terceros con fines comerciales."
         },
         "s7": {
@@ -844,13 +1134,26 @@
         "s9": {
           "title": "9. Seguridad de los datos",
           "intro": "Implementamos medidas técnicas y organizativas adaptadas:",
-          "items": ["cifrado de contraseñas", "acceso restringido a los datos", "supervisión de accesos", "copias de seguridad seguras"],
+          "items": [
+            "cifrado de contraseñas",
+            "acceso restringido a los datos",
+            "supervisión de accesos",
+            "copias de seguridad seguras"
+          ],
           "outro": "Ningún sistema es infalible, pero la seguridad es una prioridad."
         },
         "s10": {
           "title": "10. Tus derechos (RGPD)",
           "intro": "Conforme al RGPD, dispones de los siguientes derechos:",
-          "items": ["Derecho de acceso a tus datos", "Derecho de rectificación", "Derecho de supresión (derecho al olvido)", "Derecho a la limitación del tratamiento", "Derecho a la portabilidad", "Derecho de oposición", "Derecho a retirar tu consentimiento en cualquier momento"],
+          "items": [
+            "Derecho de acceso a tus datos",
+            "Derecho de rectificación",
+            "Derecho de supresión (derecho al olvido)",
+            "Derecho a la limitación del tratamiento",
+            "Derecho a la portabilidad",
+            "Derecho de oposición",
+            "Derecho a retirar tu consentimiento en cualquier momento"
+          ],
           "exercise": "📩 Para ejercer tus derechos: Contáctanos en",
           "response": "Respondemos en un máximo de 30 días."
         },
@@ -858,29 +1161,41 @@
           "title": "11. Eliminación de la cuenta",
           "intro": "Puedes eliminar tu cuenta directamente desde la aplicación.",
           "result": "Esta acción conlleva:",
-          "items": ["la eliminación de tus datos personales,", "salvo obligaciones legales de conservación."]
+          "items": [
+            "la eliminación de tus datos personales,",
+            "salvo obligaciones legales de conservación."
+          ]
         },
         "s12": {
           "title": "12. Cookies y rastreadores",
           "intro": "La aplicación puede usar:",
-          "items": ["cookies estrictamente necesarias,", "herramientas de medición anonimizadas."],
+          "items": [
+            "cookies estrictamente necesarias,",
+            "herramientas de medición anonimizadas."
+          ],
           "outro": "Ninguna cookie publicitaria sin consentimiento explícito."
         },
         "s13": {
           "title": "13. Modificaciones de la política",
           "intro": "Esta política puede evolucionar para:",
-          "items": ["seguir conforme a la ley,", "reflejar la evolución del producto."],
+          "items": [
+            "seguir conforme a la ley,",
+            "reflejar la evolución del producto."
+          ],
           "outro": "En caso de cambio importante, serás informado."
         },
         "s14": {
           "title": "14. Reclamación",
           "intro": "Si consideras que tus derechos no se respetan, puedes:",
-          "items": ["contactarnos directamente,", "o recurrir a la autoridad de control competente (ej.: CNIL en Francia, AEPD en España)."]
+          "items": [
+            "contactarnos directamente,",
+            "o recurrir a la autoridad de control competente (ej.: CNIL en Francia, AEPD en España)."
+          ]
         },
         "s15": {
           "title": "15. Contacto",
           "question": "¿Una pregunta sobre tus datos?",
-          "tempEmail": ""
+          "tempEmail": " "
         }
       }
     }
@@ -921,7 +1236,7 @@
     "impactName": "Plan Impact",
     "impactLimited": "Cada año, un número limitado de plazas se reserva para usuarios determinados que desean retomar el control de sus finanzas pero cuyos recursos son limitados.",
     "impactEligibility": "Si eres estudiante, estás al inicio de tu carrera o en una situación financiera temporalmente difícil, puedes solicitar un",
-    "impactDiscount": "descuento del 50\u00a0%",
+    "impactDiscount": "descuento del 50 %",
     "impactDuration": "por un período de un año renovable.",
     "impactReview": "Las candidaturas se estudian individualmente.",
     "impactGoal": "Nuestro objetivo es simple: permitir que quienes están dispuestos a hacer el esfuerzo de progresar tengan acceso a las herramientas adecuadas.",

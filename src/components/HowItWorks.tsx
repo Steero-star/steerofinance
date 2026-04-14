@@ -1,147 +1,105 @@
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import steeroBanner from "@/assets/steero-banner-3.png";
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3
-    }
-  }
-};
-
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 40,
-    scale: 0.95
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut" as const
-    }
-  }
-};
-
-const lineVariants = {
-  hidden: {
-    scaleX: 0
-  },
-  visible: {
-    scaleX: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeInOut" as const
-    }
-  }
+const letterColors: Record<string, string> = {
+  T: "bg-green-600 text-white",
+  E: "bg-yellow-600 text-white",
+  M: "bg-emerald-700 text-white",
+  P: "bg-primary text-primary-foreground",
+  O: "bg-amber-700 text-white",
 };
 
 const HowItWorks = () => {
   const { t } = useTranslation();
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
 
-  const decorY1 = useTransform(scrollYProgress, [0, 1], [-50, 100]);
-  const decorY2 = useTransform(scrollYProgress, [0, 1], [50, -50]);
-
-  const steps = [{
-    number: "01",
-    title: t('howItWorks.step1.title'),
-    description: t('howItWorks.step1.description')
-  }, {
-    number: "02",
-    title: t('howItWorks.step2.title'),
-    description: t('howItWorks.step2.description')
-  }, {
-    number: "03",
-    title: t('howItWorks.step3.title'),
-    description: t('howItWorks.step3.description')
-  }];
+  const rituals = ["t", "e", "m", "p", "o"] as const;
 
   return (
-    <section ref={sectionRef} className="py-24 bg-primary/5 relative overflow-hidden">
-      {/* Background banner image */}
-      <div className="absolute inset-0">
-        <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-15" />
-        <div className="absolute inset-0 bg-background/70" />
-      </div>
-      {/* Decorative background elements with parallax */}
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div 
-          style={{ y: decorY1 }}
-          className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" 
-        />
-        <motion.div 
-          style={{ y: decorY2 }}
-          className="absolute bottom-0 right-1/4 w-80 h-80 bg-primary/3 rounded-full blur-3xl" 
-        />
-      </div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="text-center mb-16" 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.6 }}
+    <section className="py-14 bg-background">
+      <div className="container mx-auto px-6 max-w-3xl">
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-sm font-semibold tracking-widest text-muted-foreground mb-4"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">{t('howItWorks.title')}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            {t('howItWorks.description')}
-          </p>
-        </motion.div>
+          {t("tempo.label")}
+        </motion.p>
 
-        {/* Progress line for desktop */}
-        <div className="hidden md:block max-w-4xl mx-auto mb-8">
-          <motion.div 
-            className="h-1 bg-gradient-to-r from-primary/20 via-primary to-primary/20 rounded-full origin-left" 
-            initial="hidden" 
-            whileInView="visible" 
-            viewport={{ once: true, margin: "-100px" }} 
-            variants={lineVariants} 
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-4"
+        >
+          {t("tempo.title")}
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-muted-foreground mb-12 max-w-2xl whitespace-pre-line"
+        >
+          {t("tempo.description")}
+        </motion.p>
+
+        <div className="relative">
+          {/* Vertical progress line */}
+          <div className="absolute left-[1.65rem] top-5 bottom-5 w-0.5 bg-border/40 z-0" />
+          <motion.div
+            className="absolute left-[1.65rem] top-5 bottom-5 w-0.5 bg-primary/50 origin-top z-0"
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, delay: 0.4, ease: "easeOut" }}
           />
-        </div>
 
-        <motion.div 
-          className="grid md:grid-cols-3 gap-8" 
-          initial="hidden" 
-          whileInView="visible" 
-          viewport={{ once: true, margin: "-100px" }} 
-          variants={containerVariants}
-        >
-          {steps.map((step, index) => (
-            <motion.div 
-              key={index} 
-              variants={cardVariants} 
-              className="relative p-8 rounded-2xl shadow-card hover:shadow-lg transition-all duration-300 border border-border/50 hover:border-primary/20 group bg-secondary"
-            >
-              {/* Step indicator dot */}
-              <div className="absolute -top-3 left-8 w-6 h-6 rounded-full flex items-center justify-center bg-primary">
-                <div className="w-2 h-2 rounded-full bg-white" />
-              </div>
-              
-              <span className="text-5xl font-bold transition-colors text-right text-primary">
-                {step.number}
-              </span>
-              <h3 className="text-xl font-semibold mb-3 mt-2 text-primary">{step.title}</h3>
-              <p className="leading-relaxed text-sidebar-foreground">{step.description}</p>
-              
-              {/* Connecting line to next card (mobile) */}
-              {index < steps.length - 1 && (
-                <div className="md:hidden absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0.5 h-8 bg-gradient-to-b from-primary/50 to-transparent" />
-              )}
-            </motion.div>
-          ))}
-        </motion.div>
+          <div className="space-y-4 relative z-10">
+            {rituals.map((key, i) => {
+              const letter = t(`tempo.rituals.${key}.letter`);
+              const colorClass = letterColors[letter] || "bg-primary text-primary-foreground";
+
+              return (
+                <motion.div
+                  key={key}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
+                  className="flex items-center gap-5 rounded-2xl border border-border/60 bg-card p-5 hover:border-primary/20 transition-colors"
+                >
+                  <div
+                    className={`w-11 h-11 rounded-full flex items-center justify-center text-lg font-bold shrink-0 ring-4 ring-background ${colorClass}`}
+                  >
+                    {letter}
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-foreground text-base">
+                      {t(`tempo.rituals.${key}.name`)}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {t(`tempo.rituals.${key}.desc`)}
+                    </p>
+                  </div>
+
+                  <div className="text-right shrink-0">
+                    <span className="block text-sm text-muted-foreground">
+                      {t(`tempo.rituals.${key}.freq`)}
+                    </span>
+                    <span className="block text-sm font-semibold text-foreground">
+                      {t(`tempo.rituals.${key}.time`)}
+                    </span>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </section>
   );

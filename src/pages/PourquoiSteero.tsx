@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
 import steeroBanner from "@/assets/steero-banner-3.png";
+import WhySteero from "@/components/WhySteero";
 // Progress sidebar component for behavioral principles
 const BehavioralProgressSidebar = ({
   elements,

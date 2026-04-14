@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import steeroBanner from "@/assets/steero-banner-3.png";
 import { motion, AnimatePresence } from "framer-motion";
-import { Clock, ArrowRight, Lightbulb, AlertCircle, Share2, Check, List, Search, X } from "lucide-react";
+import { Clock, ArrowRight, Lightbulb, AlertCircle, Share2, Check, List, Search, X, Download, FileSpreadsheet, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -21,549 +21,753 @@ interface Article {
 // Article content is kept in French as the main content - titles/hooks are translated
 const getArticles = (t: (key: string, options?: Record<string, unknown>) => string): Article[] => [
   {
-    id: 1,
-    titleKey: "blog.articles.1.title",
-    hookKey: "blog.articles.1.hook",
-    tagsKey: "blog.articles.1.tags",
-    content: `Pourquoi la gestion des finances personnelles n'est pas innée
+    id: 3,
+    titleKey: "blog.articles.3.title",
+    hookKey: "blog.articles.3.hook",
+    tagsKey: "blog.articles.3.tags",
+    content: `La majorité des apps de finance personnelle sont des rétroviseurs
 
-Contrairement aux idées reçues, être à l'aise avec l'argent n'est pas une question de talent ou de chance.
+Finary, Bankin, Linxo, ces outils font une chose très bien : te montrer où est allé ton argent. Ils agrègent, catégorisent, affichent. Automatiquement, proprement, joliment.
 
-La gestion financière personnelle est une compétence acquise, qui repose sur :
-• la compréhension de ses revenus et dépenses,
-• la capacité à structurer un budget,
-• et la prise de décisions conscientes dans le temps.
+Le problème : un rétroviseur te montre la route que tu viens de parcourir. Pas celle devant toi.
 
-Sans méthode claire, beaucoup fonctionnent au ressenti, à l'urgence, ou en évitant le sujet financier. Ce flou est la principale source de stress financier.
+Conduire en regardant uniquement le rétroviseur, ça finit dans le fossé. Et c'est exactement ce qui se passe avec ces outils. Tu consultes ton bilan en fin de mois, quand la dérive est déjà installée depuis trois semaines, quand il est trop tard pour corriger quoi que ce soit. Résultat : Tu subis l'information au lieu de piloter avec.
 
-Comprendre son argent pour reprendre le contrôle financier
+Ce n'est pas un défaut de l'outil. C'est une erreur de paradigme. Ces apps ont été conçues pour observer le passé, pas pour piloter l'avenir.
 
-Un mythe également très répandu consiste à penser que le problème vient uniquement du niveau de revenu, bien souvent gagner plus d'argent ne suffit pas à mieux gérer ses finances car en réalité :
-• plus de revenus = plus de décisions financières,
-• plus de flux = plus de complexité,
-• plus de comptes = plus de confusion… sans cadre adapté.
+Un rituel n'est pas un bilan mensuel
 
-Sans compréhension financière :
-• les dépenses augmentent avec les revenus,
-• l'épargne reste irrégulière,
-• les objectifs financiers sont repoussés.
+Quand on parle de rituel financier, la plupart imaginent une session Excel de deux heures, un dimanche soir, avec une calculatrice et un café froid. C'est exactement ce qu'un rituel n'est pas.
 
-Ce n'est pas le montant gagné qui sécurise, mais la capacité à piloter ses finances personnelles.
+Un rituel, c'est une action courte, répétée à fréquence fixe, qui donne un feedback immédiat. Pas une corvée mais un geste. La différence entre les deux n'est pas la durée. C'est la régularité et la clarté de ce qu'on cherche à voir.
 
-Comprendre ses finances personnelles, ce n'est pas devenir expert en finance.
+Un suivi parfait mais rare ne crée aucune maîtrise durable, c'est même pire, c'est anxiogène. Sans rituel régulier, on regarde ses comptes après une mauvaise surprise, sous charge émotionnelle, en mode pompier. L'argent devient une source de stress, pas un levier. Et plus le stress monte, plus l'évitement s'installe. C'est un cercle fermé.
 
-C'est savoir :
-• combien on gagne réellement,
-• combien on dépense,
-• et comment ces choix impactent le futur.
+La régularité, elle, agit comme un tampon. Elle neutralise la surprise. Elle transforme la gestion financière d'une épreuve à une compétence.
 
-Une bonne compréhension financière permet :
-• de réduire le stress lié à l'argent,
-• de prendre de meilleures décisions budgétaires,
-• d'aligner ses dépenses avec ses priorités de vie.
+Pourquoi les rituels financiers échouent avant de commencer
 
-La clarté financière est le premier pas vers la liberté financière.
+Trois raisons expliquent l'abandon systématique :
+• Ils prennent trop de temps : incompatibles avec une semaine chargée
+• Ils demandent un effort cognitif trop important : trop de décisions, trop de données à interpréter
+• Et ils ne donnent pas de feedback immédiat : sans résultat visible, la motivation s'évapore en dix jours.
 
-La finance personnelle est une compétence qui se développe avec le temps
+Un bon rituel doit satisfaire trois critères non négociables : être rapide, être clair, et être utile dès la première utilisation.
 
-Apprendre à gérer son argent ne se fait pas en un jour. La montée en compétences financières suit généralement plusieurs étapes :
+Si l'un des trois manque, l'abandon est inévitable. Pas parce que tu manques de sérieux, mais parce que le cerveau humain abandonne tout comportement qui consomme plus qu'il ne produit.
 
-1. Observer ses finances sans jugement
-2. Structurer ses budgets et catégories
-3. Analyser les écarts entre prévu et réel
-4. Décider en fonction de ses objectifs
+Le système TEMPO : cinq rituels, cinq fréquences, un seul cap
 
-L'essentiel n'est pas d'être parfait, mais d'avoir un cadre simple et évolutif alors comment Steero t'aide à mieux comprendre tes finances personnelles ?
+Piloter ses finances, c'est exactement comme piloter une équipe. Tu ne gères pas une équipe avec une réunion annuelle. Tu as des points quotidiens, des bilans hebdomadaires, des revues mensuelles, des comités trimestriels, et une direction annuelle. Chaque fréquence répond à une question différente. Ensemble, elles forment un système.
 
-Steero a été conçu pour répondre à un besoin simple : rendre la gestion financière compréhensible, structurée et accessible.
+C'est ce que le système TEMPO structure pour tes finances personnelles.
 
-Contrairement aux outils complexes ou trop techniques, Steero permet :
-• une vision claire de ses finances globales,
-• une structuration budgétaire flexible,
-• un suivi ritualisé, rapide et durable,
-• une montée en compétences progressive.
+Tracer — quotidien, 5 minutes. Enregistrer ses opérations récentes, vérifier le classement, observer l'impact sur la trésorerie. Aucune analyse attendue juste le geste de saisir. Et ce geste compte : noter une dépense, c'est déjà en prendre conscience. C'est là que le comportement change, en amont, avant que la décision soit prise.
 
-L'objectif n'est pas seulement de suivre des chiffres, mais de comprendre pour mieux décider.
+Examiner — hebdomadaire, 10 minutes. Comparer ce qu'on avait prévu à ce qui s'est passé. Identifier les écarts avant qu'ils s'installent. Ajuster une catégorie si nécessaire. Ce rituel est le pont entre l'opérationnel et la décision mensuelle, il t'évite l'effet "je verrai en fin de mois" qui est systématiquement trop tard.
 
-Conclusion : apprendre à gérer son argent change durablement la relation à l'argent
+Maîtriser — mensuel, 15 minutes. Analyser revenus vs dépenses, budget prévu vs réel, évolution de la trésorerie. Décider consciemment où va l'argent le mois suivant. Ce n'est pas un bilan subi mais bien un acte de pilotage. La question n'est pas "où est passé mon argent ?" mais "est-ce que je choisis où il va ?"
 
-La gestion des finances personnelles n'est pas réservée aux experts. C'est une compétence accessible à tous, à condition d'avoir :
-• un cadre clair,
-• un outil adapté,
-• et un rituel simple.
+Positionner — trimestriel, 30 minutes. Prendre de la hauteur. Ne plus regarder les dépenses mais regarder la direction. Est-ce que ma trésorerie évolue dans le bon sens ? Est-ce que mes finances soutiennent ce que je veux construire ? Ce rituel sort du transactionnel pour entrer dans le stratégique.
 
-Avant d'optimiser, d'investir ou de chercher plus de rendement, il faut d'abord comprendre ses finances.
+Orienter — annuel, 60 minutes. Bilan global. Évolution du patrimoine, discipline installée, habitudes ancrées ou abandonnées. Et surtout : définir les grandes orientations. Ce rituel ne gère pas — il décide de la direction. C'est lui qui donne du sens à tous les autres.
 
-Tu souhaites mieux comprendre et gérer tes finances personnelles ?
+Ce que ça change concrètement
 
-Steero t'aide à :
-• clarifier ton budget,
-• structurer tes finances,
-• et monter en compétences à ton rythme.
+Le premier effet visible arrive en 7 à 10 jours. Pas un gain financier spectaculaire, une clarté mentale. Tu sais où tu en es. Tu sais quoi faire. Tu ne devines plus.
 
-Commence par poser des bases solides pour ton avenir financier.`
+Après un mois, les décisions changent naturellement. Pas parce que tu te forces mais parce que tu vois. Et voir change le comportement en amont, avant la dépense, pas après.
+
+Après trois mois, le pilotage est installé. Les rituels ne sont plus un effort mais un réflexe. Et la charge mentale liée à l'argent a significativement diminué.
+
+Le seul outil qui fonctionne est celui qu'on utilise régulièrement
+
+C'est la règle la plus simple et la plus ignorée.
+
+L'outil parfait qu'on n'ouvre plus au bout de deux semaines ne vaut rien. Un rituel imparfait mais tenu vaut tout.
+
+C'est pour ça que Steero est construit autour de la méthode TEMPO. Les cinq niveaux de rituels sont intégrés directement dans l'outil. La saisie quotidienne se fait en quelques secondes avec des modèles préremplis, sans supprimer le geste conscient d'enregistrer. Et chaque niveau du système s'ouvre naturellement quand le précédent est ancré.
+
+Ce n'est pas un outil de plus. C'est le premier outil construit pour que tu l'utilises vraiment.
+
+Installe le rituel. L'outil suit.`
   },
   {
     id: 2,
     titleKey: "blog.articles.2.title",
     hookKey: "blog.articles.2.hook",
     tagsKey: "blog.articles.2.tags",
-    content: `De la gestion subie au pilotage financier
+    content: `Subir ou piloter : la seule distinction qui compte
 
-On peut schématiser la relation à l'argent en deux grandes situations :
+Regarder son solde de temps en temps, payer ses factures, épargner quand il reste quelque chose en fin de mois c'est subir ses finances. Pas les gérer mal. Les subir. La différence est subtile mais elle change tout.
 
-Subir ses finances
-Argent flou, décisions réactives, stress latent.
+Subir, c'est réagir. Une mauvaise surprise en fin de mois, une dépense imprévue qui déséquilibre tout, une décision prise sous pression faute de vision claire. L'argent est une source de stress latent, pas parce qu'il manque mais parce qu'il reste flou.
 
-Piloter ses finances
-Vision claire, arbitrages conscients, décisions alignées avec ses objectifs.
+Piloter, c'est anticiper. Avoir une vision claire de sa situation en temps réel, identifier une dérive avant qu'elle s'installe, décider consciemment où va chaque euro. Un pilote ne regarde pas ses instruments une fois par mois, il les consulte en continu et à des fréquences différentes, pour des questions différentes.
 
-La différence entre les deux n'est pas le revenu, mais le niveau de compétence financière.
+La différence entre les deux n'est pas le revenu. C'est le niveau de compétence financière. Et ce niveau se développe par étapes.
 
-Étape 1 : Observer ses finances sans jugement
+Étape 1 : Observer sans juger (niveau Tracer)
 
-La première étape n'est ni le budget, ni l'épargne, ni l'investissement. C'est l'observation.
+Avant le budget, avant l'épargne, avant n'importe quelle optimisation : l'observation.
 
-Observer, c'est :
-• voir ses revenus et ses dépenses,
-• identifier les grandes catégories,
-• comprendre ses habitudes financières.
+Voir ses revenus et ses dépenses tels qu'ils sont. Identifier ses grandes catégories. Comprendre ses habitudes réelles et non celles qu'on croit avoir.
 
-Sans jugement, sans culpabilité.
+Sans jugement. Sans culpabilité. Juste les faits.
 
-Tant que l'argent reste flou, aucune décision solide n'est possible.
+Tant que l'argent reste flou, aucune décision solide n'est possible. On ne peut pas corriger ce qu'on ne voit pas. Et on ne peut pas voir clairement ce qu'on ne regarde que rarement.
 
-Étape 2 : Structurer pour donner du sens aux chiffres
+C'est le niveau T du système TEMPO : Tracer. Cinq minutes par jour pour rester connecté à sa situation réelle. Pas pour analyser. Juste pour voir.
 
-Une fois les flux visibles, vient la structuration.
+Étape 2 : Structurer pour transformer des chiffres en information (niveau Examiner)
 
-Structurer ses finances, c'est :
-• organiser ses dépenses par catégories,
-• poser des budgets simples,
-• distinguer l'essentiel du variable.
+Une fois les flux visibles, la structuration devient possible. Organiser ses dépenses par catégories, poser des budgets simples par poste, distinguer ce qui est fixe de ce qui est variable. Cette étape transforme des chiffres isolés en information exploitable.
 
-Cette étape transforme des chiffres isolés en information exploitable.
+C'est ici qu'on commence à comparer ce qu'on avait prévu face à ce qui s'est passé. Et c'est là que les premières décisions conscientes apparaissent.
 
-Étape 3 : Comprendre les écarts pour mieux décider
+C'est le niveau E pour Examiner. Dix minutes par semaine pour regarder la semaine écoulée et corriger la trajectoire avant qu'il soit trop tard. Pas un bilan global : une vérification de cap.
 
-Un budget parfait n'existe pas.
+Étape 3 : Comprendre les écarts pour reprendre la main (niveau Maîtriser)
 
-Les écarts sont normaux :
-• un mois plus cher que prévu,
-• une dépense imprévue,
-• une priorité qui change.
+Un budget parfait n'existe pas. Les écarts sont normaux avec parfois un mois plus chargé que prévu, une priorité qui change, une dépense imprévue. Le problème n'est pas l'écart. C'est de ne pas le voir.
 
-Le problème n'est pas l'écart, mais le fait de ne pas le voir.
+Comprendre ses écarts, c'est passer de la réaction à la décision. Au lieu de subir le bilan en fin de mois, on l'analyse consciemment : où a-t-on dépassé et pourquoi ? est-ce que c'était un choix ou une dérive ? Cette lecture régulière développe progressivement un instinct financier et la capacité à anticiper ses propres comportements.
 
-Comprendre ses écarts permet :
-• d'ajuster ses décisions,
-• d'éviter les mauvaises surprises,
-• de reprendre le contrôle sans se restreindre.
+C'est le niveau M pour Maîtriser. Quinze minutes par mois pour décider où va l'argent le mois suivant. Pas subir son budget mais pour le construire.
 
-Étape 4 : Décider en fonction de ses objectifs
+Étape 4 : Aligner finances et objectifs (niveaux Positionner et Orienter)
 
-C'est ici que la gestion financière devient réellement utile. Quand la vision est claire, on peut :
-• arbitrer sans stress,
-• aligner ses dépenses avec ses objectifs,
-• donner un rôle précis à chaque euro.
+C'est ici que la gestion financière devient réellement utile. Quand elle cesse d'être une contrainte pour devenir un levier. Quand la vision est suffisamment claire pour arbitrer sans stress, aligner ses dépenses avec ses projets, donner un rôle précis à chaque euro.
 
-L'argent cesse d'être une source d'anxiété pour devenir un outil au service de ses projets.
+À ce niveau, l'argent n'est plus une source d'anxiété. C'est un outil au service de ce qu'on veut construire. Un apport immobilier, une transition professionnelle, une liberté financière à horizon cinq ans : ces objectifs deviennent pilotables parce qu'on a installé les niveaux précédents.
 
-Pourquoi la montée en compétences financières échoue souvent
+C'est le niveau P puis O du système TEMPO pour Positionner trimestriellement et Orienter annuellement. Prendre de la hauteur pour vérifier que la direction est juste, pas seulement que les chiffres sont bons.
 
-Beaucoup abandonnent à cette étape pour trois raisons principales :
+Pourquoi la montée en compétences échoue avant d'avoir commencé
 
-1. Des outils trop complexes
-Pensés pour des experts, pas pour progresser.
+La majorité des gens abandonnent dans les premières semaines. Pas par manque de sérieux mais par manque de cadre adapté. Les outils disponibles sont pensés pour des gens qui savent déjà piloter, pas pour ceux qui apprennent. Le suivi demande trop de temps. L'effort cognitif est trop important. Et surtout : le feedback n'est pas immédiat et sans résultat visible rapidement, la motivation s'effondre.
 
-2. Un suivi trop lourd
-Trop chronophage pour durer.
+Un bon système de montée en compétences doit être progressif, pas tout ou rien. On n'installe pas les cinq niveaux TEMPO en même temps. On commence par Tracer quotidiennement, ça prend cinq minutes maximum. On installe l'habitude avant d'installer la méthode. Et on monte d'un niveau quand le précédent est ancré.
 
-3. Aucun cadre évolutif
-Tout ou rien, sans progression naturelle.
+La tendance prime sur la perfection. Un rituel imparfait mais tenu vaut infiniment plus qu'un système parfait abandonné.
 
-Résultat : motivation au départ, abandon quelques semaines plus tard.
+Le pilotage s'apprend. Comme n'importe quelle compétence.
 
-Comment Steero accompagne la montée en compétences financières
+Personne ne naît en sachant piloter ses finances. C'est une compétence qui s'apprend par exposition régulière, par répétition consciente, par feedback progressif. Exactement comme piloter un projet, manager une équipe ou maîtriser un outil professionnel.
 
-Steero a été conçu comme un parcours, pas comme un simple outil de suivi te permettant :
-• d'observer ses finances simplement,
-• de structurer progressivement ses budgets,
-• de visualiser les écarts sans culpabilité,
-• de ritualiser le suivi pour durer dans le temps.
+La différence entre quelqu'un qui subit ses finances et quelqu'un qui les pilote n'est pas le revenu, ni la discipline, ni l'intelligence financière. C'est l'existence d'un système. Un cadre clair, des fréquences définies, des questions simples auxquelles répondre régulièrement.
 
-L'objectif n'est pas de devenir expert en finance, mais de monter en compétences à son rythme, avec un cadre clair.
-
-Conclusion : piloter ses finances est une compétence accessible
-
-Personne ne naît en sachant gérer son argent. Mais tout le monde peut apprendre à le piloter.
-
-La montée en compétences financières repose sur :
-• la clarté,
-• la régularité,
-• et des outils pensés pour accompagner, pas pour complexifier.
-
-Passer du flou au pilotage, c'est reprendre le contrôle de son avenir financier.
-
-Tu souhaites passer du flou au pilotage de tes finances ?
-
-Steero t'aide à :
-• comprendre tes finances,
-• structurer ton budget,
-• et progresser étape par étape.
-
-Commence par voir clair. Le reste suivra.`
+Steero est construit autour de cette logique de progression. Les cinq niveaux TEMPO sont intégrés dans l'outil, pas comme des fonctionnalités à découvrir, mais comme une structure de pilotage à installer progressivement. Tu commences par Tracer. Le reste suit naturellement.`
   },
   {
-    id: 3,
-    titleKey: "blog.articles.3.title",
-    hookKey: "blog.articles.3.hook",
-    tagsKey: "blog.articles.3.tags",
-    content: `Le vrai problème des outils financiers modernes
+    id: 1,
+    titleKey: "blog.articles.1.title",
+    hookKey: "blog.articles.1.hook",
+    tagsKey: "blog.articles.1.tags",
+    content: `Ce n'est pas que tu dépenses trop. C'est que tu regardes trop rarement.
 
-La majorité des outils de gestion financière échouent pour une raison simple : ils supposent que l'utilisateur va s'adapter à l'outil.
+La dérive financière ne se construit pas en un jour. Elle s'installe progressivement puis se découvre en fin de mois quand il est trop tard pour corriger.
 
-Dans la réalité :
-• les interfaces peuvent être complexes,
-• les actions et/ou connaissances demandées peuvent être nombreuses,
-• le suivi prend trop de temps.
+Les études comportementales sur la perception des dépenses le confirment : la plupart des gens sous-estiment leurs dépenses mensuelles de 20 à 30 %. Pas parce qu'ils se mentent mais parce que la mémoire financière est sélective : on retient les bons mois et on oublie les mauvais. On mémorise les gros postes, on oublie les petits débits qui s'accumulent.
 
-Résultat :
-• enthousiasme au début,
-• effort perçu comme trop important,
-• abandon progressif.
+Le résultat : une vision déformée de sa situation réelle, et des décisions prises sur des bases fausses.
 
-Ce n'est pas un problème de discipline, mais de conception.
+Le problème n'est pas l'argent que tu gagnes. C'est la fréquence à laquelle tu regardes où il va.
 
-Rituel financier : de quoi parle-t-on vraiment ?
+Les 4 fuites invisibles qui plombent un budget cadre
 
-Un rituel financier n'est pas :
-• un long bilan mensuel,
-• une session Excel de deux heures,
-• une contrainte rigide.
+Avant de construire un système, il faut nommer ce qu'on cherche à corriger.
 
-Un rituel, c'est :
-• une action simple,
-• répétée régulièrement,
-• intégrée naturellement dans le quotidien.
+Les abonnements zombies. Ils sont débités entre J+10 et J+20, jamais au même moment, souvent pour des services qu'on n'utilise plus. Invisibles parce que le montant unitaire est faible. Dévastateurs parce qu'ils s'accumulent.
 
-Le rituel transforme la gestion financière en habitude, pas en corvée c'est pourquoi la régularité vaut mieux que la perfection sans nécessairement tout suivre, tout comprendre ou tout optimiser.
+Les dépenses sociales non budgétées. Le dîner de dernière minute, le week-end improvisé, le cadeau oublié. Chaque occurrence semble exceptionnelle. Ensemble, elles représentent souvent 15 à 20 % des dépenses réelles d'un cadre actif en grande métropole.
 
-En réalité, la régularité est bien plus importante que la précision : quelques minutes par semaine permettent d'identifier les dérives, d'anticiper les problèmes et de garder le contrôle.
+Le lissage mental. Ce mécanisme cognitif te fait inconsciemment moyenner tes dépenses sur les "bons mois" pour justifier les mauvais. "En janvier j'avais bien géré, donc février c'est rattrapable." Ce raisonnement est faux et coûteux.
 
-À l'inverse, un suivi parfait mais rare ne crée aucune maîtrise durable et trop souvent il est anxiogène car sans rituel :
-• on regarde ses comptes en retard,
-• souvent après une mauvaise surprise,
-• avec une charge émotionnelle forte.
+La catégorie "divers". C'est la poubelle budgétaire. Tout ce qu'on ne veut pas regarder de trop près atterrit là. Une catégorie "divers" qui grossit est toujours le signe d'un pilotage qui s'effondre.
 
-L'argent devient alors :
-• source de stress,
-• de culpabilité,
-• voire d'évitement.
+Pourquoi les bonnes résolutions ne fonctionnent pas
 
-Le rituel agit comme un tampon émotionnel : il neutralise la surprise et redonne de la sérénité.
+"Je vais faire plus attention ce mois-ci." Cette phrase a une durée de vie moyenne de 11 jours. Pas parce que tu manques de volonté mais parce qu'une intention sans structure est condamnée au premier imprévu.
 
-Le rituel comme pilier de la montée en compétences financières
+Une résolution n'a pas de fréquence. Pas de moment dédié. Pas de feedback régulier. Elle repose entièrement sur ta motivation du moment, soit la ressource la plus volatile qui soit.
 
-La montée en compétences financières repose sur une chose : la répétition consciente.
+Ce qui fonctionne, ce n'est pas une règle. C'est un système. Et un système se compose de rituels, pas de bonnes intentions.
 
-Le rituel permet :
-• d'observer régulièrement,
-• de comprendre progressivement,
-• d'ajuster sans brutalité.
+La vraie solution : un système de pilotage à 5 niveaux
 
-Sans rituel, aucune compétence ne se développe. Avec un rituel, la progression devient naturelle mais alors pourquoi la plupart des rituels financiers échouent ?
+C'est ici que la plupart des conseils financiers s'arrêtent à mi-chemin. Ils te disent de "faire un budget". Mais un budget sans cadence de révision est un document mort.
 
-Trois raisons principales expliquent l'échec des rituels financiers :
+Le pilotage financier efficace fonctionne exactement comme le pilotage professionnel : des niveaux d'analyse différents, des fréquences différentes, des questions différentes. Du quotidien opérationnel au stratégique annuel.
 
-1. Ils prennent trop de temps → incompatibles avec la vie réelle.
-2. Ils demandent trop d'efforts cognitifs → fatigue mentale.
-3. Ils ne donnent pas de feedback immédiat → perte de motivation.
+C'est ce qu'on appelle le système TEMPO.
 
-Un bon rituel doit être : rapide, clair et utile dès la première utilisation.
+Tracer (quotidien, 5 minutes)
 
-Comment Steero a été pensé autour du rituel, pas de l'outil
+Objectif : garder le lien. Éviter la dérive invisible.
 
-Steero n'a pas été conçu comme une application "à consulter quand on a le temps" mais pour :
-• s'intégrer dans une routine courte,
-• donner une information claire en quelques secondes,
-• montrer immédiatement où l'on en est.
+Chaque jour ou trois fois par semaine au minimum tu enregistres tes opérations récentes, tu vérifies le classement de chaque dépense, et tu observes l'impact sur ta trésorerie.
 
-Le cœur de Steero, ce n'est pas la donnée brute, c'est la ritualisation de la compréhension financière parce que ce qui est simple se répète et ce qui se répète transforme durablement.
+Aucune analyse n'est attendue ici. Il s'agit de saisir, observer, valider.
 
-Conclusion : sans rituel, il n'y a pas de contrôle financier
+La clé : la saisie est manuelle et intentionnelle. Pas par contrainte technique, mais par choix comportemental. Enregistrer une dépense, c'est déjà en prendre conscience. C'est l'acte de pilotage le plus simple et le plus puissant. C'est là que la discipline s'installe, pas dans les grandes décisions de fin de mois.
 
-Aucun outil, aussi puissant soit-il, ne fonctionne sans rituel. La maîtrise financière ne vient pas de l'intensité, mais de la constance.
+Steero est construit sur ce principe : des modèles de saisie préremplis réduisent la friction à quelques secondes, sans supprimer le geste conscient d'enregistrer. Tu saisis vite et tu restes acteur.
 
-Un rituel simple réduit le stress, améliore les décisions et renforce la confiance. C'est le socle invisible de toute gestion financière réussie.
+La règle d'or : si tu n'as pas envie d'y passer 5 minutes par jour, commence par 3 fois par semaine. La régularité prime sur la fréquence parfaite.
 
-Et si ta gestion financière devenait un rituel simple, et non une contrainte ?
+Examiner (hebdomadaire, 10 minutes)
 
-Steero t'aide à :
-• créer un rituel financier durable,
-• suivre tes finances sans friction,
-• progresser sans surcharge mentale.
+Objectif : corriger la trajectoire avant qu'il soit trop tard.
 
-Commence petit. Répète souvent. Les résultats suivront.`
+Chaque semaine, tu passes en revue les dépenses de la semaine écoulée. Tu identifies les écarts, les dépenses inhabituelles, et tu ajustes les catégories si nécessaire.
+
+Trois questions suffisent : Ai-je dépensé comme prévu ? Qu'est-ce qui mérite d'être ajusté ? Que puis-je anticiper la semaine prochaine ?
+
+Ce rituel est le pont entre le quotidien opérationnel et la décision mensuelle. Il t'évite l'effet "je verrai en fin de mois" qui est systématiquement trop tard. Il transforme un spectateur passif en pilote actif.
+
+Maîtriser (mensuel, 15 minutes)
+
+Objectif : reprendre la main sur tes choix financiers.
+
+Une fois par mois, tu analyses : revenus vs dépenses, budget prévu vs réel, évolution de ta trésorerie. Tu ajustes les catégories et les montants budgétés. Et surtout, tu décides consciemment où va ton argent le mois suivant.
+
+Ce n'est pas un bilan subi. C'est une décision active.
+
+La question centrale n'est pas "où est passé mon argent ?" mais "est-ce que je choisis consciemment où il va ?" Ce déplacement de perspective change tout.
+
+Steero structure ce moment avec une vue consolidée budget prévu / réel par catégorie pour que la décision soit basée sur des données, pas sur une impression.
+
+Un mois imparfait n'est pas un problème. Un mois non regardé, oui.
+
+Positionner (trimestriel, 30 minutes)
+
+Objectif : aligner finances et objectifs de vie.
+
+Tous les trois mois, tu prends de la hauteur. Tu ne regardes plus les dépenses mais regardes la direction. Est-ce que ma trésorerie évolue dans le bon sens ? Est-ce que mes finances soutiennent ce que je veux construire ? Qu'est-ce qui doit changer dans mes grandes catégories ?
+
+Ce rituel évite la gestion automatique sans sens. Il renforce ton attachement à tes finances non pas comme une contrainte, mais comme un levier. C'est le niveau où tu passes du pilotage tactique à la stratégie personnelle.
+
+Orienter (annuel, 60 minutes)
+
+Objectif : choisir l'avenir, pas juste gérer le présent.
+
+Une fois par an, tu fais le bilan global. Évolution du patrimoine, discipline installée, habitudes ancrées ou abandonnées. Et surtout : tu définis les grandes orientations : épargne, investissements, projets de vie.
+
+Trois questions fondamentales : Qu'est-ce que je veux vraiment construire avec mon argent ? Quelle vie est-ce que je soutiens par mes décisions financières ? Qu'est-ce qui mérite mon énergie cette année et qu'est-ce qui n'en mérite plus ?
+
+Une direction claire vaut mieux qu'un plan parfait.
+
+Par où commencer quand on part de zéro
+
+Ne commence pas par les cinq niveaux en même temps. C'est le meilleur moyen d'abandonner au bout de dix jours.
+
+L'ordre logique : installe d'abord le T. Tracer, idéalement de manière quotidienne et à minima trois fois par semaine (Exemple : mardis, jeudis, samedis). Juste ça. Pendant trois semaines, sans ajouter autre chose.
+
+Une fois que le geste est ancré, ajoute le E. Un quart d'heure le week-end.
+
+Puis le M en fin de premier mois complet.
+
+Le système TEMPO n'est pas un outil qu'on configure une fois, c'est une cadence qu'on installe progressivement. La tendance prime sur la perfection. Rater un rituel n'est pas un échec. Ne jamais le faire est le seul vrai problème.
+
+Ce que tu vas changer cette semaine
+
+Tu ne dépenses pas trop. Tu pilotes trop rarement.
+
+Cinq minutes par jour et quinze minutes par mois changent plus une situation financière que n'importe quelle règle d'austérité. Pas parce qu'ils révèlent des fuites magiques — mais parce qu'ils installent une conscience active de là où va ton argent. Et cette conscience change les décisions, en amont, avant que la dépense soit faite.
+
+Le système TEMPO est la méthode. Steero est l'outil construit pour l'implémenter — avec la friction juste, les rituels structurés, et la vision dont tu as besoin pour piloter, pas juste suivre.`
   },
   {
     id: 4,
     titleKey: "blog.articles.4.title",
     hookKey: "blog.articles.4.hook",
     tagsKey: "blog.articles.4.tags",
-    content: `Pourquoi la gestion financière paraît toujours trop lourde
+    content: `Le vrai problème : on essaie de tout faire d'un coup
 
-Le problème n'est pas la finance. Le problème, c'est l'absence de structure.
+La gestion financière paraît lourde parce qu'elle est pensée comme un bloc monolithique. Un bilan mensuel de deux heures, ou rien. Un tableau Excel complet, ou abandon. Tout comprendre, tout analyser, tout décider en une seule session.
 
-Beaucoup essaient de :
-• tout suivre en même temps,
-• tout comprendre au même moment,
-• tout décider d'un seul coup.
+Ce mode de fonctionnement génère trois problèmes qui se renforcent mutuellement. La surcharge mentale d'abord avec trop de décisions à prendre en même temps qui épuise. La confusion ensuite, quand tout est mélangé, rien n'est clair. L'abandon enfin, un système trop lourd ne tient jamais.
 
-Résultat :
-• surcharge mentale,
-• confusion,
-• abandon.
+La solution n'est pas de réduire le temps. C'est de séparer les rôles.
 
-Sans séparation claire des rôles, la gestion financière devient pesante.
+Un rituel, une question. Pas plus.
 
-Le principe clé : un rituel = une vocation
+Un rituel financier efficace ne cherche jamais à tout faire. Il répond à une seule question, à une fréquence précise, en un temps défini. C'est cette séparation qui rend le système tenable et durable.
 
-Un rituel financier efficace n'essaie jamais de tout faire.
+C'est exactement la logique d'un pilote. Il ne fait pas le bilan de vol, la vérification des instruments, la planification de la prochaine destination et la communication avec la tour de contrôle en même temps. Chaque action a son moment, sa fréquence, son objectif. Ensemble, elles forment un système de pilotage cohérent.
 
-Chaque rituel a :
-• un horizon temporel,
-• un objectif précis,
-• une vocation claire.
+Pour les finances personnelles, c'est identique. Le système TEMPO structure cinq niveaux de rituels : chacun avec une vocation précise, une durée adaptée, une question centrale.
 
-C'est cette répartition qui rend la gestion financière fluide et durable.
+Les 5 niveaux du système TEMPO
 
-Les rituels financiers : une architecture, pas une contrainte
+Tracer — quotidien, 5 minutes. La question : est-ce que je vois ce qui se passe en ce moment ? Le rôle : maintenir le lien avec sa situation réelle. Enregistrer les opérations récentes, vérifier le classement, observer l'impact sur la trésorerie. Pas d'analyse — juste la conscience. C'est ce rituel qui évite la déconnexion progressive, les mauvaises surprises et l'évitement émotionnel. Il ne décide pas. Il voit.
 
-Dans l'approche Steero, la gestion financière repose sur plusieurs rituels, chacun jouant un rôle spécifique dans le pilotage global.
+Examiner — hebdomadaire, 10 minutes. La question : est-ce que je suis sur la trajectoire prévue ? Le rôle : corriger avant que l'écart devienne une dérive. Comparer la semaine réelle à la semaine prévue, identifier ce qui a dérapé, ajuster une catégorie si nécessaire. Ce rituel est le pont entre le quotidien et la décision mensuelle — il t'évite d'arriver en fin de mois sans avoir rien vu venir.
 
-Le rituel court terme pour rester connecté
-Son rôle est simple : maintenir le lien avec tes finances. Il évite l'évitement, la surprise et la perte de contrôle. Ce rituel n'est pas là pour décider, mais pour voir.
+Maîtriser — mensuel, 15 minutes. La question : est-ce que je décide consciemment où va mon argent ? Le rôle : passer de la réaction à la décision. Analyser revenus vs dépenses, comprendre les écarts, construire le budget du mois suivant. Ce n'est pas un bilan subi — c'est un acte de pilotage. La nuance change tout.
 
-Le rituel de pilotage pour garder le cap
-Il permet de vérifier que la trajectoire est cohérente avec ce qui a été prévu. C'est un moment d'ajustement léger, sans remise en question profonde. On ne refait pas le plan, on corrige la trajectoire.
+Positionner — trimestriel, 30 minutes. La question : est-ce que mes finances avancent dans la bonne direction ? Le rôle : sortir du transactionnel pour entrer dans le stratégique. Observer les tendances sur trois mois, évaluer la cohérence globale, identifier ce qui doit évoluer. Ce rituel donne du recul là où les trois premiers donnent de la précision.
 
-Le rituel d'analyse pour comprendre
-Ici, on cherche à donner du sens : comprendre les écarts, observer les habitudes, améliorer la structure existante. Ce rituel transforme les chiffres en apprentissages.
+Orienter — annuel, 60 minutes. La question : quelle vie est-ce que je soutiens par mes décisions financières ? Le rôle : aligner finances et objectifs de vie. Bilan global de l'année, grandes orientations pour la suivante, arbitrages stratégiques. C'est le rituel de sens — celui qui donne de la valeur à tous les autres.
 
-Le rituel de recul pour prendre de la hauteur
-Il permet d'observer les tendances, les évolutions et la cohérence globale. On sort du quotidien pour regarder le système dans son ensemble. C'est le rituel de la lucidité stratégique.
+Alors, 2 minutes : mythe ou réalité ?
 
-Le rituel d'alignement pour donner du sens
-Le plus rare, mais le plus structurant. Il permet de réaligner les finances avec :
-• les objectifs de vie,
-• les priorités personnelles,
-• la direction souhaitée.
+Ni l'un ni l'autre. Le rituel quotidien de Tracer peut tenir en moins 5 minutes quand le système est en place et la saisie fluide. Mais cette rapidité n'est pas une promesse de facilité, c'est le résultat d'une structure installée.
 
-Pourquoi le rituel en 2 minutes est non seulement possible, mais essentiel
+Ce qui est un mythe : croire qu'on peut gérer ses finances sérieusement avec 2 minutes par semaine sans cadre. Ce qui est réel : un rituel quotidien de 5 minutes, ancré dans une architecture cohérente, change durablement le rapport à l'argent pas parce qu'il prend peu de temps, mais parce qu'il est régulier.
 
-Le rituel en 2 minutes n'est pas censé remplacer les autres, il est plus régulier et est le point d'entrée du système.
+La régularité bat l'intensité. Toujours.
 
-Son rôle :
-• maintenir la conscience financière,
-• éviter la déconnexion,
-• rendre les autres rituels naturels et non subis.
+Ce que change une architecture de rituels
 
-Ce sont ces micro-rituels qui rendent :
-• le pilotage fluide,
-• l'analyse pertinente,
-• et la vision long terme sereine.
+Quand chaque rituel a une vocation claire et une fréquence définie, trois choses se produisent. La charge mentale diminue et on ne cherche plus à tout traiter en même temps. La régularité s'installe puisque chaque rituel est adapté pour ne pas être repoussé. Et les décisions sont prises au bon moment avec la bonne information et pas sous pression.
 
-Ce que change une approche structurée par rituels
+La gestion financière cesse d'être une tâche redoutée. Elle devient un système de pilotage discret, régulier et efficace.
 
-Quand chaque rituel a une vocation claire :
-• la charge mentale diminue,
-• la gestion devient plus régulière,
-• les décisions sont prises au bon moment.
+Steero est structuré autour de cette architecture. Les cinq niveaux TEMPO sont intégrés directement dans l'outil. La saisie quotidienne se fait en quelques secondes avec des modèles préremplis sans supprimer le geste conscient d'enregistrer. Et chaque niveau du système s'ouvre naturellement quand le précédent est ancré.
 
-La finance cesse d'être une tâche lourde. Elle devient un système de pilotage simple et progressif.
-
-Conclusion : ce n'est pas le temps qui manque, c'est la structure
-
-Un rituel financier en 2 minutes n'est pas un mythe. Ce qui est irréaliste, c'est de vouloir tout gérer au même moment.
-
-La clé d'une gestion financière durable, ce n'est pas l'intensité, mais une architecture de rituels, chacun avec un objectif clair.
-
-C'est cette structure qui transforme la contrainte en sérénité.
-
-Et si ta gestion financière reposait enfin sur les bons rituels, au bon moment ?
-
-Steero t'aide à :
-• structurer ton approche financière,
-• clarifier chaque temps de décision,
-• et garder le contrôle sans surcharge mentale.
-
-Moins d'effort. Plus de clarté. Une vision durable.`
+Ce n'est pas le temps qui manque pour gérer ses finances. C'est la structure.`
   },
   {
     id: 5,
     titleKey: "blog.articles.5.title",
     hookKey: "blog.articles.5.hook",
     tagsKey: "blog.articles.5.tags",
-    content: `Pourquoi regarder ses finances est souvent vécu comme une punition
+    content: `Si regarder tes finances te met mal à l'aise, ce n'est probablement pas à cause des chiffres. C'est à cause de ce qu'ils semblent dire sur toi.
 
-Dans l'imaginaire collectif, suivre son argent signifie souvent :
-• pointer ce qui ne va pas,
-• repérer les excès,
-• chercher ce qu'il aurait fallu mieux faire.
+Pour beaucoup, ouvrir son application bancaire en fin de mois ressemble à recevoir un bulletin scolaire. On cherche instinctivement les erreurs, les excès, ce qu'on aurait dû mieux faire. Et quand on en trouve, ce qui arrive toujours, la réaction est prévisible : culpabilité, puis évitement, puis déconnexion progressive. Jusqu'au mois suivant, où le cycle recommence.
 
-Résultat :
-• on repousse le moment de regarder,
-• on évite quand on doute,
-• on consulte uniquement en cas de problème.
+Ce n'est pas un problème de discipline. C'est un problème de posture.
 
-Le problème n'est pas l'information, mais la manière dont on l'interprète.
+Le rétroviseur ne te juge pas. Ton cerveau, si.
 
-Un tableau de bord n'est pas là pour juger, mais pour informer
+Quand un pilote regarde ses instruments de bord, il ne se demande pas s'il est un bon ou un mauvais pilote. Il lit une information : altitude, vitesse, cap; et prend une décision en conséquence. L'instrument est neutre. La lecture est factuelle. La réponse est immédiate.
 
-Dans un avion ou une voiture, le tableau de bord ne te juge pas. Il t'indique simplement ta vitesse, ton niveau de carburant et d'éventuelles alertes.
+Tes finances devraient fonctionner exactement comme ça. Un tableau de bord ne dit pas "tu as mal fait". Il dit "voilà où tu en es". La distinction est simple à formuler et radicalement difficile à intérioriser quand on a passé des années à lire ses relevés bancaires avec une charge émotionnelle.
 
-Il ne dit jamais : « tu es nul ».
-Il dit : « voilà où tu en es ».
+Le problème n'est pas l'information. C'est le cadre interprétatif dans lequel on la reçoit.
 
-Tes finances devraient fonctionner exactement de la même manière, mais alors que change une vision "tableau de bord" ?
+Pourquoi l'évitement financier s'installe
 
-Quand tu regardes tes finances comme un tableau de bord :
-• tu observes au lieu de culpabiliser,
-• tu ajustes au lieu de te restreindre,
-• tu décides au lieu de subir.
+L'évitement n'est pas une faiblesse de caractère. C'est une réponse rationnelle du cerveau à une source de stress récurrente. Si chaque fois que tu regardes tes finances tu te sens mal, ton cerveau finit par associer le geste au malaise et il évite le geste.
 
-Les chiffres deviennent neutres, utiles et actionnables. Ils ne racontent pas qui tu es mais t'aident simplement à savoir où tu vas.
+Le mécanisme est précis : on repousse le moment de regarder, on consulte uniquement en cas de problème, on arrive en fin de mois sans avoir rien vu venir. Et là, sous pression émotionnelle, on prend de mauvaises décisions pas parce qu'on manque d'intelligence financière, mais parce qu'on réagit au lieu de piloter.
 
-Pourquoi la visualisation est un levier si puissant
+L'évitement crée exactement la situation qu'il cherche à éviter. C'est le paradoxe central de la mauvaise relation à l'argent.
 
-Le cerveau humain comprend mieux ce qu'il peut voir clairement.
+La posture de pilotage : observer sans juger
 
-Une bonne visualisation permet :
-• d'identifier rapidement une dérive,
-• de confirmer que tout est sous contrôle,
-• de prendre une décision sans surcharge mentale.
+Changer de posture ne demande pas de changer de personnalité. Ça demande de changer la question qu'on pose en ouvrant ses finances.
 
-À l'inverse, quand tout est dispersé ou peu lisible :
-• l'information fatigue,
-• la décision est repoussée,
-• le stress augmente.
+La question punitive : "Qu'est-ce que j'ai mal fait ce mois-ci ?" La question de pilotage : "Où en suis-je ? Qu'est-ce que je décide maintenant ?"
 
-Voir clair, c'est déjà décider mieux.
+Ce déplacement est minimal en apparence. Il est massif dans ses effets. La première question cherche une faute, spoiler : elle en trouve toujours une; et elle génère de la culpabilité qui mène à l'évitement. La seconde cherche une information, elle en trouve aussi, et elle génère une décision qui maintient le contrôle.
 
-De la sanction au pilotage : un changement de posture
+Un pilote qui voit son niveau de carburant descendre ne se reproche pas d'avoir consommé de l'essence. Il cherche la prochaine station.
 
-La différence entre une gestion punitive et une gestion pilotée ne tient pas aux chiffres. Elle tient à la posture.
+Voir clair, c'est déjà décider mieux
 
-Posture punitive :
-"J'ai mal fait."
+Le cerveau humain prend de meilleures décisions face à une information claire et organisée que face à une masse de données floues et émotionnellement chargées. Ce n'est pas une question d'intelligence mais de la neurologie basique.
 
-Posture de pilotage :
-"Voilà où j'en suis. Que fais-je maintenant ?"
+Une bonne visualisation financière permet trois choses distinctes. Identifier rapidement une dérive avant qu'elle s'installe. Confirmer que la trajectoire est cohérente, ce qui réduit l'anxiété de fond. Et prendre une décision sans surcharge mentale parce que l'information est là, lisible, disponible.
 
-Ce simple changement transforme complètement la relation à l'argent.
+À l'inverse, quand les données sont dispersées sur trois banques, un compte joint, un broker ou de l'espèce quand rien n'est catégorisé, quand le dernier regard remonte à trois semaines : l'information fatigue avant d'informer. La décision est repoussée. Le stress monte.
 
-Comment Steero t'aide à adopter cette logique de tableau de bord
+Ce n'est pas un manque de sérieux. C'est l'absence d'un tableau de bord lisible.
 
-Steero a été pensé pour que tu ne craignes pas de regarder.
+De l'observation à la décision : le rôle des rituels
 
-L'objectif n'est pas de tout analyser, optimiser ou contrôler mais de te donner une vision claire, lisible et rassurante de ta situation.
+Changer de posture ne suffit pas si on ne change pas la fréquence à laquelle on regarde. Un tableau de bord consulté une fois par mois n'est pas un tableau de bord, c'est un bilan. Et un bilan, par définition, arrive trop tard pour piloter.
 
-Tu viens prendre l'information dont tu as besoin pour avancer.
+Le niveau T du système TEMPO — Tracer, cinq minutes par jour — existe précisément pour ça. Pas pour analyser. Pas pour décider. Juste pour maintenir un contact régulier avec sa situation réelle. Ce contact régulier neutralise progressivement la charge émotionnelle : quand on regarde souvent, chaque regard est petit. Quand on évite, chaque regard devient une confrontation.
 
-Conclusion : regarder tes finances ne devrait jamais faire peur
+C'est là que Steero intervient, pas pour te montrer où tu as failli, mais pour que regarder devienne un réflexe neutre. La saisie est manuelle et intentionnelle : enregistrer une dépense, c'est simplement noter un fait. Pas le juger. Le voir.
 
-Tes finances ne sont pas un bulletin de notes mais un système vivant, qui évolue avec toi.
+Et le niveau M — Maîtriser, quinze minutes par mois — est le moment où l'observation devient décision. Pas un bilan subi. Un choix actif sur où va l'argent le mois suivant.
 
-Quand tu les regardes avec des indicateurs pertinents :
-• tu enlèves la charge émotionnelle,
-• tu simplifies les décisions,
-• tu reprends le contrôle.
+Ce que change une lecture factuelle de ses finances
 
-La clarté remplace la culpabilité et c'est là que tout change.
+Quand les chiffres cessent d'être un jugement pour devenir une information, trois choses se produisent progressivement. La charge émotionnelle diminue — regarder ses finances devient aussi neutre que vérifier la météo avant de sortir. Les décisions s'améliorent — prises à froid, avec de l'information claire, elles sont structurellement meilleures. Et la régularité s'installe — parce qu'on n'évite plus ce qui ne fait plus peur.
 
-Et si regarder tes finances devenait un réflexe simple, pas une source de stress ?
+Tes finances ne sont pas un bulletin de notes. Elles ne disent rien sur ta valeur, ta discipline ou ton intelligence. Elles indiquent simplement où tu en es, et dans quelle direction tu vas.
 
-Steero t'aide à visualiser clairement ta situation, piloter sans te juger et décider avec sérénité.
-
-Moins de pression. Plus de clarté. Plus de maîtrise.`
+La clarté remplace la culpabilité. C'est là que tout change.`
   },
   {
     id: 6,
     titleKey: "blog.articles.6.title",
     hookKey: "blog.articles.6.hook",
     tagsKey: "blog.articles.6.tags",
-    content: `Pourquoi la règle des 50 / 30 / 20 est si populaire
+     content: `50% pour les besoins. 30% pour les envies. 20% pour l'épargne. Simple, clair, rassurant. Et pratiquement inutile si on s'arrête là.
 
-Cette règle a un énorme avantage : elle simplifie. Elle permet de donner un cadre clair, éviter de partir de zéro et de comprendre qu'un budget doit être équilibré.
+Ce n'est pas que la règle soit fausse. C'est qu'elle répond à la mauvaise question.
 
-Pour quelqu'un qui débute, c'est souvent la première fois que l'argent est structuré autrement que "ce qu'il reste à la fin du mois".
+Pourquoi cette règle est si populaire et pourquoi c'est un problème
 
-En ce sens, la règle joue parfaitement son rôle pédagogique toutefois cette règle simple appliquée à des vies complexes n'est pas toujours évident parce que dans la vraie vie :
-• les loyers ne font pas 50 % partout,
-• les revenus varient,
-• les situations personnelles sont très différentes.
+La règle des 50/30/20 a un avantage massif : elle simplifie. Pour quelqu'un qui n'a jamais structuré son budget, elle offre un cadre immédiat, trois catégories claires, l'impression rassurante d'avoir un système. C'est pédagogiquement utile comme pour les petites roues d'un vélo d'apprentissage.
 
-Famille, célibat, ville chère, projets personnels, phases de vie…
+Le problème, c'est qu'on ne garde pas les petites roues d'apprentissage toute sa vie. Et beaucoup de gens restent bloqués là, convaincus d'avoir un système parce qu'ils ont une règle.
 
-Vouloir faire entrer toutes les réalités dans une seule règle rigide peut créer plus de frustration que de clarté.
+Une règle n'est pas un système. C'est un repère statique. Et un repère statique ne s'adapte pas à une vie qui change.
 
-Pourquoi la règle peut devenir culpabilisante
+Le problème réel : la règle te dit où aller, pas comment y arriver
 
-Quand la règle est présentée comme une norme, elle peut devenir un piège. Si tu n'es pas à 20 % d'épargne tu as l'impression de mal faire, tu te compares et tu culpabilises.
+Prenons la réalité d'un cadre parisien à 70k brut. Son loyer représente probablement 35 à 40% de son salaire net, soit les deux tiers de ce que la règle alloue aux "besoins". Avant d'avoir payé ses charges, ses transports et son alimentation, il a déjà explosé le ratio. Il n'a pas mal géré. Il vit dans une grande métropole avec des prix immobiliers qui rendent la règle structurellement inapplicable.
 
-Mais une règle n'a jamais été faite pour juger mais pour aider à réfléchir.
+Même chose pour un entrepreneur en phase de lancement qui réinvestit l'essentiel de ses revenus dans son activité. Ou un cadre qui traverse une période de transition professionnelle. Ou n'importe qui dont la vie ne rentre pas dans trois cases préformatées.
 
-Le problème n'est pas l'écart, mais l'absence de compréhension derrière cet écart.
+La règle des 50/30/20 a été pensée pour une vie médiane américaine des années 2000. Elle ne connaît pas ta ville, ton projet, tes priorités, ta phase de vie. Elle te donne des pourcentages et non une direction.
 
-La vraie question à se poser (et que la règle ne pose pas)
+La règle comme rétroviseur
 
-La règle des 50 / 30 / 20 ne répond pas à la question la plus importante : Pourquoi dépenses-tu comme tu dépenses ?
+C'est là que l'analogie est exacte. La règle des 50/30/20 fonctionne comme un rétroviseur puisqu'elle te montre où ton argent aurait dû aller selon une norme externe. Et comme tous les rétroviseurs, elle est utile pour un regard rapide, inutile pour piloter.
 
-Un bon budget ne cherche pas à faire rentrer la réalité dans des pourcentages ou d'atteindre un chiffre "idéal", il cherche à refléter ta vie, respecter tes contraintes et surtout soutenir tes objectifs.
+Piloter, ce n'est pas vérifier si tes dépenses correspondent à un ratio théorique. C'est savoir où tu en es maintenant, décider consciemment où va ton argent le mois prochain, et vérifier régulièrement que ta trajectoire financière soutient ce que tu veux construire. Pas ce qu'une règle dit que tu devrais construire.
 
-La règle comme repère, pas comme objectif
+La question pertinente n'est pas "est-ce que je respecte le 50/30/20 ?" Elle est "est-ce que mes dépenses reflètent mes vraies priorités ?"
 
-Utilisée intelligemment, la règle des 50 / 30 / 20 peut être très utile, non pas comme une obligation, mais comme un point de comparaison, un outil de lecture et un déclencheur de questions. Par exemple :
-• Pourquoi mes besoins sont-ils si élevés ?
-• Est-ce temporaire ou structurel ?
-• Quelle part de mes dépenses reflète vraiment mes priorités ?
+Pourquoi la règle devient culpabilisante sans le vouloir
 
-C'est là que la règle devient intéressante.
+Quand un outil de gestion est présenté comme une norme, il devient automatiquement un instrument de jugement. Si tu n'épargnes pas 20%, tu as l'impression de mal faire et ce, même si tu traverses une phase de dépenses exceptionnelles parfaitement justifiées, même si tu rembourses un crédit à taux élevé qui vaut mieux que toute épargne, même si tu investis dans une formation qui va doubler tes revenus dans deux ans.
 
-Adapter plutôt qu'appliquer : la clé d'un budget durable
+Le problème n'est pas l'écart avec la règle. Le problème, c'est d'avoir une règle rigide à la place d'une compréhension de sa propre situation.
 
-Un budget qui fonctionne est un budget : adaptable, évolutif, et aligné avec ta réalité.
+Un écart compris est une décision. Un écart subi est une dérive. La règle ne fait pas cette distinction. Un système de pilotage, si.
 
-Tu peux très bien :
-• épargner moins aujourd'hui pour un projet précis,
-• dépenser plus sur certaines envies sans culpabilité,
-• ajuster tes ratios selon les périodes de ta vie.
+Ce qu'il faut à la place : un système adaptatif
 
-La cohérence compte plus que le pourcentage.
+Un budget qui fonctionne durablement n'est pas un budget qui respecte des ratios fixes. C'est un budget qui évolue avec toi, qui reflète tes priorités actuelles, et qui te permet de décider consciemment où va chaque euro, pas de vérifier si tu colles à une norme externe.
 
-Comment Steero t'aide à dépasser la règle sans la jeter
+C'est ce que structure le niveau M du système TEMPO — Maîtriser, quinze minutes par mois. Pas pour vérifier si tu es à 20% d'épargne. Pour répondre à trois questions : où est allé mon argent ce mois-ci ? Est-ce que c'était choisi ou subi ? Où est-ce que je veux qu'il aille le mois prochain ?
 
-Steero ne te demande pas de rentrer dans une règle toute faite mais t'aide à structurer ton budget, visualiser tes répartitions, et comprendre ce qui est choisi et ce qui est subi.
+Et le niveau P — Positionner, trimestriellement — pour une question plus large : est-ce que ma trajectoire financière globale soutient ce que je veux construire ? Pas un ratio. Une direction.
 
-La règle des 50 / 30 / 20 peut devenir un point de départ, un repère visuel et un outil de réflexion mais jamais une injonction.
+Utilise la règle comme point de départ, pas comme destination
 
-Conclusion : une bonne règle ne remplace jamais la compréhension
+La règle des 50/30/20 a une vraie utilité : elle force une première structuration. Si tu n'as jamais catégorisé tes dépenses, elle te donne un cadre pour commencer. C'est un déclencheur de questions tel que : pourquoi mes besoins dépassent-ils 50% ? Est-ce structurel ou temporaire ? Quelle part de mes dépenses reflète vraiment mes priorités ?
 
-La règle des 50 / 30 / 20 n'est ni bonne ni mauvaise. Elle est incomplète si elle est utilisée seule.
+Ces questions sont bonnes. La règle comme réponse définitive ne l'est pas.
 
-Ce qui fait la différence, ce n'est pas le respect parfait d'un ratio, mais la capacité à comprendre, ajuster et décider en conscience.
+Steero ne te demande pas de rentrer dans des cases préformatées. Il structure tes catégories selon ta réalité, te montre l'écart entre ce que tu avais prévu et ce qui s'est passé, et te donne le cadre pour décider pas pour te conformer.
 
-Un bon budget ne te dit pas ce que tu dois faire. Il t'aide à faire des choix alignés avec ta vie.
+La règle des 50/30/20 peut être ton point de départ. Le système TEMPO est ce qui fait que tu n'en as plus besoin.`
+  },
+  {
+    id: 7,
+    titleKey: "blog.articles.7.title",
+    hookKey: "blog.articles.7.hook",
+    tagsKey: "blog.articles.7.tags",
+    content: `Excel n'est pas le coupable
 
-Et si ton budget s'adaptait enfin à ta réalité, plutôt que l'inverse ?
+Soyons clairs : Excel est un excellent outil de gestion budgétaire. Flexible, personnalisable, gratuit, accessible. Des milliers de personnes pilotent leurs finances avec une feuille de calcul et elles le font efficacement depuis des années.
 
-Steero t'aide à :
-• structurer ton budget sans rigidité,
-• comprendre tes arbitrages,
-• et piloter ton argent sans culpabilité.
+Ce n'est pas l'outil qui échoue. C'est ce qu'on fait ou ne fait pas autour de l'outil.
 
-Des repères clairs. Des choix conscients. Une gestion qui te ressemble.`
+Chercher un meilleur tableau, un template plus complet, une formule plus élaborée, c'est répondre à la mauvaise question. C'est comme chercher un meilleur agenda quand le problème c'est qu'on ne l'ouvre jamais. L'outil n'est pas en cause. Le rituel autour de l'outil l'est.
+
+La mécanique d'abandon en 3 semaines
+
+Elle est prévisible et elle se déroule toujours de la même façon.
+
+Semaine 1 — l'enthousiasme. Tu télécharges le tableau, tu le personnalises, tu saisis tes premières dépenses avec une rigueur exemplaire. La motivation est haute, l'effort est faible, le résultat semble prometteur.
+
+Semaine 2 — la friction. Une journée chargée, tu oublies de saisir deux dépenses. Puis trois. Le tableau commence à avoir des trous. Rattraper le retard demande plus d'effort que la saisie quotidienne — tu repousses.
+
+Semaine 3 — le découragement. Le tableau est incomplet. Tu ne sais plus si les chiffres sont fiables. L'information partielle est pire qu'inutile et elle donne une fausse impression de contrôle. Tu fermes l'onglet. Pour de bon.
+
+Ce cycle n'a rien à voir avec ta motivation initiale. Il est structurel. Sans rituel défini autour de l'outil, l'abandon est inévitable. Pas parce que tu manques de sérieux, mais parce que le cerveau humain abandonne systématiquement tout comportement sans fréquence fixe et sans feedback immédiat.
+
+Ce qui manque dans tous les tableaux Excel budget
+
+Un tableau Excel, même parfaitement conçu, ne te dit pas quand l'ouvrir. Il ne te rappelle pas que tu as oublié de saisir hier. Il ne te donne pas de signal quand tu dérapes. Il ne te pose pas les bonnes questions au bon moment.
+
+Il attend. Passivement. Que tu penses à lui.
+
+C'est là le problème fondamental de tous les outils sans rituel intégré, ils supposent que l'utilisateur va s'organiser lui-même autour de l'outil. Dans la réalité, une semaine chargée suffit à briser l'habitude. Et une habitude brisée à la semaine 2 ne se reconstruit presque jamais.
+
+Ce qu'il manque dans ton tableau Excel, ce n'est pas une colonne supplémentaire. C'est une cadence. Un moment défini, une fréquence fixe, une question précise à laquelle répondre à chaque ouverture.
+
+Le rituel qui fait vivre n'importe quel outil
+
+La solution n'est pas de changer d'outil. C'est d'installer un rituel autour de l'outil que tu as déjà.
+
+Et ce rituel a une structure précise. Le niveau T du système TEMPO : Tracer; Te donne le cadre minimal pour qu'un outil budgétaire survive au-delà de trois semaines.
+
+Cinq minutes, tous les jours et à minima trois fois par semaine (Exemple : les mardis, jeudis, samedis) juste assez pour que les trous ne s'accumulent pas au point de rendre le rattrapage décourageant. À chaque session, une seule question : qu'est-ce qui s'est passé depuis la dernière fois ? Tu saisis, tu vérifies le classement, tu observes l'impact sur ta trésorerie. Rien de plus.
+
+Ce geste simple, régulier, court, sans ambition d'analyse est ce qui fait la différence entre un tableau vivant et un onglet oublié.
+
+Puis le niveau E — Examiner — dix minutes dans le week-end. Comparer ce qui était prévu à ce qui s'est passé. Identifier les écarts avant qu'ils s'installent. Ce rituel hebdomadaire transforme la saisie quotidienne en information exploitable.
+
+Avec ces deux niveaux en place, n'importe quel outil, Excel inclus, devient fonctionnel durablement.
+
+Alors pourquoi ne pas rester sur Excel ?
+
+Tu peux. Sérieusement. Si tu installes le rituel, Excel fait le travail.
+
+Mais Excel a trois limites structurelles qu'aucun template ne résout. Il n'a pas de mémoire de tes catégories habituelles, chaque saisie part de zéro. Il ne te propose pas de comparaison automatique prévu/réel, tu dois la construire toi-même à chaque mois. Et il n'a aucune logique de fréquence intégrée : il ne sait pas que tu aurais dû l'ouvrir hier.
+
+Ces limites ne sont pas rédhibitoires si tu es rigoureux. Elles deviennent des points de friction qui s'accumulent et les points de friction, sur la durée, tuent les rituels.
+
+Un outil pensé autour du rituel réduit ces frictions sans supprimer le geste conscient de saisir. Des modèles de saisie préremplis pour tes dépenses récurrentes. Une structure prévu/réel intégrée par défaut. Une architecture qui correspond aux cinq niveaux TEMPO : du quotidien à l'annuel.
+
+C'est ce que Steero a été construit pour faire. Pas pour remplacer ta rigueur mais pour que ta rigueur ne s'épuise pas sur des frictions techniques.
+
+Le bon diagnostic change tout
+
+Si ton tableau Excel budget n'a pas tenu, ne cherche pas un meilleur tableau. Cherche le rituel qui manquait autour.
+
+Définis quand tu l'ouvres. Définis ce que tu y fais à chaque ouverture. Définis la question à laquelle tu dois répondre. Pas "comment optimiser mes finances" mais simplement "qu'est-ce qui s'est passé depuis hier ?"
+
+Commence petit. Trois fois par semaine à minima. Cinq minutes. Sans ambition d'exhaustivité au début.
+
+L'outil suit le rituel. Jamais l'inverse.`
+  },
+  {
+    id: 8,
+    titleKey: "blog.articles.8.title",
+    hookKey: "blog.articles.8.hook",
+    tagsKey: "blog.articles.8.tags",
+    content: `Les 500€ sont probablement déjà là
+
+Voilà ce que les articles de conseil financier ne te disent jamais : pour la grande majorité des cadres et actifs urbains qui gagnent correctement leur vie, les 500€ d'économies potentielles existent déjà dans leurs dépenses actuelles. Ils ne sont pas cachés dans un sacrifice futur mais sont dispersés dans des dépenses présentes qu'on ne voit pas parce qu'on ne les regarde pas avec suffisamment de granularité.
+
+Les études comportementales sur la perception des dépenses sont sans appel : la plupart des gens sous-estiment leurs dépenses mensuelles réelles de 20 à 30%. Pas parce qu'ils se mentent à eux mêmes mais parce que la mémoire financière est sélective : on retient les gros postes, on oublie les petits débits qui s'accumulent silencieusement entre le 5 et le 25 du mois.
+
+Avant de couper quoi que ce soit, il faut savoir précisément ce qu'on dépense. Pas approximativement. Précisément.
+
+Pourquoi les coupes budgétaires ne fonctionnent pas seules
+
+La logique de la coupe est séduisante : identifie une dépense, supprime la, économise le montant. Propre, simple, immédiat.
+
+Le problème : cette logique traite les symptômes, pas la cause. Si tu ne comprends pas pourquoi une dépense existe, si elle est choisie ou subie, récurrente ou exceptionnelle, compressible ou structurelle, tu risques de couper au hasard. Parfois tu élimines quelque chose qui comptait vraiment. Souvent tu laisses intact ce qui draine silencieusement.
+
+Et surtout : sans système de suivi en place, la dépense supprimée revient sous une autre forme trois semaines plus tard. Le comportement financier ne change pas par décision ponctuelle. Il change par compréhension progressive de ses propres habitudes.
+
+La coupe sans diagnostic est une rustine. Elle tient un mois. Rarement deux.
+
+Le vrai travail : cartographier avant de couper
+
+Économiser 500€ durablement commence par une seule action : regarder précisément où part l'argent sur les 60 à 90 derniers jours. Pas le solde de fin de mois. Les dépenses réelles, catégorisées, dans le détail.
+
+Cet exercice révèle systématiquement quatre types de fuites que personne ne voit venir.
+
+Les abonnements zombies. Ils sont débités entre J+10 et J+20, rarement au même moment, souvent pour des services qu'on n'utilise plus ou qu'on a oubliés. Chaque montant unitaire est faible : 9,99€, 14,99€, 4,99€. Ensemble, ils représentent fréquemment 60 à 120€ par mois chez un actif urbain abonné à une dizaine de services numériques ou autres.
+
+Les dépenses sociales non budgétées. Le dîner de dernière minute, le weekend improvisé, le cadeau oublié, le verre après le bureau. Chaque occurrence semble exceptionnelle. Sur trois mois, elles forment une catégorie à part entière.
+
+Le lissage mental. Le cerveau mémorise les bons mois et efface les mauvais. Résultat : on croit dépenser en moyenne 1 800€ par mois alors qu'on dépense 2 100€. Cet écart de 300€ est invisible jusqu'à ce qu'on le mesure sur trois mois consécutifs.
+
+Les dépenses de confort invisibles. Pas les grandes décisions, les petites frictions quotidiennes qu'on ne conscientise jamais. Le taxi au lieu du métro parce qu'on est en retard. La livraison parce qu'on n'a pas anticipé le repas. Le parking parce qu'on est arrivé trop tard pour trouver gratuit. Individuellement anodines. Collectivement significatives.
+
+Le niveau M de TEMPO : l'endroit où les 500€ apparaissent
+
+C'est précisément pour ça qu'existe le niveau M du système TEMPO — Maîtriser, quinze minutes par mois.
+
+Ce rituel mensuel n'est pas un bilan comptable. C'est un moment de décision consciente. Tu analyses les revenus vs les dépenses, le budget prévu vs le réel, l'évolution de ta trésorerie. Et tu poses trois questions précises : où est allé mon argent ce mois-ci ? Est-ce que c'était choisi ou subi ? Où est-ce que je veux qu'il aille le mois prochain ?
+
+C'est dans ce moment et seulement dans ce moment précis que les 500€ deviennent visibles. Pas avant. Pas en cherchant quoi couper abstraitement. En regardant ce qui s'est réellement passé, catégorie par catégorie, et en décidant consciemment ce qui change.
+
+Mais le niveau M ne fonctionne que si les niveaux T et E sont en place. Sans saisie régulière des dépenses, le niveau T (Tracer) cinq minutes plusieurs fois par semaine, le bilan mensuel repose sur des données incomplètes. Sans revue hebdomadaire, le niveau E (Examiner) dix minutes dans le week-end, les écarts ont eu trois semaines pour s'installer avant d'être vus.
+
+Les 500€ d'économies ne se trouvent pas dans une liste de conseils. Ils se trouvent dans tes propres données financières à condition de les avoir collectées.
+
+Ce que tu peux faire dès cette semaine
+
+Ne commence pas par chercher quoi couper. Commence par regarder.
+
+Trois actions concrètes dans cet ordre :
+
+1. Saisir toutes tes dépenses des deux dernières semaines en les catégorisant précisément, pas en les regroupant dans un "divers" qui ne dit rien.
+
+2. Identifier tes abonnements actifs : tous, y compris ceux débités sur une carte secondaire ou un compte joint.
+
+3. Noter les trois postes de dépenses qui te surprennent le plus : ceux dont le total réel est supérieur à ce que tu aurais estimé spontanément.
+
+Ces trois postes surprenants sont presque toujours là où se trouvent tes 500€.
+
+Steero structure ce travail avec la capture de tous tes abonnements, une vue prévu/réel par catégorie qui rend les écarts immédiatement lisibles sans avoir à construire toi-même les formules ni à maintenir un tableau à jour. La saisie est manuelle et intentionnelle : noter une dépense, c'est déjà commencer à la questionner.
+
+Et le niveau M est intégré directement dans l'outil comme moment de décision mensuelle, pas comme bilan subi.
+
+500€ d'économies ou 500€ de choix ?
+
+La vraie question derrière "comment économiser 500€" n'est pas financière. Elle est comportementale. Est-ce que tu veux économiser 500€ par restriction en te privant de quelque chose ou par lucidité en arrêtant de financer des choses que tu n'as pas vraiment choisies ?
+
+La restriction demande de la discipline. Elle s'épuise. La lucidité demande de l'information. Elle se construit.
+
+Un mois de regard précis sur tes dépenses réelles change plus ta situation financière que six mois de bonnes intentions. Pas parce que tu vas trouver des coupes magiques mais parce que comprendre où part son argent change les décisions en amont, avant que la dépense soit faite.
+
+Les 500€ sont probablement déjà là. Il manque juste le regard pour les voir.`
+  },
+  {
+    id: 9,
+    titleKey: "blog.articles.9.title",
+    hookKey: "blog.articles.9.hook",
+    tagsKey: "blog.articles.9.tags",
+    content: `Le marché des apps finance personnelle a un problème structurel
+
+Le secteur des applications de gestion financière repose sur une promesse implicite : plus l'app fait de choses à ta place, mieux elle est. Agrégation automatique des comptes, catégorisation intelligente, alertes en temps réel, prédictions basées sur tes habitudes. Moins tu fais mieux c'est.
+
+C'est une logique de confort. Elle est commercialement efficace car les fonctionnalités se comptent, se comparent, se vendent. Et elle est comportementalement problématique.
+
+Parce qu'une app qui fait tout à ta place ne te rend pas plus compétent financièrement. Elle te rend plus confortable dans ton incompétence actuelle. La différence entre les deux est exactement la différence entre regarder quelqu'un d'autre conduire et apprendre à conduire soi-même.
+
+Ce que les comparatifs ne mesurent jamais
+
+Ouvre n'importe quel comparatif d'applications de gestion financière. Tu vas trouver des critères précis : nombre de banques connectées, qualité de la catégorisation automatique, lisibilité des graphiques, existence d'une version gratuite, note moyenne sur les stores.
+
+Ce que tu ne vas pas trouver : est-ce que les utilisateurs de cette app ont amélioré leur situation financière après six mois d'utilisation ? Est-ce qu'ils comprennent mieux leurs habitudes de dépenses ? Est-ce qu'ils prennent de meilleures décisions financières ?
+
+Ces questions ne sont jamais posées parce qu'elles sont difficiles à mesurer et parce que les réponses seraient inconfortables pour beaucoup d'acteurs du marché.
+
+La vérité que personne ne dit : la majorité des utilisateurs d'apps d'agrégation automatique consultent leurs données une à deux fois par mois et souvent moins. Ils ont une vision de leur situation. Ils n'ont pas développé une compétence de pilotage.
+
+Le rétroviseur automatique vs le pare-brise conscient
+
+Les apps d'agrégation tel que Finary, Bankin, Linxo et leurs équivalents font une chose très bien : te montrer où est allé ton argent. Automatiquement, proprement, sans effort de ta part. C'est utile. C'est aussi fondamentalement limité.
+
+Un rétroviseur automatique te montre la route déjà parcourue. Il ne te demande rien. Il ne t'apprend rien. Et surtout, il ne te prépare pas à prendre de meilleures décisions la prochaine fois, parce que tu n'as jamais eu à te confronter activement à tes propres comportements financiers.
+
+La question pertinente n'est pas "quelle app me donne la meilleure vision de mon passé financier ?" Elle est "quelle app m'aide à mieux piloter mon avenir financier ?"
+
+Ce sont deux produits différents. Ils répondent à deux besoins différents.
+
+Ce qu'une app doit vraiment faire pour changer ta situation
+
+Changer durablement sa situation financière ne vient pas d'une meilleure visualisation du passé. Ça vient de trois choses précises.
+
+Développer une conscience financière régulière. Pas une notification quotidienne qu'on ignore. Un geste actif, court et répété qui maintient un contact conscient avec sa situation réelle. La conscience financière se construit par exposition régulière, pas par consultation passive d'un dashboard.
+
+Installer une fréquence de regard adaptée à chaque niveau de décision. Les décisions quotidiennes ne demandent pas le même regard que les décisions mensuelles ou les orientations annuelles. Une app qui traite tout au même niveau en affichant tout en permanence crée de la confusion, pas de la clarté.
+
+Créer de la friction intentionnelle aux bons endroits. C'est contre-intuitif dans un marché qui vend de la fluidité mais la friction légère est un outil comportemental puissant. Enregistrer manuellement une dépense prend dix secondes. Ces dix secondes sont le moment où tu conscientises la dépense où tu te demandes si elle était prévue, si elle était nécessaire, si elle correspond à tes priorités. Automatiser ce geste, c'est supprimer ce moment de conscience. Et c'est exactement ce moment qui change les décisions futures.
+
+Pourquoi l'automatisation totale ne tient pas sa promesse
+
+L'argument de l'agrégation automatique est séduisant : moins de friction, plus d'utilisation, meilleure vision. En théorie. En pratique, le taux d'abandon des apps d'agrégation après 90 jours est massif — précisément parce que l'automatisation supprime l'engagement actif de l'utilisateur.
+
+Un outil qu'on consulte passivement finit par ne plus être consulté du tout. La notification devient un bruit de fond. Le dashboard devient un onglet qu'on n'ouvre plus. Et six mois après le téléchargement, la situation financière est exactement la même : mieux documentée certes mais pas mieux pilotée.
+
+L'automatisation résout le problème de l'effort de saisie. Elle ne résout pas le problème de l'absence de rituel. Et c'est le rituel qui fait toute la différence.
+
+Les critères qui comptent vraiment pour choisir une app
+
+Avant de comparer des features, pose-toi quatre questions.
+
+Est-ce que cette app m'engage activement ou me laisse passif ? Un outil qui fait tout à ta place ne développe aucune compétence. Un outil qui structure ton engagement développe une discipline durable.
+
+Est-ce que cette app a une logique de fréquence intégrée ? Pas des notifications push mais une architecture qui distingue ce qu'on fait quotidiennement, hebdomadairement, mensuellement, trimestriellement, annuellement. Sans cette architecture, tout se mélange et rien n'est actionnable au bon moment.
+
+Est-ce que cette app distingue l'observation de la décision ? Voir où est allé son argent et décider où il va sont deux actes différents. Une app qui les confond dans le même dashboard ne t'aide pas à décider : elle t'aide à constater.
+
+Est-ce que cette app me rend dépendant d'elle ou progressivement plus autonome ? La meilleure app de gestion financière est celle dont tu n'as plus besoin dans cinq ans parce qu'elle t'a aidé à développer une vraie compétence de pilotage. Pas celle dont tu es plus dépendant chaque mois parce qu'elle gère à ta place.
+
+Le paradoxe de la meilleure app
+
+La meilleure app pour gérer son argent n'est pas la plus automatisée. Ce n'est pas celle qui connecte le plus de banques. Ce n'est pas celle qui a les graphiques les plus beaux ni la catégorisation la plus précise.
+
+C'est celle qui change ton comportement financier durablement. Celle qui te fait regarder plus souvent, comprendre plus clairement, décider plus consciemment. Celle qui installe un système pas un dashboard.
+
+Steero a été construit à rebours de la tendance du marché. La saisie y est manuelle et intentionnelle parce que ce geste est un acte de conscience, pas une friction inutile. Des modèles préremplis réduisent ce geste à quelques secondes sans le supprimer et l'architecture entière repose sur le système TEMPO qui sont cinq niveaux de rituels, du quotidien à l'annuel, chacun avec une question précise et un temps défini.
+
+Pas une app de plus à consulter passivement. Un système de pilotage à installer activement.
+
+La différence n'est pas dans les features. Elle est dans ce que tu deviens après six mois d'utilisation.`
+  },
+  {
+    id: 10,
+    titleKey: "blog.articles.10.title",
+    hookKey: "blog.articles.10.hook",
+    tagsKey: "blog.articles.10.tags",
+    content: `Payer fait, ou ne fait plus mal : ce que la recherche dit vraiment
+
+L'expérience qui a tout changé
+
+En 2001, deux chercheurs du MIT, Drazen Prelec et Duncan Simester, publient une étude qui va devenir une référence en économie comportementale. Leur question est simple : est-ce qu'on dépense différemment selon qu'on paie en cash ou par carte ?
+
+Leur protocole : une enchère pour des billets de matchs très demandés. Une moitié des participants paie en cash. L'autre par carte de crédit. Résultat : les participants payant par carte étaient prêts à dépenser près du double de ceux qui payaient en liquide. À valeur perçue identique, le mode de paiement avait quasiment doublé le consentement à payer.
+
+Ce n'est pas une question de pouvoir d'achat. C'est une question de câblage cognitif.
+
+Pourquoi la carte découple l'achat de la douleur
+
+Prelec et Simester introduisent un concept précis : le pain of paying, la douleur de payer. Quand tu sors un billet de 50€ de ton portefeuille, ton cerveau enregistre une perte immédiate. Tu la vois. Tu la tiens. Tu la lâches. Cette friction sensorielle active les mêmes zones neurologiques que la douleur physique et c'est documenté par imagerie cérébrale.
+
+Quand tu paies par carte, ce mécanisme est court-circuité. Le geste est identique qu'il s'agisse de 12€ ou de 1 200€. Il n'y a pas de perte visible. Pas de friction. L'achat et le paiement sont découplés, séparés dans le temps et dans la perception. Ton cerveau traite une transaction, pas une perte.
+
+Et ça change tout ce qui suit.
+
+La comptabilité mentale : comment ton cerveau classe et déforme l'argent
+
+L'argent du casino et l'argent du salaire ne sont pas le même argent
+
+Richard Thaler, prix Nobel d'économie, a formalisé un concept que tu vis sans le nommer : la comptabilité mentale. Ton cerveau ne traite pas l'argent comme une masse homogène. Il le classe dans des comptes séparés selon sa source, sa destination, son format.
+
+L'argent gagné à un jeu est dépensé plus facilement que l'argent du salaire. Un remboursement inattendu part plus vite qu'une prime attendue. Et le solde affiché sur ton écran de banque semble moins réel que les billets dans ton portefeuille même si le montant est identique.
+
+Ce n'est pas de l'irresponsabilité. C'est de la cognition.
+
+Ce que ça change concrètement dans tes fins de mois
+
+L'effet est direct : quand l'argent n'a pas de forme physique, il perd de son poids mental. Les micro-dépenses s'accumulent sans que ton cerveau les comptabilise vraiment. Un abonnement prélevé automatiquement ? Invisible.
+
+Un paiement sans contact à 8h du matin ? Inexistant dans ta mémoire de la journée. Un achat sur app, un clic, une livraison : zéro friction, zéro trace cognitive.
+
+Ce n'est pas que tu dépenses trop. C'est que tu dépenses sans le ressentir. Et ce que tu ne ressens pas, tu ne le pilotes pas.
+
+L'anesthésie de l'argent numérique : ce que les apps automatiques aggravent
+
+Quand tout est agrégé, rien ne compte
+
+Les apps d'agrégation bancaire celles qui connectent tes comptes et catégorisent tout automatiquement ont résolu un problème réel : la visibilité. Tu peux voir où est allé ton argent le mois dernier. C'est utile.
+
+Mais elles ont introduit un problème plus silencieux : elles ont supprimé le dernier moment de conscience qui restait dans le parcours de dépense. Tu n'as pas eu à noter. Pas eu à te souvenir. Pas eu à faire face. L'app a tout absorbé à ta place.
+
+Le résultat : tu observes le passé sans jamais avoir vécu le présent. Tu regardes un rapport de dépenses comme tu regardes un relevé météo d'une semaine que tu n'as pas vécue. C'est de l'information. Pas de la conscience. C'est exactement ce que Steero a choisi de ne pas reproduire.
+
+Le rétroviseur ne fait pas mal : c'est son problème
+
+Un agrégateur automatique, c'est un rétroviseur parfaitement net. Il te montre tout ce qui s'est passé derrière toi, avec précision. Mais regarder un rétroviseur ne change pas la trajectoire. Ça ne fait pas mal. Et ce qui ne fait pas mal ne modifie pas le comportement.
+
+La douleur de payer même atténuée, même symbolique, est une information. C'est ton cerveau qui te dit : quelque chose a changé dans ta situation. Quand cette information disparaît, le comportement dérive. Pas d'un coup. Progressivement. Imperceptiblement. Jusqu'à la fin de mois que tu n'arrives pas à expliquer.
+
+La saisie manuelle comme acte de conscience : pourquoi c'est un choix de design
+
+Enregistrer une dépense, c'est la ressentir
+
+Quand tu saisis manuellement une dépense : 34€ au restaurant, 12€ d'abonnement, 80€ de courses; Tu fais exactement ce que le cash forçait à faire : tu reconnectes l'achat à la perte. Pas de façon dramatique. Pas douloureusement. Mais consciemment.
+
+Ce geste simple réintroduit la friction que la carte a supprimée. Il force un micro-moment d'attention : tu as dépensé ça. Maintenant tu le sais. Maintenant ça compte.
+
+C'est neuro scientifiquement cohérent avec ce que Prelec et Simester ont documenté : la saillance du paiement avec sa visibilité, sa présence dans la conscience qui modifie directement le comportement de dépense. Pas après. Pendant. Et surtout : avant la prochaine fois.
+
+C'est exactement ce que Steero a choisi de ne pas automatiser
+
+Steero ne connecte pas tes comptes pour agréger à ta place. C'est une décision de design, pas une limitation technique. La saisie manuelle est le mécanisme. C'est elle qui réinstalle la douleur de payer dans un monde où tout a été fait pour la supprimer.
+
+Et parce que la vie financière ne se résume pas à un compte courant : espèces, Ticket Restaurant, solde Vinted, compte commun, cagnotte; Steero permet de tout tracer dans un seul endroit, quel que soit le portefeuille. Pas pour automatiser. Pour centraliser la conscience. C'est exactement ce que permet Steero : tenir un registre de tout ce qui sort, quelle qu'en soit la forme, pour que rien ne disparaisse dans l'angle mort cognitif.
+
+Comment installer ce mécanisme dans ta vie : le rituel T de TEMPO
+
+5 minutes par jour : Pas pour noter, pour ressentir
+
+Le premier niveau du système TEMPO, c'est Tracer. Quotidien. 5 minutes. L'idée n'est pas de tenir une comptabilité à la virgule près. C'est de maintenir le lien entre toi et ta situation financière réelle.
+
+Concrètement : chaque soir, ou dans le moment, tu saisis ce qui est sorti. Ce que tu as mangé, payé, abonné, transféré. Pas pour te juger. Pour ne pas laisser la carte faire ce qu'elle fait par défaut rendre la dépense invisible.
+
+Ce rituel ne demande pas de discipline extraordinaire. Il demande 5 minutes et la décision de ne pas déléguer ta conscience financière à un algorithme.
+
+Ce que ça change au bout de 3 semaines
+
+La plupart des gens qui passent à la saisie manuelle régulière rapportent la même chose : ce n'est pas qu'ils dépensent moins mais ils savent pourquoi ils dépensent. La décision devient consciente. Le glissement invisible s'arrête. Pas parce qu'ils se sont imposé des règles strictes. Parce qu'ils ont réintroduit la friction que le système financier moderne avait soigneusement effacée.
+
+C'est ça, piloter. Pas observer le passé. Ressentir le présent pour choisir l'avenir.
+
+Ton cerveau a été conçu pour ressentir la dépense. La carte lui a volé ce signal. La saisie manuelle le lui rend.
+
+C'est exactement pour ça que Steero ne t'agrège rien automatiquement. Essaie 14 jours et remarque ce que tu ressens la première fois que tu saisis une dépense.`
   }
 ];
 
@@ -602,52 +806,89 @@ const MythBlock = ({ children }: { children: React.ReactNode }) => (
 // Define explicit section titles for each article (matching the document)
 const articleSections: Record<number, string[]> = {
   1: [
-    "Pourquoi la gestion des finances personnelles n'est pas innée",
-    "Comprendre son argent pour reprendre le contrôle financier",
-    "La finance personnelle est une compétence qui se développe avec le temps",
-    "Conclusion : apprendre à gérer son argent change durablement la relation à l'argent"
+    "Ce n'est pas que tu dépenses trop. C'est que tu regardes trop rarement.",
+    "Les 4 fuites invisibles qui plombent un budget cadre",
+    "Pourquoi les bonnes résolutions ne fonctionnent pas",
+    "La vraie solution : un système de pilotage à 5 niveaux",
+    "Par où commencer quand on part de zéro",
+    "Ce que tu vas changer cette semaine"
   ],
   2: [
-    "De la gestion subie au pilotage financier",
-    "Étape 1 : Observer ses finances sans jugement",
-    "Étape 2 : Structurer pour donner du sens aux chiffres",
-    "Étape 3 : Comprendre les écarts pour mieux décider",
-    "Étape 4 : Décider en fonction de ses objectifs",
-    "Pourquoi la montée en compétences financières échoue souvent",
-    "Comment Steero accompagne la montée en compétences financières",
-    "Conclusion : piloter ses finances est une compétence accessible"
+    "Subir ou piloter : la seule distinction qui compte",
+    "Étape 1 : Observer sans juger (niveau Tracer)",
+    "Étape 2 : Structurer pour transformer des chiffres en information (niveau Examiner)",
+    "Étape 3 : Comprendre les écarts pour reprendre la main (niveau Maîtriser)",
+    "Étape 4 : Aligner finances et objectifs (niveaux Positionner et Orienter)",
+    "Pourquoi la montée en compétences échoue avant d'avoir commencé",
+    "Le pilotage s'apprend. Comme n'importe quelle compétence."
   ],
   3: [
-    "Le vrai problème des outils financiers modernes",
-    "Rituel financier : de quoi parle-t-on vraiment ?",
-    "Le rituel comme pilier de la montée en compétences financières",
-    "Comment Steero a été pensé autour du rituel, pas de l'outil",
-    "Conclusion : sans rituel, il n'y a pas de contrôle financier"
+    "La majorité des apps de finance personnelle sont des rétroviseurs",
+    "Un rituel n'est pas un bilan mensuel",
+    "Pourquoi les rituels financiers échouent avant de commencer",
+    "Le système TEMPO : cinq rituels, cinq fréquences, un seul cap",
+    "Ce que ça change concrètement",
+    "Le seul outil qui fonctionne est celui qu'on utilise régulièrement"
   ],
   4: [
-    "Pourquoi la gestion financière paraît toujours trop lourde",
-    "Le principe clé : un rituel = une vocation",
-    "Les rituels financiers : une architecture, pas une contrainte",
-    "Pourquoi le rituel en 2 minutes est non seulement possible, mais essentiel",
-    "Ce que change une approche structurée par rituels",
-    "Conclusion : ce n'est pas le temps qui manque, c'est la structure"
+    "Le vrai problème : on essaie de tout faire d'un coup",
+    "Un rituel, une question. Pas plus.",
+    "Les 5 niveaux du système TEMPO",
+    "Alors, 2 minutes : mythe ou réalité ?",
+    "Ce que change une architecture de rituels"
   ],
   5: [
-    "Pourquoi regarder ses finances est souvent vécu comme une punition",
-    "Un tableau de bord n'est pas là pour juger, mais pour informer",
-    "Pourquoi la visualisation est un levier si puissant",
-    "De la sanction au pilotage : un changement de posture",
-    "Comment Steero t'aide à adopter cette logique de tableau de bord",
-    "Conclusion : regarder tes finances ne devrait jamais faire peur"
+    "Le rétroviseur ne te juge pas. Ton cerveau, si.",
+    "Pourquoi l'évitement financier s'installe",
+    "La posture de pilotage : observer sans juger",
+    "Voir clair, c'est déjà décider mieux",
+    "De l'observation à la décision : le rôle des rituels",
+    "Ce que change une lecture factuelle de ses finances"
   ],
   6: [
-    "Pourquoi la règle des 50 / 30 / 20 est si populaire",
-    "Pourquoi la règle peut devenir culpabilisante",
-    "La vraie question à se poser (et que la règle ne pose pas)",
-    "La règle comme repère, pas comme objectif",
-    "Adapter plutôt qu'appliquer : la clé d'un budget durable",
-    "Comment Steero t'aide à dépasser la règle sans la jeter",
-    "Conclusion : une bonne règle ne remplace jamais la compréhension"
+    "Pourquoi cette règle est si populaire et pourquoi c'est un problème",
+    "Le problème réel : la règle te dit où aller, pas comment y arriver",
+    "La règle comme rétroviseur",
+    "Pourquoi la règle devient culpabilisante sans le vouloir",
+    "Ce qu'il faut à la place : un système adaptatif",
+    "Utilise la règle comme point de départ, pas comme destination"
+  ],
+  7: [
+    "Excel n'est pas le coupable",
+    "La mécanique d'abandon en 3 semaines",
+    "Ce qui manque dans tous les tableaux Excel budget",
+    "Le rituel qui fait vivre n'importe quel outil",
+    "Alors pourquoi ne pas rester sur Excel ?",
+    "Le bon diagnostic change tout"
+  ],
+  8: [
+    "Les 500€ sont probablement déjà là",
+    "Pourquoi les coupes budgétaires ne fonctionnent pas seules",
+    "Le vrai travail : cartographier avant de couper",
+    "Le niveau M de TEMPO : l'endroit où les 500€ apparaissent",
+    "Ce que tu peux faire dès cette semaine",
+    "500€ d'économies ou 500€ de choix ?"
+  ],
+  9: [
+    "Le marché des apps finance personnelle a un problème structurel",
+    "Ce que les comparatifs ne mesurent jamais",
+    "Le rétroviseur automatique vs le pare-brise conscient",
+    "Ce qu'une app doit vraiment faire pour changer ta situation",
+    "Pourquoi l'automatisation totale ne tient pas sa promesse",
+    "Les critères qui comptent vraiment pour choisir une app",
+    "Le paradoxe de la meilleure app"
+  ],
+  10: [
+    "Payer fait, ou ne fait plus mal : ce que la recherche dit vraiment",
+    "Pourquoi la carte découple l'achat de la douleur",
+    "La comptabilité mentale : comment ton cerveau classe et déforme l'argent",
+    "Ce que ça change concrètement dans tes fins de mois",
+    "L'anesthésie de l'argent numérique : ce que les apps automatiques aggravent",
+    "Le rétroviseur ne fait pas mal : c'est son problème",
+    "La saisie manuelle comme acte de conscience : pourquoi c'est un choix de design",
+    "C'est exactement ce que Steero a choisi de ne pas automatiser",
+    "Comment installer ce mécanisme dans ta vie : le rituel T de TEMPO",
+    "Ce que ça change au bout de 3 semaines"
   ]
 };
 
@@ -873,14 +1114,16 @@ interface ArticleCardProps {
   onToggle: () => void;
   cardRef?: React.RefObject<HTMLDivElement>;
   openWaitlist: () => void;
+  onOpenArticle?: (id: number) => void;
 }
 
-const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist }: ArticleCardProps) => {
+const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist, onOpenArticle }: ArticleCardProps) => {
   const [copied, setCopied] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const hook = t(article.hookKey);
   const title = t(article.titleKey);
-  const tags = t(article.tagsKey, { returnObjects: true }) as unknown as string[];
+  const rawTags = t(article.tagsKey, { returnObjects: true });
+  const tags = Array.isArray(rawTags) ? rawTags as string[] : [];
   const readingTime = calculateReadingTime(hook + article.content);
 
   const handleShare = (e: React.MouseEvent) => {
@@ -987,6 +1230,329 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist }: Ar
                   {formatContent(article.content, article.id)}
                 </div>
               </div>
+
+              {/* Related links section - Article 3 */}
+              {article.id === 3 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onOpenArticle?.(1);
+                      }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Tu dépenses trop chaque mois : voici pourquoi</span>
+                    </button>
+                    <a
+                      href="https://medium.com/essentiels/bj-fogg-cr%C3%A9ez-un-changement-durable-avec-de-petites-habitudes-5086dc9d9d37"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>Étude sur la formation des habitudes (BJ Fogg, Tiny Habits)</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 2 (La montée en compétences) */}
+              {article.id === 2 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(1); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Tu dépenses trop chaque mois : voici pourquoi (et comment l'arrêter)</span>
+                    </button>
+                    <a
+                      href="https://www.youtube.com/watch?v=Ss8yEyijZ8k"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>James Clear, Atomic Habits — sur la formation des habitudes par étapes</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 1 (Tu dépenses trop) */}
+              {article.id === 1 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel, aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(10); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Ta carte bancaire t'a rendu financièrement anesthésié</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 4 (5 minutes par jour) */}
+              {article.id === 4 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(1); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Tu dépenses trop chaque mois</span>
+                    </button>
+                    <a
+                      href="https://des-livres-pour-changer-de-vie.com/changer-vie-methode-petites-habitudes/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>BJ Fogg, Tiny Habits — sur l'ancrage des micro-comportements</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 6 (Règle 50/30/20) */}
+              {article.id === 6 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(1); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Tu dépenses trop chaque mois</span>
+                    </button>
+                    <a
+                      href="https://www.youtube.com/watch?v=DmMSG7Lzopk"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>Elizabeth Warren, All Your Worth — origine de la règle 50/30/20 et son contexte d'origine</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 7 (Tableau Excel budget) */}
+              {article.id === 7 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(4); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>5 minutes par jour pour ne plus jamais subir sa fin de mois</span>
+                    </button>
+                    <a
+                      href="https://medium.com/essentiels/bj-fogg-cr%C3%A9ez-un-changement-durable-avec-de-petites-habitudes-5086dc9d9d37"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>BJ Fogg, Tiny Habits — sur la construction des habitudes par ancrage comportemental</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 8 (Économiser 500€) */}
+              {article.id === 8 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(1); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Tu dépenses trop chaque mois</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(10); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Ta carte bancaire t'a rendu financièrement anesthésié</span>
+                    </button>
+                    <a
+                      href="https://thedecisionlab.com/fr/insights/consumer-insights/this-is-your-brain-on-money"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>Étude comportementale sur la sous-estimation des dépenses — Journal of Consumer Research</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 9 (Meilleure app) */}
+              {article.id === 9 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(2); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>La montée en compétences financières</span>
+                    </button>
+                    <a
+                      href="https://des-livres-pour-changer-de-vie.com/hooked/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>Nir Eyal, Hooked — sur les mécanismes d'engagement des produits numériques</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 10 (Carte bancaire douleur de payer) */}
+              {article.id === 10 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(5); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Tes finances ne sont pas un bulletin de notes. Arrête de les lire comme tel.</span>
+                    </button>
+                    <a
+                      href="https://cdn1.nyt.com/packages/pdf/Alwaysleavehome-2.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>Prelec, D. & Simester, D. (2001). Always leaving home without it. Marketing Letters</span>
+                    </a>
+                  </div>
+                </div>
+              )}
+
+              {/* Related links section - Article 5 (Finances vs bulletin de notes) */}
+              {article.id === 5 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(4); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>5 minutes par jour pour ne plus jamais subir sa fin de mois</span>
+                    </button>
+                    <a
+                      href="https://thedecisionlab.com/fr/thinkers/economics/daniel-kahneman"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      <span>Daniel Kahneman, Thinking Fast and Slow — sur les biais émotionnels dans la prise de décision</span>
+                    </a>
+                  </div>
+                </div>
+              )}
               
               {/* CTA Button */}
               <motion.div
@@ -1050,6 +1616,7 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist }: Ar
   );
 };
 
+
 const Blog = () => {
   const { t } = useTranslation();
   const { openWaitlist } = useWaitlist();
@@ -1060,7 +1627,10 @@ const Blog = () => {
   const articleRefs = useRef<Map<number, HTMLDivElement>>(new Map());
   
   const articles = getArticles(t);
-  const allTags = Array.from(new Set(articles.flatMap(article => t(article.tagsKey, { returnObjects: true }) as string[])));
+  const allTags = Array.from(new Set(articles.flatMap(article => {
+    const raw = t(article.tagsKey, { returnObjects: true });
+    return Array.isArray(raw) ? raw as string[] : [];
+  })));
 
   // Track which open article is most visible
   useEffect(() => {
@@ -1113,6 +1683,18 @@ const Blog = () => {
     });
   };
 
+  const openSpecificArticle = (id: number) => {
+    setOpenArticles(prev => {
+      const newSet = new Set(prev);
+      newSet.add(id);
+      return newSet;
+    });
+    setTimeout(() => {
+      const el = articleRefs.current.get(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
   const setArticleRef = (id: number, element: HTMLDivElement | null) => {
     if (element) {
       articleRefs.current.set(id, element);
@@ -1135,7 +1717,8 @@ const Blog = () => {
   };
 
   const filteredArticles = articles.filter(article => {
-    const tags = t(article.tagsKey, { returnObjects: true }) as string[];
+    const rawTags = t(article.tagsKey, { returnObjects: true });
+    const tags = Array.isArray(rawTags) ? rawTags as string[] : [];
     const title = t(article.titleKey) as string;
     const hook = t(article.hookKey) as string;
     const matchesTags = selectedTags.length === 0 || 
@@ -1267,6 +1850,7 @@ const Blog = () => {
               {/* Right side - Scrollable articles */}
               <div className="lg:w-2/3">
                 <div className="space-y-4">
+                  
                   <AnimatePresence mode="popLayout">
                     {filteredArticles.map((article, index) => (
                       <motion.div
@@ -1284,6 +1868,7 @@ const Blog = () => {
                           isOpen={openArticles.has(article.id)}
                           onToggle={() => toggleArticle(article.id)}
                           openWaitlist={openWaitlist}
+                          onOpenArticle={openSpecificArticle}
                         />
                       </motion.div>
                     ))}
