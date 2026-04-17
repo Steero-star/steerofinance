@@ -108,7 +108,7 @@ const Header = () => {
                 className="btn-primary text-xs w-full mt-2"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  window.open("https://app.steero.fr/onboarding/welcome", "_blank");
+                  window.open("https://app.steero.fr/auth/sign-up", "_blank");
                 }}
               >
                 {t('common.joinWaitlist')}
