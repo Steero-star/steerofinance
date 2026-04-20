@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import SEO from "@/components/SEO";
 import { useWaitlist } from "@/contexts/WaitlistContext";
+import { trackPricingToggle, trackCTAClick, trackWaitlistOpen } from "@/lib/analytics";
+
 
 type BillingPeriod = "quarterly" | "annual";
 
@@ -70,7 +72,10 @@ const Pricing = () => {
               {/* Billing Toggle */}
               <div className="inline-flex items-center gap-2 bg-muted rounded-full p-1 mb-12">
                 <button
-                  onClick={() => setBillingPeriod("quarterly")}
+                  onClick={() => {
+                    setBillingPeriod("quarterly");
+                    trackPricingToggle("quarterly");
+                  }}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
                     !isAnnual
                       ? "bg-primary text-primary-foreground shadow-sm"
@@ -80,7 +85,10 @@ const Pricing = () => {
                   {t("pricing.quarterly")}
                 </button>
                 <button
-                  onClick={() => setBillingPeriod("annual")}
+                  onClick={() => {
+                    setBillingPeriod("annual");
+                    trackPricingToggle("annual");
+                  }}
                   className={`px-5 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2 ${
                     isAnnual
                       ? "bg-primary text-primary-foreground shadow-sm"
@@ -196,7 +204,11 @@ const Pricing = () => {
                 </div>
 
                 <Button
-                  onClick={openWaitlist}
+                  onClick={() => {
+                    trackWaitlistOpen("pricing");
+                    trackCTAClick("rejoindre_waitlist", "pricing_card");
+                    openWaitlist();
+                  }}
                   className="w-full rounded-full bg-white text-primary hover:bg-white/90"
                 >
                   {t("pricing.cta")}

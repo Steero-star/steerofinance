@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Facebook, Linkedin, Youtube } from "lucide-react";
 import steeroLogo from "@/assets/steero-logo.png";
+import { trackSocialClick, trackOutboundLink, trackNavClick } from "@/lib/analytics";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -56,6 +57,10 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 aria-label="LinkedIn"
+                onClick={() => {
+                  trackSocialClick("linkedin");
+                  trackOutboundLink("https://www.linkedin.com/company/steero-osfinance", "LinkedIn");
+                }}
               >
                 <Linkedin size={27} />
               </a>
@@ -66,6 +71,10 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 aria-label="Youtube"
+                onClick={() => {
+                  trackSocialClick("youtube");
+                  trackOutboundLink("https://www.youtube.com/@Steero-fin", "Youtube");
+                }}
               >
                 <Youtube size={27} />
               </a>
@@ -76,6 +85,10 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-9 h-9 rounded-md border border-border text-muted-foreground hover:text-primary hover:border-primary transition-colors"
                 aria-label="Facebook"
+                onClick={() => {
+                  trackSocialClick("facebook");
+                  trackOutboundLink("https://www.facebook.com/profile.php?id=61579672177032", "Facebook");
+                }}
               >
                 <Facebook size={27} />
               </a>
@@ -95,6 +108,7 @@ const Footer = () => {
                 <Link
                   key={link.to}
                   to={link.to}
+                  onClick={() => trackNavClick(t(link.labelKey), link.to)}
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"
                 >
                   {t(link.labelKey)}

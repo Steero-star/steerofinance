@@ -9,6 +9,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
+import { trackArticleOpen, trackArticleClose, trackArticleShare, trackBlogSearch, trackBlogTagFilter } from "@/lib/analytics";
 
 interface Article {
   id: number;
@@ -1125,9 +1126,11 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist, onOp
   const rawTags = t(article.tagsKey, { returnObjects: true });
   const tags = Array.isArray(rawTags) ? rawTags as string[] : [];
   const readingTime = calculateReadingTime(hook + article.content);
+  const openTimeRef = useRef<number | null>(null);
 
   const handleShare = (e: React.MouseEvent) => {
     e.stopPropagation();
+    trackArticleShare(article.id, t(article.titleKey));
     const url = `${window.location.origin}/blog#article-${article.id}`;
     navigator.clipboard.writeText(url).then(() => {
       setCopied(true);
@@ -1672,11 +1675,18 @@ const Blog = () => {
   }, [openArticles]);
 
   const toggleArticle = (id: number) => {
+    const article = articles.find(a => a.id === id);
     setOpenArticles(prev => {
       const newSet = new Set(prev);
       if (newSet.has(id)) {
+         if (article) {
+          trackArticleClose(id, 0); // tu peux affiner avec un ref de temps
+         }
         newSet.delete(id);
       } else {
+        if (article) {
+          trackArticleOpen(id, t(article.titleKey));
+        }
         newSet.add(id);
       }
       return newSet;
@@ -1704,6 +1714,9 @@ const Blog = () => {
   };
 
   const toggleTag = (tag: string) => {
+    if (!selectedTags.includes(tag)) {
+      trackBlogTagFilter(tag);
+    }
     setSelectedTags(prev => 
       prev.includes(tag) 
         ? prev.filter(tg => tg !== tag)
@@ -1735,6 +1748,15 @@ const Blog = () => {
   // Get sections for the most visible article
   const visibleArticle = visibleArticleId ? articles.find(a => a.id === visibleArticleId) : null;
   const visibleSections = visibleArticle ? extractSectionTitles(visibleArticle.content, visibleArticle.id) : [];
+
+  useEffect(() => {
+    if (searchQuery.length > 2) {
+      const timer = setTimeout(() => {
+        trackBlogSearch(searchQuery, filteredArticles.length);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [searchQuery, filteredArticles.length]);
 
   return (
     <div className="min-h-screen">

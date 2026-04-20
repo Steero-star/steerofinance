@@ -7,6 +7,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { WaitlistForm } from "./WaitlistForm";
+import { useEffect } from "react";
+import { trackWaitlistOpen, trackWaitlistStep } from "@/lib/analytics";
 
 interface WaitlistModalProps {
   open: boolean;
@@ -15,6 +17,13 @@ interface WaitlistModalProps {
 
 export function WaitlistModal({ open, onOpenChange }: WaitlistModalProps) {
   const { t } = useTranslation();
+
+  useEffect(() => {
+    if (open) {
+      trackWaitlistOpen("modal");
+      trackWaitlistStep("form_seen");
+    }
+  }, [open]);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>

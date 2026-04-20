@@ -21,6 +21,12 @@ import {
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
 import { supabase } from "@/lib/supabase";
+import {
+  trackWaitlistStep,
+  trackWaitlistSubmit,
+  dispatchWaitlistConversion,
+} from "@/lib/analytics";
+
 
 interface WaitlistFormProps {
   onSuccess?: () => void;
@@ -149,6 +155,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
 
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
+    trackWaitlistStep("form_submitted");
     try {
       const { error } = await supabase.from("waitlist").insert([
         {
@@ -164,6 +171,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
       ]);
 
       if (error?.message?.includes("waitlist_email_key")) {
+        trackWaitlistStep("email_duplicate");
         toast.error(
           t("waitlist.errors.emailExists") || "Email already registered",
           {
@@ -175,6 +183,8 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
         return;
       }
 
+      trackWaitlistStep("form_success");
+      dispatchWaitlistConversion();
       toast.success(t("waitlist.successTitle"), {
         description: t("waitlist.successMessage"),
       });
@@ -185,6 +195,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
       setDobYear("");
       onSuccess?.();
     } catch (error: any) {
+      trackWaitlistStep("form_error", { reason: error.message });
       toast.error("Error", {
         description: error.message || "An error occurred while submitting the form.",
       });
@@ -231,6 +242,7 @@ export function WaitlistForm({ onSuccess }: WaitlistFormProps) {
           id="email"
           type="email"
           {...register("email")}
+          onFocus={() => trackWaitlistStep("form_focused")}
           placeholder="email@example.com"
           className="bg-background"
         />

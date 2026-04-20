@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, Globe } from 'lucide-react';
+import { trackLanguageChange } from "@/lib/analytics";
 
 const languages = [
   { code: 'fr', label: 'Français', flag: '🇫🇷' },
@@ -28,6 +29,7 @@ const LanguageSwitcher = () => {
   }, []);
 
   const handleLanguageChange = (langCode: string) => {
+    trackLanguageChange(langCode);
     i18n.changeLanguage(langCode);
     setIsOpen(false);
   };

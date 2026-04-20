@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { trackCTAClick } from "@/lib/analytics";
 
 const DiscoverFeatures = () => {
   const { t } = useTranslation();
@@ -18,6 +19,7 @@ const DiscoverFeatures = () => {
         >
           <Link
             to="/fonctionnalites"
+            onClick={() => trackCTAClick("discover_features", "discover_features_section", "/fonctionnalites")}
             className="group relative inline-flex items-center gap-3 px-8 py-4 rounded-full bg-primary text-primary-foreground font-medium text-lg shadow-soft hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
             <Sparkles className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />

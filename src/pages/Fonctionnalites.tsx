@@ -11,6 +11,7 @@ import { ArrowRight, Check, FolderKanban, Users, Building2, Crosshair, LayoutGri
 import { useSoundEffects } from "@/hooks/useSoundEffects";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
+import { trackFeatureCardOpen, trackWaitlistOpen, trackCTAClick } from "@/lib/analytics";
 
 // Progress sidebar component
 const ProgressSidebar = ({
@@ -1933,9 +1934,13 @@ const Fonctionnalites = () => {
   }];
   const handleToggleCard = (groupIndex: number, featureIndex: number) => {
     const cardId = `${groupIndex}-${featureIndex}`;
+    const isOpening = openCardId !== cardId;
     // Mark as explored when opening
-    if (openCardId !== cardId) {
+    if (isOpening) {
       setExploredCards(prev => new Set(prev).add(cardId));
+      const group = featureGroups[groupIndex];
+      const feature = group.features[featureIndex];
+      trackFeatureCardOpen(group.label, feature.title);
     }
     setOpenCardId(prev => prev === cardId ? null : cardId);
   };
@@ -2592,7 +2597,11 @@ const Fonctionnalites = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button 
-                onClick={openWaitlist}
+                onClick={() => {
+                  trackWaitlistOpen("fonctionnalites_cta");
+                  trackCTAClick("rejoindre_waitlist", "fonctionnalites_cta");
+                  openWaitlist();
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"

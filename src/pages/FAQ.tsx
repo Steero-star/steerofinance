@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
+import { trackFAQOpen, trackWaitlistOpen, trackCTAClick } from "@/lib/analytics";
 
 interface FAQItem {
   question: string;
@@ -147,7 +148,19 @@ const FAQ = () => {
                         {section.title}
                       </h2>
                       <div className={`rounded-xl ${section.colorClass} p-1`}>
-                        <Accordion type="single" collapsible className="space-y-1">
+                        <Accordion 
+                        type="single" 
+                        collapsible 
+                        className="space-y-1"
+                        onValueChange={(value) => {
+                          if (value) {
+                            const item = section.items[parseInt(value.split('-item-')[1])];
+                            if (item) {
+                              trackFAQOpen(section.title, item.question);
+                            }
+                          }
+                        }}
+                        >
                           {section.items.map((item, itemIndex) => <AccordionItem key={itemIndex} value={`section-${sectionIndex}-item-${itemIndex}`} className="bg-card rounded-lg px-5 py-0 border-none shadow-sm transition-colors duration-200 hover:bg-muted/50 data-[state=open]:bg-card">
                               <AccordionTrigger className="text-left text-foreground font-semibold hover:no-underline py-3 text-[15px]">
                                 <span className="flex items-center gap-2">

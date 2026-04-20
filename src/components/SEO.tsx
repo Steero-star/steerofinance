@@ -20,7 +20,7 @@ const SEO = ({
   noIndex = false,
 }: SEOProps) => {
   const fullTitle = title.includes('Steero') ? title : `${title} | Steero`;
-  const baseUrl = 'https://steerofinance.lovable.app';
+  const baseUrl = 'https://steero.fr';
   const canonicalUrl = canonical ? `${baseUrl}${canonical}` : undefined;
 
   return (

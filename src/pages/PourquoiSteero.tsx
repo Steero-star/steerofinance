@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
 import steeroBanner from "@/assets/steero-banner-3.png";
 import WhySteero from "@/components/WhySteero";
+import { trackBehavioralCardOpen, trackWaitlistOpen, trackCTAClick } from "@/lib/analytics";
+
 // Progress sidebar component for behavioral principles
 const BehavioralProgressSidebar = ({
   elements,
@@ -1117,6 +1119,7 @@ const PourquoiSteero = () => {
     const isOpening = openCardIndex !== index;
     if (isOpening) {
       setExploredCards(prev => new Set(prev).add(index));
+      trackBehavioralCardOpen(index, t(behavioralElementsData[index].titleKey));
     }
     setOpenCardIndex(prev => prev === index ? null : index);
   };
