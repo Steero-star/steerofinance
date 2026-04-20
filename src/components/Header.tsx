@@ -42,8 +42,8 @@ const Header = () => {
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          <Button variant="outline" className="text-xs sm:text-sm hidden sm:inline-flex rounded-full border-primary text-primary hover:bg-primary/10 px-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft" onClick={() => window.open("https://app.steero.fr/auth/login", "_blank")}>Connexion</Button>
-          <Button className="btn-primary text-xs sm:text-sm hidden sm:inline-flex rounded-full px-6" onClick={() => window.open("https://app.steero.fr/auth/sign-up", "_blank")}>{t('common.joinWaitlist')}</Button>
+          <Button variant="outline" className="text-xs sm:text-sm hidden sm:inline-flex rounded-full border-primary text-primary hover:bg-primary/10 px-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft" onClick={() => window.open("https://accounts.steero.fr/sign-in?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank")}>Connexion</Button>
+          <Button className="btn-primary text-xs sm:text-sm hidden sm:inline-flex rounded-full px-6" onClick={() => window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank")}>{t('common.joinWaitlist')}</Button>
           
           {/* Hamburger button */}
           <button
@@ -99,7 +99,7 @@ const Header = () => {
                 className="text-xs w-full mt-2"
                 onClick={() => { 
                   setIsMenuOpen(false);
-                  window.open("https://app.steero.fr/auth/login", "_blank");
+                  window.open("https://accounts.steero.fr/sign-in?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
                 }}
               >
                 Connexion
@@ -108,7 +108,7 @@ const Header = () => {
                 className="btn-primary text-xs w-full mt-2"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  window.open("https://app.steero.fr/auth/sign-up", "_blank");
+                  window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
                 }}
               >
                 {t('common.joinWaitlist')}

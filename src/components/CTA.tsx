@@ -55,7 +55,7 @@ const CTA = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => window.open("https://app.steero.fr/auth/sign-up", "_blank")}
+            onClick={() => window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank")}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group mb-12"
           >
             {t('common.joinWaitlist')}
