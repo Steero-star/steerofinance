@@ -2,17 +2,17 @@ import { useState, useRef, useEffect } from "react";
 import steeroBanner from "@/assets/steero-banner-3.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, ArrowRight, Lightbulb, AlertCircle, Share2, Check, List, Search, X, Download, FileSpreadsheet, CheckCircle2, ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
-import { trackArticleOpen, trackArticleClose, trackArticleShare, trackBlogSearch, trackBlogTagFilter } from "@/lib/analytics";
 
 interface Article {
   id: number;
+  slug: string;
   titleKey: string;
   hookKey: string;
   content: string;
@@ -23,6 +23,7 @@ interface Article {
 const getArticles = (t: (key: string, options?: Record<string, unknown>) => string): Article[] => [
   {
     id: 3,
+    slug: "pourquoi-sans-rituel-aucun-outil-financier-ne-fonctionne",
     titleKey: "blog.articles.3.title",
     hookKey: "blog.articles.3.hook",
     tagsKey: "blog.articles.3.tags",
@@ -95,6 +96,7 @@ Installe le rituel. L'outil suit.`
   },
   {
     id: 2,
+    slug: "montee-en-competences-financieres-du-flou-au-pilotage",
     titleKey: "blog.articles.2.title",
     hookKey: "blog.articles.2.hook",
     tagsKey: "blog.articles.2.tags",
@@ -162,6 +164,7 @@ Steero est construit autour de cette logique de progression. Les cinq niveaux TE
   },
   {
     id: 1,
+    slug: "tu-depenses-trop-chaque-mois-voici-pourquoi",
     titleKey: "blog.articles.1.title",
     hookKey: "blog.articles.1.hook",
     tagsKey: "blog.articles.1.tags",
@@ -281,6 +284,7 @@ Le système TEMPO est la méthode. Steero est l'outil construit pour l'implémen
   },
   {
     id: 4,
+    slug: "5-minutes-par-jour-pour-ne-plus-subir-sa-fin-de-mois",
     titleKey: "blog.articles.4.title",
     hookKey: "blog.articles.4.hook",
     tagsKey: "blog.articles.4.tags",
@@ -332,6 +336,7 @@ Ce n'est pas le temps qui manque pour gérer ses finances. C'est la structure.`
   },
   {
     id: 5,
+    slug: "tes-finances-ne-sont-pas-un-bulletin-de-notes",
     titleKey: "blog.articles.5.title",
     hookKey: "blog.articles.5.hook",
     tagsKey: "blog.articles.5.tags",
@@ -397,6 +402,7 @@ La clarté remplace la culpabilité. C'est là que tout change.`
   },
   {
     id: 6,
+    slug: "regle-50-30-20-limites-alternative",
     titleKey: "blog.articles.6.title",
     hookKey: "blog.articles.6.hook",
     tagsKey: "blog.articles.6.tags",
@@ -456,6 +462,7 @@ La règle des 50/30/20 peut être ton point de départ. Le système TEMPO est ce
   },
   {
     id: 7,
+    slug: "pourquoi-tableau-excel-budget-ne-tient-pas",
     titleKey: "blog.articles.7.title",
     hookKey: "blog.articles.7.hook",
     tagsKey: "blog.articles.7.tags",
@@ -527,6 +534,7 @@ L'outil suit le rituel. Jamais l'inverse.`
   },
   {
     id: 8,
+    slug: "economiser-500-euros-ce-mois-ci",
     titleKey: "blog.articles.8.title",
     hookKey: "blog.articles.8.hook",
     tagsKey: "blog.articles.8.tags",
@@ -604,6 +612,7 @@ Les 500€ sont probablement déjà là. Il manque juste le regard pour les voir
   },
   {
     id: 9,
+    slug: "meilleure-app-pour-gerer-son-argent",
     titleKey: "blog.articles.9.title",
     hookKey: "blog.articles.9.hook",
     tagsKey: "blog.articles.9.tags",
@@ -679,6 +688,7 @@ La différence n'est pas dans les features. Elle est dans ce que tu deviens apr�
   },
   {
     id: 10,
+    slug: "carte-bancaire-douleur-de-payer-saisie-manuelle",
     titleKey: "blog.articles.10.title",
     hookKey: "blog.articles.10.hook",
     tagsKey: "blog.articles.10.tags",
@@ -1126,12 +1136,10 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist, onOp
   const rawTags = t(article.tagsKey, { returnObjects: true });
   const tags = Array.isArray(rawTags) ? rawTags as string[] : [];
   const readingTime = calculateReadingTime(hook + article.content);
-  const openTimeRef = useRef<number | null>(null);
 
   const handleShare = (e: React.MouseEvent) => {
     e.stopPropagation();
-    trackArticleShare(article.id, t(article.titleKey));
-    const url = `${window.location.origin}/blog#article-${article.id}`;
+    const url = `${window.location.origin}/blog/${article.slug}`;
     navigator.clipboard.writeText(url).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -1623,6 +1631,8 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist, onOp
 const Blog = () => {
   const { t } = useTranslation();
   const { openWaitlist } = useWaitlist();
+  const { slug } = useParams<{ slug?: string }>();
+  const navigate = useNavigate();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [openArticles, setOpenArticles] = useState<Set<number>>(new Set());
@@ -1634,6 +1644,26 @@ const Blog = () => {
     const raw = t(article.tagsKey, { returnObjects: true });
     return Array.isArray(raw) ? raw as string[] : [];
   })));
+
+  // Article matching the URL slug (if any)
+  const slugArticle = slug ? articles.find(a => a.slug === slug) : null;
+
+  // Open the article matching the URL slug & scroll to it
+  useEffect(() => {
+    if (slugArticle) {
+      setOpenArticles(prev => {
+        if (prev.has(slugArticle.id)) return prev;
+        const newSet = new Set(prev);
+        newSet.add(slugArticle.id);
+        return newSet;
+      });
+      setTimeout(() => {
+        const el = articleRefs.current.get(slugArticle.id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
 
   // Track which open article is most visible
   useEffect(() => {
@@ -1675,19 +1705,21 @@ const Blog = () => {
   }, [openArticles]);
 
   const toggleArticle = (id: number) => {
-    const article = articles.find(a => a.id === id);
     setOpenArticles(prev => {
       const newSet = new Set(prev);
       if (newSet.has(id)) {
-         if (article) {
-          trackArticleClose(id, 0); // tu peux affiner avec un ref de temps
-         }
         newSet.delete(id);
-      } else {
-        if (article) {
-          trackArticleOpen(id, t(article.titleKey));
+        // If we close the article currently shown in the URL, fall back to /blog
+        const closedArticle = articles.find(a => a.id === id);
+        if (closedArticle && slug === closedArticle.slug) {
+          navigate('/blog', { replace: true });
         }
+      } else {
         newSet.add(id);
+        const openedArticle = articles.find(a => a.id === id);
+        if (openedArticle && slug !== openedArticle.slug) {
+          navigate(`/blog/${openedArticle.slug}`, { replace: false });
+        }
       }
       return newSet;
     });
@@ -1699,6 +1731,10 @@ const Blog = () => {
       newSet.add(id);
       return newSet;
     });
+    const target = articles.find(a => a.id === id);
+    if (target && slug !== target.slug) {
+      navigate(`/blog/${target.slug}`, { replace: false });
+    }
     setTimeout(() => {
       const el = articleRefs.current.get(id);
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1714,9 +1750,6 @@ const Blog = () => {
   };
 
   const toggleTag = (tag: string) => {
-    if (!selectedTags.includes(tag)) {
-      trackBlogTagFilter(tag);
-    }
     setSelectedTags(prev => 
       prev.includes(tag) 
         ? prev.filter(tg => tg !== tag)
@@ -1749,24 +1782,24 @@ const Blog = () => {
   const visibleArticle = visibleArticleId ? articles.find(a => a.id === visibleArticleId) : null;
   const visibleSections = visibleArticle ? extractSectionTitles(visibleArticle.content, visibleArticle.id) : [];
 
-  useEffect(() => {
-    if (searchQuery.length > 2) {
-      const timer = setTimeout(() => {
-        trackBlogSearch(searchQuery, filteredArticles.length);
-      }, 1000);
-      return () => clearTimeout(timer);
-    }
-  }, [searchQuery, filteredArticles.length]);
-
   return (
     <div className="min-h-screen">
-      <SEO
-        title="Blog - Conseils pour bien gérer son argent"
-        description="Articles et conseils pour apprendre à gérer son argent. Comment mieux gérer son budget sans Excel ? Découvrez nos guides pratiques sur les finances personnelles et les rituels financiers."
-        keywords="blog finances personnelles, comment gérer son argent, conseils budget, mieux gérer son argent, gestion budget personnel, alternative excel finances"
-        canonical="/blog"
-        ogType="blog"
-      />
+      {slugArticle ? (
+        <SEO
+          title={`${t(slugArticle.titleKey)} | Steero Blog`}
+          description={(t(slugArticle.hookKey) as string).split('\n')[0].slice(0, 158)}
+          canonical={`/blog/${slugArticle.slug}`}
+          ogType="article"
+        />
+      ) : (
+        <SEO
+          title="Blog - Conseils pour bien gérer son argent"
+          description="Articles et conseils pour apprendre à gérer son argent. Comment mieux gérer son budget sans Excel ? Découvrez nos guides pratiques sur les finances personnelles et les rituels financiers."
+          keywords="blog finances personnelles, comment gérer son argent, conseils budget, mieux gérer son argent, gestion budget personnel, alternative excel finances"
+          canonical="/blog"
+          ogType="blog"
+        />
+      )}
       <Header />
       
       <main className="pt-32 pb-16 bg-hero-gradient">

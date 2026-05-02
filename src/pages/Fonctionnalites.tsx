@@ -7,11 +7,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, FolderKanban, Users, Building2, Crosshair, LayoutGrid, RefreshCcw, ClipboardList, Gauge, CalendarCheck, BarChart3, Landmark, Wallet, Receipt, RotateCcw, ClipboardCheck, Flame, Plane, type LucideIcon } from "lucide-react";
+import { ArrowRight, Check, FolderKanban, Users, Building2, Crosshair, LayoutGrid, RefreshCcw, ClipboardList, Gauge, CalendarCheck, BarChart3, Landmark, Wallet, Receipt, RotateCcw, ClipboardCheck, Flame, Plane, Sparkles, type LucideIcon } from "lucide-react";
 import { useSoundEffects } from "@/hooks/useSoundEffects";
 import { useTranslation } from "react-i18next";
 import { useWaitlist } from "@/contexts/WaitlistContext";
-import { trackFeatureCardOpen, trackWaitlistOpen, trackCTAClick } from "@/lib/analytics";
+import { TempoLetter } from "@/components/TempoLetter";
 
 // Progress sidebar component
 const ProgressSidebar = ({
@@ -112,10 +112,14 @@ interface Feature {
   textColor: string;
   animation: AnimationType;
   animationDirection: AnimationDirection;
+  letters?: string[]; // TEMPO letters: T, E, M, P, O
 }
 interface FeatureGroup {
   label: string;
+  labelLetters?: string[]; // pastilles TEMPO colorées
+  labelText?: string;      // suffixe textuel (ex: "Quotidien & hebdo")
   title: string;
+  description?: string;
   features: Feature[];
   isLarge?: boolean;
 }
@@ -1686,6 +1690,8 @@ const getCardAnimationVariants = (direction: AnimationDirection, isFuture: boole
       };
   }
 };
+
+
 const FeatureCard = ({
   feature,
   isOpen,
@@ -1709,67 +1715,43 @@ const FeatureCard = ({
   const variants = getCardAnimationVariants(feature.animationDirection);
   
   // Hauteur uniforme pour toutes les cartes fermées
-  const closedHeight = 'h-[120px]';
-  
+  const closedHeight = 'min-h-[88px]';
+
   // Icône Lucide ou emoji de fallback
   const IconComponent = feature.icon;
-  
+
   return (
-    <motion.div 
-      onClick={handleClick} 
+    <motion.div
+      onClick={handleClick}
       layout
       transition={{
         layout: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
       }}
-      className={`cursor-pointer rounded-2xl border ${isOpen ? 'border-primary/30 shadow-md' : 'border-border/40 hover:border-border/60'} bg-card ${isLarge ? 'p-6' : 'p-5'} transition-colors duration-250 hover:shadow-sm relative ${isExplored && !isOpen ? 'opacity-90' : ''} ${isOpen ? '' : closedHeight}`}
+      className={`cursor-pointer rounded-xl border ${isOpen ? 'border-primary/30 shadow-md bg-card' : 'border-border/50 hover:border-primary/30 bg-card'} ${isLarge ? 'p-5' : 'p-5'} transition-all duration-250 hover:shadow-sm relative ${isOpen ? '' : closedHeight}`}
     >
-      {/* Badge "Découvert" - plus subtil */}
-      <AnimatePresence>
-        {isExplored && !isOpen && (
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            transition={{ duration: 0.3 }}
-            className="absolute top-3 right-3 flex items-center gap-1 bg-muted text-muted-foreground text-[10px] font-medium px-2 py-0.5 rounded-full"
-          >
-            <Check className="w-2.5 h-2.5" />
-            <span>{t('fonctionnalites.discovered')}</span>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      
-      <div className="flex items-start gap-4">
-        {/* Icône Lucide professionnelle ou emoji de fallback */}
-        <div className="flex-shrink-0 mt-0.5 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-          {IconComponent ? (
-            <IconComponent className="w-5 h-5 text-primary" strokeWidth={1.5} />
-          ) : (
-            <span className="text-2xl">{feature.emoji}</span>
-          )}
+      {/* TEMPO letter badges - top right (couleurs cohérentes avec la home) */}
+      {feature.letters && feature.letters.length > 0 && (
+        <div className="absolute top-3 right-3 flex items-center gap-1">
+          {feature.letters.map((letter, i) => (
+            <TempoLetter key={i} letter={letter} size="sm" />
+          ))}
         </div>
-        
-        <div className="flex-1 min-w-0">
-          {/* Header : titre + chevron */}
-          <div className="flex items-center justify-between gap-2">
-            <h3 className="text-base font-semibold text-foreground leading-tight">
-              {feature.title}
-            </h3>
-            
-            {/* Chevron avec rotation calme */}
-            <motion.div 
-              animate={{ rotate: isOpen ? 180 : 0 }}
-              transition={{ duration: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex-shrink-0 text-muted-foreground/60"
-            >
-              <svg width="18" height="18" viewBox="0 0 12 12" fill="none">
-                <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </motion.div>
+      )}
+
+      <div className="flex items-start gap-4 pr-16">
+        {/* Icône Lucide à gauche, style home (bg-primary/10) */}
+        {IconComponent && (
+          <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+            <IconComponent className="w-5 h-5 text-primary" strokeWidth={1.75} />
           </div>
-          
-          {/* Micro-promesse - visible uniquement en état fermé */}
-          <motion.p 
+        )}
+
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base md:text-lg font-semibold text-foreground leading-tight">
+            {feature.title}
+          </h3>
+
+          <motion.p
             animate={{
               opacity: isOpen ? 0 : 1,
               height: isOpen ? 0 : 'auto'
@@ -1779,15 +1761,6 @@ const FeatureCard = ({
           >
             {feature.microPromise}
           </motion.p>
-          
-          {/* Indice d'interaction - uniquement en état fermé */}
-          <motion.span
-            animate={{ opacity: isOpen ? 0 : 0.4 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            className="text-[10px] text-muted-foreground/50 mt-2 block"
-          >
-            {t('fonctionnalites.clickForPreview')}
-          </motion.span>
         </div>
       </div>
       
@@ -1845,787 +1818,372 @@ const Fonctionnalites = () => {
   const sounds = useSoundEffects();
   const [openCardId, setOpenCardId] = useState<string | null>(null);
   const [exploredCards, setExploredCards] = useState<Set<string>>(new Set());
-  const [activeGroupIndex, setActiveGroupIndex] = useState(0);
-  const groupRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  const featureGroups: FeatureGroup[] = [{
-    label: t('fonctionnalites.step1'),
-    title: t('fonctionnalites.start'),
-    isLarge: true,
-    features: [{
-      icon: Crosshair,
-      title: t('fonctionnalites.features.onboarding.title'),
-      microPromise: t('fonctionnalites.features.onboarding.microPromise'),
-      details: t('fonctionnalites.features.onboarding.details'),
-      bgColor: "bg-primary/5",
-      borderColor: "border-primary/20",
-      textColor: "text-primary",
-      animation: "onboarding",
-      animationDirection: "horizontal"
-    }, {
-      icon: LayoutGrid,
-      title: t('fonctionnalites.features.budget.title'),
-      microPromise: t('fonctionnalites.features.budget.microPromise'),
-      details: t('fonctionnalites.features.budget.details'),
-      bgColor: "bg-secondary",
-      borderColor: "border-primary/15",
-      textColor: "text-primary",
-      animation: "budget",
-      animationDirection: "horizontal"
-    }]
-  }, {
-    label: t('fonctionnalites.step2'),
-    title: t('fonctionnalites.follow'),
-    features: [{
-      icon: RefreshCcw,
-      title: t('fonctionnalites.features.fixed.title'),
-      microPromise: t('fonctionnalites.features.fixed.microPromise'),
-      details: t('fonctionnalites.features.fixed.details'),
-      bgColor: "bg-card",
-      borderColor: "border-border",
-      textColor: "text-foreground",
-      animation: "fixed",
-      animationDirection: "vertical"
-    }, {
-      icon: ClipboardList,
-      title: t('fonctionnalites.features.daily.title'),
-      microPromise: t('fonctionnalites.features.daily.microPromise'),
-      details: t('fonctionnalites.features.daily.details'),
-      bgColor: "bg-primary/5",
-      borderColor: "border-primary/20",
-      textColor: "text-primary",
-      animation: "daily",
-      animationDirection: "vertical"
-    }, {
-      icon: Gauge,
-      title: t('fonctionnalites.features.level.title'),
-      microPromise: t('fonctionnalites.features.level.microPromise'),
-      details: t('fonctionnalites.features.level.details'),
-      bgColor: "bg-secondary",
-      borderColor: "border-primary/15",
-      textColor: "text-foreground",
-      animation: "gauge",
-      animationDirection: "pulse"
-    }]
-  }, {
-    label: t('fonctionnalites.step3'),
-    title: t('fonctionnalites.adjustLast'),
-    features: [{
-      icon: CalendarCheck,
-      title: t('fonctionnalites.features.rituals.title'),
-      microPromise: t('fonctionnalites.features.rituals.microPromise'),
-      details: t('fonctionnalites.features.rituals.details'),
-      bgColor: "bg-card",
-      borderColor: "border-border",
-      textColor: "text-foreground",
-      animation: "rituals",
-      animationDirection: "pulse"
-    }, {
-      icon: BarChart3,
-      title: t('fonctionnalites.features.indicators.title'),
-      microPromise: t('fonctionnalites.features.indicators.microPromise'),
-      details: t('fonctionnalites.features.indicators.details'),
-      bgColor: "bg-primary/5",
-      borderColor: "border-primary/20",
-      textColor: "text-primary",
-      animation: "indicators",
-      animationDirection: "pulse"
-    }]
-  }];
+  // Regroupement par horizons TEMPO (préserve l'ADN du système TEMPO)
+  const featureGroups: FeatureGroup[] = [
+    {
+      label: "T · E — Quotidien & hebdo",
+      labelLetters: ["T", "E"],
+      labelText: "Quotidien & hebdo",
+      title: "Tracer & Examiner",
+      description: "Saisir, observer, maintenir le lien avec sa situation réelle.",
+      features: [
+        {
+          icon: LayoutGrid,
+          title: t('fonctionnalites.features.budget.title'),
+          microPromise: "Catégories et sous-catégories qui reflètent ta vie réelle.",
+          details: t('fonctionnalites.features.budget.details'),
+          bgColor: "",
+          borderColor: "",
+          textColor: "",
+          animation: "budget",
+          animationDirection: "horizontal",
+          letters: ["T"],
+        },
+        {
+          icon: ClipboardList,
+          title: t('fonctionnalites.features.daily.title'),
+          microPromise: "Enregistre une dépense en quelques secondes.",
+          details: t('fonctionnalites.features.daily.details'),
+          bgColor: "",
+          borderColor: "",
+          textColor: "",
+          animation: "daily",
+          animationDirection: "vertical",
+          letters: ["T"],
+        },
+        {
+          icon: Gauge,
+          title: t('fonctionnalites.features.level.title'),
+          microPromise: t('fonctionnalites.features.level.microPromise'),
+          details: t('fonctionnalites.features.level.details'),
+          bgColor: "",
+          borderColor: "",
+          textColor: "",
+          animation: "gauge",
+          animationDirection: "pulse",
+          letters: ["E"],
+        },
+        {
+          icon: RefreshCcw,
+          title: t('fonctionnalites.features.fixed.title'),
+          microPromise: "Anticipe les flux récurrents. Ne les subis plus.",
+          details: t('fonctionnalites.features.fixed.details'),
+          bgColor: "",
+          borderColor: "",
+          textColor: "",
+          animation: "fixed",
+          animationDirection: "vertical",
+          letters: ["T", "E"],
+        },
+      ],
+    },
+    {
+      label: "M · P — Mensuel & trimestriel",
+      labelLetters: ["M", "P"],
+      labelText: "Mensuel & trimestriel",
+      title: "Maîtriser & Positionner",
+      description: "Décider consciemment. Aligner finances et objectifs de vie.",
+      features: [
+        {
+          icon: Crosshair,
+          title: t('fonctionnalites.features.onboarding.title'),
+          microPromise: "Fixe le cap. Steero te montre si tu t'en écartes.",
+          details: t('fonctionnalites.features.onboarding.details'),
+          bgColor: "",
+          borderColor: "",
+          textColor: "",
+          animation: "onboarding",
+          animationDirection: "horizontal",
+          letters: ["M", "P"],
+        },
+        {
+          icon: CalendarCheck,
+          title: t('fonctionnalites.features.rituals.title'),
+          microPromise: "Ancre les comportements qui durent.",
+          details: t('fonctionnalites.features.rituals.details'),
+          bgColor: "",
+          borderColor: "",
+          textColor: "",
+          animation: "rituals",
+          animationDirection: "pulse",
+          letters: ["M"],
+        },
+        {
+          icon: BarChart3,
+          title: t('fonctionnalites.features.indicators.title'),
+          microPromise: "Repère les écarts avant qu'ils ne s'installent.",
+          details: t('fonctionnalites.features.indicators.details'),
+          bgColor: "",
+          borderColor: "",
+          textColor: "",
+          animation: "indicators",
+          animationDirection: "pulse",
+          letters: ["E", "M"],
+        },
+      ],
+    },
+  ];
+
   const handleToggleCard = (groupIndex: number, featureIndex: number) => {
     const cardId = `${groupIndex}-${featureIndex}`;
-    const isOpening = openCardId !== cardId;
-    // Mark as explored when opening
-    if (isOpening) {
+    if (openCardId !== cardId) {
       setExploredCards(prev => new Set(prev).add(cardId));
-      const group = featureGroups[groupIndex];
-      const feature = group.features[featureIndex];
-      trackFeatureCardOpen(group.label, feature.title);
     }
     setOpenCardId(prev => prev === cardId ? null : cardId);
   };
 
-  // Track which group is currently in view
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-      for (let i = groupRefs.current.length - 1; i >= 0; i--) {
-        const element = groupRefs.current[i];
-        if (element && element.offsetTop <= scrollPosition) {
-          setActiveGroupIndex(i);
-          break;
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll, {
-      passive: true
-    });
-    handleScroll(); // Initial check
+  const futureFeatures: { letter: string; title: string; promise: string }[] = [
+    {
+      letter: "P",
+      title: t('fonctionnalites.futureFeatures.projects.title'),
+      promise: t('fonctionnalites.futureFeatures.projects.promise'),
+    },
+    {
+      letter: "P",
+      title: t('fonctionnalites.futureFeatures.tiers.title'),
+      promise: t('fonctionnalites.futureFeatures.tiers.promise'),
+    },
+    {
+      letter: "O",
+      title: t('fonctionnalites.futureFeatures.patrimoine.title'),
+      promise: t('fonctionnalites.futureFeatures.patrimoine.promise'),
+    },
+  ];
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  return <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
       <SEO
-        title="Fonctionnalités - Comment bien gérer son budget"
-        description="Découvrez les fonctionnalités Steero pour mieux gérer votre argent : budget personnalisé, saisie intuitive des dépenses, rituels financiers. Plus simple qu'un tableau Excel, plus efficace que les apps bancaires."
-        keywords="fonctionnalités gestion budget, application budget, gérer son argent facilement, alternative excel budget, suivi dépenses, rituel financier"
+        title="Fonctionnalités — Le système TEMPO de Steero"
+        description="Chaque fonctionnalité Steero a sa place dans le système TEMPO : tracer, examiner, maîtriser, positionner, observer. Une progression claire du rituel quotidien aux arbitrages stratégiques."
+        keywords="fonctionnalités gestion budget, application budget, système TEMPO, suivi dépenses, rituel financier, pilotage financier"
         canonical="/fonctionnalites"
       />
       <Header />
-      
-      {/* Progress Sidebar */}
-      <ProgressSidebar groups={featureGroups} activeIndex={activeGroupIndex} />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-hero-gradient overflow-hidden relative">
-        <div className="absolute inset-0">
-          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/40 to-background/70" />
+
+      {/* Hero éditorial */}
+      <section className="relative bg-hero-gradient pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -left-20 top-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl" />
+          <div className="absolute -right-20 bottom-1/4 w-80 h-80 rounded-full bg-primary/5 blur-3xl" />
         </div>
+
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 initial={{
-              opacity: 0,
-              y: 30
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.7,
-              ease: "easeOut"
-            }} className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              {t('fonctionnalites.heroTitle')} <span className="text-gradient">{t('fonctionnalites.heroTitleHighlight')}</span>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="badge-sparkle mb-8"
+            >
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span>Le système TEMPO</span>
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-6"
+            >
+              Chaque fonctionnalité a sa place dans le{" "}
+              <span className="text-primary italic">système.</span>
             </motion.h1>
-            <motion.p initial={{
-              opacity: 0,
-              y: 20
-            }} animate={{
-              opacity: 1,
-              y: 0
-            }} transition={{
-              duration: 0.7,
-              delay: 0.2,
-              ease: "easeOut"
-            }} className="text-lg text-muted-foreground mb-8">
-              {t('fonctionnalites.heroSubtitle')}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto"
+            >
+              Pas une liste de features. Une progression — du rituel quotidien aux arbitrages stratégiques.
             </motion.p>
           </div>
         </div>
       </section>
 
-      {/* Feature Groups */}
-      <section className="py-16">
-        <div className="container mx-auto px-6 md:pl-20 lg:pl-28 space-y-24">
-          {featureGroups.map((group, groupIndex) => <motion.div key={groupIndex} id={`group-${groupIndex}`} ref={el => groupRefs.current[groupIndex] = el} initial={{
-          opacity: 0,
-          y: 60,
-          scale: 0.95
-        }} whileInView={{
-          opacity: 1,
-          y: 0,
-          scale: 1
-        }} viewport={{
-          once: true,
-          margin: "-100px"
-        }} transition={{
-          duration: 0.7,
-          delay: 0.1,
-          ease: [0.22, 1, 0.36, 1]
-        }} className="relative scroll-mt-32">
-              {/* Decorative connector line between groups */}
-              {groupIndex < featureGroups.length - 1 && <motion.div initial={{
-            scaleY: 0,
-            opacity: 0
-          }} whileInView={{
-            scaleY: 1,
-            opacity: 1
-          }} viewport={{
-            once: true,
-            margin: "-50px"
-          }} transition={{
-            duration: 0.8,
-            delay: 0.5,
-            ease: "easeOut"
-          }} className="absolute left-1/2 -bottom-16 w-px h-12 bg-gradient-to-b from-primary/30 to-transparent origin-top" />}
-              
-              {/* Group Header */}
-              <motion.div initial={{
-            opacity: 0,
-            x: -20
-          }} whileInView={{
-            opacity: 1,
-            x: 0
-          }} viewport={{
-            once: true
-          }} transition={{
-            duration: 0.5,
-            delay: 0.2
-          }} className="flex items-center gap-4 mb-8">
-                <motion.span initial={{
-              scale: 0,
-              rotate: -180
-            }} whileInView={{
-              scale: 1,
-              rotate: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.5,
-              delay: 0.3,
-              type: "spring",
-              stiffness: 200
-            }} className="text-xs font-semibold text-primary/60 uppercase tracking-wider bg-primary/10 px-3 py-1 rounded-full">
-                  {group.label}
-                </motion.span>
-                <motion.h2 initial={{
-              opacity: 0,
-              y: 10
-            }} whileInView={{
-              opacity: 1,
-              y: 0
-            }} viewport={{
-              once: true
-            }} transition={{
-              duration: 0.4,
-              delay: 0.4
-            }} className="text-2xl md:text-3xl font-bold text-foreground">
-                  {group.title}
-                </motion.h2>
-              </motion.div>
-              
-              {/* Feature Cards Grid with staggered animation */}
-              <div className={`grid gap-6 items-start ${group.isLarge ? 'grid-cols-1 md:grid-cols-2' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'}`}>
-                {group.features.map((feature, featureIndex) => <motion.div key={featureIndex} layout initial={{
-              opacity: 0,
-              y: 40,
-              scale: 0.9
-            }} whileInView={{
-              opacity: 1,
-              y: 0,
-              scale: 1
-            }} viewport={{
-              once: true,
-              margin: "-50px"
-            }} transition={{
-              duration: 0.5,
-              delay: 0.2 + featureIndex * 0.1,
-              ease: [0.22, 1, 0.36, 1]
-            }}>
-                    <FeatureCard feature={feature} isOpen={openCardId === `${groupIndex}-${featureIndex}`} onToggle={() => handleToggleCard(groupIndex, featureIndex)} sounds={sounds} isLarge={group.isLarge} isExplored={exploredCards.has(`${groupIndex}-${featureIndex}`)} t={t} />
-                  </motion.div>)}
+      {/* Groupes par horizon TEMPO */}
+      <section className="pb-20">
+        <div className="container mx-auto px-6 max-w-4xl">
+          {featureGroups.map((group, groupIndex) => (
+            <motion.div
+              key={groupIndex}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="border-t border-border/60 pt-12 pb-4 mt-12 first:mt-0"
+            >
+              {/* Header de groupe : pastilles TEMPO + titre éditorial */}
+              <div className="flex flex-col md:flex-row md:items-baseline md:gap-6 mb-8">
+                <div className="inline-flex items-center gap-2 self-start mb-3 md:mb-0 whitespace-nowrap">
+                  <div className="flex items-center gap-1">
+                    {(group.labelLetters ?? []).map((letter, li) => (
+                      <TempoLetter key={li} letter={letter} size="sm" />
+                    ))}
+                  </div>
+                  {group.labelText && (
+                    <span className="text-[11px] font-semibold tracking-[0.15em] text-muted-foreground uppercase">
+                      — {group.labelText}
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <h2
+                    className="text-2xl md:text-3xl font-bold text-foreground leading-tight"
+                  >
+                    {group.title}
+                  </h2>
+                  {group.description && (
+                    <p className="text-sm md:text-base text-muted-foreground mt-2 leading-relaxed">
+                      {group.description}
+                    </p>
+                  )}
+                </div>
               </div>
-            </motion.div>)}
+
+              {/* Cartes empilées */}
+              <div className="space-y-3">
+                {group.features.map((feature, featureIndex) => (
+                  <motion.div
+                    key={featureIndex}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-40px" }}
+                    transition={{
+                      duration: 0.45,
+                      delay: featureIndex * 0.06,
+                      ease: [0.22, 1, 0.36, 1]
+                    }}
+                  >
+                    <FeatureCard
+                      feature={feature}
+                      isOpen={openCardId === `${groupIndex}-${featureIndex}`}
+                      onToggle={() => handleToggleCard(groupIndex, featureIndex)}
+                      sounds={sounds}
+                      isExplored={exploredCards.has(`${groupIndex}-${featureIndex}`)}
+                      t={t}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
 
-      {/* Future Features Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-6 md:pl-20 lg:pl-28">
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} whileInView={{
-          opacity: 1,
-          y: 0
-        }} viewport={{
-          once: true
-        }} transition={{
-          duration: 0.6
-        }} className="max-w-3xl mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold text-foreground/80 mb-4">
-              {t('fonctionnalites.futureTitle')}
+      {/* Prochaines évolutions — section sobre */}
+      <section className="py-16 border-t border-border/60">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-10"
+          >
+            <p className="text-xs font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-3">
+              Prochaines évolutions
+            </p>
+            <h2
+              className="text-2xl md:text-3xl font-bold text-foreground mb-3"
+            >
+              Le système continue de se construire.
             </h2>
-            <p className="text-muted-foreground text-base leading-relaxed">
-              {t('fonctionnalites.futureSubtitle')}
+            <p className="text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed">
+              Ces fonctionnalités étendent le pilotage vers les horizons P et O de TEMPO.
             </p>
           </motion.div>
 
-          <div className="grid gap-6 grid-cols-1 md:grid-cols-3 items-start">
-            {/* Projets financiers */}
-            <FutureFeatureCard
-              icon="folder-kanban"
-              title={t('fonctionnalites.futureFeatures.projects.title')}
-              promise={t('fonctionnalites.futureFeatures.projects.promise')}
-              delay={0.1}
-              sounds={sounds}
-              t={t}
-              animation={
-                <div className="relative w-full flex flex-col items-center gap-3">
-                  {/* Projet Vacances */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: 0.1 }}
-                    className="w-full bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg border border-primary/20 p-4"
-                  >
-                    {/* Header avec titre et montant */}
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-2">
-                        <Plane className="w-5 h-5 text-primary" />
-                        <span className="text-sm font-semibold text-foreground">{t('fonctionnalites.animations.projectVacances')}</span>
-                      </div>
-                      <motion.span 
-                        className="text-base font-bold text-primary"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.3 }}
-                      >
-                        2 300 €
-                      </motion.span>
-                    </div>
-
-                    {/* Progress bar */}
-                    <motion.div 
-                      className="h-2 bg-muted rounded-full overflow-hidden mb-3"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.35 }}
-                    >
-                      <motion.div 
-                        className="h-full bg-primary rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: "65%" }}
-                        transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                      />
-                    </motion.div>
-                    <motion.div 
-                      className="flex justify-between text-[10px] text-muted-foreground mb-3"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 0.6 }}
-                    >
-                      <span>{t('fonctionnalites.animations.projectConsumed')}: <span className="text-primary font-medium">1 495 €</span></span>
-                      <span>{t('fonctionnalites.animations.projectRemaining')}: <span className="font-medium">805 €</span></span>
-                    </motion.div>
-
-                    {/* Liste des budgets avec montants */}
-                    <div className="space-y-1.5">
-                      <motion.div
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.7 }}
-                        className="flex items-center justify-between text-xs"
-                      >
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                          <span>{t('fonctionnalites.animations.projectLodging')}</span>
-                          <span className="text-muted-foreground/50">({t('fonctionnalites.animations.budgetLeisure')})</span>
-                        </div>
-                        <span className="text-foreground/80 font-medium">1 100 €</span>
-                      </motion.div>
-                      <motion.div
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.8 }}
-                        className="flex items-center justify-between text-xs"
-                      >
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                          <span>{t('fonctionnalites.animations.projectTransport')}</span>
-                          <span className="text-muted-foreground/50">({t('fonctionnalites.animations.budgetTransport')})</span>
-                        </div>
-                        <span className="text-foreground/80 font-medium">650 €</span>
-                      </motion.div>
-                      <motion.div
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.9 }}
-                        className="flex items-center justify-between text-xs"
-                      >
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-                          <span>{t('fonctionnalites.animations.projectOnSite')}</span>
-                          <span className="text-muted-foreground/50">({t('fonctionnalites.animations.budgetDaily')})</span>
-                        </div>
-                        <span className="text-foreground/80 font-medium">550 €</span>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-
-                  {/* Texte de clôture */}
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.1 }}
-                    className="text-[11px] text-center text-muted-foreground/80 italic px-2"
-                  >
-                    {t('fonctionnalites.animations.projectClosing')}
-                  </motion.p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {futureFeatures.map((f, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.08,
+                  ease: [0.22, 1, 0.36, 1]
+                }}
+                className="rounded-xl border border-border/60 bg-card/40 p-5 hover:border-primary/30 transition-colors"
+              >
+                <div className="inline-flex items-center gap-2 mb-4">
+                  <span className="text-[10px] font-semibold tracking-[0.15em] text-muted-foreground uppercase bg-muted px-2 py-1 rounded">
+                    Bientôt
+                  </span>
+                  <TempoLetter letter={f.letter} size="sm" />
                 </div>
-              }
-            />
-
-            {/* Tiers & avances */}
-            <FutureFeatureCard
-              icon="users"
-              title={t('fonctionnalites.futureFeatures.tiers.title')}
-              promise={t('fonctionnalites.futureFeatures.tiers.promise')}
-              delay={0.2}
-              sounds={sounds}
-              t={t}
-              animation={
-                <div className="relative w-full flex flex-col gap-3">
-                  {/* Section: Mes avoirs - Ce qu'on me doit */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                    className="space-y-1.5"
-                  >
-                    <p className="text-[10px] font-medium text-foreground/70 mb-1">{t('fonctionnalites.animations.tiersOwedToMe')}</p>
-                    
-                    {/* Marie - Vacances */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
-                      className="flex items-center justify-between bg-primary/5 rounded-lg px-3 py-1.5 border border-primary/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">👤</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">Marie</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.tiersVacationShare')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-primary">+45 €</span>
-                    </motion.div>
-
-                    {/* Lucas - Restaurant */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                      className="flex items-center justify-between bg-primary/5 rounded-lg px-3 py-1.5 border border-primary/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">👤</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">Lucas</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.tiersRestaurant')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-primary">+32 €</span>
-                    </motion.div>
-
-                    {/* Employeur - Notes de frais */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 }}
-                      className="flex items-center justify-between bg-primary/5 rounded-lg px-3 py-1.5 border border-primary/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">🏢</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">{t('fonctionnalites.animations.tiersEmployer')}</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.tiersExpenseReports')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-primary">+250 €</span>
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Section: Mes dettes - Ce que je dois */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.5 }}
-                    className="space-y-1.5"
-                  >
-                    <p className="text-[10px] font-medium text-foreground/70 mb-1">{t('fonctionnalites.animations.tiersIOwe')}</p>
-                    
-                    {/* Paul - Cadeau groupe */}
-                    <motion.div
-                      initial={{ opacity: 0, x: 15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.6 }}
-                      className="flex items-center justify-between bg-destructive/5 rounded-lg px-3 py-1.5 border border-destructive/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">👤</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">Paul</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.tiersGroupGift')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-destructive">-20 €</span>
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Solde trésorerie */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 }}
-                    className="flex justify-between items-center pt-2 border-t border-border/30"
-                  >
-                    <span className="text-[10px] text-muted-foreground">{t('fonctionnalites.animations.tiersTreasuryBalance')}</span>
-                    <span className="text-xs font-bold text-primary">+307 €</span>
-                  </motion.div>
-
-                  {/* Texte de clôture */}
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.0 }}
-                    className="text-[11px] text-center text-muted-foreground/80 italic px-2"
-                  >
-                    {t('fonctionnalites.animations.tiersClosing')}
-                  </motion.p>
-                </div>
-              }
-            />
-
-            {/* Patrimoine */}
-            <FutureFeatureCard
-              icon="building-2"
-              title={t('fonctionnalites.futureFeatures.patrimoine.title')}
-              promise={t('fonctionnalites.futureFeatures.patrimoine.promise')}
-              delay={0.3}
-              sounds={sounds}
-              t={t}
-              animation={
-                <div className="relative w-full flex flex-col gap-3">
-                  {/* Section: Actifs */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.1 }}
-                    className="space-y-1.5"
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <p className="text-[10px] font-medium text-foreground/70">{t('fonctionnalites.animations.patrimoineAssets')}</p>
-                      <span className="text-[10px] font-semibold text-primary">+192 630 €</span>
-                    </div>
-                    
-                    {/* Appartement */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 }}
-                      className="flex items-center justify-between bg-primary/5 rounded-lg px-3 py-1.5 border border-primary/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">🏠</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">{t('fonctionnalites.animations.patrimoineApartment')}</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.patrimoineRealEstate')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-primary">+180 000 €</span>
-                    </motion.div>
-
-                    {/* Comptes courants et épargnes */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.3 }}
-                      className="flex items-center justify-between bg-primary/5 rounded-lg px-3 py-1.5 border border-primary/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">💰</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">{t('fonctionnalites.animations.patrimoineAccounts')}</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.patrimoineLiquidity')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-primary">+7 630 €</span>
-                    </motion.div>
-
-                    {/* Actions & ETF */}
-                    <motion.div
-                      initial={{ opacity: 0, x: -15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.4 }}
-                      className="flex items-center justify-between bg-primary/5 rounded-lg px-3 py-1.5 border border-primary/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">📈</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">{t('fonctionnalites.animations.patrimoineStocksETF')}</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.patrimoineInvestments')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-primary">+5 000 €</span>
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Section: Passifs */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: 0.5 }}
-                    className="space-y-1.5"
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <p className="text-[10px] font-medium text-foreground/70">{t('fonctionnalites.animations.patrimoineLiabilities')}</p>
-                      <span className="text-[10px] font-semibold text-destructive">-156 000 €</span>
-                    </div>
-                    
-                    {/* Crédit immobilier */}
-                    <motion.div
-                      initial={{ opacity: 0, x: 15 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.6 }}
-                      className="flex items-center justify-between bg-destructive/5 rounded-lg px-3 py-1.5 border border-destructive/20"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm">🏦</span>
-                        <div>
-                          <p className="text-[10px] font-medium text-foreground/80">{t('fonctionnalites.animations.patrimoineMortgage')}</p>
-                          <p className="text-[8px] text-muted-foreground">{t('fonctionnalites.animations.patrimoineApartmentDebt')}</p>
-                        </div>
-                      </div>
-                      <span className="text-xs font-semibold text-destructive">-156 000 €</span>
-                    </motion.div>
-                  </motion.div>
-
-                  {/* Patrimoine net avec évolution */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.8 }}
-                    className="pt-2 border-t border-border/30"
-                  >
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-[10px] font-medium text-foreground/80">{t('fonctionnalites.animations.patrimoineNetWorth')}</span>
-                      <motion.span 
-                        className="text-sm font-bold text-primary"
-                        animate={{ scale: [1, 1.05, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        +36 630 €
-                      </motion.span>
-                    </div>
-                    
-                    {/* Timeline d'évolution */}
-                    <div className="flex items-center gap-1 mt-2">
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 1.0 }}
-                        className="flex flex-col items-center"
-                      >
-                        <span className="text-[7px] text-muted-foreground/60">2024</span>
-                        <div className="w-2 h-2 rounded-full bg-primary/30" />
-                        <span className="text-[7px] text-muted-foreground/80">+12k</span>
-                      </motion.div>
-                      <motion.div 
-                        className="flex-1 h-0.5 bg-gradient-to-r from-primary/30 to-primary/50"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ delay: 1.1, duration: 0.4 }}
-                        style={{ originX: 0 }}
-                      />
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 1.2 }}
-                        className="flex flex-col items-center"
-                      >
-                        <span className="text-[7px] text-muted-foreground/60">2025</span>
-                        <div className="w-2 h-2 rounded-full bg-primary/50" />
-                        <span className="text-[7px] text-muted-foreground/80">+24k</span>
-                      </motion.div>
-                      <motion.div 
-                        className="flex-1 h-0.5 bg-gradient-to-r from-primary/50 to-primary"
-                        initial={{ scaleX: 0 }}
-                        animate={{ scaleX: 1 }}
-                        transition={{ delay: 1.3, duration: 0.4 }}
-                        style={{ originX: 0 }}
-                      />
-                      <motion.div
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 1.4, type: "spring", stiffness: 200 }}
-                        className="flex flex-col items-center"
-                      >
-                        <span className="text-[7px] text-primary font-medium">2026</span>
-                        <motion.div 
-                          className="w-3 h-3 rounded-full bg-primary"
-                          animate={{ boxShadow: ["0 0 0 0 hsl(var(--primary) / 0.4)", "0 0 0 4px hsl(var(--primary) / 0)", "0 0 0 0 hsl(var(--primary) / 0.4)"] }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                        />
-                        <span className="text-[7px] text-primary font-semibold">+37k</span>
-                      </motion.div>
-                    </div>
-                  </motion.div>
-
-                  {/* Texte de clôture */}
-                  <motion.p
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.9 }}
-                    className="text-[11px] text-center text-muted-foreground/80 italic px-2"
-                  >
-                    {t('fonctionnalites.animations.patrimoineClosing')}
-                  </motion.p>
-                </div>
-              }
-            />
+                <h3 className="text-base font-semibold text-foreground mb-2 leading-snug">
+                  {f.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {f.promise}
+                </p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA FINAL — pattern canonique Home / Blog / PourquoiSteero */}
       <section className="py-20 bg-primary relative overflow-hidden">
         {/* Background banner image */}
         <div className="absolute inset-0">
           <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
           <div className="absolute inset-0 bg-primary/50" />
         </div>
-        {/* Decorative elements */}
+        {/* Decorative halos */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -left-20 top-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -right-20 bottom-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
-            transition={{ duration: 0.6 }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-              {t('fonctionnalites.ctaTitle')}
+              Prêt à piloter tes finances ?
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8">
-              {t('fonctionnalites.ctaSubtitle')}
+              14 jours pour tester le pilotage actif de tes finances.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button 
-                onClick={() => {
-                  trackWaitlistOpen("fonctionnalites_cta");
-                  trackCTAClick("rejoindre_waitlist", "fonctionnalites_cta");
-                  openWaitlist();
-                }}
+              <motion.button
+                onClick={openWaitlist}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                {t('common.joinWaitlist')}
+                Commencer gratuitement
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </motion.button>
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <Link 
+                <Link
                   to="/pourquoi-steero"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
                 >
-                  {t('common.discoverApproach')}
+                  Découvrir l'approche Steero
                 </Link>
               </motion.div>
             </div>
+            <p className="text-xs text-primary-foreground/80 mt-6">
+              14 jours gratuits — sans engagement
+            </p>
           </motion.div>
         </div>
       </section>
 
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Fonctionnalites;

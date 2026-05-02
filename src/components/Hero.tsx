@@ -18,7 +18,7 @@ const Hero = () => {
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-hero-gradient pt-2 pb-2 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-hero-gradient pt-20 pb-2 overflow-hidden">
       {/* Decorative elements with parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div

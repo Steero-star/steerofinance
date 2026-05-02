@@ -1,13 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { TempoLetter } from "@/components/TempoLetter";
 
-const letterColors: Record<string, string> = {
-  T: "bg-green-600 text-white",
-  E: "bg-yellow-600 text-white",
-  M: "bg-emerald-700 text-white",
-  P: "bg-primary text-primary-foreground",
-  O: "bg-amber-700 text-white",
-};
 
 const HowItWorks = () => {
   const { t } = useTranslation();
@@ -15,7 +9,7 @@ const HowItWorks = () => {
   const rituals = ["t", "e", "m", "p", "o"] as const;
 
   return (
-    <section className="py-14 bg-background">
+    <section className="py-24 bg-background">
       <div className="container mx-auto px-6 max-w-3xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -61,7 +55,6 @@ const HowItWorks = () => {
           <div className="space-y-4 relative z-10">
             {rituals.map((key, i) => {
               const letter = t(`tempo.rituals.${key}.letter`);
-              const colorClass = letterColors[letter] || "bg-primary text-primary-foreground";
 
               return (
                 <motion.div
@@ -72,11 +65,7 @@ const HowItWorks = () => {
                   transition={{ duration: 0.4, delay: 0.3 + i * 0.08 }}
                   className="flex items-center gap-5 rounded-2xl border border-border/60 bg-card p-5 hover:border-primary/20 transition-colors"
                 >
-                  <div
-                    className={`w-11 h-11 rounded-full flex items-center justify-center text-lg font-bold shrink-0 ring-4 ring-background ${colorClass}`}
-                  >
-                    {letter}
-                  </div>
+                  <TempoLetter letter={letter} size="lg" />
 
                   <div className="flex-1 min-w-0">
                     <h3 className="font-semibold text-foreground text-base">
