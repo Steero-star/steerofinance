@@ -7,59 +7,25 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { TempoLetter } from "@/components/TempoLetter";
 import steeroBanner from "@/assets/steero-banner-3.png";
+import { useTranslation } from "react-i18next";
+
+type Principle = { num: string; title: string; desc: string; ref: string };
+type TempoRow = { letter: string; name: string; desc: string; freq: string; time: string };
 
 const PourquoiSteero = () => {
+  const { t } = useTranslation();
 
-  const retroItems = [
-    "Montre où est allé l'argent",
-    "Automatique, passif",
-    "Observe le passé",
-    "Ne prépare pas les décisions",
-  ];
-  const pareItems = [
-    "Aide à piloter vers où tu veux aller",
-    "Manuel, conscient, intentionnel",
-    "Décide l'avenir",
-    "Développe une compétence durable",
-  ];
-
-  const principles = [
-    {
-      num: "01",
-      title: "La compréhension naît de l'effort cognitif, pas de l'exposition à l'information.",
-      desc: "Enregistrer une dépense, c'est l'identifier, la catégoriser, la comparer à une intention. Ce mécanisme de traitement actif est ce qui produit la maîtrise réelle, pas la consultation d'un dashboard.",
-      ref: "Chi & Wylie — The ICAP Framework, 2014",
-    },
-    {
-      num: "02",
-      title: "L'automatisation crée une illusion de contrôle, pas une maîtrise.",
-      desc: "Les systèmes automatiques génèrent un biais de surconfiance passive : « mes comptes sont connectés » ne signifie pas « je sais où va mon argent ». L'outil porte la responsabilité, pas l'utilisateur.",
-      ref: "Parasuraman & Riley — Humans and Automation, 1997",
-    },
-    {
-      num: "03",
-      title: "Le rituel transforme la finance en comportement, pas en obligation.",
-      desc: "5 minutes par jour créent une boucle de feedback courte. C'est le principe de toute discipline installée durablement : la régularité faible et consistante bat l'effort intense et irrégulier.",
-      ref: "Clear — Atomic Habits, 2018",
-    },
-  ];
-
-  const tempo = [
-    { letter: "T", name: "Tracer", desc: "Saisie intentionnelle. Maintient le lien.", freq: "Quotidien", time: "5 min" },
-    { letter: "E", name: "Examiner", desc: "Prévoir vs réel. Corriger avant qu'il soit trop tard.", freq: "Hebdomadaire", time: "10 min" },
-    { letter: "M", name: "Maîtriser", desc: "Décider où va l'argent le mois suivant.", freq: "Mensuel", time: "15 min" },
-    { letter: "P", name: "Positionner", desc: "Aligner finances et objectifs de vie.", freq: "Trimestriel", time: "30 min" },
-    { letter: "O", name: "Orienter", desc: "Grandes orientations. Arbitrages stratégiques.", freq: "Annuel", time: "60 min" },
-  ];
-
-
+  const retroItems = t("pourquoiSteero.realProblem.retroItems", { returnObjects: true }) as string[];
+  const pareItems = t("pourquoiSteero.realProblem.pareItems", { returnObjects: true }) as string[];
+  const principles = t("pourquoiSteero.behavioral.principles", { returnObjects: true }) as Principle[];
+  const tempo = t("pourquoiSteero.tempo.rows", { returnObjects: true }) as TempoRow[];
 
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="Pourquoi Steero — Tu as besoin d'un pare-brise"
-        description="Steero n'est pas un agrégateur de plus. C'est un système de pilotage actif qui t'aide à décider où va ton argent."
-        keywords="pourquoi steero, pilotage financier, alternative agrégateur bancaire, rituel TEMPO, contrôle budget"
+        title={t("pourquoiSteero.seo.title")}
+        description={t("pourquoiSteero.seo.description")}
+        keywords={t("pourquoiSteero.seo.keywords")}
         canonical="/pourquoi-steero"
       />
       <Header />
@@ -80,7 +46,7 @@ const PourquoiSteero = () => {
               className="badge-sparkle mb-8"
             >
               <Sparkles className="w-4 h-4 text-primary" />
-              <span>Pourquoi Steero</span>
+              <span>{t("pourquoiSteero.hero.badge")}</span>
             </motion.div>
 
             <motion.h1
@@ -89,8 +55,8 @@ const PourquoiSteero = () => {
               transition={{ duration: 0.7, delay: 0.1 }}
               className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
             >
-              Tu n'as pas besoin d'un rétroviseur de plus.<br />
-              <span className="italic text-primary">Tu as besoin d'un pare-brise.</span>
+              {t("pourquoiSteero.hero.title")}<br />
+              <span className="italic text-primary">{t("pourquoiSteero.hero.titleHighlight")}</span>
             </motion.h1>
 
             <motion.p
@@ -99,7 +65,7 @@ const PourquoiSteero = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto"
             >
-              Les apps qui agrègent tes données te montrent où est allé ton argent. Steero t'aide à décider où il va aller.
+              {t("pourquoiSteero.hero.description")}
             </motion.p>
 
             <motion.div
@@ -113,12 +79,12 @@ const PourquoiSteero = () => {
                 onClick={() => window.open("https://app.steero.fr/", "_blank")}
                 className="rounded-full px-8 group"
               >
-                Commencer 14 jours gratuits
+                {t("pourquoiSteero.hero.cta")}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </motion.div>
             <p className="text-xs text-muted-foreground mt-4">
-              Sans engagement
+              {t("pourquoiSteero.hero.subtext")}
             </p>
           </div>
         </div>
@@ -134,7 +100,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.5 }}
             className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
           >
-            Le vrai problème
+            {t("pourquoiSteero.realProblem.label")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -143,7 +109,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
           >
-            Tu sais déjà où ton argent est allé. Ce que tu ignores, <span className="italic text-primary">c'est où il va aller.</span>
+            {t("pourquoiSteero.realProblem.title")} <span className="italic text-primary">{t("pourquoiSteero.realProblem.titleHighlight")}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -152,7 +118,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-muted-foreground text-lg leading-relaxed mb-12 max-w-3xl"
           >
-            Les apps automatiques te donnent une réponse au mauvais problème. Tu n'as pas un problème d'information : tu as un problème de décision. Finary, Linxo, Bankin te montrent le passé avec une précision parfaite. Ça ne change pas les comportements.
+            {t("pourquoiSteero.realProblem.description")}
           </motion.p>
 
           <motion.div
@@ -165,9 +131,9 @@ const PourquoiSteero = () => {
             {/* Rétroviseur */}
             <div className="bg-muted/40 p-6 md:border-r border-border/60">
               <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-4">
-                Rétroviseur
+                {t("pourquoiSteero.realProblem.retroLabel")}
               </p>
-              <p className="font-semibold text-foreground mb-5">Finary, Bankin, Linxo</p>
+              <p className="font-semibold text-foreground mb-5">{t("pourquoiSteero.realProblem.retroCompany")}</p>
               <ul className="space-y-0">
                 {retroItems.map((item, i) => (
                   <li
@@ -183,9 +149,9 @@ const PourquoiSteero = () => {
             {/* Pare-brise */}
             <div className="bg-card p-6 border-t md:border-t-0 border-border/60">
               <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-4">
-                Pare-brise
+                {t("pourquoiSteero.realProblem.pareLabel")}
               </p>
-              <p className="font-semibold text-foreground mb-5">Steero</p>
+              <p className="font-semibold text-foreground mb-5">{t("pourquoiSteero.realProblem.pareCompany")}</p>
               <ul className="space-y-0">
                 {pareItems.map((item, i) => (
                   <li
@@ -212,7 +178,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.5 }}
             className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
           >
-            Approche comportementale
+            {t("pourquoiSteero.behavioral.label")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -221,7 +187,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
           >
-            Pourquoi <span className="italic text-primary">le manuel</span> change tout.
+            {t("pourquoiSteero.behavioral.titlePre")} <span className="italic text-primary">{t("pourquoiSteero.behavioral.titleHighlight")}</span> {t("pourquoiSteero.behavioral.titlePost")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -230,7 +196,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-muted-foreground text-lg leading-relaxed mb-12"
           >
-            La saisie manuelle n'est pas un manque de technologie. C'est la mécanique qui produit le changement de comportement. Trois principes, documentés.
+            {t("pourquoiSteero.behavioral.description")}
           </motion.p>
 
           <div className="space-y-4">
@@ -276,7 +242,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.5 }}
             className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
           >
-            Le système
+            {t("pourquoiSteero.tempo.label")}
           </motion.p>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -285,7 +251,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
           >
-            TEMPO : <span className="italic text-primary">Cinq rituels</span>, une discipline.
+            {t("pourquoiSteero.tempo.titlePre")} <span className="italic text-primary">{t("pourquoiSteero.tempo.titleHighlight")}</span>{t("pourquoiSteero.tempo.titlePost")}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -294,7 +260,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-muted-foreground text-lg leading-relaxed mb-12"
           >
-            Du quotidien au stratégique. Chaque niveau a une fréquence, un objectif, une durée. L'ensemble forme un système de pilotage complet.
+            {t("pourquoiSteero.tempo.description")}
           </motion.p>
 
           <motion.div
@@ -309,13 +275,13 @@ const PourquoiSteero = () => {
                 <tr className="bg-muted/40">
                   <th className="text-xs font-semibold tracking-widest uppercase text-muted-foreground text-left p-4 w-20 border-b border-border/60" />
                   <th className="text-xs font-semibold tracking-widest uppercase text-muted-foreground text-left p-4 border-b border-border/60">
-                    Rituel
+                    {t("pourquoiSteero.tempo.colRitual")}
                   </th>
                   <th className="text-xs font-semibold tracking-widest uppercase text-muted-foreground text-left p-4 border-b border-border/60">
-                    Fréquence
+                    {t("pourquoiSteero.tempo.colFrequency")}
                   </th>
                   <th className="text-xs font-semibold tracking-widest uppercase text-muted-foreground text-left p-4 border-b border-border/60">
-                    Durée
+                    {t("pourquoiSteero.tempo.colDuration")}
                   </th>
                 </tr>
               </thead>
@@ -346,8 +312,8 @@ const PourquoiSteero = () => {
           >
             <Info className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
             <p className="text-sm text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">Intégration bancaire à venir.</span>{" "}
-              Steero se connectera à tes comptes, pas pour automatiser mais pour te présenter tes transactions à valider. Tu catégorises, tu confirmes, tu décides. La friction administrative disparaît. La friction utile, elle, reste entière.
+              <span className="font-semibold text-foreground">{t("pourquoiSteero.tempo.bankingNoteTitle")}</span>{" "}
+              {t("pourquoiSteero.tempo.bankingNoteDesc")}
             </p>
           </motion.div>
         </div>
@@ -355,12 +321,10 @@ const PourquoiSteero = () => {
 
       {/* CTA FINAL */}
       <section className="py-20 bg-primary relative overflow-hidden">
-        {/* Background banner image */}
         <div className="absolute inset-0">
           <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
           <div className="absolute inset-0 bg-primary/50" />
         </div>
-        {/* Decorative elements */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -left-20 top-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
           <div className="absolute -right-20 bottom-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
@@ -375,10 +339,10 @@ const PourquoiSteero = () => {
             className="text-center max-w-2xl mx-auto"
           >
             <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-primary-foreground mb-4">
-              Installe un système.<br /><span className="italic opacity-80">Pas une app de plus.</span>
+              {t("pourquoiSteero.cta.title")}<br /><span className="italic opacity-80">{t("pourquoiSteero.cta.titleHighlight")}</span>
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8">
-              14 jours pour tester le pilotage actif de tes finances.
+              {t("pourquoiSteero.cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
@@ -387,7 +351,7 @@ const PourquoiSteero = () => {
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                Commencer gratuitement
+                {t("pourquoiSteero.cta.primary")}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
               </motion.button>
               <motion.div
@@ -398,7 +362,7 @@ const PourquoiSteero = () => {
                   to="/fonctionnalites"
                   className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
                 >
-                  Découvrir les fonctionnalités
+                  {t("pourquoiSteero.cta.secondary")}
                 </Link>
               </motion.div>
             </div>

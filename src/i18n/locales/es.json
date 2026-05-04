@@ -1,6 +1,6 @@
 {
   "common": {
-    "joinWaitlist": "Unirme a la lista de espera",
+    "joinWaitlist": "Empezar gratis",
     "discoverApproach": "Descubre el enfoque Steero",
     "discoverFeatures": "Descubre las funcionalidades",
     "learnMore": "Saber más",
@@ -221,8 +221,8 @@
     "description": "Descubre la hoja de ruta de Steero y únete a la aventura ahora.",
     "step": "Paso",
     "step1": {
-      "title": "Inscríbete en la lista de espera",
-      "description": "Una herramienta sencilla, intuitiva, diseñada para retomar el control de tus finanzas es nuestra prioridad. Inscríbete en la lista y comparte Steero a tu alrededor: cada apoyo cuenta para acelerar el lanzamiento.",
+      "title": "Empieza ahora",
+      "description": "Una herramienta sencilla, intuitiva, diseñada para retomar el control de tus finanzas. Prueba Steero gratis durante 14 días y compártelo a tu alrededor — cada recomendación cuenta.",
       "date": "Desde ahora"
     },
     "step2": {
@@ -390,9 +390,9 @@
     "noAnswer": "¿NO ENCUENTRAS TU RESPUESTA?",
     "discoverHow": "Descubre cómo funciona Steero concretamente.",
     "discoverApproach": "Descubre el enfoque Steero",
-    "joinWaitlist": "Unirse a la lista de espera",
+    "joinWaitlist": "Empezar gratis",
     "ctaTitle": "¿Listo para pilotar tus finanzas?",
-    "ctaDescription": "Únete a la lista de espera y sé de los primeros en probar Steero.",
+    "ctaDescription": "Únete a Steero para cambiar tu enfoque y alcanzar tus objetivos.",
     "sections": {
       "understand": {
         "title": "Entender Steero",
@@ -472,8 +472,8 @@
     "futureTitle": "Y cuando quieras ir más lejos",
     "futureSubtitle": "Otras dimensiones por explorar, pronto disponibles.",
     "ctaTitle": "¿Listo para pilotar tus finanzas?",
-    "ctaSubtitle": "Únete a la lista de espera y sé de los primeros en probar Steero.",
-    "ctaDescription": "Únete a la lista de espera y sé de los primeros en probar Steero.",
+    "ctaSubtitle": "Únete a Steero para cambiar tu enfoque y alcanzar tus objetivos.",
+    "ctaDescription": "Únete a Steero para cambiar tu enfoque y alcanzar tus objetivos.",
     "features": {
       "onboarding": {
         "title": "Trayectoria personalizada",
@@ -638,8 +638,8 @@
     "readFullArticle": "Leer el artículo completo",
     "readyToTransform": "¿Listo para transformar tu gestión financiera?",
     "ctaTitle": "¿Listo para pilotar tus finanzas?",
-    "ctaDescription": "Únete a la lista de espera y sé de los primeros en probar Steero.",
-    "joinWaitlist": "Unirse a la lista de espera",
+    "ctaDescription": "Únete a Steero para cambiar tu enfoque y alcanzar tus objetivos.",
+    "joinWaitlist": "Empezar",
     "linkCopied": "¡Enlace copiado!",
     "share": "Compartir",
     "collapseArticle": "Reducir el artículo",
@@ -1200,6 +1200,96 @@
       }
     }
   },
+  "pourquoiSteero": {
+    "seo": {
+      "title": "Por qué Steero — Necesitas un parabrisas",
+      "description": "Steero no es un agregador más. Es un sistema de pilotaje activo que te ayuda a decidir adónde va tu dinero.",
+      "keywords": "por qué steero, pilotaje financiero, alternativa agregador bancario, ritual TEMPO, control presupuesto"
+    },
+    "hero": {
+      "badge": "Por qué Steero",
+      "title": "No necesitas otro retrovisor.",
+      "titleHighlight": "Necesitas un parabrisas.",
+      "description": "Las apps que agregan tus datos te muestran adónde fue tu dinero. Steero te ayuda a decidir adónde irá.",
+      "cta": "Empezar 14 días gratis",
+      "subtext": "Sin compromiso"
+    },
+    "realProblem": {
+      "label": "El verdadero problema",
+      "title": "Ya sabes adónde fue tu dinero. Lo que no sabes,",
+      "titleHighlight": "es adónde va a ir.",
+      "description": "Las apps automáticas te dan una respuesta al problema equivocado. No tienes un problema de información: tienes un problema de decisión. Finary, Linxo, Bankin te muestran el pasado con precisión perfecta. Eso no cambia los comportamientos.",
+      "retroLabel": "Retrovisor",
+      "retroCompany": "Finary, Bankin, Linxo",
+      "retroItems": [
+        "Muestra adónde fue el dinero",
+        "Automático, pasivo",
+        "Observa el pasado",
+        "No prepara las decisiones"
+      ],
+      "pareLabel": "Parabrisas",
+      "pareCompany": "Steero",
+      "pareItems": [
+        "Ayuda a pilotar hacia donde quieres ir",
+        "Manual, consciente, intencional",
+        "Decide el futuro",
+        "Desarrolla una competencia duradera"
+      ]
+    },
+    "behavioral": {
+      "label": "Enfoque conductual",
+      "titlePre": "Por qué",
+      "titleHighlight": "lo manual",
+      "titlePost": "lo cambia todo.",
+      "description": "El registro manual no es una falta de tecnología. Es el mecanismo que produce el cambio de comportamiento. Tres principios, documentados.",
+      "principles": [
+        {
+          "num": "01",
+          "title": "La comprensión nace del esfuerzo cognitivo, no de la exposición a la información.",
+          "desc": "Registrar un gasto es identificarlo, categorizarlo, compararlo con una intención. Este mecanismo de procesamiento activo es lo que produce el verdadero dominio, no la consulta de un dashboard.",
+          "ref": "Chi & Wylie — The ICAP Framework, 2014"
+        },
+        {
+          "num": "02",
+          "title": "La automatización crea una ilusión de control, no un dominio.",
+          "desc": "Los sistemas automáticos generan un sesgo de sobreconfianza pasiva: «mis cuentas están conectadas» no significa «sé adónde va mi dinero». La herramienta lleva la responsabilidad, no el usuario.",
+          "ref": "Parasuraman & Riley — Humans and Automation, 1997"
+        },
+        {
+          "num": "03",
+          "title": "El ritual transforma las finanzas en comportamiento, no en obligación.",
+          "desc": "5 minutos al día crean un ciclo de retroalimentación corto. Es el principio de toda disciplina instalada duraderamente: la regularidad baja y consistente supera el esfuerzo intenso e irregular.",
+          "ref": "Clear — Atomic Habits, 2018"
+        }
+      ]
+    },
+    "tempo": {
+      "label": "El sistema",
+      "titlePre": "TEMPO:",
+      "titleHighlight": "Cinco rituales",
+      "titlePost": ", una disciplina.",
+      "description": "De lo cotidiano a lo estratégico. Cada nivel tiene una frecuencia, un objetivo, una duración. El conjunto forma un sistema de pilotaje completo.",
+      "colRitual": "Ritual",
+      "colFrequency": "Frecuencia",
+      "colDuration": "Duración",
+      "bankingNoteTitle": "Integración bancaria próximamente.",
+      "bankingNoteDesc": "Steero se conectará a tus cuentas, no para automatizar sino para presentarte tus transacciones a validar. Tú categorizas, confirmas, decides. La fricción administrativa desaparece. La fricción útil, en cambio, permanece intacta.",
+      "rows": [
+        { "letter": "T", "name": "Trazar", "desc": "Registro intencional. Mantiene el vínculo.", "freq": "Diario", "time": "5 min" },
+        { "letter": "E", "name": "Examinar", "desc": "Previsto vs real. Corregir antes de que sea tarde.", "freq": "Semanal", "time": "10 min" },
+        { "letter": "M", "name": "Dominar", "desc": "Decidir adónde va el dinero el mes siguiente.", "freq": "Mensual", "time": "15 min" },
+        { "letter": "P", "name": "Posicionar", "desc": "Alinear finanzas y objetivos de vida.", "freq": "Trimestral", "time": "30 min" },
+        { "letter": "O", "name": "Orientar", "desc": "Grandes orientaciones. Arbitrajes estratégicos.", "freq": "Anual", "time": "60 min" }
+      ]
+    },
+    "cta": {
+      "title": "Instala un sistema.",
+      "titleHighlight": "No una app más.",
+      "description": "14 días para probar el pilotaje activo de tus finanzas.",
+      "primary": "Empezar gratis",
+      "secondary": "Descubrir las funcionalidades"
+    }
+  },
   "pricing": {
     "seoTitle": "Precios - Steero",
     "seoDescription": "Descubre Steero a 8€/mes: acceso completo a todas las funcionalidades para tomar el control de tus finanzas.",
@@ -1232,7 +1322,7 @@
     "earlyBadge": "Early Adopters · 200 plazas",
     "earlyText1": "Los 200 primeros inscritos en la lista de espera obtienen un −50% de por vida en su suscripción. Oferta no acumulable, plazas no garantizadas después de los 200 primeros.",
     "earlyText2": "",
-    "earlyCta": "Unirse a la lista de espera",
+    "earlyCta": "Obtener acceso anticipado",
     "earlyDisclaimer": "El descuento se aplica sobre el precio público vigente. Si el precio cambia en el futuro, el descuento se mantendrá.",
     "guarantee": "14 días de prueba gratis al lanzamiento · Tarjeta requerida al final del periodo",
     "faqTitle": "¿Tienes preguntas?",

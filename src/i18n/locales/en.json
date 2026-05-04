@@ -1,6 +1,6 @@
 {
   "common": {
-    "joinWaitlist": "Join the waitlist",
+    "joinWaitlist": "Start for free",
     "discoverApproach": "Discover Steero's approach",
     "discoverFeatures": "Discover features",
     "learnMore": "Learn more",
@@ -221,8 +221,8 @@
     "description": "Discover Steero's roadmap and join the adventure now.",
     "step": "Step",
     "step1": {
-      "title": "Join the waitlist",
-      "description": "A simple, intuitive tool designed to help you take control of your finances is our priority. Sign up for the list and share Steero around you: every support counts to accelerate the launch.",
+      "title": "Get started now",
+      "description": "A simple, intuitive tool designed to help you take control of your finances. Try Steero free for 14 days and share it around you — every word of mouth counts.",
       "date": "Starting now"
     },
     "step2": {
@@ -390,9 +390,9 @@
     "noAnswer": "CAN'T FIND YOUR ANSWER?",
     "discoverHow": "Discover how Steero works in practice.",
     "discoverApproach": "Discover Steero's approach",
-    "joinWaitlist": "Join the waitlist",
+    "joinWaitlist": "Start for free",
     "ctaTitle": "Ready to steer your finances?",
-    "ctaDescription": "Join the waitlist and be among the first to try Steero.",
+    "ctaDescription": "Join Steero to change your approach and reach your goals.",
     "sections": {
       "understand": {
         "title": "Understanding Steero",
@@ -472,8 +472,8 @@
     "futureTitle": "And when you want to go further",
     "futureSubtitle": "Other dimensions to explore, coming soon.",
     "ctaTitle": "Ready to steer your finances?",
-    "ctaSubtitle": "Join the waitlist and be among the first to try Steero.",
-    "ctaDescription": "Join the waitlist and be among the first to try Steero.",
+    "ctaSubtitle": "Join Steero to change your approach and reach your goals.",
+    "ctaDescription": "Join Steero to change your approach and reach your goals.",
     "features": {
       "onboarding": {
         "title": "Personalized Path",
@@ -638,8 +638,8 @@
     "readFullArticle": "Read full article",
     "readyToTransform": "Ready to transform your financial management?",
     "ctaTitle": "Ready to steer your finances?",
-    "ctaDescription": "Join the waitlist and be among the first to try Steero.",
-    "joinWaitlist": "Join the waitlist",
+    "ctaDescription": "Join Steero to change your approach and reach your goals.",
+    "joinWaitlist": "Start",
     "linkCopied": "Link copied!",
     "share": "Share",
     "collapseArticle": "Collapse article",
@@ -1200,6 +1200,96 @@
       }
     }
   },
+  "pourquoiSteero": {
+    "seo": {
+      "title": "Why Steero — You need a windshield",
+      "description": "Steero is not just another aggregator. It's an active steering system that helps you decide where your money goes.",
+      "keywords": "why steero, financial steering, banking aggregator alternative, TEMPO ritual, budget control"
+    },
+    "hero": {
+      "badge": "Why Steero",
+      "title": "You don't need another rearview mirror.",
+      "titleHighlight": "You need a windshield.",
+      "description": "Apps that aggregate your data show you where your money went. Steero helps you decide where it will go.",
+      "cta": "Start 14 days free",
+      "subtext": "No commitment"
+    },
+    "realProblem": {
+      "label": "The real problem",
+      "title": "You already know where your money went. What you don't know,",
+      "titleHighlight": "is where it's going.",
+      "description": "Automatic apps give you an answer to the wrong problem. You don't have an information problem — you have a decision problem. Finary, Linxo, Bankin show you the past with perfect precision. That doesn't change behavior.",
+      "retroLabel": "Rearview mirror",
+      "retroCompany": "Finary, Bankin, Linxo",
+      "retroItems": [
+        "Shows where money went",
+        "Automatic, passive",
+        "Observes the past",
+        "Doesn't prepare decisions"
+      ],
+      "pareLabel": "Windshield",
+      "pareCompany": "Steero",
+      "pareItems": [
+        "Helps steer toward where you want to go",
+        "Manual, conscious, intentional",
+        "Decides the future",
+        "Builds a lasting skill"
+      ]
+    },
+    "behavioral": {
+      "label": "Behavioral approach",
+      "titlePre": "Why",
+      "titleHighlight": "manual",
+      "titlePost": "changes everything.",
+      "description": "Manual entry is not a lack of technology. It's the mechanism that produces behavioral change. Three principles, documented.",
+      "principles": [
+        {
+          "num": "01",
+          "title": "Understanding comes from cognitive effort, not exposure to information.",
+          "desc": "Recording an expense means identifying it, categorizing it, comparing it to an intention. This active processing mechanism is what produces real mastery — not consulting a dashboard.",
+          "ref": "Chi & Wylie — The ICAP Framework, 2014"
+        },
+        {
+          "num": "02",
+          "title": "Automation creates an illusion of control, not mastery.",
+          "desc": "Automatic systems generate a passive overconfidence bias: \"my accounts are connected\" doesn't mean \"I know where my money goes.\" The tool carries the responsibility, not the user.",
+          "ref": "Parasuraman & Riley — Humans and Automation, 1997"
+        },
+        {
+          "num": "03",
+          "title": "Ritual transforms finance into behavior, not obligation.",
+          "desc": "5 minutes a day creates a short feedback loop. This is the principle behind any durably installed discipline: low, consistent regularity beats intense, irregular effort.",
+          "ref": "Clear — Atomic Habits, 2018"
+        }
+      ]
+    },
+    "tempo": {
+      "label": "The system",
+      "titlePre": "TEMPO:",
+      "titleHighlight": "Five rituals",
+      "titlePost": ", one discipline.",
+      "description": "From daily to strategic. Each level has a frequency, an objective, a duration. Together they form a complete steering system.",
+      "colRitual": "Ritual",
+      "colFrequency": "Frequency",
+      "colDuration": "Duration",
+      "bankingNoteTitle": "Banking integration coming soon.",
+      "bankingNoteDesc": "Steero will connect to your accounts — not to automate, but to present your transactions for validation. You categorize, confirm, decide. Administrative friction disappears. Useful friction stays intact.",
+      "rows": [
+        { "letter": "T", "name": "Track", "desc": "Intentional entry. Keeps the connection.", "freq": "Daily", "time": "5 min" },
+        { "letter": "E", "name": "Examine", "desc": "Planned vs actual. Correct before it's too late.", "freq": "Weekly", "time": "10 min" },
+        { "letter": "M", "name": "Master", "desc": "Decide where money goes next month.", "freq": "Monthly", "time": "15 min" },
+        { "letter": "P", "name": "Position", "desc": "Align finances and life goals.", "freq": "Quarterly", "time": "30 min" },
+        { "letter": "O", "name": "Orient", "desc": "Big directions. Strategic trade-offs.", "freq": "Yearly", "time": "60 min" }
+      ]
+    },
+    "cta": {
+      "title": "Install a system.",
+      "titleHighlight": "Not another app.",
+      "description": "14 days to test active financial steering.",
+      "primary": "Start for free",
+      "secondary": "Discover features"
+    }
+  },
   "pricing": {
     "seoTitle": "Pricing - Steero",
     "seoDescription": "Discover Steero at €8/month: full access to all features to take control of your finances.",
@@ -1232,7 +1322,7 @@
     "earlyBadge": "Early Adopters · 200 spots",
     "earlyText1": "The first 200 waitlist subscribers get −50% for life on their subscription. Non-cumulative offer, spots not guaranteed after the first 200.",
     "earlyText2": "",
-    "earlyCta": "Join the waitlist",
+    "earlyCta": "Get early access",
     "earlyDisclaimer": "The discount applies to the current public price. If the price changes in the future, your discount will remain applied.",
     "guarantee": "14-day free trial at launch · Credit card required at the end of the trial",
     "faqTitle": "Have questions?",

@@ -221,8 +221,8 @@
     "description": "Découvre la feuille de route de Steero et rejoins l'aventure dès maintenant.",
     "step": "Étape",
     "step1": {
-      "title": "Inscris-toi à la liste d'attente",
-      "description": "Un outil simple, intuitif, conçu pour reprendre le contrôle de tes finances c'est notre priorité. Inscris-toi à la liste et partage Steero autour de toi : chaque soutien compte pour accélérer le lancement.",
+      "title": "Commence maintenant",
+      "description": "Un outil simple, intuitif, conçu pour reprendre le contrôle de tes finances. Essaie Steero gratuitement pendant 14 jours et partage-le autour de toi : chaque soutien compte.",
       "date": "Dès maintenant"
     },
     "step2": {
@@ -390,7 +390,7 @@
     "noAnswer": "TU NE TROUVES PAS TA RÉPONSE ?",
     "discoverHow": "Découvre comment Steero fonctionne concrètement.",
     "discoverApproach": "Découvrir l'approche Steero",
-    "joinWaitlist": "Rejoindre la liste d'attente",
+    "joinWaitlist": "Commencer gratuitement",
     "ctaTitle": "Prêt à piloter tes finances ?",
     "ctaDescription": "Rejoins Steero pour changer d'approche et atteindre tes objectifs.",
     "sections": {
@@ -1200,6 +1200,96 @@
       }
     }
   },
+  "pourquoiSteero": {
+    "seo": {
+      "title": "Pourquoi Steero — Tu as besoin d'un pare-brise",
+      "description": "Steero n'est pas un agrégateur de plus. C'est un système de pilotage actif qui t'aide à décider où va ton argent.",
+      "keywords": "pourquoi steero, pilotage financier, alternative agrégateur bancaire, rituel TEMPO, contrôle budget"
+    },
+    "hero": {
+      "badge": "Pourquoi Steero",
+      "title": "Tu n'as pas besoin d'un rétroviseur de plus.",
+      "titleHighlight": "Tu as besoin d'un pare-brise.",
+      "description": "Les apps qui agrègent tes données te montrent où est allé ton argent. Steero t'aide à décider où il va aller.",
+      "cta": "Commencer 14 jours gratuits",
+      "subtext": "Sans engagement"
+    },
+    "realProblem": {
+      "label": "Le vrai problème",
+      "title": "Tu sais déjà où ton argent est allé. Ce que tu ignores,",
+      "titleHighlight": "c'est où il va aller.",
+      "description": "Les apps automatiques te donnent une réponse au mauvais problème. Tu n'as pas un problème d'information : tu as un problème de décision. Finary, Linxo, Bankin te montrent le passé avec une précision parfaite. Ça ne change pas les comportements.",
+      "retroLabel": "Rétroviseur",
+      "retroCompany": "Finary, Bankin, Linxo",
+      "retroItems": [
+        "Montre où est allé l'argent",
+        "Automatique, passif",
+        "Observe le passé",
+        "Ne prépare pas les décisions"
+      ],
+      "pareLabel": "Pare-brise",
+      "pareCompany": "Steero",
+      "pareItems": [
+        "Aide à piloter vers où tu veux aller",
+        "Manuel, conscient, intentionnel",
+        "Décide l'avenir",
+        "Développe une compétence durable"
+      ]
+    },
+    "behavioral": {
+      "label": "Approche comportementale",
+      "titlePre": "Pourquoi",
+      "titleHighlight": "le manuel",
+      "titlePost": "change tout.",
+      "description": "La saisie manuelle n'est pas un manque de technologie. C'est la mécanique qui produit le changement de comportement. Trois principes, documentés.",
+      "principles": [
+        {
+          "num": "01",
+          "title": "La compréhension naît de l'effort cognitif, pas de l'exposition à l'information.",
+          "desc": "Enregistrer une dépense, c'est l'identifier, la catégoriser, la comparer à une intention. Ce mécanisme de traitement actif est ce qui produit la maîtrise réelle, pas la consultation d'un dashboard.",
+          "ref": "Chi & Wylie — The ICAP Framework, 2014"
+        },
+        {
+          "num": "02",
+          "title": "L'automatisation crée une illusion de contrôle, pas une maîtrise.",
+          "desc": "Les systèmes automatiques génèrent un biais de surconfiance passive : « mes comptes sont connectés » ne signifie pas « je sais où va mon argent ». L'outil porte la responsabilité, pas l'utilisateur.",
+          "ref": "Parasuraman & Riley — Humans and Automation, 1997"
+        },
+        {
+          "num": "03",
+          "title": "Le rituel transforme la finance en comportement, pas en obligation.",
+          "desc": "5 minutes par jour créent une boucle de feedback courte. C'est le principe de toute discipline installée durablement : la régularité faible et consistante bat l'effort intense et irrégulier.",
+          "ref": "Clear — Atomic Habits, 2018"
+        }
+      ]
+    },
+    "tempo": {
+      "label": "Le système",
+      "titlePre": "TEMPO :",
+      "titleHighlight": "Cinq rituels",
+      "titlePost": ", une discipline.",
+      "description": "Du quotidien au stratégique. Chaque niveau a une fréquence, un objectif, une durée. L'ensemble forme un système de pilotage complet.",
+      "colRitual": "Rituel",
+      "colFrequency": "Fréquence",
+      "colDuration": "Durée",
+      "bankingNoteTitle": "Intégration bancaire à venir.",
+      "bankingNoteDesc": "Steero se connectera à tes comptes, pas pour automatiser mais pour te présenter tes transactions à valider. Tu catégorises, tu confirmes, tu décides. La friction administrative disparaît. La friction utile, elle, reste entière.",
+      "rows": [
+        { "letter": "T", "name": "Tracer", "desc": "Saisie intentionnelle. Maintient le lien.", "freq": "Quotidien", "time": "5 min" },
+        { "letter": "E", "name": "Examiner", "desc": "Prévoir vs réel. Corriger avant qu'il soit trop tard.", "freq": "Hebdomadaire", "time": "10 min" },
+        { "letter": "M", "name": "Maîtriser", "desc": "Décider où va l'argent le mois suivant.", "freq": "Mensuel", "time": "15 min" },
+        { "letter": "P", "name": "Positionner", "desc": "Aligner finances et objectifs de vie.", "freq": "Trimestriel", "time": "30 min" },
+        { "letter": "O", "name": "Orienter", "desc": "Grandes orientations. Arbitrages stratégiques.", "freq": "Annuel", "time": "60 min" }
+      ]
+    },
+    "cta": {
+      "title": "Installe un système.",
+      "titleHighlight": "Pas une app de plus.",
+      "description": "14 jours pour tester le pilotage actif de tes finances.",
+      "primary": "Commencer gratuitement",
+      "secondary": "Découvrir les fonctionnalités"
+    }
+  },
   "pricing": {
     "seoTitle": "Tarifs - Steero",
     "seoDescription": "Découvrez l'offre Steero à 8€/mois : accès complet à toutes les fonctionnalités pour reprendre le contrôle de vos finances.",
@@ -1232,7 +1322,7 @@
     "earlyBadge": "Early Adopters · 200 places",
     "earlyText1": "Les 200 premiers inscrits sur la liste d'attente bénéficient de −50% à vie sur leur abonnement. Offre non cumulable, places non garanties après les 200 premiers inscrits.",
     "earlyText2": "",
-    "earlyCta": "Rejoindre la liste d'attente",
+    "earlyCta": "Commencer gratuitement",
     "earlyDisclaimer": "La réduction s'applique sur le prix public en vigueur. Si le tarif évolue dans le futur, la réduction reste appliquée.",
     "guarantee": "14 jours d'essai gratuit à l'ouverture",
     "faqTitle": "Des questions ?",

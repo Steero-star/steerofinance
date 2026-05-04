@@ -7,7 +7,11 @@
       "Bash(Select-Object -First 50)",
       "Bash(Format-List FullName)",
       "Bash(Remove-Item \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\\\\contexts\\\\WaitlistContext.tsx\" -Force)",
-      "Bash(Remove-Item \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\\\\components\\\\WaitlistModal.tsx\" -Force)"
+      "Bash(Remove-Item \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\\\\components\\\\WaitlistModal.tsx\" -Force)",
+      "Bash(findstr /i \"i18n\\\\|config\\\\|translation\")",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\" -Recurse -Include \"*i18n*\", \"*config*\")",
+      "Bash(npx tsc *)",
+      "Bash(npx vite *)"
     ]
   }
 }
