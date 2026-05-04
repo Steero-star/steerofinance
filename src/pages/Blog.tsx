@@ -1575,7 +1575,7 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist, onOp
                 <p className="text-sm text-foreground font-medium mb-3">
                   {t('blog.readyToTransform')}
                 </p>
-                <Button size="sm" className="group" onClick={openWaitlist}>
+                <Button size="sm" className="group" onClick={() => window.open("https://app.steero.fr/", "_blank")}>
                     {t('blog.joinWaitlist')}
                     <ArrowRight className="ml-2 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -1981,8 +1981,8 @@ const Blog = () => {
               {t('blog.ctaDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button 
-                onClick={openWaitlist}
+              <motion.button
+                onClick={() => window.open("https://app.steero.fr/", "_blank")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"

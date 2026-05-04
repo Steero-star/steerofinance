@@ -249,7 +249,7 @@ const Pricing = () => {
               {/* CTA */}
               <div className="px-8 md:px-10 pb-8">
                 <Button
-                  onClick={openWaitlist}
+                  onClick={() => window.open("https://app.steero.fr/", "_blank")}
                   size="lg"
                   className="w-full rounded-full group"
                 >

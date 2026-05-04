@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ronal\\\\steerofinance\" -Recurse -Directory -Filter \"*blog*\")",
-      "Bash(Select-Object FullName)"
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\" -Recurse -Include \"*.tsx\", \"*.ts\", \"*.jsx\", \"*.js\")",
+      "Bash(Select-Object -First 50)",
+      "Bash(Format-List FullName)"
     ]
   }
 }

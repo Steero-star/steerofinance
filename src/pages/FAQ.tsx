@@ -121,7 +121,7 @@ const FAQ = () => {
                         {t('faq.discoverApproach')}
                         <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </Link>
-                      <button onClick={openWaitlist} className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-medium transition-all hover:bg-muted">
+                      <button onClick={() => window.open("https://app.steero.fr/", "_blank")} className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-border bg-card text-foreground font-medium transition-all hover:bg-muted">
                         {t('faq.joinWaitlist')}
                       </button>
                     </div>
@@ -210,8 +210,8 @@ const FAQ = () => {
               {t('faq.ctaDescription')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button 
-                onClick={openWaitlist}
+              <motion.button
+                onClick={() => window.open("https://app.steero.fr/", "_blank")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
