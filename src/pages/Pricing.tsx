@@ -22,8 +22,8 @@ const Pricing = () => {
   const discountPercent = 25;
 
   const quarterlyTotal = (monthlyPrice * 3).toFixed(2).replace(".", ",");
-  const annualTotal = 72;
-  const annualSavings = 24;
+  const annualTotal = 76;
+  const annualSavings = 20;
 
   const getPrice = () =>
     isAnnual
