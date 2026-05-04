@@ -34,7 +34,7 @@ const CTA = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-bold mb-4 text-primary-foreground"
+            className="font-serif text-3xl md:text-4xl font-normal tracking-tight mb-4 text-primary-foreground"
           >
             {t('cta.title')}
           </motion.h2>

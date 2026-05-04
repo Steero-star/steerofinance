@@ -62,10 +62,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl md:text-5xl font-bold leading-tight text-foreground lg:text-6xl"
+              className="font-serif text-4xl md:text-5xl font-normal leading-[1.1] tracking-tight text-foreground lg:text-6xl"
             >
               {t('hero.title')}<br />
-              <span className="text-primary">{t('hero.titleHighlight')}</span>
+              <span className="italic text-primary">{t('hero.titleHighlight')}</span>
             </motion.h1>
 
             <motion.p

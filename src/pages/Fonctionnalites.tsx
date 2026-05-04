@@ -2028,7 +2028,7 @@ const Fonctionnalites = () => {
                 </div>
                 <div>
                   <h2
-                    className="text-2xl md:text-3xl font-bold text-foreground leading-tight"
+                    className="font-serif text-2xl md:text-3xl font-normal leading-[1.1] tracking-tight text-foreground"
                   >
                     {group.title}
                   </h2>
@@ -2084,7 +2084,7 @@ const Fonctionnalites = () => {
               Prochaines évolutions
             </p>
             <h2
-              className="text-2xl md:text-3xl font-bold text-foreground mb-3"
+              className="font-serif text-2xl md:text-3xl font-normal tracking-tight text-foreground mb-3"
             >
               Le système continue de se construire.
             </h2>
@@ -2146,7 +2146,7 @@ const Fonctionnalites = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-primary-foreground mb-4">
               Prêt à piloter tes finances ?
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8">

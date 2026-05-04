@@ -107,7 +107,7 @@ const FAQ = () => {
                 }} transition={{
                   duration: 0.6
                 }}>
-                    <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+                    <h1 className="font-serif text-4xl md:text-5xl font-normal tracking-tight text-foreground mb-8">
                       {t('faq.title')}
                     </h1>
                     
@@ -203,7 +203,7 @@ const FAQ = () => {
             transition={{ duration: 0.6 }} 
             className="text-center max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+            <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-primary-foreground mb-4">
               {t('faq.ctaTitle')}
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8">

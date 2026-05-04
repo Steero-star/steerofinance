@@ -89,10 +89,10 @@ const PourquoiSteero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground mb-6"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
             >
               Tu n'as pas besoin d'un rétroviseur de plus.<br />
-              <span className="text-primary italic">Tu as besoin d'un pare-brise.</span>
+              <span className="italic text-primary">Tu as besoin d'un pare-brise.</span>
             </motion.h1>
 
             <motion.p
@@ -143,9 +143,9 @@ const PourquoiSteero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-6"
+            className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
           >
-            Tu sais déjà où ton argent est allé. Ce que tu ignores, c'est où il va aller.
+            Tu sais déjà où ton argent est allé. Ce que tu ignores,<br /><span className="italic text-primary">c'est où il va aller.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -221,9 +221,9 @@ const PourquoiSteero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-6"
+            className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
           >
-            Pourquoi le manuel change tout.
+            Pourquoi <span className="italic text-primary">le manuel</span> change tout.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -285,9 +285,9 @@ const PourquoiSteero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-6"
+            className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
           >
-            TEMPO : Cinq rituels, une discipline.
+            TEMPO : <span className="italic text-primary">Cinq rituels</span>, une discipline.
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -376,8 +376,8 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6 }}
             className="text-center max-w-2xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-              Installe un système.<br />Pas une app de plus.
+            <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-primary-foreground mb-4">
+              Installe un système.<br /><span className="italic opacity-80">Pas une app de plus.</span>
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8">
               14 jours pour tester le pilotage actif de tes finances.
