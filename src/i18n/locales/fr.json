@@ -58,7 +58,7 @@
   "freeResources": {
     "badge": "📥 Ressource gratuite",
     "title": "Template budget mensuel gratuit",
-    "description": "Un tableau simple et prêt à l'emploi pour poser les bases de ta gestion financière. Revenus, dépenses, épargne — en un coup d'œil.",
+    "description": "Un tableau simple et prêt à l'emploi pour poser les bases de ta gestion financière. Revenus, dépenses, épargne : en un coup d'œil.",
     "download": "Télécharger",
     "learnMore": "En savoir plus sur le blog →"
   },
@@ -428,7 +428,7 @@
         "title": "Sécurité & données",
         "q1": {
           "question": "Mes données sont-elles sécurisées ?",
-          "answer": "Oui. La sécurité et le respect de tes données sont des priorités.\n\n• Tes données sont stockées de manière sécurisée\n• Steero ne revend pas tes informations\n• Tu restes propriétaire de tes données à tout moment\n\nSteero est conçu comme un outil de confiance, durable et respectueux — pas comme un produit basé sur l'exploitation de tes informations.\n\nNous t'invitons à prendre connaissance des conditions générales de services avant d'essayer."
+          "answer": "Oui. La sécurité et le respect de tes données sont des priorités.\n\n• Tes données sont stockées de manière sécurisée\n• Steero ne revend pas tes informations\n• Tu restes propriétaire de tes données à tout moment\n\nSteero est conçu comme un outil de confiance, durable et respectueux, pas comme un produit basé sur l'exploitation de tes informations.\n\nNous t'invitons à prendre connaissance des conditions générales de services avant d'essayer."
         },
         "q2": {
           "question": "Où sont stockées mes données ?",
@@ -653,7 +653,7 @@
       "badge": "📥 Ressource gratuite",
       "title": "Ton premier pas vers la clarté financière",
       "subtitle": "Un template budget mensuel simple, gratuit et prêt à l'emploi pour poser les bases de ta gestion financière.",
-      "description": "Avant d'utiliser un outil comme Steero, il faut commencer par voir clair. Ce template Excel te permet de poser les bases : tes revenus, tes dépenses fixes et variables, ton épargne — et de voir immédiatement ton solde disponible.",
+      "description": "Avant d'utiliser un outil comme Steero, il faut commencer par voir clair. Ce template Excel te permet de poser les bases : tes revenus, tes dépenses fixes et variables, ton épargne, et de voir immédiatement ton solde disponible.",
       "whyTitle": "Pourquoi ce template ?",
       "why1": "Parce que 80% des personnes ne savent pas exactement où va leur argent chaque mois.",
       "why2": "Parce qu'un simple tableau peut déjà changer ta perception de tes finances.",
@@ -705,7 +705,7 @@
           "Compétences",
           "Méthode"
         ],
-        "hook": "Mal gérer son argent ou ne pas le piloter — ce n'est pas la même chose. Voici comment passer concrètement de l'un à l'autre, étape par étape.",
+        "hook": "Mal gérer son argent ou ne pas le piloter : ce n'est pas la même chose. Voici comment passer concrètement de l'un à l'autre, étape par étape.",
         "sections": [
           "Subir ou piloter : la seule distinction qui compte",
           "Étape 1 : Observer sans juger (niveau Tracer)",

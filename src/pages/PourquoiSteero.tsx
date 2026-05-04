@@ -29,13 +29,13 @@ const PourquoiSteero = () => {
     {
       num: "01",
       title: "La compréhension naît de l'effort cognitif, pas de l'exposition à l'information.",
-      desc: "Enregistrer une dépense, c'est l'identifier, la catégoriser, la comparer à une intention. Ce mécanisme de traitement actif est ce qui produit la maîtrise réelle — pas la consultation d'un dashboard.",
+      desc: "Enregistrer une dépense, c'est l'identifier, la catégoriser, la comparer à une intention. Ce mécanisme de traitement actif est ce qui produit la maîtrise réelle, pas la consultation d'un dashboard.",
       ref: "Chi & Wylie — The ICAP Framework, 2014",
     },
     {
       num: "02",
       title: "L'automatisation crée une illusion de contrôle, pas une maîtrise.",
-      desc: "Les systèmes automatiques génèrent un biais de surconfiance passive : « mes comptes sont connectés » ne signifie pas « je sais où va mon argent ». L'outil porte la responsabilité — pas l'utilisateur.",
+      desc: "Les systèmes automatiques génèrent un biais de surconfiance passive : « mes comptes sont connectés » ne signifie pas « je sais où va mon argent ». L'outil porte la responsabilité, pas l'utilisateur.",
       ref: "Parasuraman & Riley — Humans and Automation, 1997",
     },
     {
@@ -145,7 +145,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
           >
-            Tu sais déjà où ton argent est allé. Ce que tu ignores,<br /><span className="italic text-primary">c'est où il va aller.</span>
+            Tu sais déjà où ton argent est allé. Ce que tu ignores, <span className="italic text-primary">c'est où il va aller.</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -154,7 +154,7 @@ const PourquoiSteero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-muted-foreground text-lg leading-relaxed mb-12 max-w-3xl"
           >
-            Les apps automatiques te donnent une réponse au mauvais problème. Tu n'as pas un problème d'information — tu as un problème de décision. Finary, Linxo, Bankin te montrent le passé avec une précision parfaite. Ça ne change pas les comportements.
+            Les apps automatiques te donnent une réponse au mauvais problème. Tu n'as pas un problème d'information : tu as un problème de décision. Finary, Linxo, Bankin te montrent le passé avec une précision parfaite. Ça ne change pas les comportements.
           </motion.p>
 
           <motion.div

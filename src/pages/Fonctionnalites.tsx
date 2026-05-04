@@ -1994,7 +1994,7 @@ const Fonctionnalites = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto"
             >
-              Pas une liste de features. Une progression — du rituel quotidien aux arbitrages stratégiques.
+              Pas une liste de features. Une progression : du rituel quotidien aux arbitrages stratégiques.
             </motion.p>
           </div>
         </div>
@@ -2175,7 +2175,7 @@ const Fonctionnalites = () => {
               </motion.div>
             </div>
             <p className="text-xs text-primary-foreground/80 mt-6">
-              14 jours gratuits — sans engagement
+              14 jours gratuits, sans engagement
             </p>
           </motion.div>
         </div>

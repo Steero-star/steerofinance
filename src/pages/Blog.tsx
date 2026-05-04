@@ -64,15 +64,15 @@ Piloter ses finances, c'est exactement comme piloter une équipe. Tu ne gères p
 
 C'est ce que le système TEMPO structure pour tes finances personnelles.
 
-Tracer — quotidien, 5 minutes. Enregistrer ses opérations récentes, vérifier le classement, observer l'impact sur la trésorerie. Aucune analyse attendue juste le geste de saisir. Et ce geste compte : noter une dépense, c'est déjà en prendre conscience. C'est là que le comportement change, en amont, avant que la décision soit prise.
+Tracer : quotidien, 5 minutes. Enregistrer ses opérations récentes, vérifier le classement, observer l'impact sur la trésorerie. Aucune analyse attendue juste le geste de saisir. Et ce geste compte : noter une dépense, c'est déjà en prendre conscience. C'est là que le comportement change, en amont, avant que la décision soit prise.
 
-Examiner — hebdomadaire, 10 minutes. Comparer ce qu'on avait prévu à ce qui s'est passé. Identifier les écarts avant qu'ils s'installent. Ajuster une catégorie si nécessaire. Ce rituel est le pont entre l'opérationnel et la décision mensuelle, il t'évite l'effet "je verrai en fin de mois" qui est systématiquement trop tard.
+Examiner : hebdomadaire, 10 minutes. Comparer ce qu'on avait prévu à ce qui s'est passé. Identifier les écarts avant qu'ils s'installent. Ajuster une catégorie si nécessaire. Ce rituel est le pont entre l'opérationnel et la décision mensuelle, il t'évite l'effet "je verrai en fin de mois" qui est systématiquement trop tard.
 
-Maîtriser — mensuel, 15 minutes. Analyser revenus vs dépenses, budget prévu vs réel, évolution de la trésorerie. Décider consciemment où va l'argent le mois suivant. Ce n'est pas un bilan subi mais bien un acte de pilotage. La question n'est pas "où est passé mon argent ?" mais "est-ce que je choisis où il va ?"
+Maîtriser : mensuel, 15 minutes. Analyser revenus vs dépenses, budget prévu vs réel, évolution de la trésorerie. Décider consciemment où va l'argent le mois suivant. Ce n'est pas un bilan subi mais bien un acte de pilotage. La question n'est pas "où est passé mon argent ?" mais "est-ce que je choisis où il va ?"
 
-Positionner — trimestriel, 30 minutes. Prendre de la hauteur. Ne plus regarder les dépenses mais regarder la direction. Est-ce que ma trésorerie évolue dans le bon sens ? Est-ce que mes finances soutiennent ce que je veux construire ? Ce rituel sort du transactionnel pour entrer dans le stratégique.
+Positionner : trimestriel, 30 minutes. Prendre de la hauteur. Ne plus regarder les dépenses mais regarder la direction. Est-ce que ma trésorerie évolue dans le bon sens ? Est-ce que mes finances soutiennent ce que je veux construire ? Ce rituel sort du transactionnel pour entrer dans le stratégique.
 
-Orienter — annuel, 60 minutes. Bilan global. Évolution du patrimoine, discipline installée, habitudes ancrées ou abandonnées. Et surtout : définir les grandes orientations. Ce rituel ne gère pas — il décide de la direction. C'est lui qui donne du sens à tous les autres.
+Orienter : annuel, 60 minutes. Bilan global. Évolution du patrimoine, discipline installée, habitudes ancrées ou abandonnées. Et surtout : définir les grandes orientations. Ce rituel ne gère pas, il décide de la direction. C'est lui qui donne du sens à tous les autres.
 
 Ce que ça change concrètement
 
@@ -278,9 +278,9 @@ Ce que tu vas changer cette semaine
 
 Tu ne dépenses pas trop. Tu pilotes trop rarement.
 
-Cinq minutes par jour et quinze minutes par mois changent plus une situation financière que n'importe quelle règle d'austérité. Pas parce qu'ils révèlent des fuites magiques — mais parce qu'ils installent une conscience active de là où va ton argent. Et cette conscience change les décisions, en amont, avant que la dépense soit faite.
+Cinq minutes par jour et quinze minutes par mois changent plus une situation financière que n'importe quelle règle d'austérité. Pas parce qu'ils révèlent des fuites magiques, mais parce qu'ils installent une conscience active de là où va ton argent. Et cette conscience change les décisions, en amont, avant que la dépense soit faite.
 
-Le système TEMPO est la méthode. Steero est l'outil construit pour l'implémenter — avec la friction juste, les rituels structurés, et la vision dont tu as besoin pour piloter, pas juste suivre.`
+Le système TEMPO est la méthode. Steero est l'outil construit pour l'implémenter, avec la friction juste, les rituels structurés, et la vision dont tu as besoin pour piloter, pas juste suivre.`
   },
   {
     id: 4,
@@ -306,15 +306,15 @@ Pour les finances personnelles, c'est identique. Le système TEMPO structure cin
 
 Les 5 niveaux du système TEMPO
 
-Tracer — quotidien, 5 minutes. La question : est-ce que je vois ce qui se passe en ce moment ? Le rôle : maintenir le lien avec sa situation réelle. Enregistrer les opérations récentes, vérifier le classement, observer l'impact sur la trésorerie. Pas d'analyse — juste la conscience. C'est ce rituel qui évite la déconnexion progressive, les mauvaises surprises et l'évitement émotionnel. Il ne décide pas. Il voit.
+Tracer : quotidien, 5 minutes. La question : est-ce que je vois ce qui se passe en ce moment ? Le rôle : maintenir le lien avec sa situation réelle. Enregistrer les opérations récentes, vérifier le classement, observer l'impact sur la trésorerie. Pas d'analyse, juste la conscience. C'est ce rituel qui évite la déconnexion progressive, les mauvaises surprises et l'évitement émotionnel. Il ne décide pas. Il voit.
 
-Examiner — hebdomadaire, 10 minutes. La question : est-ce que je suis sur la trajectoire prévue ? Le rôle : corriger avant que l'écart devienne une dérive. Comparer la semaine réelle à la semaine prévue, identifier ce qui a dérapé, ajuster une catégorie si nécessaire. Ce rituel est le pont entre le quotidien et la décision mensuelle — il t'évite d'arriver en fin de mois sans avoir rien vu venir.
+Examiner : hebdomadaire, 10 minutes. La question : est-ce que je suis sur la trajectoire prévue ? Le rôle : corriger avant que l'écart devienne une dérive. Comparer la semaine réelle à la semaine prévue, identifier ce qui a dérapé, ajuster une catégorie si nécessaire. Ce rituel est le pont entre le quotidien et la décision mensuelle, il t'évite d'arriver en fin de mois sans avoir rien vu venir.
 
-Maîtriser — mensuel, 15 minutes. La question : est-ce que je décide consciemment où va mon argent ? Le rôle : passer de la réaction à la décision. Analyser revenus vs dépenses, comprendre les écarts, construire le budget du mois suivant. Ce n'est pas un bilan subi — c'est un acte de pilotage. La nuance change tout.
+Maîtriser : mensuel, 15 minutes. La question : est-ce que je décide consciemment où va mon argent ? Le rôle : passer de la réaction à la décision. Analyser revenus vs dépenses, comprendre les écarts, construire le budget du mois suivant. Ce n'est pas un bilan subi, c'est un acte de pilotage. La nuance change tout.
 
-Positionner — trimestriel, 30 minutes. La question : est-ce que mes finances avancent dans la bonne direction ? Le rôle : sortir du transactionnel pour entrer dans le stratégique. Observer les tendances sur trois mois, évaluer la cohérence globale, identifier ce qui doit évoluer. Ce rituel donne du recul là où les trois premiers donnent de la précision.
+Positionner : trimestriel, 30 minutes. La question : est-ce que mes finances avancent dans la bonne direction ? Le rôle : sortir du transactionnel pour entrer dans le stratégique. Observer les tendances sur trois mois, évaluer la cohérence globale, identifier ce qui doit évoluer. Ce rituel donne du recul là où les trois premiers donnent de la précision.
 
-Orienter — annuel, 60 minutes. La question : quelle vie est-ce que je soutiens par mes décisions financières ? Le rôle : aligner finances et objectifs de vie. Bilan global de l'année, grandes orientations pour la suivante, arbitrages stratégiques. C'est le rituel de sens — celui qui donne de la valeur à tous les autres.
+Orienter : annuel, 60 minutes. La question : quelle vie est-ce que je soutiens par mes décisions financières ? Le rôle : aligner finances et objectifs de vie. Bilan global de l'année, grandes orientations pour la suivante, arbitrages stratégiques. C'est le rituel de sens, celui qui donne de la valeur à tous les autres.
 
 Alors, 2 minutes : mythe ou réalité ?
 
@@ -386,15 +386,15 @@ De l'observation à la décision : le rôle des rituels
 
 Changer de posture ne suffit pas si on ne change pas la fréquence à laquelle on regarde. Un tableau de bord consulté une fois par mois n'est pas un tableau de bord, c'est un bilan. Et un bilan, par définition, arrive trop tard pour piloter.
 
-Le niveau T du système TEMPO — Tracer, cinq minutes par jour — existe précisément pour ça. Pas pour analyser. Pas pour décider. Juste pour maintenir un contact régulier avec sa situation réelle. Ce contact régulier neutralise progressivement la charge émotionnelle : quand on regarde souvent, chaque regard est petit. Quand on évite, chaque regard devient une confrontation.
+Le niveau T du système TEMPO (Tracer, cinq minutes par jour) existe précisément pour ça. Pas pour analyser. Pas pour décider. Juste pour maintenir un contact régulier avec sa situation réelle. Ce contact régulier neutralise progressivement la charge émotionnelle : quand on regarde souvent, chaque regard est petit. Quand on évite, chaque regard devient une confrontation.
 
 C'est là que Steero intervient, pas pour te montrer où tu as failli, mais pour que regarder devienne un réflexe neutre. La saisie est manuelle et intentionnelle : enregistrer une dépense, c'est simplement noter un fait. Pas le juger. Le voir.
 
-Et le niveau M — Maîtriser, quinze minutes par mois — est le moment où l'observation devient décision. Pas un bilan subi. Un choix actif sur où va l'argent le mois suivant.
+Et le niveau M (Maîtriser, quinze minutes par mois) est le moment où l'observation devient décision. Pas un bilan subi. Un choix actif sur où va l'argent le mois suivant.
 
 Ce que change une lecture factuelle de ses finances
 
-Quand les chiffres cessent d'être un jugement pour devenir une information, trois choses se produisent progressivement. La charge émotionnelle diminue — regarder ses finances devient aussi neutre que vérifier la météo avant de sortir. Les décisions s'améliorent — prises à froid, avec de l'information claire, elles sont structurellement meilleures. Et la régularité s'installe — parce qu'on n'évite plus ce qui ne fait plus peur.
+Quand les chiffres cessent d'être un jugement pour devenir une information, trois choses se produisent progressivement. La charge émotionnelle diminue : regarder ses finances devient aussi neutre que vérifier la météo avant de sortir. Les décisions s'améliorent : prises à froid, avec de l'information claire, elles sont structurellement meilleures. Et la régularité s'installe, parce qu'on n'évite plus ce qui ne fait plus peur.
 
 Tes finances ne sont pas un bulletin de notes. Elles ne disent rien sur ta valeur, ta discipline ou ton intelligence. Elles indiquent simplement où tu en es, et dans quelle direction tu vas.
 
@@ -446,9 +446,9 @@ Ce qu'il faut à la place : un système adaptatif
 
 Un budget qui fonctionne durablement n'est pas un budget qui respecte des ratios fixes. C'est un budget qui évolue avec toi, qui reflète tes priorités actuelles, et qui te permet de décider consciemment où va chaque euro, pas de vérifier si tu colles à une norme externe.
 
-C'est ce que structure le niveau M du système TEMPO — Maîtriser, quinze minutes par mois. Pas pour vérifier si tu es à 20% d'épargne. Pour répondre à trois questions : où est allé mon argent ce mois-ci ? Est-ce que c'était choisi ou subi ? Où est-ce que je veux qu'il aille le mois prochain ?
+C'est ce que structure le niveau M du système TEMPO (Maîtriser, quinze minutes par mois). Pas pour vérifier si tu es à 20% d'épargne. Pour répondre à trois questions : où est allé mon argent ce mois-ci ? Est-ce que c'était choisi ou subi ? Où est-ce que je veux qu'il aille le mois prochain ?
 
-Et le niveau P — Positionner, trimestriellement — pour une question plus large : est-ce que ma trajectoire financière globale soutient ce que je veux construire ? Pas un ratio. Une direction.
+Et le niveau P (Positionner, trimestriellement) pour une question plus large : est-ce que ma trajectoire financière globale soutient ce que je veux construire ? Pas un ratio. Une direction.
 
 Utilise la règle comme point de départ, pas comme destination
 
@@ -478,11 +478,11 @@ La mécanique d'abandon en 3 semaines
 
 Elle est prévisible et elle se déroule toujours de la même façon.
 
-Semaine 1 — l'enthousiasme. Tu télécharges le tableau, tu le personnalises, tu saisis tes premières dépenses avec une rigueur exemplaire. La motivation est haute, l'effort est faible, le résultat semble prometteur.
+Semaine 1 : l'enthousiasme. Tu télécharges le tableau, tu le personnalises, tu saisis tes premières dépenses avec une rigueur exemplaire. La motivation est haute, l'effort est faible, le résultat semble prometteur.
 
-Semaine 2 — la friction. Une journée chargée, tu oublies de saisir deux dépenses. Puis trois. Le tableau commence à avoir des trous. Rattraper le retard demande plus d'effort que la saisie quotidienne — tu repousses.
+Semaine 2 : la friction. Une journée chargée, tu oublies de saisir deux dépenses. Puis trois. Le tableau commence à avoir des trous. Rattraper le retard demande plus d'effort que la saisie quotidienne, tu repousses.
 
-Semaine 3 — le découragement. Le tableau est incomplet. Tu ne sais plus si les chiffres sont fiables. L'information partielle est pire qu'inutile et elle donne une fausse impression de contrôle. Tu fermes l'onglet. Pour de bon.
+Semaine 3 : le découragement. Le tableau est incomplet. Tu ne sais plus si les chiffres sont fiables. L'information partielle est pire qu'inutile et elle donne une fausse impression de contrôle. Tu fermes l'onglet. Pour de bon.
 
 Ce cycle n'a rien à voir avec ta motivation initiale. Il est structurel. Sans rituel défini autour de l'outil, l'abandon est inévitable. Pas parce que tu manques de sérieux, mais parce que le cerveau humain abandonne systématiquement tout comportement sans fréquence fixe et sans feedback immédiat.
 
@@ -506,7 +506,7 @@ Cinq minutes, tous les jours et à minima trois fois par semaine (Exemple : les 
 
 Ce geste simple, régulier, court, sans ambition d'analyse est ce qui fait la différence entre un tableau vivant et un onglet oublié.
 
-Puis le niveau E — Examiner — dix minutes dans le week-end. Comparer ce qui était prévu à ce qui s'est passé. Identifier les écarts avant qu'ils s'installent. Ce rituel hebdomadaire transforme la saisie quotidienne en information exploitable.
+Puis le niveau E (Examiner), dix minutes dans le week-end. Comparer ce qui était prévu à ce qui s'est passé. Identifier les écarts avant qu'ils s'installent. Ce rituel hebdomadaire transforme la saisie quotidienne en information exploitable.
 
 Avec ces deux niveaux en place, n'importe quel outil, Excel inclus, devient fonctionnel durablement.
 
@@ -572,7 +572,7 @@ Les dépenses de confort invisibles. Pas les grandes décisions, les petites fri
 
 Le niveau M de TEMPO : l'endroit où les 500€ apparaissent
 
-C'est précisément pour ça qu'existe le niveau M du système TEMPO — Maîtriser, quinze minutes par mois.
+C'est précisément pour ça qu'existe le niveau M du système TEMPO (Maîtriser, quinze minutes par mois).
 
 Ce rituel mensuel n'est pas un bilan comptable. C'est un moment de décision consciente. Tu analyses les revenus vs les dépenses, le budget prévu vs le réel, l'évolution de ta trésorerie. Et tu poses trois questions précises : où est allé mon argent ce mois-ci ? Est-ce que c'était choisi ou subi ? Où est-ce que je veux qu'il aille le mois prochain ?
 
@@ -656,7 +656,7 @@ Créer de la friction intentionnelle aux bons endroits. C'est contre-intuitif da
 
 Pourquoi l'automatisation totale ne tient pas sa promesse
 
-L'argument de l'agrégation automatique est séduisant : moins de friction, plus d'utilisation, meilleure vision. En théorie. En pratique, le taux d'abandon des apps d'agrégation après 90 jours est massif — précisément parce que l'automatisation supprime l'engagement actif de l'utilisateur.
+L'argument de l'agrégation automatique est séduisant : moins de friction, plus d'utilisation, meilleure vision. En théorie. En pratique, le taux d'abandon des apps d'agrégation après 90 jours est massif, précisément parce que l'automatisation supprime l'engagement actif de l'utilisateur.
 
 Un outil qu'on consulte passivement finit par ne plus être consulté du tout. La notification devient un bruit de fond. Le dashboard devient un onglet qu'on n'ouvre plus. Et six mois après le téléchargement, la situation financière est exactement la même : mieux documentée certes mais pas mieux pilotée.
 
