@@ -2,7 +2,8 @@ import { Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-const heroImage = "../assets/flux_financiers_HD.png";
+import heroImageWebP from "@/assets/hero-dashboard.webp";
+import heroImagePng from "@/assets/hero-dashboard.png";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -90,19 +91,23 @@ const Hero = () => {
               <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-primary/5 rounded-[2rem] blur-xl" />
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl transform rotate-3 scale-[1.03]" />
               <div style={{ overflow: 'hidden', borderRadius: '12px' }}>
-                <img
-                  src={heroImage}
-                  srcSet="../assets/flux_financiers_HD.png 2x"
-                  alt="Finances calmes et claires"
-                  style={{
-                    width: '100%',
-                    maxWidth: '100%',
-                    height: 'auto',
-                    display: 'block',
-                    imageRendering: 'crisp-edges',
-                  }}
-                  className="relative shadow-2xl ring-1 ring-border/10"
-                />
+                <picture>
+                  <source srcSet={heroImageWebP} type="image/webp" />
+                  <img
+                    src={heroImagePng}
+                    alt="Finances calmes et claires"
+                    fetchPriority="high"
+                    loading="eager"
+                    decoding="async"
+                    style={{
+                      width: '100%',
+                      maxWidth: '100%',
+                      height: 'auto',
+                      display: 'block',
+                    }}
+                    className="relative shadow-2xl ring-1 ring-border/10"
+                  />
+                </picture>
               </div>
             </div>
           </motion.div>
