@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ronal\\\\steerofinance\" -Recurse -Directory -Filter \"*blog*\")",
+      "Bash(Select-Object FullName)"
+    ]
+  }
+}
