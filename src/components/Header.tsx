@@ -6,13 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import steeroLogo from "@/assets/steero-logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { useWaitlist } from "@/contexts/WaitlistContext";
 import { trackNavClick, trackCTAClick, trackWaitlistOpen } from "@/lib/analytics";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
-  const { openWaitlist } = useWaitlist();
 
   useEffect(() => {
     if (!isMenuOpen) return;

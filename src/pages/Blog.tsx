@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
-import { useWaitlist } from "@/contexts/WaitlistContext";
 
 interface Article {
   id: number;
@@ -1124,11 +1123,10 @@ interface ArticleCardProps {
   isOpen: boolean;
   onToggle: () => void;
   cardRef?: React.RefObject<HTMLDivElement>;
-  openWaitlist: () => void;
   onOpenArticle?: (id: number) => void;
 }
 
-const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist, onOpenArticle }: ArticleCardProps) => {
+const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, onOpenArticle }: ArticleCardProps) => {
   const [copied, setCopied] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
   const hook = t(article.hookKey);
@@ -1630,7 +1628,6 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, openWaitlist, onOp
 
 const Blog = () => {
   const { t } = useTranslation();
-  const { openWaitlist } = useWaitlist();
   const { slug } = useParams<{ slug?: string }>();
   const navigate = useNavigate();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
@@ -1922,7 +1919,6 @@ const Blog = () => {
                           t={t}
                           isOpen={openArticles.has(article.id)}
                           onToggle={() => toggleArticle(article.id)}
-                          openWaitlist={openWaitlist}
                           onOpenArticle={openSpecificArticle}
                         />
                       </motion.div>

@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, FolderKanban, Users, Building2, Crosshair, LayoutGrid, RefreshCcw, ClipboardList, Gauge, CalendarCheck, BarChart3, Landmark, Wallet, Receipt, RotateCcw, ClipboardCheck, Flame, Plane, Sparkles, type LucideIcon } from "lucide-react";
 import { useSoundEffects } from "@/hooks/useSoundEffects";
 import { useTranslation } from "react-i18next";
-import { useWaitlist } from "@/contexts/WaitlistContext";
 import { TempoLetter } from "@/components/TempoLetter";
 
 // Progress sidebar component
@@ -1814,7 +1813,6 @@ const FeatureCard = ({
 };
 const Fonctionnalites = () => {
   const { t } = useTranslation();
-  const { openWaitlist } = useWaitlist();
   const sounds = useSoundEffects();
   const [openCardId, setOpenCardId] = useState<string | null>(null);
   const [exploredCards, setExploredCards] = useState<Set<string>>(new Set());

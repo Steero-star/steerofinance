@@ -5,7 +5,9 @@
       "Bash(Select-Object FullName)",
       "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\" -Recurse -Include \"*.tsx\", \"*.ts\", \"*.jsx\", \"*.js\")",
       "Bash(Select-Object -First 50)",
-      "Bash(Format-List FullName)"
+      "Bash(Format-List FullName)",
+      "Bash(Remove-Item \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\\\\contexts\\\\WaitlistContext.tsx\" -Force)",
+      "Bash(Remove-Item \"C:\\\\Users\\\\ronal\\\\steerofinance\\\\src\\\\components\\\\WaitlistModal.tsx\" -Force)"
     ]
   }
 }

@@ -7,8 +7,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useTranslation } from "react-i18next";
-import { useWaitlist } from "@/contexts/WaitlistContext";
-import { trackFAQOpen, trackWaitlistOpen, trackCTAClick } from "@/lib/analytics";
+import { trackFAQOpen, trackCTAClick } from "@/lib/analytics";
 
 interface FAQItem {
   question: string;
@@ -24,7 +23,6 @@ interface FAQSection {
 
 const FAQ = () => {
   const { t } = useTranslation();
-  const { openWaitlist } = useWaitlist();
 
   const faqSections: FAQSection[] = [{
     title: t('faq.sections.understand.title'),

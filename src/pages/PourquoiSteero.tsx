@@ -4,13 +4,11 @@ import SEO from "@/components/SEO";
 import { Info, Sparkles, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useWaitlist } from "@/contexts/WaitlistContext";
 import { Button } from "@/components/ui/button";
 import { TempoLetter } from "@/components/TempoLetter";
 import steeroBanner from "@/assets/steero-banner-3.png";
 
 const PourquoiSteero = () => {
-  const { openWaitlist } = useWaitlist();
 
   const retroItems = [
     "Montre où est allé l'argent",
