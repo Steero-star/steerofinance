@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -18,11 +18,11 @@ const Differentiation = () => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
 
-  useState(() => {
+  useEffect(() => {
     if (!emblaApi) return;
     emblaApi.on("select", onSelect);
     onSelect();
-  });
+  }, [emblaApi, onSelect]);
 
   // Re-register listener when emblaApi changes
   const callbackRef = useCallback(
@@ -93,7 +93,7 @@ const Differentiation = () => {
             {t("differentiation.title")}
           </h2>
           <p className="text-muted-foreground text-lg">
-            Modèles, favoris et raccourcis éliminent la friction. Tu te concentres sur ce qui compte : <span className="font-bold text-primary">comprendre tes décisions</span>.
+            {t("differentiation.description")}
           </p>
         </motion.div>
 
@@ -103,14 +103,14 @@ const Differentiation = () => {
           <button
             onClick={scrollPrev}
             className="absolute left-0 md:-left-14 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-            aria-label="Précédent"
+            aria-label={t("common.prev")}
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={scrollNext}
             className="absolute right-0 md:-right-14 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-card/80 backdrop-blur-sm border border-border/50 shadow-lg flex items-center justify-center text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110"
-            aria-label="Suivant"
+            aria-label={t("common.next")}
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -129,6 +129,8 @@ const Differentiation = () => {
                       <img
                         src={adv.image}
                         alt={t(adv.titleKey)}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>

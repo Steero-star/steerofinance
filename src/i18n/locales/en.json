@@ -5,7 +5,9 @@
     "discoverFeatures": "Discover features",
     "learnMore": "Learn more",
     "readMore": "Read more",
-    "close": "Close"
+    "close": "Close",
+    "prev": "Previous",
+    "next": "Next"
   },
   "waitlist": {
     "modalTitle": "Join the waitlist",
@@ -40,7 +42,10 @@
     "home": "Home",
     "whySteero": "Why Steero",
     "features": "Features",
-    "pricing": "Pricing"
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "login": "Log in"
   },
   "footer": {
     "tagline": "A simple framework to understand and manage your finances over time.",
@@ -1334,5 +1339,10 @@
     "impactConditionsTitle": "Eligibility",
     "impactConditionsText": "Student, early career, or temporarily difficult financial situation. 50% discount, renewable annually. Applications reviewed individually.",
     "impactCta": "Apply"
+  },
+  "notFound": {
+    "title": "Page not found | Steero",
+    "message": "Page not found",
+    "backHome": "Back to home"
   }
 }

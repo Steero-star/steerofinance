@@ -5,7 +5,9 @@
     "discoverFeatures": "Découvrir les fonctionnalités",
     "learnMore": "En savoir plus",
     "readMore": "Lire plus",
-    "close": "Fermer"
+    "close": "Fermer",
+    "prev": "Précédent",
+    "next": "Suivant"
   },
   "waitlist": {
     "modalTitle": "Rejoins la liste d'attente",
@@ -40,7 +42,10 @@
     "home": "Accueil",
     "whySteero": "Pourquoi Steero",
     "features": "Fonctionnalités",
-    "pricing": "Tarifs"
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "login": "Connexion"
   },
   "footer": {
     "tagline": "Un cadre simple pour comprendre et piloter ses finances dans la durée.",
@@ -1334,5 +1339,10 @@
     "impactConditionsTitle": "Conditions d'accès",
     "impactConditionsText": "Étudiant, début de carrière, ou situation financière difficile temporaire. Remise de 50% renouvelable annuellement. Candidatures étudiées individuellement.",
     "impactCta": "Candidater"
+  },
+  "notFound": {
+    "title": "Page introuvable | Steero",
+    "message": "Page introuvable",
+    "backHome": "Retour à l'accueil"
   }
 }

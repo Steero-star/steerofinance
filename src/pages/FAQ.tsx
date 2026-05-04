@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import steeroBanner from "@/assets/steero-banner-3.png";
+import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { motion } from "framer-motion";
@@ -184,7 +185,10 @@ const FAQ = () => {
       <section className="py-20 bg-primary relative overflow-hidden">
         {/* Background banner image */}
         <div className="absolute inset-0">
-          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+          <picture>
+            <source srcSet={steeroBannerWebP} type="image/webp" />
+            <img src={steeroBanner} alt="" loading="lazy" className="w-full h-full object-cover opacity-35" />
+          </picture>
           <div className="absolute inset-0 bg-primary/50" />
         </div>
         {/* Decorative elements */}

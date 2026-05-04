@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -5,19 +6,22 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "@/components/ScrollToTop";
-import Index from "./pages/Index";
-import FAQ from "./pages/FAQ";
-import PourquoiSteero from "./pages/PourquoiSteero";
-import Fonctionnalites from "./pages/Fonctionnalites";
-import Pricing from "./pages/Pricing";
-import Blog from "./pages/Blog";
-import MentionsLegales from "./pages/MentionsLegales";
-import CGS from "./pages/CGS";
-import PolitiqueConfidentialite from "./pages/PolitiqueConfidentialite";
-import NotFound from "./pages/NotFound";
-import AnalyticsTracker from "./components/AnalyticsTracker";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
+
+const Index = lazy(() => import("./pages/Index"));
+const FAQ = lazy(() => import("./pages/FAQ"));
+const PourquoiSteero = lazy(() => import("./pages/PourquoiSteero"));
+const Fonctionnalites = lazy(() => import("./pages/Fonctionnalites"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const Blog = lazy(() => import("./pages/Blog"));
+const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
+const CGS = lazy(() => import("./pages/CGS"));
+const PolitiqueConfidentialite = lazy(() => import("./pages/PolitiqueConfidentialite"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
+
+const PageLoader = () => <div className="min-h-screen bg-background" />;
 
 const App = () => (
   <HelmetProvider>
@@ -28,6 +32,7 @@ const App = () => (
         <BrowserRouter>
           <AnalyticsTracker />
           <ScrollToTop />
+          <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/faq" element={<FAQ />} />
@@ -42,6 +47,7 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+          </Suspense>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

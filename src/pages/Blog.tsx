@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import steeroBanner from "@/assets/steero-banner-3.png";
+import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import { Clock, ArrowRight, Lightbulb, AlertCircle, Share2, Check, List, Search, X, Download, FileSpreadsheet, CheckCircle2, ArrowUpRight } from "lucide-react";
 import { Link, useParams, useNavigate } from "react-router-dom";
@@ -1953,7 +1954,10 @@ const Blog = () => {
       <section className="py-20 bg-primary relative overflow-hidden">
         {/* Background banner image */}
         <div className="absolute inset-0">
-          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+          <picture>
+            <source srcSet={steeroBannerWebP} type="image/webp" />
+            <img src={steeroBanner} alt="" loading="lazy" className="w-full h-full object-cover opacity-35" />
+          </picture>
           <div className="absolute inset-0 bg-primary/50" />
         </div>
         {/* Decorative elements */}

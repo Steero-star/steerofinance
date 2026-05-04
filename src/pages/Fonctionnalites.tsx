@@ -1,5 +1,6 @@
 import React from "react";
 import steeroBanner from "@/assets/steero-banner-3.png";
+import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
@@ -2127,7 +2128,10 @@ const Fonctionnalites = () => {
       <section className="py-20 bg-primary relative overflow-hidden">
         {/* Background banner image */}
         <div className="absolute inset-0">
-          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+          <picture>
+            <source srcSet={steeroBannerWebP} type="image/webp" />
+            <img src={steeroBanner} alt="" loading="lazy" className="w-full h-full object-cover opacity-35" />
+          </picture>
           <div className="absolute inset-0 bg-primary/50" />
         </div>
         {/* Decorative halos */}

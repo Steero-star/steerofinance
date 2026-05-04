@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { TempoLetter } from "@/components/TempoLetter";
 import steeroBanner from "@/assets/steero-banner-3.png";
+import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 import { useTranslation } from "react-i18next";
 
 type Principle = { num: string; title: string; desc: string; ref: string };
@@ -322,7 +323,10 @@ const PourquoiSteero = () => {
       {/* CTA FINAL */}
       <section className="py-20 bg-primary relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+          <picture>
+            <source srcSet={steeroBannerWebP} type="image/webp" />
+            <img src={steeroBanner} alt="" loading="lazy" className="w-full h-full object-cover opacity-35" />
+          </picture>
           <div className="absolute inset-0 bg-primary/50" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">

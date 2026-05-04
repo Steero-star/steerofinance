@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import steeroLogo from "@/assets/steero-logo.png";
@@ -39,21 +39,21 @@ const Header = () => {
             {t('header.whySteero')}
           </Link>
           <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-            Blog
+            {t('header.blog')}
           </Link>
         </nav>
 
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          <Button 
-            variant="outline" 
-            className="text-xs sm:text-sm hidden sm:inline-flex rounded-full border-primary text-primary hover:bg-primary/10 px-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft" 
+          <Button
+            variant="outline"
+            className="text-xs sm:text-sm hidden sm:inline-flex rounded-full border-primary text-primary hover:bg-primary/10 px-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft"
             onClick={() => {
               trackCTAClick("connexion", "header", "https://accounts.steero.fr/sign-in");
               window.open("https://accounts.steero.fr/sign-in?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
             }}
           >
-            Connexion
+            {t('header.login')}
           </Button>
           <Button 
             className="btn-primary text-xs sm:text-sm hidden sm:inline-flex rounded-full px-6" 
@@ -113,18 +113,18 @@ const Header = () => {
                 className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Blog
+                {t('header.blog')}
               </Link>
               <Button 
                 variant="outline"
                 className="text-xs w-full mt-2"
-                onClick={() => { 
+                onClick={() => {
                   setIsMenuOpen(false);
                   trackCTAClick("connexion", "header", "https://accounts.steero.fr/sign-in");
                   window.open("https://accounts.steero.fr/sign-in?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
                 }}
               >
-                Connexion
+                {t('header.login')}
               </Button>
               <Button 
                 className="btn-primary text-xs w-full mt-2"
@@ -144,4 +144,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

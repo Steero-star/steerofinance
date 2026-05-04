@@ -5,7 +5,9 @@
     "discoverFeatures": "Descubre las funcionalidades",
     "learnMore": "Saber más",
     "readMore": "Leer más",
-    "close": "Cerrar"
+    "close": "Cerrar",
+    "prev": "Anterior",
+    "next": "Siguiente"
   },
   "waitlist": {
     "modalTitle": "Únete a la lista de espera",
@@ -40,7 +42,10 @@
     "home": "Inicio",
     "whySteero": "Por qué Steero",
     "features": "Funcionalidades",
-    "pricing": "Precios"
+    "pricing": "Precios",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "login": "Iniciar sesión"
   },
   "footer": {
     "tagline": "Un marco sencillo para entender y gestionar tus finanzas a largo plazo.",
@@ -1334,5 +1339,10 @@
     "impactConditionsTitle": "Condiciones de acceso",
     "impactConditionsText": "Estudiante, inicio de carrera o situación financiera difícil temporal. Descuento del 50% renovable anualmente. Candidaturas estudiadas individualmente.",
     "impactCta": "Candidatarse"
+  },
+  "notFound": {
+    "title": "Página no encontrada | Steero",
+    "message": "Página no encontrada",
+    "backHome": "Volver al inicio"
   }
 }

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { Facebook, Linkedin, Youtube } from "lucide-react";
 import steeroLogo from "@/assets/steero-logo.png";
@@ -12,11 +13,11 @@ const Footer = () => {
     { to: "/pourquoi-steero", labelKey: "header.whySteero" },
     { to: "/fonctionnalites", labelKey: "header.features" },
     { to: "/pricing", labelKey: "header.pricing" },
-    { to: "/faq", labelKey: "FAQ" },
+    { to: "/faq", labelKey: "header.faq" },
   ];
 
   const resourceLinks = [
-    { to: "/blog", labelKey: "Blog" },
+    { to: "/blog", labelKey: "header.blog" },
     { href: "mailto:contact@steero.fr", labelKey: "footer.contact" },
   ];
 
@@ -186,4 +187,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

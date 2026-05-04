@@ -27,7 +27,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === "development" && componentTagger(),
     Sitemap({
-      hostname: "https://steerofinance.lovable.app",
+      hostname: "https://steero.fr",
       dynamicRoutes,
       exclude: ["/404"],
       outDir: "dist",
@@ -67,6 +67,22 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) => {
+          // Nom stable pour le hero (permet le preload statique dans index.html)
+          if (
+            assetInfo.name === "hero-dashboard.webp" ||
+            assetInfo.name === "hero-dashboard.png"
+          ) {
+            return "assets/[name][extname]";
+          }
+          return "assets/[name]-[hash][extname]";
+        },
+      },
     },
   },
 }));

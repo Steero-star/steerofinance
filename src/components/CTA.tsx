@@ -2,6 +2,7 @@ import { ArrowRight, Shield, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import steeroBanner from "@/assets/steero-banner-3.png";
+import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 
 const CTA = () => {
   const { t } = useTranslation();
@@ -16,7 +17,10 @@ const CTA = () => {
     <section className="py-20 bg-primary relative overflow-hidden">
       {/* Background banner image */}
       <div className="absolute inset-0">
-        <img src={steeroBanner} alt="" className="w-full h-full object-cover opacity-35" />
+        <picture>
+          <source srcSet={steeroBannerWebP} type="image/webp" />
+          <img src={steeroBanner} alt="" loading="lazy" className="w-full h-full object-cover opacity-35" />
+        </picture>
         <div className="absolute inset-0 bg-primary/50" />
       </div>
       {/* Decorative elements */}
