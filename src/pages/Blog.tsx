@@ -779,6 +779,120 @@ C'est ça, piloter. Pas observer le passé. Ressentir le présent pour choisir l
 Ton cerveau a été conçu pour ressentir la dépense. La carte lui a volé ce signal. La saisie manuelle le lui rend.
 
 C'est exactement pour ça que Steero ne t'agrège rien automatiquement. Essaie 14 jours et remarque ce que tu ressens la première fois que tu saisis une dépense.`
+  },
+  {
+    id: 11,
+    slug: "creer-une-routine-fondement-change",
+    titleKey: "blog.articles.11.title",
+    hookKey: "blog.articles.11.hook",
+    tagsKey: "blog.articles.11.tags",
+    content: `Tu essaies depuis des années. Des apps, des calendriers, des résolutions et rien ne tient. Au bout de trois semaines, tu as abandonné.
+
+Pas parce que tu manques de discipline. Parce que tu n'as pas de routine.
+
+Une routine n'est pas une promesse. C'est une structure. Et cette structure est le seul levier qui transforme durablement ta vie.
+
+Pourquoi les routines échouent (et pourquoi les tiennes ont échoué)
+
+La plupart des gens cible une routine trop compliquée. Méditation 20 min, gym 1h, journal 15 min, lecture 30 min et le jour 4, c'est fini.
+
+Pourquoi ? Parce qu'une routine doit être si simple qu'elle fonctionne même quand tu as zéro motivation.
+
+Ta routine n'a pas échoué parce que tu es faible. Elle a échoué parce qu'elle n'était pas actionnable.
+
+La vraie question n'est pas "que devrais-je faire ?" mais "que ferai-je même si je n'ai pas envie ?"
+
+Les trois éléments d'une routine qui tient
+
+L'ancre
+
+Une ancre, c'est un moment existant de ta journée. Pas "je vais créer un nouveau moment". Non. Tu accroches ta routine à un moment qui existe déjà.
+
+Exemples d'ancres solides :
+• Après ton café du matin
+• Après ta douche
+• Juste avant de te coucher
+• Au réveil, avant de vérifier ton téléphone
+
+L'ancre crée l'automaticité. Tu n'as pas à te demander "est-ce que je fais ma routine ?" L'habitude s'attache à un moment qui existe déjà.
+
+La friction minimale
+
+Plus ta routine demande d'effort d'accès, plus elle meurt vite.
+
+Si ta routine exige que tu ouvres une app, attendes 3 secondes de chargement, navigues dans 4 menus, elle sera morte dans la semaine parce que tu trouveras une excuse le jour 3.
+
+La meilleure routine c'est celle que tu peux commencer en 10 secondes. Pas 10 minutes. 10 secondes.
+
+Pas besoin de rendre ça joli. Juste accessible.
+
+La fréquence avant l'intensité
+
+C'est l'erreur numéro un : "Je vais faire 1h de gym tous les jours" ou "Je vais lire 100 pages par jour".
+
+Les routines qui tiennent c'est la fréquence. Pas l'intensité.
+
+5 min chaque jour > 1h une fois par semaine.
+
+Pourquoi ? Parce que la fréquence crée le lien automatique avec l'ancre. Et c'est ce lien qui tue la routine : le moment où elle demande de la volonté consciente, et plus de l'habitude.
+
+Comment créer ta première routine (et la tenir)
+
+Étape 1 : Choisis ton ancre
+
+Pense à 3 moments de ta journée qui sont non-négociables. Des moments que tu fais même quand tu es malade, en voyage, stressé.
+
+Prends celui qui correspond le mieux à ce que tu veux faire.
+
+Étape 2 : Définir l'action en 5 minutes
+
+Pas 20 minutes. Pas 15. Cinq minutes maximum.
+
+Et c'est important : c'est la durée que ça prend réellement, pas celle que tu aimerais faire. Si tu veux lire, ne dis pas "je vais lire 30 min". Dis "je vais lire 5 pages".
+
+Si tu veux bouger, ce n'est pas gym intensif. C'est 10 pas dehors.
+
+Le truc contre-intuitif ? Les petites routines deviennent plus grandes naturellement. Une fois que tu as l'habitude, tu resteras souvent 10 min au lieu de 5. Mais jamais si tu commences à 20 et que tu démissionnes à la semaine 3.
+
+Étape 3 : Supprime la friction d'accès
+
+Tout doit être prêt. Pas de setup. Pas d'attente. Pas de choix.
+
+• Livre sur ta table de nuit (pas en bibliothèque)
+• Tapis de yoga déjà déroulé (pas dans un placard)
+• Cahier et stylo prêts (pas à chercher)
+
+Étape 4 : Les trois premières semaines
+
+Les trois premières semaines, la routine n'est PAS optionnelle. Elle est aussi non-négociable que te brosser les dents.
+
+Les trois premières semaines, c'est dur. Pas parce que tu n'as pas la capacité. Parce que ta structure neurologique n'a pas encore fait la liaison automatique.
+
+Après trois semaines, ça devient facile. Pas parce que tu es motivé. Parce que tu n'as plus à penser : tu le fais simplement.
+
+La routine est l'accès à tout le reste
+
+C'est la chose que personne ne te dit : une routine n'est pas une fin en soi.
+
+Une routine est l'accès à tout ce que tu veux vraiment faire.
+
+Pourquoi ? Parce qu'une routine t'enseigne que tu peux tenir un engagement envers toi-même. Et une fois que tu sais ça (vraiment, pas intellectuellement mais en le vivant), tout le reste devient possible.
+
+C'est exactement ce que permet une routine bien fichée : créer le lien entre "j'ai une intention" et "j'agis". Pas une fois. Régulièrement. Consciemment.
+
+Et c'est ce lien qui change le jeu.
+
+Steero c'est exactement ça : une routine pour installer une discipline de pilotage. Cinq minutes chaque jour pour enregistrer, observer, rester conscient de ta situation. Pas une app qui remplace ta réflexion. Un système qui la construit.
+
+Commence maintenant
+
+Choisis ton ancre. Choisis une action que tu peux faire en 5 min. Élimine la friction. Et pendant les trois premières semaines, fais le. Point.
+
+Pas de "je vais commencer lundi" car lundi c'est l'excuse des gens qui n'y arrivent pas. Commence maintenant. Après ton prochain café. Ou ta prochaine douche.
+
+C'est tout ce qu'il faut pour que tout change.
+
+Tu veux construire une routine de pilotage financier ? Steero offre des modèles préremplis qui réduisent la friction : tout est déjà structuré, tu as juste à taper 5 min chaque jour. Essaie gratuitement.`
   }
 ];
 
@@ -900,6 +1014,13 @@ const articleSections: Record<number, string[]> = {
     "C'est exactement ce que Steero a choisi de ne pas automatiser",
     "Comment installer ce mécanisme dans ta vie : le rituel T de TEMPO",
     "Ce que ça change au bout de 3 semaines"
+  ],
+  11: [
+    "Pourquoi les routines échouent (et pourquoi les tiennes ont échoué)",
+    "Les trois éléments d'une routine qui tient",
+    "Comment créer ta première routine (et la tenir)",
+    "La routine est l'accès à tout le reste",
+    "Commence maintenant"
   ]
 };
 
@@ -910,6 +1031,35 @@ const extractSectionTitles = (content: string, articleId: number): { title: stri
     title,
     id: `section-${articleId}-${index}`
   }));
+};
+
+// Parse markdown-style links [text](/url) and convert to React Link components
+const parseMarkdownLinks = (text: string): React.ReactNode => {
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^\)]+)\)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    // Add text before the link
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+    // Add the link
+    parts.push(
+      <Link key={`link-${match.index}`} to={match[2]} className="text-primary hover:underline">
+        {match[1]}
+      </Link>
+    );
+    lastIndex = regex.lastIndex;
+  }
+
+  // Add remaining text
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length === 1 && typeof parts[0] === 'string' ? parts[0] : <>{parts}</>;
 };
 
 // Format content with improved visual hierarchy
@@ -955,14 +1105,14 @@ const formatContent = (content: string, articleId: number = 0) => {
       elements.push(
         <div key={i} className="flex items-start gap-3 py-1.5 pl-4">
           <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
-          <span className="text-muted-foreground">{trimmedLine.substring(1).trim()}</span>
+          <span className="text-muted-foreground">{parseMarkdownLinks(trimmedLine.substring(1).trim())}</span>
         </div>
       );
     } else if (trimmedLine.startsWith('→')) {
       elements.push(
         <div key={i} className="flex items-start gap-3 py-1.5 pl-4 text-primary/80">
           <span className="flex-shrink-0">→</span>
-          <span>{trimmedLine.substring(1).trim()}</span>
+          <span>{parseMarkdownLinks(trimmedLine.substring(1).trim())}</span>
         </div>
       );
     } else if (trimmedLine.match(/^\d+\./)) {
@@ -971,13 +1121,13 @@ const formatContent = (content: string, articleId: number = 0) => {
           <span className="w-6 h-6 rounded-full bg-primary/15 text-primary text-sm font-semibold flex items-center justify-center flex-shrink-0">
             {trimmedLine.match(/^(\d+)/)?.[1]}
           </span>
-          <span className="text-muted-foreground pt-0.5">{trimmedLine.replace(/^\d+\.\s*/, '')}</span>
+          <span className="text-muted-foreground pt-0.5">{parseMarkdownLinks(trimmedLine.replace(/^\d+\.\s*/, ''))}</span>
         </div>
       );
     } else {
       elements.push(
         <p key={i} className="text-muted-foreground leading-relaxed py-1">
-          {trimmedLine}
+          {parseMarkdownLinks(trimmedLine)}
         </p>
       );
     }
@@ -1563,7 +1713,30 @@ const ArticleCard = ({ article, t, isOpen, onToggle, cardRef, onOpenArticle }: A
                   </div>
                 </div>
               )}
-              
+
+              {/* Related links section - Article 11 (Créer une routine) */}
+              {article.id === 11 && (
+                <div className="mt-8 p-5 bg-muted/50 rounded-xl border border-primary/10">
+                  <h4 className="text-sm font-semibold text-foreground mb-4">Ces articles pourraient t'intéresser :</h4>
+                  <div className="space-y-2">
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(3); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>Pourquoi sans rituel, aucun outil financier ne fonctionne</span>
+                    </button>
+                    <button
+                      onClick={(e) => { e.stopPropagation(); onOpenArticle?.(4); }}
+                      className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      <span>5 minutes par jour pour ne plus jamais subir sa fin de mois</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
               {/* CTA Button */}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}

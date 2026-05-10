@@ -860,6 +860,22 @@
           "Comment installer ce mécanisme dans ta vie : le rituel T de TEMPO",
           "Ce que ça change au bout de 3 semaines"
         ]
+      },
+      "11": {
+        "title": "Créer une routine : Le seul fondement qui change vraiment",
+        "tags": [
+          "Rituel",
+          "Mindset",
+          "Méthode"
+        ],
+        "hook": "Tu essaies depuis des années. Des apps, des calendriers, des résolutions et rien ne tient. Au bout de trois semaines, tu as abandonné. Pas parce que tu manques de discipline. Parce que tu n'as pas de routine.",
+        "sections": [
+          "Pourquoi les routines échouent (et pourquoi les tiennes ont échoué)",
+          "Les trois éléments d'une routine qui tient",
+          "Comment créer ta première routine (et la tenir)",
+          "La routine est l'accès à tout le reste",
+          "Commence maintenant"
+        ]
       }
     }
   },
