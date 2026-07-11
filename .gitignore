@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# graphify (generated knowledge graph, regenerated on demand)
+graphify-out/
