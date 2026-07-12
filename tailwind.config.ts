@@ -13,7 +13,9 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
+      sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+      serif: ['Instrument Serif', 'Georgia', 'serif'],
+      mono: ['DM Mono', 'monospace'],
     },
     extend: {
       colors: {

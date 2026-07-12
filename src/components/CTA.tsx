@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Users, Zap } from "lucide-react";
+import { ArrowRight, Lock, Shield, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import steeroBanner from "@/assets/steero-banner-3.png";
@@ -11,6 +11,7 @@ const CTA = () => {
     { icon: Users, text: t('cta.features.free') },
     { icon: Zap, text: t('cta.features.noCard') },
     { icon: Shield, text: t('cta.features.cancel') },
+    { icon: Lock, text: t('cta.features.secure') },
   ];
 
   return (
@@ -50,7 +51,22 @@ const CTA = () => {
             {t('cta.description')}
           </motion.p>
 
-          <motion.button 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="max-w-2xl mx-auto mb-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 px-6 py-5 text-left"
+          >
+            <p className="text-primary-foreground font-medium mb-1">
+              {t('cta.offer')}
+            </p>
+            <p className="text-primary-foreground/70 text-sm">
+              {t('cta.offerTerms')}
+            </p>
+          </motion.div>
+
+          <motion.button
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

@@ -68,23 +68,36 @@
     "learnMore": "En savoir plus sur le blog →"
   },
   "hero": {
-    "badge": "Système de pilotage financier personnel",
-    "title": "Construire un système",
-    "titleHighlight": "Pas juste suivre ses dépenses",
-    "description": "La plupart des gens ne gèrent pas mal leur argent. \n\nIls n'ont pas de système pour le piloter. Steero t'en donne un avec des rituels clairs, de l'opérationnel au stratégique."
+    "badge": "L'app de pilotage financier personnel",
+    "title": "Passe du tableur au pilotage",
+    "titleHighlight": "En 5 minutes par jour",
+    "description": "Ton tableau Excel finit toujours par lâcher. Les apps bancaires te montrent le passé, pas quoi décider. \n\nSteero installe des rendez-vous courts avec ton argent : tu vois où il va, tu décides où il doit aller. Jusqu'à tes projets, ton épargne, ton patrimoine."
   },
   "realProblem": {
-    "label": "LE VRAI PROBLÈME",
-    "title": "Tu ne dépenses pas trop. \nTu pilotes trop rarement.",
-    "description": "La dérive financière ne se construit pas en un jour. Elle s'installe sur plusieurs jours puis semaines et se découvre en fin de mois : quand il est trop tard pour corriger. \nCe n'est pas un manque de discipline mais l'absence d'un système de pilotage régulier.",
-    "card1": "Tu regardes tes comptes une fois par mois, quand les dégâts sont déjà faits.",
-    "card2": "Tu as l'intention de \"mieux gérer\" mais pas de moment ni de structure dédiée.",
-    "card3": "Tu sous-estimes tes dépenses réelles de 20 à 30% car la mémoire financière est sélective."
+    "label": "POURQUOI STEERO",
+    "title": "Un pare-brise, pas un rétroviseur de plus.",
+    "description": "Les agrégateurs te montrent le passé avec précision. Steero t'équipe pour décider la suite.",
+    "retroLabel": "Rétroviseur",
+    "retroCompany": "Finary, Bankin, Linxo",
+    "retroItems": [
+      "Montre où est allé l'argent",
+      "Automatique, passif",
+      "Observe le passé",
+      "Ne prépare pas les décisions"
+    ],
+    "pareLabel": "Pare-brise",
+    "pareCompany": "Steero",
+    "pareItems": [
+      "Aide à piloter vers où tu veux aller",
+      "Manuel, conscient, intentionnel",
+      "Décide l'avenir",
+      "Développe une compétence durable"
+    ]
   },
   "tempo": {
-    "label": "LE SYSTÈME TEMPO",
-    "title": "5 rituels : Du quotidien à l'annuel",
-    "description": "Un pilote ne regarde pas ses instruments une fois par mois. \n\nSteero est structuré autour de 5 rituels à fréquences différentes qui t'accompagne de d'une approche opérationnel à une vision stratégique.",
+    "label": "LA MÉTHODE TEMPO",
+    "title": "Comment passer au pilotage ?",
+    "description": "Tu le fais déjà au travail : un point court à fréquence fixe, un ordre du jour, des décisions. \n\nSteero applique ce cadre à ton argent. Cinq rendez-vous, du quotidien au stratégique. Chacun a sa question, sa fréquence, sa durée.",
     "rituals": {
       "t": {
         "letter": "T",
@@ -159,64 +172,52 @@
     }
   },
   "differentiation": {
-    "title": "Moins de friction. Plus de maîtrise",
-    "description": "Modèles, favoris et raccourcis éliminent la friction. Tu te concentres sur ce qui compte : comprendre tes décisions.",
+    "title": "Ce que le pilotage change",
+    "description": "Pas des promesses : les écrans que tu utiliseras. Trois résultats concrets.",
     "budget": {
-      "title": "Etape #1 : Fixe toi des objectifs et la voie pour y arriver",
+      "title": "Tes finances s'alignent sur tes objectifs",
       "ba1": {
-        "before": "Tu te demandes où est passé ton argent",
-        "after": "Tu sais exactement où il va et pourquoi"
-      },
-      "ba2": {
-        "before": "Tu subis tes dépenses",
-        "after": "Tu les anticipes et tu les diriges"
-      },
-      "ba3": {
-        "before": "Ton argent disparaît sans structure",
+        "before": "Un tableur enregistre, il ne priorise pas",
         "after": "Chaque euro sert une intention claire"
       },
-      "ba4": {
-        "before": "Tu avances à l'aveugle",
-        "after": "Tu sais où tu vas, chaque mois"
+      "ba2": {
+        "before": "Tes objectifs vivent hors de tes comptes",
+        "after": "Projets, épargne, investissements : chacun a sa ligne et son cap"
+      },
+      "ba3": {
+        "before": "Le tableur te répond seulement en fin d'année",
+        "after": "Tu sais chaque mois si tu avances"
       }
     },
     "capture": {
-      "title": "Etape #2 : Reconnecte toi à tes dépenses",
+      "title": "Tu te reconnectes à tes dépenses",
       "ba1": {
-        "before": "Tu dépenses sans vraiment t'en rendre compte",
+        "before": "L'agrégation automatique te déconnecte de tes choix",
         "after": "Chaque dépense devient une décision consciente"
       },
       "ba2": {
-        "before": "Tu perds le contrôle petit à petit",
-        "after": "Tu le reprends, opération après opération"
+        "before": "Sur Excel, chaque ligne se mérite",
+        "after": "La saisie prend quelques secondes, modèles préremplis à l'appui"
       },
       "ba3": {
-        "before": "Tes habitudes te pilotent",
-        "after": "C'est toi qui pilotes tes habitudes"
-      },
-      "ba4": {
-        "before": "Tu oublies, tu repousses, tu évites",
-        "after": "Tu fais face, simplement, sans friction"
+        "before": "Les relevés s'empilent sans rien te dire",
+        "after": "Tu fais face à tes chiffres, sans jugement"
       },
       "link": "Les fondements comportementaux de Steero"
     },
     "ritualize": {
-      "title": "Etape #3 : Garde le cap",
+      "title": "Tu tiens le cap, mois après mois",
       "ba1": {
-        "before": "Tu regardes tes comptes quand il est trop tard",
-        "after": "Tu ajustes avant que ça dérape"
+        "before": "Le bilan de fin de mois arrive trop tard",
+        "after": "Tu ajustes en cours de mois, quand c'est encore utile"
       },
       "ba2": {
-        "before": "Tu fonctionnes par à-coups",
-        "after": "Tu avances avec régularité"
+        "before": "Une bonne résolution sans structure tient trois semaines",
+        "after": "Des rendez-vous courts, à fréquence fixe"
       },
       "ba3": {
-        "before": "Tu subis ton manque de discipline",
-        "after": "Tu installes une maîtrise naturelle"
-      },
-      "ba4": {
-        "before": "Tu réagis",
-        "after": "Tu anticipes"
+        "before": "L'effort par à-coups s'épuise",
+        "after": "La régularité installe une maîtrise durable"
       },
       "link": "Les fondements comportementaux de Steero"
     }
@@ -242,18 +243,20 @@
     }
   },
   "cta": {
-    "title": "Installe ton système TEMPO",
-    "description": "14 jours pour tester la méthode puis un abonnement accessible pour transformer ta relation à l'argent ",
-    "launchDate": "Lancement prévu le 17 avril 2026",
-    "days": "Jours",
-    "hours": "Heures",
-    "minutes": "Minutes",
-    "seconds": "Secondes",
+    "title": "Installe ton premier rendez-vous",
+    "description": "14 jours gratuits pour tester la méthode. Ton premier rituel prend 5 minutes.",
+    "offer": "Les 200 premiers inscrits gardent −50 % à vie avec le code EARLYADOPTERS, appliqué au prix public en vigueur : aujourd'hui 4 € par mois au lieu de 8 €.",
+    "offerTerms": "Offre non cumulable, dans la limite des 200 premières places. Si le tarif évolue, la réduction reste appliquée.",
     "features": {
       "free": "Gratuit pour commencer",
-      "noCard": "Aucune intégration bancaire requise",
-      "cancel": "Données sécurisées"
+      "noCard": "Résiliation en un clic, quand tu veux",
+      "cancel": "Aucune connexion bancaire requise",
+      "secure": "Données sécurisées"
     }
+  },
+  "announcement": {
+    "text": "Offre de lancement : −50 % à vie pour les 200 premiers inscrits",
+    "cta": "Voir l'offre"
   },
   "whySteero": {
     "heroTitle": "Pourquoi choisir",
@@ -1296,11 +1299,41 @@
       "bankingNoteTitle": "Intégration bancaire à venir.",
       "bankingNoteDesc": "Steero se connectera à tes comptes, pas pour automatiser mais pour te présenter tes transactions à valider. Tu catégorises, tu confirmes, tu décides. La friction administrative disparaît. La friction utile, elle, reste entière.",
       "rows": [
-        { "letter": "T", "name": "Tracer", "desc": "Saisie intentionnelle. Maintient le lien.", "freq": "Quotidien", "time": "5 min" },
-        { "letter": "E", "name": "Examiner", "desc": "Prévoir vs réel. Corriger avant qu'il soit trop tard.", "freq": "Hebdomadaire", "time": "10 min" },
-        { "letter": "M", "name": "Maîtriser", "desc": "Décider où va l'argent le mois suivant.", "freq": "Mensuel", "time": "15 min" },
-        { "letter": "P", "name": "Positionner", "desc": "Aligner finances et objectifs de vie.", "freq": "Trimestriel", "time": "30 min" },
-        { "letter": "O", "name": "Orienter", "desc": "Grandes orientations. Arbitrages stratégiques.", "freq": "Annuel", "time": "60 min" }
+        {
+          "letter": "T",
+          "name": "Tracer",
+          "desc": "Saisie intentionnelle. Maintient le lien.",
+          "freq": "Quotidien",
+          "time": "5 min"
+        },
+        {
+          "letter": "E",
+          "name": "Examiner",
+          "desc": "Prévoir vs réel. Corriger avant qu'il soit trop tard.",
+          "freq": "Hebdomadaire",
+          "time": "10 min"
+        },
+        {
+          "letter": "M",
+          "name": "Maîtriser",
+          "desc": "Décider où va l'argent le mois suivant.",
+          "freq": "Mensuel",
+          "time": "15 min"
+        },
+        {
+          "letter": "P",
+          "name": "Positionner",
+          "desc": "Aligner finances et objectifs de vie.",
+          "freq": "Trimestriel",
+          "time": "30 min"
+        },
+        {
+          "letter": "O",
+          "name": "Orienter",
+          "desc": "Grandes orientations. Arbitrages stratégiques.",
+          "freq": "Annuel",
+          "time": "60 min"
+        }
       ]
     },
     "cta": {
@@ -1341,11 +1374,11 @@
     "founderText1": "Steero évolue. De nouvelles fonctionnalités arrivent. Ce prix évoluera avec la plateforme. Les premiers utilisateurs bénéficieront toujours des meilleures conditions, quelles qu'elles soient.",
     "founderText2": "",
     "earlyBadge": "Early Adopters · 200 places",
-    "earlyText1": "Les 200 premiers inscrits sur la liste d'attente bénéficient de −50% à vie sur leur abonnement. Offre non cumulable, places non garanties après les 200 premiers inscrits.",
+    "earlyText1": "Les 200 premiers inscrits bénéficient de −50% à vie sur leur abonnement avec le code EARLYADOPTERS, appliqué au prix public en vigueur : aujourd'hui 4 € par mois au lieu de 8 €. Offre non cumulable, places non garanties après les 200 premiers inscrits.",
     "earlyText2": "",
     "earlyCta": "Commencer gratuitement",
     "earlyDisclaimer": "La réduction s'applique sur le prix public en vigueur. Si le tarif évolue dans le futur, la réduction reste appliquée.",
-    "guarantee": "14 jours d'essai gratuit à l'ouverture",
+    "guarantee": "14 jours d'essai gratuit · Carte requise à l'inscription, résiliable à tout moment avant la fin de l'essai",
     "faqTitle": "Des questions ?",
     "faqDescription": "Consulte notre FAQ pour en savoir plus sur Steero.",
     "faqCta": "Voir la FAQ",
@@ -1360,5 +1393,18 @@
     "title": "Page introuvable | Steero",
     "message": "Page introuvable",
     "backHome": "Retour à l'accueil"
+  },
+  "showcase": {
+    "label": "EN UN COUP D'ŒIL",
+    "title": "Le pilotage, en un coup d'œil.",
+    "flux": {
+      "title": "Comprends où va ton argent",
+      "desc": "Estimé, budgété, réel : un seul flux lisible qui montre ce que tu prévois, ce que tu alloues et ce que tu dépenses vraiment."
+    },
+    "accueil": {
+      "title": "Décide d'un coup d'œil",
+      "desc": "Objectifs, balance globale, marges : ton tableau de bord réunit les indicateurs qui comptent pour piloter, pas seulement constater."
+    },
+    "zoomLabel": "Agrandir l'image : {{name}}"
   }
 }

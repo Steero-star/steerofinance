@@ -2,14 +2,15 @@ import { cn } from "@/lib/utils";
 
 /**
  * Mapping unique des couleurs TEMPO partagé sur tout le site.
- * Doit rester l'unique source de vérité (cf. test src/test/tempo-letter-colors.test.ts).
+ * Gradient thermique validé (chaud/opérationnel → froid/stratégique) — steero_brand_guidelines.html.
+ * Doit rester l'unique source de vérité.
  */
 export const tempoLetterColors: Record<string, string> = {
-  T: "bg-green-600 text-white",
-  E: "bg-yellow-600 text-white",
-  M: "bg-emerald-700 text-white",
-  P: "bg-primary text-primary-foreground",
-  O: "bg-amber-700 text-white",
+  T: "bg-[#F43F5E] text-white",
+  E: "bg-[#F59E0B] text-white",
+  M: "bg-[#00C896] text-white",
+  P: "bg-[#8B5CF6] text-white",
+  O: "bg-[#356FFD] text-white",
 };
 
 type TempoLetterSize = "sm" | "lg";

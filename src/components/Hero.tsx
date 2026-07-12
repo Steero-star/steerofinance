@@ -2,6 +2,7 @@ import { Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import heroImageWebP from "@/assets/hero-dashboard.webp";
 import heroImagePng from "@/assets/hero-dashboard.png";
 
@@ -46,9 +47,9 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
+        <div className="grid lg:grid-cols-[35fr_65fr] gap-10 items-center min-h-[calc(100vh-8rem)]">
           {/* Left content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,7 +64,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="font-serif text-4xl md:text-5xl font-normal leading-[1.1] tracking-tight text-foreground lg:text-6xl"
+              className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground lg:text-5xl"
             >
               {t('hero.title')}<br />
               <span className="italic text-primary">{t('hero.titleHighlight')}</span>
@@ -73,7 +74,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-lg text-muted-foreground max-w-xl"
+              className="text-base text-muted-foreground max-w-md"
             >
               {t('hero.description')}
             </motion.p>
@@ -81,35 +82,46 @@ const Hero = () => {
 
           {/* Right image with parallax */}
           <motion.div
-            initial={{ opacity: 0, x: 50, rotate: 6 }}
+            initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             style={{ y: imageY }}
             className="relative"
           >
-            <div className="relative transform hover:rotate-0 transition-transform duration-500">
-              <div className="absolute -inset-3 bg-gradient-to-br from-primary/15 to-primary/5 rounded-[2rem] blur-xl" />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl transform rotate-3 scale-[1.03]" />
-              <div style={{ overflow: 'hidden', borderRadius: '12px' }}>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button
+                  type="button"
+                  aria-label={t("showcase.zoomLabel", { name: t("hero.title") })}
+                  className="group block w-full cursor-zoom-in rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                >
+                  <picture>
+                    <source srcSet={heroImageWebP} type="image/webp" />
+                    <img
+                      src={heroImagePng}
+                      alt="Tableau de bord budgétaire de Steero"
+                      fetchPriority="high"
+                      loading="eager"
+                      decoding="async"
+                      className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
+                    />
+                  </picture>
+                </button>
+              </DialogTrigger>
+              <DialogContent className="max-w-6xl w-[95vw] border-none bg-transparent p-0 shadow-none">
+                <DialogTitle className="sr-only">
+                  {t("hero.title")}
+                </DialogTitle>
                 <picture>
                   <source srcSet={heroImageWebP} type="image/webp" />
                   <img
                     src={heroImagePng}
-                    alt="Finances calmes et claires"
-                    fetchPriority="high"
-                    loading="eager"
-                    decoding="async"
-                    style={{
-                      width: '100%',
-                      maxWidth: '100%',
-                      height: 'auto',
-                      display: 'block',
-                    }}
-                    className="relative shadow-2xl ring-1 ring-border/10"
+                    alt="Tableau de bord budgétaire de Steero"
+                    className="w-full h-auto block rounded-lg"
                   />
                 </picture>
-              </div>
-            </div>
+              </DialogContent>
+            </Dialog>
           </motion.div>
         </div>
       </div>

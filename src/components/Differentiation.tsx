@@ -45,7 +45,6 @@ const Differentiation = () => {
         { before: "differentiation.budget.ba1.before", after: "differentiation.budget.ba1.after" },
         { before: "differentiation.budget.ba2.before", after: "differentiation.budget.ba2.after" },
         { before: "differentiation.budget.ba3.before", after: "differentiation.budget.ba3.after" },
-        { before: "differentiation.budget.ba4.before", after: "differentiation.budget.ba4.after" },
       ],
       link: null,
     },
@@ -56,7 +55,6 @@ const Differentiation = () => {
         { before: "differentiation.capture.ba1.before", after: "differentiation.capture.ba1.after" },
         { before: "differentiation.capture.ba2.before", after: "differentiation.capture.ba2.after" },
         { before: "differentiation.capture.ba3.before", after: "differentiation.capture.ba3.after" },
-        { before: "differentiation.capture.ba4.before", after: "differentiation.capture.ba4.after" },
       ],
       link: {
         labelKey: "differentiation.capture.link",
@@ -70,7 +68,6 @@ const Differentiation = () => {
         { before: "differentiation.ritualize.ba1.before", after: "differentiation.ritualize.ba1.after" },
         { before: "differentiation.ritualize.ba2.before", after: "differentiation.ritualize.ba2.after" },
         { before: "differentiation.ritualize.ba3.before", after: "differentiation.ritualize.ba3.after" },
-        { before: "differentiation.ritualize.ba4.before", after: "differentiation.ritualize.ba4.after" },
       ],
       link: {
         labelKey: "differentiation.ritualize.link",
@@ -89,7 +86,7 @@ const Differentiation = () => {
           transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-normal text-foreground mb-4">
             {t("differentiation.title")}
           </h2>
           <p className="text-muted-foreground text-lg">
@@ -144,12 +141,12 @@ const Differentiation = () => {
                         {adv.beforeAfterKeys.map((ba, i) => (
                           <div key={i} className="flex flex-col sm:flex-row gap-2 sm:gap-4">
                             <div className="flex items-start gap-2 flex-1">
-                              <span className="shrink-0 mt-1 w-5 h-5 rounded-full bg-muted-foreground/20 flex items-center justify-center text-xs text-muted-foreground font-medium">✗</span>
-                              <p className="text-muted-foreground text-sm md:text-base leading-relaxed line-through decoration-muted-foreground/40">{t(ba.before)}</p>
-                            </div>
-                            <div className="flex items-start gap-2 flex-1">
                               <span className="shrink-0 mt-1 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center text-xs text-primary font-medium">✓</span>
                               <p className="text-foreground text-sm md:text-base leading-relaxed font-medium">{t(ba.after)}</p>
+                            </div>
+                            <div className="flex items-start gap-2 flex-1">
+                              <span className="shrink-0 mt-1 w-5 h-5 rounded-full bg-muted-foreground/20 flex items-center justify-center text-xs text-muted-foreground font-medium">✗</span>
+                              <p className="text-muted-foreground text-sm md:text-base leading-relaxed line-through decoration-muted-foreground/40">{t(ba.before)}</p>
                             </div>
                           </div>
                         ))}

@@ -26,7 +26,7 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold leading-tight text-foreground mb-4"
+          className="font-serif text-3xl md:text-4xl font-normal leading-tight text-foreground mb-4"
         >
           {t("tempo.title")}
         </motion.h2>

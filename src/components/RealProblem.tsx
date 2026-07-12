@@ -4,21 +4,18 @@ import { useTranslation } from "react-i18next";
 const RealProblem = () => {
   const { t } = useTranslation();
 
-  const cards = [
-    { num: "01", text: t("realProblem.card1") },
-    { num: "02", text: t("realProblem.card2") },
-    { num: "03", text: t("realProblem.card3") },
-  ];
+  const retroItems = t("realProblem.retroItems", { returnObjects: true }) as string[];
+  const pareItems = t("realProblem.pareItems", { returnObjects: true }) as string[];
 
   return (
-    <section className="py-20 bg-[hsl(222,47%,11%)] text-[hsl(210,40%,98%)]">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-6 max-w-4xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-sm font-semibold tracking-widest mb-4 uppercase text-orange-400"
+          className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
         >
           {t("realProblem.label")}
         </motion.p>
@@ -28,7 +25,7 @@ const RealProblem = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight mb-6 max-w-none text-primary-foreground"
+          className="font-serif text-3xl md:text-4xl font-normal leading-[1.1] tracking-tight text-foreground mb-6"
         >
           {t("realProblem.title")}
         </motion.h2>
@@ -38,30 +35,55 @@ const RealProblem = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg mb-14 max-w-none leading-relaxed whitespace-pre-line text-secondary"
+          className="text-muted-foreground text-lg leading-relaxed mb-8 max-w-3xl"
         >
           {t("realProblem.description")}
         </motion.p>
 
-        <div className="grid sm:grid-cols-3 gap-5">
-          {cards.map((card, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
-              className="rounded-2xl bg-[hsl(222,40%,16%)] border border-[hsl(217,33%,24%)] p-7"
-            >
-              <span className="text-2xl font-bold mb-4 block text-primary-foreground">
-                {card.num}
-              </span>
-              <p className="text-[hsl(210,30%,88%)] text-[15px] leading-relaxed">
-                {card.text}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border border-border/60"
+        >
+          {/* Rétroviseur */}
+          <div className="bg-muted/40 p-6 md:border-r border-border/60">
+            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-4">
+              {t("realProblem.retroLabel")}
+            </p>
+            <p className="font-semibold text-foreground mb-5">{t("realProblem.retroCompany")}</p>
+            <ul className="space-y-0">
+              {retroItems.map((item, i) => (
+                <li
+                  key={i}
+                  className={`py-3 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
+                >
+                  <span className="text-muted-foreground">—</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* Pare-brise */}
+          <div className="bg-card p-6 border-t md:border-t-0 border-border/60">
+            <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-4">
+              {t("realProblem.pareLabel")}
+            </p>
+            <p className="font-semibold text-foreground mb-5">{t("realProblem.pareCompany")}</p>
+            <ul className="space-y-0">
+              {pareItems.map((item, i) => (
+                <li
+                  key={i}
+                  className={`py-3 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
+                >
+                  <span className="text-primary font-semibold">→</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

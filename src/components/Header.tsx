@@ -22,6 +22,14 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+      <Link
+        to="/pricing"
+        onClick={() => trackCTAClick("annonce_early_adopters", "announcement_bar", "/pricing")}
+        className="block bg-primary text-primary-foreground text-center text-xs sm:text-sm py-2 px-4 hover:bg-primary/90 transition-colors"
+      >
+        <span className="font-medium">{t('announcement.text')}</span>
+        <span className="ml-2 underline underline-offset-2">{t('announcement.cta')} →</span>
+      </Link>
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link 
           to="/" 
@@ -37,6 +45,9 @@ const Header = () => {
           </Link>
           <Link to="/pourquoi-steero" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.whySteero')}
+          </Link>
+          <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            {t('header.pricing')}
           </Link>
           <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.blog')}
@@ -101,15 +112,22 @@ const Header = () => {
               >
                 {t('header.home')}
               </Link>
-              <Link 
-                to="/pourquoi-steero" 
+              <Link
+                to="/pourquoi-steero"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('header.whySteero')}
               </Link>
-              <Link 
-                to="/blog" 
+              <Link
+                to="/pricing"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('header.pricing')}
+              </Link>
+              <Link
+                to="/blog"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >

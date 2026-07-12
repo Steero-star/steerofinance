@@ -1,13 +1,11 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import HowItWorks from "@/components/HowItWorks";
-import Differentiation from "@/components/Differentiation";
-import DiscoverFeatures from "@/components/DiscoverFeatures";
-import NextSteps from "@/components/NextSteps";
+import MethodResults from "@/components/MethodResults";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import RealProblem from "@/components/RealProblem";
 import WhySteero from "@/components/WhySteero";
+import ProductGlance from "@/components/ProductGlance";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -18,7 +16,7 @@ const Index = () => {
     url: "https://steero.fr",
     logo: " ",
     description:
-      "Steero est un système de pilotage actif des finances personnelles. Il t'aide à reprendre le contrôle de ton argent grâce à des rituels TEMPO simples et durables.",
+      "Steero est un système de pilotage actif des finances personnelles. Un cadre de rituels TEMPO simples et durables pour décider où va ton argent.",
     sameAs: [],
   };
 
@@ -46,18 +44,18 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Steero - Gérer son argent simplement | Alternative à Excel pour votre budget"
-        description="Comment bien gérer son argent ? Steero vous aide à mieux gérer votre budget au quotidien. Plus simple qu'Excel, plus efficace que les apps bancaires."
+        title="Steero - Passe du tableur au pilotage | Alternative à Excel pour ton budget"
+        description="Ton Excel finit toujours par lâcher. Steero installe un cadre de pilotage simple : 5 minutes par jour pour voir où va ton argent et décider où il va. Plus simple qu'Excel, plus utile que les apps bancaires."
         keywords="gérer son argent, comment gérer son argent, gestion budget, alternative excel budget, finances personnelles"
         canonical="/"
         ogType="website"
       />
       <Header />
       <Hero />
+      <MethodResults />
       <RealProblem />
-      <HowItWorks />
       <WhySteero />
-      <Differentiation />
+      <ProductGlance />
       <CTA />
       <Footer />
     </div>
