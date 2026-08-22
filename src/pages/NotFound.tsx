@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 import { useTranslation } from "react-i18next";
 import { trackNotFound } from "@/lib/analytics";
 
@@ -14,10 +14,7 @@ const NotFound = () => {
 
   return (
     <>
-      <Helmet>
-        <meta name="robots" content="noindex, nofollow" />
-        <title>{t('notFound.title')}</title>
-      </Helmet>
+      <SEO title={t("notFound.title")} description={t("notFound.message")} noIndex />
       <div className="flex min-h-screen items-center justify-center bg-muted">
         <div className="text-center">
           <h1 className="mb-4 text-4xl font-bold">404</h1>

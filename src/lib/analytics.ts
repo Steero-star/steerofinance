@@ -78,36 +78,7 @@ export const trackCTAClick = (
     destination_url: destination ?? "",
     page_path: window.location.pathname,
   });
-};
-
-// ── Waitlist Funnel ────────────────────────────────────────
-export const trackWaitlistOpen = (source: string) => {
-  gtag("event", "waitlist_open", {
-    trigger_location: source,
-    page_path: window.location.pathname,
-  });
-};
-
-export const trackWaitlistStep = (
-  step:
-    | "form_seen"
-    | "form_focused"
-    | "form_submitted"
-    | "form_success"
-    | "form_error"
-    | "email_duplicate",
-  extra?: Record<string, unknown>
-) => {
-  gtag("event", "waitlist_funnel", {
-    step,
-    page_path: window.location.pathname,
-    ...extra,
-  });
-};
-
-// Compat avec l'ancien code
-export const trackWaitlistSubmit = (success: boolean) => {
-  trackWaitlistStep(success ? "form_success" : "form_error");
+  dispatchConversion();
 };
 
 // ── Navigation ─────────────────────────────────────────────
@@ -238,6 +209,6 @@ export const trackNotFound = (path: string) => {
 };
 
 // ── Conversion dispatch (pour AnalyticsTracker) ────────────
-export const dispatchWaitlistConversion = () => {
-  window.dispatchEvent(new CustomEvent("steero:waitlist_converted"));
+export const dispatchConversion = () => {
+  window.dispatchEvent(new CustomEvent("steero:converted"));
 };

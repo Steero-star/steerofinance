@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Facebook, Linkedin, Youtube } from "lucide-react";
 import steeroLogo from "@/assets/steero-logo.png";
 import { trackSocialClick, trackOutboundLink, trackNavClick } from "@/lib/analytics";
+import { openConsentPreferences } from "@/lib/consent";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -157,7 +158,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.25 }}
           >
             <h4 className="text-sm font-semibold text-foreground mb-4">{t("footer.legal")}</h4>
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col gap-3 items-start">
               {legalLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -167,6 +168,14 @@ const Footer = () => {
                   {t(link.labelKey)}
                 </Link>
               ))}
+              {/* Le choix cookies doit rester révocable aussi simplement qu il a été donné. */}
+              <button
+                type="button"
+                onClick={openConsentPreferences}
+                className="text-sm text-muted-foreground hover:text-primary transition-colors text-left"
+              >
+                {t("cookies.manage")}
+              </button>
             </nav>
           </motion.div>
         </motion.div>

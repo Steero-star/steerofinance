@@ -1,42 +1,13 @@
 {
   "common": {
-    "joinWaitlist": "Start for free",
     "discoverApproach": "Discover Steero's approach",
     "discoverFeatures": "Discover features",
     "learnMore": "Learn more",
     "readMore": "Read more",
     "close": "Close",
     "prev": "Previous",
-    "next": "Next"
-  },
-  "waitlist": {
-    "modalTitle": "Join the waitlist",
-    "modalDescription": "Be among the first to try Steero and transform your relationship with money.",
-    "firstName": "First name",
-    "lastName": "Last name",
-    "email": "Email",
-    "dateOfBirth": "Date of birth",
-    "selectDate": "Select a date",
-    "country": "Country",
-    "selectCountry": "Select a country",
-    "language": "Language",
-    "selectLanguage": "Select a language",
-    "currency": "Currency",
-    "selectCurrency": "Select a currency",
-    "popularCurrencies": "Popular currencies",
-    "allCurrencies": "All currencies",
-    "termsText": "I accept the",
-    "termsLink": "General Terms of Service",
-    "submit": "Join the waitlist",
-    "submitting": "Submitting...",
-    "successTitle": "Registration successful! 🎉",
-    "successMessage": "You're now on the Steero waitlist. We'll keep you updated!",
-    "errors": {
-      "required": "This field is required",
-      "email": "Invalid email address",
-      "terms": "You must accept the terms and conditions",
-      "emailExists": "This email is already registered"
-    }
+    "next": "Next",
+    "startFree": "Start for free"
   },
   "header": {
     "home": "Home",
@@ -398,7 +369,6 @@
     "noAnswer": "CAN'T FIND YOUR ANSWER?",
     "discoverHow": "Discover how Steero works in practice.",
     "discoverApproach": "Discover Steero's approach",
-    "joinWaitlist": "Start for free",
     "ctaTitle": "Ready to steer your finances?",
     "ctaDescription": "Join Steero to change your approach and reach your goals.",
     "sections": {
@@ -462,7 +432,8 @@
           "answer": "Yes, and it's at the heart of the project.\n\nSteero is designed as a long-term product, which evolves gradually to remain simple, relevant, and aligned with users' real needs.\n\nNew features will enrich the experience, always with the same philosophy:\n• no unnecessary complexity\n• no automation that dispossesses\n• only what really helps to better steer\n\nSubscriptions are precisely used to maintain this quality and make Steero evolve in the right direction."
         }
       }
-    }
+    },
+    "startFree": "Start for free"
   },
   "fonctionnalites": {
     "heroTitle": "Features designed for your",
@@ -647,7 +618,6 @@
     "readyToTransform": "Ready to transform your financial management?",
     "ctaTitle": "Ready to steer your finances?",
     "ctaDescription": "Join Steero to change your approach and reach your goals.",
-    "joinWaitlist": "Start",
     "linkCopied": "Link copied!",
     "share": "Share",
     "collapseArticle": "Collapse article",
@@ -864,348 +834,847 @@
           "What changes after 3 weeks"
         ]
       }
-    }
+    },
+    "startFree": "Start"
   },
   "legal": {
+    "mentions": {
+      "title": "Legal notice",
+      "subtitle": "Publisher, hosting and contact",
+      "lastUpdate": "Last updated: 22 August 2026",
+      "sections": [
+        {
+          "title": "1. Site publisher",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The steero.fr website and the Steero application are published by:"
+            },
+            {
+              "type": "kv",
+              "items": [
+                {
+                  "k": "Publisher",
+                  "v": "Ronald MARTINEZ, sole trader (entrepreneur individuel) trading as “Steero”"
+                },
+                {
+                  "k": "Address",
+                  "v": "1 rue Princesse, 75006 Paris, France"
+                },
+                {
+                  "k": "SIREN",
+                  "v": "842 247 033"
+                },
+                {
+                  "k": "Registration",
+                  "v": "French National Business Register (RNE)"
+                },
+                {
+                  "k": "Activity code",
+                  "v": "58.29C — Publishing of application software"
+                },
+                {
+                  "k": "VAT",
+                  "v": "VAT not applicable, article 293 B of the French tax code"
+                },
+                {
+                  "k": "Publication director",
+                  "v": "Ronald MARTINEZ"
+                },
+                {
+                  "k": "Phone",
+                  "v": "[+33 6 42 59 11 44](tel:+33642591144)"
+                },
+                {
+                  "k": "Email",
+                  "v": "[contact@steero.fr](mailto:contact@steero.fr)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "2. Hosting",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The website and the application are not hosted in the same place:"
+            },
+            {
+              "type": "kv",
+              "items": [
+                {
+                  "k": "steero.fr website",
+                  "v": "Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, United States — [vercel.com](https://vercel.com)"
+                },
+                {
+                  "k": "Application and data",
+                  "v": "Convex, eu-west-1 region (Ireland, European Union) — [convex.dev](https://www.convex.dev)"
+                },
+                {
+                  "k": "Email service",
+                  "v": "OVH SAS, 2 rue Kellermann, 59100 Roubaix, France — [ovhcloud.com](https://www.ovhcloud.com)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "3. Intellectual property",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "All content on this website and in the application (text, images, video, logos, icons, sound, software, structure) is protected by copyright and trademark law. Any reproduction, representation, modification, publication or adaptation of all or part of these elements, by any means, is prohibited without prior written permission from the publisher."
+            }
+          ]
+        },
+        {
+          "title": "4. Personal data",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "How we process personal data is described in detail in the [privacy policy](/politique-confidentialite): data collected, purposes, retention periods, processors and GDPR rights."
+            },
+            {
+              "type": "p",
+              "text": "To exercise your rights (access, rectification, erasure, portability, objection), write to [contact@steero.fr](mailto:contact@steero.fr). We reply within one month at the latest."
+            }
+          ]
+        },
+        {
+          "title": "5. Cookies and analytics",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "No analytics cookie is set before you agree. Google Analytics is loaded only if you accept it, and declining does not degrade the site in any way."
+            },
+            {
+              "type": "p",
+              "text": "You can change your mind at any time: [manage cookie preferences](#cookies). Details are in the [privacy policy](/politique-confidentialite)."
+            }
+          ]
+        },
+        {
+          "title": "6. Complaints and disputes",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Any complaint can be sent to [contact@steero.fr](mailto:contact@steero.fr) or by phone at [+33 6 42 59 11 44](tel:+33642591144). We reply within 14 days and always seek an amicable solution."
+            },
+            {
+              "type": "p",
+              "text": "Under article L612-1 of the French Consumer Code, every consumer has the right to free access to a consumer mediator to settle a dispute amicably. Steero's membership of a mediation service is being finalised: the mediator's details will be published here as soon as it takes effect."
+            },
+            {
+              "type": "p",
+              "text": "This legal notice and the use of the site are governed by French law."
+            }
+          ]
+        }
+      ]
+    },
     "cgs": {
       "title": "Terms of Service",
-      "subtitle": "Personal financial management application",
-      "lastUpdate": "Last updated: Friday, January 9, 2026",
-      "sections": {
-        "s1": {
+      "subtitle": "Personal finance management application",
+      "lastUpdate": "Last updated: 22 August 2026",
+      "sections": [
+        {
           "title": "1. Why these terms?",
-          "intro": "These Terms of Service simply explain:",
-          "items": [
-            "what the application does,",
-            "what you can expect from it,",
-            "what we do (and don't do),",
-            "and how everyone is protected."
-          ],
-          "outro": "By creating an account or using the application, you accept these terms."
+          "blocks": [
+            {
+              "type": "p",
+              "text": "These Terms of Service (the “Terms”) explain, in plain words:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "what the application does,",
+                "what you can expect from it,",
+                "what we do (and do not do),",
+                "what you pay and how you can stop,",
+                "and how each party is protected."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "By creating an account or using the application, you accept these Terms. They form the contract between you and Ronald MARTINEZ, sole trader trading as “Steero” (see the [legal notice](/mentions-legales))."
+            }
+          ]
         },
-        "s2": {
+        {
           "title": "2. What the application is",
-          "intro": "The application is a personal financial management and habit tracking tool, designed to help you:",
-          "items": [
-            "better understand your finances,",
-            "track your expenses, income, and budgets,",
-            "set clear goals,",
-            "adopt better long-term financial behaviors."
-          ],
-          "notes": [
-            "👉 It's not a bank,",
-            "👉 it's not a financial advisor,",
-            "👉 and it's not an automated trading or investment tool."
-          ],
-          "outro": "It's a smart dashboard to help you make better decisions."
-        },
-        "s3": {
-          "title": "3. Who is the application for?",
-          "intro": "The application is intended for any adult wishing to organize their personal finances.",
-          "confirm": "By using the application, you confirm that:",
-          "items": [
-            "you are legally capable of contracting,",
-            "you use the tool for personal use (not professional or illegal)."
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The application is a personal finance and habit-tracking tool, designed to help you:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "understand your finances better,",
+                "track your spending, income and budgets,",
+                "set clear goals,",
+                "build better financial habits over time."
+              ]
+            },
+            {
+              "type": "note",
+              "text": "It is not a bank, not a financial adviser, and not a trading or automated investment tool."
+            },
+            {
+              "type": "p",
+              "text": "It is a dashboard to help you make better decisions."
+            }
           ]
         },
-        "s4": {
+        {
+          "title": "3. Who the application is for",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The application is intended for adults who want to organise their personal finances. By using it, you confirm that:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "you are of legal age and able to enter into a contract,",
+                "you use the tool for personal purposes (not professional or unlawful)."
+              ]
+            }
+          ]
+        },
+        {
           "title": "4. Account creation and management",
-          "intro": "To use the application, you must create an account.",
-          "responsible": "You are responsible for:",
-          "items": [
-            "the information you provide,",
-            "the confidentiality of your credentials,",
-            "the use of your account."
-          ],
-          "outro": "If you notice suspicious activity, contact us quickly."
-        },
-        "s5": {
-          "title": "5. Features and updates",
-          "intro": "Available features depend on:",
-          "items": [
-            "the version of the application,",
-            "your subscription, if any."
-          ],
-          "evolution": "The application evolves continuously: we may add, modify, or improve certain features to offer a better experience.",
-          "outro": "We always do our best to ensure these changes remain consistent and beneficial."
-        },
-        "s6": {
-          "title": "6. Subscriptions and payments",
-          "intro": "Some features may be accessible via a paid subscription.",
-          "conditions": "The conditions (price, duration, renewal) are clearly indicated at the time of subscription.",
-          "renewal": "Subscriptions are automatically renewed, unless cancelled before the renewal date.",
-          "outro": "You can manage or cancel your subscription at any time from your account."
-        },
-        "s7": {
-          "title": "7. What the application doesn't do",
-          "important": "This is important to be clear about 👇",
-          "noAdvice": "The application does not provide personalized financial advice.",
-          "informative": "Analyses, charts, projections, or recommendations are informative, not guarantees.",
-          "responsible": "You remain 100% responsible for your financial decisions.",
-          "outro": "If you need professional advice (financial, tax, legal), consult a qualified expert."
-        },
-        "s8": {
-          "title": "8. Your data",
-          "ownership": "Your data belongs to you.",
-          "intro": "We:",
-          "items": [
-            "store it securely,",
-            "use it only to operate the application,",
-            "never sell it."
-          ],
-          "details": "Details on personal data management are available in our",
-          "privacyLink": "Privacy Policy",
-          "gdpr": "(GDPR compliant)."
-        },
-        "s9": {
-          "title": "9. Availability and security",
-          "intro": "We do our best to:",
-          "items": [
-            "ensure reliable service,",
-            "protect your data,",
-            "keep the application accessible."
+          "blocks": [
+            {
+              "type": "p",
+              "text": "You need an account to use the application. Authentication is handled by our provider Clerk."
+            },
+            {
+              "type": "p",
+              "text": "You are responsible for the information you enter, for keeping your credentials confidential and for the use of your account. If you notice suspicious activity, write to [contact@steero.fr](mailto:contact@steero.fr)."
+            }
           ]
         },
-        "s10": {
-          "title": "10. Liability",
-          "intro": "The application is a support tool, not a promise of results.",
-          "noLiability": "We cannot be held liable for:",
-          "items": [
-            "input errors,",
-            "misinterpretations,",
-            "financial losses,",
-            "decisions made based on displayed data."
-          ],
-          "outro": "You keep control. Always."
-        },
-        "s11": {
-          "title": "11. Intellectual property",
-          "intro": "Everything that makes up the application (design, code, texts, brand, structure) belongs to us or is used with authorization.",
-          "usage": "You can use the application normally, but not:",
-          "items": [
-            "copy it,",
-            "resell it,",
-            "modify it,",
-            "or exploit it without written agreement."
+        {
+          "title": "5. Features and changes",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Available features depend on the version of the application and on your subscription. The application evolves continuously: features may be added, changed or improved."
+            },
+            {
+              "type": "p",
+              "text": "If a change were to substantially reduce a service you pay for, you would be informed in advance and could cancel at no cost."
+            }
           ]
         },
-        "s12": {
-          "title": "12. Termination",
-          "userDelete": "You can delete your account at any time, simply.",
-          "ourSide": "On our side, we may suspend or close an account in case of:",
-          "items": [
-            "abusive use,",
-            "fraud,",
-            "or non-compliance with these terms."
+        {
+          "title": "6. Subscription, price and payment",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Full access to the application is offered through a subscription. Current prices are shown on the [pricing page](/pricing) and repeated before any payment."
+            },
+            {
+              "type": "kv",
+              "items": [
+                {
+                  "k": "Price",
+                  "v": "€8 per month. VAT not applicable, article 293 B of the French tax code. Quarterly and annual plans are available."
+                },
+                {
+                  "k": "Trial",
+                  "v": "14 days free. A payment card is required at sign-up; nothing is charged during the trial."
+                },
+                {
+                  "k": "Payment",
+                  "v": "Payments are processed by Stripe. We never have access to your full card number."
+                },
+                {
+                  "k": "Renewal",
+                  "v": "The subscription renews automatically at each term until you cancel it."
+                },
+                {
+                  "k": "Cancellation",
+                  "v": "At any time from your account, free of charge and without justification. Access remains open until the end of the period already paid for."
+                },
+                {
+                  "k": "Promotional codes",
+                  "v": "The conditions of each code (duration, combination, number of seats) are stated when the offer is made. A lifetime discount applies to the public price in force."
+                }
+              ]
+            },
+            {
+              "type": "p",
+              "text": "If the price of your subscription changes, you are notified at least 30 days before the term concerned and may cancel before it takes effect."
+            },
+            {
+              "type": "p",
+              "text": "One-off paid services may be offered in the future. Their specific conditions (content, price, delivery time) will be presented before payment."
+            }
           ]
         },
-        "s13": {
-          "title": "13. Applicable law",
-          "law": "These terms are governed by French law.",
-          "dispute": "In case of dispute, we always prefer an amicable solution before any legal action."
+        {
+          "title": "7. Right of withdrawal",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "You have 14 days to withdraw from a subscription taken out remotely, starting on the day you subscribe, without having to give a reason."
+            },
+            {
+              "type": "p",
+              "text": "To do so, simply write to [contact@steero.fr](mailto:contact@steero.fr) before the deadline. Any amount already charged is refunded within 14 days of receiving your request, using the same payment method."
+            },
+            {
+              "type": "note",
+              "text": "In practice, the 14-day free trial lets you stop before any charge: cancelling before the end of the trial means no payment at all."
+            },
+            {
+              "type": "p",
+              "text": "If you expressly ask for the service to start during the withdrawal period, you can still withdraw, but the part of the service already provided may remain payable (article L221-25 of the French Consumer Code)."
+            }
+          ]
         },
-        "s14": {
-          "title": "14. Contact",
-          "question": "A question, a problem, an idea?",
-          "email": "📧 Contact us at:",
-          "tempEmail": ""
+        {
+          "title": "8. Legal guarantee of conformity",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "As a consumer, you benefit from the legal guarantee of conformity for digital content and services provided by articles L224-25-12 et seq. of the French Consumer Code."
+            },
+            {
+              "type": "p",
+              "text": "If the service provided does not match what was announced, you may require it to be brought into conformity and, failing that, obtain a price reduction or termination of the contract. Write to [contact@steero.fr](mailto:contact@steero.fr) to invoke it."
+            }
+          ]
+        },
+        {
+          "title": "9. What the application does not do",
+          "blocks": [
+            {
+              "type": "note",
+              "text": "The application does not provide personalised financial, tax or legal advice, nor investment advice in the regulatory sense."
+            },
+            {
+              "type": "p",
+              "text": "Analyses, charts, projections and suggestions are informational: they are neither guarantees nor investment recommendations. You remain solely responsible for your financial decisions."
+            },
+            {
+              "type": "p",
+              "text": "If you need professional advice, consult a qualified and authorised expert."
+            }
+          ]
+        },
+        {
+          "title": "10. Your data",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Your data belongs to you. We store it securely, use it only to run the application, and never sell it."
+            },
+            {
+              "type": "p",
+              "text": "The details (data collected, purposes, retention, processors, rights) are in the [privacy policy](/politique-confidentialite), which complies with the GDPR."
+            }
+          ]
+        },
+        {
+          "title": "11. Availability and security",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "We do everything we can to provide a reliable service, protect your data and keep the application accessible. Interruptions may occur for maintenance or for reasons beyond our control."
+            }
+          ]
+        },
+        {
+          "title": "12. Liability",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The application is a decision-support tool, not a promise of results. We cannot be held liable for:"
+            },
+            {
+              "type": "ul",
+              "items": [
+                "input or import errors on your side,",
+                "misreading of the data displayed,",
+                "financial losses,",
+                "decisions made on the basis of information in the application."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Nothing in these Terms excludes the legal guarantees you benefit from as a consumer."
+            }
+          ]
+        },
+        {
+          "title": "13. Intellectual property",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Everything that makes up the application (design, code, text, brand, structure) belongs to us or is used with permission. You may use the application normally, but you may not copy, resell, modify or exploit it without written agreement."
+            }
+          ]
+        },
+        {
+          "title": "14. Termination and account deletion",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "You can cancel your subscription and delete your account at any time from the application."
+            },
+            {
+              "type": "p",
+              "text": "On our side, we may suspend or close an account in the event of abuse, fraud or breach of these Terms. Except in an emergency or where the law requires otherwise, you are notified beforehand and can retrieve your data."
+            }
+          ]
+        },
+        {
+          "title": "15. Complaints and mediation",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "If something goes wrong, write to [contact@steero.fr](mailto:contact@steero.fr) first: we reply within 14 days."
+            },
+            {
+              "type": "p",
+              "text": "Under article L612-1 of the French Consumer Code, you have the right to free access to a consumer mediator. Steero's membership of a mediation service is being finalised: the mediator's details will be published in the [legal notice](/mentions-legales) as soon as it takes effect."
+            },
+            {
+              "type": "p",
+              "text": "For a complaint about your personal data, you may contact the CNIL ([cnil.fr](https://www.cnil.fr))."
+            }
+          ]
+        },
+        {
+          "title": "16. Governing law",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "These Terms are governed by French law. In the event of a dispute, we always seek an amicable solution before any legal action."
+            },
+            {
+              "type": "p",
+              "text": "We may update these Terms. In the event of a significant change, you are informed at least 30 days in advance and may cancel free of charge if the change does not suit you."
+            }
+          ]
+        },
+        {
+          "title": "17. Contact",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "A question, a problem, an idea?"
+            },
+            {
+              "type": "kv",
+              "items": [
+                {
+                  "k": "Email",
+                  "v": "[contact@steero.fr](mailto:contact@steero.fr)"
+                },
+                {
+                  "k": "Phone",
+                  "v": "[+33 6 42 59 11 44](tel:+33642591144)"
+                },
+                {
+                  "k": "Postal address",
+                  "v": "Ronald MARTINEZ (Steero), 1 rue Princesse, 75006 Paris, France"
+                }
+              ]
+            }
+          ]
         }
-      }
-    },
-    "mentions": {
-      "title": "Legal Notice",
-      "sections": {
-        "s1": {
-          "title": "1. Site publisher",
-          "intro": "The Steero site is published by Steero SAS, a simplified joint-stock company with capital of 1,000 euros, registered with the Paris Trade and Companies Register under number 842247033.",
-          "address": "Registered office: 295 rue Lecourbe 75015 Paris",
-          "director": "Publication director: M. Ronald MARTINEZ",
-          "email": "Email:",
-          "tbc": " "
-        },
-        "s2": {
-          "title": "2. Hosting",
-          "intro": "The site is hosted by OVH, whose registered office is located at 2 rue Kellermann - 59100 Roubaix - France."
-        },
-        "s3": {
-          "title": "3. Intellectual property",
-          "content": "All content on this site (texts, images, videos, logos, icons, sounds, software, etc.) is protected by copyright and trademark law. Any reproduction, representation, modification, publication, or adaptation of all or part of the site elements, by any means or process, is prohibited without prior written authorization from Steero SAS."
-        },
-        "s4": {
-          "title": "4. Personal data protection",
-          "content": "In accordance with the General Data Protection Regulation (GDPR), you have the right to access, rectify, delete, and object to personal data concerning you. To exercise these rights, you can contact us at: contact@steero.fr"
-        },
-        "s5": {
-          "title": "5. Cookies",
-          "content": "This site uses cookies to improve user experience and measure audience. You can configure your browser to refuse cookies, but some site features may no longer be available."
-        },
-        "s6": {
-          "title": "6. Contact",
-          "content": "For any questions regarding these legal notices, you can contact us at the following email address: contact@steero.fr"
-        }
-      }
+      ]
     },
     "privacy": {
-      "title": "Privacy Policy",
-      "subtitle": "Personal data protection & GDPR (EU)",
-      "lastUpdate": "Last updated: Friday, January 9, 2026",
-      "sections": {
-        "s1": {
+      "title": "Privacy policy",
+      "subtitle": "Personal data protection & GDPR",
+      "lastUpdate": "Last updated: 22 August 2026",
+      "sections": [
+        {
           "title": "1. Why this policy?",
-          "intro": "Your privacy is important to us.",
-          "explains": "This privacy policy explains:",
-          "items": [
-            "what data we collect,",
-            "why we collect it,",
-            "how we use and protect it,",
-            "and what your rights are."
-          ],
-          "outro": "It applies to all application users."
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Your privacy matters to us. This policy explains what data we collect, why, how we protect it and what your rights are."
+            },
+            {
+              "type": "p",
+              "text": "It applies to the steero.fr website and to the Steero application."
+            }
+          ]
         },
-        "s2": {
+        {
           "title": "2. Who is responsible for your data?",
-          "intro": "The data controller is:",
-          "company": "Steero",
-          "legalForm": "[Legal form] – [RCS] / Being created",
-          "address": "Registered office: 295 rue Lecourbe",
-          "contact": "📧 Contact: contact@steero.fr"
+          "blocks": [
+            {
+              "type": "p",
+              "text": "The data controller is:"
+            },
+            {
+              "type": "kv",
+              "items": [
+                {
+                  "k": "Controller",
+                  "v": "Ronald MARTINEZ, sole trader trading as “Steero”"
+                },
+                {
+                  "k": "Address",
+                  "v": "1 rue Princesse, 75006 Paris, France"
+                },
+                {
+                  "k": "SIREN",
+                  "v": "842 247 033"
+                },
+                {
+                  "k": "Contact",
+                  "v": "[contact@steero.fr](mailto:contact@steero.fr) — [+33 6 42 59 11 44](tel:+33642591144)"
+                }
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Given its size and the nature of its processing, Steero is not required to appoint a data protection officer. All your requests are handled directly at the address above."
+            }
+          ]
         },
-        "s3": {
+        {
           "title": "3. What data do we collect?",
-          "intro": "We only collect data necessary for the application to function.",
-          "voluntary": "🔹 Data you voluntarily provide",
-          "voluntaryItems": [
-            "Email address",
-            "Password (encrypted)",
-            "Profile information (optional)"
-          ],
-          "financial": "Manually entered financial data:",
-          "financialItems": [
-            "budgets (Goals)",
-            "transactions",
-            "income",
-            "habits",
-            "custom categories"
-          ],
-          "note": "👉 No banking data is collected without your explicit voluntary action.",
-          "technical": "🔹 Technical data",
-          "technicalItems": [
-            "Device type and browser",
-            "IP address",
-            "Connection logs",
-            "Anonymized usage data (to improve the product)"
+          "blocks": [
+            {
+              "type": "p",
+              "text": "We only collect the data needed to run the service."
+            },
+            {
+              "type": "p",
+              "text": "Account data: email address, password (managed and encrypted by our authentication provider Clerk), optional profile information."
+            },
+            {
+              "type": "p",
+              "text": "Financial data you enter or import yourself: accounts, transactions, income, budgets, goals, projects, habits, categories."
+            },
+            {
+              "type": "p",
+              "text": "Billing data: subscription and payment history, processed by Stripe. We never have access to your full card number."
+            },
+            {
+              "type": "p",
+              "text": "Technical data: device and browser type, IP address, connection logs, application usage data."
+            },
+            {
+              "type": "note",
+              "text": "There is no automatic bank connection: no data is retrieved from your bank without a deliberate and explicit action on your part."
+            }
           ]
         },
-        "s4": {
+        {
           "title": "4. Why do we use this data?",
-          "intro": "Your data is used to:",
-          "items": [
-            "Provide and operate the application",
-            "Save and display your information",
-            "Calculate statistics and visualizations",
-            "Improve user experience",
-            "Ensure security and prevent fraud",
-            "Manage subscriptions and billing",
-            "Respond to your support requests"
-          ],
-          "noProfiling": "We do not do any advertising profiling."
-        },
-        "s5": {
-          "title": "5. Legal basis for processing (GDPR)",
-          "intro": "In accordance with GDPR, processing is based on:",
-          "items": [
-            "Contract execution (normal use of the application)",
-            "Your consent (e.g., non-essential communications)",
-            "Our legitimate interest (security, product improvement)"
+          "blocks": [
+            {
+              "type": "ul",
+              "items": [
+                "to provide and run the application,",
+                "to save and display your information,",
+                "to compute the statistics and charts you consult,",
+                "to manage subscriptions, payments and invoicing,",
+                "to ensure security and prevent fraud,",
+                "to improve the product from usage statistics,",
+                "to answer your support requests."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "We do no advertising profiling and make no automated decision producing legal effects concerning you."
+            }
           ]
         },
-        "s6": {
-          "title": "6. Data sharing",
-          "noSell": "We never sell your data. Never.",
-          "shared": "Your data may only be shared with:",
-          "items": [
-            "trusted technical providers (hosting, payment, emails),",
-            "strictly within the scope of application operation,",
-            "with contractual guarantees compliant with GDPR."
-          ],
-          "outro": "No data is transmitted to third parties for commercial purposes."
+        {
+          "title": "5. Legal basis for processing",
+          "blocks": [
+            {
+              "type": "table",
+              "head": [
+                "Processing",
+                "Legal basis"
+              ],
+              "rows": [
+                [
+                  "Account, running the application, support",
+                  "Performance of the contract (art. 6.1.b GDPR)"
+                ],
+                [
+                  "Subscription, payment, invoicing",
+                  "Performance of the contract and legal accounting obligation"
+                ],
+                [
+                  "Security, fraud prevention, product improvement",
+                  "Legitimate interest (art. 6.1.f GDPR)"
+                ],
+                [
+                  "Website analytics, non-essential communications",
+                  "Your consent (art. 6.1.a GDPR), revocable at any time"
+                ]
+              ]
+            }
+          ]
         },
-        "s7": {
+        {
+          "title": "6. Who has access to your data?",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "We never sell your data. It is shared only with the technical providers needed to run the service, each bound by a contract compliant with article 28 of the GDPR:"
+            },
+            {
+              "type": "table",
+              "head": [
+                "Provider",
+                "Role",
+                "Location"
+              ],
+              "rows": [
+                [
+                  "Convex",
+                  "Hosting of the application and data",
+                  "Ireland (EU)"
+                ],
+                [
+                  "Clerk",
+                  "Authentication and account management",
+                  "United States — standard contractual clauses"
+                ],
+                [
+                  "Stripe",
+                  "Payments and invoicing",
+                  "Ireland and United States — standard contractual clauses"
+                ],
+                [
+                  "PostHog",
+                  "Application usage analytics",
+                  "European Union"
+                ],
+                [
+                  "Vercel",
+                  "Hosting of the steero.fr website",
+                  "United States — standard contractual clauses"
+                ],
+                [
+                  "Google Analytics",
+                  "Website analytics, only after your consent",
+                  "United States — standard contractual clauses"
+                ],
+                [
+                  "Vercel Web Analytics",
+                  "Cookieless website analytics, no persistent identifier",
+                  "United States — standard contractual clauses"
+                ],
+                [
+                  "OVH",
+                  "contact@steero.fr mailbox",
+                  "France (EU)"
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "Your data may also be disclosed where the law requires it (judicial request, tax or accounting obligation)."
+            }
+          ]
+        },
+        {
           "title": "7. Where is your data stored?",
-          "location": "Data is hosted within the European Union or in countries recognized as adequate by the European Commission.",
-          "scc": "If a provider outside the EU is used, standard contractual clauses (SCC) are implemented."
+          "blocks": [
+            {
+              "type": "p",
+              "text": "Application data (accounts, transactions, budgets) is hosted in the European Union, in Ireland."
+            },
+            {
+              "type": "p",
+              "text": "Some of the providers listed above are established in the United States. Those transfers are covered by the European Commission's standard contractual clauses and, where applicable, by the provider's Data Privacy Framework certification."
+            }
+          ]
         },
-        "s8": {
+        {
           "title": "8. How long do we keep your data?",
-          "content": "Data is kept for the duration of your use of the application, then deleted or anonymized in accordance with legal obligations."
+          "blocks": [
+            {
+              "type": "table",
+              "head": [
+                "Data",
+                "Retention period"
+              ],
+              "rows": [
+                [
+                  "Account and application data",
+                  "For the lifetime of the account, then deleted within 30 days of its deletion"
+                ],
+                [
+                  "Backups",
+                  "Purged at the latest 90 days after account deletion"
+                ],
+                [
+                  "Invoices and accounting records",
+                  "10 years, legal obligation (art. L123-22 French Commercial Code)"
+                ],
+                [
+                  "Connection and security logs",
+                  "12 months"
+                ],
+                [
+                  "Support conversations",
+                  "3 years after the last contact"
+                ],
+                [
+                  "Analytics cookies",
+                  "13 months maximum"
+                ],
+                [
+                  "Proof of your cookie choice",
+                  "6 months, then you are asked again"
+                ]
+              ]
+            }
+          ]
         },
-        "s9": {
+        {
           "title": "9. Data security",
-          "intro": "We implement appropriate technical and organizational measures:",
-          "items": [
-            "password encryption",
-            "restricted data access",
-            "access monitoring",
-            "secure backups"
-          ],
-          "outro": "No system is infallible, but security is a priority."
+          "blocks": [
+            {
+              "type": "p",
+              "text": "We apply appropriate technical and organisational measures: encrypted traffic (HTTPS), passwords hashed and managed by a specialist provider, restricted access to production data, access logging, regular backups."
+            },
+            {
+              "type": "p",
+              "text": "No system is infallible. In the event of a data breach likely to create a risk to your rights, we notify the CNIL within 72 hours and inform you as soon as possible."
+            }
+          ]
         },
-        "s10": {
-          "title": "10. Your rights (GDPR)",
-          "intro": "In accordance with GDPR, you have the following rights:",
-          "items": [
-            "Right to access your data",
-            "Right to rectification",
-            "Right to erasure (right to be forgotten)",
-            "Right to restriction of processing",
-            "Right to data portability",
-            "Right to object",
-            "Right to withdraw your consent at any time"
-          ],
-          "exercise": "📩 To exercise your rights: Contact us at",
-          "response": "We respond within 30 days maximum."
+        {
+          "title": "10. Your rights",
+          "blocks": [
+            {
+              "type": "ul",
+              "items": [
+                "right of access to your data,",
+                "right to rectification,",
+                "right to erasure (right to be forgotten),",
+                "right to restriction of processing,",
+                "right to data portability,",
+                "right to object,",
+                "right to withdraw your consent at any time,",
+                "right to set instructions on what happens to your data after your death."
+              ]
+            },
+            {
+              "type": "p",
+              "text": "To exercise them, write to [contact@steero.fr](mailto:contact@steero.fr). We reply within one month at the latest, extendable by two months for complex requests, in which case you are informed."
+            }
+          ]
         },
-        "s11": {
+        {
           "title": "11. Account deletion",
-          "intro": "You can delete your account directly from the application.",
-          "result": "This action results in:",
-          "items": [
-            "the deletion of your personal data,",
-            "except for legal retention obligations."
+          "blocks": [
+            {
+              "type": "p",
+              "text": "You can delete your account directly from the application. This deletes your personal data within the periods stated in section 8, except for documents the law requires us to keep (invoices in particular)."
+            }
           ]
         },
-        "s12": {
-          "title": "12. Cookies and trackers",
-          "intro": "The application may use:",
-          "items": [
-            "strictly necessary cookies,",
-            "anonymized measurement tools."
-          ],
-          "outro": "No advertising cookies without explicit consent."
-        },
-        "s13": {
-          "title": "13. Policy changes",
-          "intro": "This policy may evolve to:",
-          "items": [
-            "remain compliant with the law,",
-            "reflect product evolution."
-          ],
-          "outro": "In case of major changes, you will be informed."
-        },
-        "s14": {
-          "title": "14. Complaint",
-          "intro": "If you believe your rights are not being respected, you can:",
-          "items": [
-            "contact us directly,",
-            "or file a complaint with the competent supervisory authority (e.g., CNIL in France)."
+        {
+          "title": "12. Cookies and analytics",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "No analytics cookie is set before you agree, and declining takes nothing away from the site."
+            },
+            {
+              "type": "table",
+              "head": [
+                "Cookie or tracker",
+                "Purpose",
+                "Duration"
+              ],
+              "rows": [
+                [
+                  "Consent choice (local storage)",
+                  "Remember your decision so you are not asked on every visit",
+                  "6 months"
+                ],
+                [
+                  "_ga, _ga_* (Google Analytics)",
+                  "Website analytics, set only if you accept",
+                  "13 months"
+                ],
+                [
+                  "Application session (Clerk)",
+                  "Keep you signed in to the application, strictly necessary",
+                  "Session duration"
+                ]
+              ]
+            },
+            {
+              "type": "p",
+              "text": "You can change your choice at any time: [manage cookie preferences](#cookies). No advertising cookie is used."
+            },
+            {
+              "type": "p",
+              "text": "Vercel Web Analytics sets no cookie and uses no persistent identifier, so it does not require consent."
+            }
           ]
         },
-        "s15": {
+        {
+          "title": "13. Changes to this policy",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "This policy may change to stay compliant with the law and to reflect how the product evolves. In the event of a significant change, you are informed before it takes effect, and the update date at the top of the page is refreshed."
+            }
+          ]
+        },
+        {
+          "title": "14. Complaints",
+          "blocks": [
+            {
+              "type": "p",
+              "text": "If you believe your rights are not being respected, contact us first at [contact@steero.fr](mailto:contact@steero.fr)."
+            },
+            {
+              "type": "p",
+              "text": "You may also lodge a complaint with the CNIL: 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07, France — [cnil.fr](https://www.cnil.fr)."
+            }
+          ]
+        },
+        {
           "title": "15. Contact",
-          "question": "A question about your data?",
-          "tempEmail": " "
+          "blocks": [
+            {
+              "type": "p",
+              "text": "A question about your data?"
+            },
+            {
+              "type": "kv",
+              "items": [
+                {
+                  "k": "Email",
+                  "v": "[contact@steero.fr](mailto:contact@steero.fr)"
+                },
+                {
+                  "k": "Phone",
+                  "v": "[+33 6 42 59 11 44](tel:+33642591144)"
+                },
+                {
+                  "k": "Postal address",
+                  "v": "Ronald MARTINEZ (Steero), 1 rue Princesse, 75006 Paris, France"
+                }
+              ]
+            }
+          ]
         }
-      }
+      ]
     }
   },
   "pourquoiSteero": {
@@ -1390,5 +1859,13 @@
       "desc": "Goals, overall balance, margins: your dashboard brings together the indicators that matter to steer, not just to observe."
     },
     "zoomLabel": "Enlarge image: {{name}}"
+  },
+  "cookies": {
+    "title": "Cookies",
+    "body": "We use analytics to understand what gets read on this site. Nothing is set without your agreement, and declining removes no feature. You can change your mind at any time from the footer.",
+    "policyLink": "Read the privacy policy",
+    "accept": "Accept all",
+    "decline": "Continue without accepting",
+    "manage": "Manage cookies"
   }
 }

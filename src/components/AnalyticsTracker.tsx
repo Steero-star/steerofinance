@@ -19,16 +19,14 @@ const AnalyticsTracker = () => {
   const convertedRef = useRef<boolean>(false);
   const currentPathRef = useRef<string>(location.pathname);
 
-  // ── Marquer une conversion (appel externe possible) ──────
-  // On expose ça via un événement custom pour que WaitlistForm
-  // puisse notifier ce composant
+  // ── Marquer une conversion (clic sur un CTA d'inscription) ──
   useEffect(() => {
     const handleConversion = () => {
       convertedRef.current = true;
     };
-    window.addEventListener("steero:waitlist_converted", handleConversion);
+    window.addEventListener("steero:converted", handleConversion);
     return () =>
-      window.removeEventListener("steero:waitlist_converted", handleConversion);
+      window.removeEventListener("steero:converted", handleConversion);
   }, []);
 
   // ── Fonction de nettoyage au changement de page ──────────

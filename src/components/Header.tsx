@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import steeroLogo from "@/assets/steero-logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { trackNavClick, trackCTAClick, trackWaitlistOpen } from "@/lib/analytics";
+import { trackNavClick, trackCTAClick } from "@/lib/analytics";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,12 +69,11 @@ const Header = () => {
           <Button 
             className="btn-primary text-xs sm:text-sm hidden sm:inline-flex rounded-full px-6" 
             onClick={() => {
-              trackWaitlistOpen("header");
-              trackCTAClick("rejoindre_waitlist", "header");
+              trackCTAClick("commencer_gratuitement", "header");
               window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
             }}
             >
-              {t('common.joinWaitlist')}
+              {t('common.startFree')}
             </Button>
           
           {/* Hamburger button */}
@@ -148,11 +147,11 @@ const Header = () => {
                 className="btn-primary text-xs w-full mt-2"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  trackCTAClick("rejoindre_waitlist", "header");
+                  trackCTAClick("commencer_gratuitement", "header");
                   window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
                 }}
               >
-                {t('common.joinWaitlist')}
+                {t('common.startFree')}
               </Button>
             </motion.nav>
           </motion.div>
