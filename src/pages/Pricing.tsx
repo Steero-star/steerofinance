@@ -17,11 +17,16 @@ const Pricing = () => {
   const isAnnual = billingPeriod === "annual";
   const monthlyPrice = 8.0;
   const annualPrice = 6.0;
-  const discountPercent = 25;
 
+  // Tout se déduit des deux prix mensuels. Les totaux et l'économie ont déjà été
+  // saisis à la main une fois, et l'annuel affichait 6,00€/mois pour un total de
+  // 76€, soit 6,33€ réels : un écart de 4€ que rien ne rattrapait.
   const quarterlyTotal = (monthlyPrice * 3).toFixed(2).replace(".", ",");
-  const annualTotal = 76;
-  const annualSavings = 20;
+  const annualTotal = annualPrice * 12;
+  const annualSavings = monthlyPrice * 12 - annualTotal;
+  const discountPercent = Math.round(
+    ((monthlyPrice - annualPrice) / monthlyPrice) * 100
+  );
 
   const getPrice = () =>
     isAnnual
@@ -31,8 +36,11 @@ const Pricing = () => {
   const getOriginalPrice = () =>
     isAnnual ? `${monthlyPrice.toFixed(2).replace(".", ",")}€` : null;
 
+  const formatEur = (value: number) =>
+    `${value.toFixed(2).replace(".", ",")}€`;
+
   const getTotalBilled = () =>
-    isAnnual ? `${annualTotal},00€` : `${quarterlyTotal}€`;
+    isAnnual ? formatEur(annualTotal) : `${quarterlyTotal}€`;
 
   const features = [
     t("pricing.feature1"),
@@ -176,7 +184,7 @@ const Pricing = () => {
                     {isAnnual && (
                       <span className="text-primary font-medium">
                         {" "}
-                        — {t("pricing.savings")} {annualSavings},00€
+                        — {t("pricing.savings")} {formatEur(annualSavings)}
                       </span>
                     )}
                   </motion.p>
