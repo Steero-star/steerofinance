@@ -120,7 +120,7 @@
 
   /* Invitation au scroll : les trois bandes du chevron s'éclairent vers le bas */
   .scroll-hint svg {
-    opacity: 0.25;
+    opacity: 0.35;
     animation: scroll-hint-glow 1.8s ease-in-out infinite;
   }
   .scroll-hint svg:nth-child(2) {
@@ -131,7 +131,7 @@
   }
   @keyframes scroll-hint-glow {
     0%, 60%, 100% {
-      opacity: 0.25;
+      opacity: 0.35;
     }
     25% {
       opacity: 1;

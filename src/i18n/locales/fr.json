@@ -1927,8 +1927,7 @@
         "gainTitle": "Une compétence qui te reste.",
         "gainBody": "Le cadre t'apprend en te faisant faire. Ce que tu y gagnes ne se désabonne pas."
       }
-    ],
-    "hint": "Survole ou touche un constat pour lire le détail et sa source."
+    ]
   },
   "preuve": {
     "label": "La preuve",

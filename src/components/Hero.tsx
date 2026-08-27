@@ -142,20 +142,21 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Invitation au scroll : trois bandes qui s'éclairent l'une après l'autre */}
-        <button
-          type="button"
-          aria-label={t("hero.scrollHint")}
-          onClick={() =>
-            document.getElementById("pourquoi")?.scrollIntoView({ behavior: "smooth" })
-          }
-          className="scroll-hint absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center text-primary cursor-pointer p-2 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-        >
-          <ChevronDown className="w-6 h-6 -mb-3.5" />
-          <ChevronDown className="w-6 h-6 -mb-3.5" />
-          <ChevronDown className="w-6 h-6" />
-        </button>
       </div>
+
+      {/* Invitation au scroll : trois bandes qui s'éclairent l'une après l'autre */}
+      <button
+        type="button"
+        aria-label={t("hero.scrollHint")}
+        onClick={() =>
+          document.getElementById("pourquoi")?.scrollIntoView({ behavior: "smooth" })
+        }
+        className="scroll-hint absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground shadow-soft cursor-pointer transition-transform duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      >
+        <ChevronDown className="w-5 h-5 -mb-3" />
+        <ChevronDown className="w-5 h-5 -mb-3" />
+        <ChevronDown className="w-5 h-5" />
+      </button>
     </section>
   );
 };

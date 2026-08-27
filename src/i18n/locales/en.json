@@ -1911,8 +1911,7 @@
         "gainTitle": "A skill that stays with you.",
         "gainBody": "The framework teaches you by doing. What you gain doesn't unsubscribe."
       }
-    ],
-    "hint": "Hover or tap a finding to read the detail and its source."
+    ]
   },
   "preuve": {
     "label": "The proof",
