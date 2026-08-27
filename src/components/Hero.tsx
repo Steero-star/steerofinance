@@ -1,10 +1,11 @@
-import { Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import heroImageWebP from "@/assets/hero-dashboard.webp";
 import heroImagePng from "@/assets/hero-dashboard.png";
+import { trackCTAClick } from "@/lib/analytics";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -78,6 +79,25 @@ const Hero = () => {
             >
               {t('hero.description')}
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="flex flex-col items-start gap-3"
+            >
+              <button
+                onClick={() => {
+                  trackCTAClick("commencer_maintenant", "hero");
+                  window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
+                }}
+                className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold group"
+              >
+                {t('common.startFree')}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </button>
+              <span className="text-xs text-muted-foreground">{t('hero.microcopy')}</span>
+            </motion.div>
           </div>
 
           {/* Right image with parallax */}

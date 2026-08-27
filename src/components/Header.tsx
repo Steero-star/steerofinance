@@ -52,6 +52,9 @@ const Header = () => {
           <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.blog')}
           </Link>
+          <a href="mailto:contact@steero.fr" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            {t('header.contact')}
+          </a>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -132,6 +135,13 @@ const Header = () => {
               >
                 {t('header.blog')}
               </Link>
+              <a
+                href="mailto:contact@steero.fr"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('header.contact')}
+              </a>
               <Button 
                 variant="outline"
                 className="text-xs w-full mt-2"

@@ -120,15 +120,19 @@ const ResultPanel = ({
 const RitualRailItem = ({
   ritualKey,
   active,
+  onSelect,
 }: {
   ritualKey: (typeof RITUAL_KEYS)[number];
   active: boolean;
+  onSelect: () => void;
 }) => {
   const { t } = useTranslation();
 
   return (
-    <div
-      className={`rounded-2xl border p-3 transition-all duration-300 ${
+    <button
+      type="button"
+      onClick={onSelect}
+      className={`w-full text-left rounded-2xl border p-3 transition-all duration-300 cursor-pointer hover:opacity-100 ${
         active ? "border-primary/30 bg-card shadow-md" : "border-border/50 bg-transparent opacity-55"
       }`}
     >
@@ -156,9 +160,13 @@ const RitualRailItem = ({
           </motion.p>
         )}
       </AnimatePresence>
-    </div>
+    </button>
   );
 };
+
+/** Premier panneau resultat illustrant un rituel donne. */
+const panelIndexFor = (ritualKey: string) =>
+  RESULTS.findIndex((r) => (r.rituals as readonly string[]).includes(ritualKey));
 
 const MethodResults = () => {
   const { t } = useTranslation();
@@ -184,7 +192,7 @@ const MethodResults = () => {
   const activeRituals: readonly string[] = RESULTS[activeIndex]?.rituals ?? [];
 
   return (
-    <section className="py-16 bg-background">
+    <section id="methode" className="py-16 bg-background">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Header de section */}
         <div className="max-w-3xl mb-10">
@@ -231,7 +239,19 @@ const MethodResults = () => {
           <div className="grid grid-cols-4 gap-10 items-start">
             <div className="col-span-1 sticky top-36 space-y-2">
               {RITUAL_KEYS.map((k) => (
-                <RitualRailItem key={k} ritualKey={k} active={activeRituals.includes(k)} />
+                <RitualRailItem
+                  key={k}
+                  ritualKey={k}
+                  active={activeRituals.includes(k)}
+                  onSelect={() => {
+                    const idx = panelIndexFor(k);
+                    if (idx >= 0) {
+                      document
+                        .getElementById(`methode-panel-${idx}`)
+                        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+                    }
+                  }}
+                />
               ))}
             </div>
 
@@ -239,6 +259,7 @@ const MethodResults = () => {
               {RESULTS.map((result, i) => (
                 <motion.div
                   key={result.key}
+                  id={`methode-panel-${i}`}
                   onViewportEnter={() => setActiveIndex(i)}
                   viewport={{ margin: "-40% 0px -40% 0px" }}
                 >
@@ -252,8 +273,13 @@ const MethodResults = () => {
           <div>
             <div className="flex flex-wrap gap-2 mb-8">
               {RITUAL_KEYS.map((k) => (
-                <span
+                <button
                   key={k}
+                  type="button"
+                  onClick={() => {
+                    const idx = panelIndexFor(k);
+                    if (idx >= 0) emblaApi?.scrollTo(idx);
+                  }}
                   className={`inline-flex items-center gap-1.5 rounded-full border pl-1 pr-2.5 py-1 transition-all duration-300 ${
                     activeRituals.includes(k)
                       ? "border-primary/30 bg-card shadow-sm"
@@ -264,7 +290,7 @@ const MethodResults = () => {
                   <span className="text-xs font-medium text-foreground">
                     {t(`tempo.rituals.${k}.name`)}
                   </span>
-                </span>
+                </button>
               ))}
             </div>
 

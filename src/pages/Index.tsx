@@ -1,10 +1,11 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import RapportEtonnement from "@/components/RapportEtonnement";
 import MethodResults from "@/components/MethodResults";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import RealProblem from "@/components/RealProblem";
-import WhySteero from "@/components/WhySteero";
+import Preuve from "@/components/Preuve";
 import ProductGlance from "@/components/ProductGlance";
 import SEO from "@/components/SEO";
 
@@ -52,9 +53,10 @@ const Index = () => {
       />
       <Header />
       <Hero />
+      <RapportEtonnement />
       <MethodResults />
       <RealProblem />
-      <WhySteero />
+      <Preuve />
       <ProductGlance />
       <CTA />
       <Footer />

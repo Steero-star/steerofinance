@@ -84,6 +84,16 @@ const RealProblem = () => {
             </ul>
           </div>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-6 rounded-2xl border border-border/60 border-l-4 border-l-primary bg-card p-5 text-foreground leading-relaxed"
+        >
+          {t("realProblem.verdict")}
+        </motion.p>
       </div>
     </section>
   );

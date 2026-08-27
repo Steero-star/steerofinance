@@ -7,7 +7,7 @@
     "close": "Fermer",
     "prev": "Précédent",
     "next": "Suivant",
-    "startFree": "Commencer gratuitement"
+    "startFree": "Commencer maintenant"
   },
   "header": {
     "home": "Accueil",
@@ -16,7 +16,8 @@
     "pricing": "Tarifs",
     "blog": "Blog",
     "faq": "FAQ",
-    "login": "Connexion"
+    "login": "Connexion",
+    "contact": "Contact"
   },
   "footer": {
     "tagline": "Un cadre simple pour comprendre et piloter ses finances dans la durée.",
@@ -42,7 +43,8 @@
     "badge": "L'app de pilotage financier personnel",
     "title": "Passe du tableur au pilotage",
     "titleHighlight": "En 5 minutes par jour",
-    "description": "Ton tableau Excel finit toujours par lâcher. Les apps bancaires te montrent le passé, pas quoi décider. \n\nSteero installe des rendez-vous courts avec ton argent : tu vois où il va, tu décides où il doit aller. Jusqu'à tes projets, ton épargne, ton patrimoine."
+    "description": "Ton Excel finit par lâcher. Les apps bancaires te montrent le passé, pas quoi décider. \n\nSteero installe des rendez-vous courts avec ton argent : tu vois où il va, tu décides où il doit aller.",
+    "microcopy": "14 jours gratuits · sans engagement · aucune connexion bancaire"
   },
   "realProblem": {
     "label": "POURQUOI STEERO",
@@ -63,7 +65,8 @@
       "Manuel, conscient, intentionnel",
       "Décide l'avenir",
       "Développe une compétence durable"
-    ]
+    ],
+    "verdict": "Steero ne te conseille pas et ne gère rien à ta place. Ce n'est ni un tableau de bord passif, ni un robo-conseiller : c'est le cadre qui structure tes décisions. Tu restes seul aux commandes."
   },
   "tempo": {
     "label": "LA MÉTHODE TEMPO",
@@ -214,8 +217,8 @@
     }
   },
   "cta": {
-    "title": "Installe ton premier rendez-vous",
-    "description": "14 jours gratuits pour tester la méthode. Ton premier rituel prend 5 minutes.",
+    "title": "Commence ce soir. Vois la différence en une semaine.",
+    "description": "14 jours pour installer le système et sentir le changement. Ton premier rituel prend 5 minutes.",
     "offer": "Les 200 premiers inscrits gardent −50 % à vie avec le code EARLYADOPTERS, appliqué au prix public en vigueur : aujourd'hui 4 € par mois au lieu de 8 €.",
     "offerTerms": "Offre non cumulable, dans la limite des 200 premières places. Si le tarif évolue, la réduction reste appliquée.",
     "features": {
@@ -1883,5 +1886,118 @@
     "accept": "Tout accepter",
     "decline": "Continuer sans accepter",
     "manage": "Gérer mes cookies"
+  },
+  "why": {
+    "label": "Pourquoi Steero",
+    "title": "Trois constats nous ont",
+    "titleEm": "décidés.",
+    "lead": "Ce que la recherche dit de notre rapport à l'argent nous a suffisamment étonnés pour construire Steero. On te le partage tel quel, sources à l'appui.",
+    "reportTitle": "Notre rapport d'étonnement",
+    "reportMeta": "3 constats · sources liées · aucun chiffre inventé",
+    "gainLabel": "Ce que tu y gagnes",
+    "constats": [
+      {
+        "num": "Constat 01",
+        "fig": "30 %",
+        "title": "Sans les tracer, on sous-estime nos dépenses",
+        "body": "Ce qui sort de la routine échappe presque entièrement à l'estimation : l'écart entre ce qu'on croit dépenser et le réel se compte en milliers d'euros par an. Ce qu'on ne voit pas, on ne le pilote pas.",
+        "srcLabel": "Étude · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
+        "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",
+        "gainTitle": "Tu vois enfin le réel.",
+        "gainBody": "Les dépenses qui passaient inaperçues remontent à la surface, et tu reprends la main dessus. Cinq minutes par jour suffisent."
+      },
+      {
+        "num": "Constat 02",
+        "fig": "×2",
+        "title": "La carte anesthésie la dépense",
+        "body": "Payer par carte peut doubler ce qu'on accepte de payer par rapport au liquide. La douleur de payer disparaît, et la dépense passe sans se faire remarquer.",
+        "srcLabel": "Étude · Prelec & Simester, MIT, Marketing Letters",
+        "srcHref": "https://link.springer.com/article/10.1023/A:1008196717017",
+        "gainTitle": "Tu décides avant, au lieu de constater après.",
+        "gainBody": "La saisie te fait ressentir la dépense que la carte anesthésie : le geste qui freine les achats subis."
+      },
+      {
+        "num": "Constat 03",
+        "fig": "1/3",
+        "title": "L'éducation financière n'est jamais venue",
+        "body": "Dans les 39 pays étudiés par l'OCDE, seul un adulte sur trois atteint le niveau minimal d'éducation financière. Personne ne nous a appris à piloter notre argent.",
+        "srcLabel": "Enquête · OCDE/INFE 2023, littératie financière",
+        "srcHref": "https://www.oecd.org/en/publications/oecd-infe-2023-international-survey-of-adult-financial-literacy_56003a32-en.html",
+        "gainTitle": "Une compétence qui te reste.",
+        "gainBody": "Le cadre t'apprend en te faisant faire. Ce que tu y gagnes ne se désabonne pas."
+      }
+    ],
+    "foot": [
+      "Rendre visible.",
+      "Rendre conscient.",
+      "Rendre compétent."
+    ],
+    "footCta": "La méthode qui en découle"
+  },
+  "preuve": {
+    "label": "La preuve",
+    "mechTitle": "Ce n'est pas une question de volonté.",
+    "mechTitleEm": "C'est une question d'attention.",
+    "mechBody": "La recherche est nette : se fixer un budget ne change presque rien, on le dépasse. Ce qui change vraiment les comportements, c'est de regarder consciemment chaque dépense, à intervalle régulier. C'est exactement ce que Steero installe : des rendez-vous courts qui rendent ton argent visible, au lieu d'un budget que tu oublies.",
+    "sourcesTitle": "Ce que disent les travaux de recherche",
+    "sources": [
+      {
+        "label": "Rendre ses dépenses visibles les fait baisser",
+        "sub": "Expérience de terrain · Computers in Human Behavior",
+        "href": "https://www.sciencedirect.com/science/article/abs/pii/S0747563220302569"
+      },
+      {
+        "label": "Tracer bat budgétiser",
+        "sub": "Recherche appliquée · Irrational Labs",
+        "href": "https://irrationallabs.com/blog/money-budgeting-experiment"
+      },
+      {
+        "label": "Le budget conscient améliore le bien-être financier",
+        "sub": "Étude publiée · PLOS One",
+        "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294466"
+      }
+    ],
+    "quotes": [
+      {
+        "text": "Ce n'est pas juste regarder mes comptes : c'est un outil de décision. Le suivi est bien plus poussé que mon Excel et sans la maintenance.",
+        "name": "David, 32 ans",
+        "role": "Cadre en informatique · Early Adopter"
+      },
+      {
+        "text": "Avant, mes finances étaient un flou qui me stressait. Là, j'ai un cadre qui m'aide à comprendre et reprendre le contrôle.",
+        "name": "Prune, 32 ans",
+        "role": "Cadre dans l'événementiel · Early Adopter"
+      },
+      {
+        "text": "Les indicateurs et le cadre donnent du sens à la saisie manuelle. Cette prise de conscience sur mes dépenses m'a fait économiser de l'argent.",
+        "name": "Raphaël, 34 ans",
+        "role": "Assistant Achat dans l'industrie · Early Adopter"
+      }
+    ],
+    "weekLabel": "La projection",
+    "weekTitle": "À quoi ressemble ta",
+    "weekTitleEm": "première semaine.",
+    "weekNote": "Pas de magie, pas de synchronisation passive. Juste toi, aux commandes, en quelques minutes.",
+    "steps": [
+      {
+        "when": "Jour 1",
+        "title": "Tu poses ton cadre",
+        "body": "Loyer 850 €, abonnements, courses : tes charges fixes se posent avec des modèles préremplis. 10 minutes, une fois."
+      },
+      {
+        "when": "Chaque jour",
+        "title": "5 minutes pour tracer",
+        "body": "Café 2,80 €, courses 46,20 € : tu notes tes dépenses du jour et tu fermes l'app quand tout est à jour."
+      },
+      {
+        "when": "Jour 7",
+        "title": "Ton premier point hebdo",
+        "body": "150 € prévus en sorties, 214 € réels : tu vois l'écart et tu ajustes pendant qu'il est encore temps."
+      }
+    ],
+    "exNote": "Exemple illustratif : chez toi, ce seront tes chiffres.",
+    "honestTitle": "Steero est jeune, et on te le dit.",
+    "honestBody": "Nos premiers utilisateurs installent la méthode en ce moment : les chiffres d'impact viendront d'eux, pas d'un argumentaire. En attendant, la meilleure preuve, c'est la tienne. Teste 14 jours et juge sur pièce.",
+    "honestMicro": "Résiliation en un clic · aucune connexion bancaire"
   }
 }

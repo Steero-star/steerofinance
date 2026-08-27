@@ -7,7 +7,7 @@
     "close": "Close",
     "prev": "Previous",
     "next": "Next",
-    "startFree": "Start for free"
+    "startFree": "Start now"
   },
   "header": {
     "home": "Home",
@@ -16,7 +16,8 @@
     "pricing": "Pricing",
     "blog": "Blog",
     "faq": "FAQ",
-    "login": "Log in"
+    "login": "Log in",
+    "contact": "Contact"
   },
   "footer": {
     "tagline": "A simple framework to understand and manage your finances over time.",
@@ -42,7 +43,8 @@
     "badge": "The personal finance steering app",
     "title": "From spreadsheet to steering",
     "titleHighlight": "In 5 minutes a day",
-    "description": "Your Excel sheet always ends up breaking. Banking apps show you the past, not what to decide. \n\nSteero installs a simple system of rituals: you see where your money goes, and you choose where it goes — from daily life to your long-term goals."
+    "description": "Your Excel sheet always ends up breaking. Banking apps show you the past, not what to decide. \n\nSteero installs short check-ins with your money: you see where it goes, you decide where it should go.",
+    "microcopy": "14 days free · no commitment · no bank connection"
   },
   "realProblem": {
     "label": "WHY STEERO",
@@ -63,7 +65,8 @@
       "Manual, conscious, intentional",
       "Decides the future",
       "Builds a lasting skill"
-    ]
+    ],
+    "verdict": "Steero doesn't advise you and doesn't manage anything for you. It is neither a passive dashboard nor a robo-advisor: it is the framework that structures your decisions. You stay at the controls."
   },
   "tempo": {
     "label": "THE TEMPO METHOD",
@@ -214,8 +217,8 @@
     }
   },
   "cta": {
-    "title": "Set up your first appointment",
-    "description": "14 days free to try the method. Your first ritual takes 5 minutes.",
+    "title": "Start tonight. See the difference in a week.",
+    "description": "14 days to install the system and feel the change. Your first ritual takes 5 minutes.",
     "offer": "The first 200 subscribers keep −50% for life with the code EARLYADOPTERS, applied to the current public price: today €4 a month instead of €8.",
     "offerTerms": "Offer cannot be combined. Limited to the first 200 subscribers. If the price changes, the discount still applies.",
     "features": {
@@ -1867,5 +1870,118 @@
     "accept": "Accept all",
     "decline": "Continue without accepting",
     "manage": "Manage cookies"
+  },
+  "why": {
+    "label": "Why Steero",
+    "title": "Three findings made up",
+    "titleEm": "our minds.",
+    "lead": "What research says about our relationship with money surprised us enough to build Steero. Here it is, as is, sources included.",
+    "reportTitle": "Our wake-up call",
+    "reportMeta": "3 findings · sources linked · no invented numbers",
+    "gainLabel": "What you gain",
+    "constats": [
+      {
+        "num": "Finding 01",
+        "fig": "30%",
+        "title": "Untracked spending gets underestimated",
+        "body": "Anything outside your routine barely makes it into your estimates: the gap between what you think you spend and reality adds up to thousands a year. What you don't see, you can't steer.",
+        "srcLabel": "Study · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
+        "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",
+        "gainTitle": "You finally see what's real.",
+        "gainBody": "Expenses that used to slip by resurface, and you take back control. Five minutes a day is enough."
+      },
+      {
+        "num": "Finding 02",
+        "fig": "×2",
+        "title": "Cards numb the pain of paying",
+        "body": "Paying by card can double what you accept to pay compared with cash. The pain of paying disappears, and the expense slips through unnoticed.",
+        "srcLabel": "Study · Prelec & Simester, MIT, Marketing Letters",
+        "srcHref": "https://link.springer.com/article/10.1023/A:1008196717017",
+        "gainTitle": "You decide before, instead of noticing after.",
+        "gainBody": "Manual entry brings back the feeling the card removed: the gesture that curbs unintended spending."
+      },
+      {
+        "num": "Finding 03",
+        "fig": "1/3",
+        "title": "Financial education never came",
+        "body": "Across the 39 countries surveyed by the OECD, only one adult in three reaches the minimum level of financial literacy. Nobody taught us how to steer our money.",
+        "srcLabel": "Survey · OECD/INFE 2023, financial literacy",
+        "srcHref": "https://www.oecd.org/en/publications/oecd-infe-2023-international-survey-of-adult-financial-literacy_56003a32-en.html",
+        "gainTitle": "A skill that stays with you.",
+        "gainBody": "The framework teaches you by doing. What you gain doesn't unsubscribe."
+      }
+    ],
+    "foot": [
+      "Make it visible.",
+      "Make it conscious.",
+      "Make it a skill."
+    ],
+    "footCta": "The method that follows"
+  },
+  "preuve": {
+    "label": "The proof",
+    "mechTitle": "It's not about willpower.",
+    "mechTitleEm": "It's about attention.",
+    "mechBody": "The research is clear: setting a budget changes almost nothing, we overshoot it. What actually changes behavior is consciously looking at every expense, at regular intervals. That is exactly what Steero installs: short check-ins that make your money visible, instead of a budget you forget.",
+    "sourcesTitle": "What the research says",
+    "sources": [
+      {
+        "label": "Making spending visible reduces it",
+        "sub": "Field experiment · Computers in Human Behavior",
+        "href": "https://www.sciencedirect.com/science/article/abs/pii/S0747563220302569"
+      },
+      {
+        "label": "Tracking beats budgeting",
+        "sub": "Applied research · Irrational Labs",
+        "href": "https://irrationallabs.com/blog/money-budgeting-experiment"
+      },
+      {
+        "label": "Mindful budgeting improves financial well-being",
+        "sub": "Published study · PLOS One",
+        "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0294466"
+      }
+    ],
+    "quotes": [
+      {
+        "text": "It's not just looking at my accounts: it's a decision-making tool. The tracking goes far deeper than my spreadsheet, without the maintenance.",
+        "name": "David, 32",
+        "role": "IT executive · Early adopter"
+      },
+      {
+        "text": "Before, my finances were a stressful blur. Now I have a framework that helps me understand and take back control.",
+        "name": "Prune, 32",
+        "role": "Events industry executive · Early adopter"
+      },
+      {
+        "text": "The indicators and the framework give meaning to manual entry. Becoming aware of my spending has saved me money.",
+        "name": "Raphaël, 34",
+        "role": "Purchasing assistant in industry · Early adopter"
+      }
+    ],
+    "weekLabel": "The projection",
+    "weekTitle": "This is your",
+    "weekTitleEm": "first week.",
+    "weekNote": "No magic, no passive syncing. Just you, at the controls, in a few minutes.",
+    "steps": [
+      {
+        "when": "Day 1",
+        "title": "You set your frame",
+        "body": "Rent €850, subscriptions, groceries: your fixed costs go in with pre-filled templates. 10 minutes, once."
+      },
+      {
+        "when": "Every day",
+        "title": "5 minutes to track",
+        "body": "Coffee €2.80, groceries €46.20: you log the day's expenses and close the app when everything is up to date."
+      },
+      {
+        "when": "Day 7",
+        "title": "Your first weekly check-in",
+        "body": "€150 planned for going out, €214 actual: you see the gap and adjust while there is still time."
+      }
+    ],
+    "exNote": "An illustrative example: yours will be your own numbers.",
+    "honestTitle": "Steero is young, and we say so.",
+    "honestBody": "Our first users are installing the method right now: the impact numbers will come from them, not from a sales pitch. Meanwhile, the best proof is your own. Try it for 14 days and judge for yourself.",
+    "honestMicro": "Cancel in one click · no bank connection"
   }
 }
