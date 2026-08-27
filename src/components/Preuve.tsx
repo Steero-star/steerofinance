@@ -19,8 +19,10 @@ const Preuve = () => {
   const steps = t("preuve.steps", { returnObjects: true }) as Step[];
 
   return (
-    <section className="py-16 bg-primary/5 border-y border-border/40" id="preuve">
+    <section className="py-16 bg-background" id="preuve">
       <div className="container mx-auto px-6 max-w-6xl">
+        {/* Le bloc preuve porte seul le voile primaire : c'est lui qui ressort */}
+        <div className="rounded-3xl bg-primary/5 border border-border/40 px-6 md:px-10 py-10">
         {/* Mécanisme : volonté vs attention, sourcé */}
         <div className="grid gap-10 lg:grid-cols-[7fr_5fr] items-start">
           <div>
@@ -84,7 +86,7 @@ const Preuve = () => {
         </div>
 
         {/* Témoignages : citations validées, accord écrit */}
-        <div className="grid sm:grid-cols-3 gap-4 mt-14">
+        <div className="grid sm:grid-cols-3 gap-4 mt-12">
           {quotes.map((q, i) => (
             <motion.figure
               key={q.name}
@@ -106,6 +108,7 @@ const Preuve = () => {
               </figcaption>
             </motion.figure>
           ))}
+        </div>
         </div>
 
         {/* Première semaine : la projection concrète, exemple illustratif */}
