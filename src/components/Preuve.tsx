@@ -19,7 +19,7 @@ const Preuve = () => {
   const steps = t("preuve.steps", { returnObjects: true }) as Step[];
 
   return (
-    <section className="py-16 bg-background" id="preuve">
+    <section className="py-16 bg-primary/5 border-y border-border/40" id="preuve">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* Mécanisme : volonté vs attention, sourcé */}
         <div className="grid gap-10 lg:grid-cols-[7fr_5fr] items-start">
@@ -60,7 +60,7 @@ const Preuve = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25 }}
-            className="rounded-2xl border border-border/60 bg-muted/40 p-6"
+            className="rounded-2xl border border-border/60 bg-card p-6"
           >
             <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-4">
               {t("preuve.sourcesTitle")}
@@ -174,25 +174,25 @@ const Preuve = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-20 rounded-3xl border border-border/60 bg-muted/40 px-7 md:px-10 py-9 flex flex-col md:flex-row items-start md:items-center gap-7"
+          className="mt-20 rounded-3xl bg-primary px-7 md:px-10 py-9 flex flex-col md:flex-row items-start md:items-center gap-7 shadow-card"
         >
           <div className="flex-1">
-            <h3 className="font-serif text-2xl font-normal text-foreground mb-2">
+            <h3 className="font-serif text-2xl font-normal text-primary-foreground mb-2">
               {t("preuve.honestTitle")}
             </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed max-w-xl">
+            <p className="text-primary-foreground/85 text-sm leading-relaxed max-w-xl">
               {t("preuve.honestBody")}
             </p>
           </div>
           <div className="flex flex-col items-start md:items-center gap-2">
             <button
               onClick={() => startTrial("preuve")}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full btn-primary font-semibold group"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-primary font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 group"
             >
               {t("common.startFree")}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
-            <p className="text-xs text-muted-foreground">{t("preuve.honestMicro")}</p>
+            <p className="text-xs text-primary-foreground/75">{t("preuve.honestMicro")}</p>
           </div>
         </motion.div>
       </div>

@@ -8,7 +8,7 @@ const RealProblem = () => {
   const pareItems = t("realProblem.pareItems", { returnObjects: true }) as string[];
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-12 bg-background">
       <div className="container mx-auto px-6 max-w-4xl">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ const RealProblem = () => {
           className="grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden border border-border/60"
         >
           {/* Rétroviseur */}
-          <div className="bg-muted/40 p-6 md:border-r border-border/60">
+          <div className="bg-muted/40 p-5 md:border-r border-border/60">
             <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-4">
               {t("realProblem.retroLabel")}
             </p>
@@ -47,7 +47,7 @@ const RealProblem = () => {
               {retroItems.map((item, i) => (
                 <li
                   key={i}
-                  className={`py-3 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
+                  className={`py-2.5 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
                 >
                   <span className="text-muted-foreground">—</span>
                   <span>{item}</span>
@@ -56,7 +56,7 @@ const RealProblem = () => {
             </ul>
           </div>
           {/* Pare-brise */}
-          <div className="bg-card p-6 border-t md:border-t-0 border-border/60">
+          <div className="bg-card p-5 border-t md:border-t-0 border-border/60">
             <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-4">
               {t("realProblem.pareLabel")}
             </p>
@@ -65,7 +65,7 @@ const RealProblem = () => {
               {pareItems.map((item, i) => (
                 <li
                   key={i}
-                  className={`py-3 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
+                  className={`py-2.5 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
                 >
                   <span className="text-primary font-semibold">→</span>
                   <span>{item}</span>
@@ -74,16 +74,6 @@ const RealProblem = () => {
             </ul>
           </div>
         </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-6 rounded-2xl border border-border/60 border-l-4 border-l-primary bg-card p-5 text-foreground leading-relaxed"
-        >
-          {t("realProblem.verdict")}
-        </motion.p>
       </div>
     </section>
   );
