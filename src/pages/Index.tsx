@@ -2,11 +2,9 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import RapportEtonnement from "@/components/RapportEtonnement";
 import MethodResults from "@/components/MethodResults";
-import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import RealProblem from "@/components/RealProblem";
 import Preuve from "@/components/Preuve";
-import ProductGlance from "@/components/ProductGlance";
 import SEO from "@/components/SEO";
 
 const Index = () => {
@@ -57,8 +55,6 @@ const Index = () => {
       <MethodResults />
       <RealProblem />
       <Preuve />
-      <ProductGlance />
-      <CTA />
       <Footer />
     </div>
   );

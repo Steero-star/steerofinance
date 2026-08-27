@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useState, useEffect, memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -11,6 +11,8 @@ import { trackNavClick, trackCTAClick, startTrial } from "@/lib/analytics";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
+  // L'offre de lancement ne s'affiche que là où on parle prix.
+  const showOffer = useLocation().pathname === "/pricing";
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -22,14 +24,16 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <Link
-        to="/pricing"
-        onClick={() => trackCTAClick("annonce_early_adopters", "announcement_bar", "/pricing")}
-        className="block bg-primary text-primary-foreground text-center text-xs sm:text-sm py-2 px-4 hover:bg-primary/90 transition-colors"
-      >
-        <span className="font-medium">{t('announcement.text')}</span>
-        <span className="ml-2 underline underline-offset-2">{t('announcement.cta')} →</span>
-      </Link>
+      {showOffer && (
+        <Link
+          to="/pricing"
+          onClick={() => trackCTAClick("annonce_early_adopters", "announcement_bar", "/pricing")}
+          className="block bg-primary text-primary-foreground text-center text-xs sm:text-sm py-2 px-4 hover:bg-primary/90 transition-colors"
+        >
+          <span className="font-medium">{t('announcement.text')}</span>
+          <span className="ml-2 underline underline-offset-2">{t('announcement.cta')} →</span>
+        </Link>
+      )}
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link 
           to="/" 

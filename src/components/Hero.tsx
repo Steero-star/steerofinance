@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -141,6 +141,20 @@ const Hero = () => {
             </Dialog>
           </motion.div>
         </div>
+
+        {/* Invitation au scroll : trois bandes qui s'éclairent l'une après l'autre */}
+        <button
+          type="button"
+          aria-label={t("hero.scrollHint")}
+          onClick={() =>
+            document.getElementById("pourquoi")?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="scroll-hint absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center text-primary cursor-pointer p-2 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        >
+          <ChevronDown className="w-6 h-6 -mb-3.5" />
+          <ChevronDown className="w-6 h-6 -mb-3.5" />
+          <ChevronDown className="w-6 h-6" />
+        </button>
       </div>
     </section>
   );

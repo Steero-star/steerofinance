@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 type Constat = {
@@ -13,19 +14,19 @@ type Constat = {
 };
 
 /**
- * Le Grand Pourquoi : trois constats de recherche présentés comme le rapport
- * d'étonnement qui a fait naître Steero, chacun refermé sur le gain visiteur.
+ * Le Grand Pourquoi en panneau compact : trois grands chiffres, le détail
+ * (constat sourcé + gain) ne s'affiche qu'au survol, au focus ou au tap.
  * Règle non négociable : chaque chiffre affiché ici est sourcé et lié.
  */
 const RapportEtonnement = () => {
   const { t } = useTranslation();
   const constats = t("why.constats", { returnObjects: true }) as Constat[];
-  const foot = t("why.foot", { returnObjects: true }) as string[];
+  const [active, setActive] = useState<number | null>(null);
 
   return (
-    <section className="py-16 bg-background">
+    <section id="pourquoi" className="py-16 bg-background">
       <div className="container mx-auto px-6 max-w-6xl">
-        <div className="max-w-3xl mb-10">
+        <div className="max-w-3xl mb-8">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -49,76 +50,79 @@ const RapportEtonnement = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-muted-foreground text-lg leading-relaxed"
+            className="text-muted-foreground leading-relaxed"
           >
-            {t("why.lead")}
+            {t("why.lead")}{" "}
+            <span className="text-sm whitespace-nowrap">· {t("why.reportMeta")}</span>
           </motion.p>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-3xl border border-border/60 bg-card shadow-card overflow-hidden"
-        >
-          <div className="flex flex-wrap items-baseline justify-between gap-3 px-6 md:px-9 py-5 border-b border-border/60 bg-muted/40">
-            <h3 className="font-serif text-xl md:text-2xl font-normal text-foreground">
-              {t("why.reportTitle")}
-            </h3>
-            <span className="text-xs text-muted-foreground tracking-wide">{t("why.reportMeta")}</span>
-          </div>
-
+        <div className="grid md:grid-cols-3 gap-4 items-start">
           {constats.map((c, i) => (
-            <div
+            <motion.div
               key={c.num}
-              className={`grid gap-6 md:gap-8 md:grid-cols-[160px_1fr_1fr] px-6 md:px-9 py-8 ${
-                i !== 0 ? "border-t border-border/60" : ""
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
+              onMouseEnter={() => setActive(i)}
+              onMouseLeave={() => setActive(null)}
+              className={`rounded-2xl border bg-card transition-all duration-300 ${
+                active === i ? "border-primary/40 shadow-card" : "border-border/60"
               }`}
             >
-              <div>
-                <p className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase">
+              <button
+                type="button"
+                aria-expanded={active === i}
+                onClick={() => setActive(active === i ? null : i)}
+                onFocus={() => setActive(i)}
+                className="w-full text-left p-6 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-2xl"
+              >
+                <p className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase mb-2">
                   {c.num}
                 </p>
-                <p className="font-serif text-5xl md:text-6xl text-primary leading-none mt-2">{c.fig}</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-foreground mb-2">{c.title}</h4>
-                <p className="text-sm text-muted-foreground leading-relaxed">{c.body}</p>
-                <a
-                  href={c.srcHref}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-3 text-xs text-primary hover:underline"
-                >
-                  {c.srcLabel} ↗
-                </a>
-              </div>
-              <div className="border-t md:border-t-0 md:border-l border-primary/20 pt-4 md:pt-0 md:pl-8">
-                <p className="text-[11px] font-semibold tracking-widest text-primary uppercase mb-2">
-                  {t("why.gainLabel")}
+                <p className="font-serif text-5xl md:text-6xl text-primary leading-none mb-3">
+                  {c.fig}
                 </p>
-                <p className="text-sm text-foreground leading-relaxed">
-                  <span className="font-semibold">{c.gainTitle}</span> {c.gainBody}
-                </p>
-              </div>
-            </div>
-          ))}
+                <h3 className="font-semibold text-foreground">{c.title}</h3>
+              </button>
 
-          <div className="flex flex-wrap items-center justify-between gap-4 px-6 md:px-9 py-6 border-t border-border/60 bg-muted/40">
-            <p className="font-serif text-lg md:text-xl italic text-foreground">
-              {foot.map((word, i) => (
-                <span key={i}>
-                  {i > 0 && " "}
-                  {word}
-                </span>
-              ))}
-            </p>
-            <a href="#methode" className="text-sm font-medium text-primary hover:underline whitespace-nowrap">
-              {t("why.footCta")} ↓
-            </a>
-          </div>
-        </motion.div>
+              <AnimatePresence initial={false}>
+                {active === i && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 pb-6">
+                      <p className="text-sm text-muted-foreground leading-relaxed">{c.body}</p>
+                      <a
+                        href={c.srcHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block mt-3 text-xs text-primary hover:underline"
+                      >
+                        {c.srcLabel} ↗
+                      </a>
+                      <div className="mt-4 border-t border-border/60 pt-4">
+                        <p className="text-[11px] font-semibold tracking-widest text-primary uppercase mb-1.5">
+                          {t("why.gainLabel")}
+                        </p>
+                        <p className="text-sm text-foreground leading-relaxed">
+                          <span className="font-semibold">{c.gainTitle}</span> {c.gainBody}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
+        </div>
+
+        <p className="mt-4 text-xs text-muted-foreground">{t("why.hint")}</p>
       </div>
     </section>
   );

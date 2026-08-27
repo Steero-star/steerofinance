@@ -117,6 +117,32 @@
   .shadow-image {
     box-shadow: var(--shadow-image);
   }
+
+  /* Invitation au scroll : les trois bandes du chevron s'éclairent vers le bas */
+  .scroll-hint svg {
+    opacity: 0.25;
+    animation: scroll-hint-glow 1.8s ease-in-out infinite;
+  }
+  .scroll-hint svg:nth-child(2) {
+    animation-delay: 0.25s;
+  }
+  .scroll-hint svg:nth-child(3) {
+    animation-delay: 0.5s;
+  }
+  @keyframes scroll-hint-glow {
+    0%, 60%, 100% {
+      opacity: 0.25;
+    }
+    25% {
+      opacity: 1;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-hint svg {
+      animation: none;
+      opacity: 0.7;
+    }
+  }
 }
 
 @layer components {

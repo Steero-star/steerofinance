@@ -44,7 +44,8 @@
     "title": "From spreadsheet to steering",
     "titleHighlight": "In 5 minutes a day",
     "description": "Your Excel sheet always ends up breaking. Banking apps show you the past, not what to decide. \n\nSteero installs short check-ins with your money: you see where it goes, you decide where it should go.",
-    "microcopy": "14 days free · no commitment · no bank connection"
+    "microcopy": "14 days free · no commitment · no bank connection",
+    "scrollHint": "Discover why Steero"
   },
   "realProblem": {
     "label": "WHY STEERO",
@@ -1902,21 +1903,16 @@
       },
       {
         "num": "Finding 03",
-        "fig": "1/3",
+        "fig": "66%",
         "title": "Financial education never came",
-        "body": "Across the 39 countries surveyed by the OECD, only one adult in three reaches the minimum level of financial literacy. Nobody taught us how to steer our money.",
+        "body": "Across the 39 countries surveyed by the OECD, 66% of adults do not reach the minimum level of financial literacy. Executives included: nobody taught us how to steer our money.",
         "srcLabel": "Survey · OECD/INFE 2023, financial literacy",
         "srcHref": "https://www.oecd.org/en/publications/oecd-infe-2023-international-survey-of-adult-financial-literacy_56003a32-en.html",
         "gainTitle": "A skill that stays with you.",
         "gainBody": "The framework teaches you by doing. What you gain doesn't unsubscribe."
       }
     ],
-    "foot": [
-      "Make it visible.",
-      "Make it conscious.",
-      "Make it a skill."
-    ],
-    "footCta": "The method that follows"
+    "hint": "Hover or tap a finding to read the detail and its source."
   },
   "preuve": {
     "label": "The proof",

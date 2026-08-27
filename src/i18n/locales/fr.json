@@ -44,7 +44,8 @@
     "title": "Passe du tableur au pilotage",
     "titleHighlight": "En 5 minutes par jour",
     "description": "Ton Excel finit par lâcher. Les apps bancaires te montrent le passé, pas quoi décider. \n\nSteero installe des rendez-vous courts avec ton argent : tu vois où il va, tu décides où il doit aller.",
-    "microcopy": "14 jours gratuits · sans engagement · aucune connexion bancaire"
+    "microcopy": "14 jours gratuits · sans engagement · aucune connexion bancaire",
+    "scrollHint": "Découvrir pourquoi Steero"
   },
   "realProblem": {
     "label": "POURQUOI STEERO",
@@ -1918,21 +1919,16 @@
       },
       {
         "num": "Constat 03",
-        "fig": "1/3",
+        "fig": "66 %",
         "title": "L'éducation financière n'est jamais venue",
-        "body": "Dans les 39 pays étudiés par l'OCDE, seul un adulte sur trois atteint le niveau minimal d'éducation financière. Personne ne nous a appris à piloter notre argent.",
+        "body": "Dans les 39 pays étudiés par l'OCDE, 66 % des adultes n'atteignent pas le niveau minimal d'éducation financière. Cadres compris : personne ne nous a appris à piloter notre argent.",
         "srcLabel": "Enquête · OCDE/INFE 2023, littératie financière",
         "srcHref": "https://www.oecd.org/en/publications/oecd-infe-2023-international-survey-of-adult-financial-literacy_56003a32-en.html",
         "gainTitle": "Une compétence qui te reste.",
         "gainBody": "Le cadre t'apprend en te faisant faire. Ce que tu y gagnes ne se désabonne pas."
       }
     ],
-    "foot": [
-      "Rendre visible.",
-      "Rendre conscient.",
-      "Rendre compétent."
-    ],
-    "footCta": "La méthode qui en découle"
+    "hint": "Survole ou touche un constat pour lire le détail et sa source."
   },
   "preuve": {
     "label": "La preuve",
