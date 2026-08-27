@@ -194,8 +194,8 @@ const MethodResults = () => {
   return (
     <section id="methode" className="py-16 bg-background">
       <div className="container mx-auto px-6 max-w-6xl">
-        {/* Header de section */}
-        <div className="max-w-3xl mb-10">
+        {/* Header de section, aligné à droite pour casser le rythme */}
+        <div className="max-w-3xl ml-auto text-right mb-10">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
