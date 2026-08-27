@@ -78,13 +78,11 @@ const RapportEtonnement = () => {
                 onFocus={() => setActive(i)}
                 className="w-full text-left p-6 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
-                <p className="text-[11px] font-semibold tracking-widest text-muted-foreground uppercase mb-2">
-                  {c.num}
-                </p>
                 <p className="font-serif text-5xl md:text-6xl text-primary leading-none mb-3">
                   {c.fig}
                 </p>
-                <h3 className="font-semibold text-foreground">{c.title}</h3>
+                {/* min-h : deux lignes reservees pour que les trois cartes restent a la meme hauteur */}
+                <h3 className="font-semibold text-foreground min-h-12">{c.title}</h3>
               </button>
 
               <AnimatePresence initial={false}>

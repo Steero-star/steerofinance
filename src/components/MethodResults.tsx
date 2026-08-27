@@ -223,15 +223,6 @@ const MethodResults = () => {
           >
             {t("tempo.description")}
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-muted-foreground mt-4"
-          >
-            {t("differentiation.description")}
-          </motion.p>
         </div>
 
         {isDesktop ? (

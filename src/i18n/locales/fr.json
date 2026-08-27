@@ -50,7 +50,6 @@
   "realProblem": {
     "label": "POURQUOI STEERO",
     "title": "Un pare-brise, pas un rétroviseur de plus.",
-    "description": "Les agrégateurs te montrent le passé avec précision. Steero t'équipe pour décider la suite.",
     "retroLabel": "Rétroviseur",
     "retroCompany": "Finary, Bankin, Linxo",
     "retroItems": [
@@ -72,7 +71,7 @@
   "tempo": {
     "label": "LA MÉTHODE TEMPO",
     "title": "Comment passer au pilotage ?",
-    "description": "Tu le fais déjà au travail : un point court à fréquence fixe, un ordre du jour, des décisions. \n\nSteero applique ce cadre à ton argent. Cinq rendez-vous, du quotidien au stratégique. Chacun a sa question, sa fréquence, sa durée.",
+    "description": "Tu le fais déjà au travail : un point court à fréquence fixe, un ordre du jour, des décisions. \n\nCinq rendez-vous, du quotidien au stratégique. Chacun a sa question, sa fréquence, sa durée.",
     "rituals": {
       "t": {
         "letter": "T",
@@ -1892,7 +1891,7 @@
     "label": "Pourquoi Steero",
     "title": "Trois constats nous ont",
     "titleEm": "décidés.",
-    "lead": "Ce que la recherche dit de notre rapport à l'argent nous a suffisamment étonnés pour construire Steero. On te le partage tel quel, sources à l'appui.",
+    "lead": "Ce que la recherche dit de notre rapport à l'argent nous a suffisamment étonnés pour construire Steero.",
     "reportTitle": "Notre rapport d'étonnement",
     "reportMeta": "3 constats · sources liées · aucun chiffre inventé",
     "gainLabel": "Ce que tu y gagnes",

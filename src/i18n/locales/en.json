@@ -50,7 +50,6 @@
   "realProblem": {
     "label": "WHY STEERO",
     "title": "A windshield, not another rearview mirror.",
-    "description": "Aggregators show you the past with precision. Steero equips you to decide what comes next.",
     "retroLabel": "Rearview mirror",
     "retroCompany": "Finary, Bankin, Linxo",
     "retroItems": [
@@ -72,7 +71,7 @@
   "tempo": {
     "label": "THE TEMPO METHOD",
     "title": "How do you switch to steering?",
-    "description": "You already do it at work: a short check-in at a fixed frequency, an agenda, decisions. \n\nSteero applies that framework to your money. Five appointments, from daily to strategic. Each has its question, its frequency, its duration.",
+    "description": "You already do it at work: a short check-in at a fixed frequency, an agenda, decisions. \n\nFive appointments, from daily to strategic. Each has its question, its frequency, its duration.",
     "rituals": {
       "t": {
         "letter": "T",
@@ -1876,7 +1875,7 @@
     "label": "Why Steero",
     "title": "Three findings made up",
     "titleEm": "our minds.",
-    "lead": "What research says about our relationship with money surprised us enough to build Steero. Here it is, as is, sources included.",
+    "lead": "What research says about our relationship with money surprised us enough to build Steero.",
     "reportTitle": "Our wake-up call",
     "reportMeta": "3 findings · sources linked · no invented numbers",
     "gainLabel": "What you gain",
