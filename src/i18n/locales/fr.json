@@ -1999,5 +1999,10 @@
     "honestTitle": "Steero est jeune, et on te le dit.",
     "honestBody": "Nos premiers utilisateurs installent la méthode en ce moment : les chiffres d'impact viendront d'eux, pas d'un argumentaire. En attendant, la meilleure preuve, c'est la tienne. Teste 14 jours et juge sur pièce.",
     "honestMicro": "Résiliation en un clic · aucune connexion bancaire"
+  },
+  "bienvenue": {
+    "title": "Ton essai de 14 jours démarre.",
+    "body": "Ton compte est prêt. On t'emmène vers ton espace Steero…",
+    "cta": "Ouvrir l'app"
   }
 }

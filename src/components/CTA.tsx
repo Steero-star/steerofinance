@@ -1,6 +1,7 @@
 import { ArrowRight, Lock, Shield, Users, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { startTrial } from "@/lib/analytics";
 import steeroBanner from "@/assets/steero-banner-3.png";
 import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 
@@ -73,7 +74,7 @@ const CTA = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            onClick={() => window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank")}
+            onClick={() => startTrial("cta_final")}
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group mb-12"
           >
             {t('common.startFree')}

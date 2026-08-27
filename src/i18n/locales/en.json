@@ -1983,5 +1983,10 @@
     "honestTitle": "Steero is young, and we say so.",
     "honestBody": "Our first users are installing the method right now: the impact numbers will come from them, not from a sales pitch. Meanwhile, the best proof is your own. Try it for 14 days and judge for yourself.",
     "honestMicro": "Cancel in one click · no bank connection"
+  },
+  "bienvenue": {
+    "title": "Your 14-day trial is starting.",
+    "body": "Your account is ready. Taking you to your Steero space…",
+    "cta": "Open the app"
   }
 }

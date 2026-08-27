@@ -212,3 +212,50 @@ export const trackNotFound = (path: string) => {
 export const dispatchConversion = () => {
   window.dispatchEvent(new CustomEvent("steero:converted"));
 };
+
+// ── Essai gratuit : porte unique (checklist GA4 begin_trial) ──
+export const APP_URL = "https://app.steero.fr/";
+
+/**
+ * L'inscription Clerk revient sur /bienvenue : c'est cette page qui envoie
+ * begin_trial (la confirmation), jamais le clic sur un bouton.
+ */
+export const SIGNUP_URL =
+  "https://accounts.steero.fr/sign-up?redirect_url=" +
+  encodeURIComponent("https://steero.fr/bienvenue");
+
+/** Tout CTA d'essai passe par ici : événement secondaire + ouverture Clerk. */
+export const startTrial = (location: string) => {
+  gtag("event", "cta_start_trial_click", {
+    cta_location: location,
+    page_path: window.location.pathname,
+  });
+  trackCTAClick("commencer_maintenant", location, SIGNUP_URL);
+  window.open(SIGNUP_URL, "_blank");
+};
+
+const BEGIN_TRIAL_SENT_KEY = "steero_begin_trial_sent";
+
+/**
+ * Événement clé de conversion, envoyé une seule fois par navigateur :
+ * la garde localStorage évite le double comptage (refresh, StrictMode,
+ * retour sur /bienvenue). method n'est pas connaissable depuis le site
+ * (l'inscription se fait chez Clerk), on ne l'invente pas.
+ */
+export const trackBeginTrial = () => {
+  // Sans consentement, gtag n'est pas chargé : on ne grille pas la garde,
+  // un passage ultérieur avec consentement pourra encore compter l'essai.
+  if (typeof window === "undefined" || !window.gtag) return false;
+  try {
+    if (localStorage.getItem(BEGIN_TRIAL_SENT_KEY)) return false;
+  } catch {
+    // Stockage indisponible (navigation privée) : on envoie quand même.
+  }
+  gtag("event", "begin_trial", { plan: "trial_14d" });
+  try {
+    localStorage.setItem(BEGIN_TRIAL_SENT_KEY, new Date().toISOString());
+  } catch {
+    // Sans stockage, pas de garde possible : assumé.
+  }
+  return true;
+};

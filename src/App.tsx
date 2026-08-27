@@ -17,6 +17,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const CGS = lazy(() => import("./pages/CGS"));
 const PolitiqueConfidentialite = lazy(() => import("./pages/PolitiqueConfidentialite"));
+const Bienvenue = lazy(() => import("./pages/Bienvenue"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/cgs" element={<CGS />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
+              <Route path="/bienvenue" element={<Bienvenue />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

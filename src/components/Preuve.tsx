@@ -1,13 +1,11 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
-import { trackCTAClick } from "@/lib/analytics";
+import { startTrial } from "@/lib/analytics";
 
 type Source = { label: string; sub: string; href: string };
 type Quote = { text: string; name: string; role: string };
 type Step = { when: string; title: string; body: string };
-
-const SIGNUP_URL = "https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F";
 
 /**
  * Échelle de preuve (doc Pipe 27/09) : mécanisme sourcé, témoignages validés
@@ -188,10 +186,7 @@ const Preuve = () => {
           </div>
           <div className="flex flex-col items-start md:items-center gap-2">
             <button
-              onClick={() => {
-                trackCTAClick("commencer_maintenant", "preuve");
-                window.open(SIGNUP_URL, "_blank");
-              }}
+              onClick={() => startTrial("preuve")}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full btn-primary font-semibold group"
             >
               {t("common.startFree")}

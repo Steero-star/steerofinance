@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
 import heroImageWebP from "@/assets/hero-dashboard.webp";
 import heroImagePng from "@/assets/hero-dashboard.png";
-import { trackCTAClick } from "@/lib/analytics";
+import { startTrial } from "@/lib/analytics";
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -87,10 +87,7 @@ const Hero = () => {
               className="flex flex-col items-start gap-3"
             >
               <button
-                onClick={() => {
-                  trackCTAClick("commencer_maintenant", "hero");
-                  window.open("https://accounts.steero.fr/sign-up?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
-                }}
+                onClick={() => startTrial("hero")}
                 className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold group"
               >
                 {t('common.startFree')}
