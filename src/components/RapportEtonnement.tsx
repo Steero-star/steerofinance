@@ -57,7 +57,7 @@ const RapportEtonnement = () => {
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-4 items-start">
           {constats.map((c, i) => (
             <motion.div
               key={c.num}
