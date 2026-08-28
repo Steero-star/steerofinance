@@ -438,176 +438,109 @@
     "startFree": "Empezar gratis"
   },
   "fonctionnalites": {
-    "heroTitle": "Funcionalidades pensadas para tu",
-    "heroTitleHighlight": "autonomía financiera",
-    "heroSubtitle": "Haz clic en una tarjeta para saber más",
-    "step1": "Paso 1",
-    "step2": "Paso 2",
-    "step3": "Paso 3",
-    "start": "Empezar",
-    "follow": "Seguir",
-    "adjustLast": "Ajustar y durar",
-    "discovered": "Descubierto",
-    "clickForPreview": "Ver el detalle",
-    "comingSoon": "Próximamente",
-    "futureTitle": "Y cuando quieras ir más lejos",
-    "futureSubtitle": "Otras dimensiones por explorar, pronto disponibles.",
-    "ctaTitle": "¿Listo para pilotar tus finanzas?",
-    "ctaSubtitle": "Únete a Steero para cambiar tu enfoque y alcanzar tus objetivos.",
-    "ctaDescription": "Únete a Steero para cambiar tu enfoque y alcanzar tus objetivos.",
-    "features": {
-      "onboarding": {
-        "title": "Trayectoria personalizada",
-        "microPromise": "Establece las bases de tu dirección financiera.",
-        "details": "Un recorrido guiado que te ayuda a definir tus objetivos, ingresos, gastos fijos y prioridades. Sin jerga, sin complejidad: solo las preguntas adecuadas para crear tu marco financiero."
+    "heroLabel": "Funcionalidades",
+    "heroTitle": "Todo para pilotar.",
+    "heroTitleEm": "Nada que te distraiga.",
+    "heroLead": "Tres tiempos: colocas tu marco una vez, sostienes tu día a día en unos minutos y decides con altura. Estas son las pantallas que usarás de verdad.",
+    "newBadge": "Nuevo",
+    "groups": [
+      {
+        "num": "01",
+        "title": "Coloca tu marco.",
+        "titleEm": "Una vez.",
+        "sub": "Diez minutos guiados y tu sistema existe: objetivos, presupuestos, gastos fijos.",
+        "features": [
+          {
+            "key": "onboarding",
+            "title": "Trayectoria personalizada",
+            "promise": "Establece las bases de tu dirección financiera.",
+            "details": "Un recorrido guiado que te ayuda a definir tus objetivos, ingresos, gastos fijos y prioridades. Sin jerga, sin complejidad: solo las preguntas adecuadas para crear tu marco financiero."
+          },
+          {
+            "key": "budget",
+            "title": "Estructura de presupuesto",
+            "promise": "Organiza tus recursos según tus prioridades.",
+            "details": "Crea categorías y subcategorías que reflejen tu vida real. Organiza tus gastos de forma jerárquica para tener una visión clara de lo que realmente importa."
+          },
+          {
+            "key": "fixed",
+            "title": "Operaciones fijas",
+            "promise": "Anticipa tus flujos recurrentes.",
+            "details": "Planifica tus ingresos, gastos y plazos del mes. Anticipa cuándo tu tesorería estará ajustada y mantén un calendario claro de tus movimientos."
+          }
+        ]
       },
-      "budget": {
-        "title": "Estructura de presupuesto",
-        "microPromise": "Organiza tus recursos según tus prioridades.",
-        "details": "Crea categorías y subcategorías que reflejen tu vida real. Organiza tus gastos de forma jerárquica para tener una visión clara de lo que realmente importa."
+      {
+        "num": "02",
+        "title": "Sostén tu día a día.",
+        "titleEm": "5 minutos.",
+        "sub": "Registro consciente sin fricción: plantillas, un indicador en tiempo real, rituales que marcan el ritmo.",
+        "features": [
+          {
+            "key": "daily",
+            "title": "Plantillas y registro rápido",
+            "promise": "Registra tus gastos en un instante.",
+            "details": "Crea plantillas para tus operaciones frecuentes: café, compras, gasolina... Un toque basta para registrar, el sistema aprende tus hábitos."
+          },
+          {
+            "key": "level",
+            "title": "El Nivel",
+            "promise": "Visualiza tu margen en tiempo real.",
+            "details": "En cada registro, visualiza instantáneamente: lo que ya se ha gastado, lo que representa el gasto en curso, y lo que te quedará disponible en tu presupuesto."
+          },
+          {
+            "key": "rituals",
+            "title": "Seguimiento de rituales",
+            "promise": "Ancla hábitos que perduran.",
+            "details": "Un sistema de rituales que te guía sobre lo que debes hacer, mirar, y qué preguntas hacerte. Desarrolla hábitos financieros duraderos."
+          }
+        ]
       },
-      "fixed": {
-        "title": "Operaciones fijas",
-        "microPromise": "Anticipa tus flujos recurrentes.",
-        "details": "Planifica tus ingresos, gastos y plazos del mes. Anticipa cuándo tu tesorería estará ajustada y mantén un calendario claro de tus movimientos."
-      },
-      "daily": {
-        "title": "Plantillas y registro rápido",
-        "microPromise": "Registra tus gastos en un instante.",
-        "details": "Crea plantillas para tus operaciones frecuentes: café, compras, gasolina... Un toque basta para registrar, el sistema aprende tus hábitos."
-      },
-      "level": {
-        "title": "El Nivel",
-        "microPromise": "Visualiza tu margen en tiempo real.",
-        "details": "En cada registro, visualiza instantáneamente: lo que ya se ha gastado, lo que representa el gasto en curso, y lo que te quedará disponible en tu presupuesto."
-      },
-      "rituals": {
-        "title": "Seguimiento de rituales",
-        "microPromise": "Ancla hábitos que perduran.",
-        "details": "Un sistema de rituales que te guía sobre lo que debes hacer, mirar, y qué preguntas hacerte. Desarrolla hábitos financieros duraderos."
-      },
-      "indicators": {
-        "title": "Ayuda a la toma de decisiones",
-        "microPromise": "Detecta las desviaciones antes de que se instalen.",
-        "details": "Una vista presupuestaria clara que resalta lo que merece tu atención. Comprende rápidamente tu situación y toma decisiones informadas gracias a indicadores pensados para ayudarte a ajustar tu trayectoria."
+      {
+        "num": "03",
+        "title": "Decide con altura.",
+        "sub": "Indicadores que hablan de comportamiento, proyectos cubiertos por tu ahorro y una tesorería por fin neta de lo que te deben.",
+        "features": [
+          {
+            "key": "indicators",
+            "title": "Ayuda a la toma de decisiones",
+            "promise": "Detecta las desviaciones antes de que se instalen.",
+            "details": "Una vista presupuestaria clara que resalta lo que merece tu atención. Comprende rápidamente tu situación y toma decisiones informadas gracias a indicadores pensados para ayudarte a ajustar tu trayectoria."
+          },
+          {
+            "key": "projects",
+            "title": "Gestión de proyectos",
+            "promise": "Conecta tu ahorro con tus objetivos.",
+            "details": "Un viaje, una reforma, una entrada: cada proyecto está cubierto por tu ahorro real y sigues su avance, sin doble conteo.",
+            "isNew": true
+          },
+          {
+            "key": "tiers",
+            "title": "Gestión de terceros y tesorería",
+            "promise": "Lo que debes, lo que te deben.",
+            "details": "Notas de gastos, adelantos entre amigos, reembolsos esperados: tu tesorería real, neta de los compromisos en curso.",
+            "isNew": true
+          }
+        ]
       }
-    },
-    "futureFeatures": {
-      "projects": {
-        "title": "Gestión de proyectos",
-        "promise": "Conecta varios presupuestos en torno a un mismo objetivo.",
-        "description": "Agrupa varios presupuestos bajo un mismo objetivo con una temporalidad definida. Ya sea un viaje, una renovación o un evento: visualiza tu progreso y mantén una visión transversal de los recursos asignados."
+    ],
+    "soonTitle": "Está llegando.",
+    "soonSub": "Dos obras abiertas, en el orden en que las construimos.",
+    "soonBadge": "Próximamente",
+    "soon": [
+      {
+        "title": "Integración bancaria",
+        "body": "La importación de tus operaciones llega para reducir la fricción de entrada.",
+        "strong": "La calificación seguirá siendo tu gesto consciente: es lo que cambia los comportamientos."
       },
-      "tiers": {
-        "title": "Gestión de terceros y tesorería",
-        "promise": "Aclara lo que debes, lo que te deben y el impacto real en tu tesorería.",
-        "description": "Sigue lo que debes y lo que te deben. Notas de gastos, adelantos entre amigos, reembolsos esperados: esta vista te permite clarificar tu tesorería real y anticipar los flujos futuros."
-      },
-      "patrimoine": {
+      {
         "title": "Gestión del patrimonio",
-        "promise": "Comprende tu situación financiera global de un vistazo.",
-        "description": "Identifica tus activos (ahorros, inversiones, bienes) y tus pasivos (créditos, deudas). Comprende tu patrimonio neto como un indicador clave de tu situación financiera global."
+        "body": "Identifica tus activos (ahorros, inversiones, bienes) y tus pasivos (créditos, deudas). Comprende tu patrimonio neto como un indicador clave de tu situación financiera global."
       }
-    },
-    "animations": {
-      "banks": "Bancos",
-      "objectives": "Objetivos",
-      "income": "Ingresos",
-      "fixedExpenses": "Gastos fijos",
-      "rituals": "Rituales",
-      "priorities": "Prioridades",
-      "profileComplete": "Perfil completado",
-      "onboardingClosing": "Un recorrido guiado para establecer un marco claro, sin jerga ni complejidad.",
-      "month": "Mes",
-      "april": "Abril",
-      "may": "Mayo",
-      "june": "Junio",
-      "total": "Total",
-      "categories": "Categorías",
-      "budgetClosing": "Un presupuesto mensual estructurado para reflejar tu vida real.",
-      "housing": "Vivienda",
-      "rent": "Alquiler",
-      "insurance": "Seguro",
-      "food": "Alimentación",
-      "groceries": "Compras",
-      "restaurant": "Restaurante",
-      "leisure": "Ocio",
-      "sports": "Deporte",
-      "outings": "Salidas",
-      "salary": "Salario",
-      "netflix": "Netflix",
-      "electricity": "Electricidad",
-      "shopping": "Compras",
-      "coffee": "Café",
-      "gas": "Gasolina",
-      "transport": "Transporte",
-      "cornerCoffee": "Café de la esquina",
-      "tapToAdd": "Toca para añadir rápidamente ↓",
-      "spent": "Gastado",
-      "inProgress": "En curso",
-      "remaining": "Disponible",
-      "dailyRitual": "Ritual diario",
-      "consecutiveDays": "¡7 días consecutivos!",
-      "upcomingRituals": "Próximos rituales",
-      "weeklyRitual": "Semanal",
-      "weeklyDate": "7 de abril",
-      "monthlyRitual": "Mensual",
-      "monthlyDate": "28 de abril",
-      "ritualsClosing": "Citas simples para mantener el rumbo, sin presión.",
-      "budgetLabel": "Presupuesto",
-      "percentConsumed": "% cons.",
-      "available": "Disp.",
-      "indicatorsClosing": "Una ayuda concreta para decidir, antes de que las desviaciones se instalen.",
-      "fixedChargesIdentified": "Cargos fijos identificados",
-      "fixedExpensesTotal": "Gastos fijos",
-      "ofIncome": "del ingreso",
-      "streamingCanceled": "Streaming cancelado",
-      "fixedClosing": "Centraliza la gestión de lo que entra y sale de forma fija cada mes y la proporción de gastos fijos sobre mis ingresos.",
-      "favoriteOperations": "Operaciones favoritas",
-      "selectOperation": "Seleccionar...",
-      "name": "Nombre",
-      "date": "Fecha",
-      "category": "Categoría",
-      "bank": "Banco",
-      "amount": "Monto",
-      "transactionComplete": "Operación registrada",
-      "dailyClosing": "Una forma simple e intuitiva de crear tus operaciones puntuales favoritas: ¡todo está prellenado, solo hay que validar!",
-      "budgetResto": "Presupuesto Restaurante",
-      "gaugeClosing": "Cada gasto te muestra inmediatamente dónde estás, permitiéndote ajustar tu comportamiento financiero.",
-      "newExpense": "Nuevo gasto",
-      "gaugeEachEntry": "Este indicador aparece con cada entrada",
-      "projectVacances": "Vacaciones",
-      "projectLodging": "Alojamiento",
-      "projectTransport": "Transporte",
-      "projectOnSite": "Gastos en destino",
-      "budgetLeisure": "Presupuesto ocio",
-      "budgetTransport": "Presupuesto transporte",
-      "budgetDaily": "Presupuesto diario",
-      "projectClosing": "El proyecto no es un presupuesto más: es tu vista transversal.",
-      "projectConsumed": "Consumido",
-      "projectRemaining": "Resto",
-      "tiersOwedToMe": "Mis activos: Me deben",
-      "tiersIOwe": "Mis deudas: Yo debo",
-      "tiersVacationShare": "Parte vacaciones",
-      "tiersRestaurant": "Restaurante sábado",
-      "tiersGroupGift": "Regalo grupo",
-      "tiersEmployer": "Mi empleador",
-      "tiersExpenseReports": "Notas de gastos",
-      "tiersTreasuryBalance": "Impacto tesorería",
-      "tiersClosing": "Sé dónde está mi dinero, incluso cuando no está en mi cuenta.",
-      "patrimoineAssets": "Activos",
-      "patrimoineLiabilities": "Pasivos",
-      "patrimoineApartment": "Apartamento",
-      "patrimoineRealEstate": "Inmobiliario",
-      "patrimoineAccounts": "Cuentas corrientes y ahorros",
-      "patrimoineLiquidity": "Liquidez",
-      "patrimoineStocksETF": "Acciones y ETF",
-      "patrimoineInvestments": "Inversiones",
-      "patrimoineMortgage": "Hipoteca",
-      "patrimoineApartmentDebt": "Préstamo apartamento",
-      "patrimoineNetWorth": "Patrimonio neto",
-      "patrimoineClosing": "Tengo un balance global, sintético y evolutivo de mi patrimonio."
-    }
+    ],
+    "ctaTitle": "Las pantallas están aquí. El marco te espera.",
+    "ctaBody": "14 días para instalar el sistema y juzgarlo tú mismo. Tu primer ritual toma 5 minutos.",
+    "ctaMicro": "Sin compromiso · cancela en un clic"
   },
   "blog": {
     "title": "Blog Steero",

@@ -117,7 +117,7 @@ const Hero = () => {
                     <img
                       src={heroImagePng}
                       alt="Tableau de bord budgétaire de Steero"
-                      fetchPriority="high"
+                      fetchpriority="high"
                       loading="eager"
                       decoding="async"
                       className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-[1.02]"

@@ -50,6 +50,9 @@ const Header = () => {
           <Link to="/pourquoi-steero" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.whySteero')}
           </Link>
+          <Link to="/fonctionnalites" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            {t('header.features')}
+          </Link>
           <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.pricing')}
           </Link>
@@ -121,6 +124,13 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {t('header.whySteero')}
+              </Link>
+              <Link
+                to="/fonctionnalites"
+                className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {t('header.features')}
               </Link>
               <Link
                 to="/pricing"

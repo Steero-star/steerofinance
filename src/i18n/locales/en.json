@@ -438,176 +438,109 @@
     "startFree": "Start for free"
   },
   "fonctionnalites": {
-    "heroTitle": "Features designed for your",
-    "heroTitleHighlight": "financial autonomy",
-    "heroSubtitle": "Click on a card to learn more",
-    "step1": "Step 1",
-    "step2": "Step 2",
-    "step3": "Step 3",
-    "start": "Get Started",
-    "follow": "Track",
-    "adjustLast": "Adjust & Sustain",
-    "discovered": "Discovered",
-    "clickForPreview": "See details",
-    "comingSoon": "Coming soon",
-    "futureTitle": "And when you want to go further",
-    "futureSubtitle": "Other dimensions to explore, coming soon.",
-    "ctaTitle": "Ready to steer your finances?",
-    "ctaSubtitle": "Join Steero to change your approach and reach your goals.",
-    "ctaDescription": "Join Steero to change your approach and reach your goals.",
-    "features": {
-      "onboarding": {
-        "title": "Personalized Path",
-        "microPromise": "Set the foundations of your financial direction.",
-        "details": "A guided journey that helps you define your goals, income, fixed expenses, and priorities. No jargon, no complexity: just the right questions to create your financial framework."
+    "heroLabel": "Features",
+    "heroTitle": "Everything to steer.",
+    "heroTitleEm": "Nothing to distract you.",
+    "heroLead": "Three moments: you set your frame once, you hold your daily routine in a few minutes, and you decide with altitude. These are the screens you'll actually use.",
+    "newBadge": "New",
+    "groups": [
+      {
+        "num": "01",
+        "title": "Set your frame.",
+        "titleEm": "Once.",
+        "sub": "Ten guided minutes and your system exists: goals, budgets, fixed costs.",
+        "features": [
+          {
+            "key": "onboarding",
+            "title": "Personalized Path",
+            "promise": "Set the foundations of your financial direction.",
+            "details": "A guided journey that helps you define your goals, income, fixed expenses, and priorities. No jargon, no complexity: just the right questions to create your financial framework."
+          },
+          {
+            "key": "budget",
+            "title": "Budget Structure",
+            "promise": "Organize your resources by priority.",
+            "details": "Create categories and subcategories that reflect your real life. Organize your expenses hierarchically for a clear vision of what really matters."
+          },
+          {
+            "key": "fixed",
+            "title": "Fixed Transactions",
+            "promise": "Anticipate your recurring flows.",
+            "details": "Plan your income, expenses, and deadlines for the month. Anticipate when your cash flow will be tight and keep a clear calendar of your movements."
+          }
+        ]
       },
-      "budget": {
-        "title": "Budget Structure",
-        "microPromise": "Organize your resources by priority.",
-        "details": "Create categories and subcategories that reflect your real life. Organize your expenses hierarchically for a clear vision of what really matters."
+      {
+        "num": "02",
+        "title": "Hold your daily routine.",
+        "titleEm": "5 minutes.",
+        "sub": "Conscious entry without friction: templates, a real-time gauge, rituals that set the pace.",
+        "features": [
+          {
+            "key": "daily",
+            "title": "Templates & Quick Entry",
+            "promise": "Record your expenses in an instant.",
+            "details": "Create templates for your frequent transactions: coffee, groceries, gas... One tap is enough to record, the system learns your habits."
+          },
+          {
+            "key": "level",
+            "title": "The Level",
+            "promise": "Visualize your margin in real time.",
+            "details": "With each entry, instantly visualize: what has already been spent, what the current expense represents, and what will remain available in your budget."
+          },
+          {
+            "key": "rituals",
+            "title": "Habit Tracker",
+            "promise": "Anchor habits that last.",
+            "details": "A ritual system that guides you on what to do, what to look at, and what questions to ask yourself. Develop lasting financial habits."
+          }
+        ]
       },
-      "fixed": {
-        "title": "Fixed Transactions",
-        "microPromise": "Anticipate your recurring flows.",
-        "details": "Plan your income, expenses, and deadlines for the month. Anticipate when your cash flow will be tight and keep a clear calendar of your movements."
-      },
-      "daily": {
-        "title": "Templates & Quick Entry",
-        "microPromise": "Record your expenses in an instant.",
-        "details": "Create templates for your frequent transactions: coffee, groceries, gas... One tap is enough to record, the system learns your habits."
-      },
-      "level": {
-        "title": "The Level",
-        "microPromise": "Visualize your margin in real time.",
-        "details": "With each entry, instantly visualize: what has already been spent, what the current expense represents, and what will remain available in your budget."
-      },
-      "rituals": {
-        "title": "Habit Tracker",
-        "microPromise": "Anchor habits that last.",
-        "details": "A ritual system that guides you on what to do, what to look at, and what questions to ask yourself. Develop lasting financial habits."
-      },
-      "indicators": {
-        "title": "Decision Support",
-        "microPromise": "Spot gaps before they settle in.",
-        "details": "A clear budget view that highlights what deserves your attention. Quickly understand your situation and make informed decisions with indicators designed to help you adjust your trajectory."
+      {
+        "num": "03",
+        "title": "Decide with altitude.",
+        "sub": "Indicators that speak behavior, projects covered by your savings, and cash flow finally net of what you're owed.",
+        "features": [
+          {
+            "key": "indicators",
+            "title": "Decision Support",
+            "promise": "Spot gaps before they settle in.",
+            "details": "A clear budget view that highlights what deserves your attention. Quickly understand your situation and make informed decisions with indicators designed to help you adjust your trajectory."
+          },
+          {
+            "key": "projects",
+            "title": "Project Management",
+            "promise": "Link your savings to your goals.",
+            "details": "A trip, a renovation, a down payment: each project is covered by your real savings and you track its progress, with no double counting.",
+            "isNew": true
+          },
+          {
+            "key": "tiers",
+            "title": "Third-Party & Cash Flow Management",
+            "promise": "What you owe, what you're owed.",
+            "details": "Expense reports, advances between friends, expected repayments: your real cash flow, net of ongoing commitments.",
+            "isNew": true
+          }
+        ]
       }
-    },
-    "futureFeatures": {
-      "projects": {
-        "title": "Project Management",
-        "promise": "Link multiple budgets around a single objective.",
-        "description": "Group multiple budgets under a single objective with a defined timeline. Whether it's a trip, renovation, or event: track your progress and maintain a cross-cutting view of allocated resources."
+    ],
+    "soonTitle": "It's coming.",
+    "soonSub": "Two open work streams, in the order we're building them.",
+    "soonBadge": "Coming soon",
+    "soon": [
+      {
+        "title": "Bank integration",
+        "body": "Importing your transactions is coming, to reduce entry friction.",
+        "strong": "Qualifying them will remain your conscious act: that's what changes behavior."
       },
-      "tiers": {
-        "title": "Third-Party & Cash Flow Management",
-        "promise": "Clarify what you owe, what's owed to you, and the real impact on your cash flow.",
-        "description": "Track what you owe and what's owed to you. Expense reports, advances between friends, expected reimbursements: this view clarifies your real cash flow and helps anticipate incoming and outgoing transactions."
-      },
-      "patrimoine": {
+      {
         "title": "Net Worth Management",
-        "promise": "Understand your overall financial situation at a glance.",
-        "description": "Identify your assets (savings, investments, property) and liabilities (loans, debts). Understand your net worth as a key indicator of your overall financial situation."
+        "body": "Identify your assets (savings, investments, property) and liabilities (loans, debts). Understand your net worth as a key indicator of your overall financial situation."
       }
-    },
-    "animations": {
-      "banks": "Banks",
-      "objectives": "Goals",
-      "income": "Income",
-      "fixedExpenses": "Fixed expenses",
-      "rituals": "Rituals",
-      "priorities": "Priorities",
-      "profileComplete": "Profile completed",
-      "onboardingClosing": "A guided journey to establish a clear framework, without jargon or complexity.",
-      "month": "Month",
-      "april": "April",
-      "may": "May",
-      "june": "June",
-      "total": "Total",
-      "categories": "Categories",
-      "budgetClosing": "A structured monthly budget to reflect your real life.",
-      "housing": "Housing",
-      "rent": "Rent",
-      "insurance": "Insurance",
-      "food": "Food",
-      "groceries": "Groceries",
-      "restaurant": "Restaurant",
-      "leisure": "Leisure",
-      "sports": "Sports",
-      "outings": "Outings",
-      "salary": "Salary",
-      "netflix": "Netflix",
-      "electricity": "Electricity",
-      "shopping": "Shopping",
-      "coffee": "Coffee",
-      "gas": "Gas",
-      "transport": "Transport",
-      "cornerCoffee": "Corner café",
-      "tapToAdd": "Tap to add quickly ↓",
-      "spent": "Spent",
-      "inProgress": "In progress",
-      "remaining": "Available",
-      "dailyRitual": "Daily ritual",
-      "consecutiveDays": "7 consecutive days!",
-      "upcomingRituals": "Upcoming rituals",
-      "weeklyRitual": "Weekly",
-      "weeklyDate": "April 7th",
-      "monthlyRitual": "Monthly",
-      "monthlyDate": "April 28th",
-      "ritualsClosing": "Simple check-ins to stay on track, without pressure.",
-      "budgetLabel": "Budget",
-      "percentConsumed": "% used",
-      "available": "Avail.",
-      "indicatorsClosing": "Concrete support for decisions, before gaps settle in.",
-      "fixedChargesIdentified": "Fixed charges identified",
-      "fixedExpensesTotal": "Fixed expenses",
-      "ofIncome": "of income",
-      "streamingCanceled": "Streaming canceled",
-      "fixedClosing": "Centralize the management of what comes in and goes out on a fixed basis each month and the share of fixed expenses on my income.",
-      "favoriteOperations": "Favorite operations",
-      "selectOperation": "Select...",
-      "name": "Name",
-      "date": "Date",
-      "category": "Category",
-      "bank": "Bank",
-      "amount": "Amount",
-      "transactionComplete": "Transaction recorded",
-      "dailyClosing": "A simple and intuitive way to create your favorite one-time operations: everything is pre-filled, just validate!",
-      "budgetResto": "Restaurant Budget",
-      "gaugeClosing": "Each expense shows you immediately where you stand, allowing you to adjust your financial behavior.",
-      "newExpense": "New expense",
-      "gaugeEachEntry": "This indicator appears with each entry",
-      "projectVacances": "Vacation",
-      "projectLodging": "Accommodation",
-      "projectTransport": "Transportation",
-      "projectOnSite": "On-site expenses",
-      "budgetLeisure": "Leisure budget",
-      "budgetTransport": "Transport budget",
-      "budgetDaily": "Daily budget",
-      "projectClosing": "A project isn't just another budget: it's your cross-functional view.",
-      "projectConsumed": "Consumed",
-      "projectRemaining": "Remaining",
-      "tiersOwedToMe": "My assets: Owed to me",
-      "tiersIOwe": "My debts: I owe",
-      "tiersVacationShare": "Vacation share",
-      "tiersRestaurant": "Saturday dinner",
-      "tiersGroupGift": "Group gift",
-      "tiersEmployer": "My employer",
-      "tiersExpenseReports": "Expense reports",
-      "tiersTreasuryBalance": "Treasury impact",
-      "tiersClosing": "I know where my money is, even when it's not in my account.",
-      "patrimoineAssets": "Assets",
-      "patrimoineLiabilities": "Liabilities",
-      "patrimoineApartment": "Apartment",
-      "patrimoineRealEstate": "Real estate",
-      "patrimoineAccounts": "Current & savings accounts",
-      "patrimoineLiquidity": "Liquidity",
-      "patrimoineStocksETF": "Stocks & ETF",
-      "patrimoineInvestments": "Investments",
-      "patrimoineMortgage": "Mortgage",
-      "patrimoineApartmentDebt": "Apartment loan",
-      "patrimoineNetWorth": "Net worth",
-      "patrimoineClosing": "I have a global, synthetic, and evolving overview of my net worth."
-    }
+    ],
+    "ctaTitle": "The screens are here. The frame is waiting.",
+    "ctaBody": "14 days to install the system and judge for yourself. Your first ritual takes 5 minutes.",
+    "ctaMicro": "No commitment · cancel in one click"
   },
   "blog": {
     "title": "Steero Blog",
