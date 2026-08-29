@@ -218,7 +218,7 @@
   "cta": {
     "title": "Empieza esta noche. Nota la diferencia en una semana.",
     "description": "14 días para instalar el sistema y sentir el cambio. Tu primer ritual toma 5 minutos.",
-    "offer": "Los primeros 200 suscriptores conservan −50 % de por vida con el código EARLYADOPTERS, aplicado al precio público vigente: hoy 4 € al mes en lugar de 8 €.",
+    "offer": "Los primeros 200 suscriptores conservan −25 % de por vida con el código EARLY25, aplicado al precio vigente, mensual o anual: hoy 6 € al mes en lugar de 8 €, o 54 € al año en lugar de 72 €.",
     "offerTerms": "Oferta no acumulable, limitada a las primeras 200 plazas. Si el precio cambia, el descuento se mantiene.",
     "features": {
       "free": "Gratis para empezar",
@@ -228,7 +228,7 @@
     }
   },
   "announcement": {
-    "text": "Oferta de lanzamiento: −50 % de por vida para los primeros 200 suscriptores",
+    "text": "Oferta de lanzamiento: −25 % de por vida para los primeros 200 suscriptores",
     "cta": "Ver la oferta"
   },
   "whySteero": {
@@ -1762,7 +1762,7 @@
     "founderText1": "Steero evoluciona. Llegan nuevas funciones. Este precio cambiará con la plataforma — los primeros usuarios siempre disfrutarán de las mejores condiciones, sean cuales sean.",
     "founderText2": "",
     "earlyBadge": "Early Adopters · 200 plazas",
-    "earlyText1": "Los 200 primeros suscriptores obtienen un −50% de por vida en su suscripción con el código EARLYADOPTERS, aplicado al precio público vigente: hoy 4 € al mes en lugar de 8 €. Oferta no acumulable, plazas no garantizadas después de los 200 primeros.",
+    "earlyText1": "Los 200 primeros suscriptores obtienen un −25 % de por vida en su suscripción con el código EARLY25, aplicado al precio vigente, mensual o anual: hoy 6 € al mes en lugar de 8 €, o 54 € al año en lugar de 72 €. Oferta no acumulable con otro código, plazas no garantizadas después de los 200 primeros.",
     "earlyText2": "",
     "earlyCta": "Obtener acceso anticipado",
     "earlyDisclaimer": "El descuento se aplica sobre el precio público vigente. Si el precio cambia en el futuro, el descuento se mantendrá.",

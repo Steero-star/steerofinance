@@ -218,7 +218,7 @@
   "cta": {
     "title": "Start tonight. See the difference in a week.",
     "description": "14 days to install the system and feel the change. Your first ritual takes 5 minutes.",
-    "offer": "The first 200 subscribers keep −50% for life with the code EARLYADOPTERS, applied to the current public price: today €4 a month instead of €8.",
+    "offer": "The first 200 subscribers keep −25% for life with the code EARLY25, applied to the current price, monthly or annual: today €6 a month instead of €8, or €54 a year instead of €72.",
     "offerTerms": "Offer cannot be combined. Limited to the first 200 subscribers. If the price changes, the discount still applies.",
     "features": {
       "free": "Free to start",
@@ -228,7 +228,7 @@
     }
   },
   "announcement": {
-    "text": "Launch offer: −50% for life for the first 200 subscribers",
+    "text": "Launch offer: −25% for life for the first 200 subscribers",
     "cta": "See the offer"
   },
   "whySteero": {
@@ -1762,7 +1762,7 @@
     "founderText1": "Steero is evolving. New features are coming. This price will change with the platform — early users will always enjoy the best conditions, whatever they may be.",
     "founderText2": "",
     "earlyBadge": "Early Adopters · 200 spots",
-    "earlyText1": "The first 200 subscribers get −50% for life on their subscription with the code EARLYADOPTERS, applied to the current public price: today €4 a month instead of €8. Non-cumulative offer, spots not guaranteed after the first 200.",
+    "earlyText1": "The first 200 subscribers get −25% for life on their subscription with the code EARLY25, applied to the current price, monthly or annual: today €6 a month instead of €8, or €54 a year instead of €72. Not combinable with another code, spots not guaranteed after the first 200.",
     "earlyText2": "",
     "earlyCta": "Get early access",
     "earlyDisclaimer": "The discount applies to the current public price. If the price changes in the future, your discount will remain applied.",

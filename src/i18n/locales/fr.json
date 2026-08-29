@@ -218,7 +218,7 @@
   "cta": {
     "title": "Commence ce soir. Vois la différence en une semaine.",
     "description": "14 jours pour installer le système et sentir le changement. Ton premier rituel prend 5 minutes.",
-    "offer": "Les 200 premiers inscrits gardent −50 % à vie avec le code EARLYADOPTERS, appliqué au prix public en vigueur : aujourd'hui 4 € par mois au lieu de 8 €.",
+    "offer": "Les 200 premiers inscrits gardent −25 % à vie avec le code EARLY25, appliqué au prix en vigueur, mensuel ou annuel : aujourd'hui 6 € par mois au lieu de 8 €, ou 54 € par an au lieu de 72 €.",
     "offerTerms": "Offre non cumulable, dans la limite des 200 premières places. Si le tarif évolue, la réduction reste appliquée.",
     "features": {
       "free": "Gratuit pour commencer",
@@ -228,7 +228,7 @@
     }
   },
   "announcement": {
-    "text": "Offre de lancement : −50 % à vie pour les 200 premiers inscrits",
+    "text": "Offre de lancement : −25 % à vie pour les 200 premiers inscrits",
     "cta": "Voir l'offre"
   },
   "whySteero": {
@@ -1778,7 +1778,7 @@
     "founderText1": "Steero évolue. De nouvelles fonctionnalités arrivent. Ce prix évoluera avec la plateforme. Les premiers utilisateurs bénéficieront toujours des meilleures conditions, quelles qu'elles soient.",
     "founderText2": "",
     "earlyBadge": "Early Adopters · 200 places",
-    "earlyText1": "Les 200 premiers inscrits bénéficient de −50% à vie sur leur abonnement avec le code EARLYADOPTERS, appliqué au prix public en vigueur : aujourd'hui 4 € par mois au lieu de 8 €. Offre non cumulable, places non garanties après les 200 premiers inscrits.",
+    "earlyText1": "Les 200 premiers inscrits bénéficient de −25 % à vie sur leur abonnement avec le code EARLY25, appliqué au prix en vigueur, mensuel ou annuel : aujourd'hui 6 € par mois au lieu de 8 €, ou 54 € par an au lieu de 72 €. Offre non cumulable avec un autre code, places non garanties après les 200 premiers inscrits.",
     "earlyText2": "",
     "earlyCta": "Commencer gratuitement",
     "earlyDisclaimer": "La réduction s'applique sur le prix public en vigueur. Si le tarif évolue dans le futur, la réduction reste appliquée.",
