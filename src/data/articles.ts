@@ -469,11 +469,7 @@ La clarté remplace la culpabilité. C'est là que tout change.`,
       "Ce qu'il faut à la place : un système adaptatif",
       "Utilise la règle comme point de départ, pas comme destination",
     ],
-    content: `50% pour les besoins. 30% pour les envies. 20% pour l'épargne. Simple, clair, rassurant. Et pratiquement inutile si on s'arrête là.
-
-Ce n'est pas que la règle soit fausse. C'est qu'elle répond à la mauvaise question.
-
-Pourquoi cette règle est si populaire et pourquoi c'est un problème
+    content: `Pourquoi cette règle est si populaire et pourquoi c'est un problème
 
 La règle des 50/30/20 a un avantage massif : elle simplifie. Pour quelqu'un qui n'a jamais structuré son budget, elle offre un cadre immédiat, trois catégories claires, l'impression rassurante d'avoir un système. C'est pédagogiquement utile comme pour les petites roues d'un vélo d'apprentissage.
 
@@ -904,11 +900,7 @@ C'est exactement pour ça que Steero ne t'agrège rien automatiquement. Essaie 1
       "La routine est l'accès à tout le reste",
       "Commence maintenant",
     ],
-    content: `Tu essaies depuis des années. Des apps, des calendriers, des résolutions et rien ne tient. Au bout de trois semaines, tu as abandonné.
-
-Pas parce que tu manques de discipline. Parce que tu n'as pas de routine.
-
-Une routine n'est pas une promesse. C'est une structure. Et cette structure est le seul levier qui transforme durablement ta vie.
+    content: `Une routine n'est pas une promesse. C'est une structure. Et cette structure est le seul levier qui transforme durablement ta vie.
 
 Pourquoi les routines échouent (et pourquoi les tiennes ont échoué)
 
