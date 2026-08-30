@@ -414,7 +414,7 @@
         },
         "q2": {
           "question": "Où sont stockées mes données ?",
-          "answer": "Tes données sont hébergées sur des serveurs sécurisés en Europe, conformément aux réglementations en vigueur (RGPD).\n\nNous utilisons des technologies modernes de chiffrement et des pratiques de sécurité éprouvées pour garantir la confidentialité et l'intégrité de tes informations."
+          "answer": "Les données de l'application sont hébergées par Convex, dans la région eu-west-1 (Irlande, Union européenne) — convex.dev.\n\nPour le détail complet de l'hébergement et des sous-traitants, consulte les [mentions légales](/mentions-legales)."
         }
       },
       "access": {
@@ -424,14 +424,10 @@
           "answer": "Oui, Steero est gratuit pendant 14 jours. Cette période te permet de découvrir l'outil, de l'utiliser dans ton quotidien et de vérifier s'il s'intègre naturellement à ta façon de gérer tes finances. Aucune pression — tu peux arrêter à tout moment pendant cette période.\n\nEt après les 14 jours ? Un abonnement est nécessaire pour continuer. Cet abonnement permet de maintenir et améliorer la solution, de garantir une expérience stable et de développer de nouvelles fonctionnalités.\n\nUn prix volontairement accessible : l'abonnement principal coûtera moins de 10 € par mois — soit l'équivalent d'un café par semaine, ou de quelques minutes de charge mentale en moins chaque jour."
         },
         "q2": {
-          "question": "Comment fonctionne la liste d'attente ?",
-          "answer": "La liste d'attente te permet de réserver ta place pour accéder à Steero dès son lancement.\n\nEn t'inscrivant, tu seras parmi les premiers informés de l'ouverture de l'application. Tu recevras un email pour créer ton compte et commencer ton essai gratuit de 14 jours.\n\nL'inscription est gratuite et sans engagement."
-        },
-        "q3": {
           "question": "Puis-je utiliser Steero sur Mobile ?",
           "answer": "Pas pour le moment — et c'est un choix assumé. Steero est conçu comme un outil de pilotage, pas comme une application à consulter entre deux notifications.\n\nLe rituel financier que nous défendons nécessite du calme et de la concentration. Comprendre une trajectoire financière implique de la profondeur d'information, des comparaisons, des indicateurs lisibles et une vision globale.\n\nLe mobile est excellent pour consulter rapidement. Il l'est beaucoup moins pour réfléchir, analyser et ajuster consciemment. Steero n'est pas conçu pour être \"checké\", mais pour être utilisé avec intention.\n\nEt pour la suite ? Le mobile n'est pas exclu, mais s'il arrive un jour, ce sera pour servir le pilotage, pas pour l'appauvrir."
         },
-        "q4": {
+        "q3": {
           "question": "Steero va-t-il évoluer avec le temps ?",
           "answer": "Oui, et c'est même au cœur du projet.\n\nSteero est pensé comme un produit long terme, qui évolue progressivement pour rester simple, pertinent et aligné avec les besoins réels des utilisateurs.\n\nDe nouvelles fonctionnalités viendront enrichir l'expérience, toujours avec la même philosophie :\n• pas de complexité inutile\n• pas d'automatisation qui dépossède\n• uniquement ce qui aide réellement à mieux piloter\n\nLes abonnements servent précisément à maintenir cette qualité et à faire évoluer Steero dans le bon sens."
         }

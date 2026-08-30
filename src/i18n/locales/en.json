@@ -414,7 +414,7 @@
         },
         "q2": {
           "question": "Where is my data stored?",
-          "answer": "Your data is hosted on secure servers in Europe, in compliance with current regulations (GDPR).\n\nWe use modern encryption technologies and proven security practices to ensure the confidentiality and integrity of your information."
+          "answer": "The app's data is hosted by Convex, in the eu-west-1 region (Ireland, European Union) — convex.dev.\n\nFor the full detail on hosting and subprocessors, see the [legal notice](/mentions-legales)."
         }
       },
       "access": {
@@ -424,14 +424,10 @@
           "answer": "Yes, Steero is free for 14 days. This period allows you to discover the tool, use it in your daily life, and check if it naturally fits your way of managing your finances. No pressure — you can stop at any time during this period.\n\nAnd after 14 days? A subscription is required to continue. This subscription helps maintain and improve the solution, ensure a stable experience, and develop new features.\n\nAn intentionally accessible price: the main subscription will cost less than €10 per month — the equivalent of a coffee per week, or a few minutes less of mental load each day."
         },
         "q2": {
-          "question": "How does the waitlist work?",
-          "answer": "The waitlist allows you to reserve your spot to access Steero as soon as it launches.\n\nBy signing up, you'll be among the first to know when the app opens. You'll receive an email to create your account and start your 14-day free trial.\n\nRegistration is free and non-binding."
-        },
-        "q3": {
           "question": "Can I use Steero on mobile?",
           "answer": "Not at the moment — and it's a deliberate choice. Steero is designed as a steering tool, not as an app to check between two notifications.\n\nThe financial ritual we advocate requires calm and concentration. Understanding a financial trajectory requires depth of information, comparisons, readable indicators, and a global vision.\n\nMobile is great for quick consultation. It's much less so for thinking, analyzing, and consciously adjusting. Steero is not designed to be \"checked\", but to be used with intention.\n\nAnd for the future? Mobile is not excluded, but if it comes one day, it will be to serve steering, not to impoverish it."
         },
-        "q4": {
+        "q3": {
           "question": "Will Steero evolve over time?",
           "answer": "Yes, and it's at the heart of the project.\n\nSteero is designed as a long-term product, which evolves gradually to remain simple, relevant, and aligned with users' real needs.\n\nNew features will enrich the experience, always with the same philosophy:\n• no unnecessary complexity\n• no automation that dispossesses\n• only what really helps to better steer\n\nSubscriptions are precisely used to maintain this quality and make Steero evolve in the right direction."
         }

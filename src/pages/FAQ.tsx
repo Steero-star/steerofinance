@@ -26,8 +26,30 @@ const SECTION_DEFS: { key: string; questions: number; highlighted?: number[] }[]
   { key: "understand", questions: 3, highlighted: [2] },
   { key: "howItWorks", questions: 3, highlighted: [1] },
   { key: "security", questions: 2, highlighted: [1] },
-  { key: "access", questions: 4 },
+  { key: "access", questions: 3 },
 ];
+
+/** Rend `[libellé](/route)` en lien interne ; le reste passe tel quel. */
+const renderAnswer = (text: string): React.ReactNode => {
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
+    parts.push(
+      <Link key={match.index} to={match[2]} className="text-primary hover:underline">
+        {match[1]}
+      </Link>
+    );
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return parts;
+};
+
+/** Version texte brut (sans balisage markdown) pour le schéma FAQPage. */
+const stripMarkdownLinks = (text: string): string => text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
 
 const FAQ = () => {
   const { t } = useTranslation();
@@ -49,7 +71,7 @@ const FAQ = () => {
       section.items.map((item) => ({
         "@type": "Question",
         name: item.question,
-        acceptedAnswer: { "@type": "Answer", text: item.answer },
+        acceptedAnswer: { "@type": "Answer", text: stripMarkdownLinks(item.answer) },
       }))
     ),
   };
@@ -140,7 +162,7 @@ const FAQ = () => {
                         </span>
                       </AccordionTrigger>
                       <AccordionContent className="text-[15px] leading-relaxed text-foreground/75 whitespace-pre-line pb-6 pt-0 max-w-[65ch]">
-                        {item.answer}
+                        {renderAnswer(item.answer)}
                       </AccordionContent>
                     </AccordionItem>
                   ))}
