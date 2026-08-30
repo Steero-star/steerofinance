@@ -14,6 +14,7 @@ const PourquoiSteero = lazy(() => import("./pages/PourquoiSteero"));
 const Fonctionnalites = lazy(() => import("./pages/Fonctionnalites"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Blog = lazy(() => import("./pages/Blog"));
+const BlogArticle = lazy(() => import("./pages/BlogArticle"));
 const MentionsLegales = lazy(() => import("./pages/MentionsLegales"));
 const CGS = lazy(() => import("./pages/CGS"));
 const PolitiqueConfidentialite = lazy(() => import("./pages/PolitiqueConfidentialite"));
@@ -41,7 +42,7 @@ const App = () => (
               <Route path="/fonctionnalites" element={<Fonctionnalites />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogArticle />} />
               <Route path="/mentions-legales" element={<MentionsLegales />} />
               <Route path="/cgs" element={<CGS />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
