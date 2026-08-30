@@ -41,9 +41,9 @@
   },
   "hero": {
     "badge": "The personal finance steering app",
-    "title": "From spreadsheet to steering",
-    "titleHighlight": "In 5 minutes a day",
-    "description": "Your Excel sheet always ends up breaking. Banking apps show you the past, not what to decide. \n\nSteero installs short check-ins with your money: you see where it goes, you decide where it should go.",
+    "title": "Steer your finances.",
+    "titleHighlight": "By installing a framework.",
+    "description": "Install short check-ins with your money: you know where it is, you see where it's going, and you decide where it should go.",
     "microcopy": "14 days free · no commitment · no bank connection",
     "scrollHint": "Discover why Steero"
   },
@@ -68,9 +68,9 @@
     ]
   },
   "tempo": {
-    "label": "THE TEMPO METHOD",
-    "title": "How do you switch to steering?",
-    "description": "You already do it at work: a short check-in at a fixed frequency, an agenda, decisions. \n\nFive appointments, from daily to strategic. Each has its question, its frequency, its duration.",
+    "label": "HOW DO YOU SWITCH TO STEERING?",
+    "title": "The TEMPO method",
+    "description": "Discipline beats motivation, and that's just as true in personal finance. You probably already do it at work: you have goals, you put a strategy in place, and you steer toward the target, adjusting when needed. \n\nTEMPO is the framework that guides you: five appointments, from daily to strategic. Each has its question, its frequency, its duration.",
     "rituals": {
       "t": {
         "letter": "T",
@@ -368,6 +368,8 @@
   },
   "faq": {
     "title": "Frequently Asked Questions",
+    "subtitle": "Straight answers to the questions we hear most: the approach, how it works, security and the model.",
+    "essential": "Essential",
     "noAnswer": "CAN'T FIND YOUR ANSWER?",
     "discoverHow": "Discover how Steero works in practice.",
     "discoverApproach": "Discover Steero's approach",
@@ -1819,7 +1821,7 @@
       {
         "num": "Finding 01",
         "fig": "30%",
-        "title": "Untracked spending gets underestimated",
+        "title": "of spending underestimated without a regular look",
         "body": "Anything outside your routine barely makes it into your estimates: the gap between what you think you spend and reality adds up to thousands a year. What you don't see, you can't steer.",
         "srcLabel": "Study · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
         "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",
@@ -1829,7 +1831,7 @@
       {
         "num": "Finding 02",
         "fig": "×2",
-        "title": "Cards numb the pain of paying",
+        "title": "the willingness to spend when paying by card",
         "body": "Paying by card can double what you accept to pay compared with cash. The pain of paying disappears, and the expense slips through unnoticed.",
         "srcLabel": "Study · Prelec & Simester, MIT, Marketing Letters",
         "srcHref": "https://link.springer.com/article/10.1023/A:1008196717017",
@@ -1839,7 +1841,7 @@
       {
         "num": "Finding 03",
         "fig": "66%",
-        "title": "Financial education never came",
+        "title": "never had access to basic financial education. Executives included.",
         "body": "Across the 39 countries surveyed by the OECD, 66% of adults do not reach the minimum level of financial literacy. Executives included: nobody taught us how to steer our money.",
         "srcLabel": "Survey · OECD/INFE 2023, financial literacy",
         "srcHref": "https://www.oecd.org/en/publications/oecd-infe-2023-international-survey-of-adult-financial-literacy_56003a32-en.html",

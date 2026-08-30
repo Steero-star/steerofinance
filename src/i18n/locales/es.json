@@ -41,9 +41,9 @@
   },
   "hero": {
     "badge": "La app de pilotaje financiero personal",
-    "title": "Pasa de la hoja de cálculo al pilotaje",
-    "titleHighlight": "En 5 minutos al día",
-    "description": "Tu Excel siempre acaba fallando. Las apps bancarias te muestran el pasado, no qué decidir. \n\nSteero instala citas cortas con tu dinero: ves adónde va, decides adónde debe ir.",
+    "title": "Pilota tus finanzas.",
+    "titleHighlight": "Instalando un marco.",
+    "description": "Instala citas cortas con tu dinero: sabes dónde está, ves adónde va y decides adónde debe ir.",
     "microcopy": "14 días gratis · sin compromiso · sin conexión bancaria",
     "scrollHint": "Descubrir por qué Steero"
   },
@@ -68,9 +68,9 @@
     ]
   },
   "tempo": {
-    "label": "EL MÉTODO TEMPO",
-    "title": "¿Cómo pasar al pilotaje?",
-    "description": "Ya lo haces en el trabajo: una reunión corta a frecuencia fija, un orden del día, decisiones. \n\nCinco citas, de lo diario a lo estratégico. Cada una tiene su pregunta, su frecuencia, su duración.",
+    "label": "¿CÓMO PASAR AL PILOTAJE?",
+    "title": "El método TEMPO",
+    "description": "La disciplina vale más que la motivación, y eso también es cierto en las finanzas personales. Seguramente ya lo haces en tu trabajo: tienes objetivos, pones en marcha una estrategia y pilotas hasta la meta ajustando si hace falta. \n\nTEMPO es el marco que te acompaña: cinco citas, de lo diario a lo estratégico. Cada una tiene su pregunta, su frecuencia, su duración.",
     "rituals": {
       "t": {
         "letter": "T",
@@ -368,6 +368,8 @@
   },
   "faq": {
     "title": "Preguntas frecuentes",
+    "subtitle": "Respuestas directas a las preguntas más frecuentes: el enfoque, el funcionamiento, la seguridad y el modelo.",
+    "essential": "Esencial",
     "noAnswer": "¿NO ENCUENTRAS TU RESPUESTA?",
     "discoverHow": "Descubre cómo funciona Steero concretamente.",
     "discoverApproach": "Descubre el enfoque Steero",
@@ -1819,7 +1821,7 @@
       {
         "num": "Constatación 01",
         "fig": "30 %",
-        "title": "Sin registrarlos, subestimamos nuestros gastos",
+        "title": "de gasto subestimado sin una mirada regular",
         "body": "Lo que sale de la rutina apenas entra en la estimación: la diferencia entre lo que crees gastar y la realidad suma miles de euros al año. Lo que no ves, no lo pilotas.",
         "srcLabel": "Estudio · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
         "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",
@@ -1829,7 +1831,7 @@
       {
         "num": "Constatación 02",
         "fig": "×2",
-        "title": "La tarjeta anestesia el gasto",
+        "title": "de tolerancia al gasto al pagar con tarjeta",
         "body": "Pagar con tarjeta puede duplicar lo que aceptas pagar frente al efectivo. El dolor de pagar desaparece y el gasto pasa sin hacerse notar.",
         "srcLabel": "Estudio · Prelec & Simester, MIT, Marketing Letters",
         "srcHref": "https://link.springer.com/article/10.1023/A:1008196717017",
@@ -1839,7 +1841,7 @@
       {
         "num": "Constatación 03",
         "fig": "66 %",
-        "title": "La educación financiera nunca llegó",
+        "title": "no ha tenido acceso a una educación financiera mínima. Directivos incluidos.",
         "body": "En los 39 países estudiados por la OCDE, el 66 % de los adultos no alcanza el nivel mínimo de educación financiera. Directivos incluidos: nadie nos enseñó a pilotar nuestro dinero.",
         "srcLabel": "Encuesta · OCDE/INFE 2023, educación financiera",
         "srcHref": "https://www.oecd.org/en/publications/oecd-infe-2023-international-survey-of-adult-financial-literacy_56003a32-en.html",

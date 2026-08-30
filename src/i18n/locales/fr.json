@@ -41,9 +41,9 @@
   },
   "hero": {
     "badge": "L'app de pilotage financier personnel",
-    "title": "Passe du tableur au pilotage",
-    "titleHighlight": "En 5 minutes par jour",
-    "description": "Ton Excel finit par lâcher. Les apps bancaires te montrent le passé, pas quoi décider. \n\nSteero installe des rendez-vous courts avec ton argent : tu vois où il va, tu décides où il doit aller.",
+    "title": "Pilote tes finances.",
+    "titleHighlight": "En installant un cadre.",
+    "description": "Installe des rendez-vous courts avec ton argent : tu sais où il est, tu vois où il va et tu décides où il doit aller.",
     "microcopy": "14 jours gratuits · sans engagement · aucune connexion bancaire",
     "scrollHint": "Découvrir pourquoi Steero"
   },
@@ -68,9 +68,9 @@
     ]
   },
   "tempo": {
-    "label": "LA MÉTHODE TEMPO",
-    "title": "Comment passer au pilotage ?",
-    "description": "Tu le fais déjà au travail : un point court à fréquence fixe, un ordre du jour, des décisions. \n\nCinq rendez-vous, du quotidien au stratégique. Chacun a sa question, sa fréquence, sa durée.",
+    "label": "COMMENT PASSER AU PILOTAGE ?",
+    "title": "La méthode TEMPO",
+    "description": "La discipline vaut plus que la motivation, et c'est aussi vrai en finance personnelle. Tu le fais sûrement dans ton travail : tu as des objectifs, tu mets en place une stratégie et tu pilotes jusqu'à la cible en adaptant si nécessaire. \n\nTEMPO, c'est le cadre qui t'accompagne : cinq rendez-vous, du quotidien au stratégique. Chacun a sa question, sa fréquence, sa durée.",
     "rituals": {
       "t": {
         "letter": "T",
@@ -368,6 +368,8 @@
   },
   "faq": {
     "title": "Questions fréquentes",
+    "subtitle": "Les réponses directes aux questions qu'on nous pose le plus : l'approche, le fonctionnement, la sécurité et le modèle.",
+    "essential": "Essentiel",
     "noAnswer": "TU NE TROUVES PAS TA RÉPONSE ?",
     "discoverHow": "Découvre comment Steero fonctionne concrètement.",
     "discoverApproach": "Découvrir l'approche Steero",
@@ -1835,7 +1837,7 @@
       {
         "num": "Constat 01",
         "fig": "30 %",
-        "title": "Sans les tracer, on sous-estime nos dépenses",
+        "title": "de dépense sous-estimée sans regard régulier",
         "body": "Ce qui sort de la routine échappe presque entièrement à l'estimation : l'écart entre ce qu'on croit dépenser et le réel se compte en milliers d'euros par an. Ce qu'on ne voit pas, on ne le pilote pas.",
         "srcLabel": "Étude · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
         "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",
@@ -1845,7 +1847,7 @@
       {
         "num": "Constat 02",
         "fig": "×2",
-        "title": "La carte anesthésie la dépense",
+        "title": "de tolérance à la dépense en utilisant une carte de paiement",
         "body": "Payer par carte peut doubler ce qu'on accepte de payer par rapport au liquide. La douleur de payer disparaît, et la dépense passe sans se faire remarquer.",
         "srcLabel": "Étude · Prelec & Simester, MIT, Marketing Letters",
         "srcHref": "https://link.springer.com/article/10.1023/A:1008196717017",
@@ -1855,7 +1857,7 @@
       {
         "num": "Constat 03",
         "fig": "66 %",
-        "title": "L'éducation financière n'est jamais venue",
+        "title": "n'ont pas eu accès à une éducation financière minimale. Cadres compris.",
         "body": "Dans les 39 pays étudiés par l'OCDE, 66 % des adultes n'atteignent pas le niveau minimal d'éducation financière. Cadres compris : personne ne nous a appris à piloter notre argent.",
         "srcLabel": "Enquête · OCDE/INFE 2023, littératie financière",
         "srcHref": "https://www.oecd.org/en/publications/oecd-infe-2023-international-survey-of-adult-financial-literacy_56003a32-en.html",
