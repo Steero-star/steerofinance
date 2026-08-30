@@ -15,8 +15,14 @@ type Constat = {
 
 /**
  * Le Grand Pourquoi en panneau compact : trois cartes de même hauteur au
- * repos, le détail (constat sourcé + gain) se déplie DANS la carte au
- * survol, au focus ou au tap : un seul bloc, rien ne recouvre la suite.
+ * repos, le détail (constat sourcé + gain) se déplie DANS la carte au clic ou
+ * au tap : un seul bloc, rien ne recouvre la suite.
+ *
+ * LE CLIC EST LA SEULE PORTE, ET IL N'EN SUPPORTE PAS UNE DEUXIÈME. Ouvrir
+ * aussi sur `onFocus` paraît inoffensif tant qu'un `onMouseEnter` ouvre avant
+ * lui, mais le focus précède le clic : la carte s'ouvre au mousedown puis le
+ * clic la referme, et plus rien ne s'ouvre à la souris. Le clavier passe par
+ * ce même onClick (Entrée et Espace l'émettent), donc rien n'est perdu.
  * Règle non négociable : chaque chiffre affiché ici est sourcé et lié.
  */
 const RapportEtonnement = () => {
@@ -65,8 +71,6 @@ const RapportEtonnement = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              onMouseEnter={() => setActive(i)}
-              onMouseLeave={() => setActive(null)}
               className={`rounded-2xl border border-border/60 bg-card transition-shadow duration-300 ${
                 active === i ? "shadow-card" : ""
               }`}
@@ -75,7 +79,6 @@ const RapportEtonnement = () => {
                 type="button"
                 aria-expanded={active === i}
                 onClick={() => setActive(active === i ? null : i)}
-                onFocus={() => setActive(i)}
                 className="w-full text-left p-6 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <p className="font-serif text-5xl md:text-6xl text-primary leading-none mb-3">

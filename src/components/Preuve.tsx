@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowRight, PlayCircle } from "lucide-react";
 import { startTrial } from "@/lib/analytics";
+import steeroBanner from "@/assets/steero-banner-3.png";
+import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 
 type Source = { label: string; sub: string; href: string };
 type Quote = { text: string; name: string; role: string };
@@ -9,9 +12,14 @@ type Step = { when: string; title: string; body: string };
 
 /**
  * Échelle de preuve (doc Pipe 27/09) : mécanisme sourcé, témoignages validés
- * mot pour mot avec accord écrit, projection concrète, ligne d'honnêteté.
- * La preuve est une bande pleine largeur teintée, dimensionnée pour tenir
- * dans un écran ; la projection et l'honnêteté suivent sur fond normal.
+ * mot pour mot avec accord écrit, projection concrète. La preuve est une bande
+ * pleine largeur teintée, dimensionnée pour tenir dans un écran ; la projection
+ * suit sur fond normal, puis le CTA ferme la page.
+ *
+ * Le quatrième barreau de l'échelle — la ligne d'honnêteté « Steero est jeune,
+ * et on te le dit. » — a quitté l'accueil le 30/08 au profit du CTA de Pourquoi
+ * Steero. Ses clés `preuve.honest*` restent en locale, prêtes à revenir : c'est
+ * la seule surface qui disait le stade du produit et l'absence d'engagement.
  */
 const Preuve = () => {
   const { t } = useTranslation();
@@ -173,31 +181,72 @@ const Preuve = () => {
             </motion.div>
           </div>
 
-          {/* Ligne d'honnêteté : transparence sur le stade + CTA */}
+        </div>
+      </section>
+
+      {/* CTA final : le bloc « Installe un système. » de Pourquoi Steero, repris
+          ici mot pour mot ET clé pour clé. Le partage de `pourquoiSteero.cta.*`
+          est VOULU — les deux surfaces doivent dire la même chose, donc éditer
+          l'une doit se voir sur l'autre. Les séparer un jour se fera en
+          dupliquant les clés, jamais en réécrivant celles-ci pour une seule des
+          deux pages.
+
+          Une seule différence assumée avec la page d'origine : le bouton passe
+          par `startTrial`, qui mesure avant d'ouvrir. Le `window.open` brut de
+          Pourquoi Steero rendrait muet le dernier CTA de l'accueil. */}
+      <section className="py-20 bg-primary relative overflow-hidden">
+        <div className="absolute inset-0">
+          <picture>
+            <source srcSet={steeroBannerWebP} type="image/webp" />
+            <img src={steeroBanner} alt="" loading="lazy" className="w-full h-full object-cover opacity-35" />
+          </picture>
+          <div className="absolute inset-0 bg-primary/50" />
+        </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -left-20 top-1/4 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+          <div className="absolute -right-20 bottom-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="container mx-auto px-6 relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="mt-16 rounded-3xl bg-primary px-7 md:px-10 py-9 flex flex-col md:flex-row items-start md:items-center gap-7 shadow-card"
+            className="text-center max-w-2xl mx-auto"
           >
-            <div className="flex-1">
-              <h3 className="font-serif text-2xl font-normal text-primary-foreground mb-2">
-                {t("preuve.honestTitle")}
-              </h3>
-              <p className="text-primary-foreground/85 text-sm leading-relaxed max-w-xl">
-                {t("preuve.honestBody")}
-              </p>
-            </div>
-            <div className="flex flex-col items-start md:items-center gap-2">
-              <button
+            <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-primary-foreground mb-4">
+              {t("pourquoiSteero.cta.title")}<br />
+              <span className="italic opacity-80">{t("pourquoiSteero.cta.titleHighlight")}</span>
+            </h2>
+            <p className="text-lg text-primary-foreground/90 mb-8">
+              {t("pourquoiSteero.cta.description")}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
                 onClick={() => startTrial("preuve")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-primary font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
-                {t("common.startFree")}
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </button>
-              <p className="text-xs text-primary-foreground/75">{t("preuve.honestMicro")}</p>
+                {t("pourquoiSteero.cta.primary")}
+                <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              </motion.button>
+              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
+                {/* Le second CTA de la home mène au FILM, pas au haut de la
+                    page : depuis qu'une démo existe, promettre « voir une
+                    démo » et déposer le visiteur sur un titre serait une
+                    promesse en l'air. Clé propre, dans `common` — la page
+                    Pourquoi Steero garde son « Découvrir les fonctionnalités ».
+                    Voir aussi `ScrollToTop`, qui ignorait les ancres. */}
+                <Link
+                  to="/fonctionnalites#demo"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                >
+                  <PlayCircle className="w-5 h-5" />
+                  {t("common.watchDemo")}
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>

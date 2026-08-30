@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
+import ZoomableShot from "@/components/ZoomableShot";
 import featureBudgetiser from "@/assets/feature-budgetiser.webp";
+import featureBudgetiser2x from "@/assets/feature-budgetiser@2x.webp";
 import featureSaisir from "@/assets/feature-saisir.webp";
+import featureSaisir2x from "@/assets/feature-saisir@2x.webp";
 import featureRitualiser from "@/assets/feature-ritualiser.webp";
+import featureRitualiser2x from "@/assets/feature-ritualiser@2x.webp";
 
 const Differentiation = () => {
   const { t } = useTranslation();
@@ -41,6 +45,7 @@ const Differentiation = () => {
     {
       titleKey: "differentiation.budget.title",
       image: featureBudgetiser,
+      image2x: featureBudgetiser2x,
       beforeAfterKeys: [
         { before: "differentiation.budget.ba1.before", after: "differentiation.budget.ba1.after" },
         { before: "differentiation.budget.ba2.before", after: "differentiation.budget.ba2.after" },
@@ -51,6 +56,7 @@ const Differentiation = () => {
     {
       titleKey: "differentiation.capture.title",
       image: featureSaisir,
+      image2x: featureSaisir2x,
       beforeAfterKeys: [
         { before: "differentiation.capture.ba1.before", after: "differentiation.capture.ba1.after" },
         { before: "differentiation.capture.ba2.before", after: "differentiation.capture.ba2.after" },
@@ -64,6 +70,7 @@ const Differentiation = () => {
     {
       titleKey: "differentiation.ritualize.title",
       image: featureRitualiser,
+      image2x: featureRitualiser2x,
       beforeAfterKeys: [
         { before: "differentiation.ritualize.ba1.before", after: "differentiation.ritualize.ba1.after" },
         { before: "differentiation.ritualize.ba2.before", after: "differentiation.ritualize.ba2.after" },
@@ -121,16 +128,21 @@ const Differentiation = () => {
                   className="flex-[0_0_100%] min-w-0 px-4"
                 >
                   <div className="bg-card/60 backdrop-blur-sm border border-border/40 rounded-3xl overflow-hidden shadow-xl">
-                    {/* Image */}
-                    <div className="w-full aspect-[16/9] overflow-hidden">
-                      <img
-                        src={adv.image}
-                        alt={t(adv.titleKey)}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
+                    {/* Image.
+
+                        Plus de boîte 16/9 en `object-cover` : les captures font
+                        1200×780, soit 20/13, et le recadrage mangeait le fil
+                        d'Ariane en haut et la barre de compte en bas — les deux
+                        repères qui disent « c'est une vraie app ». Elles
+                        prennent maintenant leur hauteur naturelle, et comme les
+                        onze captures partagent exactement les mêmes dimensions,
+                        les diapositives restent de la même hauteur. */}
+                    <ZoomableShot
+                      src={adv.image}
+                      src2x={adv.image2x}
+                      alt={t(adv.titleKey)}
+                      className="overflow-hidden"
+                    />
 
                     {/* Content */}
                     <div className="p-8 md:p-10">

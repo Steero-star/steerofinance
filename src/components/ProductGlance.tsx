@@ -1,13 +1,17 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import ZoomableShot from "@/components/ZoomableShot";
 import showcaseFlux from "@/assets/showcase-flux.webp";
+import showcaseFlux2x from "@/assets/showcase-flux@2x.webp";
 import showcaseAccueil from "@/assets/showcase-accueil.webp";
+import showcaseAccueil2x from "@/assets/showcase-accueil@2x.webp";
 
+// Deux tailles par capture : la vignette prend la petite, la visionneuse la
+// grande. C'est ce qui fait qu'agrandir agrandit vraiment.
 const ITEMS = [
-  { key: "flux", image: showcaseFlux },
-  { key: "accueil", image: showcaseAccueil },
+  { key: "flux", image: showcaseFlux, image2x: showcaseFlux2x },
+  { key: "accueil", image: showcaseAccueil, image2x: showcaseAccueil2x },
 ] as const;
 
 const ProductGlance = () => {
@@ -92,31 +96,7 @@ const ProductGlance = () => {
                   style={{ y: imageParallax }}
                   className={imageLeft ? "lg:order-1" : "lg:order-2"}
                 >
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <button
-                        type="button"
-                        aria-label={t("showcase.zoomLabel", { name: title })}
-                        className="group block w-full cursor-zoom-in rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                      >
-                        <img
-                          src={item.image}
-                          alt={title}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                        />
-                      </button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-6xl w-[95vw] border-none bg-transparent p-0 shadow-none">
-                      <DialogTitle className="sr-only">{title}</DialogTitle>
-                      <img
-                        src={item.image}
-                        alt={title}
-                        className="w-full h-auto block rounded-lg"
-                      />
-                    </DialogContent>
-                  </Dialog>
+                  <ZoomableShot src={item.image} src2x={item.image2x} alt={title} />
                 </motion.div>
               </div>
             );

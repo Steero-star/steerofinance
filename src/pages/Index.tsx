@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import RapportEtonnement from "@/components/RapportEtonnement";
 import MethodResults from "@/components/MethodResults";
 import Footer from "@/components/Footer";
-import RealProblem from "@/components/RealProblem";
 import Preuve from "@/components/Preuve";
 import SEO from "@/components/SEO";
 
@@ -53,7 +52,6 @@ const Index = () => {
       <Hero />
       <RapportEtonnement />
       <MethodResults />
-      <RealProblem />
       <Preuve />
       <Footer />
     </div>

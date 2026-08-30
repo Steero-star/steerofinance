@@ -2,6 +2,7 @@
   "common": {
     "discoverApproach": "Découvrir l'approche Steero",
     "discoverFeatures": "Découvrir les fonctionnalités",
+    "watchDemo": "Voir une démo",
     "learnMore": "En savoir plus",
     "readMore": "Lire plus",
     "close": "Fermer",
@@ -13,7 +14,7 @@
     "home": "Accueil",
     "whySteero": "Pourquoi Steero",
     "features": "Fonctionnalités",
-    "pricing": "Tarifs",
+    "pricing": "Abonnement",
     "blog": "Blog",
     "faq": "FAQ",
     "login": "Connexion",
@@ -42,8 +43,8 @@
   "hero": {
     "badge": "L'app de pilotage financier personnel",
     "title": "Pilote tes finances.",
-    "titleHighlight": "En installant un cadre.",
-    "description": "Installe des rendez-vous courts avec ton argent : tu sais où il est, tu vois où il va et tu décides où il doit aller.",
+    "titleHighlight": "Reste aligné à tes objectifs.",
+    "description": "Installe des rendez-vous courts et guidés avec ton argent : tu sais où il est, tu décides consciemment où il va et où il doit aller.",
     "microcopy": "14 jours gratuits · sans engagement · aucune connexion bancaire",
     "scrollHint": "Découvrir pourquoi Steero"
   },
@@ -146,7 +147,7 @@
   },
   "differentiation": {
     "title": "Ce que le pilotage change",
-    "description": "Pas des promesses : les écrans que tu utiliseras. Trois résultats concrets.",
+    "description": "Pas des promesses : les écrans que tu utiliseras. Cinq résultats concrets, un par rituel.",
     "budget": {
       "title": "Tes finances s'alignent sur tes objectifs",
       "ba1": {
@@ -193,6 +194,36 @@
         "after": "La régularité installe une maîtrise durable"
       },
       "link": "Les fondements comportementaux de Steero"
+    },
+    "master": {
+      "title": "Tu lis ton mois d'un seul coup d'œil",
+      "ba1": {
+        "before": "Il faut ouvrir trois onglets pour savoir où tu en es",
+        "after": "Revenus, dépenses, épargne : une seule lecture"
+      },
+      "ba2": {
+        "before": "Un tableur additionne, il n'explique rien",
+        "after": "Chaque enveloppe dit ce qu'elle a consommé et ce qui reste"
+      },
+      "ba3": {
+        "before": "Tu découvres le dérapage une fois qu'il est dépensé",
+        "after": "L'écart se voit pendant qu'il est encore corrigeable"
+      }
+    },
+    "position": {
+      "title": "Tu arbitres sur un trimestre, pas sur une humeur",
+      "ba1": {
+        "before": "Un mois isolé ne dit pas si c'est une tendance",
+        "after": "Trois mois montrent ce qui se répète"
+      },
+      "ba2": {
+        "before": "Sans recul, chaque dépense semble exceptionnelle",
+        "after": "Un trimestre clos montre ce que tu as vraiment arbitré"
+      },
+      "ba3": {
+        "before": "Réajuster au ressenti recommence chaque mois",
+        "after": "Tu déplaces l'effort là où il change quelque chose"
+      }
     }
   },
   "nextSteps": {
@@ -440,6 +471,9 @@
     "heroTitle": "Tout pour piloter.",
     "heroTitleEm": "Rien pour te distraire.",
     "heroLead": "Trois temps : tu poses ton cadre une fois, tu tiens ton quotidien en quelques minutes, et tu décides avec de la hauteur. Voici les écrans que tu utiliseras vraiment.",
+    "tourLabel": "En mouvement",
+    "tourTitle": "Le produit en moins d'une minute",
+    "tourLead": "Six étapes filmées dans l'app : centraliser ses comptes, poser son budget, déclarer une dépense, piloter le mois, fixer un cap, et le cadre qui tient l'ensemble.",
     "newBadge": "Nouveau",
     "groups": [
       {
@@ -1027,7 +1061,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "L'accès complet à l'application est proposé par abonnement. Les prix en vigueur sont affichés sur la [page tarifs](/pricing) et rappelés avant tout paiement."
+              "text": "L'accès complet à l'application est proposé par abonnement. Les prix en vigueur sont affichés sur la [page tarifs](/abonnement) et rappelés avant tout paiement."
             },
             {
               "type": "kv",
@@ -1642,13 +1676,14 @@
       "titleHighlight": "Tu as besoin d'un pare-brise.",
       "description": "Les apps qui agrègent tes données te montrent où est allé ton argent. Steero t'aide à décider où il va aller.",
       "cta": "Commencer 14 jours gratuits",
-      "subtext": "Sans engagement"
+      "subtext": "Sans engagement",
+      "imageAlt": "Un bureau clair face aux toits de Paris : une personne assise, mains sur le clavier, tient son rendez-vous avec ses finances."
     },
     "realProblem": {
-      "label": "Le vrai problème",
-      "title": "Tu sais déjà où ton argent est allé. Ce que tu ignores,",
-      "titleHighlight": "c'est où il va aller.",
-      "description": "Les apps automatiques te donnent une réponse au mauvais problème. Tu n'as pas un problème d'information : tu as un problème de décision. Finary, Linxo, Bankin te montrent le passé avec une précision parfaite. Ça ne change pas les comportements.",
+      "label": "Ce qu'on fait différemment",
+      "title": "Reprends le contrôle",
+      "titleHighlight": "grâce à un cadre clair.",
+      "description": "Les apps automatiques te donnent beaucoup d'informations : des graphiques, des évolutions ou des indicateurs, mais tout est déjà acté. \n\nFinary, Linxo, Bankin montrent le passé avec précision, sans accompagner ta montée en compétence financière ni t'aider à piloter tes comportements pour prendre des décisions éclairées.",
       "retroLabel": "Rétroviseur",
       "retroCompany": "Finary, Bankin, Linxo",
       "retroItems": [
@@ -1677,24 +1712,27 @@
           "num": "01",
           "title": "La compréhension naît de l'effort cognitif, pas de l'exposition à l'information.",
           "desc": "Enregistrer une dépense, c'est l'identifier, la catégoriser, la comparer à une intention. Ce mécanisme de traitement actif est ce qui produit la maîtrise réelle, pas la consultation d'un dashboard.",
-          "ref": "Chi & Wylie — The ICAP Framework, 2014"
+          "ref": "Chi & Wylie — The ICAP Framework, 2014",
+          "refHref": "https://doi.org/10.1080/00461520.2014.965823"
         },
         {
           "num": "02",
           "title": "L'automatisation crée une illusion de contrôle, pas une maîtrise.",
           "desc": "Les systèmes automatiques génèrent un biais de surconfiance passive : « mes comptes sont connectés » ne signifie pas « je sais où va mon argent ». L'outil porte la responsabilité, pas l'utilisateur.",
-          "ref": "Parasuraman & Riley — Humans and Automation, 1997"
+          "ref": "Parasuraman & Riley — Humans and Automation, 1997",
+          "refHref": "https://doi.org/10.1518/001872097778543886"
         },
         {
           "num": "03",
           "title": "Le rituel transforme la finance en comportement, pas en obligation.",
           "desc": "5 minutes par jour créent une boucle de feedback courte. C'est le principe de toute discipline installée durablement : la régularité faible et consistante bat l'effort intense et irrégulier.",
-          "ref": "Clear — Atomic Habits, 2018"
+          "ref": "Clear — Atomic Habits, 2018",
+          "refHref": "https://jamesclear.com/atomic-habits"
         }
       ]
     },
     "tempo": {
-      "label": "Le système",
+      "label": "Un système",
       "titlePre": "TEMPO :",
       "titleHighlight": "Cinq rituels",
       "titlePost": ", une discipline.",
@@ -1755,7 +1793,7 @@
     "seoDescription": "Découvrez l'offre Steero à 8€/mois : accès complet à toutes les fonctionnalités pour reprendre le contrôle de vos finances.",
     "titlePart1": "Un prix.",
     "titleHighlight": "Une décision simple.",
-    "subtitle": "Accès complet à Steero. Pas de plan Free tronqué, pas de features cachées derrière un tier supérieur.",
+    "subtitle": "Accès complet à Steero. Pas de plan tronqué, pas de fonctions réservées.",
     "perMonth": "mois",
     "quarterly": "Trimestriel",
     "annual": "Annuel",
@@ -1764,7 +1802,7 @@
     "totalBilled": "Total",
     "savings": "Économie de",
     "planName": "Steero",
-    "description": "Tout ce dont tu as besoin pour piloter ton budget au quotidien. Rituels TEMPO complets, modèles préremplis, suivi de trajectoire.",
+    "description": "Tout pour piloter ton budget au quotidien, sans friction.",
     "featuresHeading": "Ce que tu obtiens",
     "feature1": "Rituels TEMPO complets",
     "feature2": "Modèles & saisie rapide",
@@ -1784,7 +1822,7 @@
     "earlyText2": "",
     "earlyCta": "Commencer gratuitement",
     "earlyDisclaimer": "La réduction s'applique sur le prix public en vigueur. Si le tarif évolue dans le futur, la réduction reste appliquée.",
-    "guarantee": "14 jours d'essai gratuit · Carte requise à l'inscription, résiliable à tout moment avant la fin de l'essai",
+    "guarantee": "14 jours offerts · Données sécurisées · Pas de synchronisation",
     "faqTitle": "Des questions ?",
     "faqDescription": "Consulte notre FAQ pour en savoir plus sur Steero.",
     "faqCta": "Voir la FAQ",
@@ -1833,7 +1871,7 @@
       {
         "num": "Constat 01",
         "fig": "30 %",
-        "title": "de dépense sous-estimée sans regard régulier",
+        "title": "de dépense sous-estimée sans un regard conscient et régulier",
         "body": "Ce qui sort de la routine échappe presque entièrement à l'estimation : l'écart entre ce qu'on croit dépenser et le réel se compte en milliers d'euros par an. Ce qu'on ne voit pas, on ne le pilote pas.",
         "srcLabel": "Étude · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
         "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",

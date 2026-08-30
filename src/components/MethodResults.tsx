@@ -4,45 +4,83 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import useEmblaCarousel from "embla-carousel-react";
 import { TempoLetter } from "@/components/TempoLetter";
-import featureBudgetiser from "@/assets/feature-budgetiser.webp";
-import featureSaisir from "@/assets/feature-saisir.webp";
-import featureRitualiser from "@/assets/feature-ritualiser.webp";
+import { useIsDesktop } from "@/hooks/use-is-desktop";
+import ZoomableShot from "@/components/ZoomableShot";
+import shotAccueil from "@/assets/shot-accueil.webp";
+import shotAccueil2x from "@/assets/shot-accueil@2x.webp";
+import featureExaminer from "@/assets/feature-examiner.webp";
+import featureExaminer2x from "@/assets/feature-examiner@2x.webp";
+import showcaseAccueil from "@/assets/showcase-accueil.webp";
+import showcaseAccueil2x from "@/assets/showcase-accueil@2x.webp";
+import featurePositionner from "@/assets/feature-positionner.webp";
+import featurePositionner2x from "@/assets/feature-positionner@2x.webp";
+import featureOrienter from "@/assets/feature-orienter.webp";
+import featureOrienter2x from "@/assets/feature-orienter@2x.webp";
 
 const RITUAL_KEYS = ["t", "e", "m", "p", "o"] as const;
 
+/**
+ * CINQ PANNEAUX, UN PAR RITUEL, DANS L'ORDRE DU TEMPO.
+ *
+ * Le rail s'allume au passage de chaque panneau. Tant que les panneaux
+ * portaient [m,p] puis [t] puis [e,o], descendre la page allumait
+ * Maîtriser-Positionner, PUIS Tracer, PUIS Examiner-Orienter : la méthode se
+ * lisait à l'envers de ce qu'elle enseigne.
+ *
+ * Regrouper M·P·O sur un seul panneau (29/08) réglait l'ordre sans écrire de
+ * copy, mais coûtait la démonstration : les trois rituels regardent le même
+ * plan à trois PROFONDEURS DE TEMPS, et une seule image ne peut pas montrer
+ * trois profondeurs. Chacun a donc désormais son écran, et c'est l'échelle qui
+ * les distingue, pas le sujet :
+ *
+ *   T  l'accueil, la série de jours tenus       — le geste
+ *   E  le rituel Examiner                        — la semaine
+ *   M  la vue d'ensemble                         — le mois consolidé
+ *   P  Mon avancement sur un trimestre CLOS      — le trimestre
+ *   O  le budget annuel, ses douze colonnes      — l'année
+ *
+ * Le trimestre est clos et non en cours : sur un trimestre aux deux tiers, la
+ * colonne Écart dit le calendrier plutôt qu'une décision (cf. la spec du jeu de
+ * démonstration). Deux blocs de copy ont été écrits pour M et P, dans les trois
+ * locales, avec leurs « avant » — `Differentiation.tsx` les lit.
+ */
 const RESULTS = [
   {
-    key: "budget",
-    image: featureBudgetiser,
-    rituals: ["m", "p"],
-    link: null as string | null,
-  },
-  {
     key: "capture",
-    image: featureSaisir,
+    image: shotAccueil,
+    image2x: shotAccueil2x,
     rituals: ["t"],
     link: "/pourquoi-steero#fondements-comportementaux",
   },
   {
     key: "ritualize",
-    image: featureRitualiser,
-    rituals: ["e", "o"],
+    image: featureExaminer,
+    image2x: featureExaminer2x,
+    rituals: ["e"],
     link: "/pourquoi-steero#fondements-comportementaux",
   },
+  {
+    key: "master",
+    image: showcaseAccueil,
+    image2x: showcaseAccueil2x,
+    rituals: ["m"],
+    link: null as string | null,
+  },
+  {
+    key: "position",
+    image: featurePositionner,
+    image2x: featurePositionner2x,
+    rituals: ["p"],
+    link: null as string | null,
+  },
+  {
+    key: "budget",
+    image: featureOrienter,
+    image2x: featureOrienter2x,
+    rituals: ["o"],
+    link: null as string | null,
+  },
 ] as const;
-
-const useIsDesktop = () => {
-  const [isDesktop, setIsDesktop] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(min-width: 1024px)").matches
-  );
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
-    const onChange = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
-  }, []);
-  return isDesktop;
-};
 
 /** Panneau résultat : capture + titre + paires ✓/✗ */
 const ResultPanel = ({
@@ -57,21 +95,28 @@ const ResultPanel = ({
 
   return (
     <div className="relative bg-card border border-border/60 rounded-3xl overflow-hidden shadow-xl">
-      <div className="relative w-full aspect-[16/9] overflow-hidden">
-        <motion.img
+      {/* Ici le recadrage 16/9 est VOULU : la capture est un fond, le panneau de
+          texte lui passe dessus sur le tiers droit en desktop. C'est justement
+          pourquoi elle mérite le zoom — le tiers caché n'est atteignable que par
+          la visionneuse. `imgClassName` garde le remplissage, `motion.div`
+          reprend l'animation qui vivait sur l'image. */}
+      <motion.div
+        className="relative w-full aspect-[16/9] overflow-hidden"
+        initial={reduceMotion ? undefined : { scale: 1.04 }}
+        whileInView={reduceMotion ? undefined : { scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.9, ease: "easeOut" }}
+      >
+        <ZoomableShot
           src={result.image}
+          src2x={result.image2x}
           alt={t(`differentiation.${result.key}.title`)}
-          loading="lazy"
-          decoding="async"
-          initial={reduceMotion ? undefined : { scale: 1.04 }}
-          whileInView={reduceMotion ? undefined : { scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: "easeOut" }}
-          className="w-full h-full object-cover"
+          className="h-full"
+          imgClassName="w-full h-full object-cover"
         />
         {/* Dégradé de contraste sous le panneau texte (desktop) */}
-        <div className="hidden lg:block absolute inset-y-0 right-0 w-[45%] bg-gradient-to-l from-card/60 via-card/15 to-transparent" />
-      </div>
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-[45%] bg-gradient-to-l from-card/60 via-card/15 to-transparent pointer-events-none" />
+      </motion.div>
 
       <div className="relative p-5 md:p-6 flex flex-col justify-center lg:absolute lg:inset-y-0 lg:right-0 lg:w-[30%] lg:p-6 lg:bg-card/60 lg:backdrop-blur-md">
         <div className="flex items-center gap-2 mb-3">

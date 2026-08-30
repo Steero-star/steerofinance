@@ -2,10 +2,11 @@ import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import ZoomableShot from "@/components/ZoomableShot";
 import heroImageWebP from "@/assets/hero-dashboard.webp";
 import heroImagePng from "@/assets/hero-dashboard.png";
 import { startTrial } from "@/lib/analytics";
+
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -19,6 +20,7 @@ const Hero = () => {
   const decorScale1 = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const decorScale2 = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 50]);
+
 
   return (
     <section ref={sectionRef} className="relative min-h-screen bg-hero-gradient pt-20 pb-2 overflow-hidden">
@@ -105,40 +107,12 @@ const Hero = () => {
             style={{ y: imageY }}
             className="relative"
           >
-            <Dialog>
-              <DialogTrigger asChild>
-                <button
-                  type="button"
-                  aria-label={t("showcase.zoomLabel", { name: t("hero.title") })}
-                  className="group block w-full cursor-zoom-in rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                >
-                  <picture>
-                    <source srcSet={heroImageWebP} type="image/webp" />
-                    <img
-                      src={heroImagePng}
-                      alt="Tableau de bord budgétaire de Steero"
-                      fetchPriority="high"
-                      loading="eager"
-                      decoding="async"
-                      className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                    />
-                  </picture>
-                </button>
-              </DialogTrigger>
-              <DialogContent className="max-w-6xl w-[95vw] border-none bg-transparent p-0 shadow-none">
-                <DialogTitle className="sr-only">
-                  {t("hero.title")}
-                </DialogTitle>
-                <picture>
-                  <source srcSet={heroImageWebP} type="image/webp" />
-                  <img
-                    src={heroImagePng}
-                    alt="Tableau de bord budgétaire de Steero"
-                    className="w-full h-auto block rounded-lg"
-                  />
-                </picture>
-              </DialogContent>
-            </Dialog>
+            <ZoomableShot
+              src={heroImageWebP}
+              fallback={heroImagePng}
+              alt={t("hero.title")}
+              loading="eager"
+            />
           </motion.div>
         </div>
 

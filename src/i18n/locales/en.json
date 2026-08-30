@@ -2,6 +2,7 @@
   "common": {
     "discoverApproach": "Discover Steero's approach",
     "discoverFeatures": "Discover features",
+    "watchDemo": "Watch a demo",
     "learnMore": "Learn more",
     "readMore": "Read more",
     "close": "Close",
@@ -13,7 +14,7 @@
     "home": "Home",
     "whySteero": "Why Steero",
     "features": "Features",
-    "pricing": "Pricing",
+    "pricing": "Subscription",
     "blog": "Blog",
     "faq": "FAQ",
     "login": "Log in",
@@ -42,8 +43,8 @@
   "hero": {
     "badge": "The personal finance steering app",
     "title": "Steer your finances.",
-    "titleHighlight": "By installing a framework.",
-    "description": "Install short check-ins with your money: you know where it is, you see where it's going, and you decide where it should go.",
+    "titleHighlight": "Stay aligned with your goals.",
+    "description": "Install short, guided check-ins with your money: you know where it is, and you consciously decide where it goes and where it should go.",
     "microcopy": "14 days free · no commitment · no bank connection",
     "scrollHint": "Discover why Steero"
   },
@@ -146,7 +147,7 @@
   },
   "differentiation": {
     "title": "What steering changes",
-    "description": "Not promises: the screens you will use. Three concrete results.",
+    "description": "Not promises: the screens you will use. Five concrete results, one per ritual.",
     "budget": {
       "title": "Your finances align with your goals",
       "ba1": {
@@ -193,6 +194,36 @@
         "after": "Consistency builds lasting mastery"
       },
       "link": "The behavioral foundations of Steero"
+    },
+    "master": {
+      "title": "You read your month at a glance",
+      "ba1": {
+        "before": "You need three tabs to know where you stand",
+        "after": "Income, spending, saving: one single reading"
+      },
+      "ba2": {
+        "before": "A spreadsheet adds up, it explains nothing",
+        "after": "Every envelope shows what it used and what is left"
+      },
+      "ba3": {
+        "before": "You find the overshoot once the money is gone",
+        "after": "The gap shows while it can still be corrected"
+      }
+    },
+    "position": {
+      "title": "You decide on a quarter, not on a mood",
+      "ba1": {
+        "before": "One month alone never tells you whether it is a trend",
+        "after": "Three months show what repeats"
+      },
+      "ba2": {
+        "before": "Without distance, every expense looks exceptional",
+        "after": "A closed quarter shows what you actually chose"
+      },
+      "ba3": {
+        "before": "Adjusting by feel starts over every month",
+        "after": "You move the effort where it changes something"
+      }
     }
   },
   "nextSteps": {
@@ -440,6 +471,9 @@
     "heroTitle": "Everything to steer.",
     "heroTitleEm": "Nothing to distract you.",
     "heroLead": "Three moments: you set your frame once, you hold your daily routine in a few minutes, and you decide with altitude. These are the screens you'll actually use.",
+    "tourLabel": "In motion",
+    "tourTitle": "The product in under a minute",
+    "tourLead": "Six steps filmed inside the app: bring your accounts together, set your budget, record an expense, steer the month, set a course, and the framework that holds it all.",
     "newBadge": "New",
     "groups": [
       {
@@ -1011,7 +1045,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Full access to the application is offered through a subscription. Current prices are shown on the [pricing page](/pricing) and repeated before any payment."
+              "text": "Full access to the application is offered through a subscription. Current prices are shown on the [pricing page](/abonnement) and repeated before any payment."
             },
             {
               "type": "kv",
@@ -1626,13 +1660,14 @@
       "titleHighlight": "You need a windshield.",
       "description": "Apps that aggregate your data show you where your money went. Steero helps you decide where it will go.",
       "cta": "Start 14 days free",
-      "subtext": "No commitment"
+      "subtext": "No commitment",
+      "imageAlt": "A bright desk overlooking the Paris rooftops: someone seated, hands on the keyboard, keeping their check-in with their finances."
     },
     "realProblem": {
-      "label": "The real problem",
-      "title": "You already know where your money went. What you don't know,",
-      "titleHighlight": "is where it's going.",
-      "description": "Automatic apps give you an answer to the wrong problem. You don't have an information problem — you have a decision problem. Finary, Linxo, Bankin show you the past with perfect precision. That doesn't change behavior.",
+      "label": "What we do differently",
+      "title": "Take back control",
+      "titleHighlight": "with a clear framework.",
+      "description": "Automatic apps give you plenty of information: charts, trends or indicators — but it has all already happened. \n\nFinary, Linxo, Bankin show the past with precision, without building your financial skill or helping you steer your behavior toward informed decisions.",
       "retroLabel": "Rearview mirror",
       "retroCompany": "Finary, Bankin, Linxo",
       "retroItems": [
@@ -1661,24 +1696,27 @@
           "num": "01",
           "title": "Understanding comes from cognitive effort, not exposure to information.",
           "desc": "Recording an expense means identifying it, categorizing it, comparing it to an intention. This active processing mechanism is what produces real mastery — not consulting a dashboard.",
-          "ref": "Chi & Wylie — The ICAP Framework, 2014"
+          "ref": "Chi & Wylie — The ICAP Framework, 2014",
+          "refHref": "https://doi.org/10.1080/00461520.2014.965823"
         },
         {
           "num": "02",
           "title": "Automation creates an illusion of control, not mastery.",
           "desc": "Automatic systems generate a passive overconfidence bias: \"my accounts are connected\" doesn't mean \"I know where my money goes.\" The tool carries the responsibility, not the user.",
-          "ref": "Parasuraman & Riley — Humans and Automation, 1997"
+          "ref": "Parasuraman & Riley — Humans and Automation, 1997",
+          "refHref": "https://doi.org/10.1518/001872097778543886"
         },
         {
           "num": "03",
           "title": "Ritual transforms finance into behavior, not obligation.",
           "desc": "5 minutes a day creates a short feedback loop. This is the principle behind any durably installed discipline: low, consistent regularity beats intense, irregular effort.",
-          "ref": "Clear — Atomic Habits, 2018"
+          "ref": "Clear — Atomic Habits, 2018",
+          "refHref": "https://jamesclear.com/atomic-habits"
         }
       ]
     },
     "tempo": {
-      "label": "The system",
+      "label": "A system",
       "titlePre": "TEMPO:",
       "titleHighlight": "Five rituals",
       "titlePost": ", one discipline.",
@@ -1739,7 +1777,7 @@
     "seoDescription": "Discover Steero at €8/month: full access to all features to take control of your finances.",
     "titlePart1": "One price.",
     "titleHighlight": "One simple decision.",
-    "subtitle": "Full access to Steero. No watered-down Free plan, no features hidden behind a higher tier.",
+    "subtitle": "Full access to Steero. No stripped-down plan, no features held back.",
     "perMonth": "month",
     "quarterly": "Quarterly",
     "annual": "Annual",
@@ -1748,7 +1786,7 @@
     "totalBilled": "Total",
     "savings": "You save",
     "planName": "Steero",
-    "description": "Everything you need to steer your budget day after day. Full TEMPO rituals, ready-made templates, trajectory tracking.",
+    "description": "Everything to steer your budget day to day, without friction.",
     "featuresHeading": "What you get",
     "feature1": "Full TEMPO rituals",
     "feature2": "Templates & quick entry",
@@ -1768,7 +1806,7 @@
     "earlyText2": "",
     "earlyCta": "Get early access",
     "earlyDisclaimer": "The discount applies to the current public price. If the price changes in the future, your discount will remain applied.",
-    "guarantee": "14-day free trial · Card required to start, cancel anytime before the trial ends",
+    "guarantee": "14 days free · Secure data · No bank sync",
     "faqTitle": "Have questions?",
     "faqDescription": "Check out our FAQ to learn more about Steero.",
     "faqCta": "View FAQ",
@@ -1817,7 +1855,7 @@
       {
         "num": "Finding 01",
         "fig": "30%",
-        "title": "of spending underestimated without a regular look",
+        "title": "of spending underestimated without a conscious, regular look",
         "body": "Anything outside your routine barely makes it into your estimates: the gap between what you think you spend and reality adds up to thousands a year. What you don't see, you can't steer.",
         "srcLabel": "Study · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
         "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",

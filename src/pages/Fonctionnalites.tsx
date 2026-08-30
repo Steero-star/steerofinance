@@ -17,11 +17,31 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import { Dialog, DialogContent, DialogTrigger, DialogTitle } from "@/components/ui/dialog";
+import ZoomableShot from "@/components/ZoomableShot";
 import { startTrial, trackFeatureCardOpen } from "@/lib/analytics";
+import showcaseAccueil from "@/assets/showcase-accueil.webp";
+import showcaseAccueil2x from "@/assets/showcase-accueil@2x.webp";
+import shotAccueil from "@/assets/shot-accueil.webp";
+import shotAccueil2x from "@/assets/shot-accueil@2x.webp";
 import featureBudgetiser from "@/assets/feature-budgetiser.webp";
+import featureBudgetiser2x from "@/assets/feature-budgetiser@2x.webp";
+import featureRecurrents from "@/assets/feature-recurrents.webp";
+import featureRecurrents2x from "@/assets/feature-recurrents@2x.webp";
 import featureSaisir from "@/assets/feature-saisir.webp";
-import showcaseFlux from "@/assets/showcase-flux.webp";
+import featureSaisir2x from "@/assets/feature-saisir@2x.webp";
+import featureRitualiser from "@/assets/feature-ritualiser.webp";
+import featureRitualiser2x from "@/assets/feature-ritualiser@2x.webp";
+import featureAvancement from "@/assets/feature-avancement.webp";
+import featureAvancement2x from "@/assets/feature-avancement@2x.webp";
+import featureProjets from "@/assets/feature-projets.webp";
+import featureProjets2x from "@/assets/feature-projets@2x.webp";
+import featureProjetDetail from "@/assets/feature-projet-detail.webp";
+import featureProjetDetail2x from "@/assets/feature-projet-detail@2x.webp";
+import featureTiers from "@/assets/feature-tiers.webp";
+import featureTiers2x from "@/assets/feature-tiers@2x.webp";
+import tourMp4 from "@/assets/tour-steero.mp4";
+import tourWebm from "@/assets/tour-steero.webm";
+import tourPoster from "@/assets/tour-steero-poster.jpg";
 
 type Feature = { key: string; title: string; promise: string; details: string; isNew?: boolean };
 type Group = { num: string; title: string; titleEm?: string; sub: string; features: Feature[] };
@@ -39,8 +59,44 @@ const ICONS: Record<string, LucideIcon> = {
   tiers: Users,
 };
 
-/* Une capture réelle par groupe ; celle des projets/tiers reste à produire. */
-const GROUP_IMAGES = [featureBudgetiser, featureSaisir, showcaseFlux];
+type Shot = { src: string; src2x: string };
+const shot = (src: string, src2x: string): Shot => ({ src, src2x });
+
+/**
+ * UNE CAPTURE PAR CARTE, PLUS UNE PAR GROUPE.
+ *
+ * La page annonçait neuf fonctionnalités et n'en montrait que trois écrans, un
+ * par groupe — le groupe 03 promettait « Gestion par projets » ET « Gestion des
+ * tiers » avec une seule image, qui jusqu'au 29/08 était d'ailleurs une capture
+ * de trésorerie. Les cartes portent déjà un état de survol (`active`) : le même
+ * geste qui déplie le détail change maintenant la capture. Rien à apprendre, et
+ * les onze captures servent enfin à quelque chose.
+ *
+ * Une clé absente d'ici retombe sur la vignette de son groupe : ajouter une
+ * carte dans les traductions ne casse donc pas la page, elle montre simplement
+ * l'écran par défaut tant que personne n'a photographié le sien.
+ */
+const FEATURE_SHOTS: Record<string, Shot> = {
+  // 01 — poser le cadre
+  onboarding: shot(showcaseAccueil, showcaseAccueil2x),
+  budget: shot(featureBudgetiser, featureBudgetiser2x),
+  fixed: shot(featureRecurrents, featureRecurrents2x),
+  // 02 — tenir le quotidien
+  daily: shot(featureSaisir, featureSaisir2x),
+  level: shot(shotAccueil, shotAccueil2x),
+  rituals: shot(featureRitualiser, featureRitualiser2x),
+  // 03 — décider
+  indicators: shot(featureAvancement, featureAvancement2x),
+  projects: shot(featureProjetDetail, featureProjetDetail2x),
+  tiers: shot(featureTiers, featureTiers2x),
+};
+
+/** Ce que montre un groupe tant qu'aucune de ses cartes n'est survolée. */
+const GROUP_SHOTS: Shot[] = [
+  shot(featureBudgetiser, featureBudgetiser2x),
+  shot(featureSaisir, featureSaisir2x),
+  shot(featureProjets, featureProjets2x),
+];
 
 /**
  * Page Fonctionnalités v2 : trois groupes qui suivent le parcours réel
@@ -112,6 +168,64 @@ const Fonctionnalites = () => {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
             <span className="text-xs text-muted-foreground">{t("hero.microcopy")}</span>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Le tour filmé — entre la promesse et son détail.
+          Pas d'autoplay, et `preload="metadata"` : le fichier pèse 2,4 Mo, il
+          ne se télécharge que si quelqu'un décide de le regarder. C'est ce qui
+          permet aussi de le servir au mobile, ce qu'un fond animé n'aurait pas
+          permis. Les contrôles natifs suffisent : le film dure cinquante
+          secondes et se parcourt, ce n'est pas une décoration. */}
+      <section id="demo" className="scroll-mt-24 py-16 bg-background border-t border-border/40">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+          >
+            {t("fonctionnalites.tourLabel")}
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-serif text-2xl md:text-4xl font-normal leading-[1.15] tracking-tight text-foreground mb-3"
+          >
+            {t("fonctionnalites.tourTitle")}
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-muted-foreground leading-relaxed max-w-2xl mb-8"
+          >
+            {t("fonctionnalites.tourLead")}
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.25 }}
+            className="rounded-3xl overflow-hidden border border-border/60 shadow-xl bg-card"
+          >
+            <video
+              className="w-full h-auto block"
+              poster={tourPoster}
+              aria-label={t("fonctionnalites.tourTitle")}
+              controls
+              muted
+              playsInline
+              preload="metadata"
+            >
+              <source src={tourMp4} type="video/mp4" />
+              <source src={tourWebm} type="video/webm" />
+            </video>
           </motion.div>
         </div>
       </section>
@@ -210,27 +324,26 @@ const Fonctionnalites = () => {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className={gi % 2 === 1 ? "lg:order-1" : ""}
               >
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <button
-                      type="button"
-                      aria-label={t("showcase.zoomLabel", { name: g.title })}
-                      className="group block w-full cursor-zoom-in rounded-2xl overflow-hidden border border-border/60 shadow-image focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-                    >
-                      <img
-                        src={GROUP_IMAGES[gi]}
-                        alt={g.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-auto block transition-transform duration-500 ease-out group-hover:scale-[1.02]"
-                      />
-                    </button>
-                  </DialogTrigger>
-                  <DialogContent className="max-w-6xl w-[95vw] border-none bg-transparent p-0 shadow-none">
-                    <DialogTitle className="sr-only">{g.title}</DialogTitle>
-                    <img src={GROUP_IMAGES[gi]} alt={g.title} className="w-full h-auto block rounded-lg" />
-                  </DialogContent>
-                </Dialog>
+                {(() => {
+                  // `active` est global à la page : sans ce filtre, survoler une
+                  // carte du groupe 03 changerait aussi la vignette du 01.
+                  const survolee = g.features.find((f) => f.key === active);
+                  const vue =
+                    (survolee && FEATURE_SHOTS[survolee.key]) ?? GROUP_SHOTS[gi];
+                  return (
+                    <ZoomableShot
+                      // Pas de `key` : on veut justement que React réutilise le
+                      // même <img>. Le navigateur garde alors la capture
+                      // précédente à l'écran le temps de décoder la suivante,
+                      // là où un remontage laisserait un trou blanc à chaque
+                      // survol.
+                      src={vue.src}
+                      src2x={vue.src2x}
+                      alt={survolee?.title ?? g.title}
+                      className="rounded-2xl overflow-hidden border border-border/60 shadow-image"
+                    />
+                  );
+                })()}
               </motion.div>
             </div>
           </div>

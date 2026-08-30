@@ -2,6 +2,7 @@
   "common": {
     "discoverApproach": "Descubre el enfoque Steero",
     "discoverFeatures": "Descubre las funcionalidades",
+    "watchDemo": "Ver una demo",
     "learnMore": "Saber más",
     "readMore": "Leer más",
     "close": "Cerrar",
@@ -13,7 +14,7 @@
     "home": "Inicio",
     "whySteero": "Por qué Steero",
     "features": "Funcionalidades",
-    "pricing": "Precios",
+    "pricing": "Suscripción",
     "blog": "Blog",
     "faq": "FAQ",
     "login": "Iniciar sesión",
@@ -42,8 +43,8 @@
   "hero": {
     "badge": "La app de pilotaje financiero personal",
     "title": "Pilota tus finanzas.",
-    "titleHighlight": "Instalando un marco.",
-    "description": "Instala citas cortas con tu dinero: sabes dónde está, ves adónde va y decides adónde debe ir.",
+    "titleHighlight": "Sigue alineado con tus objetivos.",
+    "description": "Instala citas cortas y guiadas con tu dinero: sabes dónde está y decides conscientemente adónde va y adónde debe ir.",
     "microcopy": "14 días gratis · sin compromiso · sin conexión bancaria",
     "scrollHint": "Descubrir por qué Steero"
   },
@@ -146,7 +147,7 @@
   },
   "differentiation": {
     "title": "Lo que cambia el pilotaje",
-    "description": "No promesas: las pantallas que usarás. Tres resultados concretos.",
+    "description": "No promesas: las pantallas que usarás. Cinco resultados concretos, uno por ritual.",
     "budget": {
       "title": "Tus finanzas se alinean con tus objetivos",
       "ba1": {
@@ -193,6 +194,36 @@
         "after": "La regularidad instala un dominio duradero"
       },
       "link": "Los fundamentos conductuales de Steero"
+    },
+    "master": {
+      "title": "Lees tu mes de un vistazo",
+      "ba1": {
+        "before": "Necesitas tres pestañas para saber dónde estás",
+        "after": "Ingresos, gastos, ahorro: una sola lectura"
+      },
+      "ba2": {
+        "before": "Una hoja de cálculo suma, no explica nada",
+        "after": "Cada sobre dice lo que ha consumido y lo que queda"
+      },
+      "ba3": {
+        "before": "Descubres el desvío cuando el dinero ya se fue",
+        "after": "La diferencia se ve mientras aún se puede corregir"
+      }
+    },
+    "position": {
+      "title": "Decides sobre un trimestre, no sobre un impulso",
+      "ba1": {
+        "before": "Un mes aislado no dice si es una tendencia",
+        "after": "Tres meses muestran lo que se repite"
+      },
+      "ba2": {
+        "before": "Sin perspectiva, cada gasto parece excepcional",
+        "after": "Un trimestre cerrado muestra lo que realmente decidiste"
+      },
+      "ba3": {
+        "before": "Reajustar por intuición empieza de cero cada mes",
+        "after": "Mueves el esfuerzo donde cambia algo"
+      }
     }
   },
   "nextSteps": {
@@ -440,6 +471,9 @@
     "heroTitle": "Todo para pilotar.",
     "heroTitleEm": "Nada que te distraiga.",
     "heroLead": "Tres tiempos: colocas tu marco una vez, sostienes tu día a día en unos minutos y decides con altura. Estas son las pantallas que usarás de verdad.",
+    "tourLabel": "En movimiento",
+    "tourTitle": "El producto en menos de un minuto",
+    "tourLead": "Seis pasos filmados en la app: centralizar las cuentas, fijar el presupuesto, registrar un gasto, pilotar el mes, marcar un rumbo, y el marco que lo sostiene.",
     "newBadge": "Nuevo",
     "groups": [
       {
@@ -1011,7 +1045,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "El acceso completo a la aplicación se ofrece mediante suscripción. Los precios vigentes se muestran en la [página de tarifas](/pricing) y se recuerdan antes de cualquier pago."
+              "text": "El acceso completo a la aplicación se ofrece mediante suscripción. Los precios vigentes se muestran en la [página de tarifas](/abonnement) y se recuerdan antes de cualquier pago."
             },
             {
               "type": "kv",
@@ -1626,13 +1660,14 @@
       "titleHighlight": "Necesitas un parabrisas.",
       "description": "Las apps que agregan tus datos te muestran adónde fue tu dinero. Steero te ayuda a decidir adónde irá.",
       "cta": "Empezar 14 días gratis",
-      "subtext": "Sin compromiso"
+      "subtext": "Sin compromiso",
+      "imageAlt": "Un escritorio luminoso frente a los tejados de París: una persona sentada, con las manos en el teclado, cumple su cita con sus finanzas."
     },
     "realProblem": {
-      "label": "El verdadero problema",
-      "title": "Ya sabes adónde fue tu dinero. Lo que no sabes,",
-      "titleHighlight": "es adónde va a ir.",
-      "description": "Las apps automáticas te dan una respuesta al problema equivocado. No tienes un problema de información: tienes un problema de decisión. Finary, Linxo, Bankin te muestran el pasado con precisión perfecta. Eso no cambia los comportamientos.",
+      "label": "Lo que hacemos diferente",
+      "title": "Recupera el control",
+      "titleHighlight": "con un marco claro.",
+      "description": "Las apps automáticas te dan mucha información: gráficos, evoluciones o indicadores, pero todo ya está consumado. \n\nFinary, Linxo, Bankin muestran el pasado con precisión, sin acompañar tu aprendizaje financiero ni ayudarte a pilotar tus comportamientos para tomar decisiones informadas.",
       "retroLabel": "Retrovisor",
       "retroCompany": "Finary, Bankin, Linxo",
       "retroItems": [
@@ -1661,24 +1696,27 @@
           "num": "01",
           "title": "La comprensión nace del esfuerzo cognitivo, no de la exposición a la información.",
           "desc": "Registrar un gasto es identificarlo, categorizarlo, compararlo con una intención. Este mecanismo de procesamiento activo es lo que produce el verdadero dominio, no la consulta de un dashboard.",
-          "ref": "Chi & Wylie — The ICAP Framework, 2014"
+          "ref": "Chi & Wylie — The ICAP Framework, 2014",
+          "refHref": "https://doi.org/10.1080/00461520.2014.965823"
         },
         {
           "num": "02",
           "title": "La automatización crea una ilusión de control, no un dominio.",
           "desc": "Los sistemas automáticos generan un sesgo de sobreconfianza pasiva: «mis cuentas están conectadas» no significa «sé adónde va mi dinero». La herramienta lleva la responsabilidad, no el usuario.",
-          "ref": "Parasuraman & Riley — Humans and Automation, 1997"
+          "ref": "Parasuraman & Riley — Humans and Automation, 1997",
+          "refHref": "https://doi.org/10.1518/001872097778543886"
         },
         {
           "num": "03",
           "title": "El ritual transforma las finanzas en comportamiento, no en obligación.",
           "desc": "5 minutos al día crean un ciclo de retroalimentación corto. Es el principio de toda disciplina instalada duraderamente: la regularidad baja y consistente supera el esfuerzo intenso e irregular.",
-          "ref": "Clear — Atomic Habits, 2018"
+          "ref": "Clear — Atomic Habits, 2018",
+          "refHref": "https://jamesclear.com/atomic-habits"
         }
       ]
     },
     "tempo": {
-      "label": "El sistema",
+      "label": "Un sistema",
       "titlePre": "TEMPO:",
       "titleHighlight": "Cinco rituales",
       "titlePost": ", una disciplina.",
@@ -1739,7 +1777,7 @@
     "seoDescription": "Descubre Steero a 8€/mes: acceso completo a todas las funcionalidades para tomar el control de tus finanzas.",
     "titlePart1": "Un precio.",
     "titleHighlight": "Una decisión simple.",
-    "subtitle": "Acceso completo a Steero. Sin plan Free recortado, sin funciones ocultas detrás de un nivel superior.",
+    "subtitle": "Acceso completo a Steero. Sin plan recortado, sin funciones reservadas.",
     "perMonth": "mes",
     "quarterly": "Trimestral",
     "annual": "Anual",
@@ -1748,7 +1786,7 @@
     "totalBilled": "Total",
     "savings": "Ahorro de",
     "planName": "Steero",
-    "description": "Todo lo que necesitas para pilotar tu presupuesto día a día. Rituales TEMPO completos, plantillas listas, seguimiento de trayectoria.",
+    "description": "Todo para pilotar tu presupuesto a diario, sin fricción.",
     "featuresHeading": "Lo que obtienes",
     "feature1": "Rituales TEMPO completos",
     "feature2": "Plantillas y entrada rápida",
@@ -1768,7 +1806,7 @@
     "earlyText2": "",
     "earlyCta": "Obtener acceso anticipado",
     "earlyDisclaimer": "El descuento se aplica sobre el precio público vigente. Si el precio cambia en el futuro, el descuento se mantendrá.",
-    "guarantee": "14 días de prueba gratis · Tarjeta requerida al inscribirse, cancelable en cualquier momento antes del fin de la prueba",
+    "guarantee": "14 días de regalo · Datos seguros · Sin sincronización",
     "faqTitle": "¿Tienes preguntas?",
     "faqDescription": "Consulta nuestra FAQ para saber más sobre Steero.",
     "faqCta": "Ver FAQ",
@@ -1817,7 +1855,7 @@
       {
         "num": "Constatación 01",
         "fig": "30 %",
-        "title": "de gasto subestimado sin una mirada regular",
+        "title": "de gasto subestimado sin una mirada consciente y regular",
         "body": "Lo que sale de la rutina apenas entra en la estimación: la diferencia entre lo que crees gastar y la realidad suma miles de euros al año. Lo que no ves, no lo pilotas.",
         "srcLabel": "Estudio · Lukas et al., Univ. of St Andrews, Journal of Marketing Research",
         "srcHref": "https://news.st-andrews.ac.uk/archive/consumers-underestimate-annual-spend-by-3900/",
