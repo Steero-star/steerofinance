@@ -24,7 +24,6 @@ type Section = { title: string; blocks: Block[] };
 interface LegalDocumentProps {
   /** Préfixe i18n du document, ex. "legal.mentions" */
   docKey: string;
-  seoTitle: string;
   seoDescription: string;
   canonical: string;
 }
@@ -155,22 +154,22 @@ const renderBlock = (block: Block, i: number) => {
 
 const LegalDocument = ({
   docKey,
-  seoTitle,
   seoDescription,
   canonical,
 }: LegalDocumentProps) => {
   const { t } = useTranslation();
+  const title = t(`${docKey}.title`) as string;
   const sections = t(`${docKey}.sections`, { returnObjects: true }) as Section[];
   const subtitle = t(`${docKey}.subtitle`, { defaultValue: "" });
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO title={seoTitle} description={seoDescription} canonical={canonical} />
+      <SEO title={title} description={seoDescription} canonical={canonical} />
       <Header />
 
       <main className="flex-grow pt-32 pb-16">
         <div className="container mx-auto max-w-4xl px-6">
-          <h1 className="mb-2 text-4xl font-bold text-foreground">{t(`${docKey}.title`)}</h1>
+          <h1 className="mb-2 text-4xl font-bold text-foreground">{title}</h1>
           {subtitle && <p className="mb-4 text-muted-foreground">{subtitle}</p>}
           <p className="mb-12 text-sm text-muted-foreground">{t(`${docKey}.lastUpdate`)}</p>
 
