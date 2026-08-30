@@ -13,7 +13,7 @@ const Footer = () => {
   const productLinks = [
     { to: "/pourquoi-steero", labelKey: "header.whySteero" },
     { to: "/fonctionnalites", labelKey: "header.features" },
-    { to: "/pricing", labelKey: "header.pricing" },
+    { to: "/abonnement", labelKey: "header.pricing" },
     { to: "/faq", labelKey: "header.faq" },
   ];
 

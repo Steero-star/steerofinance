@@ -12,7 +12,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { t } = useTranslation();
   // L'offre de lancement ne s'affiche que là où on parle prix.
-  const showOffer = useLocation().pathname === "/pricing";
+  const showOffer = useLocation().pathname === "/abonnement";
 
   useEffect(() => {
     if (!isMenuOpen) return;
@@ -26,8 +26,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       {showOffer && (
         <Link
-          to="/pricing"
-          onClick={() => trackCTAClick("annonce_early_adopters", "announcement_bar", "/pricing")}
+          to="/abonnement"
+          onClick={() => trackCTAClick("annonce_early_adopters", "announcement_bar", "/abonnement")}
           className="block bg-primary text-primary-foreground text-center text-xs sm:text-sm py-2 px-4 hover:bg-primary/90 transition-colors"
         >
           <span className="font-medium">{t('announcement.text')}</span>
@@ -53,7 +53,7 @@ const Header = () => {
           <Link to="/fonctionnalites" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.features')}
           </Link>
-          <Link to="/pricing" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+          <Link to="/abonnement" className="text-sm text-muted-foreground hover:text-primary transition-colors">
             {t('header.pricing')}
           </Link>
           <Link to="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">
@@ -133,7 +133,7 @@ const Header = () => {
                 {t('header.features')}
               </Link>
               <Link
-                to="/pricing"
+                to="/abonnement"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >

@@ -1,4 +1,11 @@
 {
+  "redirects": [
+    {
+      "source": "/pricing",
+      "destination": "/abonnement",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/).*)",

@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import CookieConsent from "@/components/CookieConsent";
@@ -40,7 +40,15 @@ const App = () => (
               <Route path="/faq" element={<FAQ />} />
               <Route path="/pourquoi-steero" element={<PourquoiSteero />} />
               <Route path="/fonctionnalites" element={<Fonctionnalites />} />
-              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/abonnement" element={<Pricing />} />
+              {/* L'ancienne adresse a été indexée : elle ne disparaît pas, elle
+                  redirige. Le vrai 308 est posé dans `vercel.json`, côté serveur,
+                  seul endroit où un moteur de recherche transmet le référencement
+                  acquis. Cette ligne-ci couvre les deux cas que le serveur ne voit
+                  pas : le dev local, et un lien interne oublié qui naviguerait
+                  sans recharger la page. `replace` évite de piéger le visiteur
+                  dans le bouton Retour. */}
+              <Route path="/pricing" element={<Navigate to="/abonnement" replace />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogArticle />} />
               <Route path="/mentions-legales" element={<MentionsLegales />} />
