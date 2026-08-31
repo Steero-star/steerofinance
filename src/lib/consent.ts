@@ -22,6 +22,53 @@ type StoredConsent = {
   ts: number;
 };
 
+/**
+ * Identifiant de clic publicitaire (`gclid`, et ses variantes iOS `gbraid` et
+ * `wbraid`).
+ *
+ * La balise Google le lit dans l'URL **au moment où elle démarre**. Or elle ne
+ * démarre qu'après le consentement : si le visiteur navigue avant d'accepter,
+ * l'URL a perdu le paramètre, le clic payant devient inattribuable, et GA4 le
+ * recompte même en organique puisqu'il ne voit plus que le référent Google.
+ *
+ * On met donc l'identifiant de côté dès le premier rendu — une valeur d'URL,
+ * aucun cookie, aucune donnée personnelle — et on le remet dans l'URL le temps
+ * que la balise s'initialise.
+ */
+const CLICK_ID_KEYS = ["gclid", "gbraid", "wbraid"] as const;
+const CLICK_ID_KEY = "steero_click_id";
+
+const captureClickId = () => {
+  if (typeof window === "undefined") return;
+  try {
+    const params = new URLSearchParams(window.location.search);
+    for (const key of CLICK_ID_KEYS) {
+      const value = params.get(key);
+      if (value) {
+        window.sessionStorage.setItem(CLICK_ID_KEY, `${key}=${encodeURIComponent(value)}`);
+        return;
+      }
+    }
+  } catch {
+    /* stockage indisponible : on perd l'attribution, jamais la mesure */
+  }
+};
+
+// Au chargement du module, donc avant le premier rendu React : c'est le seul
+// moment où l'URL d'arrivée est encore intacte.
+captureClickId();
+
+const readClickId = (): string | null => {
+  try {
+    return window.sessionStorage.getItem(CLICK_ID_KEY);
+  } catch {
+    return null;
+  }
+};
+
+const urlHasClickId = () =>
+  CLICK_ID_KEYS.some((key) => new URLSearchParams(window.location.search).has(key));
+
 export const readConsent = (): ConsentChoice | null => {
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
@@ -42,10 +89,32 @@ const loadAnalytics = () => {
   if (document.getElementById("ga-script")) return;
   analyticsLoaded = true;
 
+  // La balise lit l'identifiant de clic dans l'URL courante, et elle le lit au
+  // moment où le script est exécuté, pas au moment où la commande est empilée.
+  // On réinjecte donc l'identifiant avant de charger le script, et on rend
+  // l'URL intacte une fois le script exécuté.
+  const clickId = readClickId();
+  const cleanUrl = window.location.href;
+  const restoreClickId = Boolean(clickId) && !urlHasClickId();
+
+  if (restoreClickId) {
+    const separator = window.location.search ? "&" : "?";
+    window.history.replaceState(null, "", `${cleanUrl}${separator}${clickId}`);
+  }
+
+  const restoreUrl = () => {
+    if (!restoreClickId) return;
+    if (window.location.href === cleanUrl) return;
+    window.history.replaceState(null, "", cleanUrl);
+  };
+
   const script = document.createElement("script");
   script.id = "ga-script";
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  script.addEventListener("load", restoreUrl);
+  // Filet : si le script est bloqué, l'URL ne doit pas rester salie.
+  window.setTimeout(restoreUrl, 4000);
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
