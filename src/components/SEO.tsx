@@ -44,7 +44,12 @@ const SEO = ({
   description,
   keywords,
   canonical,
-  ogImage = `${BASE_URL}/og-image.png`,
+  // Le nom porte une date : WhatsApp, Facebook et LinkedIn mettent les
+  // aperçus en cache PAR URL, et pour longtemps. Réécrire le fichier en
+  // place ne rafraîchit rien chez qui a déjà partagé le lien. Régénérer
+  // l'image (`steero/scripts/og.mjs`) veut donc dire : nouveau nom, ici et
+  // dans `index.html`.
+  ogImage = `${BASE_URL}/og-2026-08.png`,
   ogType = 'website',
   noIndex = false,
   jsonLd,
