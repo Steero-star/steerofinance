@@ -18,5 +18,8 @@ Disallow: /mentions-legales
 Disallow: /cgs
 Disallow: /politique-confidentialite
 
+# Coquille de repli du SPA, sans contenu propre
+Disallow: /spa.html
 
-Sitemap: https://steero.fr/sitemap.xml
+
+Sitemap: https://www.steero.fr/sitemap.xml

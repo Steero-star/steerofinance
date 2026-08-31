@@ -222,7 +222,7 @@ export const APP_URL = "https://app.steero.fr/";
  */
 export const SIGNUP_URL =
   "https://accounts.steero.fr/sign-up?redirect_url=" +
-  encodeURIComponent("https://steero.fr/bienvenue");
+  encodeURIComponent("https://www.steero.fr/bienvenue");
 
 /** Tout CTA d'essai passe par ici : événement secondaire + ouverture Clerk. */
 export const startTrial = (location: string) => {

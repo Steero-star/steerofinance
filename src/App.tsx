@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import CookieConsent from "@/components/CookieConsent";
+import { useReleaseEntryAnimations } from "@/lib/entry-animations";
 
 const Index = lazy(() => import("./pages/Index"));
 const FAQ = lazy(() => import("./pages/FAQ"));
@@ -24,6 +25,12 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const queryClient = new QueryClient();
 
 const PageLoader = () => <div className="min-h-screen bg-background" />;
+
+/** Rend la main aux animations une fois la premiere page reellement montee. */
+const ReleaseEntryAnimations = () => {
+  useReleaseEntryAnimations();
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -58,6 +65,7 @@ const App = () => (
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <ReleaseEntryAnimations />
           </Suspense>
         </BrowserRouter>
       </TooltipProvider>

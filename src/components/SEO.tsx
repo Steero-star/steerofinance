@@ -18,7 +18,7 @@ interface SEOProps {
  * en build) : chaque page servait le titre, la description et le canonical de
  * l'accueil. On pilote donc le head à la main, sans dépendance.
  */
-const BASE_URL = 'https://steero.fr';
+const BASE_URL = 'https://www.steero.fr';
 const MANAGED = 'data-seo';
 
 /** Crée ou met à jour une balise du head, en réutilisant celle d'index.html si elle existe. */

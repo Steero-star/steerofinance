@@ -12,23 +12,23 @@
     <meta name="robots" content="index, follow" />
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://steero.fr/" />
+    <link rel="canonical" href="https://www.steero.fr/" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://steero.fr/" />
+    <meta property="og:url" content="https://www.steero.fr/" />
     <meta property="og:title" content="Steero - Passe du tableur au pilotage" />
     <meta property="og:description" content="Ton Excel finit toujours par lâcher. Steero t'aide à comprendre, piloter et ritualiser tes finances personnelles, sans apps bancaires complexes." />
-    <meta property="og:image" content="https://steero.fr/og-image.png" />
+    <meta property="og:image" content="https://www.steero.fr/og-image.png" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content="Steero" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://steero.fr/" />
+    <meta name="twitter:url" content="https://www.steero.fr/" />
     <meta name="twitter:title" content="Steero - Passe du tableur au pilotage" />
     <meta name="twitter:description" content="Ton Excel finit toujours par lâcher. Steero t'aide à comprendre et ritualiser tes finances personnelles, sans apps bancaires complexes." />
-    <meta name="twitter:image" content="https://steero.fr/og-image.png" />
+    <meta name="twitter:image" content="https://www.steero.fr/og-image.png" />
 
     <!-- Google Fonts — non-bloquant -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,38 +44,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Steero",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web",
-      "description": "Application de gestion de budget et finances personnelles. Apprenez comment bien gérer son argent avec des rituels financiers simples, plus efficace qu'Excel.",
-      "url": "https://steero.fr",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR",
-        "description": "Version gratuite disponible"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "150"
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Steero",
-        "url": "https://steero.fr",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://steero.fr/steero-logo.png"
-        }
-      }
-    }
-    </script>
+    <!-- Les données structurées vivent sur les pages, jamais ici : ce fichier est servi
+         à l'identique sur TOUTES les URL du site. Un bloc posé ici décrit l'accueil
+         depuis la page d'un article. Voir src/pages/Index.tsx (Organization, WebSite,
+         SoftwareApplication) et src/pages/BlogArticle.tsx (BlogPosting). -->
 
     <!-- Le schéma FAQPage vit sur la page /faq (src/pages/FAQ.tsx), aligné sur le contenu visible -->
 

@@ -244,8 +244,8 @@ const BlogArticle = () => {
           description: hook.split("\n")[0],
           datePublished: article.date,
           inLanguage: "fr",
-          author: { "@type": "Organization", name: "Steero", url: "https://steero.fr" },
-          mainEntityOfPage: `https://steero.fr/blog/${article.slug}`,
+          author: { "@type": "Organization", name: "Steero", url: "https://www.steero.fr" },
+          mainEntityOfPage: `https://www.steero.fr/blog/${article.slug}`,
         }}
       />
       <Header />

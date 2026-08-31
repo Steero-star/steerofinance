@@ -11,8 +11,8 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Steero",
-    url: "https://steero.fr",
-    logo: " ",
+    url: "https://www.steero.fr",
+    logo: "https://www.steero.fr/steero-logo.png",
     description:
       "Steero est un système de pilotage actif des finances personnelles. Un cadre de rituels TEMPO simples et durables pour décider où va ton argent.",
     sameAs: [],
@@ -22,7 +22,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Steero",
-    url: "https://steero.fr",
+    url: "https://www.steero.fr",
     inLanguage: "fr-FR",
   };
 
@@ -32,10 +32,14 @@ const Index = () => {
     name: "Steero",
     applicationCategory: "FinanceApplication",
     operatingSystem: "Web",
+    description:
+      "Application de pilotage des finances personnelles : rituels TEMPO, budget, projets et suivi des dépenses, sans connexion bancaire obligatoire.",
+    url: "https://www.steero.fr",
     offers: {
       "@type": "Offer",
       price: "8.00",
       priceCurrency: "EUR",
+      url: "https://www.steero.fr/abonnement",
     },
   };
 
@@ -47,6 +51,7 @@ const Index = () => {
         keywords="gérer son argent, comment gérer son argent, gestion budget, alternative excel budget, finances personnelles"
         canonical="/"
         ogType="website"
+        jsonLd={[organizationLd, websiteLd, softwareLd]}
       />
       <Header />
       <Hero />
