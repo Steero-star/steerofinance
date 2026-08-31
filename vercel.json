@@ -6,11 +6,10 @@
       "permanent": true
     }
   ],
-  "_comment_rewrites": "Les routes reelles sont des fichiers prerendus (scripts/prerender.mjs), servis par le systeme de fichiers avant tout rewrite. Le repli ne concerne donc que les URL inconnues : il sert spa.html, une coquille neutre, et surtout pas index.html qui porte desormais le titre et le contenu de l'accueil.",
   "rewrites": [
     {
       "source": "/((?!api/).*)",
-      "destination": "/spa.html"
+      "destination": "/index.html"
     }
   ],
   "headers": [
