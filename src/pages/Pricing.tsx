@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Check, ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
+import { bookCall } from "@/lib/analytics";
 
 type BillingPeriod = "quarterly" | "annual";
 
@@ -395,6 +396,18 @@ const Pricing = () => {
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Button>
             </Link>
+
+            {/* Un lien texte, jamais un bouton. Qui hesite devant le tarif ne
+                doit pas trouver ici un motif de reporter sa decision de quatre
+                jours : l'echange rattrape l'essai, il ne le concurrence pas. */}
+            <p className="mt-5">
+              <button
+                onClick={() => bookCall("abonnement_faq_teaser")}
+                className="text-sm text-muted-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              >
+                {t("booking.pricingLink")}
+              </button>
+            </p>
           </motion.div>
         </div>
       </section>

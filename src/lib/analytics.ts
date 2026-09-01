@@ -259,3 +259,36 @@ export const trackBeginTrial = () => {
   }
   return true;
 };
+// ── Échange avec le fondateur : porte unique ───────────────
+/**
+ * LA DURÉE VIT DANS LE SLUG CALENDLY, PAS DANS LA COPY.
+ *
+ * `30min` est le type d'événement Calendly : c'est LUI qui fait foi. La copy des
+ * locales (`booking.title`, `booking.pricingLink`) annonce la même durée, et les
+ * deux doivent bouger ensemble. Passer à 15 minutes, c'est donc trois valeurs :
+ * l'URL ici, et le titre dans les trois locales. Une page qui promet 15 minutes
+ * devant un agenda qui en réserve 30 fait perdre la confiance avant l'appel.
+ */
+export const BOOKING_URL = "https://calendly.com/steerofinance/30min";
+
+/**
+ * Tout CTA de réservation passe par ici.
+ *
+ * `trackCTAClick` déclenche `dispatchConversion()` : une réservation compte donc
+ * comme session convertie dans `session_exit`, au même titre qu'un essai. C'est
+ * voulu — le visiteur a bien fait le pas qu'on lui demandait — mais ça déplace
+ * mécaniquement une part de `read_but_no_convert`. L'événement propre à suivre
+ * reste `cta_book_call_click`, jamais le taux de conversion global.
+ *
+ * Ce que ce clic n'est PAS : la conversion Google Ads. Elle reste `begin_trial`.
+ * Une réservation est trop rare pour qu'un algorithme d'enchères apprenne
+ * dessus.
+ */
+export const bookCall = (location: string) => {
+  gtag("event", "cta_book_call_click", {
+    cta_location: location,
+    page_path: window.location.pathname,
+  });
+  trackCTAClick("reserver_echange", location, BOOKING_URL);
+  window.open(BOOKING_URL, "_blank", "noopener,noreferrer");
+};

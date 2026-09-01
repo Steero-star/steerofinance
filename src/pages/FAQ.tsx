@@ -9,6 +9,7 @@ import { ArrowRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useTranslation } from "react-i18next";
 import { trackFAQOpen } from "@/lib/analytics";
+import BookingBand from "@/components/BookingBand";
 
 interface FAQItem {
   question: string;
@@ -25,7 +26,7 @@ interface FAQSection {
 const SECTION_DEFS: { key: string; questions: number; highlighted?: number[] }[] = [
   { key: "understand", questions: 3, highlighted: [2] },
   { key: "howItWorks", questions: 3, highlighted: [1] },
-  { key: "security", questions: 2, highlighted: [1] },
+  { key: "security", questions: 3, highlighted: [1] },
   { key: "access", questions: 3 },
 ];
 
@@ -204,6 +205,11 @@ const FAQ = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* L'escalade du bloc precedent : les deux liens d'abord, la personne
+          ensuite. Quelqu'un qui lit la FAQ sans trouver sa reponse est le
+          visiteur le mieux qualifie du site. */}
+      <BookingBand location="faq" />
 
       {/* CTA final */}
       <section className="py-20 bg-primary relative overflow-hidden">

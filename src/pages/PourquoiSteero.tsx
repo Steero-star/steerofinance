@@ -2,11 +2,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { useState } from "react";
-import { Info, Sparkles, ArrowRight } from "lucide-react";
+import { CalendarDays, Info, Sparkles, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { TempoLetter } from "@/components/TempoLetter";
+import IndiceDepli from "@/components/IndiceDepli";
 import steeroBanner from "@/assets/steero-banner-3.png";
 import steeroBannerWebP from "@/assets/steero-banner-3.webp";
 import illustrationPng from "@/assets/illustration-bureau.png";
@@ -325,12 +326,13 @@ const PourquoiSteero = () => {
                     type="button"
                     aria-expanded={principeOuvert === i}
                     onClick={() => setPrincipeOuvert(principeOuvert === i ? null : i)}
-                    className="w-full text-left p-5 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    className="group w-full text-left p-5 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     <p className="font-serif text-4xl text-primary leading-none mb-3">{p.num}</p>
                     <h3 className="font-semibold text-foreground text-sm leading-snug min-h-20">
                       {p.title}
                     </h3>
+                    <IndiceDepli label={t("pourquoiSteero.behavioral.expandLabel")} ouvert={principeOuvert === i} />
                   </button>
 
                   <AnimatePresence initial={false}>
@@ -434,19 +436,46 @@ const PourquoiSteero = () => {
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-6 p-4 rounded-xl bg-primary/5 border border-primary/20 flex gap-3"
-          >
-            <Info className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              <span className="font-semibold text-foreground">{t("pourquoiSteero.tempo.bankingNoteTitle")}</span>{" "}
-              {t("pourquoiSteero.tempo.bankingNoteDesc")}
-            </p>
-          </motion.div>
+          {/* DEUX NOTES SUR UNE LIGNE, ET DEUX HABILLAGES DIFFERENTS.
+              Le calendrier est livre, la banque est promise. Les habiller
+              pareil ferait lire le calendrier comme « a venir » lui aussi, et
+              une fonctionnalite en production passerait pour une annonce : la
+              note livree prend donc le fond des cartes de rituels au-dessus,
+              la note a venir garde sa teinte d'annonce. Les titres portent la
+              meme opposition, « deja la » face a « a venir ».
+
+              `items-start` volontairement absent : les deux notes s'etirent a
+              la meme hauteur, deux encadres annonces cote a cote mais de
+              hauteurs differentes se liraient comme un reste de mise en page. */}
+          <div className="mt-6 grid md:grid-cols-2 gap-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="p-4 rounded-xl bg-card border border-border/60 flex gap-3"
+            >
+              <CalendarDays className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="font-semibold text-foreground">{t("pourquoiSteero.tempo.calendarNoteTitle")}</span>{" "}
+                {t("pourquoiSteero.tempo.calendarNoteDesc")}
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="p-4 rounded-xl bg-primary/5 border border-primary/20 flex gap-3"
+            >
+              <Info className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                <span className="font-semibold text-foreground">{t("pourquoiSteero.tempo.bankingNoteTitle")}</span>{" "}
+                {t("pourquoiSteero.tempo.bankingNoteDesc")}
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 

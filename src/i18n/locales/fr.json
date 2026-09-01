@@ -446,6 +446,10 @@
         "q2": {
           "question": "Où sont stockées mes données ?",
           "answer": "Les données de l'application sont hébergées par Convex, dans la région eu-west-1 (Irlande, Union européenne) — convex.dev.\n\nPour le détail complet de l'hébergement et des sous-traitants, consulte les [mentions légales](/mentions-legales)."
+        },
+        "q3": {
+          "question": "Steero a-t-il accès à mon agenda ?",
+          "answer": "Non. L'app ne se connecte pas à ton compte Google ou Apple et ne demande aucune autorisation. Elle publie un lien privé que ton agenda vient lire seul, en lecture seule : Steero n'écrit jamais dans ton calendrier.\n\nCe lien est un secret, comme un mot de passe : qui l'a peut lire tes rendez-vous. Tu peux le régénérer à tout moment, l'ancien meurt à l'instant.\n\nEt aucun montant ne circule dans ce flux. Un agenda garde ses données en cache pendant des heures : un chiffre y serait faux la moitié du temps, hors de l'app, là où personne ne peut le corriger."
         }
       },
       "access": {
@@ -465,6 +469,15 @@
       }
     },
     "startFree": "Commencer gratuitement"
+  },
+  "booking": {
+    "label": "En direct",
+    "title": "30 minutes.",
+    "titleEm": "Avec la personne qui l'a construit.",
+    "body": "Steero est construit par une seule personne, et cette personne prend le temps. Tu décris ta situation, on cale un créneau, et je te montre le produit sur ton cas. S'il ne correspond pas à ce que tu cherches, je te le dirai.",
+    "cta": "Réserver un créneau",
+    "micro": "Créneaux limités chaque semaine · aucune donnée bancaire à partager",
+    "pricingLink": "Ou prends 30 minutes avec le fondateur"
   },
   "fonctionnalites": {
     "heroLabel": "Fonctionnalités",
@@ -506,7 +519,7 @@
         "num": "02",
         "title": "Tiens ton quotidien.",
         "titleEm": "5 minutes.",
-        "sub": "La saisie consciente, sans friction : des modèles, une jauge en temps réel, des rituels qui rythment.",
+        "sub": "La saisie consciente, sans friction : des modèles, une jauge en temps réel, et des rituels qui rythment jusque dans ton agenda.",
         "features": [
           {
             "key": "daily",
@@ -525,6 +538,13 @@
             "title": "Suivi d'habitudes",
             "promise": "Ancre des habitudes qui durent.",
             "details": "Un système de rituels qui te guide sur quoi faire, quoi regarder et quelles questions te poser. Développe des habitudes financières durables."
+          },
+          {
+            "key": "calendar",
+            "title": "Rituels dans ton agenda",
+            "promise": "Retrouve tes rendez-vous là où tu regardes déjà.",
+            "details": "Un lien à coller une fois dans Google Agenda, Apple Calendrier ou Outlook : tes rendez-vous hebdomadaire, mensuel, trimestriel et annuel s'y installent, avec la question du rituel dans l'événement. Steero ne demande aucun accès à ton agenda et n'y écrit rien d'autre. Le geste quotidien, lui, reste dans l'app : il n'a pas besoin d'une case.",
+            "isNew": true
           }
         ]
       },
@@ -1707,6 +1727,7 @@
       "titleHighlight": "le manuel",
       "titlePost": "change tout.",
       "description": "La saisie manuelle n'est pas un manque de technologie. C'est la mécanique qui produit le changement de comportement. Trois principes, documentés.",
+      "expandLabel": "La mécanique et sa source",
       "principles": [
         {
           "num": "01",
@@ -1740,6 +1761,8 @@
       "colRitual": "Rituel",
       "colFrequency": "Fréquence",
       "colDuration": "Durée",
+      "calendarNoteTitle": "Intégration calendrier, déjà là.",
+      "calendarNoteDesc": "Tes rendez-vous hebdomadaire, mensuel, trimestriel et annuel rejoignent Google Agenda, Apple Calendrier ou Outlook : un seul endroit pour voir ce qui vient. Steero ne demande aucun accès, c'est ton agenda qui vient lire, et aucun montant n'y circule.",
       "bankingNoteTitle": "Intégration bancaire à venir.",
       "bankingNoteDesc": "Steero se connectera à tes comptes, pas pour automatiser mais pour te présenter tes transactions à valider. Tu catégorises, tu confirmes, tu décides. La friction administrative disparaît. La friction utile, elle, reste entière.",
       "rows": [
@@ -1867,6 +1890,7 @@
     "reportTitle": "Notre rapport d'étonnement",
     "reportMeta": "3 constats · sources liées · aucun chiffre inventé",
     "gainLabel": "Ce que tu y gagnes",
+    "expandLabel": "L'étude et ce que ça change",
     "constats": [
       {
         "num": "Constat 01",

@@ -446,6 +446,10 @@
         "q2": {
           "question": "¿Dónde se almacenan mis datos?",
           "answer": "Los datos de la aplicación están alojados por Convex, en la región eu-west-1 (Irlanda, Unión Europea) — convex.dev.\n\nPara el detalle completo del alojamiento y los subencargados, consulta el [aviso legal](/mentions-legales)."
+        },
+        "q3": {
+          "question": "¿Steero tiene acceso a mi calendario?",
+          "answer": "No. La app no se conecta a tu cuenta de Google o Apple y no pide ningún permiso. Publica un enlace privado que tu calendario lee por su cuenta, en solo lectura: Steero nunca escribe en tu calendario.\n\nEse enlace es un secreto, como una contraseña: quien lo tiene puede leer tus citas. Puedes regenerarlo cuando quieras, el anterior muere al instante.\n\nY ningún importe circula por ese flujo. Un calendario guarda sus datos en caché durante horas: una cifra sería falsa la mitad del tiempo, fuera de la app, donde nadie puede corregirla."
         }
       },
       "access": {
@@ -465,6 +469,15 @@
       }
     },
     "startFree": "Empezar gratis"
+  },
+  "booking": {
+    "label": "En directo",
+    "title": "30 minutos.",
+    "titleEm": "Con la persona que lo construyó.",
+    "body": "Steero está construido por una sola persona, y esa persona se toma el tiempo. Describes tu situación, reservamos un hueco, y te enseño el producto sobre tu caso. Si no es lo que buscas, te lo diré.",
+    "cta": "Reservar un hueco",
+    "micro": "Huecos limitados cada semana · ningún dato bancario que compartir",
+    "pricingLink": "O reserva 30 minutos con el fundador"
   },
   "fonctionnalites": {
     "heroLabel": "Funcionalidades",
@@ -506,7 +519,7 @@
         "num": "02",
         "title": "Sostén tu día a día.",
         "titleEm": "5 minutos.",
-        "sub": "Registro consciente sin fricción: plantillas, un indicador en tiempo real, rituales que marcan el ritmo.",
+        "sub": "Registro consciente sin fricción: plantillas, un indicador en tiempo real, y rituales que marcan el ritmo hasta en tu calendario.",
         "features": [
           {
             "key": "daily",
@@ -525,6 +538,13 @@
             "title": "Seguimiento de rituales",
             "promise": "Ancla hábitos que perduran.",
             "details": "Un sistema de rituales que te guía sobre lo que debes hacer, mirar, y qué preguntas hacerte. Desarrolla hábitos financieros duraderos."
+          },
+          {
+            "key": "calendar",
+            "title": "Rituales en tu calendario",
+            "promise": "Encuentra tus citas donde ya miras.",
+            "details": "Un enlace que pegas una sola vez en Google Calendar, Apple Calendario u Outlook: tus citas semanal, mensual, trimestral y anual se instalan ahí, con la pregunta del ritual en el evento. Steero no pide ningún acceso a tu calendario y no escribe nada más en él. El gesto diario se queda en la app: no necesita una casilla.",
+            "isNew": true
           }
         ]
       },
@@ -1691,6 +1711,7 @@
       "titleHighlight": "lo manual",
       "titlePost": "lo cambia todo.",
       "description": "El registro manual no es una falta de tecnología. Es el mecanismo que produce el cambio de comportamiento. Tres principios, documentados.",
+      "expandLabel": "La mecánica y su fuente",
       "principles": [
         {
           "num": "01",
@@ -1724,6 +1745,8 @@
       "colRitual": "Ritual",
       "colFrequency": "Frecuencia",
       "colDuration": "Duración",
+      "calendarNoteTitle": "Integración de calendario, ya disponible.",
+      "calendarNoteDesc": "Tus citas semanal, mensual, trimestral y anual se suman a Google Calendar, Apple Calendario u Outlook: un solo sitio para ver lo que viene. Steero no pide ningún acceso, es tu calendario quien lee, y ningún importe circula por ahí.",
       "bankingNoteTitle": "Integración bancaria próximamente.",
       "bankingNoteDesc": "Steero se conectará a tus cuentas, no para automatizar sino para presentarte tus transacciones a validar. Tú categorizas, confirmas, decides. La fricción administrativa desaparece. La fricción útil, en cambio, permanece intacta.",
       "rows": [
@@ -1851,6 +1874,7 @@
     "reportTitle": "Nuestra llamada de atención",
     "reportMeta": "3 constataciones · fuentes enlazadas · ninguna cifra inventada",
     "gainLabel": "Lo que ganas",
+    "expandLabel": "El estudio y lo que cambia",
     "constats": [
       {
         "num": "Constatación 01",

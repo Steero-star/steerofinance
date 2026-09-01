@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import IndiceDepli from "@/components/IndiceDepli";
 
 type Constat = {
   num: string;
@@ -71,21 +72,22 @@ const RapportEtonnement = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
-              className={`rounded-2xl border border-border/60 bg-card transition-shadow duration-300 ${
-                active === i ? "shadow-card" : ""
+              className={`rounded-2xl border bg-card transition-[border-color,box-shadow] duration-300 ${
+                active === i ? "border-primary/30 shadow-card" : "border-border/60 hover:border-primary/30"
               }`}
             >
               <button
                 type="button"
                 aria-expanded={active === i}
                 onClick={() => setActive(active === i ? null : i)}
-                className="w-full text-left p-6 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="group w-full text-left p-6 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 <p className="font-serif text-5xl md:text-6xl text-primary leading-none mb-3">
                   {c.fig}
                 </p>
                 {/* min-h : deux lignes reservees pour que les trois cartes restent a la meme hauteur */}
                 <h3 className="font-semibold text-foreground min-h-12">{c.title}</h3>
+                <IndiceDepli label={t("why.expandLabel")} ouvert={active === i} />
               </button>
 
               <AnimatePresence initial={false}>

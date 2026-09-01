@@ -5,6 +5,7 @@ import {
   ArrowRight,
   BarChart3,
   CalendarCheck,
+  CalendarDays,
   Crosshair,
   FolderKanban,
   Gauge,
@@ -18,6 +19,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import ZoomableShot from "@/components/ZoomableShot";
+import { ChevronDepli } from "@/components/IndiceDepli";
+import BookingBand from "@/components/BookingBand";
 import { startTrial, trackFeatureCardOpen } from "@/lib/analytics";
 import showcaseAccueil from "@/assets/showcase-accueil.webp";
 import showcaseAccueil2x from "@/assets/showcase-accueil@2x.webp";
@@ -54,6 +57,7 @@ const ICONS: Record<string, LucideIcon> = {
   daily: Receipt,
   level: Gauge,
   rituals: CalendarCheck,
+  calendar: CalendarDays,
   indicators: BarChart3,
   projects: FolderKanban,
   tiers: Users,
@@ -61,6 +65,31 @@ const ICONS: Record<string, LucideIcon> = {
 
 type Shot = { src: string; src2x: string };
 const shot = (src: string, src2x: string): Shot => ({ src, src2x });
+
+/**
+ * LE SURVOL N'EST PAS UNIVERSEL, ET LE CROIRE CASSE LE TACTILE.
+ *
+ * Un doigt qui touche une carte ne produit pas qu'un `click` : le navigateur
+ * mobile SYNTHÉTISE d'abord un `mouseenter`, puis un `focus`. Les deux
+ * ouvraient ici la carte ; le `click` qui suivait la trouvait donc déjà ouverte
+ * et la refermait aussitôt. Au doigt, la carte clignotait sans jamais rester
+ * ouverte — c'est le piège que `PourquoiSteero` documente déjà sous « LE CLIC
+ * EST LA SEULE PORTE », et cette page était le dernier endroit à y tomber.
+ *
+ * On garde donc le survol là où il est un vrai survol, c'est-à-dire là où un
+ * pointeur peut se poser sans cliquer, et le clic redevient la seule porte
+ * ailleurs. `focus` n'ouvre plus du tout : au clavier, Entrée et Espace émettent
+ * un `click`, donc rien n'est perdu.
+ *
+ * Cache paresseux : `window` n'existe pas au prérendu (`scripts/prerender.mjs`),
+ * et ces fonctions ne sont appelées que depuis un gestionnaire d'événement,
+ * donc jamais avant le navigateur.
+ */
+let survolNatif: boolean | null = null;
+const peutSurvoler = () => {
+  if (survolNatif === null) survolNatif = window.matchMedia("(hover: hover)").matches;
+  return survolNatif;
+};
 
 /**
  * UNE CAPTURE PAR CARTE, PLUS UNE PAR GROUPE.
@@ -269,8 +298,8 @@ const Fonctionnalites = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4 }}
-                      onMouseEnter={() => setActive(f.key)}
-                      onMouseLeave={() => setActive(null)}
+                      onMouseEnter={() => peutSurvoler() && setActive(f.key)}
+                      onMouseLeave={() => peutSurvoler() && setActive(null)}
                       className={`rounded-2xl border border-border/60 bg-card transition-shadow duration-300 ${
                         isOpen ? "shadow-card" : ""
                       }`}
@@ -279,8 +308,7 @@ const Fonctionnalites = () => {
                         type="button"
                         aria-expanded={isOpen}
                         onClick={() => open(f, g.title)}
-                        onFocus={() => setActive(f.key)}
-                        className="w-full text-left px-5 py-4 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        className="group w-full text-left px-5 py-4 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         <span className="flex items-center gap-4">
                           <span className="shrink-0 w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
@@ -290,11 +318,26 @@ const Fonctionnalites = () => {
                             <span className="block font-semibold text-foreground text-[15px]">{f.title}</span>
                             <span className="block text-sm text-muted-foreground">{f.promise}</span>
                           </span>
-                          {f.isNew && (
-                            <span className="ml-auto shrink-0 rounded-full bg-primary/10 px-2.5 py-0.5 text-[10.5px] font-semibold tracking-wide text-primary uppercase">
-                              {t("fonctionnalites.newBadge")}
-                            </span>
-                          )}
+                          {/* Badge et chevron partagent le bord droit, d'où le
+                              groupe : le `ml-auto` qui vivait sur le badge n'y
+                              serait plus que sur une carte marquée « nouveau »,
+                              et le chevron des autres flotterait au milieu.
+
+                              Pas de libellé ici, contrairement aux constats de
+                              l'accueil : la ligne `promise` sous le titre répond
+                              déjà à « qu'y a-t-il derrière ». Le répéter dix fois
+                              dans une liste verticale en ferait du papier peint. */}
+                          <span className="ml-auto shrink-0 flex items-center gap-2">
+                            {f.isNew && (
+                              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10.5px] font-semibold tracking-wide text-primary uppercase">
+                                {t("fonctionnalites.newBadge")}
+                              </span>
+                            )}
+                            <ChevronDepli
+                              ouvert={isOpen}
+                              className="w-3.5 h-3.5 text-muted-foreground/50 transition-colors group-hover:text-primary"
+                            />
+                          </span>
                         </span>
                       </button>
                       <AnimatePresence initial={false}>
@@ -399,6 +442,8 @@ const Fonctionnalites = () => {
           </div>
         </div>
       </section>
+
+      <BookingBand location="fonctionnalites" />
 
       {/* CTA final */}
       <section className="py-16 bg-background">

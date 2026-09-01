@@ -446,6 +446,10 @@
         "q2": {
           "question": "Where is my data stored?",
           "answer": "The app's data is hosted by Convex, in the eu-west-1 region (Ireland, European Union) — convex.dev.\n\nFor the full detail on hosting and subprocessors, see the [legal notice](/mentions-legales)."
+        },
+        "q3": {
+          "question": "Does Steero have access to my calendar?",
+          "answer": "No. The app doesn't connect to your Google or Apple account and asks for no permission. It publishes a private link that your calendar reads on its own, read-only: Steero never writes into your calendar.\n\nThat link is a secret, like a password: whoever holds it can read your appointments. You can regenerate it at any time, and the old one dies instantly.\n\nAnd no amount travels through that feed. A calendar caches its data for hours: a figure would be wrong half the time, outside the app, where no one can correct it."
         }
       },
       "access": {
@@ -465,6 +469,15 @@
       }
     },
     "startFree": "Start for free"
+  },
+  "booking": {
+    "label": "Live",
+    "title": "30 minutes.",
+    "titleEm": "With the person who built it.",
+    "body": "Steero is built by one person, and that person takes the time. You describe your situation, we book a slot, and I show you the product on your own case. If it isn't what you're looking for, I'll tell you.",
+    "cta": "Book a slot",
+    "micro": "Limited slots each week · no banking data to share",
+    "pricingLink": "Or take 30 minutes with the founder"
   },
   "fonctionnalites": {
     "heroLabel": "Features",
@@ -506,7 +519,7 @@
         "num": "02",
         "title": "Hold your daily routine.",
         "titleEm": "5 minutes.",
-        "sub": "Conscious entry without friction: templates, a real-time gauge, rituals that set the pace.",
+        "sub": "Conscious entry without friction: templates, a real-time gauge, and rituals that set the pace right into your calendar.",
         "features": [
           {
             "key": "daily",
@@ -525,6 +538,13 @@
             "title": "Habit Tracker",
             "promise": "Anchor habits that last.",
             "details": "A ritual system that guides you on what to do, what to look at, and what questions to ask yourself. Develop lasting financial habits."
+          },
+          {
+            "key": "calendar",
+            "title": "Rituals in your calendar",
+            "promise": "Find your appointments where you already look.",
+            "details": "One link to paste once into Google Calendar, Apple Calendar or Outlook: your weekly, monthly, quarterly and yearly appointments settle in, each carrying the ritual's question. Steero asks for no access to your calendar and writes nothing else there. The daily gesture stays in the app: it doesn't need a slot.",
+            "isNew": true
           }
         ]
       },
@@ -1691,6 +1711,7 @@
       "titleHighlight": "manual",
       "titlePost": "changes everything.",
       "description": "Manual entry is not a lack of technology. It's the mechanism that produces behavioral change. Three principles, documented.",
+      "expandLabel": "The mechanism and its source",
       "principles": [
         {
           "num": "01",
@@ -1724,6 +1745,8 @@
       "colRitual": "Ritual",
       "colFrequency": "Frequency",
       "colDuration": "Duration",
+      "calendarNoteTitle": "Calendar integration, already live.",
+      "calendarNoteDesc": "Your weekly, monthly, quarterly and yearly appointments join Google Calendar, Apple Calendar or Outlook: one place to see what's coming. Steero asks for no access, your calendar does the reading, and no amount travels through it.",
       "bankingNoteTitle": "Banking integration coming soon.",
       "bankingNoteDesc": "Steero will connect to your accounts — not to automate, but to present your transactions for validation. You categorize, confirm, decide. Administrative friction disappears. Useful friction stays intact.",
       "rows": [
@@ -1851,6 +1874,7 @@
     "reportTitle": "Our wake-up call",
     "reportMeta": "3 findings · sources linked · no invented numbers",
     "gainLabel": "What you gain",
+    "expandLabel": "The study and what it changes",
     "constats": [
       {
         "num": "Finding 01",
