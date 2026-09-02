@@ -4,6 +4,11 @@
       "source": "/pricing",
       "destination": "/abonnement",
       "permanent": true
+    },
+    {
+      "source": "/guide",
+      "destination": "https://www.notion.so/Bienvenue-sur-Steero-68090e1967e74becbd1c467632904584",
+      "permanent": false
     }
   ],
   "rewrites": [

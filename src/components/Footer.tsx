@@ -6,6 +6,7 @@ import { Facebook, Linkedin, Youtube } from "lucide-react";
 import steeroLogo from "@/assets/steero-logo.png";
 import { trackSocialClick, trackOutboundLink, trackNavClick } from "@/lib/analytics";
 import { openConsentPreferences } from "@/lib/consent";
+import { GUIDE_URL } from "@/lib/aide";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -17,8 +18,18 @@ const Footer = () => {
     { to: "/faq", labelKey: "header.faq" },
   ];
 
-  const resourceLinks = [
+  /**
+   * `externe` distingue les liens qui QUITTENT le site : eux seuls ouvrent un
+   * onglet, portent `rel="noopener"` et sont tracés comme sortants. Un
+   * `mailto:` n'est aucun des trois.
+   */
+  type LienRessource =
+    | { to: string; labelKey: string }
+    | { href: string; labelKey: string; externe?: boolean };
+
+  const resourceLinks: LienRessource[] = [
     { to: "/blog", labelKey: "header.blog" },
+    { href: GUIDE_URL, labelKey: "footer.guide", externe: true },
     { href: "mailto:contact@steero.fr", labelKey: "footer.contact" },
   ];
 
@@ -141,6 +152,13 @@ const Footer = () => {
                   <a
                     key={link.href}
                     href={link.href}
+                    target={link.externe ? "_blank" : undefined}
+                    rel={link.externe ? "noopener noreferrer" : undefined}
+                    onClick={
+                      link.externe
+                        ? () => trackOutboundLink(link.href, t(link.labelKey))
+                        : undefined
+                    }
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     {t(link.labelKey)}
