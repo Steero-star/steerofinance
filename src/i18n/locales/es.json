@@ -472,12 +472,12 @@
   },
   "booking": {
     "label": "En directo",
-    "title": "30 minutos.",
+    "title": "15 minutos.",
     "titleEm": "Con la persona que lo construyó.",
     "body": "Steero está construido por una sola persona, y esa persona se toma el tiempo. Describes tu situación, reservamos un hueco, y te enseño el producto sobre tu caso. Si no es lo que buscas, te lo diré.",
     "cta": "Reservar un hueco",
     "micro": "Huecos limitados cada semana · ningún dato bancario que compartir",
-    "pricingLink": "O reserva 30 minutos con el fundador"
+    "pricingLink": "O reserva 15 minutos con el fundador"
   },
   "fonctionnalites": {
     "heroLabel": "Funcionalidades",

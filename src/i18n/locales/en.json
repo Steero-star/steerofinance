@@ -472,12 +472,12 @@
   },
   "booking": {
     "label": "Live",
-    "title": "30 minutes.",
+    "title": "15 minutes.",
     "titleEm": "With the person who built it.",
     "body": "Steero is built by one person, and that person takes the time. You describe your situation, we book a slot, and I show you the product on your own case. If it isn't what you're looking for, I'll tell you.",
     "cta": "Book a slot",
     "micro": "Limited slots each week · no banking data to share",
-    "pricingLink": "Or take 30 minutes with the founder"
+    "pricingLink": "Or take 15 minutes with the founder"
   },
   "fonctionnalites": {
     "heroLabel": "Features",

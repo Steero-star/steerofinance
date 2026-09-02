@@ -472,12 +472,12 @@
   },
   "booking": {
     "label": "En direct",
-    "title": "30 minutes.",
+    "title": "15 minutes.",
     "titleEm": "Avec la personne qui l'a construit.",
     "body": "Steero est construit par une seule personne, et cette personne prend le temps. Tu décris ta situation, on cale un créneau, et je te montre le produit sur ton cas. S'il ne correspond pas à ce que tu cherches, je te le dirai.",
     "cta": "Réserver un créneau",
     "micro": "Créneaux limités chaque semaine · aucune donnée bancaire à partager",
-    "pricingLink": "Ou prends 30 minutes avec le fondateur"
+    "pricingLink": "Ou prends 15 minutes avec le fondateur"
   },
   "fonctionnalites": {
     "heroLabel": "Fonctionnalités",

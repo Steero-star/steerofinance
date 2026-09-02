@@ -261,13 +261,28 @@ export const trackBeginTrial = () => {
 };
 // ── Échange avec le fondateur : porte unique ───────────────
 /**
- * LA DURÉE VIT DANS LE SLUG CALENDLY, PAS DANS LA COPY.
+ * ⚠️ LE SLUG DIT `30min`, L'ÉCHANGE DURE 15 MINUTES. NE PAS « CORRIGER ».
  *
- * `30min` est le type d'événement Calendly : c'est LUI qui fait foi. La copy des
- * locales (`booking.title`, `booking.pricingLink`) annonce la même durée, et les
- * deux doivent bouger ensemble. Passer à 15 minutes, c'est donc trois valeurs :
- * l'URL ici, et le titre dans les trois locales. Une page qui promet 15 minutes
- * devant un agenda qui en réserve 30 fait perdre la confiance avant l'appel.
+ * L'offre est passée de 30 à 15 minutes le 02/09/2026. Le type d'événement
+ * Calendly a été raccourci sur place, donc son slug est resté celui de sa
+ * création. L'incohérence est assumée : changer le slug fait mourir l'ancienne
+ * URL À L'INSTANT, or c'est elle que la production sert. Il y aurait une
+ * fenêtre, même courte, où « Réserver un créneau » mène à un 404 de Calendly.
+ *
+ * Le slug n'est donc plus une source de vérité, juste une adresse. **La durée
+ * qui fait foi est celle qu'annonce la page Calendly elle-même**, et la copy des
+ * locales (`booking.title`, `booking.pricingLink`) doit la répéter à
+ * l'identique. Le contrôle qui ne ment pas, avant toute mise en production de ce
+ * bloc :
+ *
+ *     curl -s https://calendly.com/steerofinance/30min | grep -o '<title>[^<]*'
+ *
+ * Une page qui promet une durée devant un agenda qui en réserve une autre fait
+ * perdre la confiance à l'endroit exact de la conversion.
+ *
+ * Changer la durée à nouveau, c'est quatre valeurs, et Calendly EN PREMIER :
+ * l'event type, puis `booking.title` et `booking.pricingLink` dans les trois
+ * locales.
  */
 export const BOOKING_URL = "https://calendly.com/steerofinance/30min";
 
