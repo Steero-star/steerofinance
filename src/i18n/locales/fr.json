@@ -45,7 +45,7 @@
     "badge": "L'app de pilotage financier personnel",
     "title": "Pilote tes finances.",
     "titleHighlight": "Reste aligné à tes objectifs.",
-    "description": "Installe des rendez-vous courts et guidés avec ton argent : tu sais où il est, tu décides consciemment où il va et où il doit aller.",
+    "description": "Installe des rituels courts et guidés avec ton argent : tu sais où il est, tu décides consciemment où il va et où il doit aller.",
     "microcopy": "14 jours gratuits · sans engagement · aucune connexion bancaire",
     "scrollHint": "Découvrir pourquoi Steero"
   },
@@ -840,6 +840,24 @@
           "Comment créer ta première routine (et la tenir)",
           "La routine est l'accès à tout le reste",
           "Commence maintenant"
+        ]
+      },
+      "12": {
+        "title": "Comment faire un tableau Excel pour gérer son budget, en cinq étapes",
+        "tags": [
+          "Méthode",
+          "Budget",
+          "Pilotage"
+        ],
+        "hook": "Tu peux passer une soirée à comparer des modèles gratuits, ou vingt minutes à construire le tien. À la fin, tu sais pourquoi chaque colonne existe.\nVoilà le pas-à-pas : catégories, saisie, récapitulatif, prévu contre réel.",
+        "sections": [
+          "Ce que ton tableau doit répondre avant d'exister",
+          "Étape 1 : poser les catégories, pas les montants",
+          "Étape 2 : la feuille de saisie, une ligne par opération",
+          "Étape 3 : le récapitulatif mensuel en trois formules",
+          "Étape 4 : comparer le prévu et le réel",
+          "Étape 5 : le rendez-vous qui fait vivre le fichier",
+          "Si tu ne veux pas le construire"
         ]
       }
     },

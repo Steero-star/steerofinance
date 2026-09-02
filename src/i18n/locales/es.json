@@ -45,7 +45,7 @@
     "badge": "La app de pilotaje financiero personal",
     "title": "Pilota tus finanzas.",
     "titleHighlight": "Sigue alineado con tus objetivos.",
-    "description": "Instala citas cortas y guiadas con tu dinero: sabes dónde está y decides conscientemente adónde va y adónde debe ir.",
+    "description": "Instala rituales cortos y guiados con tu dinero: sabes dónde está y decides conscientemente adónde va y adónde debe ir.",
     "microcopy": "14 días gratis · sin compromiso · sin conexión bancaria",
     "scrollHint": "Descubrir por qué Steero"
   },
@@ -824,6 +824,24 @@
           "Esto es exactamente lo que Steero eligió no automatizar",
           "Cómo instalar este mecanismo en tu vida: el ritual T de TEMPO",
           "Lo que cambia después de 3 semanas"
+        ]
+      },
+      "12": {
+        "title": "Cómo hacer una tabla de Excel para gestionar tu presupuesto, en cinco pasos",
+        "tags": [
+          "Método",
+          "Presupuesto",
+          "Pilotaje"
+        ],
+        "hook": "Puedes pasar una tarde comparando plantillas gratuitas, o veinte minutos construyendo la tuya. Al final, sabes por qué existe cada columna.\nAquí tienes el paso a paso: categorías, registro, resumen mensual, previsto frente a real.",
+        "sections": [
+          "Lo que tu tabla debe responder antes de existir",
+          "Paso 1: define las categorías, no los importes",
+          "Paso 2: la hoja de registro, una línea por operación",
+          "Paso 3: el resumen mensual en tres fórmulas",
+          "Paso 4: comparar lo previsto con lo real",
+          "Paso 5: la cita que mantiene vivo el archivo",
+          "Si no quieres construirla"
         ]
       }
     },

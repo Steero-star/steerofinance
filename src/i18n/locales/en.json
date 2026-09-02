@@ -45,7 +45,7 @@
     "badge": "The personal finance steering app",
     "title": "Steer your finances.",
     "titleHighlight": "Stay aligned with your goals.",
-    "description": "Install short, guided check-ins with your money: you know where it is, and you consciously decide where it goes and where it should go.",
+    "description": "Install short, guided rituals with your money: you know where it is, and you consciously decide where it goes and where it should go.",
     "microcopy": "14 days free · no commitment · no bank connection",
     "scrollHint": "Discover why Steero"
   },
@@ -824,6 +824,24 @@
           "This is exactly what Steero chose not to automate",
           "How to install this mechanism in your life: the T ritual of TEMPO",
           "What changes after 3 weeks"
+        ]
+      },
+      "12": {
+        "title": "How to build an Excel spreadsheet to manage your budget, in five steps",
+        "tags": [
+          "Method",
+          "Budget",
+          "Steering"
+        ],
+        "hook": "You can spend an evening comparing free templates, or twenty minutes building your own. By the end, you know why every column exists.\nHere is the step-by-step: categories, entry, monthly summary, planned against actual.",
+        "sections": [
+          "What your spreadsheet must answer before it exists",
+          "Step 1: set the categories, not the amounts",
+          "Step 2: the entry sheet, one line per transaction",
+          "Step 3: the monthly summary in three formulas",
+          "Step 4: compare planned against actual",
+          "Step 5: the appointment that keeps the file alive",
+          "If you would rather not build it"
         ]
       }
     },
