@@ -21,6 +21,23 @@ const formatDate = (iso: string, locale: string) =>
 /* Rendu du contenu                                                    */
 /* ------------------------------------------------------------------ */
 
+/** Une adresse qui porte un schéma : `https:`, `mailto:`, `tel:`. */
+const SCHEME = /^[a-z][a-z0-9+.-]*:/i;
+/** Un chemin du site qui désigne un FICHIER et non une route : `/modele.xlsx`. */
+const FILE_PATH = /^\/[^?#]*\.[a-z0-9]{2,5}(?:[?#]|$)/i;
+
+/**
+ * Un lien vers un fichier servi par le site n'est pas une route.
+ *
+ * React Router ne traite en lien ordinaire que ce qu'il reconnaît comme externe,
+ * c'est-à-dire une URL absolue dont l'origine diffère. Un chemin de même origine
+ * est intercepté : un clic sur `/modele.xlsx` déclencherait une navigation interne
+ * vers une route qui n'existe pas et afficherait la page 404, sans jamais
+ * télécharger le fichier. Écrire l'URL en absolu n'y change rien, l'origine reste
+ * la même.
+ */
+const isPlainAnchor = (href: string) => SCHEME.test(href) || FILE_PATH.test(href);
+
 const parseInlineLinks = (text: string): React.ReactNode => {
   const parts: React.ReactNode[] = [];
   const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -28,10 +45,25 @@ const parseInlineLinks = (text: string): React.ReactNode => {
   let match;
   while ((match = regex.exec(text)) !== null) {
     if (match.index > lastIndex) parts.push(text.substring(lastIndex, match.index));
+    const [, label, href] = match;
+    const className = "text-primary hover:underline";
     parts.push(
-      <Link key={`link-${match.index}`} to={match[2]} className="text-primary hover:underline">
-        {match[1]}
-      </Link>
+      isPlainAnchor(href) ? (
+        <a
+          key={`link-${match.index}`}
+          href={href}
+          className={className}
+          {...(FILE_PATH.test(href)
+            ? { download: true }
+            : { target: "_blank", rel: "noopener noreferrer" })}
+        >
+          {label}
+        </a>
+      ) : (
+        <Link key={`link-${match.index}`} to={href} className={className}>
+          {label}
+        </Link>
+      )
     );
     lastIndex = regex.lastIndex;
   }

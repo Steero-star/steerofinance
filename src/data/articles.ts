@@ -107,6 +107,128 @@ Ce n'est pas un outil de plus. C'est le premier outil construit pour que tu l'ut
 Installe le rituel. L'outil suit.`,
   },
   {
+    id: 12,
+    slug: "comment-faire-un-tableau-excel-pour-gerer-son-budget",
+    date: "2026-09-02",
+    related: [7, 3],
+    reference: {
+      label: "Microsoft, la documentation officielle de la fonction SOMME.SI.ENS",
+      href: "https://support.microsoft.com/fr-fr/office/fonction-somme-si-ens-c9e748f5-7ea7-455d-9406-611cebce642b",
+    },
+    sections: [
+      "Ce que ton tableau doit répondre avant d'exister",
+      "Étape 1 : poser les catégories, pas les montants",
+      "Étape 2 : la feuille de saisie, une ligne par opération",
+      "Étape 3 : le récapitulatif mensuel en trois formules",
+      "Étape 4 : comparer le prévu et le réel",
+      "Étape 5 : le rendez-vous qui fait vivre le fichier",
+      "Si tu ne veux pas le construire",
+    ],
+    content: `Ce que ton tableau doit répondre avant d'exister
+
+Un tableau de budget n'a pas besoin d'être beau. Il a besoin d'être ouvert. Le reste est de la décoration.
+
+Un tableau qui ne répond à aucune question précise devient un cimetière de chiffres. Tu le remplis trois semaines, tu ne sais pas quoi en faire, tu l'abandonnes.
+
+Avant la première cellule, écris les trois questions auxquelles il doit répondre :
+• Combien il me reste réellement d'ici la fin du mois
+• Où est parti l'écart entre ce que je pensais dépenser et ce que j'ai dépensé
+• Qu'est-ce que je change le mois prochain
+
+Trois questions, pas dix. Si une colonne ne sert aucune des trois, elle ne rentre pas dans le fichier. C'est la seule règle qui empêche un tableau de gonfler jusqu'à devenir impraticable.
+
+C'est aussi ce qui sépare un budget d'un relevé. Ton application bancaire fait déjà le relevé, et elle le fait mieux que toi : elle liste ce qui s'est passé. Un budget sert à autre chose. Il compare ce que tu avais décidé avec ce qui est arrivé, pendant que le mois est encore en cours. Si ton tableau ne fait que recopier ton relevé, il ne t'apprendra rien que ta banque ne t'ait déjà dit.
+
+Étape 1 : poser les catégories, pas les montants
+
+On commence par la nomenclature. Jamais par les chiffres.
+
+Ouvre une feuille « Catégories » et liste tes postes. Dix à quinze, pas davantage. Une base qui tient dans la plupart des situations :
+• Logement : loyer ou crédit, charges, assurance
+• Courses
+• Transport
+• Abonnements
+• Sorties et restaurants
+• Santé
+• Enfants
+• Achats ponctuels
+• Épargne
+
+Deux niveaux suffisent : un poste, et si besoin un sous-poste. Au troisième niveau, tu passes plus de temps à classer qu'à décider.
+
+Le vrai piège s'appelle « Divers ». Elle paraît pratique, elle est un trou noir. Si ta catégorie Divers dépasse cinq pour cent de tes dépenses, elle cache une catégorie réelle que tu n'as pas nommée. Ouvre-la.
+
+Étape 2 : la feuille de saisie, une ligne par opération
+
+Une seule feuille, cinq colonnes : Date, Libellé, Catégorie, Montant, Compte.
+
+Trois décisions font toute la différence, et elles se prennent maintenant :
+
+1. Un seul signe, une seule colonne. Les dépenses en négatif, les revenus en positif, dans la même colonne Montant. Deux colonnes Débit et Crédit doublent la saisie et cassent la moitié des formules que tu écriras ensuite.
+2. La catégorie se choisit, elle ne se tape pas. Données, Validation des données, Liste, et tu pointes ta feuille Catégories. Une seule faute de frappe et la ligne disparaît de tous tes totaux, sans rien afficher d'anormal.
+3. Mets la feuille en tableau structuré. Sélectionne tes colonnes, Ctrl+L. Les formules suivront automatiquement les lignes ajoutées, ce qui t'évite le bug le plus courant des budgets Excel : une plage figée qui ne couvre plus les nouvelles lignes, et des totaux qui deviennent faux en silence.
+
+La colonne Compte semble accessoire tant que tu n'as qu'un compte courant. Elle devient indispensable dès qu'il y en a deux, parce que c'est elle qui te permet de vérifier ton tableau contre ton relevé, compte par compte. Sans elle, un écart de trente euros peut venir de n'importe où.
+
+Une ligne par opération, enfin. Pas d'agrégat, pas de « courses du mois » en un seul montant. Un total saisi à la main ne te dira jamais où l'argent est parti.
+
+Étape 3 : le récapitulatif mensuel en trois formules
+
+Nouvelle feuille. Une ligne par catégorie, une colonne par mois, et une seule formule répétée partout.
+
+SOMME.SI.ENS fait tout le travail. Elle additionne les montants de la feuille de saisie qui remplissent deux conditions à la fois : la bonne catégorie, et le bon mois.
+
+→ =SOMME.SI.ENS(Saisie[Montant]; Saisie[Catégorie]; $A2; Saisie[Date]; ">="&B$1; Saisie[Date]; "<"&MOIS.DECALER(B$1;1))
+
+En clair : additionne les montants dont la catégorie est celle de ma ligne, et dont la date tombe entre le premier du mois de ma colonne et le premier du mois suivant. Tu l'écris une fois, tu l'étires sur toute la grille, c'est fini.
+
+Deux autres formules et le récapitulatif est complet : la somme de la colonne pour le total du mois, et la différence entre revenus et dépenses pour le reste à vivre.
+
+Trois formules. Pas de macro, pas de tableau croisé dynamique. Un tableau croisé est plus élégant, il est aussi la première chose qui casse le jour où tu ajoutes une catégorie six mois plus tard.
+
+Un dernier détail qui fait perdre des soirées entières : si tes dates sont stockées en texte, SOMME.SI.ENS renvoie zéro sans jamais afficher d'erreur. Une date collée depuis un export bancaire est presque toujours du texte. Le test prend une seconde : une vraie date s'aligne à droite dans sa cellule, un texte s'aligne à gauche.
+
+Étape 4 : comparer le prévu et le réel
+
+C'est l'étape que presque personne ne fait, et c'est celle qui transforme un relevé en instrument de pilotage.
+
+Ajoute une colonne Prévu à côté de chaque mois. Tu y poses ce que tu comptes dépenser par catégorie, avant que le mois commence. L'écart se calcule tout seul.
+
+Pour le premier mois, ne pose pas un idéal. Prends la moyenne de tes trois derniers mois, catégorie par catégorie. Un prévu inatteignable produit un écart rouge partout, et un tableau qui te donne tort tous les jours est un tableau que tu fermes.
+
+À partir de là, ton fichier ne raconte plus le passé, il montre la dérive pendant qu'elle est encore rattrapable. Un écart n'est pas une faute, c'est une information datée. Le voir le 12 du mois te laisse dix-huit jours pour agir. Le voir le 3 du mois suivant ne te laisse rien.
+
+Une mise en forme conditionnelle sur la colonne d'écart suffit, avec un seul seuil. Deux couleurs, pas cinq.
+
+C'est le niveau Examiner du système TEMPO : dix minutes par semaine à comparer ce que tu avais prévu et ce qui s'est passé.
+
+Étape 5 : le rendez-vous qui fait vivre le fichier
+
+Ton tableau est prêt. Il ne s'ouvrira jamais tout seul.
+
+C'est le point où la plupart des budgets Excel meurent, et ce n'est pas une question de conception. Le fichier ne te rappelle rien, ne te signale rien, ne te pose aucune question. Il attend.
+
+Deux rendez-vous suffisent, et ils vont dans ton agenda, pas dans ta tête :
+• Cinq minutes, trois fois par semaine : tu saisis ce qui s'est passé depuis la dernière fois. Aucune analyse, juste le geste.
+• Dix minutes le dimanche : tu compares le prévu et le réel, et tu décides une seule chose pour la semaine qui vient.
+
+Cinq minutes trois fois par semaine battent deux heures une fois par mois. Pas parce que c'est plus vertueux, parce que les trous ne s'accumulent pas jusqu'au point où le rattrapage décourage.
+
+Si tu veux comprendre pourquoi ce rendez-vous est le seul facteur qui décide de la survie de ton fichier, c'est le sujet de [pourquoi ton tableau Excel budget ne tient jamais plus de trois semaines](/blog/pourquoi-tableau-excel-budget-ne-tient-pas).
+
+Si tu ne veux pas le construire
+
+Deux voies honnêtes, et aucune n'est meilleure dans l'absolu.
+
+Tu pars d'un modèle tout fait. Tu gagnes une heure, tu perds la connaissance de ta propre structure, et tu passeras un moment à déchiffrer les formules de quelqu'un d'autre le jour où tu voudras ajouter une catégorie.
+
+Ou tu passes à un outil qui porte le rendez-vous à ta place. C'est exactement ce que Steero installe : les mêmes chiffres, la même saisie consciente, mais la cadence vit dans l'outil au lieu de vivre dans ta bonne volonté.
+
+Dans les deux cas, garde ce que tu viens de lire. La structure ne change pas : des catégories courtes, une ligne par opération, un prévu en face du réel, et un rendez-vous court à fréquence fixe.
+
+Le tableur n'est qu'un support. C'est la cadence qui pilote.`,
+  },
+  {
     id: 2,
     slug: "montee-en-competences-financieres-du-flou-au-pilotage",
     date: "2026-05-03",
@@ -523,7 +645,7 @@ La règle des 50/30/20 peut être ton point de départ. Le système TEMPO est ce
     id: 7,
     slug: "pourquoi-tableau-excel-budget-ne-tient-pas",
     date: "2026-05-03",
-    related: [3, 4],
+    related: [12, 3],
     reference: {
       label: "BJ Fogg, Tiny Habits — sur la construction des habitudes par ancrage comportemental",
       href: "https://medium.com/essentiels/bj-fogg-cr%C3%A9ez-un-changement-durable-avec-de-petites-habitudes-5086dc9d9d37",
