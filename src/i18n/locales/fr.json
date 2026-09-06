@@ -968,11 +968,11 @@
           ]
         },
         {
-          "title": "5. Cookies et mesure d'audience",
+          "title": "5. Cookies, mesure d'audience et publicité",
           "blocks": [
             {
               "type": "p",
-              "text": "Le site ne dépose aucun cookie de mesure d'audience avant ton accord. La mesure d'audience Google Analytics n'est chargée que si tu l'acceptes, et refuser ne dégrade en rien la navigation."
+              "text": "Le site ne dépose aucun cookie de mesure ni de publicité avant ton accord. Google Analytics et le pixel Meta ne sont chargés que si tu les acceptes, et refuser ne dégrade en rien la navigation."
             },
             {
               "type": "p",
@@ -1494,6 +1494,11 @@
                   "États-Unis — clauses contractuelles types"
                 ],
                 [
+                  "Meta (pixel Facebook)",
+                  "Mesure de nos publicités, uniquement après ton consentement",
+                  "Irlande et États-Unis — clauses contractuelles types"
+                ],
+                [
                   "Vercel Web Analytics",
                   "Mesure d’audience du site sans cookie ni identifiant persistant",
                   "États-Unis — clauses contractuelles types"
@@ -1559,6 +1564,10 @@
                   "13 mois maximum"
                 ],
                 [
+                  "Cookies publicitaires (pixel Meta)",
+                  "90 jours"
+                ],
+                [
                   "Preuve de ton choix sur les cookies",
                   "6 mois, puis le choix t'est redemandé"
                 ]
@@ -1611,11 +1620,11 @@
           ]
         },
         {
-          "title": "12. Cookies et mesure d'audience",
+          "title": "12. Cookies, mesure d'audience et publicité",
           "blocks": [
             {
               "type": "p",
-              "text": "Aucun cookie de mesure d'audience n'est déposé avant ton accord, et refuser n'enlève rien au site."
+              "text": "Aucun cookie de mesure ni de publicité n'est déposé avant ton accord, et refuser n'enlève rien au site."
             },
             {
               "type": "table",
@@ -1636,6 +1645,11 @@
                   "13 mois"
                 ],
                 [
+                  "_fbp, _fbc  (pixel Meta)",
+                  "Mesure de nos publicités, déposés uniquement si tu acceptes",
+                  "90 jours"
+                ],
+                [
                   "Session applicative (Clerk)",
                   "Te garder connecté à l'application, strictement nécessaire",
                   "Durée de la session"
@@ -1644,7 +1658,7 @@
             },
             {
               "type": "p",
-              "text": "Tu peux modifier ton choix à tout moment : [gérer mes préférences cookies](#cookies). Aucun cookie publicitaire n'est utilisé."
+              "text": "Tu peux modifier ton choix à tout moment : [gérer mes préférences cookies](#cookies). Refuser bloque aussi bien la mesure d'audience que le pixel publicitaire."
             },
             {
               "type": "p",
@@ -1895,7 +1909,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "Nous utilisons une mesure d'audience pour comprendre ce qui est lu sur le site. Rien n'est déposé sans ton accord, et refuser n'enlève aucune fonctionnalité. Tu peux changer d'avis à tout moment depuis le pied de page.",
+    "body": "Nous utilisons une mesure d'audience pour comprendre ce qui est lu sur le site, et un pixel Meta pour mesurer nos publicités. Rien n'est déposé sans ton accord, et refuser n'enlève aucune fonctionnalité. Tu peux changer d'avis à tout moment depuis le pied de page.",
     "policyLink": "Voir la politique de confidentialité",
     "accept": "Tout accepter",
     "decline": "Continuer sans accepter",

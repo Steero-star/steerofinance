@@ -952,11 +952,11 @@
           ]
         },
         {
-          "title": "5. Cookies and analytics",
+          "title": "5. Cookies, analytics and advertising",
           "blocks": [
             {
               "type": "p",
-              "text": "No analytics cookie is set before you agree. Google Analytics is loaded only if you accept it, and declining does not degrade the site in any way."
+              "text": "No analytics or advertising cookie is set before you agree. Google Analytics and the Meta pixel are loaded only if you accept them, and declining does not degrade the site in any way."
             },
             {
               "type": "p",
@@ -1478,6 +1478,11 @@
                   "United States — standard contractual clauses"
                 ],
                 [
+                  "Meta (Facebook pixel)",
+                  "Measurement of our ads, only after your consent",
+                  "Ireland and United States — standard contractual clauses"
+                ],
+                [
                   "Vercel Web Analytics",
                   "Cookieless website analytics, no persistent identifier",
                   "United States — standard contractual clauses"
@@ -1543,6 +1548,10 @@
                   "13 months maximum"
                 ],
                 [
+                  "Advertising cookies (Meta pixel)",
+                  "90 days"
+                ],
+                [
                   "Proof of your cookie choice",
                   "6 months, then you are asked again"
                 ]
@@ -1595,11 +1604,11 @@
           ]
         },
         {
-          "title": "12. Cookies and analytics",
+          "title": "12. Cookies, analytics and advertising",
           "blocks": [
             {
               "type": "p",
-              "text": "No analytics cookie is set before you agree, and declining takes nothing away from the site."
+              "text": "No analytics or advertising cookie is set before you agree, and declining takes nothing away from the site."
             },
             {
               "type": "table",
@@ -1620,6 +1629,11 @@
                   "13 months"
                 ],
                 [
+                  "_fbp, _fbc (Meta pixel)",
+                  "Measurement of our ads, set only if you accept",
+                  "90 days"
+                ],
+                [
                   "Application session (Clerk)",
                   "Keep you signed in to the application, strictly necessary",
                   "Session duration"
@@ -1628,7 +1642,7 @@
             },
             {
               "type": "p",
-              "text": "You can change your choice at any time: [manage cookie preferences](#cookies). No advertising cookie is used."
+              "text": "You can change your choice at any time: [manage cookie preferences](#cookies). Declining blocks the analytics and the advertising pixel alike."
             },
             {
               "type": "p",
@@ -1879,7 +1893,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "We use analytics to understand what gets read on this site. Nothing is set without your agreement, and declining removes no feature. You can change your mind at any time from the footer.",
+    "body": "We use analytics to understand what gets read on this site, and a Meta pixel to measure our ads. Nothing is set without your agreement, and declining removes no feature. You can change your mind at any time from the footer.",
     "policyLink": "Read the privacy policy",
     "accept": "Accept all",
     "decline": "Continue without accepting",

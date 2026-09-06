@@ -1,7 +1,25 @@
+import { readConsent } from "./consent";
+
+/**
+ * Forme du pixel Meta. `fbq` existe dès son installation et empile les appels
+ * tant que `fbevents.js` n'est pas arrivé : l'ordre de chargement est donc
+ * indifférent aux appelants. L'installation elle-même est dans `lib/consent.ts`,
+ * derrière le consentement.
+ */
+export type FbqFn = {
+  (...args: unknown[]): void;
+  callMethod?: (...args: unknown[]) => void;
+  queue: unknown[][];
+  loaded: boolean;
+  version: string;
+};
+
 declare global {
   interface Window {
     gtag: (...args: unknown[]) => void;
     dataLayer: unknown[];
+    fbq?: FbqFn;
+    _fbq?: FbqFn;
   }
 }
 
@@ -11,12 +29,41 @@ const gtag = (...args: unknown[]) => {
   }
 };
 
+/**
+ * Sans consentement, `fbq` n'est pas installé et l'appel est simplement perdu,
+ * exactement comme pour `gtag`. Aucun appelant n'a à savoir si la mesure tourne.
+ */
+const fbq = (...args: unknown[]) => {
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq(...args);
+  }
+};
+
 // ── Page Views ─────────────────────────────────────────────
+/**
+ * Le pixel Meta envoie son propre `PageView` au moment où il s'installe. C'est
+ * lui qui porte la page d'arrivée, y compris quand le consentement est donné en
+ * cours de visite : aucun changement de route ne suivra, et la page d'arrivée
+ * est justement celle qui porte l'attribution publicitaire.
+ *
+ * Le premier appel de route ne doit donc pas la compter une seconde fois. La
+ * garde tient dans les deux ordres de montage : consommée avant l'installation
+ * du pixel, c'est l'installation qui envoie la page d'arrivée ; consommée
+ * après, c'est le doublon qui saute.
+ */
+let pixelPageViewPending = true;
+
 export const trackPageView = (path: string) => {
   gtag("config", "G-61JXTXNN1N", {
     page_path: path,
     page_title: document.title,
   });
+
+  if (pixelPageViewPending) {
+    pixelPageViewPending = false;
+    return;
+  }
+  fbq("track", "PageView");
 };
 
 // ── Scroll Depth ───────────────────────────────────────────
@@ -237,21 +284,45 @@ export const startTrial = (location: string) => {
 const BEGIN_TRIAL_SENT_KEY = "steero_begin_trial_sent";
 
 /**
+ * Étiquette de la conversion « Inscription » côté Google Ads, de la forme
+ * `AW-XXXXXXXXX/aBcDeFgHiJkLmNoPqR`. À relever dans le compte : Objectifs →
+ * Conversions → Inscription → « Configuration de la balise » → « Installer la
+ * balise vous-même », dans le bloc `send_to`.
+ *
+ * L'identifiant `AW-…` qui la précède est aussi à reporter dans
+ * `ADS_CONVERSION_ID` (`lib/consent.ts`) : sans le `config`, le `send_to` ne
+ * trouve pas sa destination.
+ */
+const ADS_SIGNUP_CONVERSION = "";
+
+/**
  * Événement clé de conversion, envoyé une seule fois par navigateur :
  * la garde localStorage évite le double comptage (refresh, StrictMode,
  * retour sur /bienvenue). method n'est pas connaissable depuis le site
  * (l'inscription se fait chez Clerk), on ne l'invente pas.
  */
 export const trackBeginTrial = () => {
-  // Sans consentement, gtag n'est pas chargé : on ne grille pas la garde,
-  // un passage ultérieur avec consentement pourra encore compter l'essai.
-  if (typeof window === "undefined" || !window.gtag) return false;
+  // On lit le consentement au lieu de le deviner. Avant Consent Mode v2,
+  // l'absence de `window.gtag` valait refus, et ce test suffisait. Depuis, le
+  // shim existe dès le démarrage avec un refus par défaut : le deviner ferait
+  // griller la garde ci-dessous pour un visiteur qui a refusé, et l'essai ne
+  // serait plus jamais comptable s'il acceptait plus tard.
+  if (typeof window === "undefined" || readConsent() !== "granted") return false;
   try {
     if (localStorage.getItem(BEGIN_TRIAL_SENT_KEY)) return false;
   } catch {
     // Stockage indisponible (navigation privée) : on envoie quand même.
   }
   gtag("event", "begin_trial", { plan: "trial_14d" });
+  // La conversion Google Ads part d'ici, sous la même garde : c'est le même
+  // fait, il ne peut pas être compté deux fois. Tant que l'étiquette n'est pas
+  // renseignée, la ligne ne fait rien et GA4 continue seul.
+  if (ADS_SIGNUP_CONVERSION) {
+    gtag("event", "conversion", { send_to: ADS_SIGNUP_CONVERSION });
+  }
+  // Même conversion, donc même garde : un essai ne peut pas être compté deux
+  // fois côté Meta pour une seule inscription.
+  fbq("track", "StartTrial");
   try {
     localStorage.setItem(BEGIN_TRIAL_SENT_KEY, new Date().toISOString());
   } catch {
@@ -304,6 +375,9 @@ export const bookCall = (location: string) => {
     cta_location: location,
     page_path: window.location.pathname,
   });
+  // `Lead` chez Meta, et pas `StartTrial` : une demande d'échange n'est pas un
+  // essai. Les deux ne se mélangent pas, pour la même raison qu'au-dessus.
+  fbq("track", "Lead");
   trackCTAClick("reserver_echange", location, BOOKING_URL);
   window.open(BOOKING_URL, "_blank", "noopener,noreferrer");
 };
