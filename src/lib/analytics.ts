@@ -23,10 +23,24 @@ declare global {
   }
 }
 
+/**
+ * Porte de sortie de toute la mesure Google.
+ *
+ * Le test portait sur l'existence de `window.gtag`, qui valait refus tant que
+ * le script n'était pas chargé. Depuis Consent Mode v2, le shim existe dès le
+ * démarrage : sans ce second test, chaque page vue d'un visiteur qui a REFUSÉ
+ * s'empilerait quand même dans le `dataLayer`. Rien ne partirait aujourd'hui,
+ * puisque aucun script ne le vide — mais la file grossirait en silence, prête à
+ * se déverser d'un coup le jour où quoi que ce soit chargerait gtag.js.
+ *
+ * On teste donc le consentement lui-même. Les commandes `consent` de
+ * `lib/consent.ts` ne passent pas par ici : ce sont elles qui déclarent l'état,
+ * elles ne peuvent pas en dépendre.
+ */
 const gtag = (...args: unknown[]) => {
-  if (typeof window !== "undefined" && window.gtag) {
-    window.gtag(...args);
-  }
+  if (typeof window === "undefined" || !window.gtag) return;
+  if (readConsent() !== "granted") return;
+  window.gtag(...args);
 };
 
 /**

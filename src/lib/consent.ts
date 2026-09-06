@@ -9,7 +9,22 @@
 import type { FbqFn } from "./analytics";
 
 const STORAGE_KEY = "steero_consent";
-const CONSENT_VERSION = 1;
+/**
+ * Version du consentement recueilli.
+ *
+ * `readConsent` renvoie null dès que la version stockée diffère de celle-ci,
+ * ce qui fait réapparaître le bandeau et redemande son choix au visiteur.
+ *
+ * Le passage à 2 accompagne l'arrivée du pixel Meta, et c'est une obligation
+ * et non une précaution : les visiteurs qui ont accepté jusqu'ici l'ont fait
+ * devant un bandeau qui ne parlait que de mesure d'audience. Leur accord ne
+ * couvre pas une finalité publicitaire, et un « granted » stocké avant ce
+ * changement ne vaut pas consentement au pixel.
+ *
+ * À incrémenter chaque fois qu'une finalité NOUVELLE apparaît. Jamais pour une
+ * simple reformulation : redemander sans raison use le consentement.
+ */
+const CONSENT_VERSION = 2;
 const SIX_MONTHS_MS = 182 * 24 * 60 * 60 * 1000;
 const GA_MEASUREMENT_ID = "G-61JXTXNN1N";
 

@@ -1893,7 +1893,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "Utilizamos una medición de audiencia para entender qué se lee en el sitio y un píxel de Meta para medir nuestros anuncios. No se deposita nada sin tu acuerdo y rechazarlo no elimina ninguna funcionalidad. Puedes cambiar de opinión en cualquier momento desde el pie de página.",
+    "body": "Un recuento de audiencia sin cookies mide las páginas leídas sea cual sea tu elección: no deposita nada ni te sigue de un sitio a otro. Si aceptas, añadimos Google Analytics y un píxel de Meta para medir nuestros anuncios. Rechazarlo no elimina ninguna funcionalidad y puedes cambiar de opinión en cualquier momento desde el pie de página.",
     "policyLink": "Ver la política de privacidad",
     "accept": "Aceptar todo",
     "decline": "Continuar sin aceptar",

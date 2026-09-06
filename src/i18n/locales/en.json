@@ -1893,7 +1893,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "We use analytics to understand what gets read on this site, and a Meta pixel to measure our ads. Nothing is set without your agreement, and declining removes no feature. You can change your mind at any time from the footer.",
+    "body": "A cookieless page count measures what gets read whatever you choose: it stores nothing and does not follow you across sites. If you accept, we add Google Analytics and a Meta pixel to measure our ads. Declining removes no feature, and you can change your mind at any time from the footer.",
     "policyLink": "Read the privacy policy",
     "accept": "Accept all",
     "decline": "Continue without accepting",
