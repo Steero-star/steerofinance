@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronDown, Sparkles } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,8 +22,19 @@ const Hero = () => {
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
 
+  /*
+   * `pt-28` et non `pt-20` : l'en-tête est `fixed` et mesure 97 px sous 768,
+   * contre 80 px de marge haute. Le badge passait dessous de 17 px. Le défaut
+   * préexistait au 06/09, mais il ne se voyait qu'en 375, là où le contenu
+   * dépasse `min-h-[calc(100vh-8rem)]` et cesse d'être centré ; les trois
+   * lignes de différenciants l'ont étendu à plus de largeurs. Vérifié à 375,
+   * 768 et 1280. Mesuré après coup : le hero fait exactement 860 px pour un
+   * viewport de 860 en 1280, et 868 pour 812 en 375, où le contenu dépasse.
+   * Ce débordement de 56 px est celui du hero, pas de la page : le bouton et
+   * le prix restent dans le premier écran (bas de microcopie à 624 sur 812).
+   */
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-hero-gradient pt-20 pb-2 overflow-hidden">
+    <section ref={sectionRef} className="relative min-h-screen bg-hero-gradient pt-28 pb-2 overflow-hidden">
       {/* Decorative elements with parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -81,6 +92,34 @@ const Hero = () => {
             >
               {t('hero.description')}
             </motion.p>
+
+            {/*
+              Trois différenciants produit, entre la promesse et le bouton.
+
+              POURQUOI ICI. La semaine de calibrage Ads a montré que 93 % des
+              clics viennent de « gérer son budget ». Quelqu'un qui tape ça sait
+              déjà qu'il a un problème : il cherche un outil, et il cherche deux
+              choses en particulier, la personnalisation et la visualisation.
+              C'est le premier endroit de la page où on lui montre ce que
+              l'outil FAIT plutôt que pourquoi il devrait s'en soucier.
+
+              POURQUOI TROIS ET PAS QUATRE. La colonne de gauche fait 35 % de la
+              grille : au-delà de trois lignes courtes, le bouton sort du premier
+              écran en 1280 et l'accroche se paie en clic perdu.
+            */}
+            <motion.ul
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="max-w-md space-y-2"
+            >
+              {(t("hero.proofs", { returnObjects: true }) as string[]).map((proof) => (
+                <li key={proof} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+                  <span>{proof}</span>
+                </li>
+              ))}
+            </motion.ul>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

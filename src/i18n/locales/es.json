@@ -43,10 +43,15 @@
   },
   "hero": {
     "badge": "La app de pilotaje financiero personal",
-    "title": "Pilota tus finanzas.",
+    "title": "Pilota tu presupuesto.",
     "titleHighlight": "Sigue alineado con tus objetivos.",
     "description": "Instala rituales cortos y guiados con tu dinero: sabes dónde está y decides conscientemente adónde va y adónde debe ir.",
-    "microcopy": "14 días gratis · sin compromiso · sin conexión bancaria",
+    "proofs": [
+      "Crea tu propio presupuesto: gastos fijos y gastos variables incluidos.",
+      "Una vista visual adaptada por periodo: semana, mes, trimestre, año.",
+      "Cada decisión construye el futuro: proyecto, ahorro, inversión."
+    ],
+    "microcopy": "14 días gratis · luego 8 € al mes, todo incluido · sin conexión bancaria",
     "scrollHint": "Descubrir por qué Steero"
   },
   "realProblem": {
@@ -1981,28 +1986,6 @@
         "role": "Asistente de compras en la industria · Early adopter"
       }
     ],
-    "weekLabel": "La proyección",
-    "weekTitle": "Así es tu",
-    "weekTitleEm": "primera semana.",
-    "weekNote": "Sin magia, sin sincronización pasiva. Solo tú, a los mandos, en unos minutos.",
-    "steps": [
-      {
-        "when": "Día 1",
-        "title": "Colocas tu marco",
-        "body": "Alquiler 850 €, suscripciones, compra: tus gastos fijos se colocan con plantillas prerrellenadas. 10 minutos, una vez."
-      },
-      {
-        "when": "Cada día",
-        "title": "5 minutos para registrar",
-        "body": "Café 2,80 €, compra 46,20 €: anotas los gastos del día y cierras la app cuando todo está al día."
-      },
-      {
-        "when": "Día 7",
-        "title": "Tu primera revisión semanal",
-        "body": "150 € previstos en salidas, 214 € reales: ves la diferencia y ajustas mientras aún estás a tiempo."
-      }
-    ],
-    "exNote": "Ejemplo ilustrativo: en tu caso, serán tus cifras.",
     "honestTitle": "Steero es joven, y te lo decimos.",
     "honestBody": "Nuestros primeros usuarios están instalando el método ahora mismo: las cifras de impacto vendrán de ellos, no de un argumentario. Mientras tanto, la mejor prueba es la tuya. Pruébalo 14 días y júzgalo tú mismo.",
     "honestMicro": "Cancela en un clic · sin conexión bancaria"
@@ -2011,5 +1994,44 @@
     "title": "Tu prueba de 14 días comienza.",
     "body": "Tu cuenta está lista. Te llevamos a tu espacio Steero…",
     "cta": "Abrir la app"
+  },
+  "projection": {
+    "label": "La experiencia",
+    "title": "Lo que haces en Steero,",
+    "titleEm": "y lo que cambia.",
+    "note": "Nada que esperar: desde el primer día sabes lo que te queda. Lo que crece después es la perspectiva.",
+    "steps": [
+      {
+        "when": "Día 1",
+        "title": "Colocas tu marco",
+        "body": "Alquiler 850 €, suscripciones, compra: tus gastos fijos se colocan con plantillas prerrellenadas. 10 minutos, una vez."
+      },
+      {
+        "when": "Día 2",
+        "title": "El registro del día",
+        "body": "Café 2,80 €, compra 46,20 €: anotas los gastos del día y cierras la app cuando todo está al día."
+      },
+      {
+        "when": "Día 7",
+        "title": "Tu primera revisión semanal",
+        "body": "150 € previstos en salidas, 214 € reales: ves la diferencia y ajustas mientras aún estás a tiempo."
+      },
+      {
+        "when": "Mes 1",
+        "title": "Tu mes se cierra",
+        "body": "1 480 € previstos, 1 612 € reales: ves lo que costó de verdad, categoría por categoría, y ajustas el presupuesto del mes siguiente."
+      },
+      {
+        "when": "Mes 3",
+        "title": "Tu dinero sirve a un proyecto",
+        "body": "Lo que no se gasta deja de dormir en la cuenta corriente: lo asignas a un ahorro, un proyecto o una inversión, y Steero sigue lo que aportas."
+      },
+      {
+        "when": "Año 1",
+        "title": "Tu año, completo",
+        "body": "Doce meses medidos, no estimados: lo que gastaste de verdad, lo que apartaste y las decisiones para el año siguiente."
+      }
+    ],
+    "exNote": "Ejemplo ilustrativo: en tu caso, serán tus cifras."
   }
 }

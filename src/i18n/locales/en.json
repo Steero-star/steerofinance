@@ -43,10 +43,15 @@
   },
   "hero": {
     "badge": "The personal finance steering app",
-    "title": "Steer your finances.",
+    "title": "Steer your budget.",
     "titleHighlight": "Stay aligned with your goals.",
     "description": "Install short, guided rituals with your money: you know where it is, and you consciously decide where it goes and where it should go.",
-    "microcopy": "14 days free · no commitment · no bank connection",
+    "proofs": [
+      "Build your own budget: fixed costs and variable spending included.",
+      "A visual view for every horizon: week, month, quarter, year.",
+      "Every decision builds what comes next: projects, savings, investments."
+    ],
+    "microcopy": "14 days free · then €8 a month, all included · no bank connection",
     "scrollHint": "Discover why Steero"
   },
   "realProblem": {
@@ -1981,28 +1986,6 @@
         "role": "Purchasing assistant in industry · Early adopter"
       }
     ],
-    "weekLabel": "The projection",
-    "weekTitle": "This is your",
-    "weekTitleEm": "first week.",
-    "weekNote": "No magic, no passive syncing. Just you, at the controls, in a few minutes.",
-    "steps": [
-      {
-        "when": "Day 1",
-        "title": "You set your frame",
-        "body": "Rent €850, subscriptions, groceries: your fixed costs go in with pre-filled templates. 10 minutes, once."
-      },
-      {
-        "when": "Every day",
-        "title": "5 minutes to track",
-        "body": "Coffee €2.80, groceries €46.20: you log the day's expenses and close the app when everything is up to date."
-      },
-      {
-        "when": "Day 7",
-        "title": "Your first weekly check-in",
-        "body": "€150 planned for going out, €214 actual: you see the gap and adjust while there is still time."
-      }
-    ],
-    "exNote": "An illustrative example: yours will be your own numbers.",
     "honestTitle": "Steero is young, and we say so.",
     "honestBody": "Our first users are installing the method right now: the impact numbers will come from them, not from a sales pitch. Meanwhile, the best proof is your own. Try it for 14 days and judge for yourself.",
     "honestMicro": "Cancel in one click · no bank connection"
@@ -2011,5 +1994,44 @@
     "title": "Your 14-day trial is starting.",
     "body": "Your account is ready. Taking you to your Steero space…",
     "cta": "Open the app"
+  },
+  "projection": {
+    "label": "The experience",
+    "title": "What you do in Steero,",
+    "titleEm": "and what it changes.",
+    "note": "Nothing to wait for: from day one you know what is left. What grows after that is perspective.",
+    "steps": [
+      {
+        "when": "Day 1",
+        "title": "You set your frame",
+        "body": "Rent €850, subscriptions, groceries: your fixed costs go in with pre-filled templates. 10 minutes, once."
+      },
+      {
+        "when": "Day 2",
+        "title": "The daily entry",
+        "body": "Coffee €2.80, groceries €46.20: you log the day's expenses and close the app when everything is up to date."
+      },
+      {
+        "when": "Day 7",
+        "title": "Your first weekly check-in",
+        "body": "€150 planned for going out, €214 actual: you see the gap and adjust while there is still time."
+      },
+      {
+        "when": "Month 1",
+        "title": "Your month closes",
+        "body": "€1,480 planned, €1,612 actual: you see what really cost what, category by category, and you adjust next month's budget."
+      },
+      {
+        "when": "Month 3",
+        "title": "Your money serves a project",
+        "body": "What is not spent stops sleeping in your current account: you assign it to savings, a project or an investment, and Steero tracks what you put in."
+      },
+      {
+        "when": "Year 1",
+        "title": "Your whole year, at once",
+        "body": "Twelve months measured, not estimated: what you really spent, what you set aside, and the calls to make for next year."
+      }
+    ],
+    "exNote": "An illustrative example: yours will be your own numbers."
   }
 }

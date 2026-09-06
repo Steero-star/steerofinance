@@ -43,10 +43,15 @@
   },
   "hero": {
     "badge": "L'app de pilotage financier personnel",
-    "title": "Pilote tes finances.",
+    "title": "Pilote ton budget.",
     "titleHighlight": "Reste aligné à tes objectifs.",
     "description": "Installe des rituels courts et guidés avec ton argent : tu sais où il est, tu décides consciemment où il va et où il doit aller.",
-    "microcopy": "14 jours gratuits · sans engagement · aucune connexion bancaire",
+    "proofs": [
+      "Crée ton propre budget : charges fixes et charges variables incluses.",
+      "Un affichage visuel adapté par période : semaine, mois, trimestre, année.",
+      "Chaque décision construit l'avenir : projet, épargne, investissement."
+    ],
+    "microcopy": "14 jours gratuits · puis 8 € par mois, tout inclus · aucune connexion bancaire",
     "scrollHint": "Découvrir pourquoi Steero"
   },
   "realProblem": {
@@ -1997,28 +2002,6 @@
         "role": "Assistant Achat dans l'industrie · Early Adopter"
       }
     ],
-    "weekLabel": "La projection",
-    "weekTitle": "À quoi ressemble ta",
-    "weekTitleEm": "première semaine.",
-    "weekNote": "Pas de magie, pas de synchronisation passive. Juste toi, aux commandes, en quelques minutes.",
-    "steps": [
-      {
-        "when": "Jour 1",
-        "title": "Tu poses ton cadre",
-        "body": "Loyer 850 €, abonnements, courses : tes charges fixes se posent avec des modèles préremplis. 10 minutes, une fois."
-      },
-      {
-        "when": "Chaque jour",
-        "title": "5 minutes pour tracer",
-        "body": "Café 2,80 €, courses 46,20 € : tu notes tes dépenses du jour et tu fermes l'app quand tout est à jour."
-      },
-      {
-        "when": "Jour 7",
-        "title": "Ton premier point hebdo",
-        "body": "150 € prévus en sorties, 214 € réels : tu vois l'écart et tu ajustes pendant qu'il est encore temps."
-      }
-    ],
-    "exNote": "Exemple illustratif : chez toi, ce seront tes chiffres.",
     "honestTitle": "Steero est jeune, et on te le dit.",
     "honestBody": "Nos premiers utilisateurs installent la méthode en ce moment : les chiffres d'impact viendront d'eux, pas d'un argumentaire. En attendant, la meilleure preuve, c'est la tienne. Teste 14 jours et juge sur pièce.",
     "honestMicro": "Résiliation en un clic · aucune connexion bancaire"
@@ -2027,5 +2010,44 @@
     "title": "Ton essai de 14 jours démarre.",
     "body": "Ton compte est prêt. On t'emmène vers ton espace Steero…",
     "cta": "Ouvrir l'app"
+  },
+  "projection": {
+    "label": "L'expérience",
+    "title": "Ce que tu fais dans Steero,",
+    "titleEm": "et ce que ça change.",
+    "note": "Rien à attendre : dès le premier jour, tu sais ce qu'il te reste. Ce qui grandit ensuite, c'est le recul.",
+    "steps": [
+      {
+        "when": "Jour 1",
+        "title": "Tu poses ton cadre",
+        "body": "Loyer 850 €, abonnements, courses : tes charges fixes se posent avec des modèles préremplis. 10 minutes, une fois."
+      },
+      {
+        "when": "Jour 2",
+        "title": "Le geste du jour",
+        "body": "Café 2,80 €, courses 46,20 € : tu notes tes dépenses du jour et tu fermes l'app quand tout est à jour."
+      },
+      {
+        "when": "Jour 7",
+        "title": "Ton premier point hebdo",
+        "body": "150 € prévus en sorties, 214 € réels : tu vois l'écart et tu ajustes pendant qu'il est encore temps."
+      },
+      {
+        "when": "Mois 1",
+        "title": "Ton mois se referme",
+        "body": "1 480 € prévus, 1 612 € réels : tu vois ce qui a vraiment coûté, catégorie par catégorie, et tu ajustes le budget du mois suivant."
+      },
+      {
+        "when": "Mois 3",
+        "title": "Ton argent sert un projet",
+        "body": "Ce qui ne part pas en dépense arrête de dormir sur le compte courant : tu l'affectes à une épargne, un projet ou un placement, et Steero suit ce que tu y verses."
+      },
+      {
+        "when": "Année 1",
+        "title": "Ton année, en entier",
+        "body": "Douze mois mesurés, pas estimés : ce que tu as vraiment dépensé, ce que tu as mis de côté, et les arbitrages à poser pour l'année suivante."
+      }
+    ],
+    "exNote": "Exemple illustratif : chez toi, ce seront tes chiffres."
   }
 }

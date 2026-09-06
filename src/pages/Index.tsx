@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import Projection from "@/components/Projection";
 import RapportEtonnement from "@/components/RapportEtonnement";
 import MethodResults from "@/components/MethodResults";
 import Footer from "@/components/Footer";
@@ -46,17 +47,28 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Steero - Passe du tableur au pilotage | Alternative à Excel pour ton budget"
-        description="Ton Excel finit toujours par lâcher. Steero installe un cadre de pilotage simple : 5 minutes par jour pour voir où va ton argent et décider où il va. Plus simple qu'Excel, plus utile que les apps bancaires."
-        keywords="gérer son argent, comment gérer son argent, gestion budget, alternative excel budget, finances personnelles"
+        title="Application de budget : pilote le tien en 5 min/jour | Steero"
+        description="Une application de budget qui te fait décider : tes catégories, tes enveloppes, ta consommation au fil de l'eau. 5 minutes par jour, sans connexion bancaire."
+        keywords="gérer son budget, application de budget, application gestion budget, logiciel de budget, budget familial, finances personnelles"
         canonical="/"
         ogType="website"
         jsonLd={[organizationLd, websiteLd, softwareLd]}
       />
       <Header />
       <Hero />
-      <RapportEtonnement />
+      {/*
+        Ordre revu le 06/09 : la projection passe devant.
+
+        Elle était en avant-dernier, après le rapport d'étonnement et TEMPO,
+        c'est-à-dire après trois études et un acronyme. Cet ordre était juste
+        pour un visiteur qui ignore qu'il a un problème ; il ne l'est pas pour
+        quelqu'un qui arrive de « gérer son budget », qui a franchi cette étape
+        et cherche un outil. On montre donc d'abord ce que ça donne chez lui,
+        on nomme la méthode ensuite, et on argumente le pourquoi en dernier.
+      */}
+      <Projection />
       <MethodResults />
+      <RapportEtonnement />
       <Preuve />
       <Footer />
     </div>
