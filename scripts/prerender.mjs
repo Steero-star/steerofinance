@@ -136,6 +136,24 @@ const capture = (page) =>
       .querySelectorAll('link[rel="stylesheet"][onload]')
       .forEach((link) => link.setAttribute("media", "print"));
 
+    // MEME FAMILLE, ET CELLE-LA A COUTE UNE MEP LE 06/09. L'ecran de
+    // consentement est bloquant depuis ce jour : il verrouille le defilement
+    // en posant `overflow: hidden` sur `body`. Serialise tel quel, ce style
+    // partait dans le HTML statique des 21 routes, et la page devenait
+    // indefilable a la molette pour tout le monde -- y compris apres avoir
+    // repondu, puisque le nettoyage du composant restaurait la valeur
+    // capturee, c'est-a-dire le verrou lui-meme.
+    //
+    // On retire donc l'ecran ET son verrou avant de figer. Retirer l'ecran
+    // evite en plus un clignotement plein ecran a chaque chargement pour
+    // quiconque a deja repondu. `createRoot` remplace le contenu au montage,
+    // il n'y a pas d'hydratation a desynchroniser.
+    document.querySelectorAll("[data-consent-screen]").forEach((n) => n.remove());
+    document.body.style.overflow = "";
+    if (!document.body.getAttribute("style")) {
+      document.body.removeAttribute("style");
+    }
+
     const doctype = "<!doctype html>\n";
     return {
       html: doctype + document.documentElement.outerHTML,

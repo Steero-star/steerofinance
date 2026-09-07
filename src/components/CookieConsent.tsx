@@ -68,8 +68,29 @@ const CookieConsent = () => {
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     return () => {
-      document.body.style.overflow = previous;
+      // On ne rend PAS `previous` tel quel. INCIDENT DU 06/09 : le prerendu
+      // photographiait le DOM pendant que cet ecran etait ouvert, donc le HTML
+      // statique des 21 routes partait avec `<body style="overflow: hidden;">`.
+      // `previous` valait alors « hidden », et le nettoyage reposait le verrou
+      // qu'il devait lever : la page restait indefilable APRES la reponse du
+      // visiteur, molette et tactile morts, sur tout le site. La cause est
+      // corrigee dans `scripts/prerender.mjs`, celle-ci est la ceinture.
+      document.body.style.overflow = previous === "hidden" ? "" : previous;
     };
+  }, [blocking]);
+
+  /**
+   * Filet pour les HTML deja en cache. Quand un choix existe deja, l'effet de
+   * verrou ci-dessus ne monte jamais : personne ne leve donc un verrou livre
+   * par une version prerendue fautive, et le visiteur qui revient trouve une
+   * page morte. `grep body.style.overflow` ne retourne que ce fichier, donc
+   * effacer ce style ici ne pietine le verrou d'aucun autre composant.
+   */
+  useEffect(() => {
+    if (blocking) return;
+    if (document.body.style.overflow === "hidden") {
+      document.body.style.overflow = "";
+    }
   }, [blocking]);
 
   /**
@@ -124,6 +145,11 @@ const CookieConsent = () => {
 
   return (
     <div
+      // Contrat explicite avec `scripts/prerender.mjs`, qui retire ce noeud
+      // avant de figer le DOM : un ecran de consentement dans le HTML statique
+      // clignoterait en pleine page a chaque chargement pour quiconque a deja
+      // repondu. Ne pas renommer sans corriger le prerendu.
+      data-consent-screen=""
       className={
         blocking
           ? // `z-[90]` et non `z-50` : l'en-tête est `fixed z-50` et gagnait le
