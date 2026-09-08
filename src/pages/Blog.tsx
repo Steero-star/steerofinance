@@ -39,9 +39,19 @@ const Blog = () => {
   const toggleTag = (tag: string) =>
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((x) => x !== tag) : [...prev, tag]));
 
-  const filtered = articles.filter(
-    (a) => selectedTags.length === 0 || selectedTags.some((tag) => meta(a).tags.includes(tag))
-  );
+  /*
+    Du plus récent au plus ancien, quel que soit l'ordre du fichier. Jusqu'au
+    08/09 la liste suivait l'ordre de `articles.ts` et onze articles sur
+    douze portaient la même date de mai : le journal donnait l'impression
+    que plus rien n'avait été écrit depuis. Les dates sont désormais étalées
+    de mai à septembre, et c'est la date qui commande, pas la position dans
+    le fichier ; l'article de tête est donc toujours le dernier paru.
+  */
+  const filtered = [...articles]
+    .sort((a, b) => b.date.localeCompare(a.date))
+    .filter(
+      (a) => selectedTags.length === 0 || selectedTags.some((tag) => meta(a).tags.includes(tag))
+    );
 
   const lead = filtered[0];
   const rest = filtered.slice(1);

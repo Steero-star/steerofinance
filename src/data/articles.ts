@@ -25,7 +25,7 @@ export const articles: Article[] = [
   {
     id: 3,
     slug: "pourquoi-sans-rituel-aucun-outil-financier-ne-fonctionne",
-    date: "2026-05-03",
+    date: "2026-05-05",
     related: [1, 10],
     reference: {
       label: "BJ Fogg, Tiny Habits — sur la formation des habitudes",
@@ -109,7 +109,7 @@ Installe le rituel. L'outil suit.`,
   {
     id: 12,
     slug: "comment-faire-un-tableau-excel-pour-gerer-son-budget",
-    date: "2026-09-02",
+    date: "2026-09-04",
     related: [7, 3],
     reference: {
       label: "Microsoft, la documentation officielle de la fonction SOMME.SI.ENS",
@@ -231,7 +231,7 @@ Le tableur n'est qu'un support. C'est la cadence qui pilote.`,
   {
     id: 2,
     slug: "montee-en-competences-financieres-du-flou-au-pilotage",
-    date: "2026-05-03",
+    date: "2026-05-12",
     related: [3, 1],
     reference: {
       label: "James Clear, Atomic Habits — sur la formation des habitudes par étapes",
@@ -311,7 +311,7 @@ Steero est construit autour de cette logique de progression. Les cinq niveaux TE
   {
     id: 1,
     slug: "tu-depenses-trop-chaque-mois-voici-pourquoi",
-    date: "2026-05-03",
+    date: "2026-05-19",
     related: [3, 10],
     sections: [
       "Ce n'est pas que tu dépenses trop. C'est que tu regardes trop rarement.",
@@ -438,7 +438,7 @@ Le système TEMPO est la méthode. Steero est l'outil construit pour l'implémen
   {
     id: 4,
     slug: "5-minutes-par-jour-pour-ne-plus-subir-sa-fin-de-mois",
-    date: "2026-05-03",
+    date: "2026-05-26",
     related: [3, 1],
     reference: {
       label: "BJ Fogg, Tiny Habits — sur l'ancrage des micro-comportements",
@@ -500,7 +500,7 @@ Ce n'est pas le temps qui manque pour gérer ses finances. C'est la structure.`,
   {
     id: 5,
     slug: "tes-finances-ne-sont-pas-un-bulletin-de-notes",
-    date: "2026-05-03",
+    date: "2026-06-04",
     related: [3, 4],
     reference: {
       label: "Daniel Kahneman, Thinking Fast and Slow — sur les biais émotionnels dans la prise de décision",
@@ -577,7 +577,7 @@ La clarté remplace la culpabilité. C'est là que tout change.`,
   {
     id: 6,
     slug: "regle-50-30-20-limites-alternative",
-    date: "2026-05-03",
+    date: "2026-06-11",
     related: [3, 1],
     reference: {
       label: "Elizabeth Warren, All Your Worth — origine de la règle 50/30/20 et son contexte",
@@ -644,7 +644,7 @@ La règle des 50/30/20 peut être ton point de départ. Le système TEMPO est ce
   {
     id: 7,
     slug: "pourquoi-tableau-excel-budget-ne-tient-pas",
-    date: "2026-05-03",
+    date: "2026-06-18",
     related: [12, 3],
     reference: {
       label: "BJ Fogg, Tiny Habits — sur la construction des habitudes par ancrage comportemental",
@@ -727,7 +727,7 @@ L'outil suit le rituel. Jamais l'inverse.`,
   {
     id: 8,
     slug: "economiser-500-euros-ce-mois-ci",
-    date: "2026-05-03",
+    date: "2026-06-25",
     related: [1, 3, 10],
     reference: {
       label: "Étude comportementale sur la sous-estimation des dépenses — Journal of Consumer Research",
@@ -816,7 +816,7 @@ Les 500€ sont probablement déjà là. Il manque juste le regard pour les voir
   {
     id: 9,
     slug: "meilleure-app-pour-gerer-son-argent",
-    date: "2026-05-03",
+    date: "2026-07-07",
     related: [3, 2],
     reference: {
       label: "Nir Eyal, Hooked — sur les mécanismes d'engagement des produits numériques",
@@ -904,7 +904,7 @@ La différence n'est pas dans les features. Elle est dans ce que tu deviens apr�
   {
     id: 10,
     slug: "carte-bancaire-douleur-de-payer-saisie-manuelle",
-    date: "2026-05-03",
+    date: "2026-07-21",
     related: [3, 5],
     reference: {
       label: "Prelec, D. & Simester, D. (2001). Always leaving home without it. Marketing Letters",
@@ -1013,7 +1013,7 @@ C'est exactement pour ça que Steero ne t'agrège rien automatiquement. Essaie 1
   {
     id: 11,
     slug: "creer-une-routine-fondement-change",
-    date: "2026-05-10",
+    date: "2026-08-19",
     related: [3, 4],
     sections: [
       "Pourquoi les routines échouent (et pourquoi les tiennes ont échoué)",
