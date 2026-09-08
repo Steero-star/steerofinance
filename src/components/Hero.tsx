@@ -1,13 +1,48 @@
-import { ArrowRight, Check, ChevronDown, Sparkles } from "lucide-react";
+import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import ZoomableShot from "@/components/ZoomableShot";
-import heroImageWebP from "@/assets/hero-dashboard.webp";
-import heroImagePng from "@/assets/hero-dashboard.png";
+import heroImageWebP from "@/assets/hero-budget.webp";
+import heroImagePng from "@/assets/hero-budget.png";
+import heroImageMobileWebP from "@/assets/hero-budget-mobile.webp";
 import { startTrial } from "@/lib/analytics";
 
-
+/*
+ * LE PREMIER ÉCRAN PARLE À QUI A TAPÉ « GÉRER SON BUDGET » (07/09/2026).
+ *
+ * La semaine de calibrage Ads a livré 93 % des clics sur cette requête, avec
+ * une annonce qui promet « Vois ton mois d'un coup d'œil » et « Décide où va
+ * ton argent ». Le hero du 06/09 tenait « budget » et le prix, mais il avait
+ * grossi jusqu'à douze lignes avant le bouton : un paragraphe de 26 mots et
+ * trois puces de deux lignes, qui redisaient la section Projection juste
+ * dessous. La force du site était le peu de texte. On y revient.
+ *
+ * CE QUI RESTE : badge, titre, UNE ligne reprise de l'annonce, bouton, prix.
+ * Cinq lignes. Aucune durée quotidienne : Ronald a banni « 5 minutes par
+ * jour » de toute promesse, ça effraie sur l'effort.
+ *
+ * LES TROIS BÉNÉFICES ne disparaissent pas : ils ferment le hero dans une
+ * bande fine bleu Steero, une ligne chacun, en langage simple. Ils ouvrent
+ * sur Projection, qui les détaille avec des chiffres.
+ *
+ * L'IMAGE. Le fichier de 4096 px n'était pas en cause : le cadre d'ordinateur
+ * mangeait un tiers de sa colonne et un écran de 1440 px s'affichait en 900,
+ * soit 7 px de texte. Le visiteur voyait une densité, pas une valeur. La
+ * capture est recadrée à échelle réelle sur Reste à vivre et quatre
+ * enveloppes DANS LES CLOUS, à des niveaux différents. Pas de dépassement en
+ * premier écran, décision de Ronald : le rouge fait projeter un échec, et
+ * l'écart se raconte à Jour 7 dans Projection. Le 2 × 3 a été écarté : il
+ * demande la pleine largeur du cockpit et retombe à 7 px. Sous 768 px, une
+ * découpe portrait de deux enveloppes remplace la découpe large, sinon la
+ * même image à 335 px retombe à 6 px de texte pour 43 % du trafic payant.
+ *
+ * LA HAUTEUR. Plus de `min-h-screen` : le hero prend la hauteur de son
+ * contenu, la bande et le haut de Projection passent sous le pli, et c'est
+ * la page elle-même qui invite à défiler. Le chevron animé n'a plus de
+ * raison d'être. `pt-28` reste : l'en-tête est `fixed` et mesure 97 px sous
+ * 768, `pt-20` le faisait passer sur le badge.
+ */
 const Hero = () => {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
@@ -17,24 +52,15 @@ const Hero = () => {
   });
   const decorY1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const decorY2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
+  const decorY3 = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const decorScale1 = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const decorScale2 = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
   const imageY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
+  const benefits = t("hero.band", { returnObjects: true }) as string[];
 
-  /*
-   * `pt-28` et non `pt-20` : l'en-tête est `fixed` et mesure 97 px sous 768,
-   * contre 80 px de marge haute. Le badge passait dessous de 17 px. Le défaut
-   * préexistait au 06/09, mais il ne se voyait qu'en 375, là où le contenu
-   * dépasse `min-h-[calc(100vh-8rem)]` et cesse d'être centré ; les trois
-   * lignes de différenciants l'ont étendu à plus de largeurs. Vérifié à 375,
-   * 768 et 1280. Mesuré après coup : le hero fait exactement 860 px pour un
-   * viewport de 860 en 1280, et 868 pour 812 en 375, où le contenu dépasse.
-   * Ce débordement de 56 px est celui du hero, pas de la page : le bouton et
-   * le prix restent dans le premier écran (bas de microcopie à 624 sur 812).
-   */
   return (
-    <section ref={sectionRef} className="relative min-h-screen bg-hero-gradient pt-28 pb-2 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-hero-gradient pt-28 overflow-hidden">
       {/* Decorative elements with parallax */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
@@ -55,13 +81,19 @@ const Hero = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.5 }}
           transition={{ duration: 1.5, delay: 0.5 }}
-          style={{ y: useTransform(scrollYProgress, [0, 1], [0, 80]) }}
+          style={{ y: decorY3 }}
           className="absolute left-1/3 top-1/3 w-64 h-64 rounded-full bg-primary/3 blur-3xl"
         />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-[35fr_65fr] gap-10 items-center min-h-[calc(100vh-8rem)]">
+      {/*
+        `pt-8 lg:pt-16` sous le `pt-28` de la section : sans ce coussin, le
+        hero mesure 545 px pour 860 de viewport et Projection occupe un tiers
+        du premier écran. On veut qu'elle dépasse sous le pli, pas qu'elle
+        le partage.
+      */}
+      <div className="container mx-auto px-6 pt-8 pb-14 lg:pt-16 lg:pb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left content */}
           <div className="space-y-6">
             <motion.div
@@ -88,38 +120,10 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="text-base text-muted-foreground max-w-md"
+              className="text-base md:text-lg text-muted-foreground max-w-md"
             >
               {t('hero.description')}
             </motion.p>
-
-            {/*
-              Trois différenciants produit, entre la promesse et le bouton.
-
-              POURQUOI ICI. La semaine de calibrage Ads a montré que 93 % des
-              clics viennent de « gérer son budget ». Quelqu'un qui tape ça sait
-              déjà qu'il a un problème : il cherche un outil, et il cherche deux
-              choses en particulier, la personnalisation et la visualisation.
-              C'est le premier endroit de la page où on lui montre ce que
-              l'outil FAIT plutôt que pourquoi il devrait s'en soucier.
-
-              POURQUOI TROIS ET PAS QUATRE. La colonne de gauche fait 35 % de la
-              grille : au-delà de trois lignes courtes, le bouton sort du premier
-              écran en 1280 et l'accroche se paie en clic perdu.
-            */}
-            <motion.ul
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
-              className="max-w-md space-y-2"
-            >
-              {(t("hero.proofs", { returnObjects: true }) as string[]).map((proof) => (
-                <li key={proof} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                  <span>{proof}</span>
-                </li>
-              ))}
-            </motion.ul>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -148,28 +152,30 @@ const Hero = () => {
           >
             <ZoomableShot
               src={heroImageWebP}
+              srcMobile={heroImageMobileWebP}
               fallback={heroImagePng}
-              alt={t("hero.title")}
+              alt={t("hero.imageAlt")}
+              className="overflow-hidden rounded-2xl border border-border/60 bg-card shadow-image"
               loading="eager"
             />
           </motion.div>
         </div>
-
       </div>
 
-      {/* Invitation au scroll : trois bandes qui s'éclairent l'une après l'autre */}
-      <button
-        type="button"
-        aria-label={t("hero.scrollHint")}
-        onClick={() =>
-          document.getElementById("pourquoi")?.scrollIntoView({ behavior: "smooth" })
-        }
-        className="scroll-hint absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center w-12 h-12 rounded-full cursor-pointer transition-transform duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-      >
-        <ChevronDown className="w-5 h-5 -mb-3" />
-        <ChevronDown className="w-5 h-5 -mb-3" />
-        <ChevronDown className="w-5 h-5" />
-      </button>
+      {/*
+        La bande des trois bénéfices. Sous 640 px les trois lignes s'empilent,
+        séparées par un filet ; au-dessus elles tiennent sur une ligne de 46 px.
+        `relative z-10` : sans lui, les halos décoratifs en `absolute inset-0`
+        passeraient par-dessus et délaveraient le bleu.
+      */}
+      <ul className="relative z-10 flex flex-col sm:flex-row sm:flex-wrap sm:items-center sm:justify-center bg-primary text-primary-foreground text-sm font-medium divide-y divide-primary-foreground/25 sm:divide-y-0 sm:divide-x">
+        {benefits.map((benefit) => (
+          <li key={benefit} className="flex items-center gap-2.5 px-6 py-2.5 sm:py-3">
+            <Check className="h-4 w-4 shrink-0" strokeWidth={2.5} aria-hidden="true" />
+            <span>{benefit}</span>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 };

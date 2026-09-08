@@ -45,14 +45,14 @@
     "badge": "The personal finance steering app",
     "title": "Steer your budget.",
     "titleHighlight": "Stay aligned with your goals.",
-    "description": "Install short, guided rituals with your money: you know where it is, and you consciously decide where it goes and where it should go.",
-    "proofs": [
-      "Build your own budget: fixed costs and variable spending included.",
-      "A visual view for every horizon: week, month, quarter, year.",
-      "Every decision builds what comes next: projects, savings, investments."
+    "description": "Your month at a glance: you know where your money is, you decide where it goes.",
+    "imageAlt": "Left to live and budget envelopes in Steero",
+    "band": [
+      "You build your budget, your way",
+      "You follow it by week, by month, by year",
+      "Your savings have their own line in the budget, not what's left at the end"
     ],
-    "microcopy": "14 days free · then €8 a month, all included · no bank connection",
-    "scrollHint": "Discover why Steero"
+    "microcopy": "14 days free · then €8 a month, all included · no bank connection"
   },
   "realProblem": {
     "label": "WHY STEERO",
@@ -214,6 +214,21 @@
       "ba3": {
         "before": "You find the overshoot once the money is gone",
         "after": "The gap shows while it can still be corrected"
+      }
+    },
+    "orient": {
+      "title": "You set the direction for the year",
+      "ba1": {
+        "before": "A year gets judged by feel, in December",
+        "after": "Twelve months measured, not estimated"
+      },
+      "ba2": {
+        "before": "The year's savings are one global figure",
+        "after": "What you set aside, project by project"
+      },
+      "ba3": {
+        "before": "January resolutions start from a blank page",
+        "after": "Next year's trade-offs, grounded in real numbers"
       }
     },
     "position": {
@@ -1779,7 +1794,7 @@
       "titlePre": "TEMPO:",
       "titleHighlight": "Five rituals",
       "titlePost": ", one discipline.",
-      "description": "From daily to strategic. Each level has a frequency, an objective, a duration. Together they form a complete steering system.",
+      "description": "From daily to strategic. Each appointment has its question and its frequency. Together they form a complete steering system.",
       "colRitual": "Ritual",
       "colFrequency": "Frequency",
       "colDuration": "Duration",
@@ -1995,6 +2010,23 @@
     "body": "Your account is ready. Taking you to your Steero space…",
     "cta": "Open the app"
   },
+  "perimetre": {
+    "title": "Everything in one place.",
+    "lead": "You do your accounts once, and everything that counts is in there.",
+    "items": [
+      "Current and savings accounts",
+      "Cash and meal vouchers",
+      "Vinted, kitties and other balances",
+      "Money owed to and by friends",
+      "Fixed costs and subscriptions",
+      "Live budget tracking",
+      "Guided check-ins",
+      "Goals and projects"
+    ],
+    "soon": "Wealth tracking",
+    "soonTag": "coming soon",
+    "link": "See all the features"
+  },
   "projection": {
     "label": "The experience",
     "title": "What you do in Steero,",
@@ -2003,18 +2035,20 @@
     "steps": [
       {
         "when": "Day 1",
-        "title": "You set your frame",
-        "body": "Rent €850, subscriptions, groceries: your fixed costs go in with pre-filled templates. 10 minutes, once."
+        "title": "You set your budget",
+        "body": "Your income, your fixed costs, your everyday spending, and what you set aside. Savings and investments have their own line from day one, not whatever is left at the end of the month."
       },
       {
         "when": "Day 2",
         "title": "The daily entry",
-        "body": "Coffee €2.80, groceries €46.20: you log the day's expenses and close the app when everything is up to date."
+        "body": "Coffee €2.80, groceries €46.20: you log the day's expenses and close the app when everything is up to date.",
+        "imageAlt": "Log, the daily entry: seven dots and the streak of days kept"
       },
       {
         "when": "Day 7",
         "title": "Your first weekly check-in",
-        "body": "€150 planned for going out, €214 actual: you see the gap and adjust while there is still time."
+        "body": "€150 planned for going out, €214 actual: you see the gap and adjust while there is still time.",
+        "imageAlt": "Review, this week's money: spent against allocated, and last week's mark"
       },
       {
         "when": "Month 1",
@@ -2023,8 +2057,8 @@
       },
       {
         "when": "Month 3",
-        "title": "Your money serves a project",
-        "body": "What is not spent stops sleeping in your current account: you assign it to savings, a project or an investment, and Steero tracks what you put in."
+        "title": "Your savings held up like the rest",
+        "body": "Three months measured: income, spending, and the savings and investment line, €1,500 deposited, €700 invested. You see whether you are above or below your commitment."
       },
       {
         "when": "Year 1",
@@ -2032,6 +2066,8 @@
         "body": "Twelve months measured, not estimated: what you really spent, what you set aside, and the calls to make for next year."
       }
     ],
-    "exNote": "An illustrative example: yours will be your own numbers."
+    "exNote": "An illustrative example: yours will be your own numbers.",
+    "method": "Five appointments, from daily to strategic: that is the TEMPO method.",
+    "methodLink": "Discover the method"
   }
 }

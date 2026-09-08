@@ -6,7 +6,7 @@ import { CalendarDays, Info, Sparkles, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { TempoLetter } from "@/components/TempoLetter";
+import TempoAccordion from "@/components/TempoAccordion";
 import IndiceDepli from "@/components/IndiceDepli";
 import steeroBanner from "@/assets/steero-banner-3.png";
 import steeroBannerWebP from "@/assets/steero-banner-3.webp";
@@ -16,7 +16,6 @@ import illustrationWebP2x from "@/assets/illustration-bureau@2x.webp";
 import { useTranslation } from "react-i18next";
 
 type Principle = { num: string; title: string; desc: string; ref: string; refHref: string };
-type TempoRow = { letter: string; name: string; desc: string; freq: string; time: string };
 
 const PourquoiSteero = () => {
   const { t } = useTranslation();
@@ -26,7 +25,6 @@ const PourquoiSteero = () => {
   const retroItems = t("pourquoiSteero.realProblem.retroItems", { returnObjects: true }) as string[];
   const pareItems = t("pourquoiSteero.realProblem.pareItems", { returnObjects: true }) as string[];
   const principles = t("pourquoiSteero.behavioral.principles", { returnObjects: true }) as Principle[];
-  const tempo = t("pourquoiSteero.tempo.rows", { returnObjects: true }) as TempoRow[];
 
   return (
     <div className="min-h-screen bg-background">
@@ -369,7 +367,9 @@ const PourquoiSteero = () => {
       </section>
 
       {/* TEMPO */}
-      <section className="py-24 bg-background">
+      {/* `id="methode"` : cible du lien « Découvrir la méthode » que la section
+          L'expérience de l'accueil pose sous son fil, depuis le 08/09. */}
+      <section className="py-24 bg-background" id="methode">
         <div className="container mx-auto px-6 max-w-6xl">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -399,42 +399,11 @@ const PourquoiSteero = () => {
             {t("pourquoiSteero.tempo.description")}
           </motion.p>
 
-          {/* Cinq cases sur toute la largeur, une par rituel. Le tableau d'avant
-              rangeait TEMPO en lignes empilées, ce qui le faisait lire comme une
-              liste de tâches ; côte à côte, les cinq temps se lisent comme UNE
-              progression, du quotidien au stratégique, de gauche à droite.
-
-              Sous `md` la rangée se casse en deux puis une colonne : cinq cases
-              sur un téléphone donneraient 60 px de large chacune.
-
-              La pastille devient un carré planté dans le coin, hors du flux :
-              seul son angle haut-gauche est arrondi, pour épouser celui de la
-              carte au lieu de dépasser dessus. Le contenu réserve donc sa place
-              en haut (`pt-16`), sinon le titre passerait dessous. */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {tempo.map((row, i) => (
-              <motion.div
-                key={row.letter}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 + i * 0.08 }}
-                className="relative overflow-hidden rounded-2xl border border-border/60 bg-card transition-colors hover:border-primary/30"
-              >
-                <TempoLetter
-                  letter={row.letter}
-                  className="absolute top-0 left-0 w-12 h-12 rounded-none rounded-tl-2xl text-lg"
-                />
-                <div className="pt-16 px-5 pb-5">
-                  <p className="font-semibold text-foreground mb-1">{row.name}</p>
-                  <p className="text-muted-foreground text-xs leading-relaxed mb-4">{row.desc}</p>
-                  <p className="text-xs text-muted-foreground border-t border-border/60 pt-3">
-                    {row.freq} · <span className="font-semibold text-foreground">{row.time}</span>
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          {/* Cinq cartes sur une rangée, une ouverte à la fois : la grille de
+              cinq cases (une phrase et une durée par rituel) a laissé place le
+              07/09 à l'accordéon, qui porte les tirets « ce que ça change »
+              de chaque rendez-vous. Voir TempoAccordion.tsx. */}
+          <TempoAccordion />
 
           {/* DEUX NOTES SUR UNE LIGNE, ET DEUX HABILLAGES DIFFERENTS.
               Le calendrier est livre, la banque est promise. Les habiller

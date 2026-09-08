@@ -43,14 +43,22 @@ interface ZoomableShotProps {
   src2x?: string;
   /** Repli pour les navigateurs sans webp. */
   fallback?: string;
+  /**
+   * Découpe servie sous 768 px, à la place de `src`. Le hero en a besoin :
+   * sa découpe large, lisible dans une colonne de 600 px, retombe à 6 px de
+   * texte sur 335 px. La visionneuse ouvre toujours la grande image, qu'on
+   * peut zoomer : ce n'est que la vignette qui change de découpe.
+   */
+  srcMobile?: string;
   alt: string;
   /** Classes de la vignette, pour que chaque section garde sa mise en page. */
   className?: string;
   /**
    * Classes de l'image ELLE-MÊME. Par défaut la capture prend sa hauteur
-   * naturelle. `MethodResults` la veut en fond recadré derrière son panneau de
-   * texte : sans ce crochet, il faudrait soit renoncer au zoom, soit renoncer à
-   * sa mise en page. La transition de survol est ajoutée par le composant, elle
+   * naturelle. Une section qui la veut en fond recadré derrière un panneau de
+   * texte (c'était `MethodResults`, retiré le 07/09) passe par ce crochet :
+   * sans lui, il faudrait soit renoncer au zoom, soit renoncer à sa mise en
+   * page. La transition de survol est ajoutée par le composant, elle
    * n'a pas à être redite ici.
    */
   imgClassName?: string;
@@ -64,6 +72,7 @@ const ZoomableShot = ({
   src,
   src2x,
   fallback,
+  srcMobile,
   alt,
   className = "",
   imgClassName = "w-full h-auto block",
@@ -153,6 +162,7 @@ const ZoomableShot = ({
           className={`group block w-full cursor-zoom-in rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${className}`}
         >
           <picture>
+            {srcMobile && <source media="(max-width: 767px)" srcSet={srcMobile} type="image/webp" />}
             <source srcSet={jeuDeSources ?? src} type="image/webp" />
             <img
               src={fallback ?? src}

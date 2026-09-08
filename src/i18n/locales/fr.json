@@ -45,14 +45,14 @@
     "badge": "L'app de pilotage financier personnel",
     "title": "Pilote ton budget.",
     "titleHighlight": "Reste aligné à tes objectifs.",
-    "description": "Installe des rituels courts et guidés avec ton argent : tu sais où il est, tu décides consciemment où il va et où il doit aller.",
-    "proofs": [
-      "Crée ton propre budget : charges fixes et charges variables incluses.",
-      "Un affichage visuel adapté par période : semaine, mois, trimestre, année.",
-      "Chaque décision construit l'avenir : projet, épargne, investissement."
+    "description": "Ton mois d'un coup d'œil : tu sais où est ton argent, tu décides où il va.",
+    "imageAlt": "Reste à vivre et enveloppes de budget dans Steero",
+    "band": [
+      "Tu fais ton budget, à ta façon",
+      "Tu le suis à la semaine, au mois, à l'année",
+      "Ton épargne a sa ligne dans le budget, pas ce qui reste à la fin"
     ],
-    "microcopy": "14 jours gratuits · puis 8 € par mois, tout inclus · aucune connexion bancaire",
-    "scrollHint": "Découvrir pourquoi Steero"
+    "microcopy": "14 jours gratuits · puis 8 € par mois, tout inclus · aucune connexion bancaire"
   },
   "realProblem": {
     "label": "POURQUOI STEERO",
@@ -214,6 +214,21 @@
       "ba3": {
         "before": "Tu découvres le dérapage une fois qu'il est dépensé",
         "after": "L'écart se voit pendant qu'il est encore corrigeable"
+      }
+    },
+    "orient": {
+      "title": "Tu choisis la direction de l'année",
+      "ba1": {
+        "before": "Une année se juge au ressenti, en décembre",
+        "after": "Douze mois mesurés, pas estimés"
+      },
+      "ba2": {
+        "before": "L'épargne de l'année est un chiffre global",
+        "after": "Ce que tu as mis de côté, projet par projet"
+      },
+      "ba3": {
+        "before": "Les résolutions de janvier partent d'une page blanche",
+        "after": "Les arbitrages de l'année suivante, posés sur du réel"
       }
     },
     "position": {
@@ -1795,7 +1810,7 @@
       "titlePre": "TEMPO :",
       "titleHighlight": "Cinq rituels",
       "titlePost": ", une discipline.",
-      "description": "Du quotidien au stratégique. Chaque niveau a une fréquence, un objectif, une durée. L'ensemble forme un système de pilotage complet.",
+      "description": "Du quotidien au stratégique. Chaque rendez-vous a sa question et sa fréquence. L'ensemble forme un système de pilotage complet.",
       "colRitual": "Rituel",
       "colFrequency": "Fréquence",
       "colDuration": "Durée",
@@ -2011,6 +2026,23 @@
     "body": "Ton compte est prêt. On t'emmène vers ton espace Steero…",
     "cta": "Ouvrir l'app"
   },
+  "perimetre": {
+    "title": "Tout au même endroit.",
+    "lead": "Tu fais tes comptes une fois, et tout ce qui compte est dedans.",
+    "items": [
+      "Comptes courants et livrets",
+      "Espèces et tickets restaurant",
+      "Cagnottes, Vinted et autres soldes",
+      "Dettes et créances entre amis",
+      "Charges fixes et abonnements",
+      "Suivi dynamique du budget",
+      "Des rendez-vous guidés",
+      "Objectifs et projets"
+    ],
+    "soon": "Gestion de ton patrimoine",
+    "soonTag": "à venir",
+    "link": "Voir toutes les fonctionnalités"
+  },
   "projection": {
     "label": "L'expérience",
     "title": "Ce que tu fais dans Steero,",
@@ -2019,18 +2051,20 @@
     "steps": [
       {
         "when": "Jour 1",
-        "title": "Tu poses ton cadre",
-        "body": "Loyer 850 €, abonnements, courses : tes charges fixes se posent avec des modèles préremplis. 10 minutes, une fois."
+        "title": "Tu poses ton budget",
+        "body": "Tes revenus, tes charges fixes, tes dépenses du quotidien, et ce que tu mets de côté. L'épargne et l'investissement ont leur ligne dès le départ, pas ce qui reste à la fin du mois."
       },
       {
         "when": "Jour 2",
         "title": "Le geste du jour",
-        "body": "Café 2,80 €, courses 46,20 € : tu notes tes dépenses du jour et tu fermes l'app quand tout est à jour."
+        "body": "Café 2,80 €, courses 46,20 € : tu notes tes dépenses du jour et tu fermes l'app quand tout est à jour.",
+        "imageAlt": "Tracer, le geste du jour : sept pastilles et la série de jours tenus"
       },
       {
         "when": "Jour 7",
         "title": "Ton premier point hebdo",
-        "body": "150 € prévus en sorties, 214 € réels : tu vois l'écart et tu ajustes pendant qu'il est encore temps."
+        "body": "150 € prévus en sorties, 214 € réels : tu vois l'écart et tu ajustes pendant qu'il est encore temps.",
+        "imageAlt": "Examiner, l'argent de la semaine : dépensé sur alloué, et le trait de la semaine dernière"
       },
       {
         "when": "Mois 1",
@@ -2039,8 +2073,8 @@
       },
       {
         "when": "Mois 3",
-        "title": "Ton argent sert un projet",
-        "body": "Ce qui ne part pas en dépense arrête de dormir sur le compte courant : tu l'affectes à une épargne, un projet ou un placement, et Steero suit ce que tu y verses."
+        "title": "Ton épargne a tenu comme le reste",
+        "body": "Trois mois mesurés : revenus, dépenses, et la ligne épargne et investissement, 1 500 € versés, 700 € investis. Tu vois si tu es au-dessus ou en dessous de ton engagement."
       },
       {
         "when": "Année 1",
@@ -2048,6 +2082,8 @@
         "body": "Douze mois mesurés, pas estimés : ce que tu as vraiment dépensé, ce que tu as mis de côté, et les arbitrages à poser pour l'année suivante."
       }
     ],
-    "exNote": "Exemple illustratif : chez toi, ce seront tes chiffres."
+    "exNote": "Exemple illustratif : chez toi, ce seront tes chiffres.",
+    "method": "Cinq rendez-vous, du quotidien au stratégique : c'est la méthode TEMPO.",
+    "methodLink": "Découvrir la méthode"
   }
 }

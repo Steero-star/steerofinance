@@ -45,14 +45,14 @@
     "badge": "La app de pilotaje financiero personal",
     "title": "Pilota tu presupuesto.",
     "titleHighlight": "Sigue alineado con tus objetivos.",
-    "description": "Instala rituales cortos y guiados con tu dinero: sabes dónde está y decides conscientemente adónde va y adónde debe ir.",
-    "proofs": [
-      "Crea tu propio presupuesto: gastos fijos y gastos variables incluidos.",
-      "Una vista visual adaptada por periodo: semana, mes, trimestre, año.",
-      "Cada decisión construye el futuro: proyecto, ahorro, inversión."
+    "description": "Tu mes de un vistazo: sabes dónde está tu dinero, decides adónde va.",
+    "imageAlt": "Resto para vivir y sobres de presupuesto en Steero",
+    "band": [
+      "Haces tu presupuesto, a tu manera",
+      "Lo sigues por semana, por mes, por año",
+      "Tu ahorro tiene su línea en el presupuesto, no lo que queda al final"
     ],
-    "microcopy": "14 días gratis · luego 8 € al mes, todo incluido · sin conexión bancaria",
-    "scrollHint": "Descubrir por qué Steero"
+    "microcopy": "14 días gratis · luego 8 € al mes, todo incluido · sin conexión bancaria"
   },
   "realProblem": {
     "label": "POR QUÉ STEERO",
@@ -214,6 +214,21 @@
       "ba3": {
         "before": "Descubres el desvío cuando el dinero ya se fue",
         "after": "La diferencia se ve mientras aún se puede corregir"
+      }
+    },
+    "orient": {
+      "title": "Eliges la dirección del año",
+      "ba1": {
+        "before": "Un año se juzga por sensaciones, en diciembre",
+        "after": "Doce meses medidos, no estimados"
+      },
+      "ba2": {
+        "before": "El ahorro del año es una cifra global",
+        "after": "Lo que has apartado, proyecto por proyecto"
+      },
+      "ba3": {
+        "before": "Los propósitos de enero parten de una página en blanco",
+        "after": "Las decisiones del año siguiente, apoyadas en datos reales"
       }
     },
     "position": {
@@ -1779,7 +1794,7 @@
       "titlePre": "TEMPO:",
       "titleHighlight": "Cinco rituales",
       "titlePost": ", una disciplina.",
-      "description": "De lo cotidiano a lo estratégico. Cada nivel tiene una frecuencia, un objetivo, una duración. El conjunto forma un sistema de pilotaje completo.",
+      "description": "De lo diario a lo estratégico. Cada cita tiene su pregunta y su frecuencia. El conjunto forma un sistema de pilotaje completo.",
       "colRitual": "Ritual",
       "colFrequency": "Frecuencia",
       "colDuration": "Duración",
@@ -1995,6 +2010,23 @@
     "body": "Tu cuenta está lista. Te llevamos a tu espacio Steero…",
     "cta": "Abrir la app"
   },
+  "perimetre": {
+    "title": "Todo en un mismo sitio.",
+    "lead": "Haces tus cuentas una vez, y todo lo que cuenta está dentro.",
+    "items": [
+      "Cuentas corrientes y de ahorro",
+      "Efectivo y tickets restaurante",
+      "Vinted, botes y otros saldos",
+      "Deudas y préstamos entre amigos",
+      "Gastos fijos y suscripciones",
+      "Seguimiento dinámico del presupuesto",
+      "Citas guiadas",
+      "Objetivos y proyectos"
+    ],
+    "soon": "Gestión de tu patrimonio",
+    "soonTag": "próximamente",
+    "link": "Ver todas las funcionalidades"
+  },
   "projection": {
     "label": "La experiencia",
     "title": "Lo que haces en Steero,",
@@ -2003,18 +2035,20 @@
     "steps": [
       {
         "when": "Día 1",
-        "title": "Colocas tu marco",
-        "body": "Alquiler 850 €, suscripciones, compra: tus gastos fijos se colocan con plantillas prerrellenadas. 10 minutos, una vez."
+        "title": "Pones tu presupuesto",
+        "body": "Tus ingresos, tus gastos fijos, tus gastos del día a día y lo que apartas. El ahorro y la inversión tienen su línea desde el primer día, no lo que queda a final de mes."
       },
       {
         "when": "Día 2",
         "title": "El registro del día",
-        "body": "Café 2,80 €, compra 46,20 €: anotas los gastos del día y cierras la app cuando todo está al día."
+        "body": "Café 2,80 €, compra 46,20 €: anotas los gastos del día y cierras la app cuando todo está al día.",
+        "imageAlt": "Registrar, el gesto del día: siete puntos y la racha de días cumplidos"
       },
       {
         "when": "Día 7",
         "title": "Tu primera revisión semanal",
-        "body": "150 € previstos en salidas, 214 € reales: ves la diferencia y ajustas mientras aún estás a tiempo."
+        "body": "150 € previstos en salidas, 214 € reales: ves la diferencia y ajustas mientras aún estás a tiempo.",
+        "imageAlt": "Examinar, el dinero de la semana: gastado sobre asignado, y la marca de la semana pasada"
       },
       {
         "when": "Mes 1",
@@ -2023,8 +2057,8 @@
       },
       {
         "when": "Mes 3",
-        "title": "Tu dinero sirve a un proyecto",
-        "body": "Lo que no se gasta deja de dormir en la cuenta corriente: lo asignas a un ahorro, un proyecto o una inversión, y Steero sigue lo que aportas."
+        "title": "Tu ahorro ha aguantado como el resto",
+        "body": "Tres meses medidos: ingresos, gastos y la línea de ahorro e inversión, 1 500 € aportados, 700 € invertidos. Ves si estás por encima o por debajo de tu compromiso."
       },
       {
         "when": "Año 1",
@@ -2032,6 +2066,8 @@
         "body": "Doce meses medidos, no estimados: lo que gastaste de verdad, lo que apartaste y las decisiones para el año siguiente."
       }
     ],
-    "exNote": "Ejemplo ilustrativo: en tu caso, serán tus cifras."
+    "exNote": "Ejemplo ilustrativo: en tu caso, serán tus cifras.",
+    "method": "Cinco citas, de lo diario a lo estratégico: es el método TEMPO.",
+    "methodLink": "Descubrir el método"
   }
 }

@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Projection from "@/components/Projection";
+import Perimetre from "@/components/Perimetre";
 import RapportEtonnement from "@/components/RapportEtonnement";
-import MethodResults from "@/components/MethodResults";
 import Footer from "@/components/Footer";
 import Preuve from "@/components/Preuve";
 import SEO from "@/components/SEO";
@@ -47,8 +47,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO
-        title="Application de budget : pilote le tien en 5 min/jour | Steero"
-        description="Une application de budget qui te fait décider : tes catégories, tes enveloppes, ta consommation au fil de l'eau. 5 minutes par jour, sans connexion bancaire."
+        title="Application de budget : pilote le tien | Steero"
+        description="Une application de budget qui te fait décider : tes catégories, tes enveloppes, ta consommation au fil de l'eau. Ton mois d'un coup d'œil, sans connexion bancaire."
         keywords="gérer son budget, application de budget, application gestion budget, logiciel de budget, budget familial, finances personnelles"
         canonical="/"
         ogType="website"
@@ -56,6 +56,13 @@ const Index = () => {
       />
       <Header />
       <Hero />
+      {/*
+        La ligne de périmètre juste sous la bande bleue (08/09, demande de
+        Ronald) : la bande promet, la ligne dit avec quoi, puis L'expérience
+        montre ce qu'on fait. Quelqu'un qui cherche un outil de budget vérifie
+        sa liste avant de regarder une démonstration.
+      */}
+      <Perimetre />
       {/*
         Ordre revu le 06/09 : la projection passe devant.
 
@@ -67,7 +74,11 @@ const Index = () => {
         on nomme la méthode ensuite, et on argumente le pourquoi en dernier.
       */}
       <Projection />
-      <MethodResults />
+      {/*
+        TEMPO a quitté l'accueil le 07/09 : Projection parcourait déjà les
+        cinq horizons avec les écrans, la section méthode les redisait juste
+        derrière. La méthode se lit sur Pourquoi Steero (accordéon à tirets).
+      */}
       <RapportEtonnement />
       <Preuve />
       <Footer />
