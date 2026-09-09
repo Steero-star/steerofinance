@@ -992,7 +992,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "Le site ne dépose aucun cookie de mesure ni de publicité avant ton accord. Google Analytics et le pixel Meta ne sont chargés que si tu les acceptes, et refuser ne dégrade en rien la navigation."
+              "text": "Le site ne dépose aucun cookie de mesure ni de publicité avant ton accord. Google Analytics, PostHog et le pixel Meta ne sont chargés que si tu les acceptes, et refuser ne dégrade en rien la navigation."
             },
             {
               "type": "p",
@@ -1500,7 +1500,7 @@
                 ],
                 [
                   "PostHog",
-                  "Mesure d'usage de l'application",
+                  "Mesure d'usage de l'application, et d'audience du site uniquement après ton consentement",
                   "Union européenne"
                 ],
                 [
@@ -1663,6 +1663,11 @@
                   "_ga, _ga_*  (Google Analytics)",
                   "Mesure d'audience du site, déposés uniquement si tu acceptes",
                   "13 mois"
+                ],
+                [
+                  "ph_* (PostHog)",
+                  "Mesure d'audience du site et lien avec ton compte si tu t'inscris, déposé uniquement si tu acceptes",
+                  "12 mois"
                 ],
                 [
                   "_fbp, _fbc  (pixel Meta)",
@@ -1929,7 +1934,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "Un comptage d'audience sans cookie mesure les pages lues quel que soit ton choix : il ne dépose rien et ne te suit pas d'un site à l'autre. Si tu acceptes, nous ajoutons Google Analytics et un pixel Meta pour mesurer nos publicités. Refuser n'enlève aucune fonctionnalité, et tu peux changer d'avis à tout moment depuis le pied de page.",
+    "body": "Un comptage d'audience sans cookie mesure les pages lues quel que soit ton choix : il ne dépose rien et ne te suit pas d'un site à l'autre. Si tu acceptes, nous ajoutons Google Analytics, PostHog et un pixel Meta pour mesurer nos publicités. Refuser n'enlève aucune fonctionnalité, et tu peux changer d'avis à tout moment depuis le pied de page.",
     "policyLink": "Voir la politique de confidentialité",
     "accept": "Tout accepter",
     "decline": "Continuer sans accepter",

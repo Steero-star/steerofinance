@@ -976,7 +976,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "No analytics or advertising cookie is set before you agree. Google Analytics and the Meta pixel are loaded only if you accept them, and declining does not degrade the site in any way."
+              "text": "No analytics or advertising cookie is set before you agree. Google Analytics, PostHog and the Meta pixel are loaded only if you accept them, and declining does not degrade the site in any way."
             },
             {
               "type": "p",
@@ -1484,7 +1484,7 @@
                 ],
                 [
                   "PostHog",
-                  "Application usage analytics",
+                  "Application usage analytics, and website analytics only after your consent",
                   "European Union"
                 ],
                 [
@@ -1647,6 +1647,11 @@
                   "_ga, _ga_* (Google Analytics)",
                   "Website analytics, set only if you accept",
                   "13 months"
+                ],
+                [
+                  "ph_* (PostHog)",
+                  "Website analytics and link to your account if you sign up, set only if you accept",
+                  "12 months"
                 ],
                 [
                   "_fbp, _fbc (Meta pixel)",
@@ -1913,7 +1918,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "A cookieless page count measures what gets read whatever you choose: it stores nothing and does not follow you across sites. If you accept, we add Google Analytics and a Meta pixel to measure our ads. Declining removes no feature, and you can change your mind at any time from the footer.",
+    "body": "A cookieless page count measures what gets read whatever you choose: it stores nothing and does not follow you across sites. If you accept, we add Google Analytics, PostHog and a Meta pixel to measure our ads. Declining removes no feature, and you can change your mind at any time from the footer.",
     "policyLink": "Read the privacy policy",
     "accept": "Accept all",
     "decline": "Continue without accepting",

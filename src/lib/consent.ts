@@ -2,10 +2,12 @@
  * Consentement à la mesure d'audience (CNIL / ePrivacy).
  *
  * Règle tenue ici : aucun script de mesure n'est chargé tant que le visiteur
- * n'a pas accepté, ni Google Analytics ni le pixel Meta. Refuser ne dépose
- * rien, et le choix est redemandé au bout de 6 mois (recommandation CNIL).
+ * n'a pas accepté, ni Google Analytics, ni PostHog, ni le pixel Meta. Refuser
+ * ne dépose rien, et le choix est redemandé au bout de 6 mois (recommandation
+ * CNIL).
  */
 
+import type { PostHog } from "posthog-js";
 import type { FbqFn } from "./analytics";
 
 const STORAGE_KEY = "steero_consent";
@@ -57,6 +59,22 @@ const ADS_CONVERSION_ID = "";
  * seul endroit à changer.
  */
 const META_PIXEL_ID = "261947908196157";
+
+/**
+ * PostHog, le même projet que l'application (154238, hébergé dans l'UE).
+ *
+ * C'est ce qui relie le visiteur du site à l'utilisateur de l'app : le cookie
+ * est posé sur `.steero.fr`, donc lu tel quel par `app.steero.fr`, et
+ * l'`identify` fait à la connexion rattache tout le parcours du site (source,
+ * campagne, `gclid`) à la personne. Sans ce pont, une inscription n'a jamais
+ * de campagne d'origine, quel que soit l'outil qui la compte.
+ *
+ * La clé est publique par nature (elle ne sait qu'écrire), comme l'identifiant
+ * GA4 au-dessus. Ce que PostHog ne fait PAS ici : ni enregistrement de session,
+ * ni autocapture. Le site n'envoie que ce que `lib/analytics.ts` nomme.
+ */
+const POSTHOG_KEY = "phc_qJz63HvggMB7sBNGuvqrb4nkkKXohUr9P9F2AfXW4sbf";
+const POSTHOG_HOST = "https://eu.i.posthog.com";
 
 export const CONSENT_CHANGED_EVENT = "steero:consent-changed";
 export const CONSENT_OPEN_EVENT = "steero:consent-open";
@@ -184,6 +202,113 @@ const bootstrapGtag = () => {
   });
 };
 
+// ── PostHog ────────────────────────────────────────────────
+
+let posthogClient: PostHog | null = null;
+let posthogLoading = false;
+/** Ce qui est capturé entre le clic « Tout accepter » et l'arrivée du module. */
+const posthogQueue: Array<[string, Record<string, unknown> | undefined]> = [];
+
+/**
+ * Porte de sortie de toute la mesure PostHog, l'équivalent du `gtag` de
+ * `lib/analytics.ts`. Sans consentement, le module n'est jamais chargé et
+ * l'appel est perdu ; pendant le chargement, il attend son tour, comme les
+ * appels au stub du pixel Meta.
+ */
+export const capturePostHog = (event: string, props?: Record<string, unknown>) => {
+  if (posthogClient) {
+    posthogClient.capture(event, props);
+    return;
+  }
+  if (posthogLoading) posthogQueue.push([event, props]);
+};
+
+/**
+ * Chargé à la demande (import dynamique) : le module ne pèse rien pour un
+ * visiteur qui refuse, et n'est présent dans aucun HTML prérendu.
+ *
+ * `onSettled` est appelé quand PostHog a lu l'URL, ou quand il a échoué : c'est
+ * ce qui retient la restauration de l'URL dans `loadAnalytics`, pour que le
+ * `gclid` réinjecté soit vu par les DEUX outils.
+ */
+const loadPostHog = (onSettled: () => void) => {
+  if (posthogClient || posthogLoading || typeof window === "undefined") {
+    onSettled();
+    return;
+  }
+  posthogLoading = true;
+  import("posthog-js")
+    .then(({ default: posthog }) => {
+      posthog.init(POSTHOG_KEY, {
+        api_host: POSTHOG_HOST,
+        defaults: "2026-01-30",
+        // Le cookie vit sur `.steero.fr` : c'est le pont vers l'application.
+        cross_subdomain_cookie: true,
+        persistence: "localStorage+cookie",
+        // La page d'arrivée part ici, comme pour le pixel : c'est elle qui
+        // porte l'attribution, et aucun changement de route ne la rejouera.
+        // Les pages suivantes passent par `trackPageView`.
+        capture_pageview: true,
+        capture_pageleave: true,
+        autocapture: false,
+        disable_session_recording: true,
+        disable_surveys: true,
+      });
+      // Un refus antérieur est mémorisé par PostHog lui-même, dans le stockage
+      // local, et il survit au rechargement : sans ce geste, un visiteur qui a
+      // refusé un jour puis accepté resterait muet pour toujours.
+      if (posthog.has_opted_out_capturing()) {
+        posthog.opt_in_capturing({ captureEventName: false });
+      }
+      posthogClient = posthog;
+      for (const [event, props] of posthogQueue.splice(0)) {
+        posthog.capture(event, props);
+      }
+    })
+    .catch(() => {
+      // Module bloqué (extension, réseau) : la mesure Google continue seule.
+      posthogQueue.length = 0;
+    })
+    .finally(() => {
+      posthogLoading = false;
+      onSettled();
+    });
+};
+
+/**
+ * Consentement retiré : plus rien ne part, et l'identité est oubliée.
+ *
+ * Pas de `reset()` ici : il fabrique une identité neuve et la RÉÉCRIT dans le
+ * cookie, et le gestionnaire de session la réécrit encore deux secondes plus
+ * tard. Vu à la recette du 09/09 : le cookie `ph_…` survivait au refus.
+ * Couper la persistance efface le cookie et le stockage local par PostHog
+ * lui-même, et empêche toute réécriture tant qu'elle n'est pas rallumée.
+ */
+const stopPostHog = () => {
+  posthogQueue.length = 0;
+  if (!posthogClient) return;
+  posthogClient.opt_out_capturing();
+  posthogClient.set_config({ disable_persistence: true });
+};
+
+/**
+ * Consentement retiré puis redonné dans la même visite : on rallume ce que
+ * `stopPostHog` a éteint. `loadAnalytics` ne repasse pas par là (la balise
+ * Google est déjà chargée), d'où cette porte à part, appelée à chaque accord
+ * et muette tant qu'aucun refus ne l'a précédée.
+ *
+ * L'ordre est imposé par PostHog : `reset()` AVANT `opt_in_capturing`, un
+ * `reset()` qui suivrait l'opt-in arrêterait la capture en silence. Le reset
+ * est voulu : la personne a retiré son accord, l'identité d'avant ne lui est
+ * pas rendue.
+ */
+const resumePostHog = () => {
+  if (!posthogClient || !posthogClient.has_opted_out_capturing()) return;
+  posthogClient.set_config({ disable_persistence: false });
+  posthogClient.reset();
+  posthogClient.opt_in_capturing({ captureEventName: false });
+};
+
 let analyticsLoaded = false;
 
 const loadAnalytics = () => {
@@ -210,14 +335,24 @@ const loadAnalytics = () => {
     window.history.replaceState(null, "", cleanUrl);
   };
 
+  // Deux lecteurs de l'URL, la balise Google et PostHog : l'URL n'est rendue
+  // qu'une fois que les deux l'ont lue, ou après le filet de 4 s.
+  let readersPending = 2;
+  const readerDone = () => {
+    readersPending -= 1;
+    if (readersPending <= 0) restoreUrl();
+  };
+
   const script = document.createElement("script");
   script.id = "ga-script";
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  script.addEventListener("load", restoreUrl);
-  // Filet : si le script est bloqué, l'URL ne doit pas rester salie.
+  script.addEventListener("load", readerDone);
+  // Filet : si un script est bloqué, l'URL ne doit pas rester salie.
   window.setTimeout(restoreUrl, 4000);
   document.head.appendChild(script);
+
+  loadPostHog(readerDone);
 
   // La file et le refus par défaut sont normalement déjà posés par
   // `initConsent`. L'appel est idempotent, et il est ici pour que l'ordre
@@ -270,12 +405,14 @@ const loadMetaPixel = () => {
 };
 
 /**
- * Porte unique du consentement. Les deux mesures se chargent ensemble ou pas du
- * tout : c'est ce qui permet aux appelants de `lib/analytics.ts` de ne jamais
- * avoir à tester laquelle est active.
+ * Porte unique du consentement. Les trois mesures se chargent ensemble ou pas
+ * du tout : c'est ce qui permet aux appelants de `lib/analytics.ts` de ne
+ * jamais avoir à tester laquelle est active. PostHog part de `loadAnalytics`,
+ * parce qu'il partage avec la balise Google la réinjection du `gclid`.
  */
 const loadTrackers = () => {
   loadAnalytics();
+  resumePostHog();
   loadMetaPixel();
 };
 
@@ -293,13 +430,23 @@ const clearTrackingCookies = () => {
         // Déposés par le pixel Meta : `_fbp` identifie le navigateur, `_fbc`
         // porte l'identifiant de clic publicitaire (`fbclid`).
         name === "_fbp" ||
-        name === "_fbc"
+        name === "_fbc" ||
+        // PostHog : `ph_<clé>_posthog`, posé sur `.steero.fr`.
+        name.startsWith("ph_")
     )
     .forEach((name) => {
       for (const d of ["", `; domain=.${domain}`, `; domain=${domain}`]) {
         document.cookie = `${name}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT${d}`;
       }
     });
+  // PostHog garde aussi une copie de son identité dans le stockage local.
+  try {
+    Object.keys(window.localStorage)
+      .filter((key) => key.startsWith("ph_"))
+      .forEach((key) => window.localStorage.removeItem(key));
+  } catch {
+    /* stockage indisponible : rien à effacer */
+  }
 };
 
 export const setConsent = (choice: ConsentChoice) => {
@@ -325,6 +472,7 @@ export const setConsent = (choice: ConsentChoice) => {
     if (gtagBootstrapped) {
       window.gtag("consent", "update", consentSignals("denied"));
     }
+    stopPostHog();
     clearTrackingCookies();
   }
 

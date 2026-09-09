@@ -976,7 +976,7 @@
           "blocks": [
             {
               "type": "p",
-              "text": "El sitio no deposita ninguna cookie de medición ni de publicidad antes de tu aceptación. Google Analytics y el píxel de Meta solo se cargan si los aceptas, y rechazarlo no degrada en nada la navegación."
+              "text": "El sitio no deposita ninguna cookie de medición ni de publicidad antes de tu aceptación. Google Analytics, PostHog y el píxel de Meta solo se cargan si los aceptas, y rechazarlo no degrada en nada la navegación."
             },
             {
               "type": "p",
@@ -1484,7 +1484,7 @@
                 ],
                 [
                   "PostHog",
-                  "Medición de uso de la aplicación",
+                  "Medición de uso de la aplicación, y de audiencia del sitio solo tras tu consentimiento",
                   "Unión Europea"
                 ],
                 [
@@ -1647,6 +1647,11 @@
                   "_ga, _ga_* (Google Analytics)",
                   "Medición de audiencia del sitio, solo si aceptas",
                   "13 meses"
+                ],
+                [
+                  "ph_* (PostHog)",
+                  "Medición de audiencia del sitio y vínculo con tu cuenta si te registras, solo si aceptas",
+                  "12 meses"
                 ],
                 [
                   "_fbp, _fbc (píxel de Meta)",
@@ -1913,7 +1918,7 @@
   },
   "cookies": {
     "title": "Cookies",
-    "body": "Un recuento de audiencia sin cookies mide las páginas leídas sea cual sea tu elección: no deposita nada ni te sigue de un sitio a otro. Si aceptas, añadimos Google Analytics y un píxel de Meta para medir nuestros anuncios. Rechazarlo no elimina ninguna funcionalidad y puedes cambiar de opinión en cualquier momento desde el pie de página.",
+    "body": "Un recuento de audiencia sin cookies mide las páginas leídas sea cual sea tu elección: no deposita nada ni te sigue de un sitio a otro. Si aceptas, añadimos Google Analytics, PostHog y un píxel de Meta para medir nuestros anuncios. Rechazarlo no elimina ninguna funcionalidad y puedes cambiar de opinión en cualquier momento desde el pie de página.",
     "policyLink": "Ver la política de privacidad",
     "accept": "Aceptar todo",
     "decline": "Continuar sin aceptar",

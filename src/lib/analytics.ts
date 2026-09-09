@@ -1,4 +1,4 @@
-import { readConsent } from "./consent";
+import { capturePostHog, readConsent } from "./consent";
 
 /**
  * Forme du pixel Meta. `fbq` existe dès son installation et empile les appels
@@ -53,19 +53,31 @@ const fbq = (...args: unknown[]) => {
   }
 };
 
+/**
+ * Porte unique des événements nommés : le même nom et les mêmes propriétés
+ * partent vers GA4 et vers PostHog. Ce que GA4 seul reçoit passe par `gtag`
+ * directement (la configuration, la conversion Google Ads) ; ce que Meta seul
+ * reçoit passe par `fbq`. Aucun appelant ne choisit l'outil.
+ */
+const event = (name: string, params: Record<string, unknown>) => {
+  gtag("event", name, params);
+  capturePostHog(name, params);
+};
+
 // ── Page Views ─────────────────────────────────────────────
 /**
- * Le pixel Meta envoie son propre `PageView` au moment où il s'installe. C'est
- * lui qui porte la page d'arrivée, y compris quand le consentement est donné en
- * cours de visite : aucun changement de route ne suivra, et la page d'arrivée
- * est justement celle qui porte l'attribution publicitaire.
+ * Le pixel Meta et PostHog envoient chacun leur propre page vue au moment où
+ * ils s'installent. Ce sont eux qui portent la page d'arrivée, y compris quand
+ * le consentement est donné en cours de visite : aucun changement de route ne
+ * suivra, et la page d'arrivée est justement celle qui porte l'attribution
+ * publicitaire.
  *
  * Le premier appel de route ne doit donc pas la compter une seconde fois. La
- * garde tient dans les deux ordres de montage : consommée avant l'installation
- * du pixel, c'est l'installation qui envoie la page d'arrivée ; consommée
- * après, c'est le doublon qui saute.
+ * garde tient dans les deux ordres de montage : consommée avant l'installation,
+ * c'est l'installation qui envoie la page d'arrivée ; consommée après, c'est le
+ * doublon qui saute. GA4 n'est pas concerné : sa file rejoue le `config`.
  */
-let pixelPageViewPending = true;
+let landingPageViewPending = true;
 
 export const trackPageView = (path: string) => {
   gtag("config", "G-61JXTXNN1N", {
@@ -73,11 +85,12 @@ export const trackPageView = (path: string) => {
     page_title: document.title,
   });
 
-  if (pixelPageViewPending) {
-    pixelPageViewPending = false;
+  if (landingPageViewPending) {
+    landingPageViewPending = false;
     return;
   }
   fbq("track", "PageView");
+  capturePostHog("$pageview");
 };
 
 // ── Scroll Depth ───────────────────────────────────────────
@@ -85,7 +98,7 @@ export const trackScrollDepth = (
   path: string,
   percent: 25 | 50 | 75 | 90 | 100
 ) => {
-  gtag("event", "scroll_depth", {
+  event("scroll_depth", {
     page_path: path,
     scroll_percent: percent,
   });
@@ -100,7 +113,7 @@ export const trackTimeOnPage = (path: string, seconds: number) => {
     : seconds < 120 ? "1-2min"
     : seconds < 300 ? "2-5min"
     : "5min+";
-  gtag("event", "time_on_page", {
+  event("time_on_page", {
     page_path: path,
     seconds: Math.round(seconds),
     time_bucket: bucket,
@@ -114,7 +127,7 @@ export const trackSessionExit = (
   secondsSpent: number,
   converted: boolean
 ) => {
-  gtag("event", "session_exit", {
+  event("session_exit", {
     page_path: path,
     scroll_at_exit: scrollPercent,
     seconds_at_exit: Math.round(secondsSpent),
@@ -133,7 +146,7 @@ export const trackCTAClick = (
   location: string,
   destination?: string
 ) => {
-  gtag("event", "cta_click", {
+  event("cta_click", {
     cta_name: ctaName,
     cta_location: location,
     destination_url: destination ?? "",
@@ -144,7 +157,7 @@ export const trackCTAClick = (
 
 // ── Navigation ─────────────────────────────────────────────
 export const trackNavClick = (label: string, destination: string) => {
-  gtag("event", "nav_click", {
+  event("nav_click", {
     link_text: label,
     destination_url: destination,
     page_path: window.location.pathname,
@@ -153,7 +166,7 @@ export const trackNavClick = (label: string, destination: string) => {
 
 // ── Outbound Links ─────────────────────────────────────────
 export const trackOutboundLink = (url: string, label?: string) => {
-  gtag("event", "click", {
+  event("click", {
     link_url: url,
     link_text: label ?? url,
     outbound: true,
@@ -163,7 +176,7 @@ export const trackOutboundLink = (url: string, label?: string) => {
 
 // ── Language ───────────────────────────────────────────────
 export const trackLanguageChange = (lang: string) => {
-  gtag("event", "language_change", {
+  event("language_change", {
     selected_language: lang,
     page_path: window.location.pathname,
   });
@@ -171,7 +184,7 @@ export const trackLanguageChange = (lang: string) => {
 
 // ── Button Click générique ─────────────────────────────────
 export const trackButtonClick = (buttonName: string, location?: string) => {
-  gtag("event", "button_click", {
+  event("button_click", {
     button_name: buttonName,
     click_location: location ?? "unknown",
     page_path: window.location.pathname,
@@ -180,7 +193,7 @@ export const trackButtonClick = (buttonName: string, location?: string) => {
 
 // ── Blog ───────────────────────────────────────────────────
 export const trackArticleOpen = (articleId: number, title: string) => {
-  gtag("event", "article_open", {
+  event("article_open", {
     article_id: articleId,
     article_title: title,
     page_path: window.location.pathname,
@@ -188,7 +201,7 @@ export const trackArticleOpen = (articleId: number, title: string) => {
 };
 
 export const trackArticleClose = (articleId: number, timeSpentSeconds: number) => {
-  gtag("event", "article_close", {
+  event("article_close", {
     article_id: articleId,
     time_spent_seconds: Math.round(timeSpentSeconds),
     page_path: window.location.pathname,
@@ -196,7 +209,7 @@ export const trackArticleClose = (articleId: number, timeSpentSeconds: number) =
 };
 
 export const trackArticleShare = (articleId: number, title: string) => {
-  gtag("event", "article_share", {
+  event("article_share", {
     article_id: articleId,
     article_title: title,
     page_path: window.location.pathname,
@@ -204,7 +217,7 @@ export const trackArticleShare = (articleId: number, title: string) => {
 };
 
 export const trackBlogSearch = (query: string, resultsCount: number) => {
-  gtag("event", "blog_search", {
+  event("blog_search", {
     search_term: query,
     results_count: resultsCount,
     page_path: window.location.pathname,
@@ -212,7 +225,7 @@ export const trackBlogSearch = (query: string, resultsCount: number) => {
 };
 
 export const trackBlogTagFilter = (tag: string) => {
-  gtag("event", "blog_tag_filter", {
+  event("blog_tag_filter", {
     tag,
     page_path: window.location.pathname,
   });
@@ -220,7 +233,7 @@ export const trackBlogTagFilter = (tag: string) => {
 
 // ── Features ───────────────────────────────────────────────
 export const trackFeatureCardOpen = (groupLabel: string, featureTitle: string) => {
-  gtag("event", "feature_card_open", {
+  event("feature_card_open", {
     group: groupLabel,
     feature: featureTitle,
     page_path: window.location.pathname,
@@ -229,7 +242,7 @@ export const trackFeatureCardOpen = (groupLabel: string, featureTitle: string) =
 
 // ── FAQ ────────────────────────────────────────────────────
 export const trackFAQOpen = (section: string, question: string) => {
-  gtag("event", "faq_open", {
+  event("faq_open", {
     section,
     question: question.substring(0, 100),
     page_path: window.location.pathname,
@@ -238,7 +251,7 @@ export const trackFAQOpen = (section: string, question: string) => {
 
 // ── Pricing ────────────────────────────────────────────────
 export const trackPricingToggle = (period: "quarterly" | "annual") => {
-  gtag("event", "pricing_toggle", {
+  event("pricing_toggle", {
     billing_period: period,
     page_path: window.location.pathname,
   });
@@ -246,7 +259,7 @@ export const trackPricingToggle = (period: "quarterly" | "annual") => {
 
 // ── Social ─────────────────────────────────────────────────
 export const trackSocialClick = (platform: string) => {
-  gtag("event", "social_click", {
+  event("social_click", {
     platform,
     page_path: window.location.pathname,
   });
@@ -254,7 +267,7 @@ export const trackSocialClick = (platform: string) => {
 
 // ── Pourquoi Steero ────────────────────────────────────────
 export const trackBehavioralCardOpen = (index: number, title: string) => {
-  gtag("event", "behavioral_card_open", {
+  event("behavioral_card_open", {
     principle_index: index,
     principle_title: title,
     page_path: window.location.pathname,
@@ -263,7 +276,7 @@ export const trackBehavioralCardOpen = (index: number, title: string) => {
 
 // ── 404 ────────────────────────────────────────────────────
 export const trackNotFound = (path: string) => {
-  gtag("event", "page_not_found", {
+  event("page_not_found", {
     page_path: path,
     referrer: document.referrer,
   });
@@ -287,7 +300,7 @@ export const SIGNUP_URL =
 
 /** Tout CTA d'essai passe par ici : événement secondaire + ouverture Clerk. */
 export const startTrial = (location: string) => {
-  gtag("event", "cta_start_trial_click", {
+  event("cta_start_trial_click", {
     cta_location: location,
     page_path: window.location.pathname,
   });
@@ -327,7 +340,7 @@ export const trackBeginTrial = () => {
   } catch {
     // Stockage indisponible (navigation privée) : on envoie quand même.
   }
-  gtag("event", "begin_trial", { plan: "trial_14d" });
+  event("begin_trial", { plan: "trial_14d" });
   // La conversion Google Ads part d'ici, sous la même garde : c'est le même
   // fait, il ne peut pas être compté deux fois. Tant que l'étiquette n'est pas
   // renseignée, la ligne ne fait rien et GA4 continue seul.
@@ -385,7 +398,7 @@ export const BOOKING_URL = "https://calendly.com/steerofinance/30min";
  * dessus.
  */
 export const bookCall = (location: string) => {
-  gtag("event", "cta_book_call_click", {
+  event("cta_book_call_click", {
     cta_location: location,
     page_path: window.location.pathname,
   });
