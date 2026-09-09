@@ -62,6 +62,11 @@ const App = () => (
               <Route path="/cgs" element={<CGS />} />
               <Route path="/politique-confidentialite" element={<PolitiqueConfidentialite />} />
               <Route path="/bienvenue" element={<Bienvenue />} />
+              {/* Retour d'inscription pendant le test A/B du premier écran :
+                  même page, mais un chemin par bras pour que Vercel Analytics
+                  compte les inscriptions de chaque variante séparément. Voir
+                  `lib/variante.ts`. */}
+              <Route path="/bienvenue/:variante" element={<Bienvenue />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

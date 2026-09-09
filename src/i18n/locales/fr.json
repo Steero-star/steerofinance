@@ -54,6 +54,15 @@
     ],
     "microcopy": "14 jours gratuits · puis 8 € par mois, tout inclus · aucune connexion bancaire"
   },
+  "heroB": {
+    "description": "Installe des rituels courts et guidés avec ton argent : tu sais où il est, tu décides consciemment où il va et où il doit aller.",
+    "proofs": [
+      "Crée ton propre budget : charges fixes et charges variables incluses.",
+      "Un affichage visuel adapté par période : semaine, mois, trimestre, année.",
+      "Chaque décision construit l'avenir : projet, épargne, investissement."
+    ],
+    "scrollHint": "Découvrir pourquoi Steero"
+  },
   "realProblem": {
     "label": "POURQUOI STEERO",
     "title": "Un pare-brise, pas un rétroviseur de plus.",

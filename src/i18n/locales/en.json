@@ -54,6 +54,15 @@
     ],
     "microcopy": "14 days free · then €8 a month, all included · no bank connection"
   },
+  "heroB": {
+    "description": "Install short, guided rituals with your money: you know where it is, and you consciously decide where it goes and where it should go.",
+    "proofs": [
+      "Build your own budget: fixed costs and variable spending included.",
+      "A visual view for every horizon: week, month, quarter, year.",
+      "Every decision builds what comes next: projects, savings, investments."
+    ],
+    "scrollHint": "Discover why Steero"
+  },
   "realProblem": {
     "label": "WHY STEERO",
     "title": "A windshield, not another rearview mirror.",

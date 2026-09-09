@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import HeroVarianteB from "@/components/HeroVarianteB";
+import { VARIANTE } from "@/lib/variante";
 import Projection from "@/components/Projection";
 import Perimetre from "@/components/Perimetre";
 import RapportEtonnement from "@/components/RapportEtonnement";
@@ -55,7 +57,12 @@ const Index = () => {
         jsonLd={[organizationLd, websiteLd, softwareLd]}
       />
       <Header />
-      <Hero />
+      {/*
+        Test A/B du premier écran (09/09) : le bras vient de l'URL finale de
+        l'annonce, jamais d'un tirage local. Seul le hero change ; tout ce qui
+        suit est identique dans les deux bras. Voir `lib/variante.ts`.
+      */}
+      {VARIANTE === "b" ? <HeroVarianteB /> : <Hero />}
       {/*
         La ligne de périmètre juste sous la bande bleue (08/09, demande de
         Ronald) : la bande promet, la ligne dit avec quoi, puis L'expérience

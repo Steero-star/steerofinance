@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
 import SEO from "@/components/SEO";
 import { APP_URL, trackBeginTrial } from "@/lib/analytics";
+import type { Variante } from "@/lib/variante";
 
 /**
  * Étape de confirmation d'inscription (checklist GA4 « begin_trial »).
@@ -16,12 +18,17 @@ const REDIRECT_DELAY_MS = 2000;
 
 const Bienvenue = () => {
   const { t } = useTranslation();
+  // `/bienvenue/a` ou `/bienvenue/b` pendant le test A/B du premier écran,
+  // `/bienvenue` sinon. Le chemin est ce que Vercel compte ; le paramètre ne
+  // sert qu'à étiqueter l'évènement GA4 / PostHog du même fait.
+  const { variante: brut } = useParams<{ variante?: string }>();
+  const variante: Variante | null = brut === "a" || brut === "b" ? brut : null;
 
   useEffect(() => {
-    trackBeginTrial();
+    trackBeginTrial(variante);
     const id = window.setTimeout(() => window.location.replace(APP_URL), REDIRECT_DELAY_MS);
     return () => window.clearTimeout(id);
-  }, []);
+  }, [variante]);
 
   return (
     <div className="min-h-screen bg-hero-gradient flex items-center justify-center px-6">

@@ -54,6 +54,15 @@
     ],
     "microcopy": "14 días gratis · luego 8 € al mes, todo incluido · sin conexión bancaria"
   },
+  "heroB": {
+    "description": "Instala rituales cortos y guiados con tu dinero: sabes dónde está y decides conscientemente adónde va y adónde debe ir.",
+    "proofs": [
+      "Crea tu propio presupuesto: gastos fijos y gastos variables incluidos.",
+      "Una vista visual adaptada por periodo: semana, mes, trimestre, año.",
+      "Cada decisión construye el futuro: proyecto, ahorro, inversión."
+    ],
+    "scrollHint": "Descubrir por qué Steero"
+  },
   "realProblem": {
     "label": "POR QUÉ STEERO",
     "title": "Un parabrisas, no otro retrovisor más.",

@@ -1,4 +1,5 @@
 import { capturePostHog, readConsent } from "./consent";
+import { VARIANTE, cheminBienvenue, type Variante } from "./variante";
 
 /**
  * Forme du pixel Meta. `fbq` existe dès son installation et empile les appels
@@ -293,19 +294,26 @@ export const APP_URL = "https://app.steero.fr/";
 /**
  * L'inscription Clerk revient sur /bienvenue : c'est cette page qui envoie
  * begin_trial (la confirmation), jamais le clic sur un bouton.
+ *
+ * Pendant le test A/B du premier écran, le retour porte le bras
+ * (`/bienvenue/a` ou `/bienvenue/b`) : voir `lib/variante.ts`. L'URL se
+ * calcule au clic, dans la porte unique ci-dessous, pour qu'aucun appelant ne
+ * puisse en garder une copie figée.
  */
-export const SIGNUP_URL =
+export const signupUrl = () =>
   "https://accounts.steero.fr/sign-up?redirect_url=" +
-  encodeURIComponent("https://www.steero.fr/bienvenue");
+  encodeURIComponent("https://www.steero.fr" + cheminBienvenue());
 
 /** Tout CTA d'essai passe par ici : événement secondaire + ouverture Clerk. */
 export const startTrial = (location: string) => {
+  const url = signupUrl();
   event("cta_start_trial_click", {
     cta_location: location,
     page_path: window.location.pathname,
+    hero_variante: VARIANTE ?? "hors_test",
   });
-  trackCTAClick("commencer_maintenant", location, SIGNUP_URL);
-  window.open(SIGNUP_URL, "_blank");
+  trackCTAClick("commencer_maintenant", location, url);
+  window.open(url, "_blank");
 };
 
 const BEGIN_TRIAL_SENT_KEY = "steero_begin_trial_sent";
@@ -328,7 +336,7 @@ const ADS_SIGNUP_CONVERSION = "";
  * retour sur /bienvenue). method n'est pas connaissable depuis le site
  * (l'inscription se fait chez Clerk), on ne l'invente pas.
  */
-export const trackBeginTrial = () => {
+export const trackBeginTrial = (variante: Variante | null = null) => {
   // On lit le consentement au lieu de le deviner. Avant Consent Mode v2,
   // l'absence de `window.gtag` valait refus, et ce test suffisait. Depuis, le
   // shim existe dès le démarrage avec un refus par défaut : le deviner ferait
@@ -340,7 +348,9 @@ export const trackBeginTrial = () => {
   } catch {
     // Stockage indisponible (navigation privée) : on envoie quand même.
   }
-  event("begin_trial", { plan: "trial_14d" });
+  // Le bras du test A/B voyage avec la conversion : GA4 et PostHog peuvent
+  // ainsi confirmer ce que Vercel compte par chemin, chez ceux qui consentent.
+  event("begin_trial", { plan: "trial_14d", hero_variante: variante ?? "hors_test" });
   // La conversion Google Ads part d'ici, sous la même garde : c'est le même
   // fait, il ne peut pas être compté deux fois. Tant que l'étiquette n'est pas
   // renseignée, la ligne ne fait rien et GA4 continue seul.
