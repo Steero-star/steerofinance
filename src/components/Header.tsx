@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import steeroLogo from "@/assets/steero-logo.png";
 import LanguageSwitcher from "./LanguageSwitcher";
-import { trackNavClick, trackCTAClick, startTrial } from "@/lib/analytics";
+import { trackNavClick, trackCTAClick, startTrial, login } from "@/lib/analytics";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -69,10 +69,7 @@ const Header = () => {
           <Button
             variant="outline"
             className="text-xs sm:text-sm hidden sm:inline-flex rounded-full border-primary text-primary hover:bg-primary/10 px-6 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft"
-            onClick={() => {
-              trackCTAClick("connexion", "header", "https://accounts.steero.fr/sign-in");
-              window.open("https://accounts.steero.fr/sign-in?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
-            }}
+            onClick={() => login("header")}
           >
             {t('header.login')}
           </Button>
@@ -158,8 +155,7 @@ const Header = () => {
                 className="text-xs w-full mt-2"
                 onClick={() => {
                   setIsMenuOpen(false);
-                  trackCTAClick("connexion", "header", "https://accounts.steero.fr/sign-in");
-                  window.open("https://accounts.steero.fr/sign-in?redirect_url=https%3A%2F%2Fapp.steero.fr%2F", "_blank");
+                  login("header_mobile");
                 }}
               >
                 {t('header.login')}

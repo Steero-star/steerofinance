@@ -300,9 +300,28 @@ export const APP_URL = "https://app.steero.fr/";
  * calcule au clic, dans la porte unique ci-dessous, pour qu'aucun appelant ne
  * puisse en garder une copie figée.
  */
+/**
+ * Depuis le 19/09/2026, l'inscription et la connexion sont des pages DE L'APP
+ * (`app.steero.fr/inscription`, `/connexion`), plus le portail hébergé de
+ * Clerk (`accounts.steero.fr`). Vérifié ce jour-là : le portail affichait
+ * « Create your account » à un navigateur français, et la doc Clerk le dit,
+ * il ne se traduit pas. Les composants embarqués suivent la langue de l'app.
+ * Le `redirect_url` voyage à l'identique : c'est l'app qui l'honore.
+ */
+export const SIGNUP_PAGE = APP_URL + "inscription";
+export const LOGIN_PAGE = APP_URL + "connexion";
+
 export const signupUrl = () =>
-  "https://accounts.steero.fr/sign-up?redirect_url=" +
+  SIGNUP_PAGE +
+  "?redirect_url=" +
   encodeURIComponent("https://www.steero.fr" + cheminBienvenue());
+
+/** Le bouton « Se connecter » du site : compté, puis l'app. Une seule porte. */
+export const login = (location: string) => {
+  const url = LOGIN_PAGE + "?redirect_url=" + encodeURIComponent(APP_URL);
+  trackCTAClick("connexion", location, url);
+  window.open(url, "_blank");
+};
 
 /** Tout CTA d'essai passe par ici : événement secondaire + ouverture Clerk. */
 export const startTrial = (location: string) => {
