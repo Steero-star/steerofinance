@@ -2,10 +2,7 @@ import { ArrowRight, Check, Sparkles } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import ZoomableShot from "@/components/ZoomableShot";
-import heroImageWebP from "@/assets/hero-budget.webp";
-import heroImagePng from "@/assets/hero-budget.png";
-import heroImageMobileWebP from "@/assets/hero-budget-mobile.webp";
+import MaquetteBudget from "@/components/MaquetteBudget";
 import { startTrial } from "@/lib/analytics";
 
 /*
@@ -26,16 +23,13 @@ import { startTrial } from "@/lib/analytics";
  * bande fine bleu Steero, une ligne chacun, en langage simple. Ils ouvrent
  * sur Projection, qui les détaille avec des chiffres.
  *
- * L'IMAGE. Le fichier de 4096 px n'était pas en cause : le cadre d'ordinateur
- * mangeait un tiers de sa colonne et un écran de 1440 px s'affichait en 900,
- * soit 7 px de texte. Le visiteur voyait une densité, pas une valeur. La
- * capture est recadrée à échelle réelle sur Reste à vivre et quatre
- * enveloppes DANS LES CLOUS, à des niveaux différents. Pas de dépassement en
- * premier écran, décision de Ronald : le rouge fait projeter un échec, et
- * l'écart se raconte à Jour 7 dans Projection. Le 2 × 3 a été écarté : il
- * demande la pleine largeur du cockpit et retombe à 7 px. Sous 768 px, une
- * découpe portrait de deux enveloppes remplace la découpe large, sinon la
- * même image à 335 px retombe à 6 px de texte pour 43 % du trafic payant.
+ * L'IMAGE EST DEVENUE UNE MAQUETTE (15/11). La capture du 07/09 (Reste à
+ * vivre et quatre enveloppes « dans les clous ») montrait un écran que l'app
+ * n'a plus. À sa place, la page Mes budgets reproduite en HTML, qu'on
+ * manipule : voir `MaquetteBudget.tsx`. Elle règle au passage le défaut que
+ * la capture combattait par ses recadrages : un texte de 7 px dans une
+ * colonne de 600, 6 px sur téléphone. Le texte est du vrai texte, à sa
+ * taille, à toutes les largeurs.
  *
  * LA HAUTEUR. Plus de `min-h-screen` : le hero prend la hauteur de son
  * contenu, la bande et le haut de Projection passent sous le pli, et c'est
@@ -55,7 +49,6 @@ const Hero = () => {
   const decorY3 = useTransform(scrollYProgress, [0, 1], [0, 80]);
   const decorScale1 = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
   const decorScale2 = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, 50]);
 
   const benefits = t("hero.band", { returnObjects: true }) as string[];
 
@@ -87,13 +80,27 @@ const Hero = () => {
       </div>
 
       {/*
-        `pt-8 lg:pt-16` sous le `pt-28` de la section : sans ce coussin, le
-        hero mesure 545 px pour 860 de viewport et Projection occupe un tiers
-        du premier écran. On veut qu'elle dépasse sous le pli, pas qu'elle
-        le partage.
+        `pt-8` sous le `pt-28` de la section : sans ce coussin, le hero de la
+        capture mesurait 545 px pour 860 de viewport et Projection occupait un
+        tiers du premier écran. Depuis la maquette (15/11), c'est elle qui
+        donne la hauteur, et elle grandit au clic : le coussin du grand écran
+        redescend de `lg:pt-16 lg:pb-20` à `lg:pt-8 lg:pb-12`, pour que la
+        bande bleue reste au-dessus du pli d'un écran de 900 px même quand un
+        groupe est ouvert.
       */}
-      <div className="container mx-auto px-6 pt-8 pb-14 lg:pt-16 lg:pb-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+      <div className="container mx-auto px-6 pt-8 pb-14 lg:pt-8 lg:pb-12 relative z-10">
+        {/*
+          `grid-cols-1` et non une grille implicite : une piste implicite prend
+          la largeur min-content de son contenu, et les montants insécables de
+          la maquette la portaient à 394 px sur un écran de 375. `minmax(0, 1fr)`
+          la tient dans la colonne.
+
+          `lg:items-start` et non `items-center` (15/11) : la maquette grandit
+          quand on ouvre un groupe. Centrées, les deux colonnes feraient sauter
+          le titre à chaque clic ; alignées en haut, le texte reste où il est,
+          remonté au niveau de la maquette, et seul ce qui est dessous descend.
+        */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center lg:items-start">
           {/* Left content */}
           <div className="space-y-6">
             <motion.div
@@ -142,22 +149,17 @@ const Hero = () => {
             </motion.div>
           </div>
 
-          {/* Right image with parallax */}
+          {/*
+            La maquette, sans la parallaxe qu'avait l'image : on la manipule,
+            elle ne doit pas glisser sous le pointeur pendant le défilement.
+          */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-            style={{ y: imageY }}
             className="relative"
           >
-            <ZoomableShot
-              src={heroImageWebP}
-              srcMobile={heroImageMobileWebP}
-              fallback={heroImagePng}
-              alt={t("hero.imageAlt")}
-              className="overflow-hidden rounded-2xl border border-border/60 bg-card shadow-image"
-              loading="eager"
-            />
+            <MaquetteBudget />
           </motion.div>
         </div>
       </div>

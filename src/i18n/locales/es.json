@@ -46,13 +46,88 @@
     "title": "Pilota tu presupuesto.",
     "titleHighlight": "Sigue alineado con tus objetivos.",
     "description": "Tu mes de un vistazo: sabes dónde está tu dinero, decides adónde va.",
-    "imageAlt": "Resto para vivir y sobres de presupuesto en Steero",
     "band": [
       "Haces tu presupuesto, a tu manera",
       "Lo sigues por semana, por mes, por año",
       "Tu ahorro tiene su línea en el presupuesto, no lo que queda al final"
     ],
-    "microcopy": "14 días gratis · luego 8 € al mes, todo incluido · sin conexión bancaria"
+    "microcopy": "14 días gratis · luego 8 € al mes, todo incluido · sin conexión bancaria",
+    "maquette": {
+      "aria": "Vista previa interactiva de la página Mis presupuestos de Steero, con datos de ejemplo",
+      "indice": "Abre una categoría para ver sus presupuestos",
+      "indiceSurvol": "Pasa el ratón por una categoría para ver su detalle, haz clic para ver sus presupuestos",
+      "sections": {
+        "revenus": "Ingresos",
+        "depenses": "Gastos",
+        "epargne": "Ahorro e inversión"
+      },
+      "varie": "varía",
+      "calcule": "Calculado",
+      "nBudgets_one": "{{count}} presupuesto",
+      "nBudgets_other": "{{count}} presupuestos",
+      "familles": {
+        "socle": "Socle",
+        "plaisir": "Plaisir",
+        "ponctuel": "Ponctuel"
+      },
+      "noms": {
+        "foyer": "Hogar",
+        "deplacements": "Viajes y Movilidad",
+        "sante": "Salud, Deporte y Bienestar",
+        "vieQuotidienne": "Vida cotidiana",
+        "activites": "Actividades y salidas",
+        "credits": "Créditos e impuestos",
+        "foyerLoyer": "Seguros, domiciliaciones y alquiler",
+        "energie": "Suministros y energía",
+        "ameublement": "Muebles y Equipos",
+        "assuranceAuto": "Seguro de coche y otros gastos recurrentes",
+        "carburant": "Combustible",
+        "transports": "Transportes puntuales",
+        "entretienAuto": "Mantenimiento y reparaciones del coche",
+        "adhesions": "Membresías y suscripciones",
+        "soins": "Cuidados y bienestar",
+        "communication": "Comunicación y Streaming",
+        "alimentation": "Alimentación",
+        "menager": "Productos del hogar y limpieza",
+        "habillement": "Ropa",
+        "abonnements": "Suscripciones",
+        "restauration": "Restauración",
+        "culture": "Cultura y exposiciones",
+        "divertissement": "Entretenimiento y ocio",
+        "cadeaux": "Regalos y celebraciones",
+        "impots": "Impuestos",
+        "revenusSalaries": "Ingresos salariales",
+        "salaire": "Responsable comercial regional (Vernier Équipement)",
+        "projets": "Proyectos",
+        "investissement": "Inversión",
+        "fondsUrgence": "Fondo de emergencia",
+        "japon": "Japón, abril de 2027",
+        "apport": "Entrada del piso",
+        "velo": "Bici eléctrica"
+      },
+      "bulle": {
+        "parMois": "/ mes",
+        "desRevenus": "{{part}} de los ingresos",
+        "chargesFixes": "Gastos fijos",
+        "variables": "Variables",
+        "fixes": "fijos",
+        "nRecurrents_one": "{{count}} recurrente",
+        "nRecurrents_other": "{{count}} recurrentes",
+        "etNAutres_one": "y {{count}} más",
+        "etNAutres_other": "y {{count}} más",
+        "recurrents": {
+          "loyer": "Alquiler y gastos",
+          "assuranceHabitation": "Seguro de hogar",
+          "assuranceAutoRecurrent": "Seguro de coche",
+          "mutuelle": "Seguro médico",
+          "salleDeSport": "Gimnasio",
+          "internet": "Fibra en casa",
+          "mobile": "Tarifa móvil",
+          "netflix": "Netflix",
+          "spotify": "Spotify"
+        }
+      }
+    }
   },
   "heroB": {
     "description": "Instala rituales cortos y guiados con tu dinero: sabes dónde está y decides conscientemente adónde va y adónde debe ir.",

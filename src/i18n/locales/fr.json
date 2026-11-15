@@ -46,13 +46,88 @@
     "title": "Pilote ton budget.",
     "titleHighlight": "Reste aligné à tes objectifs.",
     "description": "Ton mois d'un coup d'œil : tu sais où est ton argent, tu décides où il va.",
-    "imageAlt": "Reste à vivre et enveloppes de budget dans Steero",
     "band": [
       "Tu fais ton budget, à ta façon",
       "Tu le suis à la semaine, au mois, à l'année",
       "Ton épargne a sa ligne dans le budget, pas ce qui reste à la fin"
     ],
-    "microcopy": "14 jours gratuits · puis 8 € par mois, tout inclus · aucune connexion bancaire"
+    "microcopy": "14 jours gratuits · puis 8 € par mois, tout inclus · aucune connexion bancaire",
+    "maquette": {
+      "aria": "Aperçu interactif de la page Mes budgets de Steero, avec des données d'exemple",
+      "indice": "Ouvre une catégorie pour voir ses budgets",
+      "indiceSurvol": "Survole une catégorie pour son détail, clique pour ses budgets",
+      "sections": {
+        "revenus": "Revenus",
+        "depenses": "Dépenses",
+        "epargne": "Épargne et investissement"
+      },
+      "varie": "varie",
+      "calcule": "Calculé",
+      "nBudgets_one": "{{count}} budget",
+      "nBudgets_other": "{{count}} budgets",
+      "familles": {
+        "socle": "Socle",
+        "plaisir": "Plaisir",
+        "ponctuel": "Ponctuel"
+      },
+      "noms": {
+        "foyer": "Foyer",
+        "deplacements": "Déplacements & Mobilités",
+        "sante": "Santé, Sport & Bien-être",
+        "vieQuotidienne": "Vie quotidienne",
+        "activites": "Activités et sorties",
+        "credits": "Crédits & impôts",
+        "foyerLoyer": "Assurances, prélèvements et loyer",
+        "energie": "Charges & énergie",
+        "ameublement": "Ameublement & Equipements",
+        "assuranceAuto": "Assurance automobile et autres charges récurrentes",
+        "carburant": "Carburant",
+        "transports": "Transports ponctuels",
+        "entretienAuto": "Entretien et réparation automobile",
+        "adhesions": "Adhésions et abonnements",
+        "soins": "Soins & bien-être",
+        "communication": "Communication & Streaming",
+        "alimentation": "Alimentation",
+        "menager": "Produits de fonctionnement et ménagers",
+        "habillement": "Habillements",
+        "abonnements": "Abonnements",
+        "restauration": "Restauration",
+        "culture": "Culture & expositions",
+        "divertissement": "Divertissement et loisirs",
+        "cadeaux": "Cadeaux et célébrations",
+        "impots": "Impôts & Taxes",
+        "revenusSalaries": "Revenus salariés",
+        "salaire": "Responsable commercial régional (Vernier Équipement)",
+        "projets": "Projets",
+        "investissement": "Investissement",
+        "fondsUrgence": "Fonds d'urgence",
+        "japon": "Japon, avril 2027",
+        "apport": "Apport appartement",
+        "velo": "Vélo électrique"
+      },
+      "bulle": {
+        "parMois": "/ mois",
+        "desRevenus": "{{part}} des revenus",
+        "chargesFixes": "Charges fixes",
+        "variables": "Variables",
+        "fixes": "fixes",
+        "nRecurrents_one": "{{count}} récurrent",
+        "nRecurrents_other": "{{count}} récurrents",
+        "etNAutres_one": "et {{count}} autre",
+        "etNAutres_other": "et {{count}} autres",
+        "recurrents": {
+          "loyer": "Loyer et charges",
+          "assuranceHabitation": "Assurance habitation",
+          "assuranceAutoRecurrent": "Assurance auto",
+          "mutuelle": "Mutuelle",
+          "salleDeSport": "Salle de sport",
+          "internet": "Box internet",
+          "mobile": "Forfait mobile",
+          "netflix": "Netflix",
+          "spotify": "Spotify"
+        }
+      }
+    }
   },
   "heroB": {
     "description": "Installe des rituels courts et guidés avec ton argent : tu sais où il est, tu décides consciemment où il va et où il doit aller.",

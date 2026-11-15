@@ -46,13 +46,88 @@
     "title": "Steer your budget.",
     "titleHighlight": "Stay aligned with your goals.",
     "description": "Your month at a glance: you know where your money is, you decide where it goes.",
-    "imageAlt": "Left to live and budget envelopes in Steero",
     "band": [
       "You build your budget, your way",
       "You follow it by week, by month, by year",
       "Your savings have their own line in the budget, not what's left at the end"
     ],
-    "microcopy": "14 days free · then €8 a month, all included · no bank connection"
+    "microcopy": "14 days free · then €8 a month, all included · no bank connection",
+    "maquette": {
+      "aria": "Interactive preview of the My budgets page in Steero, with sample data",
+      "indice": "Open a category to see its budgets",
+      "indiceSurvol": "Hover a category for its breakdown, click it for its budgets",
+      "sections": {
+        "revenus": "Income",
+        "depenses": "Expenses",
+        "epargne": "Savings and investment"
+      },
+      "varie": "varies",
+      "calcule": "Calculated",
+      "nBudgets_one": "{{count}} budget",
+      "nBudgets_other": "{{count}} budgets",
+      "familles": {
+        "socle": "Socle",
+        "plaisir": "Plaisir",
+        "ponctuel": "Ponctuel"
+      },
+      "noms": {
+        "foyer": "Home",
+        "deplacements": "Travel & Mobility",
+        "sante": "Health, Sport & Wellness",
+        "vieQuotidienne": "Daily life",
+        "activites": "Activities & outings",
+        "credits": "Loans & taxes",
+        "foyerLoyer": "Insurance, direct debits and rent",
+        "energie": "Utilities & energy",
+        "ameublement": "Furniture & Equipment",
+        "assuranceAuto": "Car insurance and other recurring charges",
+        "carburant": "Fuel",
+        "transports": "One-off transport",
+        "entretienAuto": "Car maintenance & repairs",
+        "adhesions": "Memberships & subscriptions",
+        "soins": "Care & wellbeing",
+        "communication": "Communication & Streaming",
+        "alimentation": "Food",
+        "menager": "Household & cleaning products",
+        "habillement": "Clothing",
+        "abonnements": "Subscriptions",
+        "restauration": "Dining",
+        "culture": "Culture & exhibitions",
+        "divertissement": "Entertainment & leisure",
+        "cadeaux": "Gifts & celebrations",
+        "impots": "Taxes",
+        "revenusSalaries": "Salary income",
+        "salaire": "Regional sales manager (Vernier Équipement)",
+        "projets": "Projects",
+        "investissement": "Investment",
+        "fondsUrgence": "Emergency fund",
+        "japon": "Japan, April 2027",
+        "apport": "Flat deposit",
+        "velo": "E-bike"
+      },
+      "bulle": {
+        "parMois": "/ month",
+        "desRevenus": "{{part}} of income",
+        "chargesFixes": "Fixed costs",
+        "variables": "Variable",
+        "fixes": "fixed",
+        "nRecurrents_one": "{{count}} recurring item",
+        "nRecurrents_other": "{{count}} recurring items",
+        "etNAutres_one": "and {{count}} more",
+        "etNAutres_other": "and {{count}} more",
+        "recurrents": {
+          "loyer": "Rent and charges",
+          "assuranceHabitation": "Home insurance",
+          "assuranceAutoRecurrent": "Car insurance",
+          "mutuelle": "Health insurance",
+          "salleDeSport": "Gym",
+          "internet": "Home internet",
+          "mobile": "Mobile plan",
+          "netflix": "Netflix",
+          "spotify": "Spotify"
+        }
+      }
+    }
   },
   "heroB": {
     "description": "Install short, guided rituals with your money: you know where it is, and you consciously decide where it goes and where it should go.",

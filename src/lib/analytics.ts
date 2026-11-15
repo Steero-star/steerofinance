@@ -241,6 +241,19 @@ export const trackFeatureCardOpen = (groupLabel: string, featureTitle: string) =
   });
 };
 
+// ── Maquette du premier écran ──────────────────────────────
+/**
+ * Une catégorie ouverte dans la maquette « Mes budgets » du hero
+ * (`MaquetteBudget.tsx`). Seule l'ouverture compte : le critère est la part
+ * des visiteurs de l'accueil qui ouvrent au moins une catégorie.
+ */
+export const trackMaquetteBudget = (categorie: string) => {
+  event("demo_budget_deplie", {
+    categorie,
+    page_path: window.location.pathname,
+  });
+};
+
 // ── FAQ ────────────────────────────────────────────────────
 export const trackFAQOpen = (section: string, question: string) => {
   event("faq_open", {
