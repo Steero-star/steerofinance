@@ -393,7 +393,13 @@ const NOM_GROUPE =
   "line-clamp-2 min-w-0 text-[13px] leading-[1.15] text-[color:var(--m-fg-70)] sm:line-clamp-none sm:truncate sm:leading-normal";
 const NOM_SOUS =
   "line-clamp-2 min-w-0 text-xs leading-[1.15] text-[color:var(--m-muted-fg)] sm:line-clamp-none sm:truncate sm:leading-normal";
-const MONTANT = "whitespace-nowrap pr-1 text-right tabular-nums sm:min-w-[64px] sm:pr-1.5";
+/*
+ * La colonne des montants : 64 px partout, champ ou texte, en-tête compris.
+ * Un champ plus large qu'un montant figé décalait d'autant l'anneau et le
+ * pourcentage de sa ligne (retour de Ronald du 23/11, section Épargne).
+ */
+const LARGEUR_MONTANT = "min-w-[64px]";
+const MONTANT = `whitespace-nowrap pr-1.5 text-right tabular-nums ${LARGEUR_MONTANT}`;
 const PASTILLE =
   "inline-flex h-[18px] min-w-[20px] shrink-0 items-center justify-center rounded-full bg-[var(--m-muted)] px-1.5 text-[11px] font-medium tabular-nums text-[color:var(--m-muted-fg)]";
 
@@ -703,8 +709,11 @@ const TAILLES = { ligne: 12, groupe: 13 } as const;
 /**
  * Le champ d'un montant (`ChampMontant` dans l'app) : du texte jusqu'au survol,
  * un champ au clic. Il écrit à la sortie ou sur Entrée ; Échap revient.
- * Écrit en 16 px puis réduit (voir l'en-tête) ; au doigt, un liseré dit qu'il
- * se touche, faute de survol.
+ * Écrit en 16 px puis réduit (voir l'en-tête). Une teinte légère le distingue
+ * d'un montant figé, à la souris comme au doigt (retour de Ronald du 23/11 :
+ * sans elle, rien ne disait qu'il se change) ; elle fonce au survol et laisse
+ * place au blanc pendant la saisie. Sa largeur est celle de la colonne des
+ * montants, pour que l'anneau de sa ligne reste aligné sur les autres.
  */
 const ChampMontant = ({
   montant,
@@ -748,9 +757,7 @@ const ChampMontant = ({
 
   return (
     <label
-      className={`relative block h-[22px] shrink-0 cursor-text rounded-[6px] border border-transparent transition-colors hover:bg-[color:color-mix(in_oklab,var(--m-border)_60%,transparent)] focus-within:border-[color:var(--m-primary)] focus-within:bg-white focus-within:shadow-[0_0_0_2px_color-mix(in_oklab,var(--m-primary)_12%,transparent)] [@media(hover:none)]:[&:not(:focus-within)]:border-[color:var(--m-border)] ${
-        taille === "groupe" ? "w-[76px] sm:w-[80px]" : "w-[64px] sm:w-[72px]"
-      }`}
+      className="relative block h-[22px] w-[64px] shrink-0 cursor-text rounded-[6px] border border-transparent bg-[color:color-mix(in_oklab,var(--m-primary)_7%,transparent)] transition-colors [&:not(:focus-within)]:hover:bg-[color:color-mix(in_oklab,var(--m-primary)_13%,transparent)] focus-within:border-[color:var(--m-primary)] focus-within:bg-white focus-within:shadow-[0_0_0_2px_color-mix(in_oklab,var(--m-primary)_12%,transparent)]"
     >
       <span className="sr-only">{t("hero.maquette.champ", { nom })}</span>
       <input
