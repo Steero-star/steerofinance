@@ -54,8 +54,11 @@
     "microcopy": "14 días gratis · luego 8 € al mes, todo incluido · sin conexión bancaria",
     "maquette": {
       "aria": "Vista previa interactiva de la página Mis presupuestos de Steero, con datos de ejemplo",
-      "indice": "Abre una categoría para ver sus presupuestos",
-      "indiceSurvol": "Pasa el ratón por una categoría para ver su detalle, haz clic para ver sus presupuestos",
+      "indice": "Abre una categoría y cambia un importe: todo se recalcula",
+      "champ": "Importe mensual: {{nom}}",
+      "restant": "Restante sin asignar",
+      "auDela": "Más allá de tu capacidad",
+      "revenir": "Volver al presupuesto inicial",
       "sections": {
         "revenus": "Ingresos",
         "depenses": "Gastos",
@@ -2136,7 +2139,7 @@
       {
         "when": "Día 7",
         "title": "Tu primera revisión semanal",
-        "body": "150 € previstos en salidas, 214 € reales: ves la diferencia y ajustas mientras aún estás a tiempo.",
+        "body": "280 € previstos en salidas, 344 € reales: ves la diferencia y ajustas mientras aún estás a tiempo.",
         "imageAlt": "Examinar, el dinero de la semana: gastado sobre asignado, y la marca de la semana pasada"
       },
       {

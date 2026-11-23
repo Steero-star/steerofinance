@@ -54,8 +54,11 @@
     "microcopy": "14 jours gratuits · puis 8 € par mois, tout inclus · aucune connexion bancaire",
     "maquette": {
       "aria": "Aperçu interactif de la page Mes budgets de Steero, avec des données d'exemple",
-      "indice": "Ouvre une catégorie pour voir ses budgets",
-      "indiceSurvol": "Survole une catégorie pour son détail, clique pour ses budgets",
+      "indice": "Ouvre une catégorie et change un montant : tout se recalcule",
+      "champ": "Montant mensuel : {{nom}}",
+      "restant": "Restant non orienté",
+      "auDela": "Au-delà de ta capacité",
+      "revenir": "Revenir au budget de départ",
       "sections": {
         "revenus": "Revenus",
         "depenses": "Dépenses",
@@ -2152,7 +2155,7 @@
       {
         "when": "Jour 7",
         "title": "Ton premier point hebdo",
-        "body": "150 € prévus en sorties, 214 € réels : tu vois l'écart et tu ajustes pendant qu'il est encore temps.",
+        "body": "280 € prévus en sorties, 344 € réels : tu vois l'écart et tu ajustes pendant qu'il est encore temps.",
         "imageAlt": "Examiner, l'argent de la semaine : dépensé sur alloué, et le trait de la semaine dernière"
       },
       {

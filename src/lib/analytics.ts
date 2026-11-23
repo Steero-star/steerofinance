@@ -254,6 +254,18 @@ export const trackMaquetteBudget = (categorie: string) => {
   });
 };
 
+/**
+ * Un montant changé par le visiteur dans la maquette (23/11/2026). Une fois
+ * par visite, au premier changement : le critère est la part des visiteurs de
+ * l'accueil qui changent au moins un montant, pas le nombre de frappes.
+ */
+export const trackMaquetteBudgetModifie = (budget: string) => {
+  event("demo_budget_modifie", {
+    budget,
+    page_path: window.location.pathname,
+  });
+};
+
 // ── FAQ ────────────────────────────────────────────────────
 export const trackFAQOpen = (section: string, question: string) => {
   event("faq_open", {

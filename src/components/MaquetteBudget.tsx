@@ -6,6 +6,7 @@ import {
   useState,
   type CSSProperties,
   type FocusEvent,
+  type KeyboardEvent,
   type MouseEvent,
   type ReactNode,
 } from "react";
@@ -18,12 +19,13 @@ import {
   Landmark,
   MousePointerClick,
   PiggyBank,
+  RotateCcw,
   ShoppingCart,
   Utensils,
   Wallet,
   type LucideIcon,
 } from "lucide-react";
-import { trackMaquetteBudget } from "@/lib/analytics";
+import { trackMaquetteBudget, trackMaquetteBudgetModifie } from "@/lib/analytics";
 
 /*
  * LA PAGE « MES BUDGETS » DE L'APP, QU'ON MANIPULE DANS LE PREMIER ÉCRAN (15/11/2026).
@@ -57,16 +59,42 @@ import { trackMaquetteBudget } from "@/lib/analytics";
  * lecture ») et tout est réparti : rien ne reste « non orienté », la capacité
  * va entière aux projets et à l'investissement, ce qui économise aussi une
  * ligne. Ce ne sont donc plus les chiffres exacts du compte, mais un budget
- * qui tombe juste, et c'est vérifiable ici même :
- *   - chaque catégorie vaut la somme de ses budgets ;
- *   - Dépenses + Épargne et investissement = Revenus (2 200 + 1 100 = 3 300) ;
- *   - une bulle somme ses charges fixes et ses variables au total de la
- *     catégorie, ses récurrents à ses charges fixes ;
- *   - les projets du mois somment la ligne Projets ;
- *   - chaque pourcentage est la part des revenus (la part de la catégorie
- *     dans la bulle), arrondie à l'unité.
- * Qui retouche un montant retouche les autres avec lui. « Transports
- * ponctuels » est rangé en Ponctuel, la décision du 14/11.
+ * CRÉDIBLE (retour de Ronald du 23/11 : la première version épargnait 33 %
+ * du revenu, ce qu'aucun visiteur ne croit) : 3 170 € de revenus, 18 %
+ * d'épargne et d'investissement, un loyer à 30 % du revenu, des abonnements à
+ * leur vrai prix, et les budgets vides du compte remplis (Ameublement,
+ * Divertissement, Cadeaux : un vrai budget prévoit les cadeaux). Au départ,
+ * Dépenses + Épargne et investissement = Revenus (2 600 + 570 = 3 170).
+ *
+ * Seuls les BUDGETS sont écrits ici. Tout le reste se calcule (`calculer`) :
+ * le total d'une catégorie, celui des Dépenses, la capacité d'épargne, chaque
+ * pourcentage (la part des revenus, arrondie à l'unité, « < 1 % » plutôt
+ * qu'un zéro pour un montant réel), la bulle (charges fixes = les budgets de
+ * récurrents, variables = le reste), la répartition des projets et le restant.
+ * Une somme ne peut donc plus être fausse, ni au départ ni après une saisie du
+ * visiteur. Seule la liste des récurrents d'une bulle est écrite à la main :
+ * elle doit sommer ses budgets de récurrents. « Transports ponctuels » est
+ * rangé en Ponctuel, la décision du 14/11.
+ *
+ * ## Les montants se changent, chez chacun (retour de Ronald du 23/11)
+ *
+ * Le visiteur change un budget et voit tout se recalculer. Le geste est celui
+ * de l'app (`ChampMontant` dans `saisie.tsx`) : le montant ressemble à du
+ * texte jusqu'au survol, s'écrit sur Entrée ou à la sortie du champ, Échap
+ * revient. Les mêmes lignes que dans l'app : les budgets saisis à la main,
+ * Projets et Investissement ; ni un budget de récurrents (il est la somme de
+ * ses récurrents), ni le revenu. Quand la somme ne tombe plus juste, la ligne
+ * « Restant non orienté » de l'app reparaît, ou « Au-delà de ta capacité »
+ * quand on dépense plus qu'on ne gagne : c'est ce que la maquette démontre.
+ *
+ * Les montants saisis vivent dans l'état de CE composant, dans CE navigateur :
+ * rien n'est envoyé ni gardé, recharger rend le budget de départ, et ce qu'un
+ * visiteur tape n'atteint aucun autre. Le prérendu photographie l'état de
+ * départ, toujours le même.
+ *
+ * iOS agrandit la page quand on touche un champ écrit sous 16 px : le champ
+ * est donc écrit en 16 px et réduit à sa taille par `transform`, qui ne
+ * déclenche pas ce zoom.
  *
  * ## Fermée d'entrée, et rien ne bouge tout seul
  *
@@ -112,169 +140,198 @@ type Part = number | "<1";
 
 interface BudgetDemo {
   id: string;
-  /** Moyenne mensuelle en euros ; `null` = budget créé, pas encore rempli. */
-  montant: number | null;
-  /** Part des revenus, en points, telle que l'app l'affiche. */
-  part: Part;
+  /** Moyenne mensuelle de départ, en euros. */
+  montant: number;
   famille?: Famille;
-  /** Nombre de récurrents rattachés : la pastille brique des charges fixes. */
+  /**
+   * Nombre de récurrents rattachés : la pastille brique des charges fixes. Un
+   * budget de récurrents ne se saisit pas, comme dans l'app.
+   */
   recurrents?: number;
   varie?: boolean;
-}
-
-/** Ce que dit la bulle d'une catégorie (`ApercuCategorie` dans l'app). */
-interface BulleDemo {
-  fixe: number;
-  /** Part des charges fixes dans la catégorie, en points. */
-  partFixe: number;
-  nbRecurrents: number;
-  /** Les quatre premiers récurrents, comme l'app ; le reste se compte. */
-  recurrents: { id: string; montant: number }[];
-  variables: number;
 }
 
 interface CategorieDemo {
   id: string;
   icone: LucideIcon;
-  montant: number;
-  part: number;
   budgets: BudgetDemo[];
-  bulle: BulleDemo;
+  /**
+   * Les quatre premiers récurrents de la bulle (`ApercuCategorie` dans l'app) ;
+   * le reste se compte. Ils somment les budgets de récurrents de la catégorie.
+   */
+  recurrents: { id: string; montant: number }[];
 }
 
 const REVENUS = {
-  montant: 3300,
-  groupe: { id: "revenusSalaries", sources: [{ id: "salaire", montant: 3300, part: 100, recurrents: 1 }] },
+  montant: 3170,
+  groupe: { id: "revenusSalaries", sources: [{ id: "salaire", montant: 3170, recurrents: 1 }] },
 };
-
-const DEPENSES = { montant: 2200, part: 67 };
 
 const CATEGORIES: CategorieDemo[] = [
   {
     id: "foyer",
     icone: House,
-    montant: 1000,
-    part: 30,
     budgets: [
-      { id: "foyerLoyer", montant: 950, part: 29, recurrents: 2 },
-      { id: "energie", montant: 50, part: 2, famille: "socle" },
-      { id: "ameublement", montant: null, part: 0, famille: "ponctuel" },
+      { id: "foyerLoyer", montant: 970, recurrents: 2 },
+      { id: "energie", montant: 100, famille: "socle" },
+      { id: "ameublement", montant: 80, famille: "ponctuel" },
     ],
-    bulle: {
-      fixe: 950,
-      partFixe: 95,
-      nbRecurrents: 2,
-      recurrents: [
-        { id: "loyer", montant: 930 },
-        { id: "assuranceHabitation", montant: 20 },
-      ],
-      variables: 50,
-    },
+    recurrents: [
+      { id: "loyer", montant: 950 },
+      { id: "assuranceHabitation", montant: 20 },
+    ],
   },
   {
     id: "deplacements",
     icone: Car,
-    montant: 250,
-    part: 8,
     budgets: [
-      { id: "assuranceAuto", montant: 50, part: 2, recurrents: 1 },
-      { id: "carburant", montant: 100, part: 3, famille: "socle", varie: true },
-      { id: "transports", montant: 50, part: 2, famille: "ponctuel", varie: true },
-      { id: "entretienAuto", montant: 50, part: 2, famille: "ponctuel" },
+      { id: "assuranceAuto", montant: 50, recurrents: 1 },
+      { id: "carburant", montant: 130, famille: "socle", varie: true },
+      { id: "transports", montant: 40, famille: "ponctuel", varie: true },
+      { id: "entretienAuto", montant: 80, famille: "ponctuel" },
     ],
-    bulle: {
-      fixe: 50,
-      partFixe: 20,
-      nbRecurrents: 1,
-      recurrents: [{ id: "assuranceAutoRecurrent", montant: 50 }],
-      variables: 200,
-    },
+    recurrents: [{ id: "assuranceAutoRecurrent", montant: 50 }],
   },
   {
     id: "sante",
     icone: Heart,
-    montant: 100,
-    part: 3,
     budgets: [
-      { id: "adhesions", montant: 70, part: 2, recurrents: 2 },
-      { id: "soins", montant: 30, part: 1, famille: "ponctuel" },
+      { id: "adhesions", montant: 70, recurrents: 2 },
+      { id: "soins", montant: 30, famille: "ponctuel" },
     ],
-    bulle: {
-      fixe: 70,
-      partFixe: 70,
-      nbRecurrents: 2,
-      recurrents: [
-        { id: "mutuelle", montant: 40 },
-        { id: "salleDeSport", montant: 30 },
-      ],
-      variables: 30,
-    },
+    recurrents: [
+      { id: "mutuelle", montant: 40 },
+      { id: "salleDeSport", montant: 30 },
+    ],
   },
   {
     id: "vieQuotidienne",
     icone: ShoppingCart,
-    montant: 550,
-    part: 17,
     budgets: [
-      { id: "communication", montant: 60, part: 2, recurrents: 4 },
-      { id: "alimentation", montant: 350, part: 11, famille: "socle" },
-      { id: "menager", montant: 40, part: 1, famille: "socle" },
-      { id: "habillement", montant: 90, part: 3, famille: "ponctuel" },
-      { id: "abonnements", montant: 10, part: "<1", recurrents: 1, varie: true },
+      { id: "communication", montant: 70, recurrents: 4 },
+      { id: "alimentation", montant: 400, famille: "socle" },
+      { id: "menager", montant: 50, famille: "socle" },
+      { id: "habillement", montant: 100, famille: "ponctuel" },
+      { id: "abonnements", montant: 10, recurrents: 1, varie: true },
     ],
-    bulle: {
-      fixe: 70,
-      partFixe: 13,
-      nbRecurrents: 5,
-      recurrents: [
-        { id: "internet", montant: 20 },
-        { id: "mobile", montant: 20 },
-        { id: "netflix", montant: 10 },
-        { id: "spotify", montant: 10 },
-      ],
-      variables: 480,
-    },
+    // Le cinquième, à 10 €, est l'abonnement : la bulle le compte (« et 1 autre »).
+    recurrents: [
+      { id: "internet", montant: 30 },
+      { id: "mobile", montant: 15 },
+      { id: "netflix", montant: 15 },
+      { id: "spotify", montant: 10 },
+    ],
   },
   {
     id: "activites",
     icone: Utensils,
-    montant: 250,
-    part: 8,
     budgets: [
-      { id: "restauration", montant: 150, part: 5, famille: "plaisir" },
-      { id: "culture", montant: 100, part: 3, famille: "plaisir" },
-      { id: "divertissement", montant: null, part: 0, famille: "plaisir" },
-      { id: "cadeaux", montant: null, part: 0, famille: "ponctuel" },
+      { id: "restauration", montant: 200, famille: "plaisir" },
+      { id: "culture", montant: 80, famille: "plaisir" },
+      { id: "divertissement", montant: 40, famille: "plaisir" },
+      { id: "cadeaux", montant: 50, famille: "ponctuel" },
     ],
-    bulle: { fixe: 0, partFixe: 0, nbRecurrents: 0, recurrents: [], variables: 250 },
+    recurrents: [],
   },
   {
     id: "credits",
     icone: Landmark,
-    montant: 50,
-    part: 2,
-    budgets: [{ id: "impots", montant: 50, part: 2, famille: "ponctuel" }],
-    bulle: { fixe: 0, partFixe: 0, nbRecurrents: 0, recurrents: [], variables: 50 },
+    budgets: [{ id: "impots", montant: 50, famille: "ponctuel" }],
+    recurrents: [],
   },
 ];
 
-/** Projets + Investissement = la capacité : tout est réparti, rien ne reste « non orienté ». */
+/**
+ * Projets + Investissement = la capacité au départ : rien ne reste « non
+ * orienté ». Les projets se partagent la ligne Projets ; quand le visiteur la
+ * change, chacun garde sa proportion (l'app les calcule, d'où « Calculé »).
+ */
 const EPARGNE = {
-  montant: 1100,
-  part: 33,
   projets: {
     id: "projets",
-    montant: 800,
-    part: 24,
+    montant: 420,
     liste: [
       { id: "fondsUrgence", montant: 100 },
       { id: "japon", montant: 150 },
-      { id: "apport", montant: 400 },
-      { id: "velo", montant: 150 },
+      { id: "apport", montant: 120 },
+      { id: "velo", montant: 50 },
     ],
   },
-  investissement: { id: "investissement", montant: 300, part: 9 },
+  investissement: { id: "investissement", montant: 150 },
 };
+
+/** Ce qui se saisit, par identifiant : les budgets à la main, Projets, Investissement. */
+type Montants = Record<string, number>;
+
+const DEPART: Montants = Object.fromEntries([
+  ...CATEGORIES.flatMap((c) => c.budgets.map((b) => [b.id, b.montant] as const)),
+  [EPARGNE.projets.id, EPARGNE.projets.montant],
+  [EPARGNE.investissement.id, EPARGNE.investissement.montant],
+]);
+
+/** L'arc et la ligne du restant, dans la section Épargne. */
+const ID_RESTANT = "restant";
+
+const somme = (montants: number[]) => montants.reduce((s, m) => s + m, 0);
+
+/** La part des revenus en points, non arrondie : ce que tracent les anneaux. */
+const pctDe = (montant: number) => (Math.max(0, montant) / REVENUS.montant) * 100;
+
+/** La part des revenus telle que l'app l'affiche : arrondie, « < 1 % » plutôt qu'un zéro pour un montant réel. */
+const partDe = (montant: number): Part => {
+  if (montant <= 0) return 0;
+  const p = Math.round(pctDe(montant));
+  return p === 0 ? "<1" : p;
+};
+
+/** Partage un total entier selon des poids, à l'euro près, sans perdre d'euro en route (plus forts restes). */
+function repartir<T extends { montant: number }>(total: number, liste: T[]): T[] {
+  const poids = somme(liste.map((p) => p.montant)) || 1;
+  const bruts = liste.map((p) => (total * p.montant) / poids);
+  const entiers = bruts.map(Math.floor);
+  let reste = total - somme(entiers);
+  const ordre = bruts.map((b, i) => ({ i, frac: b - Math.floor(b) })).sort((a, b) => b.frac - a.frac);
+  for (const { i } of ordre) {
+    if (reste <= 0) break;
+    entiers[i] += 1;
+    reste -= 1;
+  }
+  return liste.map((p, i) => ({ ...p, montant: entiers[i] }));
+}
+
+/** Tout ce que la maquette affiche, tiré des seuls budgets. */
+function calculer(m: Montants) {
+  const categories = CATEGORIES.map((c) => {
+    const budgets = c.budgets.map((b) => ({ ...b, montant: m[b.id] ?? b.montant }));
+    const montant = somme(budgets.map((b) => b.montant));
+    const fixe = somme(budgets.filter((b) => b.recurrents !== undefined).map((b) => b.montant));
+    return {
+      ...c,
+      budgets,
+      montant,
+      bulle: {
+        fixe,
+        partFixe: montant > 0 ? Math.round((fixe / montant) * 100) : 0,
+        nbRecurrents: somme(budgets.map((b) => b.recurrents ?? 0)),
+        variables: montant - fixe,
+      },
+    };
+  });
+  const depenses = somme(categories.map((c) => c.montant));
+  const capacite = REVENUS.montant - depenses;
+  const projets = m[EPARGNE.projets.id] ?? EPARGNE.projets.montant;
+  const investissement = m[EPARGNE.investissement.id] ?? EPARGNE.investissement.montant;
+  return {
+    categories,
+    depenses,
+    capacite,
+    projets: { ...EPARGNE.projets, montant: projets, liste: repartir(projets, EPARGNE.projets.liste) },
+    investissement: { ...EPARGNE.investissement, montant: investissement },
+    restant: capacite - projets - investissement,
+  };
+}
+
+type CategorieCalculee = ReturnType<typeof calculer>["categories"][number];
 
 /** Tout est replié au départ : c'est le clic qui agrandit la maquette. */
 const OUVERT_AU_DEPART: string | null = null;
@@ -306,6 +363,8 @@ const PALETTE = {
   "--m-fixe": "#B0503C",
   "--m-fixe-texte": "rgb(147 65 47)",
   "--m-fixe-fond": "oklab(0.549 0.109 0.071 / 0.15)",
+  "--m-primary": "oklch(0.546 0.245 262.881)",
+  "--m-attention": "#B45309",
 } as CSSProperties;
 
 const FAMILLE: Record<Famille, { texte: string; point: string }> = {
@@ -450,12 +509,12 @@ type Formats = { euros: (n: number) => string; part: (p: Part) => string };
  */
 type Place = { haut: number; bas: number; gauche: number; limiteHaute: number; limiteBasse: number };
 
-const Bulle = ({ cat, formats, id, place }: { cat: CategorieDemo; formats: Formats; id: string; place: Place }) => {
+const Bulle = ({ cat, formats, id, place }: { cat: CategorieCalculee; formats: Formats; id: string; place: Place }) => {
   const { t } = useTranslation();
   const ref = useRef<HTMLDivElement>(null);
   const [top, setTop] = useState(place.bas + 4);
   const Icone = cat.icone;
-  const { bulle } = cat;
+  const { bulle, recurrents } = cat;
   const familles = [...new Set(cat.budgets.filter((b) => b.recurrents === undefined).map((b) => b.famille ?? "socle"))];
 
   // Sous la ligne, ou au-dessus quand elle n'y tient pas (même règle que
@@ -490,7 +549,7 @@ const Bulle = ({ cat, formats, id, place }: { cat: CategorieDemo; formats: Forma
         <Icone className="h-3.5 w-3.5 text-[color:var(--m-depense)]" strokeWidth={1.75} aria-hidden="true" />
         {t("hero.maquette.nBudgets", { count: cat.budgets.length })}
         <span>·</span>
-        {t("hero.maquette.bulle.desRevenus", { part: formats.part(cat.part) })}
+        {t("hero.maquette.bulle.desRevenus", { part: formats.part(partDe(cat.montant)) })}
       </div>
       <div className="mt-2.5 grid grid-cols-[minmax(0,1fr)_64px] items-center gap-3.5 border-t border-[color:var(--m-border)] pt-2.5">
         <div className="grid gap-2">
@@ -502,17 +561,17 @@ const Bulle = ({ cat, formats, id, place }: { cat: CategorieDemo; formats: Forma
               {formats.part(bulle.partFixe)}
               {bulle.nbRecurrents > 0 && ` · ${t("hero.maquette.bulle.nRecurrents", { count: bulle.nbRecurrents })}`}
             </small>
-            {bulle.recurrents.length > 0 && (
+            {recurrents.length > 0 && (
               <div className="col-span-2 col-start-2 mt-1 grid gap-px">
-                {bulle.recurrents.map((r) => (
+                {recurrents.map((r) => (
                   <div key={r.id} className="flex justify-between gap-2.5 text-[11px] text-[color:var(--m-muted-fg)]">
                     <span className="truncate">{t(`hero.maquette.bulle.recurrents.${r.id}`)}</span>
                     <span className="tabular-nums text-[color:var(--m-fg)]">{formats.euros(r.montant)}</span>
                   </div>
                 ))}
-                {bulle.nbRecurrents > bulle.recurrents.length && (
+                {bulle.nbRecurrents > recurrents.length && (
                   <div className="text-[11px] text-[color:var(--m-muted-fg)]">
-                    {t("hero.maquette.bulle.etNAutres", { count: bulle.nbRecurrents - bulle.recurrents.length })}
+                    {t("hero.maquette.bulle.etNAutres", { count: bulle.nbRecurrents - recurrents.length })}
                   </div>
                 )}
               </div>
@@ -590,7 +649,7 @@ const PartLigne = ({ pct, texte, anneau = true }: { pct: number; texte: string; 
 const Chevron = ({ ouvert }: { ouvert: boolean }) => (
   <ChevronRight
     aria-hidden="true"
-    className={`h-3.5 w-3.5 shrink-0 text-[color:var(--m-muted-fg)] transition-[opacity,transform] duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 ${ouvert ? "rotate-90 opacity-100" : "opacity-0"}`}
+    className={`h-3.5 w-3.5 shrink-0 text-[color:var(--m-muted-fg)] transition-[opacity,transform] duration-200 group-hover:opacity-100 group-focus-visible:opacity-100 group-has-[button:focus-visible]:opacity-100 ${ouvert ? "rotate-90 opacity-100" : "opacity-0"}`}
   />
 );
 
@@ -628,6 +687,107 @@ const Corps = ({ id, ouvert, children }: { id: string; ouvert: boolean; children
   </div>
 );
 
+/** Ce que le visiteur a tapé, en euros entiers ; `null` = rien de lisible, le champ revient. */
+const lireMontant = (saisie: string): number | null => {
+  const brut = saisie.replace(/[\s€]/g, "").replace(",", ".");
+  if (brut === "") return null;
+  const n = Number(brut);
+  if (!Number.isFinite(n) || n < 0) return null;
+  return Math.min(Math.round(n), 9999);
+};
+
+/** La taille d'écriture d'un champ, et celle qu'il prend à l'écran. */
+const ECRITURE = 16;
+const TAILLES = { ligne: 12, groupe: 13 } as const;
+
+/**
+ * Le champ d'un montant (`ChampMontant` dans l'app) : du texte jusqu'au survol,
+ * un champ au clic. Il écrit à la sortie ou sur Entrée ; Échap revient.
+ * Écrit en 16 px puis réduit (voir l'en-tête) ; au doigt, un liseré dit qu'il
+ * se touche, faute de survol.
+ */
+const ChampMontant = ({
+  montant,
+  nom,
+  taille,
+  formats,
+  onValider,
+}: {
+  montant: number;
+  nom: string;
+  taille: keyof typeof TAILLES;
+  formats: Formats;
+  onValider: (montant: number) => void;
+}) => {
+  const { t } = useTranslation();
+  const [brouillon, setBrouillon] = useState<string | null>(null);
+  const annule = useRef(false);
+  // Le clic qui donne le focus se termine par un `mouseup` qui pose le curseur
+  // et défait la sélection : on l'ignore une fois, pour que la frappe remplace.
+  const garderSelection = useRef(false);
+  const echelle = TAILLES[taille] / ECRITURE;
+
+  const valider = () => {
+    const saisi = annule.current || brouillon === null ? null : lireMontant(brouillon);
+    annule.current = false;
+    setBrouillon(null);
+    if (saisi !== null && saisi !== montant) onValider(saisi);
+  };
+
+  const touche = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      e.currentTarget.blur();
+    } else if (e.key === "Escape") {
+      e.preventDefault();
+      e.stopPropagation();
+      annule.current = true;
+      e.currentTarget.blur();
+    }
+  };
+
+  return (
+    <label
+      className={`relative block h-[22px] shrink-0 cursor-text rounded-[6px] border border-transparent transition-colors hover:bg-[color:color-mix(in_oklab,var(--m-border)_60%,transparent)] focus-within:border-[color:var(--m-primary)] focus-within:bg-white focus-within:shadow-[0_0_0_2px_color-mix(in_oklab,var(--m-primary)_12%,transparent)] [@media(hover:none)]:[&:not(:focus-within)]:border-[color:var(--m-border)] ${
+        taille === "groupe" ? "w-[76px] sm:w-[80px]" : "w-[64px] sm:w-[72px]"
+      }`}
+    >
+      <span className="sr-only">{t("hero.maquette.champ", { nom })}</span>
+      <input
+        inputMode="numeric"
+        autoComplete="off"
+        enterKeyHint="done"
+        value={brouillon ?? formats.euros(montant)}
+        onFocus={(e) => {
+          setBrouillon(String(montant));
+          const champ = e.currentTarget;
+          window.requestAnimationFrame(() => champ.select());
+        }}
+        onMouseDown={(e) => {
+          garderSelection.current = document.activeElement !== e.currentTarget;
+        }}
+        onMouseUp={(e) => {
+          if (!garderSelection.current) return;
+          garderSelection.current = false;
+          e.preventDefault();
+        }}
+        onChange={(e) => setBrouillon(e.target.value)}
+        onBlur={valider}
+        onKeyDown={touche}
+        style={{
+          fontSize: ECRITURE,
+          width: `calc((100% - 10px) / ${echelle})`,
+          transform: `translateY(-50%) scale(${echelle})`,
+          transformOrigin: "right center",
+        }}
+        className={`absolute right-[5px] top-1/2 border-0 bg-transparent p-0 text-right tabular-nums leading-none outline-none focus:text-[color:var(--m-fg)] ${
+          taille === "groupe" ? "text-[color:var(--m-fg-70)]" : "text-[color:var(--m-muted-fg)]"
+        }`}
+      />
+    </label>
+  );
+};
+
 const MaquetteBudget = () => {
   const { t, i18n } = useTranslation();
   const idBase = useId();
@@ -637,6 +797,8 @@ const MaquetteBudget = () => {
   const [ouvert, setOuvert] = useState<string | null>(OUVERT_AU_DEPART);
   const [survol, setSurvol] = useState<string | null>(null);
   const [bulle, setBulle] = useState<{ id: string; place: Place } | null>(null);
+  const [montants, setMontants] = useState<Montants>(DEPART);
+  const mesure = useRef(false);
 
   useEffect(
     () => () => {
@@ -713,8 +875,18 @@ const MaquetteBudget = () => {
     onBlur: sortir,
   });
 
-  const catBulle = bulle ? CATEGORIES.find((c) => c.id === bulle.id) : undefined;
-  const { projets, investissement } = EPARGNE;
+  /** Un budget changé par le visiteur ; la mesure ne compte que le premier de la visite. */
+  const changer = (id: string, montant: number) => {
+    setMontants((avant) => ({ ...avant, [id]: montant }));
+    if (!mesure.current) {
+      mesure.current = true;
+      trackMaquetteBudgetModifie(id);
+    }
+  };
+
+  const { categories, depenses, capacite, projets, investissement, restant } = calculer(montants);
+  const modifie = Object.keys(DEPART).some((id) => montants[id] !== DEPART[id]);
+  const catBulle = bulle ? categories.find((c) => c.id === bulle.id) : undefined;
   const sourceRevenu = REVENUS.groupe.sources[0];
 
   return (
@@ -748,7 +920,7 @@ const MaquetteBudget = () => {
               <span className={NOM_SOUS}>{t(`hero.maquette.noms.${sourceRevenu.id}`)}</span>
               <span className={PASTILLE}>{sourceRevenu.recurrents}</span>
               <span className="min-w-2 flex-1" />
-              <PartLigne pct={sourceRevenu.part} texte={formats.part(sourceRevenu.part)} anneau={false} />
+              <PartLigne pct={100} texte={formats.part(100)} anneau={false} />
               <span className={`${MONTANT} text-xs text-[color:var(--m-muted-fg)]`}>{formats.euros(sourceRevenu.montant)}</span>
               <span className="w-3.5 shrink-0" />
             </li>
@@ -759,19 +931,19 @@ const MaquetteBudget = () => {
             className="mt-3.5"
             libelle={t("hero.maquette.sections.depenses")}
             couleur="var(--m-section-depenses)"
-            total={formats.euros(DEPENSES.montant)}
+            total={formats.euros(depenses)}
             part={{
-              texte: formats.part(DEPENSES.part),
+              texte: formats.part(partDe(depenses)),
               anneau: (
                 <AnneauSection
-                  arcs={CATEGORIES.map((c) => ({ id: c.id, pct: c.part }))}
+                  arcs={categories.map((c) => ({ id: c.id, pct: pctDe(c.montant) }))}
                   couleur="var(--m-section-depenses)"
                   actif={survol}
                 />
               ),
             }}
           />
-          {CATEGORIES.map((cat) => {
+          {categories.map((cat) => {
             const Icone = cat.icone;
             return (
               <div key={cat.id}>
@@ -782,7 +954,7 @@ const MaquetteBudget = () => {
                   <span className={NOM_GROUPE}>{t(`hero.maquette.noms.${cat.id}`)}</span>
                   <Compte n={cat.budgets.length} />
                   <span className="min-w-2 flex-1" />
-                  <PartLigne pct={cat.part} texte={formats.part(cat.part)} />
+                  <PartLigne pct={pctDe(cat.montant)} texte={formats.part(partDe(cat.montant))} />
                   <span className={`${MONTANT} text-[13px] text-[color:var(--m-fg-70)]`}>{formats.euros(cat.montant)}</span>
                   <Chevron ouvert={ouvert === cat.id} />
                   <Filet />
@@ -805,9 +977,19 @@ const MaquetteBudget = () => {
                       {b.varie && <Varie />}
                       <span className="min-w-2 flex-1" />
                       <span className="hidden min-w-7 whitespace-nowrap text-right text-[11px] text-[color:var(--m-muted-fg)] opacity-80 sm:inline">
-                        {formats.part(b.part)}
+                        {formats.part(partDe(b.montant))}
                       </span>
-                      <span className={`${MONTANT} text-xs text-[color:var(--m-muted-fg)]`}>{formats.euros(b.montant ?? 0)}</span>
+                      {b.recurrents === undefined ? (
+                        <ChampMontant
+                          montant={b.montant}
+                          nom={t(`hero.maquette.noms.${b.id}`)}
+                          taille="ligne"
+                          formats={formats}
+                          onValider={(m) => changer(b.id, m)}
+                        />
+                      ) : (
+                        <span className={`${MONTANT} text-xs text-[color:var(--m-muted-fg)]`}>{formats.euros(b.montant)}</span>
+                      )}
                       <span className="w-3.5 shrink-0" />
                     </li>
                   ))}
@@ -821,31 +1003,58 @@ const MaquetteBudget = () => {
             className="mt-3.5"
             libelle={t("hero.maquette.sections.epargne")}
             couleur="var(--m-section-epargne)"
-            total={formats.euros(EPARGNE.montant)}
+            total={formats.euros(capacite)}
             part={{
-              texte: formats.part(EPARGNE.part),
+              texte: formats.part(partDe(capacite)),
               anneau: (
                 <AnneauSection
-                  arcs={[projets, investissement].map((l) => ({ id: l.id, pct: l.part }))}
+                  arcs={[
+                    { id: projets.id, pct: pctDe(projets.montant) },
+                    { id: investissement.id, pct: pctDe(investissement.montant) },
+                    { id: ID_RESTANT, pct: pctDe(restant) },
+                  ]}
                   couleur="var(--m-section-epargne)"
                   actif={survol}
                 />
               ),
             }}
           />
-          <button type="button" {...gestes(projets.id, false)} className={`${LIGNE} ${LIGNE_ACTIVE}`}>
-            <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center text-[color:var(--m-projets)]">
-              <PiggyBank className="h-[15px] w-[15px]" strokeWidth={1.75} aria-hidden="true" />
+          {/* Une ligne qui s'ouvre ET porte un champ : un champ ne peut pas vivre
+              dans un bouton. Le bouton s'étend donc à toute la ligne par son
+              pseudo-élément, et le champ passe au-dessus (`z-10`). */}
+          <div
+            className={`${LIGNE} group transition-colors hover:bg-[var(--m-muted)] has-[button:focus-visible]:bg-[var(--m-muted)]`}
+            onMouseEnter={() => setSurvol(projets.id)}
+            onMouseLeave={() => setSurvol(null)}
+          >
+            <button
+              type="button"
+              {...gestes(projets.id, false)}
+              onMouseEnter={undefined}
+              onMouseLeave={undefined}
+              className="flex min-w-0 flex-1 items-center gap-2 self-stretch text-left after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
+            >
+              <span className="flex h-[22px] w-[22px] shrink-0 items-center justify-center text-[color:var(--m-projets)]">
+                <PiggyBank className="h-[15px] w-[15px]" strokeWidth={1.75} aria-hidden="true" />
+              </span>
+              <span className={NOM_GROUPE}>{t("hero.maquette.noms.projets")}</span>
+              <Compte n={projets.liste.length} />
+              <Varie />
+              <span className="min-w-2 flex-1" />
+            </button>
+            <PartLigne pct={pctDe(projets.montant)} texte={formats.part(partDe(projets.montant))} />
+            <span className="relative z-10">
+              <ChampMontant
+                montant={projets.montant}
+                nom={t("hero.maquette.noms.projets")}
+                taille="groupe"
+                formats={formats}
+                onValider={(m) => changer(projets.id, m)}
+              />
             </span>
-            <span className={NOM_GROUPE}>{t("hero.maquette.noms.projets")}</span>
-            <Compte n={projets.liste.length} />
-            <Varie />
-            <span className="min-w-2 flex-1" />
-            <PartLigne pct={projets.part} texte={formats.part(projets.part)} />
-            <span className={`${MONTANT} text-[13px] text-[color:var(--m-fg-70)]`}>{formats.euros(projets.montant)}</span>
             <Chevron ouvert={ouvert === projets.id} />
             <Filet />
-          </button>
+          </div>
           <Corps id={`${idBase}-${projets.id}`} ouvert={ouvert === projets.id}>
             {projets.liste.map((p) => (
               <li key={p.id} className={SOUS_LIGNE}>
@@ -867,19 +1076,64 @@ const MaquetteBudget = () => {
             </span>
             <span className={NOM_GROUPE}>{t("hero.maquette.noms.investissement")}</span>
             <span className="min-w-2 flex-1" />
-            <PartLigne pct={investissement.part} texte={formats.part(investissement.part)} />
-            <span className={`${MONTANT} text-[13px] text-[color:var(--m-fg-70)]`}>{formats.euros(investissement.montant)}</span>
+            <PartLigne pct={pctDe(investissement.montant)} texte={formats.part(partDe(investissement.montant))} />
+            <ChampMontant
+              montant={investissement.montant}
+              nom={t("hero.maquette.noms.investissement")}
+              taille="groupe"
+              formats={formats}
+              onValider={(m) => changer(investissement.id, m)}
+            />
             <span className="w-3.5 shrink-0" />
+            {restant !== 0 && <Filet />}
+          </div>
+          {/* Projets + Investissement + Restant = capacité : la dernière ligne
+              ferme la somme, comme dans l'app. Elle n'existe que quand le
+              visiteur a défait l'équilibre, et s'ouvre comme un groupe. */}
+          <div
+            aria-hidden={restant === 0}
+            className="grid transition-[grid-template-rows] duration-200 ease-out"
+            style={{ gridTemplateRows: restant === 0 ? "0fr" : "1fr" }}
+          >
+            <div className="min-h-0 overflow-hidden">
+              <div className={LIGNE} onMouseEnter={() => setSurvol(ID_RESTANT)} onMouseLeave={() => setSurvol(null)}>
+                <span className="h-[22px] w-[22px] shrink-0" />
+                <span className={NOM_GROUPE}>{t(restant < 0 ? "hero.maquette.auDela" : "hero.maquette.restant")}</span>
+                <span className="min-w-2 flex-1" />
+                {restant > 0 && <PartLigne pct={pctDe(restant)} texte={formats.part(partDe(restant))} />}
+                <span
+                  className={`${MONTANT} text-[13px] ${
+                    restant < 0 ? "text-[color:var(--m-attention)]" : "text-[color:var(--m-fg-70)]"
+                  }`}
+                >
+                  {restant < 0 && `−${ESPACE_INSECABLE}`}
+                  {formats.euros(Math.abs(restant))}
+                </span>
+                <span className="w-3.5 shrink-0" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {catBulle && bulle && <Bulle cat={catBulle} formats={formats} id={`${idBase}-bulle-${catBulle.id}`} place={bulle.place} />}
 
-      <p className="mt-2.5 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-        <MousePointerClick className="h-3.5 w-3.5" aria-hidden="true" />
-        <span className="[@media(hover:none)]:hidden">{t("hero.maquette.indiceSurvol")}</span>
-        <span className="hidden [@media(hover:none)]:inline">{t("hero.maquette.indice")}</span>
+      <p className="mt-2.5 flex min-h-5 items-center justify-center gap-2 text-xs text-muted-foreground">
+        {modifie ? (
+          <button
+            type="button"
+            onClick={() => setMontants(DEPART)}
+            className="inline-flex items-center gap-1.5 rounded-sm underline-offset-2 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
+            {t("hero.maquette.revenir")}
+          </button>
+        ) : (
+          <>
+            <MousePointerClick className="h-3.5 w-3.5" aria-hidden="true" />
+            {t("hero.maquette.indice")}
+          </>
+        )}
       </p>
     </div>
   );

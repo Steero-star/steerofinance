@@ -54,8 +54,11 @@
     "microcopy": "14 days free · then €8 a month, all included · no bank connection",
     "maquette": {
       "aria": "Interactive preview of the My budgets page in Steero, with sample data",
-      "indice": "Open a category to see its budgets",
-      "indiceSurvol": "Hover a category for its breakdown, click it for its budgets",
+      "indice": "Open a category and change an amount: everything recalculates",
+      "champ": "Monthly amount: {{nom}}",
+      "restant": "Not yet assigned",
+      "auDela": "Beyond your capacity",
+      "revenir": "Back to the starting budget",
       "sections": {
         "revenus": "Income",
         "depenses": "Expenses",
@@ -2136,7 +2139,7 @@
       {
         "when": "Day 7",
         "title": "Your first weekly check-in",
-        "body": "€150 planned for going out, €214 actual: you see the gap and adjust while there is still time.",
+        "body": "€280 planned for going out, €344 actual: you see the gap and adjust while there is still time.",
         "imageAlt": "Review, this week's money: spent against allocated, and last week's mark"
       },
       {
