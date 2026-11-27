@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -40,7 +41,7 @@ const RapportEtonnement = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+            className={titreDeBloc("mb-4")}
           >
             {t("why.label")}
           </motion.p>
@@ -86,7 +87,7 @@ const RapportEtonnement = () => {
                   {c.fig}
                 </p>
                 {/* min-h : deux lignes reservees pour que les trois cartes restent a la meme hauteur */}
-                <h3 className="font-semibold text-foreground min-h-12">{c.title}</h3>
+                <h3 className="font-medium text-foreground min-h-12">{c.title}</h3>
                 <IndiceDepli label={t("why.expandLabel")} ouvert={active === i} />
               </button>
 
@@ -110,11 +111,11 @@ const RapportEtonnement = () => {
                         {c.srcLabel} ↗
                       </a>
                       <div className="mt-4 border-t border-border/60 pt-4">
-                        <p className="text-[11px] font-semibold tracking-widest text-primary uppercase mb-1.5">
+                        <p className={titreDeBloc("text-primary mb-1.5")}>
                           {t("why.gainLabel")}
                         </p>
                         <p className="text-sm text-foreground leading-relaxed">
-                          <span className="font-semibold">{c.gainTitle}</span> {c.gainBody}
+                          <span className="font-medium">{c.gainTitle}</span> {c.gainBody}
                         </p>
                       </div>
                     </div>

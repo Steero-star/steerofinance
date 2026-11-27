@@ -13,7 +13,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+      sans: ['Instrument Sans', 'system-ui', 'sans-serif'],
       serif: ['Instrument Serif', 'Georgia', 'serif'],
       mono: ['DM Mono', 'monospace'],
     },

@@ -45,7 +45,7 @@ const Bienvenue = () => {
         <p className="text-muted-foreground mb-8">{t("bienvenue.body")}</p>
         <a
           href={APP_URL}
-          className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold group"
+          className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-medium group"
         >
           {t("bienvenue.cta")}
           <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

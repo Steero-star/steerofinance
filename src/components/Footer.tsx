@@ -115,7 +115,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.15 }}
           >
-            <h4 className="text-sm font-semibold text-foreground mb-4">{t("footer.product")}</h4>
+            <h4 className="text-sm font-medium text-foreground mb-4">{t("footer.product")}</h4>
             <nav className="flex flex-col gap-3">
               {productLinks.map((link) => (
                 <Link
@@ -137,7 +137,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h4 className="text-sm font-semibold text-foreground mb-4">{t("footer.resources")}</h4>
+            <h4 className="text-sm font-medium text-foreground mb-4">{t("footer.resources")}</h4>
             <nav className="flex flex-col gap-3">
               {resourceLinks.map((link) =>
                 "to" in link ? (
@@ -175,7 +175,7 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.25 }}
           >
-            <h4 className="text-sm font-semibold text-foreground mb-4">{t("footer.legal")}</h4>
+            <h4 className="text-sm font-medium text-foreground mb-4">{t("footer.legal")}</h4>
             <nav className="flex flex-col gap-3 items-start">
               {legalLinks.map((link) => (
                 <Link

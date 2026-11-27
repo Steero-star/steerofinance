@@ -140,7 +140,7 @@ const Hero = () => {
             >
               <button
                 onClick={() => startTrial("hero")}
-                className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold group"
+                className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-medium group"
               >
                 {t('common.startFree')}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

@@ -65,7 +65,7 @@ export const ChevronDepli = ({ ouvert, className = "" }: { ouvert: boolean; clas
  * remplacer, il n'y aura qu'un endroit à toucher.
  */
 const IndiceDepli = ({ label, ouvert }: { label: string; ouvert: boolean }) => (
-  <span className="mt-4 flex items-center justify-between gap-2 border-t border-border/50 pt-3 text-[10.5px] leading-none text-muted-foreground/70 transition-colors duration-300 group-hover:text-primary">
+  <span className="mt-4 flex items-center justify-between gap-2 border-t border-border/50 pt-3 text-[11px] leading-none text-muted-foreground/70 transition-colors duration-300 group-hover:text-primary">
     {label}
     <ChevronDepli ouvert={ouvert} className="w-3.5 h-3.5" />
   </span>

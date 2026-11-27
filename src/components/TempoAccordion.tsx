@@ -102,7 +102,7 @@ const TempoAccordion = () => {
             >
               <TempoLetter letter={t(`tempo.rituals.${ritual.key}.letter`)} size="lg" className="ring-0 rounded-xl lg:mb-3" />
               <span className="min-w-0">
-                <span className="block font-semibold text-foreground text-base leading-tight">
+                <span className="block font-medium text-foreground text-base leading-tight">
                   {t(`tempo.rituals.${ritual.key}.name`)}
                 </span>
                 <span className="block text-xs text-muted-foreground mt-0.5">
@@ -172,7 +172,7 @@ const TempoAccordion = () => {
               <ul className="space-y-2">
                 {PAIRS.map((ba) => (
                   <li key={ba} className="flex items-start gap-2.5">
-                    <span className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center text-[10px] text-primary font-medium">
+                    <span className="shrink-0 mt-0.5 w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center text-[11px] text-primary font-medium">
                       ✓
                     </span>
                     <p className="text-foreground text-sm leading-snug font-medium">

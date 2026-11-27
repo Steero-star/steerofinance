@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ArrowUpRight } from "lucide-react";
@@ -39,7 +40,7 @@ const BookingBand = ({ location }: { location: string }) => {
           className="rounded-3xl border border-border/60 bg-card px-7 md:px-10 py-9 flex flex-col md:flex-row items-start md:items-center gap-7 shadow-soft"
         >
           <div className="flex-1">
-            <p className="text-sm font-semibold tracking-widest text-primary mb-3 uppercase">
+            <p className={titreDeBloc("text-primary mb-3")}>
               {t("booking.label")}
             </p>
             <h2 className="font-serif text-2xl md:text-3xl font-normal leading-[1.15] tracking-tight text-foreground mb-3">
@@ -53,7 +54,7 @@ const BookingBand = ({ location }: { location: string }) => {
           <div className="flex flex-col items-start md:items-center gap-2 shrink-0">
             <button
               onClick={() => bookCall(location)}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-primary text-primary font-semibold transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 group"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-primary text-primary font-medium transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 group"
             >
               {t("booking.cta")}
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

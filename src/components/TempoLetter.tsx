@@ -35,7 +35,7 @@ export const TempoLetter = ({ letter, size = "sm", className }: TempoLetterProps
   return (
     <span
       className={cn(
-        "inline-flex items-center justify-center font-bold shrink-0",
+        "inline-flex items-center justify-center font-sans font-semibold tracking-normal shrink-0",
         sizeClasses[size],
         color,
         className,

@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { useEffect, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -122,7 +123,7 @@ const ArticleBody = ({ article }: { article: Article }) => {
     if (/^\d+\.\s/.test(trimmed)) {
       elements.push(
         <div key={i} className="flex items-start gap-3 py-2 pl-1">
-          <span className="w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-semibold flex items-center justify-center flex-shrink-0">
+          <span className="w-7 h-7 rounded-full bg-primary/10 text-primary text-sm font-medium flex items-center justify-center flex-shrink-0">
             {trimmed.match(/^\d+/)?.[0]}
           </span>
           <span className="pt-0.5">{parseInlineLinks(trimmed.replace(/^\d+\.\s*/, ""))}</span>
@@ -177,7 +178,7 @@ const TableOfContents = ({ article }: { article: Article }) => {
 
   return (
     <nav aria-label={t("blog.tableOfContents")}>
-      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-4">
+      <p className={titreDeBloc("mb-4")}>
         {t("blog.tableOfContents")}
       </p>
       <ul className="space-y-1 border-l border-border">
@@ -341,14 +342,14 @@ const BlogArticle = () => {
                 {/* Pour aller plus loin */}
                 {article.reference && (
                   <div className="mt-12 pt-6 border-t border-border/60">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+                    <p className={titreDeBloc("mb-3")}>
                       {t("blog.goFurtherLabel")}
                     </p>
                     <a
                       href={article.reference.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-start gap-2 text-[15px] text-primary hover:text-primary/80 transition-colors group"
+                      className="inline-flex items-start gap-2 text-[16px] text-primary hover:text-primary/80 transition-colors group"
                     >
                       <ArrowUpRight className="w-4 h-4 mt-0.5 flex-shrink-0 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                       <span>{article.reference.label}</span>
@@ -447,7 +448,7 @@ const BlogArticle = () => {
                 onClick={() => window.open("https://app.steero.fr/", "_blank")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 {t("common.startFree")}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -455,7 +456,7 @@ const BlogArticle = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Link
                   to="/pourquoi-steero"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-medium hover:bg-white/10 transition-all duration-300"
                 >
                   {t("common.discoverApproach")}
                 </Link>

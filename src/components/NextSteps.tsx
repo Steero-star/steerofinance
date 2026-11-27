@@ -64,7 +64,7 @@ const NextSteps = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-foreground mb-4">
             {t('nextSteps.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ const NextSteps = () => {
                 </span>
               </div>
 
-              <h3 className="text-xl font-semibold text-foreground mb-3">
+              <h3 className="text-xl font-medium text-foreground mb-3">
                 {t(step.titleKey)}
               </h3>
 

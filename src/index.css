@@ -180,7 +180,7 @@
   }
 
   .step-number {
-    @apply text-6xl font-bold text-primary/20;
+    @apply text-6xl font-semibold text-primary/20;
   }
 
   @keyframes countdown-glow {

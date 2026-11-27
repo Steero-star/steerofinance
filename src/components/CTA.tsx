@@ -75,7 +75,7 @@ const CTA = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => startTrial("cta_final")}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group mb-12"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-300 group mb-12"
           >
             {t('common.startFree')}
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

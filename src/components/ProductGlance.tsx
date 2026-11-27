@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -46,7 +47,7 @@ const ProductGlance = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+            className={titreDeBloc("mb-4")}
           >
             {t("showcase.label")}
           </motion.p>

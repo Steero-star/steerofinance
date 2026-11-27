@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
@@ -15,7 +16,7 @@ const RealProblem = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+          className={titreDeBloc("mb-4")}
         >
           {t("realProblem.label")}
         </motion.p>
@@ -39,10 +40,10 @@ const RealProblem = () => {
         >
           {/* Rétroviseur */}
           <div className="bg-muted/40 p-5 md:border-r border-border/60">
-            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-4">
+            <p className={titreDeBloc("mb-4")}>
               {t("realProblem.retroLabel")}
             </p>
-            <p className="font-semibold text-foreground mb-5">{t("realProblem.retroCompany")}</p>
+            <p className="font-medium text-foreground mb-5">{t("realProblem.retroCompany")}</p>
             <ul className="space-y-0">
               {retroItems.map((item, i) => (
                 <li
@@ -57,17 +58,17 @@ const RealProblem = () => {
           </div>
           {/* Pare-brise */}
           <div className="bg-card p-5 border-t md:border-t-0 border-border/60">
-            <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-4">
+            <p className={titreDeBloc("text-primary mb-4")}>
               {t("realProblem.pareLabel")}
             </p>
-            <p className="font-semibold text-foreground mb-5">{t("realProblem.pareCompany")}</p>
+            <p className="font-medium text-foreground mb-5">{t("realProblem.pareCompany")}</p>
             <ul className="space-y-0">
               {pareItems.map((item, i) => (
                 <li
                   key={i}
                   className={`py-2.5 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
                 >
-                  <span className="text-primary font-semibold">→</span>
+                  <span className="text-primary font-medium">→</span>
                   <span>{item}</span>
                 </li>
               ))}

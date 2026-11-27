@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -169,7 +170,7 @@ const PourquoiSteero = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-1 text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+              className={titreDeBloc("lg:col-span-1 mb-4")}
             >
               {t("pourquoiSteero.realProblem.label")}
             </motion.p>
@@ -211,10 +212,10 @@ const PourquoiSteero = () => {
             >
               {/* Rétroviseur */}
               <div className="bg-muted/40 p-6 md:border-r border-border/60">
-                <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-4">
+                <p className={titreDeBloc("mb-4")}>
                   {t("pourquoiSteero.realProblem.retroLabel")}
                 </p>
-                <p className="font-semibold text-foreground mb-5">{t("pourquoiSteero.realProblem.retroCompany")}</p>
+                <p className="font-medium text-foreground mb-5">{t("pourquoiSteero.realProblem.retroCompany")}</p>
                 <ul className="space-y-0">
                   {retroItems.map((item, i) => (
                     <li
@@ -229,17 +230,17 @@ const PourquoiSteero = () => {
               </div>
               {/* Pare-brise */}
               <div className="bg-card p-6 border-t md:border-t-0 border-border/60">
-                <p className="text-xs font-semibold tracking-widest text-primary uppercase mb-4">
+                <p className={titreDeBloc("text-primary mb-4")}>
                   {t("pourquoiSteero.realProblem.pareLabel")}
                 </p>
-                <p className="font-semibold text-foreground mb-5">{t("pourquoiSteero.realProblem.pareCompany")}</p>
+                <p className="font-medium text-foreground mb-5">{t("pourquoiSteero.realProblem.pareCompany")}</p>
                 <ul className="space-y-0">
                   {pareItems.map((item, i) => (
                     <li
                       key={i}
                       className={`py-3 text-sm text-foreground flex gap-2 ${i !== 0 ? "border-t border-border/60" : ""}`}
                     >
-                      <span className="text-primary font-semibold">→</span>
+                      <span className="text-primary font-medium">→</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -264,7 +265,7 @@ const PourquoiSteero = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-1 text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+              className={titreDeBloc("lg:col-span-1 mb-4")}
             >
               {t("pourquoiSteero.behavioral.label")}
             </motion.p>
@@ -327,7 +328,7 @@ const PourquoiSteero = () => {
                     className="group w-full text-left p-5 cursor-pointer rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     <p className="font-serif text-4xl text-primary leading-none mb-3">{p.num}</p>
-                    <h3 className="font-semibold text-foreground text-sm leading-snug min-h-20">
+                    <h3 className="font-medium text-foreground text-sm leading-snug min-h-20">
                       {p.title}
                     </h3>
                     <IndiceDepli label={t("pourquoiSteero.behavioral.expandLabel")} ouvert={principeOuvert === i} />
@@ -376,7 +377,7 @@ const PourquoiSteero = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+            className={titreDeBloc("mb-4")}
           >
             {t("pourquoiSteero.tempo.label")}
           </motion.p>
@@ -426,7 +427,7 @@ const PourquoiSteero = () => {
             >
               <CalendarDays className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
               <p className="text-sm text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">{t("pourquoiSteero.tempo.calendarNoteTitle")}</span>{" "}
+                <span className="font-medium text-foreground">{t("pourquoiSteero.tempo.calendarNoteTitle")}</span>{" "}
                 {t("pourquoiSteero.tempo.calendarNoteDesc")}
               </p>
             </motion.div>
@@ -440,7 +441,7 @@ const PourquoiSteero = () => {
             >
               <Info className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
               <p className="text-sm text-muted-foreground leading-relaxed">
-                <span className="font-semibold text-foreground">{t("pourquoiSteero.tempo.bankingNoteTitle")}</span>{" "}
+                <span className="font-medium text-foreground">{t("pourquoiSteero.tempo.bankingNoteTitle")}</span>{" "}
                 {t("pourquoiSteero.tempo.bankingNoteDesc")}
               </p>
             </motion.div>
@@ -481,7 +482,7 @@ const PourquoiSteero = () => {
                 onClick={() => window.open("https://app.steero.fr/", "_blank")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 {t("pourquoiSteero.cta.primary")}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -492,7 +493,7 @@ const PourquoiSteero = () => {
               >
                 <Link
                   to="/fonctionnalites"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-medium hover:bg-white/10 transition-all duration-300"
                 >
                   {t("pourquoiSteero.cta.secondary")}
                 </Link>

@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import Header from "@/components/Header";
 import steeroBanner from "@/assets/steero-banner-3.png";
 import steeroBannerWebP from "@/assets/steero-banner-3.webp";
@@ -156,13 +157,13 @@ const FAQ = () => {
                         <span className="flex flex-wrap items-center gap-2.5">
                           {item.question}
                           {item.highlighted && (
-                            <span className="px-2 py-0.5 text-[11px] font-semibold rounded-full bg-primary/10 text-primary whitespace-nowrap">
+                            <span className="px-2 py-0.5 text-[11px] font-medium rounded-full bg-primary/10 text-primary whitespace-nowrap">
                               {t("faq.essential")}
                             </span>
                           )}
                         </span>
                       </AccordionTrigger>
-                      <AccordionContent className="text-[15px] leading-relaxed text-foreground/75 whitespace-pre-line pb-6 pt-0 max-w-[65ch]">
+                      <AccordionContent className="text-[16px] leading-relaxed text-foreground/75 whitespace-pre-line pb-6 pt-0 max-w-[65ch]">
                         {renderAnswer(item.answer)}
                       </AccordionContent>
                     </AccordionItem>
@@ -183,7 +184,7 @@ const FAQ = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-sm font-semibold tracking-widest text-primary mb-3 uppercase">
+            <p className={titreDeBloc("text-primary mb-3")}>
               {t("faq.noAnswer")}
             </p>
             <p className="text-lg text-foreground mb-6 max-w-2xl">{t("faq.discoverHow")}</p>
@@ -241,7 +242,7 @@ const FAQ = () => {
                 onClick={() => window.open("https://app.steero.fr/", "_blank")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 {t("common.startFree")}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -249,7 +250,7 @@ const FAQ = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Link
                   to="/pourquoi-steero"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-medium hover:bg-white/10 transition-all duration-300"
                 >
                   {t("common.discoverApproach")}
                 </Link>

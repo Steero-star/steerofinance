@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
@@ -41,7 +42,7 @@ const Preuve = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="text-sm font-semibold tracking-widest text-muted-foreground mb-3 uppercase"
+                className={titreDeBloc("mb-3")}
               >
                 {t("preuve.label")}
               </motion.p>
@@ -61,7 +62,7 @@ const Preuve = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-muted-foreground text-[15px] leading-relaxed max-w-2xl"
+                className="text-muted-foreground text-[16px] leading-relaxed max-w-2xl"
               >
                 {t("preuve.mechBody")}
               </motion.p>
@@ -74,7 +75,7 @@ const Preuve = () => {
               transition={{ duration: 0.6, delay: 0.25 }}
               className="rounded-2xl border border-border/60 bg-card p-5"
             >
-              <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-3">
+              <p className={titreDeBloc("mb-3")}>
                 {t("preuve.sourcesTitle")}
               </p>
               <ul className="space-y-3">
@@ -112,7 +113,7 @@ const Preuve = () => {
                   {q.text}
                 </blockquote>
                 <figcaption className="mt-4">
-                  <p className="text-sm font-semibold text-foreground">{q.name}</p>
+                  <p className="text-sm font-medium text-foreground">{q.name}</p>
                   <p className="text-xs text-muted-foreground">{q.role}</p>
                 </figcaption>
               </motion.figure>
@@ -164,7 +165,7 @@ const Preuve = () => {
                 onClick={() => startTrial("preuve")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 {t("pourquoiSteero.cta.primary")}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -178,7 +179,7 @@ const Preuve = () => {
                     Voir aussi `ScrollToTop`, qui ignorait les ancres. */}
                 <Link
                   to="/fonctionnalites#demo"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-medium hover:bg-white/10 transition-all duration-300"
                 >
                   <PlayCircle className="w-5 h-5" />
                   {t("common.watchDemo")}

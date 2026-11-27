@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -185,7 +186,7 @@ const Projection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mb-3 text-sm font-semibold uppercase tracking-widest text-muted-foreground"
+            className={titreDeBloc("mb-3")}
           >
             {t("projection.label")}
           </motion.p>
@@ -240,11 +241,12 @@ const Projection = () => {
                   aria-controls={`projection-palier-${i}`}
                   tabIndex={actif === i ? 0 : -1}
                   onClick={() => choisir(i)}
-                  className={`inline-flex items-center gap-1.5 rounded-full py-1 pl-1.5 pr-3 text-[11px] font-semibold uppercase tracking-wide transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                  className={titreDeBloc(
+                    "inline-flex items-center gap-1.5 rounded-full py-1 pl-1.5 pr-3 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
                     actif === i
                       ? "bg-primary text-primary-foreground"
-                      : "bg-primary/10 text-primary hover:bg-primary/20"
-                  }`}
+                      : "bg-primary/10 text-primary hover:bg-primary/20",
+                  )}
                 >
                   {/* Sans lettre (Jour 1), une pastille vide tient la place :
                       les six repères gardent la même hauteur et la même
@@ -253,7 +255,7 @@ const Projection = () => {
                     <TempoLetter
                       letter={lettre.letter}
                       size="sm"
-                      className="h-4 w-4 rounded text-[9px]"
+                      className="h-4 w-4 rounded text-[11px]"
                     />
                   ) : (
                     <span aria-hidden="true" className="inline-block h-4 w-4 rounded border border-current opacity-40" />
@@ -310,11 +312,11 @@ const Projection = () => {
                 >
                   <div className={ecran ? "" : "max-w-3xl"}>
                     {lettre && (
-                      <p className="mb-2 flex items-center gap-2 text-xs uppercase tracking-wide text-muted-foreground">
+                      <p className={titreDeBloc("mb-2 flex items-center gap-2")}>
                         <TempoLetter
                           letter={lettre.letter}
                           size="sm"
-                          className="h-5 w-5 rounded text-[10px]"
+                          className="h-5 w-5 rounded text-[11px]"
                         />
                         <span>
                           {t(`tempo.rituals.${lettre.key}.name`)} ·{" "}
@@ -322,10 +324,10 @@ const Projection = () => {
                         </span>
                       </p>
                     )}
-                    <h3 className="mb-1.5 text-base font-semibold text-foreground md:text-lg">
+                    <h3 className="mb-1.5 text-base font-medium text-foreground md:text-lg">
                       {s.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground md:text-[15px]">
+                    <p className="text-sm leading-relaxed text-muted-foreground md:text-[16px]">
                       {s.body}
                     </p>
                   </div>

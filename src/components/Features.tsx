@@ -33,7 +33,7 @@ const Features = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="font-serif text-3xl md:text-4xl font-normal tracking-tight text-foreground mb-4">
             {t('features.title')}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -54,8 +54,8 @@ const Features = () => {
               <div className="w-14 h-14 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center">
                 <feature.icon className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-left text-primary">{feature.title}</h3>
-              <p className="leading-relaxed text-left text-base text-[#65758b] font-light font-[serif]">
+              <h3 className="text-xl font-medium mb-3 text-left text-primary">{feature.title}</h3>
+              <p className="leading-relaxed text-left text-base text-[#65758b] font-normal font-[serif]">
                 {feature.description}
               </p>
             </motion.div>

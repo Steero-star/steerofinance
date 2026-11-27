@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -123,7 +124,7 @@ const Pricing = () => {
                   le filet vertical entre elles n'est donc jamais tronqué. */}
               <div className="grid md:grid-cols-2">
               <div className="p-7 md:p-8 md:border-r border-border">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4 block">
+                <span className={titreDeBloc("mb-4 block")}>
                   {t("pricing.planName")}
                 </span>
 
@@ -157,7 +158,7 @@ const Pricing = () => {
                   >
                     {t("pricing.annual")}
                     <span
-                      className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${
+                      className={`text-[11px] font-medium px-1.5 py-0.5 rounded-full ${
                         isAnnual
                           ? "bg-background/15 text-background"
                           : "bg-primary/10 text-primary"
@@ -223,7 +224,7 @@ const Pricing = () => {
 
               {/* Features */}
               <div className="p-7 md:p-8 border-t md:border-t-0 border-border">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4 block">
+                <span className={titreDeBloc("mb-4 block")}>
                   {t("pricing.featuresHeading")}
                 </span>
                 {/* Une seule colonne : la liste vit maintenant dans une demi-carte,
@@ -298,7 +299,7 @@ const Pricing = () => {
               className="bg-card border border-border rounded-2xl shadow-soft overflow-hidden flex flex-col"
             >
               <div className="p-8 flex-1">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4 block">
+                <span className={titreDeBloc("mb-4 block")}>
                   {t("pricing.founderTitle")}
                 </span>
                 <h2 className="font-serif text-2xl md:text-3xl text-foreground mb-4 leading-tight">
@@ -312,7 +313,7 @@ const Pricing = () => {
               <div className="border-t border-border bg-muted/40 p-6">
                 <div className="inline-flex items-center gap-2 mb-3 bg-primary text-primary-foreground px-3 py-1 rounded-full">
                   <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary-foreground animate-pulse" />
-                  <span className="text-[11px] font-semibold uppercase tracking-wider">
+                  <span className={titreDeBloc("text-inherit")}>
                     {t("pricing.earlyBadge")}
                   </span>
                 </div>
@@ -334,7 +335,7 @@ const Pricing = () => {
               className="bg-card border border-border rounded-2xl shadow-soft overflow-hidden flex flex-col"
             >
               <div className="p-8 flex-1">
-                <span className="text-xs font-semibold tracking-[0.2em] uppercase text-muted-foreground mb-4 block">
+                <span className={titreDeBloc("mb-4 block")}>
                   {t("pricing.impactSection")}
                 </span>
                 <h2
@@ -349,7 +350,7 @@ const Pricing = () => {
 
               <div className="border-t border-border bg-muted/40 p-6 flex flex-col sm:flex-row sm:items-center gap-4">
                 <div className="flex-1">
-                  <p className="text-xs font-semibold text-foreground mb-1.5">
+                  <p className="text-xs font-medium text-foreground mb-1.5">
                     {t("pricing.impactConditionsTitle")}
                   </p>
                   <p className="text-xs text-muted-foreground leading-relaxed">

@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import {
   useEffect,
   useId,
@@ -545,13 +546,13 @@ const Bulle = ({ cat, formats, id, place }: { cat: CategorieCalculee; formats: F
       className="pointer-events-none absolute z-30 rounded-xl border border-[color:var(--m-border)] bg-white px-3.5 pb-3 pt-3 text-[12px] leading-[1.45] text-[color:var(--m-fg)] shadow-xl animate-in fade-in-0 slide-in-from-bottom-1"
     >
       <div className="flex items-baseline justify-between gap-3">
-        <span className="text-[13px] font-semibold leading-snug">{t(`hero.maquette.noms.${cat.id}`)}</span>
-        <b className="whitespace-nowrap text-sm font-semibold tabular-nums">
+        <span className="text-[13px] font-medium leading-snug">{t(`hero.maquette.noms.${cat.id}`)}</span>
+        <b className="whitespace-nowrap text-sm font-medium tabular-nums">
           {formats.euros(cat.montant)}
           <small className="text-[11px] font-normal text-[color:var(--m-muted-fg)]"> {t("hero.maquette.bulle.parMois")}</small>
         </b>
       </div>
-      <div className="mt-0.5 flex items-center gap-1.5 text-[11.5px] text-[color:var(--m-muted-fg)]">
+      <div className="mt-0.5 flex items-center gap-1.5 text-[11px] text-[color:var(--m-muted-fg)]">
         <Icone className="h-3.5 w-3.5 text-[color:var(--m-depense)]" strokeWidth={1.75} aria-hidden="true" />
         {t("hero.maquette.nBudgets", { count: cat.budgets.length })}
         <span>·</span>
@@ -562,7 +563,7 @@ const Bulle = ({ cat, formats, id, place }: { cat: CategorieCalculee; formats: F
           <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-baseline gap-x-[7px]">
             <i className="block h-[7px] w-[7px] rounded-full bg-[var(--m-fixe)]" />
             <span>{t("hero.maquette.bulle.chargesFixes")}</span>
-            <b className="font-semibold tabular-nums">{formats.euros(bulle.fixe)}</b>
+            <b className="font-medium tabular-nums">{formats.euros(bulle.fixe)}</b>
             <small className="col-span-2 col-start-2 text-[11px] text-[color:var(--m-muted-fg)]">
               {formats.part(bulle.partFixe)}
               {bulle.nbRecurrents > 0 && ` · ${t("hero.maquette.bulle.nRecurrents", { count: bulle.nbRecurrents })}`}
@@ -590,7 +591,7 @@ const Bulle = ({ cat, formats, id, place }: { cat: CategorieCalculee; formats: F
               ))}
             </span>
             <span>{t("hero.maquette.bulle.variables")}</span>
-            <b className="font-semibold tabular-nums">{formats.euros(bulle.variables)}</b>
+            <b className="font-medium tabular-nums">{formats.euros(bulle.variables)}</b>
             <small className="col-span-2 col-start-2 text-[11px] text-[color:var(--m-muted-fg)]">
               {formats.part(100 - bulle.partFixe)}
             </small>
@@ -599,8 +600,8 @@ const Bulle = ({ cat, formats, id, place }: { cat: CategorieCalculee; formats: F
         <div className="relative h-16 w-16">
           <DonutCategorie budgets={cat.budgets} />
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <b className="text-[11px] font-semibold leading-tight tabular-nums">{formats.part(bulle.partFixe)}</b>
-            <small className="text-[9px] text-[color:var(--m-muted-fg)]">{t("hero.maquette.bulle.fixes")}</small>
+            <b className="text-[11px] font-medium leading-tight tabular-nums">{formats.part(bulle.partFixe)}</b>
+            <small className="text-[11px] text-[color:var(--m-muted-fg)]">{t("hero.maquette.bulle.fixes")}</small>
           </div>
         </div>
       </div>
@@ -626,7 +627,7 @@ const EnteteSection = ({
     className={`flex h-7 items-center gap-2 border-b pl-1 pr-1 ${className}`}
     style={{ borderBottomColor: `color-mix(in oklab, ${couleur} 50%, transparent)` }}
   >
-    <span className="shrink-0 whitespace-nowrap font-mono text-[10.5px] font-medium uppercase tracking-[0.06em]" style={{ color: couleur }}>
+    <span className={titreDeBloc("shrink-0 whitespace-nowrap text-inherit")} style={{ color: couleur }}>
       {libelle}
     </span>
     <span className="min-w-2 flex-1" />
@@ -636,7 +637,7 @@ const EnteteSection = ({
         <span className="min-w-7 text-right text-[11px]">{part.texte}</span>
       </span>
     )}
-    <span className={`${MONTANT} font-mono text-[13px] font-medium`} style={{ color: couleur }}>
+    <span className={`${MONTANT} text-[13px] font-medium`} style={{ color: couleur }}>
       {total}
     </span>
     <span className="w-3.5 shrink-0" />
@@ -678,7 +679,7 @@ const Compte = ({ n }: { n: number }) => {
 const Varie = () => {
   const { t } = useTranslation();
   return (
-    <span className="hidden shrink-0 rounded-full border border-[color:var(--m-border)] px-1.5 text-[10.5px] leading-[15px] text-[color:var(--m-muted-fg)] sm:inline">
+    <span className="hidden shrink-0 rounded-full border border-[color:var(--m-border)] px-1.5 text-[11px] leading-[15px] text-[color:var(--m-muted-fg)] sm:inline">
       {t("hero.maquette.varie")}
     </span>
   );

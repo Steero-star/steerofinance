@@ -169,14 +169,14 @@ const LegalDocument = ({
 
       <main className="flex-grow pt-32 pb-16">
         <div className="container mx-auto max-w-4xl px-6">
-          <h1 className="mb-2 text-4xl font-bold text-foreground">{title}</h1>
+          <h1 className="mb-2 font-serif text-4xl font-normal tracking-tight text-foreground">{title}</h1>
           {subtitle && <p className="mb-4 text-muted-foreground">{subtitle}</p>}
           <p className="mb-12 text-sm text-muted-foreground">{t(`${docKey}.lastUpdate`)}</p>
 
           <div className="space-y-10">
             {(Array.isArray(sections) ? sections : []).map((section, i) => (
               <section key={i}>
-                <h2 className="mb-4 text-2xl font-semibold text-foreground">{section.title}</h2>
+                <h2 className="mb-4 font-serif text-2xl font-normal text-foreground">{section.title}</h2>
                 {section.blocks.map(renderBlock)}
               </section>
             ))}

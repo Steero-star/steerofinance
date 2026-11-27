@@ -146,7 +146,7 @@ const Differentiation = () => {
 
                     {/* Content */}
                     <div className="p-8 md:p-10">
-                      <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6">
+                      <h3 className="text-2xl md:text-3xl font-semibold text-primary mb-6">
                         {t(adv.titleKey)}
                       </h3>
                       <div className="space-y-4">

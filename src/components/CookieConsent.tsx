@@ -170,7 +170,7 @@ const CookieConsent = () => {
         onKeyDown={onKeyDown}
         className="container mx-auto max-w-3xl rounded-2xl border border-border bg-background p-5 shadow-soft outline-none sm:p-6"
       >
-        <h2 className="mb-2 text-base font-semibold text-foreground">{t("cookies.title")}</h2>
+        <h2 className="mb-2 text-base font-medium text-foreground">{t("cookies.title")}</h2>
         <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
           {t("cookies.body")}{" "}
           <Link to="/politique-confidentialite" className="text-primary hover:underline">

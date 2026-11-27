@@ -41,12 +41,12 @@ const Countdown = () => {
   }];
   return <div className="py-12 rounded-3xl bg-orange-100">
       <p className="text-center text-muted-foreground mb-6">
-        Lancement prévu le <span className="font-semibold text-foreground">17 avril 2026</span>
+        Lancement prévu le <span className="font-medium text-foreground">17 avril 2026</span>
       </p>
       <div className="flex justify-center gap-4 md:gap-8">
         {timeUnits.map((unit, index) => <div key={index} className="text-center">
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-xl bg-card border border-border flex items-center justify-center shadow-sm animate-countdown-glow">
-              <span className="text-2xl md:text-3xl font-bold text-primary">
+              <span className="text-2xl md:text-3xl font-semibold text-primary">
                 {String(unit.value).padStart(2, "0")}
               </span>
             </div>

@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -161,7 +162,7 @@ const Fonctionnalites = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-sm font-semibold tracking-widest text-primary mb-4 uppercase"
+            className={titreDeBloc("text-primary mb-4")}
           >
             {t("fonctionnalites.heroLabel")}
           </motion.p>
@@ -191,7 +192,7 @@ const Fonctionnalites = () => {
           >
             <button
               onClick={() => startTrial("fonctionnalites_hero")}
-              className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold group"
+              className="btn-primary inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-medium group"
             >
               {t("common.startFree")}
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -214,7 +215,7 @@ const Fonctionnalites = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-sm font-semibold tracking-widest text-muted-foreground mb-4 uppercase"
+            className={titreDeBloc("mb-4")}
           >
             {t("fonctionnalites.tourLabel")}
           </motion.p>
@@ -315,7 +316,7 @@ const Fonctionnalites = () => {
                             <Icon className="w-5 h-5" />
                           </span>
                           <span className="min-w-0">
-                            <span className="block font-semibold text-foreground text-[15px]">{f.title}</span>
+                            <span className="block font-medium text-foreground text-[16px]">{f.title}</span>
                             <span className="block text-sm text-muted-foreground">{f.promise}</span>
                           </span>
                           {/* Badge et chevron partagent le bord droit, d'où le
@@ -329,7 +330,7 @@ const Fonctionnalites = () => {
                               dans une liste verticale en ferait du papier peint. */}
                           <span className="ml-auto shrink-0 flex items-center gap-2">
                             {f.isNew && (
-                              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[10.5px] font-semibold tracking-wide text-primary uppercase">
+                              <span className={titreDeBloc("rounded-full bg-primary/10 px-2.5 py-0.5 text-primary")}>
                                 {t("fonctionnalites.newBadge")}
                               </span>
                             )}
@@ -424,16 +425,16 @@ const Fonctionnalites = () => {
                 transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
                 className="rounded-2xl border border-dashed border-border bg-background/70 p-6"
               >
-                <span className="inline-block rounded-full border border-border px-2.5 py-0.5 text-[10.5px] font-semibold tracking-wide text-muted-foreground uppercase mb-3">
+                <span className={titreDeBloc("inline-block rounded-full border border-border px-2.5 py-0.5 mb-3")}>
                   {t("fonctionnalites.soonBadge")}
                 </span>
-                <h3 className="font-semibold text-foreground mb-2">{s.title}</h3>
+                <h3 className="font-medium text-foreground mb-2">{s.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   {s.body}
                   {s.strong && (
                     <>
                       {" "}
-                      <span className="font-semibold text-foreground">{s.strong}</span>
+                      <span className="font-medium text-foreground">{s.strong}</span>
                     </>
                   )}
                 </p>
@@ -466,7 +467,7 @@ const Fonctionnalites = () => {
             <div className="flex flex-col items-start md:items-center gap-2">
               <button
                 onClick={() => startTrial("fonctionnalites_cta")}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-primary font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 group"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-primary font-medium shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 group"
               >
                 {t("common.startFree")}
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

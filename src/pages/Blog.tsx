@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -126,7 +127,7 @@ const Blog = () => {
               >
                 <div>
                   <p className="text-xs text-muted-foreground mb-4">
-                    <span className="text-primary font-semibold">{meta(lead).tags[0]}</span>
+                    <span className="text-primary font-medium">{meta(lead).tags[0]}</span>
                     {" · "}
                     {meta(lead).date}
                     {" · "}
@@ -151,7 +152,7 @@ const Blog = () => {
 
                 {/* Au sommaire de la une */}
                 <div className="hidden lg:block border-l border-border/60 pl-10">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground mb-5">
+                  <p className={titreDeBloc("mb-5")}>
                     {t("blog.tableOfContents")}
                   </p>
                   <ol className="space-y-4">
@@ -159,7 +160,7 @@ const Blog = () => {
                       <li key={index}>
                         <Link
                           to={`/blog/${lead.slug}`}
-                          className="group flex items-baseline gap-3 text-[15px] leading-snug text-foreground/80 hover:text-primary transition-colors"
+                          className="group flex items-baseline gap-3 text-[16px] leading-snug text-foreground/80 hover:text-primary transition-colors"
                         >
                           <span className="text-primary/60 font-medium text-sm tabular-nums group-hover:text-primary transition-colors">
                             {String(index + 1).padStart(2, "0")}
@@ -194,14 +195,14 @@ const Blog = () => {
                     >
                       <Link to={`/blog/${article.slug}`} className="group block border-t border-foreground/15 pt-5 h-full">
                         <p className="text-xs text-muted-foreground mb-3">
-                          <span className="text-primary font-semibold">{m.tags[0]}</span>
+                          <span className="text-primary font-medium">{m.tags[0]}</span>
                           {" · "}
                           {m.date}
                         </p>
                         <h3 className="font-serif text-[1.4rem] font-normal leading-snug tracking-tight text-foreground group-hover:text-primary transition-colors mb-3">
                           {m.title}
                         </h3>
-                        <p className="text-[15px] leading-relaxed text-muted-foreground line-clamp-3 mb-4">
+                        <p className="text-[16px] leading-relaxed text-muted-foreground line-clamp-3 mb-4">
                           {m.hook}
                         </p>
                         <p className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -260,7 +261,7 @@ const Blog = () => {
                 onClick={() => window.open("https://app.steero.fr/", "_blank")}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-semibold shadow-lg hover:shadow-xl transition-all duration-300 group"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-primary font-medium shadow-lg hover:shadow-xl transition-all duration-300 group"
               >
                 {t("common.startFree")}
                 <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
@@ -268,7 +269,7 @@ const Blog = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
                 <Link
                   to="/pourquoi-steero"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-semibold hover:bg-white/10 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border-2 border-white text-white font-medium hover:bg-white/10 transition-all duration-300"
                 >
                   {t("common.discoverApproach")}
                 </Link>

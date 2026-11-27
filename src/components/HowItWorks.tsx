@@ -16,7 +16,7 @@ const HowItWorks = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-sm font-semibold tracking-widest text-muted-foreground mb-4"
+          className="text-sm font-medium tracking-widest text-muted-foreground mb-4"
         >
           {t("tempo.label")}
         </motion.p>
@@ -68,7 +68,7 @@ const HowItWorks = () => {
                   <TempoLetter letter={letter} size="lg" />
 
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-foreground text-base">
+                    <h3 className="font-medium text-foreground text-base">
                       {t(`tempo.rituals.${key}.name`)}
                     </h3>
                     <p className="text-sm text-muted-foreground leading-relaxed">
@@ -80,7 +80,7 @@ const HowItWorks = () => {
                     <span className="block text-sm text-muted-foreground">
                       {t(`tempo.rituals.${key}.freq`)}
                     </span>
-                    <span className="block text-sm font-semibold text-foreground">
+                    <span className="block text-sm font-medium text-foreground">
                       {t(`tempo.rituals.${key}.time`)}
                     </span>
                   </div>

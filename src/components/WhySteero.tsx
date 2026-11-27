@@ -46,7 +46,7 @@ const WhySteero = () => {
                 <div className="w-10 h-10 rounded-xl bg-muted group-hover:bg-primary/10 flex items-center justify-center mb-4 transition-colors duration-300">
                   <card.icon className={`w-5 h-5 ${card.iconColor} transition-transform duration-300 group-hover:scale-110`} />
                 </div>
-                <h3 className="font-semibold text-foreground text-base mb-2">
+                <h3 className="font-medium text-foreground text-base mb-2">
                   {card.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
@@ -66,7 +66,7 @@ const WhySteero = () => {
           className="mb-10"
         >
           <div className="border-l-4 border-primary pl-6">
-            <blockquote className="text-xl md:text-2xl font-bold italic text-foreground mb-2">
+            <blockquote className="text-xl md:text-2xl font-semibold italic text-foreground mb-2">
               {t("whySteeroSection.quote")}
             </blockquote>
             <p className="text-muted-foreground text-sm">

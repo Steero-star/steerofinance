@@ -1,3 +1,4 @@
+import { titreDeBloc } from "@/components/ui/titre-de-bloc";
 import {
   ArrowRight,
   Banknote,
@@ -123,7 +124,7 @@ const Perimetre = () => {
             <li className="inline-flex items-center gap-2 rounded-full border border-dashed border-primary/40 bg-primary/5 px-3.5 py-2 text-sm text-muted-foreground">
               <TrendingUp className="h-4 w-4 shrink-0 text-primary/70" aria-hidden="true" />
               <span>{t("perimetre.soon")}</span>
-              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+              <span className={titreDeBloc("rounded-full bg-primary/10 px-2 py-0.5 text-primary")}>
                 {t("perimetre.soonTag")}
               </span>
             </li>
